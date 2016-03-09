@@ -21,4 +21,6 @@
 @property (nonatomic) CGFloat percent;
 
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
+- (void) update:(CADisplayLink *)displayLink;
+- (void) tearDownGL;
 @end

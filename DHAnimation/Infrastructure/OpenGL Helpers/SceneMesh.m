@@ -17,7 +17,7 @@
         if (splitTexture) {
             [self generateVerticesAndIndicesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount columnMajored:columnMajored];
         } else {
-            [self generateVerticesAndIndicesForView:view columnCount:columnCount rowCount:rowCount];
+            [self generateVerticesAndIndicesForView:view columnCount:columnCount rowCount:rowCount columnMajored:columnMajored];
         }
         _verticesData = [NSData dataWithBytes:vertices length:self.verticesSize];
         _indicesData = [NSData dataWithBytes:indices length:self.indicesSize];
@@ -186,8 +186,77 @@
     }
 }
 
-- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
+- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajored
 {
+    _vertexCount = (rowCount + 1) * (columnCount + 1);
+    _indexCount = rowCount * columnCount * 6;
+    _verticesSize = _vertexCount * sizeof(SceneMeshVertex);
+    _indicesSize = _indexCount * sizeof(GLushort);
     
+    vertices = malloc(_verticesSize);
+    indices = malloc(_indicesSize);
+    if (columnMajored) {
+        [self generateColumnMajoredVerticesForView:view columnCount:columnCount rowCount:rowCount];
+    } else {
+        [self generateRowMajoredVerticesForView:view columnCount:columnCount rowCount:rowCount];
+    }
+}
+
+- (void)generateColumnMajoredVerticesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
+{
+    CGFloat ux = 1.f / columnCount;
+    CGFloat uy = 1.f / rowCount;
+    for (int x = 0; x <= columnCount; x++) {
+        CGFloat vx = x * ux;
+        for (int y = 0; y <= rowCount; y++) {
+            CGFloat vy = uy * y;
+            SceneMeshVertex vertex = vertices[x * (rowCount + 1) + y];
+            vertex.position.x = vx * view.bounds.size.width;
+            vertex.position.y = vy * view.bounds.size.width;
+            vertex.position.z = 0;
+            vertex.texCoords = GLKVector2Make(vx, vy);
+        }
+    }
+    for (NSInteger x = 0; x < columnCount; x++) {
+        for (NSInteger y = 0; y < rowCount; y++) {
+            NSInteger index = x * rowCount + y;
+            NSInteger i = x * (rowCount + 1) + y;
+            indices[index * 6 + 0] = i;
+            indices[index * 6 + 1] = i + 1;
+            indices[index * 6 + 2] = i + rowCount + 1;
+            indices[index * 6 + 3] = i + rowCount + 1;
+            indices[index * 6 + 4] = i + 1;
+            indices[index * 6 + 5] = i + rowCount + 2;
+        }
+    }
+}
+
+- (void)generateRowMajoredVerticesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
+{
+    CGFloat ux = 1.f / columnCount;
+    CGFloat uy = 1.f / rowCount;
+    for (int y = 0; y <= rowCount; y++) {
+        CGFloat vy = y * uy;
+        for (int x = 0; x <= columnCount; x++) {
+            CGFloat vx = ux * x;
+            SceneMeshVertex vertex = vertices[y * (columnCount + 1) + x];
+            vertex.position.x = vx * view.bounds.size.width;
+            vertex.position.y = vy * view.bounds.size.height;
+            vertex.position.z = 0;
+            vertex.texCoords = GLKVector2Make(vx, vy);
+        }
+    }
+    for (NSInteger y = 0; y < rowCount; y++) {
+        for (NSInteger x = 0; x < columnCount; x++) {
+            NSInteger index = y * columnCount + x;
+            NSInteger i = x * (rowCount + 1) + y;
+            indices[index * 6 + 0] = i;
+            indices[index * 6 + 1] = i + 1;
+            indices[index * 6 + 2] = i + columnCount + 1;
+            indices[index * 6 + 3] = i + columnCount + 1;
+            indices[index * 6 + 4] = i + 1;
+            indices[index * 6 + 5] = i + columnCount + 2;
+        }
+    }
 }
 @end

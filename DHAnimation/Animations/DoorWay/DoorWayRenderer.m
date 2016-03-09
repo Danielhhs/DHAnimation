@@ -110,26 +110,6 @@
     [self.sourceMesh drawEntireMesh];
 }
 
-- (void) update:(CADisplayLink *)displayLink
-{
-    self.elapsedTime += displayLink.duration;
-    if (self.elapsedTime < self.duration) {
-        GLfloat populatedTime = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
-        self.percent = populatedTime / self.duration;
-        [self.animationView display];
-    } else {
-        self.percent = 1.f;
-        [self.animationView display];
-        [self.displayLink invalidate];
-        self.displayLink = nil;
-        [self.animationView removeFromSuperview];
-        [self tearDownGL];
-        if (self.completion) {
-            self.completion();
-        }
-    }
-}
-
 - (void) setupTextureWithSourceView:(UIView *)srcView destinationView:(UIView *)dstView
 {
     srcTexture = [TextureHelper setupTextureWithView:srcView];
