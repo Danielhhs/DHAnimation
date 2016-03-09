@@ -154,10 +154,6 @@
             vertices[index + 3].columnStartPosition = vertices[index + 0].position;
         }
     }
-    for (int i = 0; i < self.vertexCount; i++) {
-        SceneMeshVertex vertex = vertices[i];
-        NSLog(@"Vertex[%d].columnStartPosition = (%g, %g, %g)", i, vertex.columnStartPosition.x, vertex.columnStartPosition.y, vertex.columnStartPosition.z);
-    }
 }
 
 - (void) generateRowMajoredVerticesForSplitTextureForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
