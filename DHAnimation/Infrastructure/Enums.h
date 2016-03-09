@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeDoorWay = 0,
+    AnimationTypeCube = 1,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

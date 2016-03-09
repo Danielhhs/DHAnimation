@@ -68,7 +68,7 @@
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = @[@"DoorWay"];
+        _animations = @[@"DoorWay", @"Cube"];
     }
     return _animations;
 }

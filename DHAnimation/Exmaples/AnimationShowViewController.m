@@ -8,7 +8,9 @@
 
 #import "AnimationShowViewController.h"
 #import "DoorWayRenderer.h"
+#import "CubeRenderer.h"
 #import "AnimationSettingViewController.h"
+
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
 @property (nonatomic, strong) UIImageView *fromView;
@@ -41,7 +43,10 @@
             self.renderer = [[DoorWayRenderer alloc] init];
         }
             break;
-            
+        case AnimationTypeCube:
+        {
+            self.renderer = [[CubeRenderer alloc] init];
+        }
         default:
             break;
     }

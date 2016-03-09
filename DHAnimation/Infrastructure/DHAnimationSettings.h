@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UIView *fromView;
 @property (nonatomic, strong) UIView *toView;
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic) NSInteger columnCount;
+@property (nonatomic) NSInteger rowCount;
 
 @property (nonatomic) BOOL partialAnimation;
 

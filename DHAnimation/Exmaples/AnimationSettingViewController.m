@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *durationSlider;
 @property (weak, nonatomic) IBOutlet UIPickerView *timingFunctionPicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *directionSegment;
+@property (weak, nonatomic) IBOutlet UISlider *columnCountSlider;
+@property (weak, nonatomic) IBOutlet UISlider *rowCountSlider;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @end
 
@@ -43,6 +45,8 @@
     self.durationSlider.value = self.settings.duration;
     self.directionSegment.selectedSegmentIndex = self.settings.animationDirection;
     [self.timingFunctionPicker selectRow:self.settings.timingFunction inComponent:0 animated:NO];
+    self.columnCountSlider.value = self.settings.columnCount;
+    self.rowCountSlider.value = self.settings.rowCount;
 }
 
 #pragma mark - Event Handling
@@ -52,6 +56,14 @@
 
 - (IBAction)directionChanged:(id)sender {
     self.settings.animationDirection = self.directionSegment.selectedSegmentIndex;
+}
+
+- (IBAction)columnCountChanged:(id)sender {
+    self.settings.columnCount = self.columnCountSlider.value;
+}
+
+- (IBAction)rowCountChanged:(id)sender {
+    self.settings.rowCount = self.rowCountSlider.value;
 }
 
 #pragma mark - UIPickerViewDataSource

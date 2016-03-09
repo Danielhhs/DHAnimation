@@ -125,15 +125,48 @@
                                     <action selector="directionChanged:" destination="1Vu-II-R0J" eventType="valueChanged" id="Crm-zh-hZY"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Column Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHg-I6-GwJ">
+                                <rect key="frame" x="12" y="453" width="104" height="25"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ms9-nT-gOZ">
+                                <rect key="frame" x="129" y="451" width="177" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="columnCountChanged:" destination="1Vu-II-R0J" eventType="valueChanged" id="nci-xU-k9Y"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Row Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqX-Ec-stC">
+                                <rect key="frame" x="24" y="491" width="82" height="25"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="02T-nJ-VEe">
+                                <rect key="frame" x="130" y="489" width="177" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="rowCountChanged:" destination="1Vu-II-R0J" eventType="valueChanged" id="cRP-S5-5Kv"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GmB-3a-iAg" firstAttribute="top" secondItem="3py-ad-7zu" secondAttribute="bottom" constant="6" id="0Aj-uq-INq"/>
+                            <constraint firstItem="Ms9-nT-gOZ" firstAttribute="top" secondItem="3d1-YP-dzG" secondAttribute="bottom" constant="20" id="2ns-3V-1re"/>
                             <constraint firstItem="3py-ad-7zu" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="8" id="3GG-44-sFl"/>
                             <constraint firstItem="3py-ad-7zu" firstAttribute="top" secondItem="S9m-zE-cFH" secondAttribute="bottom" constant="8" id="8qC-Mg-zWQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ms9-nT-gOZ" secondAttribute="trailing" id="94T-eQ-jvS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3d1-YP-dzG" secondAttribute="trailing" id="Avt-rw-z0P"/>
+                            <constraint firstItem="tHg-I6-GwJ" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="-4" id="Ayb-gV-iEl"/>
+                            <constraint firstItem="Ms9-nT-gOZ" firstAttribute="leading" secondItem="tHg-I6-GwJ" secondAttribute="trailing" constant="15" id="CZr-zK-wc7"/>
                             <constraint firstItem="dn8-M3-j4N" firstAttribute="top" secondItem="n3X-vt-K6U" secondAttribute="bottom" constant="3" id="Dad-aU-1aG"/>
+                            <constraint firstItem="02T-nJ-VEe" firstAttribute="leading" secondItem="dqX-Ec-stC" secondAttribute="trailing" constant="26" id="FlJ-2A-k26"/>
+                            <constraint firstItem="02T-nJ-VEe" firstAttribute="top" secondItem="Ms9-nT-gOZ" secondAttribute="bottom" constant="8" id="IW5-cz-qbb"/>
                             <constraint firstItem="n3X-vt-K6U" firstAttribute="top" secondItem="GmB-3a-iAg" secondAttribute="bottom" constant="25" id="Iwy-pc-ray"/>
+                            <constraint firstItem="dqX-Ec-stC" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="8" id="JlP-j3-uoS"/>
                             <constraint firstItem="n3X-vt-K6U" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="8" id="Kb1-ay-Gbp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dn8-M3-j4N" secondAttribute="trailing" constant="-20" id="Lqq-oe-g8k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GmB-3a-iAg" secondAttribute="trailing" id="PB3-xH-m8x"/>
@@ -142,13 +175,18 @@
                             <constraint firstItem="GmB-3a-iAg" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="8" id="cyv-6U-Zlh"/>
                             <constraint firstItem="3d1-YP-dzG" firstAttribute="top" secondItem="lNK-6U-9zM" secondAttribute="bottom" constant="8" id="dWq-ef-SeX"/>
                             <constraint firstItem="dn8-M3-j4N" firstAttribute="leading" secondItem="5dt-V0-osW" secondAttribute="leadingMargin" constant="-20" id="l7a-71-PRo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="02T-nJ-VEe" secondAttribute="trailing" constant="-1" id="n5N-51-n4B"/>
+                            <constraint firstItem="tHg-I6-GwJ" firstAttribute="top" secondItem="3d1-YP-dzG" secondAttribute="bottom" constant="22" id="ofi-bc-IKn"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lNK-6U-9zM" secondAttribute="leading" id="rSi-rh-l2X"/>
+                            <constraint firstItem="dqX-Ec-stC" firstAttribute="top" secondItem="tHg-I6-GwJ" secondAttribute="bottom" constant="13" id="y2o-J0-ft4"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="columnCountSlider" destination="Ms9-nT-gOZ" id="llD-PP-Ld4"/>
                         <outlet property="directionSegment" destination="3d1-YP-dzG" id="IBq-NH-klQ"/>
                         <outlet property="durationSlider" destination="GmB-3a-iAg" id="lJc-4B-KfO"/>
+                        <outlet property="rowCountSlider" destination="02T-nJ-VEe" id="VmH-Qi-Abu"/>
                         <outlet property="timingFunctionPicker" destination="dn8-M3-j4N" id="wi7-cf-1u7"/>
                         <outlet property="topLayoutConstraint" destination="8qC-Mg-zWQ" id="pag-yk-T1W"/>
                     </connections>
