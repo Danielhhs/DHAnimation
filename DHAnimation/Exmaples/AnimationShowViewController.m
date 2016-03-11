@@ -9,6 +9,7 @@
 #import "AnimationShowViewController.h"
 #import "DoorWayRenderer.h"
 #import "CubeRenderer.h"
+#import "TwistRenderer.h"
 #import "AnimationSettingViewController.h"
 
 @interface AnimationShowViewController ()
@@ -46,6 +47,11 @@
         case AnimationTypeCube:
         {
             self.renderer = [[CubeRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeTwist:
+        {
+            self.renderer = [[TwistRenderer alloc] init];
         }
         default:
             break;

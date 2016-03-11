@@ -19,6 +19,7 @@
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic) CGFloat percent;
+@property (nonatomic) AnimationDirection direction;
 
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
 - (void) update:(CADisplayLink *)displayLink;

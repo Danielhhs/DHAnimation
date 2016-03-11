@@ -61,6 +61,9 @@
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, columnStartPosition));
     
+    glEnableVertexAttribArray(4);
+    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotation));
+    
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 }
 
@@ -87,7 +90,7 @@
 
 - (void) drawEntireMesh
 {
-    glDrawElements(GL_TRIANGLES, (int)self.indexCount, GL_UNSIGNED_SHORT, NULL);
+    glDrawElements(GL_TRIANGLES, (int)self.indexCount, GL_UNSIGNED_INT, NULL);
 }
 
 - (void) destroyGL
@@ -101,7 +104,7 @@
     _vertexCount = columnCount * rowCount * 4;
     _indexCount = columnCount * rowCount * 6;
     _verticesSize = _vertexCount * sizeof(SceneMeshVertex);
-    _indicesSize = _indexCount * sizeof(GLushort);
+    _indicesSize = _indexCount * sizeof(GLuint);
     
     vertices = malloc(_verticesSize);
     indices = malloc(_indicesSize);
@@ -112,10 +115,10 @@
         [self generateRowMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount];
     }
     
-    NSInteger index = 0;
+    int index = 0;
     for (int x = 0; x < columnCount; x++) {
         for (int y = 0; y < rowCount; y++) {
-            index = x * rowCount + y;
+            index = x * (int)rowCount + y;
             indices[index * 6 + 0] = index * 4;
             indices[index * 6 + 1] = index * 4 + 1;
             indices[index * 6 + 2] = index * 4 + 2;
@@ -191,7 +194,7 @@
     _vertexCount = (rowCount + 1) * (columnCount + 1);
     _indexCount = rowCount * columnCount * 6;
     _verticesSize = _vertexCount * sizeof(SceneMeshVertex);
-    _indicesSize = _indexCount * sizeof(GLushort);
+    _indicesSize = _indexCount * sizeof(GLuint);
     
     vertices = malloc(_verticesSize);
     indices = malloc(_indicesSize);
@@ -210,23 +213,22 @@
         CGFloat vx = x * ux;
         for (int y = 0; y <= rowCount; y++) {
             CGFloat vy = uy * y;
-            SceneMeshVertex vertex = vertices[x * (rowCount + 1) + y];
-            vertex.position.x = vx * view.bounds.size.width;
-            vertex.position.y = vy * view.bounds.size.width;
-            vertex.position.z = 0;
-            vertex.texCoords = GLKVector2Make(vx, vy);
+            vertices[x * (rowCount + 1) + y].position.x = vx * view.bounds.size.width;
+            vertices[x * (rowCount + 1) + y].position.y = vy * view.bounds.size.height;
+            vertices[x * (rowCount + 1) + y].position.z = 0;
+            vertices[x * (rowCount + 1) + y].texCoords = GLKVector2Make(vx, 1 - vy);
         }
     }
     for (NSInteger x = 0; x < columnCount; x++) {
         for (NSInteger y = 0; y < rowCount; y++) {
             NSInteger index = x * rowCount + y;
             NSInteger i = x * (rowCount + 1) + y;
-            indices[index * 6 + 0] = i;
-            indices[index * 6 + 1] = i + 1;
-            indices[index * 6 + 2] = i + rowCount + 1;
-            indices[index * 6 + 3] = i + rowCount + 1;
-            indices[index * 6 + 4] = i + 1;
-            indices[index * 6 + 5] = i + rowCount + 2;
+            indices[index * 6 + 0] = (GLuint)i;
+            indices[index * 6 + 1] = (GLuint)i + 1;
+            indices[index * 6 + 2] = (GLuint)(i + rowCount + 1);
+            indices[index * 6 + 3] = (GLuint)(i + rowCount + 1);
+            indices[index * 6 + 4] = (GLuint)(i + 1);
+            indices[index * 6 + 5] = (GLuint)(i + rowCount + 2);
         }
     }
 }
@@ -243,19 +245,19 @@
             vertex.position.x = vx * view.bounds.size.width;
             vertex.position.y = vy * view.bounds.size.height;
             vertex.position.z = 0;
-            vertex.texCoords = GLKVector2Make(vx, vy);
+            vertex.texCoords = GLKVector2Make(vx, 1 - vy);
         }
     }
     for (NSInteger y = 0; y < rowCount; y++) {
         for (NSInteger x = 0; x < columnCount; x++) {
             NSInteger index = y * columnCount + x;
             NSInteger i = x * (rowCount + 1) + y;
-            indices[index * 6 + 0] = i;
-            indices[index * 6 + 1] = i + 1;
-            indices[index * 6 + 2] = i + columnCount + 1;
-            indices[index * 6 + 3] = i + columnCount + 1;
-            indices[index * 6 + 4] = i + 1;
-            indices[index * 6 + 5] = i + columnCount + 2;
+            indices[index * 6 + 0] = (GLuint)i;
+            indices[index * 6 + 1] = (GLuint)i + 1;
+            indices[index * 6 + 2] = (GLuint)(i + columnCount + 1);
+            indices[index * 6 + 3] = (GLuint)(i + columnCount + 1);
+            indices[index * 6 + 4] = (GLuint)i + 1;
+            indices[index * 6 + 5] = (GLuint)(i + columnCount + 2);
         }
     }
 }

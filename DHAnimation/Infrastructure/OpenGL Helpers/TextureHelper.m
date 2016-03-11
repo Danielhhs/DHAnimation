@@ -16,11 +16,31 @@
     return [TextureHelper setupTextureWithView:view inRect:view.bounds];
 }
 
++ (GLuint) setupTextureWithView:(UIView *)view flipHorizontal:(BOOL)flipHorizontal
+{
+    return [TextureHelper setupTextureWithView:view inRect:view.bounds flipHorizontal:flipHorizontal];
+}
+
++ (GLuint) setupTextureWithView:(UIView *)view flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
+{
+    return [TextureHelper setupTextureWithView:view inRect:view.bounds flipHorizontal:flipHorizontal flipVertical:flipVertical];
+}
+
 + (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect
+{
+    return [TextureHelper setupTextureWithView:view inRect:rect flipHorizontal:NO];
+}
+
++ (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal
+{
+    return [TextureHelper setupTextureWithView:view inRect:rect flipHorizontal:flipHorizontal flipVertical:NO];
+}
+
++ (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
 {
     GLuint texture = [TextureHelper generateTexture];
     
-    [TextureHelper drawRect:rect inView:view onTexture:texture];
+    [TextureHelper drawRect:rect inView:view onTexture:texture flipHorizontal:flipHorizontal flipVertical:flipVertical];
     
     return texture;
 }
@@ -30,10 +50,31 @@
     return [TextureHelper setupTextureWithImage:image inRect:CGRectMake(0, 0, image.size.width, image.size.height)];
 }
 
++ (GLuint) setupTextureWithImage:(UIImage *)image flipHorizontal:(BOOL)flipHorizontal
+{
+    return [TextureHelper setupTextureWithImage:image inRect:CGRectMake(0, 0, image.size.width, image.size.height) flipHorizontal:flipHorizontal];
+}
+
+
++ (GLuint) setupTextureWithImage:(UIImage *)image flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
+{
+    return [TextureHelper setupTextureWithImage:image inRect:CGRectMake(0, 0, image.size.width, image.size.height) flipHorizontal:flipHorizontal flipVertical:flipVertical];
+}
+
 + (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect
 {
+    return [TextureHelper setupTextureWithImage:image inRect:rect flipHorizontal:NO];
+}
+
++ (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal
+{
+    return [TextureHelper setupTextureWithImage:image inRect:rect flipHorizontal:flipHorizontal flipVertical:NO];
+}
+
++ (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
+{
     GLuint texture = [TextureHelper generateTexture];
-    [TextureHelper drawRect:rect inImage:image onTexture:texture];
+    [TextureHelper drawRect:rect inImage:image onTexture:texture flipHorizontal:flipHorizontal flipVertical:flipVertical];
     return texture;
 }
 
@@ -51,18 +92,26 @@
     return texture;
 }
 
-+ (void) drawRect:(CGRect)rect inImage:(UIImage *)image onTexture:(GLuint)texture
++ (void) drawRect:(CGRect)rect inImage:(UIImage *)image onTexture:(GLuint)texture flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
 {
     CGFloat screenScale = [UIScreen mainScreen].scale;
     CGFloat textureWidth = rect.size.width * screenScale;
     CGFloat textureHeight = rect.size.height * screenScale;
     UIImage *imageToDraw = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
     [self drawRect:rect onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
+        if (flipHorizontal) {
+            CGContextTranslateCTM(context, textureWidth, 0);
+            CGContextScaleCTM(context, -1, 1);
+        }
+        if (flipVertical) {
+            CGContextTranslateCTM(context, textureHeight, 0);
+            CGContextScaleCTM(context, 1, -1);
+        }
         CGContextDrawImage(context, CGRectMake(0, 0, textureWidth, textureHeight), imageToDraw.CGImage);
     }];
 }
 
-+ (void) drawRect:(CGRect)rect inView:(UIView *)view onTexture:(GLuint)texture
++ (void) drawRect:(CGRect)rect inView:(UIView *)view onTexture:(GLuint)texture flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
 {
     CGFloat screenScale = [UIScreen mainScreen].scale;
     CGFloat textureWidth = rect.size.width * screenScale;
@@ -73,6 +122,14 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
     [self drawRect:rect onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
+        if (flipHorizontal) {
+            CGContextTranslateCTM(context, textureWidth, 0);
+            CGContextScaleCTM(context, -1, 1);
+        }
+        if (flipVertical) {
+            CGContextTranslateCTM(context, textureHeight, 0);
+            CGContextScaleCTM(context, 1, -1);
+        }
         CGContextDrawImage(context, CGRectMake(0, 0, textureWidth, textureHeight), image.CGImage);
     }];
 }

@@ -6,16 +6,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/SceneMesh.m"
+            timestampString = "479376497.657819"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-generateColumnMajoredVerticesForView:columnCount:rowCount:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Timing Function Helpers/DHTimingFunctionHelper.m"
-            timestampString = "479198302.172953"
+            filePath = "DHAnimation/Animations/Twist/TwistSourceMesh.m"
+            timestampString = "479376572.097639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "+functionNameForTimingFunction:"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-updateWithRotation:transition:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Twist/TwistSourceMesh.m"
+            timestampString = "479377197.84477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-initWithView:columnCount:rowCount:splitTexturesOnEachGrid:columnMajored:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

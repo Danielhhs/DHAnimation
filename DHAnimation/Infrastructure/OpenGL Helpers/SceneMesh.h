@@ -13,13 +13,14 @@ typedef struct {
     GLKVector3 normal;
     GLKVector2 texCoords;
     GLKVector3 columnStartPosition;
+    float rotation;
 }SceneMeshVertex;
 
 @interface SceneMesh : NSObject {
     GLuint vertexBuffer;
     GLuint indexBuffer;
     SceneMeshVertex *vertices;
-    GLushort *indices;
+    GLuint *indices;
 }
 @property (nonatomic, strong) NSData *verticesData;
 @property (nonatomic, strong) NSData *indicesData;
