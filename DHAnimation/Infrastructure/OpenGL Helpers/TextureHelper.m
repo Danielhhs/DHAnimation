@@ -104,7 +104,7 @@
             CGContextScaleCTM(context, -1, 1);
         }
         if (flipVertical) {
-            CGContextTranslateCTM(context, textureHeight, 0);
+            CGContextTranslateCTM(context, 0, textureHeight);
             CGContextScaleCTM(context, 1, -1);
         }
         CGContextDrawImage(context, CGRectMake(0, 0, textureWidth, textureHeight), imageToDraw.CGImage);
@@ -127,7 +127,7 @@
             CGContextScaleCTM(context, -1, 1);
         }
         if (flipVertical) {
-            CGContextTranslateCTM(context, textureHeight, 0);
+            CGContextTranslateCTM(context, 0, textureHeight);
             CGContextScaleCTM(context, 1, -1);
         }
         CGContextDrawImage(context, CGRectMake(0, 0, textureWidth, textureHeight), image.CGImage);

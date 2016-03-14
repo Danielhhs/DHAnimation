@@ -14,12 +14,13 @@
 
 @interface TwistRenderer () {
     GLuint srcProgram, dstProgram;
-    GLuint srcMvpLoc, srcSamplerLoc, srcCenterPositionLoc;
-    GLuint dstMvpLoc, dstSamplerLoc, dstCenterPositionLoc;
+    GLuint srcMvpLoc, srcSamplerLoc, srcCenterPositionLoc, srcDirectionLoc;
+    GLuint dstMvpLoc, dstSamplerLoc, dstCenterPositionLoc, dstDirectionLoc;
     GLuint srcTexture, dstTexture;
 }
 @property (nonatomic, strong) TwistMesh *sourceMesh;
 @property (nonatomic, strong) TwistMesh *destinationMesh;
+@property (nonatomic) GLfloat centerPosition;
 @end
 
 @implementation TwistRenderer
@@ -37,6 +38,11 @@
     self.timingFunction = timingFunction;
     self.completion = completion;
     self.direction = direction;
+    if (direction == AnimationDirectionBottomToTop || direction == AnimationDirectionTopToBottom) {
+        self.centerPosition = fromView.bounds.size.width / 2;
+    } else {
+        self.centerPosition = fromView.bounds.size.height / 2;
+    }
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     [self setupGL];
     [self setupMeshWithFromView:fromView toView:toView];
@@ -56,12 +62,14 @@
     srcMvpLoc = glGetUniformLocation(srcProgram, "u_mvpMatrix");
     srcSamplerLoc = glGetUniformLocation(srcProgram, "s_tex");
     srcCenterPositionLoc = glGetUniformLocation(srcProgram, "u_centerPosition");
+    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     dstProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"TwistDestinationVertex.glsl" fragmentShaderSrc:@"TwistDestinationFragment.glsl"];
     glUseProgram(dstProgram);
     dstMvpLoc = glGetUniformLocation(dstProgram, "u_mvpMatrix");
     dstSamplerLoc = glGetUniformLocation(dstProgram, "s_tex");
     dstCenterPositionLoc = glGetUniformLocation(dstProgram, "u_centerPosition");
+    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
     
     glClearColor(0, 0, 0, 1);
 }
@@ -83,7 +91,7 @@
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     srcTexture = [TextureHelper setupTextureWithView:fromView];
-    dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:YES flipVertical:YES];
+    dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
 }
 
 - (void) tearDownGL
@@ -104,7 +112,7 @@
     glCullFace(GL_BACK);
     glUseProgram(dstProgram);
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform1f(srcCenterPositionLoc, view.bounds.size.height / 2);
+    glUniform1f(dstCenterPositionLoc, self.centerPosition);
     [self.destinationMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, dstTexture);
@@ -114,7 +122,7 @@
     glCullFace(GL_FRONT);
     glUseProgram(srcProgram);
     glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform1f(srcCenterPositionLoc, view.bounds.size.height / 2);
+    glUniform1f(srcCenterPositionLoc, self.centerPosition);
     [self.sourceMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, srcTexture);
