@@ -60,6 +60,7 @@
     glUseProgram(dstProgram);
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(dstCenterPositionLoc, self.centerPosition);
+    glUniform1i(dstDirectionLoc, self.direction);
     [self.destinationMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, dstTexture);
@@ -70,6 +71,7 @@
     glUseProgram(srcProgram);
     glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(srcCenterPositionLoc, self.centerPosition);
+    glUniform1i(srcDirectionLoc, self.direction);
     [self.sourceMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, srcTexture);
@@ -142,7 +144,11 @@
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     srcTexture = [TextureHelper setupTextureWithView:fromView];
-    dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
+    if (self.direction == AnimationDirectionLeftToRight || self.direction == AnimationDirectionRightToLeft) {
+        dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
+    } else {
+        dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:YES];
+    }
 }
 
 - (CGFloat) transitionBasedOnDirection:(CGFloat)transition

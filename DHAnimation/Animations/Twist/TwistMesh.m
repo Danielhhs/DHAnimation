@@ -18,7 +18,11 @@
 {
     self = [super initWithView:view columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:splitTexture columnMajored:columnMajored];
     if (self) {
-        _transitionLength = columnCount;
+        if (columnMajored) {
+            _transitionLength = columnCount;
+        } else {
+            _transitionLength = rowCount;
+        }
         _radius = view.bounds.size.height / 2;
     }
     return self;

@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/SceneMesh.m"
-            timestampString = "479612593.365616"
+            filePath = "DHAnimation/Animations/Twist/TwistMesh.m"
+            timestampString = "479642281.622468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "-generateRowMajoredVerticesForView:columnCount:rowCount:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-updateForwardWithRotation:transition:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
