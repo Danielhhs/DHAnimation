@@ -96,7 +96,20 @@
 
 - (void) tearDownGL
 {
-    
+    [EAGLContext setCurrentContext:self.context];
+    [self.sourceMesh tearDown];
+    [self.destinationMesh tearDown];
+    glDeleteTextures(1, &srcTexture);
+    srcTexture = 0;
+    glDeleteTextures(1, &dstTexture);
+    dstTexture = 0;
+    glDeleteProgram(srcProgram);
+    srcProgram = 0;
+    glDeleteProgram(dstProgram);
+    dstProgram = 0;
+    self.animationView = nil;
+    [EAGLContext setCurrentContext:nil];
+    self.context = nil;
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
