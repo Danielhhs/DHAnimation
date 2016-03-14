@@ -10,6 +10,4 @@
 
 @interface TwistRenderer : DHAnimationRenderer
 
-- (void) startTwistFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion;
-
 @end

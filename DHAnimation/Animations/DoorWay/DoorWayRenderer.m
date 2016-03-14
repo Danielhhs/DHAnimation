@@ -36,53 +36,6 @@
     return self;
 }
 
-#pragma mark - Public Animation APIs
-- (void) performAnimationWithSettings:(DHAnimationSettings *)settings
-{
-    [self startDoorWayAnimationFromView:settings.fromView toView:settings.toView inView:settings.containerView duration:settings.duration timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
-}
-
-- (void) startDoorWayAnimationFromView:(UIView *)fromView toView:(UIView *)toView inView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
-{
-    self.duration = duration;
-    self.elapsedTime = 0.f;
-    self.percent = 0.f;
-    self.completion = completion;
-    self.timingFunction = timingFunction;
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    [self setupGL];
-    [self setupMeshWithFromView:fromView toView:toView];
-    [self setupTextureWithSourceView:fromView destinationView:toView];
-    self.animationView = [[GLKView alloc] initWithFrame:containerView.bounds context:self.context];
-    self.animationView.delegate = self;
-    [containerView addSubview:self.animationView];
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-- (void) startDoorWayAnimationFromView:(UIView *)fromView toView:(UIView *)toView inView:(UIView *)containerView duration:(NSTimeInterval)duration
-{
-    [self startDoorWayAnimationFromView:fromView toView:toView inView:containerView duration:duration completion:nil];
-}
-
-- (void) startDoorWayAnimationFromView:(UIView *)fromView toView:(UIView *)toView inView:(UIView *)containerView duration:(NSTimeInterval)duration completion:(void (^)(void))completion
-{
-    [self startDoorWayAnimationFromView:fromView toView:toView inView:containerView duration:duration timingFunction:NSBKeyframeAnimationFunctionEaseInOutCubic completion:completion];
-}
-
-#pragma mark - Set Up
-- (void) setupTextureWithSourceView:(UIView *)srcView destinationView:(UIView *)dstView
-{
-    srcTexture = [TextureHelper setupTextureWithView:srcView];
-    dstTexture = [TextureHelper setupTextureWithView:dstView];
-}
-
-- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
-{
-    self.sourceMesh = [[DoorWaySourceMesh alloc] initWithView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
-    self.destinamtionMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
-}
-
 #pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
@@ -137,5 +90,11 @@
     
     glUseProgram(dstProgram);
     dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
+}
+
+- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
+{
+    self.sourceMesh = [[DoorWaySourceMesh alloc] initWithView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.destinamtionMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 @end

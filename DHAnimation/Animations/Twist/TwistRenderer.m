@@ -36,56 +36,14 @@
 }
 
 #pragma mark - Public Animation APIs
-- (void) performAnimationWithSettings:(DHAnimationSettings *)settings
+- (void) initializeAnimationContext
 {
-    [self startTwistFromView:settings.fromView toView:settings.toView inContainerView:settings.containerView duration:settings.duration direction:settings.animationDirection timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
-}
-
-- (void) startTwistFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
-{
-    self.duration = duration;
-    self.elapsedTime = 0.f;
-    self.percent = 0.f;
-    self.timingFunction = timingFunction;
-    self.completion = completion;
-    self.direction = direction;
-    if (direction == AnimationDirectionBottomToTop || direction == AnimationDirectionTopToBottom) {
-        self.centerPosition = fromView.bounds.size.width / 2;
-    } else {
-        self.centerPosition = fromView.bounds.size.height / 2;
-    }
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    [self setupGL];
-    [self setupMeshWithFromView:fromView toView:toView];
-    [self setupTextureWithFromView:fromView toView:toView];
-    self.animationView = [[GLKView alloc] initWithFrame:fromView.frame context:self.context];
-    self.animationView.delegate = self;
-    [containerView addSubview:self.animationView];
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-#pragma mark - Set Up
-- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
-{
-    BOOL columnMajored = YES;
-    NSInteger columnCount = fromView.bounds.size.width;
-    NSInteger rowCount = 1;
     if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
-        columnMajored = NO;
-        columnCount = 1;
-        rowCount = fromView.bounds.size.height;
+        self.centerPosition = self.fromView.bounds.size.width / 2;
+    } else {
+        self.centerPosition = self.fromView.bounds.size.height / 2;
     }
-    self.sourceMesh = [[TwistMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
-    self.destinationMesh = [[TwistMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
 }
-
-- (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
-{
-    srcTexture = [TextureHelper setupTextureWithView:fromView];
-    dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
-}
-
 
 #pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -166,5 +124,26 @@
 {
     return self.destinationMesh;
 }
+
+- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
+{
+    BOOL columnMajored = YES;
+    NSInteger columnCount = fromView.bounds.size.width;
+    NSInteger rowCount = 1;
+    if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
+        columnMajored = NO;
+        columnCount = 1;
+        rowCount = fromView.bounds.size.height;
+    }
+    self.sourceMesh = [[TwistMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
+    self.destinationMesh = [[TwistMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
+}
+
+- (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
+{
+    srcTexture = [TextureHelper setupTextureWithView:fromView];
+    dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
+}
+
 
 @end

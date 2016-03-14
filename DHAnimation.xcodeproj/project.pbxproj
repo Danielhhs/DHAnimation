@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		544697DC1C92A1F000FF5EFA /* TwistMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 544697DB1C92A1F000FF5EFA /* TwistMesh.m */; };
+		544697E31C96827A00FF5EFA /* ClothLineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 544697E21C96827A00FF5EFA /* ClothLineRenderer.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -77,6 +78,8 @@
 /* Begin PBXFileReference section */
 		544697DA1C92A1F000FF5EFA /* TwistMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwistMesh.h; sourceTree = "<group>"; };
 		544697DB1C92A1F000FF5EFA /* TwistMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwistMesh.m; sourceTree = "<group>"; };
+		544697E11C96827A00FF5EFA /* ClothLineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothLineRenderer.h; sourceTree = "<group>"; };
+		544697E21C96827A00FF5EFA /* ClothLineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothLineRenderer.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		544697E01C96823100FF5EFA /* ClothLine */ = {
+			isa = PBXGroup;
+			children = (
+				544697E11C96827A00FF5EFA /* ClothLineRenderer.h */,
+				544697E21C96827A00FF5EFA /* ClothLineRenderer.m */,
+			);
+			path = ClothLine;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +281,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				544697E01C96823100FF5EFA /* ClothLine */,
 				54EC584D1C90273E009D812C /* Twist */,
 				54EC58381C902680009D812C /* Cube */,
 				54E264541C8EBDDA00FFB67E /* DoorWay */,
@@ -532,6 +545,7 @@
 				54EC581D1C8FD25F009D812C /* SceneMesh.m in Sources */,
 				54E264881C8FC74000FFB67E /* AnimationSettingViewController.m in Sources */,
 				544697DC1C92A1F000FF5EFA /* TwistMesh.m in Sources */,
+				544697E31C96827A00FF5EFA /* ClothLineRenderer.m in Sources */,
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,

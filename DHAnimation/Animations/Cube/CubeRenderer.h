@@ -12,9 +12,4 @@
 #import "CubeMesh.h"
 @interface CubeRenderer : DHAnimationRenderer
 
-- (void) startCubeTransitionFromView:(UIView *)fromView toView:(UIView *)toView columnCount:(NSInteger)columnCount inContainerView:(UIView *)containerView direction:(AnimationDirection)direction duration:(NSTimeInterval)duration;
-
-- (void) startCubeTransitionFromView:(UIView *)fromView toView:(UIView *)toView columnCount:(NSInteger)columnCount inContainerView:(UIView *)containerView direction:(AnimationDirection)direction duration:(NSTimeInterval)duration completion:(void (^)(void))completion;
-
-- (void) startCubeTransitionFromView:(UIView *)fromView toView:(UIView *)toView columnCount:(NSInteger)columnCount inContainerView:(UIView *)containerView direction:(AnimationDirection)direction duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion;
 @end

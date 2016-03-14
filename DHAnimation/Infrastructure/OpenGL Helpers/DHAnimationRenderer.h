@@ -26,17 +26,56 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic) CGFloat percent;
 @property (nonatomic) AnimationDirection direction;
+@property (nonatomic, weak) UIView *fromView;
+@property (nonatomic, weak) UIView *toView;
+@property (nonatomic) NSInteger columnCount;
 
 @property (nonatomic, strong) NSString *srcVertexShaderFileName;
 @property (nonatomic, strong) NSString *srcFragmentShaderFileName;
 @property (nonatomic, strong) NSString *dstVertexShaderFileName;
 @property (nonatomic, strong) NSString *dstFragmentShaderFileName;
 
-@property (nonatomic, strong) SceneMesh *srcMesh;
-@property (nonatomic, strong) SceneMesh *dstMesh;
 
-- (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
+#pragma mark - Methods for overriding
 - (void) update:(CADisplayLink *)displayLink;
+
+//Override this method if you want to customize the set up OpenGL context. Default implementation set up srcProgram, dstProgram and get the location for "u_mvpMatrix" and "s_tex"
 - (void) setupGL;
+
+//Release OpenGL resource created in set up GL, don't foget to call super's implementation;
 - (void) tearDownGL;
+
+//Set up the parameters for animation. Override this method if you have any specific set ups;
+- (void) initializeAnimationContext;
+
+//You MUST override this method to set up meshes for your own animation; default implementation create simple mesh for fromView and toView for 1 column, 1 row;
+- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView;
+
+//Create textures for fromView and toView; default implementation create simple texture for fromView and toView;
+- (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView;
+
+//Override the getters of these properties to provide your meshes to be used for tear down GL;
+@property (nonatomic, strong) SceneMesh * srcMesh;
+@property (nonatomic, strong) SceneMesh * dstMesh;
+
+#pragma mark - Animation APIs
+- (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
+
+//Default direction : Left to Right; TimingFunction : EaseInOutCubic; Column Count: 1; Completion : nil
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;
+
+//Default TimingFunction : EaseInOutCubic; Column Count: 1; Completion:nil
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction;
+
+//Default Completion:nil
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction;
+
+//Default TimingFunction : EaseInOutCubic; Column Count: 1;
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction completion:(void(^)(void))completion;
+
+//Default Column Count: 1;
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion;
+
+
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView columnCount:(NSInteger)columnCount duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion;
 @end

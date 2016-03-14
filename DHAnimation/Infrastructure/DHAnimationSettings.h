@@ -14,9 +14,9 @@
 @property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) void (^completion)(void);
-@property (nonatomic, strong) UIView *fromView;
-@property (nonatomic, strong) UIView *toView;
-@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, weak) UIView *fromView;
+@property (nonatomic, weak) UIView *toView;
+@property (nonatomic, weak) UIView *containerView;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) NSInteger rowCount;
 
