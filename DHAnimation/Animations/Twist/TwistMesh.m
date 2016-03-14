@@ -24,7 +24,17 @@
     return self;
 }
 
-- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition
+- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(AnimationDirection)direction
+{
+    if (direction == AnimationDirectionLeftToRight || direction == AnimationDirectionTopToBottom) {
+        [self updateForwardWithRotation:rotation transition:transition];
+    } else {
+        [self updateBackwardWithRotation:rotation transition:transition];
+    }
+    [self makeDynamicAndUpdateWithVertices:vertices numberOfVertices:self.vertexCount];
+}
+
+- (void) updateForwardWithRotation:(CGFloat)rotation transition:(CGFloat)transition
 {
     size_t zeroPosition = floor(self.transitionLength * transition);
     for (size_t i = 0; i <= zeroPosition; i++) {
@@ -47,7 +57,30 @@
             }
         }
     }
-    [self makeDynamicAndUpdateWithVertices:vertices numberOfVertices:self.vertexCount];
 }
 
+- (void) updateBackwardWithRotation:(CGFloat)rotation transition:(CGFloat)transition
+{
+    int zeroPosition = floor(self.transitionLength * transition);
+    for (int i = (int)self.transitionLength; i >= zeroPosition; i--) {
+        if (vertices[i * 2].rotation == M_PI) {
+            continue;
+        } else if (vertices[i * 2].rotation != 0) {
+            vertices[i * 2].rotation += rotation;
+            vertices[i * 2 + 1].rotation += rotation;
+            if (vertices[i * 2].rotation < -M_PI) {
+                vertices[i * 2].rotation = -M_PI;
+                vertices[i * 2 + 1].rotation = -M_PI;
+            }
+        } else if (vertices[i * 2].rotation == 0) {
+            if (i == self.transitionLength) {
+                vertices[i * 2].rotation = rotation;
+                vertices[i * 2 + 1].rotation = rotation;
+            } else {
+                vertices[i * 2].rotation = vertices[(i + 1) * 2].rotation - vertices[(i + 1) * 2].rotation / (i - zeroPosition + 2);
+                vertices[i * 2 + 1].rotation = vertices[i * 2].rotation;
+            }
+        }
+    }
+}
 @end

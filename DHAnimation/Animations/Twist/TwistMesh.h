@@ -7,9 +7,9 @@
 //
 
 #import "SceneMesh.h"
-
+#import "Enums.h"
 @interface TwistMesh : SceneMesh
 
-- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition;
+- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(AnimationDirection)direction;
 
 @end

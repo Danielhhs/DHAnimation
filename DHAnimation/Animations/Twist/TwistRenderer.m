@@ -81,15 +81,15 @@
 {
     self.elapsedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
-        CGFloat rotation = displayLink.duration / (self.duration * 0.618) * M_PI;
-        CGFloat transition = MIN(self.elapsedTime / (self.duration * 0.382), 1);
-        [self.sourceMesh updateWithRotation:rotation transition:transition];
-        [self.destinationMesh updateWithRotation:rotation transition:transition];
+        CGFloat rotation = [self rotationBasedOnDirection:displayLink.duration / (self.duration * 0.618) * M_PI];
+        CGFloat transition = [self transitionBasedOnDirection:self.elapsedTime / (self.duration * 0.382)];
+        [self.sourceMesh updateWithRotation:rotation transition:transition direction:self.direction];
+        [self.destinationMesh updateWithRotation:rotation transition:transition direction:self.direction];
         [self.animationView display];
     } else {
-        CGFloat rotation = displayLink.duration / self.duration * M_PI * 3;
-        [self.sourceMesh updateWithRotation:rotation transition:1];
-        [self.destinationMesh updateWithRotation:rotation transition:1];
+        CGFloat rotation = [self rotationBasedOnDirection:displayLink.duration / self.duration * M_PI * 3];
+        [self.sourceMesh updateWithRotation:rotation transition:[self transitionBasedOnDirection:1] direction:self.direction];
+        [self.destinationMesh updateWithRotation:rotation transition:[self transitionBasedOnDirection:1] direction:self.direction];
         [self.animationView display];
         [displayLink invalidate];
         self.displayLink = nil;
@@ -145,5 +145,21 @@
     dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
 }
 
+- (CGFloat) transitionBasedOnDirection:(CGFloat)transition
+{
+    if (self.direction == AnimationDirectionLeftToRight || self.direction == AnimationDirectionTopToBottom) {
+        transition = MIN(transition, 1);
+    } else {
+        transition = MAX(1 - transition, 0);
+    }
+    return transition;
+}
 
+- (CGFloat) rotationBasedOnDirection:(CGFloat)rotation
+{
+    if (self.direction == AnimationDirectionRightToLeft || self.direction == AnimationDirectionBottomToTop) {
+        rotation *= -1;
+    }
+    return rotation;
+}
 @end
