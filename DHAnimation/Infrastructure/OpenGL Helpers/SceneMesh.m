@@ -155,6 +155,11 @@
             vertices[index + 1].columnStartPosition = vertices[index + 0].position;
             vertices[index + 2].columnStartPosition = vertices[index + 0].position;
             vertices[index + 3].columnStartPosition = vertices[index + 0].position;
+            
+            vertices[index + 0].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 1].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 2].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 3].normal = GLKVector3Make(0, 0, 1);
         }
     }
 }
@@ -185,6 +190,10 @@
             vertices[index + 1].columnStartPosition = vertices[index + 0].position;
             vertices[index + 2].columnStartPosition = vertices[index + 0].position;
             vertices[index + 3].columnStartPosition = vertices[index + 0].position;
+            vertices[index + 0].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 1].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 2].normal = GLKVector3Make(0, 0, 1);
+            vertices[index + 3].normal = GLKVector3Make(0, 0, 1);
         }
     }
 }
@@ -217,12 +226,9 @@
             vertices[x * (rowCount + 1) + y].position.y = vy * view.bounds.size.height;
             vertices[x * (rowCount + 1) + y].position.z = 0;
             vertices[x * (rowCount + 1) + y].texCoords = GLKVector2Make(vx, 1 - vy);
+            vertices[x * (rowCount + 1) + y].normal = GLKVector3Make(0, 0, 1);
             vertices[x * (rowCount + 1) + y].rotation = 0;
         }
-    }
-    for (int i = 0; i < self.vertexCount; i++) {
-        SceneMeshVertex vertex = vertices[i];
-        NSLog(@"vetex[%d].texture = (%g, %g)", i, vertex.texCoords.x, vertex.texCoords.y);
     }
     for (NSInteger x = 0; x < columnCount; x++) {
         for (NSInteger y = 0; y < rowCount; y++) {
@@ -250,21 +256,10 @@
             vertices[y * (columnCount + 1) + x].position.y = vy * view.bounds.size.height;
             vertices[y * (columnCount + 1) + x].position.z = 0;
             vertices[y * (columnCount + 1) + x].texCoords = GLKVector2Make(vx, 1 - vy);
+            vertices[y * (columnCount + 1) + x].normal = GLKVector3Make(0, 0, 1);
             vertices[y * (columnCount + 1) + x].rotation = 0;
         }
     }
-//    for (int i = 0; i < self.vertexCount; i++) {
-//        SceneMeshVertex vertex = vertices[i];
-//        NSLog(@"vetex[%d].position = (%g, %g, %g)", i, vertex.position.x, vertex.position.y, vertex.position.z);
-//    }
-//    for (int i = 0; i < self.vertexCount; i++) {
-//        SceneMeshVertex vertex = vertices[i];
-//        NSLog(@"vetex[%d].texture = (%g, %g)", i, vertex.texCoords.x, vertex.texCoords.y);
-//    }
-//    for (int i = 0; i < self.vertexCount; i++) {
-//        SceneMeshVertex vertex = vertices[i];
-//        NSLog(@"vetex[%d].rotation = %g", i, vertex.rotation);
-//    }
     for (NSInteger y = 0; y < rowCount; y++) {
         for (NSInteger x = 0; x < columnCount; x++) {
             NSInteger index = y * columnCount + x;
@@ -277,8 +272,5 @@
             indices[index * 6 + 5] = (GLuint)(i + columnCount + 2);
         }
     }
-//    for (int i = 0; i < self.indexCount; i++) {
-//        NSLog(@"index[%d] = %d", i, indices[i]);
-//    }
 }
 @end

@@ -9,6 +9,7 @@ layout(location = 2) in vec2 a_texCoords;
 layout(location = 4) in float a_rotation;
 
 out vec2 v_texCoords;
+out vec3 v_normal;
 
 vec4 updatedPosition() {
     vec4 position = a_position;
@@ -20,14 +21,16 @@ vec4 updatedPosition() {
             position.y = u_centerPosition * (1.f + cos(a_rotation));
             position.z = u_centerPosition * sin(a_rotation);
         }
+        v_normal = vec3(0.f, sin(a_rotation), -cos(a_rotation));
     } else {
         if (position.x == 0.) {
             position.x = u_centerPosition * (1.f - cos(a_rotation));
-            position.z = u_centerPosition * sin(a_rotation);
+            position.z = -u_centerPosition * sin(a_rotation);
         } else {
             position.x = u_centerPosition * (1.f + cos(a_rotation));
             position.z = u_centerPosition * sin(a_rotation);
         }
+        v_normal = vec3(-sin(a_rotation), 0.f, -cos(a_rotation));
     }
     return position;
 }
