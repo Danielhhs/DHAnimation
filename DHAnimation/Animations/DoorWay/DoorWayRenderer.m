@@ -13,10 +13,8 @@
 #import "DHTimingFunctionHelper.h"
 
 @interface DoorWayRenderer() {
-    GLuint srcProgram, dstProgram;
-    GLuint srcTexture, dstTexture;
-    GLuint srcMvpLoc, srcSamplerLoc, srcPercentLoc, srcColumnWidthLoc;
-    GLuint dstMvpLoc, dstSamplerLoc, dstPercentLoc;
+    GLuint srcPercentLoc, srcColumnWidthLoc;
+    GLuint dstPercentLoc;
 }
 @property (nonatomic, strong) DoorWaySourceMesh *sourceMesh;
 @property (nonatomic, strong) SceneMesh *destinamtionMesh;
@@ -24,6 +22,21 @@
 
 @implementation DoorWayRenderer
 
+#pragma mark - Initialization
+- (instancetype) init
+{
+    self = [super init];
+    if (self) {
+        self.srcVertexShaderFileName = @"DoorWaySourceVertex.glsl";
+        self.srcFragmentShaderFileName = @"DoorWaySourceFragment.glsl";
+        self.dstVertexShaderFileName = @"DoorWayDestinationVertex.glsl";
+        self.dstFragmentShaderFileName = @"DoorWayDestinationFragment.glsl";
+        
+    }
+    return self;
+}
+
+#pragma mark - Public Animation APIs
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings
 {
     [self startDoorWayAnimationFromView:settings.fromView toView:settings.toView inView:settings.containerView duration:settings.duration timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
@@ -38,8 +51,7 @@
     self.timingFunction = timingFunction;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     [self setupGL];
-    self.sourceMesh = [[DoorWaySourceMesh alloc] initWithView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
-    self.destinamtionMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    [self setupMeshWithFromView:fromView toView:toView];
     [self setupTextureWithSourceView:fromView destinationView:toView];
     self.animationView = [[GLKView alloc] initWithFrame:containerView.bounds context:self.context];
     self.animationView.delegate = self;
@@ -58,25 +70,20 @@
     [self startDoorWayAnimationFromView:fromView toView:toView inView:containerView duration:duration timingFunction:NSBKeyframeAnimationFunctionEaseInOutCubic completion:completion];
 }
 
-- (void) setupGL
+#pragma mark - Set Up
+- (void) setupTextureWithSourceView:(UIView *)srcView destinationView:(UIView *)dstView
 {
-    [EAGLContext setCurrentContext:self.context];
-    srcProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"DoorWaySourceVertex.glsl" fragmentShaderSrc:@"DoorWaySourceFragment.glsl"];
-    glUseProgram(srcProgram);
-    srcMvpLoc = glGetUniformLocation(srcProgram, "u_mvpMatrix");
-    srcSamplerLoc = glGetUniformLocation(srcProgram, "s_tex");
-    srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
-    srcColumnWidthLoc = glGetUniformLocation(srcProgram, "u_columnWidth");
-    
-    dstProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"DoorWayDestinationVertex.glsl" fragmentShaderSrc:@"DoorWayDestinationFragment.glsl"];
-    glUseProgram(dstProgram);
-    dstMvpLoc = glGetUniformLocation(dstProgram, "u_mvpMatrix");
-    dstSamplerLoc = glGetUniformLocation(dstProgram, "s_tex");
-    dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
-    
-    glClearColor(0, 0, 0, 1);
+    srcTexture = [TextureHelper setupTextureWithView:srcView];
+    dstTexture = [TextureHelper setupTextureWithView:dstView];
 }
 
+- (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
+{
+    self.sourceMesh = [[DoorWaySourceMesh alloc] initWithView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.destinamtionMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+}
+
+#pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -110,24 +117,25 @@
     [self.sourceMesh drawEntireMesh];
 }
 
-- (void) setupTextureWithSourceView:(UIView *)srcView destinationView:(UIView *)dstView
+#pragma mark - Override
+- (SceneMesh *) srcMesh
 {
-    srcTexture = [TextureHelper setupTextureWithView:srcView];
-    dstTexture = [TextureHelper setupTextureWithView:dstView];
+    return self.sourceMesh;
 }
 
-- (void) tearDownGL
+- (SceneMesh *) dstMesh
 {
-    [EAGLContext setCurrentContext:self.context];
-    [self.sourceMesh tearDown];
-    [self.destinamtionMesh tearDown];
-    glDeleteTextures(1, &srcTexture);
-    srcTexture = 0;
-    glDeleteTextures(1, &dstTexture);
-    dstTexture = 0;
-    glDeleteProgram(srcProgram);
-    glDeleteProgram(dstProgram);
-    [EAGLContext setCurrentContext:nil];
-    self.context = nil;
+    return self.destinamtionMesh;
+}
+
+- (void) setupGL
+{
+    [super setupGL];
+    glUseProgram(srcProgram);
+    srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
+    srcColumnWidthLoc = glGetUniformLocation(srcProgram, "u_columnWidth");
+    
+    glUseProgram(dstProgram);
+    dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
 }
 @end

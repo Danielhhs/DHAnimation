@@ -13,10 +13,8 @@
 #import "DHTimingFunctionHelper.h"
 
 @interface TwistRenderer () {
-    GLuint srcProgram, dstProgram;
-    GLuint srcMvpLoc, srcSamplerLoc, srcCenterPositionLoc, srcDirectionLoc;
-    GLuint dstMvpLoc, dstSamplerLoc, dstCenterPositionLoc, dstDirectionLoc;
-    GLuint srcTexture, dstTexture;
+    GLuint srcCenterPositionLoc, srcDirectionLoc;
+    GLuint dstCenterPositionLoc, dstDirectionLoc;
 }
 @property (nonatomic, strong) TwistMesh *sourceMesh;
 @property (nonatomic, strong) TwistMesh *destinationMesh;
@@ -24,7 +22,20 @@
 @end
 
 @implementation TwistRenderer
+#pragma mark - Initialization
+- (instancetype) init
+{
+    self = [super init];
+    if (self) {
+        self.srcFragmentShaderFileName = @"TwistSourceFragment.glsl";
+        self.srcVertexShaderFileName = @"TwistSourceVertex.glsl";
+        self.dstVertexShaderFileName = @"TwistDestinationVertex.glsl";
+        self.dstFragmentShaderFileName = @"TwistDestinationFragment.glsl";
+    }
+    return self;
+}
 
+#pragma mark - Public Animation APIs
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings
 {
     [self startTwistFromView:settings.fromView toView:settings.toView inContainerView:settings.containerView duration:settings.duration direction:settings.animationDirection timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
@@ -54,26 +65,7 @@
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
-- (void) setupGL
-{
-    [EAGLContext setCurrentContext:self.context];
-    srcProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"TwistSourceVertex.glsl" fragmentShaderSrc:@"TwistSourceFragment.glsl"];
-    glUseProgram(srcProgram);
-    srcMvpLoc = glGetUniformLocation(srcProgram, "u_mvpMatrix");
-    srcSamplerLoc = glGetUniformLocation(srcProgram, "s_tex");
-    srcCenterPositionLoc = glGetUniformLocation(srcProgram, "u_centerPosition");
-    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
-    
-    dstProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"TwistDestinationVertex.glsl" fragmentShaderSrc:@"TwistDestinationFragment.glsl"];
-    glUseProgram(dstProgram);
-    dstMvpLoc = glGetUniformLocation(dstProgram, "u_mvpMatrix");
-    dstSamplerLoc = glGetUniformLocation(dstProgram, "s_tex");
-    dstCenterPositionLoc = glGetUniformLocation(dstProgram, "u_centerPosition");
-    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
-    
-    glClearColor(0, 0, 0, 1);
-}
-
+#pragma mark - Set Up
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     BOOL columnMajored = YES;
@@ -94,24 +86,8 @@
     dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
 }
 
-- (void) tearDownGL
-{
-    [EAGLContext setCurrentContext:self.context];
-    [self.sourceMesh tearDown];
-    [self.destinationMesh tearDown];
-    glDeleteTextures(1, &srcTexture);
-    srcTexture = 0;
-    glDeleteTextures(1, &dstTexture);
-    dstTexture = 0;
-    glDeleteProgram(srcProgram);
-    srcProgram = 0;
-    glDeleteProgram(dstProgram);
-    dstProgram = 0;
-    self.animationView = nil;
-    [EAGLContext setCurrentContext:nil];
-    self.context = nil;
-}
 
+#pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -163,7 +139,32 @@
         if (self.completion) {
             self.completion();
         }
+        [self tearDownGL];
     }
+}
+
+#pragma mark - Override Methods
+
+- (void) setupGL
+{
+    [super setupGL];
+    glUseProgram(srcProgram);
+    srcCenterPositionLoc = glGetUniformLocation(srcProgram, "u_centerPosition");
+    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
+    
+    glUseProgram(dstProgram);
+    dstCenterPositionLoc = glGetUniformLocation(dstProgram, "u_centerPosition");
+    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
+}
+
+- (SceneMesh *) srcMesh
+{
+    return self.sourceMesh;
+}
+
+- (SceneMesh *) dstMesh
+{
+    return self.destinationMesh;
 }
 
 @end
