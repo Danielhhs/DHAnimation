@@ -13,8 +13,8 @@
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
 @interface CubeRenderer ()<GLKViewDelegate> {
-    GLuint srcFacePercentLoc, srcFaceEdgeWidthLoc, srcDirectionLoc;
-    GLuint dstFacePercentLoc, dstFaceEdgeWidthLoc, dstDirectionLoc;
+    GLuint srcFaceEdgeWidthLoc, srcDirectionLoc;
+    GLuint dstFaceEdgeWidthLoc, dstDirectionLoc;
 }
 @property (nonatomic, strong) CubeSourceMesh *sourceMesh;
 @property (nonatomic, strong) CubeDestinationMesh *destinationMesh;
@@ -46,13 +46,13 @@
     
     glUseProgram(dstProgram);
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform1f(dstFacePercentLoc, self.percent);
+    glUniform1f(dstPercentLoc, self.percent);
     glUniform1f(dstFaceEdgeWidthLoc, self.edgeWidth);
     glUniform1i(dstDirectionLoc, self.direction);
     
     glUseProgram(srcProgram);
     glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform1f(srcFacePercentLoc, self.percent);
+    glUniform1f(srcPercentLoc, self.percent);
     glUniform1f(srcFaceEdgeWidthLoc, self.edgeWidth);
     glUniform1i(srcDirectionLoc, self.direction);
     
@@ -101,12 +101,10 @@
 {
     [super setupGL];
     glUseProgram(srcProgram);
-    srcFacePercentLoc = glGetUniformLocation(srcProgram, "u_percent");
     srcFaceEdgeWidthLoc = glGetUniformLocation(srcProgram, "u_edgeWidth");
     srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
-    dstFacePercentLoc = glGetUniformLocation(dstProgram, "u_percent");
     dstFaceEdgeWidthLoc = glGetUniformLocation(dstProgram, "u_edgeWidth");
     dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }

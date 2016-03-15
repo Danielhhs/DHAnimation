@@ -13,6 +13,7 @@
 #import "ClothLineRenderer.h"
 #import "ShredderRenderer.h"
 #import "AnimationSettingViewController.h"
+#import "SwitchRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -66,6 +67,12 @@
             self.settings.columnCount = 12;
             self.renderer = [[ShredderRenderer alloc] init];
         }
+            break;
+        case AnimationTypeSwitch:
+        {
+            self.renderer = [[SwitchRenderer alloc] init];
+        }
+            break;
         default:
             break;
     }

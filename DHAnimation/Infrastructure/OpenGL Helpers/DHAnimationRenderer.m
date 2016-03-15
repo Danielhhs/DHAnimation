@@ -130,12 +130,14 @@
         glUseProgram(srcProgram);
         srcMvpLoc = glGetUniformLocation(srcProgram, "u_mvpMatrix");
         srcSamplerLoc = glGetUniformLocation(srcProgram, "s_tex");
+        srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
     }
     if (self.dstVertexShaderFileName && self.dstFragmentShaderFileName) {
         dstProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:self.dstVertexShaderFileName fragmentShaderSrc:self.dstFragmentShaderFileName];
         glUseProgram(dstProgram);
         dstMvpLoc = glGetUniformLocation(dstProgram, "u_mvpMatrix");
         dstSamplerLoc = glGetUniformLocation(dstProgram, "s_tex");
+        dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
     }
     glClearColor(0, 0, 0, 1);
 }

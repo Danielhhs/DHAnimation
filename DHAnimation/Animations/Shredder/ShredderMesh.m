@@ -29,9 +29,9 @@
     vertices[3].position = GLKVector3Make(screenWidth, SHREDDER_HEIGHT, 0);
     vertices[3].texCoords = GLKVector2Make(1, 0);
     
-    GLushort indices[6] = {0,1,2,2,1,3};
+    GLushort indicies[6] = {0,1,2,2,1,3};
     NSData *vertexData = [NSData dataWithBytes:vertices length:sizeof(SceneMeshVertex) * 4];
-    NSData *indexData = [NSData dataWithBytes:indices length:sizeof(indices)];
+    NSData *indexData = [NSData dataWithBytes:indicies length:sizeof(indicies)];
     [self createVAOWithVertexData:vertexData indexData:indexData];
     return [self initWithVerticesData:vertexData indicesData:indexData];
 }

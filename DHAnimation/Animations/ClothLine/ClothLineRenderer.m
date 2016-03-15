@@ -9,7 +9,6 @@
 #import "ClothLineRenderer.h"
 
 @interface ClothLineRenderer() {
-    GLuint srcPercentLoc, dstPercentLoc;
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
     GLuint srcScreenHeightLoc, dstScreenHeightLoc;
     GLuint srcDirectionLoc, dstDirectionLoc;
@@ -36,13 +35,11 @@
 {
     [super setupGL];
     glUseProgram(srcProgram);
-    srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
     srcScreenHeightLoc = glGetUniformLocation(srcProgram, "u_screenHeight");
     srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
-    dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
     dstScreenHeightLoc = glGetUniformLocation(dstProgram, "u_screenHeight");
     dstDurationLoc = glGetUniformLocation(dstProgram, "u_duration");

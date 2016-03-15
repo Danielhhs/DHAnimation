@@ -13,8 +13,7 @@
 #import "DHTimingFunctionHelper.h"
 
 @interface DoorWayRenderer() {
-    GLuint srcPercentLoc, srcColumnWidthLoc;
-    GLuint dstPercentLoc;
+    GLuint srcColumnWidthLoc;
 }
 @property (nonatomic, strong) DoorWaySourceMesh *sourceMesh;
 @property (nonatomic, strong) SceneMesh *destinamtionMesh;
@@ -85,11 +84,7 @@
 {
     [super setupGL];
     glUseProgram(srcProgram);
-    srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
     srcColumnWidthLoc = glGetUniformLocation(srcProgram, "u_columnWidth");
-    
-    glUseProgram(dstProgram);
-    dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
 }
 
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView

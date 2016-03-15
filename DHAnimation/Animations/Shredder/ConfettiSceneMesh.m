@@ -70,12 +70,12 @@ typedef struct {
     }
     
     indexCount = (CONFETTI_WIDTH - 1) * (length) * 2 * 3;
-    size_t indexSize = indexCount * sizeof(GLushort);
-    GLushort *indices = malloc(indexSize);
-    for (size_t y = 0; y < length; y++) {
-        for (size_t x = 0; x < CONFETTI_WIDTH - 1; x++) {
-            size_t idx = y * (CONFETTI_WIDTH - 1) + x;
-            size_t i = y * CONFETTI_WIDTH + x;
+    NSInteger indexSize = indexCount * sizeof(GLuint);
+    indices = malloc(indexSize);
+    for (int y = 0; y < length; y++) {
+        for (int x = 0; x < CONFETTI_WIDTH - 1; x++) {
+            int idx = y * (CONFETTI_WIDTH - 1) + x;
+            int i = y * CONFETTI_WIDTH + x;
             indices[idx * 6 + 0] = i;
             indices[idx * 6 + 1] = i + 1;
             indices[idx * 6 + 2] = i + CONFETTI_WIDTH;
@@ -122,7 +122,7 @@ typedef struct {
 
 - (void) drawEntireMesh
 {
-    glDrawElements(GL_TRIANGLES, (GLsizei)indexCount, GL_UNSIGNED_SHORT, NULL);
+    glDrawElements(GL_TRIANGLES, (GLsizei)indexCount, GL_UNSIGNED_INT, NULL);
 }
 
 - (void) updateWithPercentage:(CGFloat)percentage timeInterval:(NSTimeInterval)timeInterval
