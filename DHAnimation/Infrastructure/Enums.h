@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeClothLine = 3,
     AnimationTypeShredder = 4,
     AnimationTypeSwitch = 5,
+    AnimationTypeGrid = 6,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

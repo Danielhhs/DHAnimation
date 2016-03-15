@@ -14,6 +14,7 @@
 #import "ShredderRenderer.h"
 #import "AnimationSettingViewController.h"
 #import "SwitchRenderer.h"
+#import "GridRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -71,6 +72,11 @@
         case AnimationTypeSwitch:
         {
             self.renderer = [[SwitchRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeGrid:
+        {
+            self.renderer = [[GridRenderer alloc] init];
         }
             break;
         default:

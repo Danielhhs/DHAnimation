@@ -8,6 +8,9 @@
 
 typedef double (*NSBKeyframeAnimationFunction)(double, double, double, double);
 
+
+double NSBKeyframeAnimationFunctionLinear(double t,double b, double c, double d);
+
 double NSBKeyframeAnimationFunctionEaseInQuad(double t,double b, double c, double d);
 double NSBKeyframeAnimationFunctionEaseOutQuad(double t,double b, double c, double d);
 double NSBKeyframeAnimationFunctionEaseInOutQuad(double t,double b, double c, double d);

@@ -32,6 +32,11 @@
 		544698871C97DAEF00FF5EFA /* SwitchSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698861C97DAEF00FF5EFA /* SwitchSourceFragment.glsl */; };
 		544698891C97DAFE00FF5EFA /* SwitchDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698881C97DAFE00FF5EFA /* SwitchDestinationVertex.glsl */; };
 		5446988B1C97DB0900FF5EFA /* SwitchDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446988A1C97DB0900FF5EFA /* SwitchDestinationFragment.glsl */; };
+		545F0A031C98107500CE03E3 /* GridRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F0A021C98107500CE03E3 /* GridRenderer.m */; };
+		545F0A051C98111700CE03E3 /* GridSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A041C98111700CE03E3 /* GridSourceVertex.glsl */; };
+		545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A061C98112300CE03E3 /* GridSourceFragment.glsl */; };
+		545F0A091C98113D00CE03E3 /* GridDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A081C98113D00CE03E3 /* GridDestinationVertex.glsl */; };
+		545F0A0B1C98114900CE03E3 /* GridDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A0A1C98114900CE03E3 /* GridDestinationFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -132,6 +137,12 @@
 		544698861C97DAEF00FF5EFA /* SwitchSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchSourceFragment.glsl; sourceTree = "<group>"; };
 		544698881C97DAFE00FF5EFA /* SwitchDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchDestinationVertex.glsl; sourceTree = "<group>"; };
 		5446988A1C97DB0900FF5EFA /* SwitchDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchDestinationFragment.glsl; sourceTree = "<group>"; };
+		545F0A011C98107500CE03E3 /* GridRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridRenderer.h; sourceTree = "<group>"; };
+		545F0A021C98107500CE03E3 /* GridRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridRenderer.m; sourceTree = "<group>"; };
+		545F0A041C98111700CE03E3 /* GridSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridSourceVertex.glsl; sourceTree = "<group>"; };
+		545F0A061C98112300CE03E3 /* GridSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridSourceFragment.glsl; sourceTree = "<group>"; };
+		545F0A081C98113D00CE03E3 /* GridDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationVertex.glsl; sourceTree = "<group>"; };
+		545F0A0A1C98114900CE03E3 /* GridDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -283,6 +294,19 @@
 			path = Switch;
 			sourceTree = "<group>";
 		};
+		545F0A001C98106500CE03E3 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				545F0A011C98107500CE03E3 /* GridRenderer.h */,
+				545F0A021C98107500CE03E3 /* GridRenderer.m */,
+				545F0A041C98111700CE03E3 /* GridSourceVertex.glsl */,
+				545F0A061C98112300CE03E3 /* GridSourceFragment.glsl */,
+				545F0A081C98113D00CE03E3 /* GridDestinationVertex.glsl */,
+				545F0A0A1C98114900CE03E3 /* GridDestinationFragment.glsl */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +400,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				545F0A001C98106500CE03E3 /* Grid */,
 				544698801C97D62700FF5EFA /* Switch */,
 				5446985E1C97D29900FF5EFA /* Shredder */,
 				544697E01C96823100FF5EFA /* ClothLine */,
@@ -583,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5446988B1C97DB0900FF5EFA /* SwitchDestinationFragment.glsl in Resources */,
+				545F0A051C98111700CE03E3 /* GridSourceVertex.glsl in Resources */,
 				544698741C97D29900FF5EFA /* ShredderConfettiVertex.glsl in Resources */,
 				5446987A1C97D29900FF5EFA /* ShredderPieceVertex.glsl in Resources */,
 				544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */,
@@ -595,6 +621,8 @@
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
 				54EC584A1C902680009D812C /* CubeSourceFragment.glsl in Resources */,
 				544698701C97D29900FF5EFA /* Shredder.png in Resources */,
+				545F0A091C98113D00CE03E3 /* GridDestinationVertex.glsl in Resources */,
+				545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
 				54EC584C1C902680009D812C /* CubeSourceVertex.glsl in Resources */,
 				54E264621C8EBDDA00FFB67E /* DoorWaySourceFragment.glsl in Resources */,
@@ -615,6 +643,7 @@
 				544698731C97D29900FF5EFA /* ShredderConfettiFragment.glsl in Resources */,
 				54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */,
 				54E264601C8EBDDA00FFB67E /* DoorWayDestinationVertex.glsl in Resources */,
+				545F0A0B1C98114900CE03E3 /* GridDestinationFragment.glsl in Resources */,
 				54EB214C1C9172040016A023 /* TwistDestinationFragment.glsl in Resources */,
 				5446983F1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl in Resources */,
 				54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */,
@@ -652,6 +681,7 @@
 				544698781C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m in Sources */,
 				54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */,
 				5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */,
+				545F0A031C98107500CE03E3 /* GridRenderer.m in Sources */,
 				54EC58481C902680009D812C /* CubeMesh.m in Sources */,
 				54EC58491C902680009D812C /* CubeRenderer.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,

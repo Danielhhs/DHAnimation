@@ -13,6 +13,10 @@
 
 // source: http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js
 
+double NSBKeyframeAnimationFunctionLinear(double t, double b, double c, double d) {
+    return t;
+}
+
 double NSBKeyframeAnimationFunctionEaseInQuad(double t,double b, double c, double d)
 {
     return c*(t/=d)*t + b;

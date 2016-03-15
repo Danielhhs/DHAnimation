@@ -31,7 +31,7 @@
 
 - (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction completion:(void (^)(void))completion
 {
-    [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:direction timingFunction:NSBKeyframeAnimationFunctionEaseInOutCubic completion:completion];
+    [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:direction timingFunction:NSBKeyframeAnimationFunctionLinear completion:completion];
 }
 
 - (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction
