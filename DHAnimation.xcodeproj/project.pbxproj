@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		544697DC1C92A1F000FF5EFA /* TwistMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 544697DB1C92A1F000FF5EFA /* TwistMesh.m */; };
 		544697E31C96827A00FF5EFA /* ClothLineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 544697E21C96827A00FF5EFA /* ClothLineRenderer.m */; };
+		5446983B1C96D56200FF5EFA /* ClothLineSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446983A1C96D56200FF5EFA /* ClothLineSourceVertex.glsl */; };
+		5446983D1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446983C1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl */; };
+		5446983F1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446983E1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl */; };
+		544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698401C96D78700FF5EFA /* ClothLineDestinationFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -80,6 +84,10 @@
 		544697DB1C92A1F000FF5EFA /* TwistMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwistMesh.m; sourceTree = "<group>"; };
 		544697E11C96827A00FF5EFA /* ClothLineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothLineRenderer.h; sourceTree = "<group>"; };
 		544697E21C96827A00FF5EFA /* ClothLineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothLineRenderer.m; sourceTree = "<group>"; };
+		5446983A1C96D56200FF5EFA /* ClothLineSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceVertex.glsl; sourceTree = "<group>"; };
+		5446983C1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceFragment.glsl; sourceTree = "<group>"; };
+		5446983E1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationVertex.glsl; sourceTree = "<group>"; };
+		544698401C96D78700FF5EFA /* ClothLineDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +192,10 @@
 			children = (
 				544697E11C96827A00FF5EFA /* ClothLineRenderer.h */,
 				544697E21C96827A00FF5EFA /* ClothLineRenderer.m */,
+				5446983A1C96D56200FF5EFA /* ClothLineSourceVertex.glsl */,
+				5446983C1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl */,
+				5446983E1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl */,
+				544698401C96D78700FF5EFA /* ClothLineDestinationFragment.glsl */,
 			);
 			path = ClothLine;
 			sourceTree = "<group>";
@@ -485,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */,
 				54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */,
 				54E264821C8FC5AC00FFB67E /* 6.jpg in Resources */,
 				54EC58451C902680009D812C /* CubeDestinationFragment.glsl in Resources */,
@@ -495,15 +508,18 @@
 				54E264621C8EBDDA00FFB67E /* DoorWaySourceFragment.glsl in Resources */,
 				54EC58471C902680009D812C /* CubeDestinationVertex.glsl in Resources */,
 				54E2640C1C8EBCBF00FFB67E /* LaunchScreen.storyboard in Resources */,
+				5446983D1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl in Resources */,
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				54E2645F1C8EBDDA00FFB67E /* DoorWayDestinationFragment.glsl in Resources */,
 				54E264811C8FC5AC00FFB67E /* 5.jpg in Resources */,
+				5446983B1C96D56200FF5EFA /* ClothLineSourceVertex.glsl in Resources */,
 				54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */,
 				54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */,
 				54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */,
 				54E264601C8EBDDA00FFB67E /* DoorWayDestinationVertex.glsl in Resources */,
 				54EB214C1C9172040016A023 /* TwistDestinationFragment.glsl in Resources */,
+				5446983F1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl in Resources */,
 				54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */,
 				54E264851C8FC5AC00FFB67E /* 9.jpg in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,

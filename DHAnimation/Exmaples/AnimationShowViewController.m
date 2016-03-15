@@ -10,6 +10,7 @@
 #import "DoorWayRenderer.h"
 #import "CubeRenderer.h"
 #import "TwistRenderer.h"
+#import "ClothLineRenderer.h"
 #import "AnimationSettingViewController.h"
 
 @interface AnimationShowViewController ()
@@ -52,6 +53,11 @@
         case AnimationTypeTwist:
         {
             self.renderer = [[TwistRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeClothLine:
+        {
+            self.renderer = [[ClothLineRenderer alloc] init];
         }
         default:
             break;
