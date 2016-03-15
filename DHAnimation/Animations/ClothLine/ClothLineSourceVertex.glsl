@@ -4,6 +4,7 @@ uniform mat4 u_mvpMatrix;
 uniform float u_percent;
 uniform float u_screenWidth;
 uniform float u_screenHeight;
+uniform int u_direction;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -22,6 +23,9 @@ vec4 updatedPositionForInitialSwing()
     vec4 position = a_position;
     float percent = min(initialSwingRatio, u_percent);
     float rotation = percent / initialSwingRatio * amplitude;
+    if (u_direction == 0) {
+        rotation *= -1.f;
+    }
     if (a_position.x == 0.f) {
         position.x = u_screenWidth / 2.f * (1.f - cos(rotation));
         position.y = u_screenHeight - u_screenWidth / 2.f * sin(rotation);
@@ -42,7 +46,11 @@ vec4 updatedPosition()
     if (u_percent <= initialSwingRatio + transitionRatio) {
         position = updatedPositionForInitialSwing();
         if (u_percent > initialSwingRatio) {
-            position.x = position.x - (u_percent - initialSwingRatio) / transitionRatio * u_screenWidth * 1.5;
+            float offset = (u_percent - initialSwingRatio) / transitionRatio * u_screenWidth * 1.5;
+            if (u_direction == 1) {
+                offset *= -1.f;
+            }
+            position.x = position.x + offset;
         }
     } else {
         position.x -= u_screenWidth * 1.5;

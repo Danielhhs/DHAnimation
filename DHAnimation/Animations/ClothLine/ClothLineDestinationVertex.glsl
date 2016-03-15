@@ -5,6 +5,7 @@ uniform float u_percent;
 uniform float u_screenWidth;
 uniform float u_screenHeight;
 uniform float u_duration;
+uniform int u_direction;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -39,6 +40,9 @@ vec4 updatedPositionForInitialSwing()
 {
     float percent = min(initialSwingRatio, u_percent);
     float rotation = percent / initialSwingRatio * amplitude;
+    if (u_direction == 0) {
+        rotation *= -1.f;
+    }
     return updatedPositionForRotation(rotation);
 }
 
@@ -65,6 +69,9 @@ float rotationForCurrentState()
     
     float cycleRotationRange = cycleDestinationRotation - cycleInitialRotation;
     float rotation = cycleInitialRotation + sin((timeInCurrentCycle / finalSwingCycle) * pi / 2.f) * cycleRotationRange;
+    if (u_direction == 0) {
+        rotation *= -1.f;
+    }
     return rotation;
 //    float rotation = pi / 6.f * (1.f - swingedTime / finalSwingTime);
 //    return rotation;
@@ -83,8 +90,11 @@ vec4 updatedPosition() {
         position.x += u_screenWidth * 1.5;
     } else if (u_percent < initialSwingRatio + transitionRatio) {
         position = updatedPositionForInitialSwing();
-        position.x += u_screenWidth * 1.5;
-        position.x -= (u_percent - initialSwingRatio) / transitionRatio * u_screenWidth * 1.5;
+        float offset = u_screenWidth * 1.5 * (1.f - (u_percent - initialSwingRatio) / transitionRatio);
+        if (u_direction == 0) {
+            offset *= -1.f;
+        }
+        position.x += offset;
     } else {
         position = updatedPositionForFinalSwing();
     }

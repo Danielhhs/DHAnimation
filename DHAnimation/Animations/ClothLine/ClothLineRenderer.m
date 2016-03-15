@@ -12,6 +12,7 @@
     GLuint srcPercentLoc, dstPercentLoc;
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
     GLuint srcScreenHeightLoc, dstScreenHeightLoc;
+    GLuint srcDirectionLoc, dstDirectionLoc;
     GLuint dstDurationLoc;
 }
 @end
@@ -38,12 +39,14 @@
     srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
     srcScreenHeightLoc = glGetUniformLocation(srcProgram, "u_screenHeight");
+    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
     dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
     dstScreenHeightLoc = glGetUniformLocation(dstProgram, "u_screenHeight");
     dstDurationLoc = glGetUniformLocation(dstProgram, "u_duration");
+    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -62,6 +65,7 @@
     glUniform1f(dstPercentLoc, self.percent);
     glUniform1f(dstScreenWidthLoc, view.bounds.size.width);
     glUniform1f(dstScreenHeightLoc, view.bounds.size.height);
+    glUniform1i(dstDirectionLoc, self.direction);
     glUniform1f(dstDurationLoc, self.duration);
     [self.dstMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -75,6 +79,7 @@
     glUniform1f(srcPercentLoc, self.percent);
     glUniform1f(srcScreenWidthLoc, view.bounds.size.width);
     glUniform1f(srcScreenHeightLoc, view.bounds.size.height);
+    glUniform1i(srcDirectionLoc, self.direction);
     [self.srcMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, srcTexture);
