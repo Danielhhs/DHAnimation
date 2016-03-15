@@ -3,15 +3,16 @@
 uniform mat4 u_mvpMatrix;
 uniform float u_percent;
 uniform float u_screenWidth;
+uniform int u_direction;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
 
 out vec2 v_texCoords;
 
-const float zoomInRatio = 0.1;
-const float zoomOutRatio = 0.1;
-const float transitionRatio = 0.8;
+const float zoomInRatio = 0.15;
+const float zoomOutRatio = 0.15;
+const float transitionRatio = 0.7;
 
 vec4 updatedPosition()
 {
@@ -20,7 +21,11 @@ vec4 updatedPosition()
         position.z = -1.f * u_percent / zoomInRatio * 300.f;
     } else if (u_percent <= zoomOutRatio + transitionRatio) {
         position.z = -300.f;
-        position.x -= (u_percent - zoomOutRatio) / transitionRatio * u_screenWidth * 1.5;
+        float offset = (u_percent - zoomOutRatio) / transitionRatio * u_screenWidth * 1.5;
+        if (u_direction == 1) {
+            offset *= -1.f;
+        }
+        position.x -= offset;
     } else {
         position.x -= u_screenWidth * 1.5;
     }

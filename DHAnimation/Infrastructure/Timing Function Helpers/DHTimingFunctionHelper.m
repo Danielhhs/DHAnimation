@@ -40,7 +40,7 @@ static DHTimingFunctionHelper *sharedInstance;
 - (NSArray *) timingFunctions
 {
     if (!_timingFunctions) {
-        _timingFunctions = @[@"Ease In Quad", @"Ease Out Quad", @"Ease In Out Quad", @"Ease In Cubic", @"Ease Out Cubic", @"Ease In Out Cubic", @"Ease In Quart", @"Ease Out Quart", @"Ease In Out Quart", @"Ease In Quint", @"Ease Out Quint", @"Ease In Out Quint", @"Ease In Sine", @"Ease Out Sine", @"Ease In Out Sine", @"Ease In Expo", @"Ease Out Expo", @"Ease In Out Expo", @"Ease In Circ", @"Ease Out Circ", @"Ease In Out Circ", @"Ease In Elastic", @"Ease Out Elastic", @"Ease In Out Elastic", @"Ease In Back", @"Ease Out Back", @"Ease In Out Back", @"Ease In Bounce", @"Ease Out Bounce", @"Ease In Out Bounce"];
+        _timingFunctions = @[@"Ease In Quad", @"Ease Out Quad", @"Ease In Out Quad", @"Ease In Cubic", @"Ease Out Cubic", @"Ease In Out Cubic", @"Ease In Quart", @"Ease Out Quart", @"Ease In Out Quart", @"Ease In Quint", @"Ease Out Quint", @"Ease In Out Quint", @"Ease In Sine", @"Ease Out Sine", @"Ease In Out Sine", @"Ease In Expo", @"Ease Out Expo", @"Ease In Out Expo", @"Ease In Circ", @"Ease Out Circ", @"Ease In Out Circ", @"Ease In Elastic", @"Ease Out Elastic", @"Ease In Out Elastic", @"Ease In Back", @"Ease Out Back", @"Ease In Out Back", @"Ease In Bounce", @"Ease Out Bounce", @"Ease In Out Bounce", @"Linear"];
     }
     return _timingFunctions;
 }
@@ -127,9 +127,11 @@ static DHTimingFunctionHelper *sharedInstance;
             return NSBKeyframeAnimationFunctionEaseOutBounce;
         case DHTimingFunctionEaseInOutBounce:
             return NSBKeyframeAnimationFunctionEaseInOutBounce;
-            
+        
+        case DHTimingFunctionLinear:
+            return NSBKeyframeAnimationFunctionLinear;
         default:
-            return NSBKeyframeAnimationFunctionEaseInOutCubic;
+            return NSBKeyframeAnimationFunctionLinear;
     }
 }
 @end

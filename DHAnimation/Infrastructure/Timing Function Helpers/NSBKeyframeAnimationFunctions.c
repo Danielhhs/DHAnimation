@@ -14,7 +14,7 @@
 // source: http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js
 
 double NSBKeyframeAnimationFunctionLinear(double t, double b, double c, double d) {
-    return t;
+    return t / d * c;
 }
 
 double NSBKeyframeAnimationFunctionEaseInQuad(double t,double b, double c, double d)

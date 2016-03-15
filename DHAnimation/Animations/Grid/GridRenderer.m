@@ -9,6 +9,7 @@
 #import "GridRenderer.h"
 @interface GridRenderer() {
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
+    GLuint srcDirectionLoc, dstDirectionLoc;
 }
 @end
 
@@ -42,6 +43,7 @@
     glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(srcPercentLoc, self.percent);
     glUniform1f(srcScreenWidthLoc, view.bounds.size.width);
+    glUniform1i(srcDirectionLoc, self.direction);
     
     [self.srcMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -53,6 +55,7 @@
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(dstPercentLoc, self.percent);
     glUniform1f(dstScreenWidthLoc, view.bounds.size.width);
+    glUniform1i(dstDirectionLoc, self.direction);
     [self.dstMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, dstTexture);
@@ -66,8 +69,10 @@
     [super setupGL];
     glUseProgram(srcProgram);
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
+    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
+    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 @end

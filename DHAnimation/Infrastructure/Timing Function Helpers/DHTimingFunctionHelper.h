@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, DHTimingFunction) {
     DHTimingFunctionEaseInBounce = 27,
     DHTimingFunctionEaseOutBounce = 28,
     DHTimingFunctionEaseInOutBounce = 29,
+    DHTimingFunctionLinear = 30,
 };
 
 @interface DHTimingFunctionHelper : NSObject

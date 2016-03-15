@@ -14,7 +14,7 @@
 {
     DHAnimationSettings *settings = [[DHAnimationSettings alloc] init];
     settings.duration = 1.f;
-    settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+    settings.timingFunction = DHTimingFunctionLinear;
     settings.columnCount = 1;
     settings.rowCount = 1;
     return settings;
