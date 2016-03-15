@@ -11,6 +11,7 @@
 #import "CubeRenderer.h"
 #import "TwistRenderer.h"
 #import "ClothLineRenderer.h"
+#import "ShredderRenderer.h"
 #import "AnimationSettingViewController.h"
 
 @interface AnimationShowViewController ()
@@ -58,6 +59,12 @@
         case AnimationTypeClothLine:
         {
             self.renderer = [[ClothLineRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeShredder:
+        {
+            self.settings.columnCount = 12;
+            self.renderer = [[ShredderRenderer alloc] init];
         }
         default:
             break;

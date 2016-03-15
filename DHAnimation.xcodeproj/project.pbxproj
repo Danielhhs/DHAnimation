@@ -13,6 +13,20 @@
 		5446983D1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446983C1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl */; };
 		5446983F1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446983E1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl */; };
 		544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698401C96D78700FF5EFA /* ClothLineDestinationFragment.glsl */; };
+		544698701C97D29900FF5EFA /* Shredder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5446985F1C97D29900FF5EFA /* Shredder.png */; };
+		544698711C97D29900FF5EFA /* ShredderBackPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698601C97D29900FF5EFA /* ShredderBackPieceFragment.glsl */; };
+		544698721C97D29900FF5EFA /* ShredderBackPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698611C97D29900FF5EFA /* ShredderBackPieceVertex.glsl */; };
+		544698731C97D29900FF5EFA /* ShredderConfettiFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698621C97D29900FF5EFA /* ShredderConfettiFragment.glsl */; };
+		544698741C97D29900FF5EFA /* ShredderConfettiVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698631C97D29900FF5EFA /* ShredderConfettiVertex.glsl */; };
+		544698751C97D29900FF5EFA /* ShredderFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698641C97D29900FF5EFA /* ShredderFragment.glsl */; };
+		544698761C97D29900FF5EFA /* ShredderMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 544698661C97D29900FF5EFA /* ShredderMesh.m */; };
+		544698771C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 544698681C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m */; };
+		544698781C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446986A1C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m */; };
+		544698791C97D29900FF5EFA /* ShredderPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446986B1C97D29900FF5EFA /* ShredderPieceFragment.glsl */; };
+		5446987A1C97D29900FF5EFA /* ShredderPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446986C1C97D29900FF5EFA /* ShredderPieceVertex.glsl */; };
+		5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446986E1C97D29900FF5EFA /* ShredderRenderer.m */; };
+		5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446986F1C97D29900FF5EFA /* ShredderVertex.glsl */; };
+		5446987F1C97D2C400FF5EFA /* ConfettiSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -88,6 +102,25 @@
 		5446983C1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceFragment.glsl; sourceTree = "<group>"; };
 		5446983E1C96D77A00FF5EFA /* ClothLineDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationVertex.glsl; sourceTree = "<group>"; };
 		544698401C96D78700FF5EFA /* ClothLineDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationFragment.glsl; sourceTree = "<group>"; };
+		5446985F1C97D29900FF5EFA /* Shredder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shredder.png; sourceTree = "<group>"; };
+		544698601C97D29900FF5EFA /* ShredderBackPieceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderBackPieceFragment.glsl; sourceTree = "<group>"; };
+		544698611C97D29900FF5EFA /* ShredderBackPieceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderBackPieceVertex.glsl; sourceTree = "<group>"; };
+		544698621C97D29900FF5EFA /* ShredderConfettiFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderConfettiFragment.glsl; sourceTree = "<group>"; };
+		544698631C97D29900FF5EFA /* ShredderConfettiVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderConfettiVertex.glsl; sourceTree = "<group>"; };
+		544698641C97D29900FF5EFA /* ShredderFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderFragment.glsl; sourceTree = "<group>"; };
+		544698651C97D29900FF5EFA /* ShredderMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderMesh.h; sourceTree = "<group>"; };
+		544698661C97D29900FF5EFA /* ShredderMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderMesh.m; sourceTree = "<group>"; };
+		544698671C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderPaperBackPieceSceneMesh.h; sourceTree = "<group>"; };
+		544698681C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderPaperBackPieceSceneMesh.m; sourceTree = "<group>"; };
+		544698691C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderPaperPieceSceneMesh.h; sourceTree = "<group>"; };
+		5446986A1C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderPaperPieceSceneMesh.m; sourceTree = "<group>"; };
+		5446986B1C97D29900FF5EFA /* ShredderPieceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderPieceFragment.glsl; sourceTree = "<group>"; };
+		5446986C1C97D29900FF5EFA /* ShredderPieceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderPieceVertex.glsl; sourceTree = "<group>"; };
+		5446986D1C97D29900FF5EFA /* ShredderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderRenderer.h; sourceTree = "<group>"; };
+		5446986E1C97D29900FF5EFA /* ShredderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderRenderer.m; sourceTree = "<group>"; };
+		5446986F1C97D29900FF5EFA /* ShredderVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderVertex.glsl; sourceTree = "<group>"; };
+		5446987D1C97D2C400FF5EFA /* ConfettiSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiSceneMesh.h; sourceTree = "<group>"; };
+		5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiSceneMesh.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,6 +233,32 @@
 			path = ClothLine;
 			sourceTree = "<group>";
 		};
+		5446985E1C97D29900FF5EFA /* Shredder */ = {
+			isa = PBXGroup;
+			children = (
+				5446987D1C97D2C400FF5EFA /* ConfettiSceneMesh.h */,
+				5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */,
+				5446985F1C97D29900FF5EFA /* Shredder.png */,
+				544698601C97D29900FF5EFA /* ShredderBackPieceFragment.glsl */,
+				544698611C97D29900FF5EFA /* ShredderBackPieceVertex.glsl */,
+				544698621C97D29900FF5EFA /* ShredderConfettiFragment.glsl */,
+				544698631C97D29900FF5EFA /* ShredderConfettiVertex.glsl */,
+				544698641C97D29900FF5EFA /* ShredderFragment.glsl */,
+				544698651C97D29900FF5EFA /* ShredderMesh.h */,
+				544698661C97D29900FF5EFA /* ShredderMesh.m */,
+				544698671C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.h */,
+				544698681C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m */,
+				544698691C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.h */,
+				5446986A1C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m */,
+				5446986B1C97D29900FF5EFA /* ShredderPieceFragment.glsl */,
+				5446986C1C97D29900FF5EFA /* ShredderPieceVertex.glsl */,
+				5446986D1C97D29900FF5EFA /* ShredderRenderer.h */,
+				5446986E1C97D29900FF5EFA /* ShredderRenderer.m */,
+				5446986F1C97D29900FF5EFA /* ShredderVertex.glsl */,
+			);
+			path = Shredder;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +352,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				5446985E1C97D29900FF5EFA /* Shredder */,
 				544697E01C96823100FF5EFA /* ClothLine */,
 				54EC584D1C90273E009D812C /* Twist */,
 				54EC58381C902680009D812C /* Cube */,
@@ -497,18 +557,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544698741C97D29900FF5EFA /* ShredderConfettiVertex.glsl in Resources */,
+				5446987A1C97D29900FF5EFA /* ShredderPieceVertex.glsl in Resources */,
 				544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */,
 				54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */,
+				544698721C97D29900FF5EFA /* ShredderBackPieceVertex.glsl in Resources */,
+				544698751C97D29900FF5EFA /* ShredderFragment.glsl in Resources */,
+				544698711C97D29900FF5EFA /* ShredderBackPieceFragment.glsl in Resources */,
 				54E264821C8FC5AC00FFB67E /* 6.jpg in Resources */,
 				54EC58451C902680009D812C /* CubeDestinationFragment.glsl in Resources */,
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
 				54EC584A1C902680009D812C /* CubeSourceFragment.glsl in Resources */,
+				544698701C97D29900FF5EFA /* Shredder.png in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
 				54EC584C1C902680009D812C /* CubeSourceVertex.glsl in Resources */,
 				54E264621C8EBDDA00FFB67E /* DoorWaySourceFragment.glsl in Resources */,
 				54EC58471C902680009D812C /* CubeDestinationVertex.glsl in Resources */,
 				54E2640C1C8EBCBF00FFB67E /* LaunchScreen.storyboard in Resources */,
 				5446983D1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl in Resources */,
+				544698791C97D29900FF5EFA /* ShredderPieceFragment.glsl in Resources */,
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				54E2645F1C8EBDDA00FFB67E /* DoorWayDestinationFragment.glsl in Resources */,
@@ -516,6 +583,7 @@
 				5446983B1C96D56200FF5EFA /* ClothLineSourceVertex.glsl in Resources */,
 				54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */,
 				54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */,
+				544698731C97D29900FF5EFA /* ShredderConfettiFragment.glsl in Resources */,
 				54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */,
 				54E264601C8EBDDA00FFB67E /* DoorWayDestinationVertex.glsl in Resources */,
 				54EB214C1C9172040016A023 /* TwistDestinationFragment.glsl in Resources */,
@@ -525,6 +593,7 @@
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				54E264831C8FC5AC00FFB67E /* 7.jpg in Resources */,
 				54E264641C8EBDDA00FFB67E /* DoorWaySourceVertex.glsl in Resources */,
+				5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */,
 				54E264071C8EBCBF00FFB67E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +620,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54E264691C8EC2FF00FFB67E /* AnimationShowViewController.m in Sources */,
+				544698781C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m in Sources */,
 				54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */,
+				5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */,
 				54EC58481C902680009D812C /* CubeMesh.m in Sources */,
 				54EC58491C902680009D812C /* CubeRenderer.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,
@@ -564,12 +635,15 @@
 				544697E31C96827A00FF5EFA /* ClothLineRenderer.m in Sources */,
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */,
+				5446987F1C97D2C400FF5EFA /* ConfettiSceneMesh.m in Sources */,
+				544698761C97D29900FF5EFA /* ShredderMesh.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,
 				54E263FE1C8EBCBF00FFB67E /* main.m in Sources */,
 				54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */,
 				54EC58501C902798009D812C /* TwistRenderer.m in Sources */,
 				54EC58461C902680009D812C /* CubeDestinationMesh.m in Sources */,
+				544698771C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m in Sources */,
 				54E264611C8EBDDA00FFB67E /* DoorWayRenderer.m in Sources */,
 				54EC584B1C902680009D812C /* CubeSourceMesh.m in Sources */,
 			);
