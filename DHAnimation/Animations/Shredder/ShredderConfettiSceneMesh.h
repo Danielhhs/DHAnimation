@@ -8,7 +8,7 @@
 
 #import "SceneMesh.h"
 
-@interface ConfettiSceneMesh : SceneMesh
+@interface ShredderConfettiSceneMesh : SceneMesh
 - (instancetype) initWithScreenWidth:(size_t)screenWidth
                         screenHeight:(size_t)screenHeight
                       numberOfPieces:(NSInteger)numberOfPieces

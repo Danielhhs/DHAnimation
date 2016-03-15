@@ -6,14 +6,14 @@
 //  Copyright © 2015 cn.daniel. All rights reserved.
 //
 
-#import "ConfettiSceneMesh.h"
+#import "ShredderConfettiSceneMesh.h"
 #import <OpenGLES/ES3/glext.h>
 typedef struct {
     GLKVector3 position;
     GLKVector2 texCoords;
     GLKVector2 yRange;
 } ConfettiSceneVertex;
-@interface ConfettiSceneMesh () {
+@interface ShredderConfettiSceneMesh () {
     ConfettiSceneVertex *vertices;
     size_t vertexCount;
     size_t indexCount;
@@ -32,7 +32,7 @@ typedef struct {
 #define CONFETTI_MIN_LENGTH 75
 #define CONFETTI_MAX_LENGTH 150
 
-@implementation ConfettiSceneMesh
+@implementation ShredderConfettiSceneMesh
 
 - (instancetype) initWithScreenWidth:(size_t)screenWidth
                         screenHeight:(size_t)screenHeight

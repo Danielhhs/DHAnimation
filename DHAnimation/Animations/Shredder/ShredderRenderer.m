@@ -12,7 +12,7 @@
 #import "ShredderMesh.h"
 #import "ShredderPaperPieceSceneMesh.h"
 #import "ShredderPaperBackPieceSceneMesh.h"
-#import "ConfettiSceneMesh.h"
+#import "ShredderConfettiSceneMesh.h"
 #import "TextureHelper.h"
 #import <OpenGLES/ES3/glext.h>
 @interface ShredderRenderer() {
@@ -99,7 +99,7 @@
 {
     int numberOfConfetties = arc4random() % 5 + 5;
     for (int i = 0; i < numberOfConfetties; i++) {
-        ConfettiSceneMesh *confettiMesh = [[ConfettiSceneMesh alloc] initWithScreenWidth:screenWidth screenHeight:screenHeight numberOfPieces:numberOfPieces index:index];
+        ShredderConfettiSceneMesh *confettiMesh = [[ShredderConfettiSceneMesh alloc] initWithScreenWidth:screenWidth screenHeight:screenHeight numberOfPieces:numberOfPieces index:index];
         [self.confettiMeshes addObject:confettiMesh];
     }
 }
@@ -181,7 +181,7 @@
     glUseProgram(confettiProgram);
     glUniformMatrix4fv(confettiMvpLoc, 1, GL_FALSE, mvp.m);
     glUniform1f(confettiShredderPositionLoc, shredderPosition);
-    for (ConfettiSceneMesh *mesh in self.confettiMeshes) {
+    for (ShredderConfettiSceneMesh *mesh in self.confettiMeshes) {
         glBindVertexArray([mesh vertexArrayObject]);
         glUniform1f(confettiFallingDistanceLoc, [mesh fallingDistance]);
         glActiveTexture(GL_TEXTURE0);
@@ -268,7 +268,7 @@
         [self updateMeshesWithPercent:percent timeInterval:displayLink.duration];
         [self.animationView display];
     } else if(self.elapsedTime < self.duration * 1.2) {
-        for (ConfettiSceneMesh *mesh in self.confettiMeshes) {
+        for (ShredderConfettiSceneMesh *mesh in self.confettiMeshes) {
             [mesh updateWithPercentage:1.f timeInterval:displayLink.duration];
         }
         shredderPosition = self.animationView.bounds.size.height;
@@ -296,7 +296,7 @@
     for (ShredderPaperPieceSceneMesh *mesh in self.backMeshes) {
         [mesh updateWithPercentage:percent];
     }
-    for (ConfettiSceneMesh *mesh in self.confettiMeshes) {
+    for (ShredderConfettiSceneMesh *mesh in self.confettiMeshes) {
         [mesh updateWithPercentage:percent timeInterval:timeInterval];
     }
 }
@@ -312,7 +312,7 @@
         [mesh destroyGL];
     }
     [self.shredderMesh destroyGL];
-    for (ConfettiSceneMesh *mesh in self.confettiMeshes) {
+    for (ShredderConfettiSceneMesh *mesh in self.confettiMeshes) {
         [mesh destroyGL];
     }
     glDeleteTextures(1, &texture);

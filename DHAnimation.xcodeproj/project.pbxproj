@@ -26,7 +26,7 @@
 		5446987A1C97D29900FF5EFA /* ShredderPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446986C1C97D29900FF5EFA /* ShredderPieceVertex.glsl */; };
 		5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446986E1C97D29900FF5EFA /* ShredderRenderer.m */; };
 		5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5446986F1C97D29900FF5EFA /* ShredderVertex.glsl */; };
-		5446987F1C97D2C400FF5EFA /* ConfettiSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */; };
+		5446987F1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5446987E1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.m */; };
 		544698831C97D64000FF5EFA /* SwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 544698821C97D64000FF5EFA /* SwitchRenderer.m */; };
 		544698851C97DAE400FF5EFA /* SwitchSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698841C97DAE400FF5EFA /* SwitchSourceVertex.glsl */; };
 		544698871C97DAEF00FF5EFA /* SwitchSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 544698861C97DAEF00FF5EFA /* SwitchSourceFragment.glsl */; };
@@ -124,8 +124,8 @@
 		5446986D1C97D29900FF5EFA /* ShredderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderRenderer.h; sourceTree = "<group>"; };
 		5446986E1C97D29900FF5EFA /* ShredderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderRenderer.m; sourceTree = "<group>"; };
 		5446986F1C97D29900FF5EFA /* ShredderVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderVertex.glsl; sourceTree = "<group>"; };
-		5446987D1C97D2C400FF5EFA /* ConfettiSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiSceneMesh.h; sourceTree = "<group>"; };
-		5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiSceneMesh.m; sourceTree = "<group>"; };
+		5446987D1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShredderConfettiSceneMesh.h; sourceTree = "<group>"; };
+		5446987E1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShredderConfettiSceneMesh.m; sourceTree = "<group>"; };
 		544698811C97D64000FF5EFA /* SwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchRenderer.h; sourceTree = "<group>"; };
 		544698821C97D64000FF5EFA /* SwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchRenderer.m; sourceTree = "<group>"; };
 		544698841C97DAE400FF5EFA /* SwitchSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchSourceVertex.glsl; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 		5446985E1C97D29900FF5EFA /* Shredder */ = {
 			isa = PBXGroup;
 			children = (
-				5446987D1C97D2C400FF5EFA /* ConfettiSceneMesh.h */,
-				5446987E1C97D2C400FF5EFA /* ConfettiSceneMesh.m */,
+				5446987D1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.h */,
+				5446987E1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.m */,
 				5446985F1C97D29900FF5EFA /* Shredder.png */,
 				544698601C97D29900FF5EFA /* ShredderBackPieceFragment.glsl */,
 				544698611C97D29900FF5EFA /* ShredderBackPieceVertex.glsl */,
@@ -665,7 +665,7 @@
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */,
 				544698831C97D64000FF5EFA /* SwitchRenderer.m in Sources */,
-				5446987F1C97D2C400FF5EFA /* ConfettiSceneMesh.m in Sources */,
+				5446987F1C97D2C400FF5EFA /* ShredderConfettiSceneMesh.m in Sources */,
 				544698761C97D29900FF5EFA /* ShredderMesh.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,
