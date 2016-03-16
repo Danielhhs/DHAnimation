@@ -55,6 +55,11 @@
 //Create textures for fromView and toView; default implementation create simple texture for fromView and toView;
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView;
 
+//Set up default mvp matrix; Override if necessary
+//modelview = translation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24))
+//projection = perspective(M_PI / 12, view.bounds.size.width / view.bounds.size.height, 1, 10000);
+- (void) setupMvpMatrixWithView:(UIView *)view;
+
 //Override the getters of these properties to provide your meshes to be used for tear down GL;
 @property (nonatomic, strong) SceneMesh * srcMesh;
 @property (nonatomic, strong) SceneMesh * dstMesh;

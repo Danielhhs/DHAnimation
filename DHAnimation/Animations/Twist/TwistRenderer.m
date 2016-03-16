@@ -50,15 +50,11 @@
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glEnable(GL_CULL_FACE);
-    GLKMatrix4 modelView = GLKMatrix4Translate(GLKMatrix4Identity, -view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
-    GLfloat aspect = view.bounds.size.width / view.bounds.size.height;
-    GLKMatrix4 projection = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), aspect, 1, 10000);
-    
-    GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(projection, modelView);
+
+    [self setupMvpMatrixWithView:view];
     
     glCullFace(GL_BACK);
     glUseProgram(dstProgram);
-    glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(dstCenterPositionLoc, self.centerPosition);
     glUniform1i(dstDirectionLoc, self.direction);
     [self.destinationMesh prepareToDraw];
@@ -69,7 +65,6 @@
     
     glCullFace(GL_FRONT);
     glUseProgram(srcProgram);
-    glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(srcCenterPositionLoc, self.centerPosition);
     glUniform1i(srcDirectionLoc, self.direction);
     [self.sourceMesh prepareToDraw];

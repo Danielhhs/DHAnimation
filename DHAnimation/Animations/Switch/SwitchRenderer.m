@@ -33,20 +33,14 @@
 {
     glClear(GL_COLOR_BUFFER_BIT);
     
-    GLKMatrix4 modelView = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
-    GLfloat aspect = view.bounds.size.width / view.bounds.size.height;
-    GLKMatrix4 perspective = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), aspect, 1, 10000);
-    
-    GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(perspective, modelView);
+    [self setupMvpMatrixWithView:view];
     
     glUseProgram(srcProgram);
-    glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(srcPercentLoc, self.percent);
     glUniform1f(srcScreenWidthLoc, view.bounds.size.width);
     glUniform1f(srcScreenHeightLoc, view.bounds.size.height);
     
     glUseProgram(dstProgram);
-    glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(dstScreenWidthLoc, view.bounds.size.width);
     glUniform1f(dstScreenHeightLoc, view.bounds.size.height);
     

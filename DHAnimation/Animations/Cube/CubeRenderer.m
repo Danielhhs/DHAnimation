@@ -39,19 +39,15 @@
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    GLfloat aspect = (GLfloat)view.bounds.size.width / view.bounds.size.height;
-    GLKMatrix4 modelView = GLKMatrix4Translate(GLKMatrix4Identity, -view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
-        GLKMatrix4 perspective = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), aspect, 1, 10000);
-    GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(perspective, modelView);
+
+    [self setupMvpMatrixWithView:view];
     
     glUseProgram(dstProgram);
-    glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(dstPercentLoc, self.percent);
     glUniform1f(dstFaceEdgeWidthLoc, self.edgeWidth);
     glUniform1i(dstDirectionLoc, self.direction);
     
     glUseProgram(srcProgram);
-    glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniform1f(srcPercentLoc, self.percent);
     glUniform1f(srcFaceEdgeWidthLoc, self.edgeWidth);
     glUniform1i(srcDirectionLoc, self.direction);

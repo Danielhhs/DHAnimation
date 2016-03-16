@@ -37,6 +37,7 @@
 		545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A061C98112300CE03E3 /* GridSourceFragment.glsl */; };
 		545F0A091C98113D00CE03E3 /* GridDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A081C98113D00CE03E3 /* GridDestinationVertex.glsl */; };
 		545F0A0B1C98114900CE03E3 /* GridDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A0A1C98114900CE03E3 /* GridDestinationFragment.glsl */; };
+		545F0A0F1C98EB6B00CE03E3 /* ConfettiRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F0A0E1C98EB6B00CE03E3 /* ConfettiRenderer.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -143,6 +144,8 @@
 		545F0A061C98112300CE03E3 /* GridSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridSourceFragment.glsl; sourceTree = "<group>"; };
 		545F0A081C98113D00CE03E3 /* GridDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationVertex.glsl; sourceTree = "<group>"; };
 		545F0A0A1C98114900CE03E3 /* GridDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationFragment.glsl; sourceTree = "<group>"; };
+		545F0A0D1C98EB6B00CE03E3 /* ConfettiRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiRenderer.h; sourceTree = "<group>"; };
+		545F0A0E1C98EB6B00CE03E3 /* ConfettiRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiRenderer.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -307,6 +310,15 @@
 			path = Grid;
 			sourceTree = "<group>";
 		};
+		545F0A0C1C98EB5800CE03E3 /* Confetti */ = {
+			isa = PBXGroup;
+			children = (
+				545F0A0D1C98EB6B00CE03E3 /* ConfettiRenderer.h */,
+				545F0A0E1C98EB6B00CE03E3 /* ConfettiRenderer.m */,
+			);
+			path = Confetti;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +412,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				545F0A0C1C98EB5800CE03E3 /* Confetti */,
 				545F0A001C98106500CE03E3 /* Grid */,
 				544698801C97D62700FF5EFA /* Switch */,
 				5446985E1C97D29900FF5EFA /* Shredder */,
@@ -701,6 +714,7 @@
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,
 				54E263FE1C8EBCBF00FFB67E /* main.m in Sources */,
 				54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */,
+				545F0A0F1C98EB6B00CE03E3 /* ConfettiRenderer.m in Sources */,
 				54EC58501C902798009D812C /* TwistRenderer.m in Sources */,
 				54EC58461C902680009D812C /* CubeDestinationMesh.m in Sources */,
 				544698771C97D29900FF5EFA /* ShredderPaperBackPieceSceneMesh.m in Sources */,
