@@ -70,22 +70,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/DHAnimationRenderer.m"
-            timestampString = "479735148.596252"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-setupGL"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -106,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/OpenGL Helpers/DHAnimationRenderer.m"
-            timestampString = "479735246.430471"
+            timestampString = "479787148.957775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-startAnimationFromView:toView:inContainerView:columnCount:duration:direction:timingFunction:completion:"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-glkView:drawInRect:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

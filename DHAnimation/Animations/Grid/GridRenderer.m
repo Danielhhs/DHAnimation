@@ -27,36 +27,6 @@
     return self;
 }
 
-#pragma mark - Drawing
-- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
-{
-    glClear(GL_COLOR_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-    
-    [self setupMvpMatrixWithView:view];
-    
-    glUseProgram(srcProgram);
-    glUniform1f(srcPercentLoc, self.percent);
-    glUniform1f(srcScreenWidthLoc, view.bounds.size.width);
-    glUniform1i(srcDirectionLoc, self.direction);
-    
-    [self.srcMesh prepareToDraw];
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, srcTexture);
-    glUniform1i(srcSamplerLoc, 0);
-    [self.srcMesh drawEntireMesh];
-    
-    glUseProgram(dstProgram);
-    glUniform1f(dstPercentLoc, self.percent);
-    glUniform1f(dstScreenWidthLoc, view.bounds.size.width);
-    glUniform1i(dstDirectionLoc, self.direction);
-    [self.dstMesh prepareToDraw];
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, dstTexture);
-    glUniform1i(dstSamplerLoc, 0);
-    [self.dstMesh drawEntireMesh];
-}
-
 #pragma mark - Override
 - (void) setupGL
 {
@@ -68,5 +38,17 @@
     glUseProgram(dstProgram);
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
     dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
+}
+
+- (void) setupUniformsForSourceProgram
+{
+    glUniform1f(srcScreenWidthLoc, self.animationView.bounds.size.width);
+    glUniform1i(srcDirectionLoc, self.direction);
+}
+
+- (void) setupUniformsForDestinationProgram
+{
+    glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
+    glUniform1i(dstDirectionLoc, self.direction);
 }
 @end

@@ -27,7 +27,21 @@
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT);
+    [self setupMvpMatrixWithView:view];
     
+    glUseProgram(dstProgram);
+    [self.dstMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, dstTexture);
+    glUniform1i(dstSamplerLoc, 0);
+    [self.dstMesh drawEntireMesh];
+    
+    glUseProgram(srcProgram);
+    [self.srcMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, srcTexture);
+    glUniform1i(srcSamplerLoc, 0);
+    [self.srcMesh drawEntireMesh];
 }
 
 #pragma mark - Override

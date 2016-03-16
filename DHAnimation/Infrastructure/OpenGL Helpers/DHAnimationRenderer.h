@@ -49,7 +49,7 @@
 //Set up the parameters for animation. Override this method if you have any specific set ups;
 - (void) initializeAnimationContext;
 
-//You MUST override this method to set up meshes for your own animation; default implementation create simple mesh for fromView and toView for 1 column, 1 row;
+//You can override this method to set up meshes for your own animation; default implementation create simple mesh for fromView and toView for 1 column, 1 row;
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView;
 
 //Create textures for fromView and toView; default implementation create simple texture for fromView and toView;
@@ -59,6 +59,11 @@
 //modelview = translation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24))
 //projection = perspective(M_PI / 12, view.bounds.size.width / view.bounds.size.height, 1, 10000);
 - (void) setupMvpMatrixWithView:(UIView *)view;
+
+//Override these two methods if you have to set up more uniforms other than "u_mvpMatrix", "s_tex" and "u_percent";
+//If you want to handle the whole drawing process, override "glkView:drawInRect:"
+- (void) setupUniformsForDestinationProgram;
+- (void) setupUniformsForSourceProgram;
 
 //Override the getters of these properties to provide your meshes to be used for tear down GL;
 @property (nonatomic, strong) SceneMesh * srcMesh;

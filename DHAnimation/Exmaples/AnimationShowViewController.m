@@ -60,12 +60,14 @@
             break;
         case AnimationTypeClothLine:
         {
+            self.settings.duration = 2.f;
             self.renderer = [[ClothLineRenderer alloc] init];
         }
             break;
         case AnimationTypeShredder:
         {
             self.settings.columnCount = 12;
+            self.settings.duration = 3.f;
             self.renderer = [[ShredderRenderer alloc] init];
         }
             break;

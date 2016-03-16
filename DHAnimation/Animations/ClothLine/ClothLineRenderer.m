@@ -46,36 +46,18 @@
     dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 
-- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
+- (void) setupUniformsForSourceProgram
 {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glEnable(GL_CULL_FACE);
+    glUniform1f(srcScreenWidthLoc, self.animationView.bounds.size.width);
+    glUniform1f(srcScreenHeightLoc, self.animationView.bounds.size.height);
+    glUniform1i(srcDirectionLoc, self.direction);
+}
 
-    [self setupMvpMatrixWithView:view];
-    
-    glCullFace(GL_FRONT);
-    glUseProgram(dstProgram);
-    glUniform1f(dstPercentLoc, self.percent);
-    glUniform1f(dstScreenWidthLoc, view.bounds.size.width);
-    glUniform1f(dstScreenHeightLoc, view.bounds.size.height);
+- (void) setupUniformsForDestinationProgram
+{
+    glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
+    glUniform1f(dstScreenHeightLoc, self.animationView.bounds.size.height);
     glUniform1i(dstDirectionLoc, self.direction);
     glUniform1f(dstDurationLoc, self.duration);
-    [self.dstMesh prepareToDraw];
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, dstTexture);
-    glUniform1i(dstSamplerLoc, 0);
-    [self.dstMesh drawEntireMesh];
-    
-    glCullFace(GL_FRONT);
-    glUseProgram(srcProgram);
-    glUniform1f(srcPercentLoc, self.percent);
-    glUniform1f(srcScreenWidthLoc, view.bounds.size.width);
-    glUniform1f(srcScreenHeightLoc, view.bounds.size.height);
-    glUniform1i(srcDirectionLoc, self.direction);
-    [self.srcMesh prepareToDraw];
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, srcTexture);
-    glUniform1i(srcSamplerLoc, 0);
-    [self.srcMesh drawEntireMesh];
 }
 @end

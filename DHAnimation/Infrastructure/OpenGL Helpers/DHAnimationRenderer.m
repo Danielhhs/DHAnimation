@@ -72,7 +72,26 @@
 #pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    glClear(GL_COLOR_BUFFER_BIT);
+    [self setupMvpMatrixWithView:view];
     
+    glUseProgram(dstProgram);
+    glUniform1f(dstPercentLoc, self.percent);
+    [self setupUniformsForDestinationProgram];
+    [self.dstMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, dstTexture);
+    glUniform1i(dstSamplerLoc, 0);
+    [self.dstMesh drawEntireMesh];
+    
+    glUseProgram(srcProgram);
+    glUniform1f(srcPercentLoc, self.percent);
+    [self setupUniformsForSourceProgram];
+    [self.srcMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, srcTexture);
+    glUniform1i(srcSamplerLoc, 0);
+    [self.srcMesh drawEntireMesh];
 }
 
 - (void) update:(CADisplayLink *)displayLink
@@ -171,5 +190,15 @@
     
     glUseProgram(dstProgram);
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+}
+
+- (void) setupUniformsForSourceProgram
+{
+    
+}
+
+- (void) setupUniformsForDestinationProgram
+{
+    
 }
 @end
