@@ -14,6 +14,8 @@
 {
     self = [super init];
     if (self) {
+        _columnCount = columnCount;
+        _rowCount = rowCount;
         if (splitTexture) {
             [self generateVerticesAndIndicesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount columnMajored:columnMajored];
         } else {
@@ -155,6 +157,7 @@
             vertices[index + 1].columnStartPosition = vertices[index + 0].position;
             vertices[index + 2].columnStartPosition = vertices[index + 0].position;
             vertices[index + 3].columnStartPosition = vertices[index + 0].position;
+            [self setupColumnStartPositionAndRotationForVertexAtX:x y:y index:index];
             
             vertices[index + 0].normal = GLKVector3Make(0, 0, 1);
             vertices[index + 1].normal = GLKVector3Make(0, 0, 1);
@@ -190,6 +193,7 @@
             vertices[index + 1].columnStartPosition = vertices[index + 0].position;
             vertices[index + 2].columnStartPosition = vertices[index + 0].position;
             vertices[index + 3].columnStartPosition = vertices[index + 0].position;
+            [self setupColumnStartPositionAndRotationForVertexAtX:x y:y index:index];
             vertices[index + 0].normal = GLKVector3Make(0, 0, 1);
             vertices[index + 1].normal = GLKVector3Make(0, 0, 1);
             vertices[index + 2].normal = GLKVector3Make(0, 0, 1);
@@ -272,5 +276,10 @@
             indices[index * 6 + 5] = (GLuint)(i + columnCount + 2);
         }
     }
+}
+
+- (void) setupColumnStartPositionAndRotationForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index
+{
+    
 }
 @end

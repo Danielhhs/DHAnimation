@@ -15,6 +15,7 @@
 #import "AnimationSettingViewController.h"
 #import "SwitchRenderer.h"
 #import "GridRenderer.h"
+#import "ConfettiRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -79,6 +80,11 @@
         case AnimationTypeGrid:
         {
             self.renderer = [[GridRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeConfetti:
+        {
+            self.renderer = [[ConfettiRenderer alloc] init];
         }
             break;
         default:

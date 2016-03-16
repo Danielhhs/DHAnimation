@@ -28,6 +28,8 @@ typedef struct {
 @property (nonatomic) NSInteger indexCount;
 @property (nonatomic) NSInteger verticesSize;
 @property (nonatomic) NSInteger indicesSize;
+@property (nonatomic) NSInteger columnCount;
+@property (nonatomic) NSInteger rowCount;
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored;
 - (instancetype) initWithVerticesData:(NSData *)verticesData indicesData:(NSData *)indicesData;
@@ -37,4 +39,6 @@ typedef struct {
 - (void) tearDown;
 - (void) drawEntireMesh;
 - (void) destroyGL;
+
+- (void) setupColumnStartPositionAndRotationForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
 @end
