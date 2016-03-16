@@ -73,6 +73,7 @@
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     glClear(GL_COLOR_BUFFER_BIT);
+    [self setupDrawingContext];
     [self setupMvpMatrixWithView:view];
     
     glUseProgram(dstProgram);
@@ -198,6 +199,11 @@
 }
 
 - (void) setupUniformsForDestinationProgram
+{
+    
+}
+
+- (void) setupDrawingContext
 {
     
 }

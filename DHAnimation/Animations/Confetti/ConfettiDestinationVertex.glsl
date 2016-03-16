@@ -10,7 +10,7 @@ out vec2 v_texCoords;
 
 void main() {
     vec4 position = a_position;
-    position.z = -300.f * (1 - u_percent);
+    position.z = -500.f * (1.f - u_percent);
     gl_Position = u_mvpMatrix * position;
     v_texCoords = a_texCoords;
 }

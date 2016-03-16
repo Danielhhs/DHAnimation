@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/OpenGL Helpers/SceneMesh.m"
-            timestampString = "479612593.365616"
+            timestampString = "479806923.648978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-generateColumnMajoredVerticesForView:columnCount:rowCount:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,13 +89,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/DHAnimationRenderer.m"
-            timestampString = "479787148.957775"
+            filePath = "DHAnimation/Animations/Confetti/ConfettiSourceMesh.m"
+            timestampString = "479813322.753594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-glkView:drawInRect:"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "-setupColumnStartPositionAndRotationForVertexAtX:y:index:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/SceneMesh.m"
+            timestampString = "479813351.746756"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-generateColumnMajoredVerticesForSplitTextureForView:columnCount:rowCount:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/SceneMesh.m"
+            timestampString = "479813354.667605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-generateRowMajoredVerticesForSplitTextureForView:columnCount:rowCount:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

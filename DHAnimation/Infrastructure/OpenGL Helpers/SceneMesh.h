@@ -14,6 +14,8 @@ typedef struct {
     GLKVector2 texCoords;
     GLKVector3 columnStartPosition;
     float rotation;
+    GLKVector3 originalCenter;
+    GLKVector3 targetCenter;
 }SceneMeshVertex;
 
 @interface SceneMesh : NSObject {

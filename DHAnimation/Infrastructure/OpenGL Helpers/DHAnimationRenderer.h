@@ -65,6 +65,9 @@
 - (void) setupUniformsForDestinationProgram;
 - (void) setupUniformsForSourceProgram;
 
+//Set up drawing context, like culling, blending
+- (void) setupDrawingContext;
+
 //Override the getters of these properties to provide your meshes to be used for tear down GL;
 @property (nonatomic, strong) SceneMesh * srcMesh;
 @property (nonatomic, strong) SceneMesh * dstMesh;
