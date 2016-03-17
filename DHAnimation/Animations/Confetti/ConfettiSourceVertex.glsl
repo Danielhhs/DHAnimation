@@ -17,8 +17,18 @@ out vec2 v_texCoords;
 vec4 updatedPosition()
 {
     float rotation = a_rotation * u_percent;
-    vec3 vertexToCenter = a_vertexToCenter;
-    vertexToCenter.x *= cos(rotation);
+    
+    vec3 vertexToCenter = vec3(0.f);
+    if (a_position.x < a_originalCenter.x && a_position.y > a_originalCenter.y) {
+        vertexToCenter.y = u_columnWidth / 2.f * sqrt(2.f);
+    } else if (a_position.x > a_originalCenter.x && a_position.y > a_originalCenter.y) {
+        vertexToCenter.x += u_columnWidth * sqrt(2.f) / 2.f;
+    } else if (a_position.x < a_originalCenter.x && a_position.y < a_originalCenter.y) {
+        vertexToCenter.x -= u_columnWidth / 2.f * sqrt(2.f);
+    } else {
+        vertexToCenter.y -= u_columnWidth / 2.f * sqrt(2.f);
+    }
+    vertexToCenter.y *= cos(rotation);
     vertexToCenter.z *= sin(rotation);
     
     vec3 currentCenter = a_originalCenter + (a_targetCenter - a_originalCenter) * u_percent;
