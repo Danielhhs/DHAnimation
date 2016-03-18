@@ -9,7 +9,6 @@
 #import "GridRenderer.h"
 @interface GridRenderer() {
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
-    GLuint srcDirectionLoc, dstDirectionLoc;
 }
 @end
 
@@ -33,22 +32,18 @@
     [super setupGL];
     glUseProgram(srcProgram);
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
-    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
-    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 
 - (void) setupUniformsForSourceProgram
 {
     glUniform1f(srcScreenWidthLoc, self.animationView.bounds.size.width);
-    glUniform1i(srcDirectionLoc, self.direction);
 }
 
 - (void) setupUniformsForDestinationProgram
 {
     glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
-    glUniform1i(dstDirectionLoc, self.direction);
 }
 @end

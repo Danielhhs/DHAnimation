@@ -13,8 +13,8 @@
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
 @interface CubeRenderer ()<GLKViewDelegate> {
-    GLuint srcFaceEdgeWidthLoc, srcDirectionLoc;
-    GLuint dstFaceEdgeWidthLoc, dstDirectionLoc;
+    GLuint srcFaceEdgeWidthLoc;
+    GLuint dstFaceEdgeWidthLoc;
 }
 @property (nonatomic, strong) CubeSourceMesh *sourceMesh;
 @property (nonatomic, strong) CubeDestinationMesh *destinationMesh;
@@ -98,11 +98,9 @@
     [super setupGL];
     glUseProgram(srcProgram);
     srcFaceEdgeWidthLoc = glGetUniformLocation(srcProgram, "u_edgeWidth");
-    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
     dstFaceEdgeWidthLoc = glGetUniformLocation(dstProgram, "u_edgeWidth");
-    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 
 - (SceneMesh *) srcMesh

@@ -68,7 +68,7 @@
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = @[@"DoorWay", @"Cube", @"Twist", @"ClothLine", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push"];
+        _animations = @[@"DoorWay", @"Cube", @"Twist", @"ClothLine", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal"];
     }
     return _animations;
 }

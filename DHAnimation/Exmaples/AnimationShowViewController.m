@@ -17,6 +17,7 @@
 #import "GridRenderer.h"
 #import "ConfettiRenderer.h"
 #import "PushRenderer.h"
+#import "RevealRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -93,6 +94,10 @@
             self.renderer = [[PushRenderer alloc] init];
         }
             break;
+        case AnimationTypeReveal:
+        {
+            self.renderer = [[RevealRenderer alloc] init];
+        }
         default:
             break;
     }

@@ -78,6 +78,7 @@
     
     glUseProgram(dstProgram);
     glUniform1f(dstPercentLoc, self.percent);
+    glUniform1i(dstDirectionLoc, self.direction);
     [self setupUniformsForDestinationProgram];
     [self.dstMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -87,6 +88,7 @@
     
     glUseProgram(srcProgram);
     glUniform1f(srcPercentLoc, self.percent);
+    glUniform1i(srcDirectionLoc, self.direction);
     [self setupUniformsForSourceProgram];
     [self.srcMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -151,6 +153,7 @@
         srcMvpLoc = glGetUniformLocation(srcProgram, "u_mvpMatrix");
         srcSamplerLoc = glGetUniformLocation(srcProgram, "s_tex");
         srcPercentLoc = glGetUniformLocation(srcProgram, "u_percent");
+        srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     }
     if (self.dstVertexShaderFileName && self.dstFragmentShaderFileName) {
         dstProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:self.dstVertexShaderFileName fragmentShaderSrc:self.dstFragmentShaderFileName];
@@ -158,6 +161,7 @@
         dstMvpLoc = glGetUniformLocation(dstProgram, "u_mvpMatrix");
         dstSamplerLoc = glGetUniformLocation(dstProgram, "s_tex");
         dstPercentLoc = glGetUniformLocation(dstProgram, "u_percent");
+        dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
     }
     glClearColor(0, 0, 0, 1);
 }

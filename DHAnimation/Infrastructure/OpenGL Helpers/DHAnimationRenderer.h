@@ -16,6 +16,7 @@
     GLuint srcMvpLoc, srcSamplerLoc;
     GLuint dstMvpLoc, dstSamplerLoc;
     GLuint srcPercentLoc, dstPercentLoc;
+    GLuint srcDirectionLoc, dstDirectionLoc;
 }
 
 @property (nonatomic, strong) EAGLContext *context;

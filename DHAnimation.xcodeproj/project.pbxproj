@@ -76,6 +76,11 @@
 		54E4B51C1C9AD51200FB4EC2 /* PushSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B51B1C9AD51200FB4EC2 /* PushSourceFragment.glsl */; };
 		54E4B51E1C9AD51D00FB4EC2 /* PushDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B51D1C9AD51D00FB4EC2 /* PushDestinationVertex.glsl */; };
 		54E4B5201C9AD52900FB4EC2 /* PushDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B51F1C9AD52900FB4EC2 /* PushDestinationFragment.glsl */; };
+		54E4B5231C9B8ED600FB4EC2 /* RevealSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5221C9B8ED600FB4EC2 /* RevealSourceVertex.glsl */; };
+		54E4B5251C9B8EE200FB4EC2 /* RevealSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5241C9B8EE200FB4EC2 /* RevealSourceFragment.glsl */; };
+		54E4B5271C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5261C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl */; };
+		54E4B5291C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5281C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl */; };
+		54E4B52C1C9B8F0E00FB4EC2 /* RevealRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */; };
 		54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */; };
 		54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */; };
 		54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */; };
@@ -210,6 +215,12 @@
 		54E4B51B1C9AD51200FB4EC2 /* PushSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushSourceFragment.glsl; sourceTree = "<group>"; };
 		54E4B51D1C9AD51D00FB4EC2 /* PushDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushDestinationVertex.glsl; sourceTree = "<group>"; };
 		54E4B51F1C9AD52900FB4EC2 /* PushDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushDestinationFragment.glsl; sourceTree = "<group>"; };
+		54E4B5221C9B8ED600FB4EC2 /* RevealSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealSourceVertex.glsl; sourceTree = "<group>"; };
+		54E4B5241C9B8EE200FB4EC2 /* RevealSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealSourceFragment.glsl; sourceTree = "<group>"; };
+		54E4B5261C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealDestinationVertex.glsl; sourceTree = "<group>"; };
+		54E4B5281C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealDestinationFragment.glsl; sourceTree = "<group>"; };
+		54E4B52A1C9B8F0E00FB4EC2 /* RevealRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealRenderer.h; sourceTree = "<group>"; };
+		54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealRenderer.m; sourceTree = "<group>"; };
 		54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceVertex.glsl; sourceTree = "<group>"; };
 		54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceFragment.glsl; sourceTree = "<group>"; };
 		54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistDestinationVertex.glsl; sourceTree = "<group>"; };
@@ -440,6 +451,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				54E4B5211C9B8EC300FB4EC2 /* Reveal */,
 				54E4B5151C9AD4D700FB4EC2 /* Push */,
 				545F0A0C1C98EB5800CE03E3 /* Confetti */,
 				545F0A001C98106500CE03E3 /* Grid */,
@@ -496,6 +508,19 @@
 				54E4B51F1C9AD52900FB4EC2 /* PushDestinationFragment.glsl */,
 			);
 			path = Push;
+			sourceTree = "<group>";
+		};
+		54E4B5211C9B8EC300FB4EC2 /* Reveal */ = {
+			isa = PBXGroup;
+			children = (
+				54E4B5221C9B8ED600FB4EC2 /* RevealSourceVertex.glsl */,
+				54E4B5241C9B8EE200FB4EC2 /* RevealSourceFragment.glsl */,
+				54E4B5261C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl */,
+				54E4B5281C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl */,
+				54E4B52A1C9B8F0E00FB4EC2 /* RevealRenderer.h */,
+				54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */,
+			);
+			path = Reveal;
 			sourceTree = "<group>";
 		};
 		54EC580F1C8FD25F009D812C /* OpenGL Helpers */ = {
@@ -666,6 +691,7 @@
 				545F0A051C98111700CE03E3 /* GridSourceVertex.glsl in Resources */,
 				544698741C97D29900FF5EFA /* ShredderConfettiVertex.glsl in Resources */,
 				5446987A1C97D29900FF5EFA /* ShredderPieceVertex.glsl in Resources */,
+				54E4B5271C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl in Resources */,
 				54E4B51C1C9AD51200FB4EC2 /* PushSourceFragment.glsl in Resources */,
 				544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */,
 				54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */,
@@ -678,10 +704,12 @@
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
 				54EC584A1C902680009D812C /* CubeSourceFragment.glsl in Resources */,
 				544698701C97D29900FF5EFA /* Shredder.png in Resources */,
+				54E4B5231C9B8ED600FB4EC2 /* RevealSourceVertex.glsl in Resources */,
 				545F0A091C98113D00CE03E3 /* GridDestinationVertex.glsl in Resources */,
 				54E4B51A1C9AD50600FB4EC2 /* PushSourceVertex.glsl in Resources */,
 				545F0A151C99047E00CE03E3 /* ConfettiDestinationVertex.glsl in Resources */,
 				545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */,
+				54E4B5251C9B8EE200FB4EC2 /* RevealSourceFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
 				54EC584C1C902680009D812C /* CubeSourceVertex.glsl in Resources */,
 				545F0A111C99046400CE03E3 /* ConfettiSourceVertex.glsl in Resources */,
@@ -712,6 +740,7 @@
 				54E264851C8FC5AC00FFB67E /* 9.jpg in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				54E264831C8FC5AC00FFB67E /* 7.jpg in Resources */,
+				54E4B5291C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl in Resources */,
 				545F0A131C99047100CE03E3 /* ConfettiSourceFragment.glsl in Resources */,
 				54E264641C8EBDDA00FFB67E /* DoorWaySourceVertex.glsl in Resources */,
 				5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */,
@@ -746,6 +775,7 @@
 				54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */,
 				5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */,
 				545F0A031C98107500CE03E3 /* GridRenderer.m in Sources */,
+				54E4B52C1C9B8F0E00FB4EC2 /* RevealRenderer.m in Sources */,
 				54EC58481C902680009D812C /* CubeMesh.m in Sources */,
 				54EC58491C902680009D812C /* CubeRenderer.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,

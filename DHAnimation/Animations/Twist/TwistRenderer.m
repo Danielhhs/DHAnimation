@@ -13,8 +13,8 @@
 #import "DHTimingFunctionHelper.h"
 
 @interface TwistRenderer () {
-    GLuint srcCenterPositionLoc, srcDirectionLoc;
-    GLuint dstCenterPositionLoc, dstDirectionLoc;
+    GLuint srcCenterPositionLoc;
+    GLuint dstCenterPositionLoc;
 }
 @property (nonatomic, strong) TwistMesh *sourceMesh;
 @property (nonatomic, strong) TwistMesh *destinationMesh;
@@ -105,11 +105,9 @@
     [super setupGL];
     glUseProgram(srcProgram);
     srcCenterPositionLoc = glGetUniformLocation(srcProgram, "u_centerPosition");
-    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     
     glUseProgram(dstProgram);
     dstCenterPositionLoc = glGetUniformLocation(dstProgram, "u_centerPosition");
-    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
 }
 
 - (SceneMesh *) srcMesh

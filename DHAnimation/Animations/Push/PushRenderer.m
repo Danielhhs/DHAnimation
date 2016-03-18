@@ -9,7 +9,6 @@
 #import "PushRenderer.h"
 
 @interface PushRenderer () {
-    GLuint srcDirectionLoc, dstDirectionLoc;
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
 }
 
@@ -33,23 +32,19 @@
 {
     [super setupGL];
     glUseProgram(srcProgram);
-    srcDirectionLoc = glGetUniformLocation(srcProgram, "u_direction");
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
     
     glUseProgram(dstProgram);
-    dstDirectionLoc = glGetUniformLocation(dstProgram, "u_direction");
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
 }
 
 - (void) setupUniformsForSourceProgram
 {
-    glUniform1i(srcDirectionLoc, self.direction);
     glUniform1f(srcScreenWidthLoc, self.animationView.bounds.size.width);
 }
 
 - (void) setupUniformsForDestinationProgram
 {
-    glUniform1i(dstDirectionLoc, self.direction);
     glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
 }
 

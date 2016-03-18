@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeGrid = 6,
     AnimationTypeConfetti = 7,
     AnimationTypePush = 8,
+    AnimationTypeReveal = 9,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
