@@ -81,6 +81,11 @@
 		54E4B5271C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5261C9B8EF000FB4EC2 /* RevealDestinationVertex.glsl */; };
 		54E4B5291C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5281C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl */; };
 		54E4B52C1C9B8F0E00FB4EC2 /* RevealRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */; };
+		54E4B5301C9B97B300FB4EC2 /* DropRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E4B52F1C9B97B300FB4EC2 /* DropRenderer.m */; };
+		54E4B5321C9B9A9B00FB4EC2 /* DropSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5311C9B9A9B00FB4EC2 /* DropSourceVertex.glsl */; };
+		54E4B5341C9B9AAC00FB4EC2 /* DropSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5331C9B9AAC00FB4EC2 /* DropSourceFragment.glsl */; };
+		54E4B5361C9B9AED00FB4EC2 /* DropDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5351C9B9AED00FB4EC2 /* DropDestinationVertex.glsl */; };
+		54E4B5381C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5371C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl */; };
 		54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */; };
 		54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */; };
 		54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */; };
@@ -221,6 +226,12 @@
 		54E4B5281C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealDestinationFragment.glsl; sourceTree = "<group>"; };
 		54E4B52A1C9B8F0E00FB4EC2 /* RevealRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealRenderer.h; sourceTree = "<group>"; };
 		54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealRenderer.m; sourceTree = "<group>"; };
+		54E4B52E1C9B97B300FB4EC2 /* DropRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropRenderer.h; sourceTree = "<group>"; };
+		54E4B52F1C9B97B300FB4EC2 /* DropRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropRenderer.m; sourceTree = "<group>"; };
+		54E4B5311C9B9A9B00FB4EC2 /* DropSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropSourceVertex.glsl; sourceTree = "<group>"; };
+		54E4B5331C9B9AAC00FB4EC2 /* DropSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropSourceFragment.glsl; sourceTree = "<group>"; };
+		54E4B5351C9B9AED00FB4EC2 /* DropDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropDestinationVertex.glsl; sourceTree = "<group>"; };
+		54E4B5371C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropDestinationFragment.glsl; sourceTree = "<group>"; };
 		54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceVertex.glsl; sourceTree = "<group>"; };
 		54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceFragment.glsl; sourceTree = "<group>"; };
 		54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistDestinationVertex.glsl; sourceTree = "<group>"; };
@@ -451,6 +462,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				54E4B52D1C9B975200FB4EC2 /* Drop */,
 				54E4B5211C9B8EC300FB4EC2 /* Reveal */,
 				54E4B5151C9AD4D700FB4EC2 /* Push */,
 				545F0A0C1C98EB5800CE03E3 /* Confetti */,
@@ -521,6 +533,19 @@
 				54E4B52B1C9B8F0E00FB4EC2 /* RevealRenderer.m */,
 			);
 			path = Reveal;
+			sourceTree = "<group>";
+		};
+		54E4B52D1C9B975200FB4EC2 /* Drop */ = {
+			isa = PBXGroup;
+			children = (
+				54E4B52E1C9B97B300FB4EC2 /* DropRenderer.h */,
+				54E4B52F1C9B97B300FB4EC2 /* DropRenderer.m */,
+				54E4B5311C9B9A9B00FB4EC2 /* DropSourceVertex.glsl */,
+				54E4B5331C9B9AAC00FB4EC2 /* DropSourceFragment.glsl */,
+				54E4B5351C9B9AED00FB4EC2 /* DropDestinationVertex.glsl */,
+				54E4B5371C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl */,
+			);
+			path = Drop;
 			sourceTree = "<group>";
 		};
 		54EC580F1C8FD25F009D812C /* OpenGL Helpers */ = {
@@ -708,6 +733,7 @@
 				545F0A091C98113D00CE03E3 /* GridDestinationVertex.glsl in Resources */,
 				54E4B51A1C9AD50600FB4EC2 /* PushSourceVertex.glsl in Resources */,
 				545F0A151C99047E00CE03E3 /* ConfettiDestinationVertex.glsl in Resources */,
+				54E4B5341C9B9AAC00FB4EC2 /* DropSourceFragment.glsl in Resources */,
 				545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */,
 				54E4B5251C9B8EE200FB4EC2 /* RevealSourceFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
@@ -717,6 +743,7 @@
 				54EC58471C902680009D812C /* CubeDestinationVertex.glsl in Resources */,
 				544698871C97DAEF00FF5EFA /* SwitchSourceFragment.glsl in Resources */,
 				544698851C97DAE400FF5EFA /* SwitchSourceVertex.glsl in Resources */,
+				54E4B5361C9B9AED00FB4EC2 /* DropDestinationVertex.glsl in Resources */,
 				54E2640C1C8EBCBF00FFB67E /* LaunchScreen.storyboard in Resources */,
 				54E4B5201C9AD52900FB4EC2 /* PushDestinationFragment.glsl in Resources */,
 				5446983D1C96D56D00FF5EFA /* ClothLineSourceFragment.glsl in Resources */,
@@ -741,6 +768,8 @@
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				54E264831C8FC5AC00FFB67E /* 7.jpg in Resources */,
 				54E4B5291C9B8EFE00FB4EC2 /* RevealDestinationFragment.glsl in Resources */,
+				54E4B5321C9B9A9B00FB4EC2 /* DropSourceVertex.glsl in Resources */,
+				54E4B5381C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl in Resources */,
 				545F0A131C99047100CE03E3 /* ConfettiSourceFragment.glsl in Resources */,
 				54E264641C8EBDDA00FFB67E /* DoorWaySourceVertex.glsl in Resources */,
 				5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */,
@@ -772,6 +801,7 @@
 				54E4B5181C9AD4EC00FB4EC2 /* PushRenderer.m in Sources */,
 				54E264691C8EC2FF00FFB67E /* AnimationShowViewController.m in Sources */,
 				544698781C97D29900FF5EFA /* ShredderPaperPieceSceneMesh.m in Sources */,
+				54E4B5301C9B97B300FB4EC2 /* DropRenderer.m in Sources */,
 				54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */,
 				5446987B1C97D29900FF5EFA /* ShredderRenderer.m in Sources */,
 				545F0A031C98107500CE03E3 /* GridRenderer.m in Sources */,

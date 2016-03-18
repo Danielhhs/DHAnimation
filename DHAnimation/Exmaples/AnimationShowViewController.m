@@ -18,6 +18,7 @@
 #import "ConfettiRenderer.h"
 #import "PushRenderer.h"
 #import "RevealRenderer.h"
+#import "DropRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -48,11 +49,13 @@
     switch (self.animationType) {
         case AnimationTypeDoorWay:
         {
+            self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
             self.renderer = [[DoorWayRenderer alloc] init];
         }
             break;
         case AnimationTypeCube:
         {
+            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
             self.renderer = [[CubeRenderer alloc] init];
         }
             break;
@@ -63,7 +66,7 @@
             break;
         case AnimationTypeClothLine:
         {
-            self.settings.duration = 2.f;
+            self.settings.duration = 3.f;
             self.renderer = [[ClothLineRenderer alloc] init];
         }
             break;
@@ -97,6 +100,12 @@
         case AnimationTypeReveal:
         {
             self.renderer = [[RevealRenderer alloc] init];
+        }
+            break;
+        case AnimationTypeDrop:
+        {
+            self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
+            self.renderer = [[DropRenderer alloc] init];
         }
         default:
             break;
