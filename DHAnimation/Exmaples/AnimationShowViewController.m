@@ -16,6 +16,7 @@
 #import "SwitchRenderer.h"
 #import "GridRenderer.h"
 #import "ConfettiRenderer.h"
+#import "PushRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -85,6 +86,11 @@
         case AnimationTypeConfetti:
         {
             self.renderer = [[ConfettiRenderer alloc] init];
+        }
+            break;
+        case AnimationTypePush:
+        {
+            self.renderer = [[PushRenderer alloc] init];
         }
             break;
         default:

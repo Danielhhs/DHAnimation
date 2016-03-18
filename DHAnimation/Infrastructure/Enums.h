@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeSwitch = 5,
     AnimationTypeGrid = 6,
     AnimationTypeConfetti = 7,
+    AnimationTypePush = 8,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
