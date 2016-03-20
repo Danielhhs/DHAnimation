@@ -43,5 +43,5 @@ typedef struct {
 - (void) drawEntireMesh;
 - (void) destroyGL;
 
-- (void) setupColumnStartPositionAndRotationForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
+- (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
 @end

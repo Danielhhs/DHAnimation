@@ -43,6 +43,7 @@
 		545F0A151C99047E00CE03E3 /* ConfettiDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A141C99047E00CE03E3 /* ConfettiDestinationVertex.glsl */; };
 		545F0A171C99048D00CE03E3 /* ConfettiDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545F0A161C99048D00CE03E3 /* ConfettiDestinationFragment.glsl */; };
 		545F0A1A1C9907F300CE03E3 /* DHConfettiSourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 545F0A191C9907F300CE03E3 /* DHConfettiSourceMesh.m */; };
+		548737C61C9EAC2C0006042F /* DHMosaicBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 548737C51C9EAC2C0006042F /* DHMosaicBackMesh.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -91,6 +92,7 @@
 		54E4B5401C9BAB7B00FB4EC2 /* MosaicSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B53F1C9BAB7B00FB4EC2 /* MosaicSourceFragment.glsl */; };
 		54E4B5421C9BAB8600FB4EC2 /* MosaicDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5411C9BAB8600FB4EC2 /* MosaicDestinationVertex.glsl */; };
 		54E4B5441C9BABA300FB4EC2 /* MosaicDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E4B5431C9BABA300FB4EC2 /* MosaicDestinationFragment.glsl */; };
+		54E4B5471C9E690700FB4EC2 /* DHMosaicMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E4B5461C9E690700FB4EC2 /* DHMosaicMesh.m */; };
 		54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */; };
 		54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */; };
 		54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */; };
@@ -177,6 +179,8 @@
 		545F0A161C99048D00CE03E3 /* ConfettiDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConfettiDestinationFragment.glsl; sourceTree = "<group>"; };
 		545F0A181C9907F300CE03E3 /* DHConfettiSourceMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConfettiSourceMesh.h; sourceTree = "<group>"; };
 		545F0A191C9907F300CE03E3 /* DHConfettiSourceMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConfettiSourceMesh.m; sourceTree = "<group>"; };
+		548737C41C9EAC2C0006042F /* DHMosaicBackMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicBackMesh.h; sourceTree = "<group>"; };
+		548737C51C9EAC2C0006042F /* DHMosaicBackMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicBackMesh.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		54E4B53F1C9BAB7B00FB4EC2 /* MosaicSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicSourceFragment.glsl; sourceTree = "<group>"; };
 		54E4B5411C9BAB8600FB4EC2 /* MosaicDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicDestinationVertex.glsl; sourceTree = "<group>"; };
 		54E4B5431C9BABA300FB4EC2 /* MosaicDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicDestinationFragment.glsl; sourceTree = "<group>"; };
+		54E4B5451C9E690700FB4EC2 /* DHMosaicMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicMesh.h; sourceTree = "<group>"; };
+		54E4B5461C9E690700FB4EC2 /* DHMosaicMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicMesh.m; sourceTree = "<group>"; };
 		54EB21451C9171D40016A023 /* TwistSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceVertex.glsl; sourceTree = "<group>"; };
 		54EB21471C9171E10016A023 /* TwistSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceFragment.glsl; sourceTree = "<group>"; };
 		54EB21491C9171F50016A023 /* TwistDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistDestinationVertex.glsl; sourceTree = "<group>"; };
@@ -565,6 +571,10 @@
 			children = (
 				54E4B53A1C9BA96100FB4EC2 /* DHMosaicRenderer.h */,
 				54E4B53B1C9BA96100FB4EC2 /* DHMosaicRenderer.m */,
+				54E4B5451C9E690700FB4EC2 /* DHMosaicMesh.h */,
+				54E4B5461C9E690700FB4EC2 /* DHMosaicMesh.m */,
+				548737C41C9EAC2C0006042F /* DHMosaicBackMesh.h */,
+				548737C51C9EAC2C0006042F /* DHMosaicBackMesh.m */,
 				54E4B53D1C9BAB7000FB4EC2 /* MosaicSourceVertex.glsl */,
 				54E4B53F1C9BAB7B00FB4EC2 /* MosaicSourceFragment.glsl */,
 				54E4B5411C9BAB8600FB4EC2 /* MosaicDestinationVertex.glsl */,
@@ -849,12 +859,14 @@
 				54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */,
 				544698831C97D64000FF5EFA /* DHSwitchRenderer.m in Sources */,
 				54E4B53C1C9BA96100FB4EC2 /* DHMosaicRenderer.m in Sources */,
+				54E4B5471C9E690700FB4EC2 /* DHMosaicMesh.m in Sources */,
 				5446987F1C97D2C400FF5EFA /* DHShredderConfettiSceneMesh.m in Sources */,
 				544698761C97D29900FF5EFA /* DHShredderMesh.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,
 				54E263FE1C8EBCBF00FFB67E /* main.m in Sources */,
 				54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */,
+				548737C61C9EAC2C0006042F /* DHMosaicBackMesh.m in Sources */,
 				545F0A0F1C98EB6B00CE03E3 /* DHConfettiRenderer.m in Sources */,
 				54EC58501C902798009D812C /* DHTwistRenderer.m in Sources */,
 				54EC58461C902680009D812C /* DHCubeDestinationMesh.m in Sources */,

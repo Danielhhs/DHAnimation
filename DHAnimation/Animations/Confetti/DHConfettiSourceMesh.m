@@ -10,7 +10,7 @@
 
 @implementation DHConfettiSourceMesh
 
-- (void) setupColumnStartPositionAndRotationForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index
+- (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index
 {
     GLKVector3 center = GLKVector3Make(-1 * (vertices[index + 1].position.x + vertices[index + 0].position.x) / 2, -1 * (vertices[index + 2].position.y + vertices[index + 0].position.y) / 2, vertices[index + 2].position.z - vertices[index + 0].position.z);
     

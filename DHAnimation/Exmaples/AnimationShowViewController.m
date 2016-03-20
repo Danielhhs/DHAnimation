@@ -19,6 +19,7 @@
 #import "DHPushRenderer.h"
 #import "DHRevealRenderer.h"
 #import "DHDropRenderer.h"
+#import "DHMosaicRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -107,6 +108,13 @@
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
             self.renderer = [[DHDropRenderer alloc] init];
         }
+            break;
+        case AnimationTypeMosaic:
+        {
+            self.settings.duration = 3.f;
+            self.renderer = [[DHMosaicRenderer alloc] init];
+        }
+            break;
         default:
             break;
     }
