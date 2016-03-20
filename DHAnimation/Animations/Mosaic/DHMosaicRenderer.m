@@ -12,6 +12,7 @@
 #import "DHMosaicBackMesh.h"
 
 #define MOSAIC_COLUMN_WIDTH 50
+#define MOSAIC_ROTATION_TIME_RATIO 0.3
 
 @interface DHMosaicRenderer () {
     GLuint srcColumnWidhtLoc, dstColumnWidthLoc;
@@ -20,7 +21,7 @@
 @property (nonatomic, strong) DHMosaicBackMesh *destinationMesh;
 @property (nonatomic) NSInteger gridCount;
 @property (nonatomic, strong) NSMutableArray *gridIndexNotRotating;
-@property (nonatomic) NSInteger startedCount;
+@property (nonatomic) NSTimeInterval accumulatedTime;
 @end
 
 @implementation DHMosaicRenderer
@@ -34,7 +35,7 @@
         self.srcFragmentShaderFileName = @"MosaicSourceFragment.glsl";
         self.dstVertexShaderFileName = @"MosaicDestinationVertex.glsl";
         self.dstFragmentShaderFileName = @"MosaicDestinationFragment.glsl";
-        self.startedCount = 0;
+        self.accumulatedTime = 0;
     }
     return self;
 }
@@ -70,20 +71,24 @@
 - (void) update:(CADisplayLink *)displayLink
 {
     self.elapsedTime += displayLink.duration;
+    self.accumulatedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
         self.percent = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
-        NSInteger numberOfGridToStart = displayLink.duration / (self.duration * 0.9) * [self.gridIndexNotRotating count] + 1;
         NSMutableArray *gridIndicesToStart = [NSMutableArray array];
-        for (int i = 0; i < numberOfGridToStart; i++) {
-            NSInteger index = arc4random() % [self.gridIndexNotRotating count];
-            if ([self.gridIndexNotRotating count] >= index) {
-                [gridIndicesToStart addObject:self.gridIndexNotRotating[index]];
-                [self.gridIndexNotRotating removeObjectAtIndex:index];
+        if (self.accumulatedTime >= 0.1) {
+            NSInteger numberOfFlipsNeeded = ceil(self.duration * (1 - MOSAIC_ROTATION_TIME_RATIO) / 0.1);
+            NSInteger numberOfGridToStart =  self.gridCount / numberOfFlipsNeeded + 1;
+            for (int i = 0; i < numberOfGridToStart; i++) {
+                NSInteger index = arc4random() % [self.gridIndexNotRotating count];
+                if ([self.gridIndexNotRotating count] >= index) {
+                    [gridIndicesToStart addObject:self.gridIndexNotRotating[index]];
+                    [self.gridIndexNotRotating removeObjectAtIndex:index];
+                }
             }
+            self.accumulatedTime = 0;
         }
-        self.startedCount += numberOfGridToStart;
-        [self.sourceMesh updateWithIndicesItemsStartedRotation:gridIndicesToStart incrementedRotation:displayLink.duration / (self.duration * 0.1) * M_PI];
-        [self.destinationMesh updateWithIndicesItemsStartedRotation:gridIndicesToStart incrementedRotation:displayLink.duration / (self.duration * 0.1) * M_PI];
+        [self.sourceMesh updateWithIndicesItemsStartedRotation:gridIndicesToStart incrementedRotation:displayLink.duration / (self.duration * MOSAIC_ROTATION_TIME_RATIO) * M_PI];
+        [self.destinationMesh updateWithIndicesItemsStartedRotation:gridIndicesToStart incrementedRotation:displayLink.duration / (self.duration * MOSAIC_ROTATION_TIME_RATIO) * M_PI];
         [self.animationView display];
     } else {
         self.percent = 1;

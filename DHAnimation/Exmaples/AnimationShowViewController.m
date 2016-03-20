@@ -111,7 +111,6 @@
             break;
         case AnimationTypeMosaic:
         {
-            self.settings.duration = 3.f;
             self.renderer = [[DHMosaicRenderer alloc] init];
         }
             break;
