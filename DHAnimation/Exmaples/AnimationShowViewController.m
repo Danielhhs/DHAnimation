@@ -7,18 +7,18 @@
 //
 
 #import "AnimationShowViewController.h"
-#import "DoorWayRenderer.h"
-#import "CubeRenderer.h"
-#import "TwistRenderer.h"
-#import "ClothLineRenderer.h"
-#import "ShredderRenderer.h"
+#import "DHDoorWayRenderer.h"
+#import "DHCubeRenderer.h"
+#import "DHTwistRenderer.h"
+#import "DHClothLineRenderer.h"
+#import "DHShredderRenderer.h"
 #import "AnimationSettingViewController.h"
-#import "SwitchRenderer.h"
-#import "GridRenderer.h"
-#import "ConfettiRenderer.h"
-#import "PushRenderer.h"
-#import "RevealRenderer.h"
-#import "DropRenderer.h"
+#import "DHSwitchRenderer.h"
+#import "DHGridRenderer.h"
+#import "DHConfettiRenderer.h"
+#import "DHPushRenderer.h"
+#import "DHRevealRenderer.h"
+#import "DHDropRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -50,62 +50,62 @@
         case AnimationTypeDoorWay:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
-            self.renderer = [[DoorWayRenderer alloc] init];
+            self.renderer = [[DHDoorWayRenderer alloc] init];
         }
             break;
         case AnimationTypeCube:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-            self.renderer = [[CubeRenderer alloc] init];
+            self.renderer = [[DHCubeRenderer alloc] init];
         }
             break;
         case AnimationTypeTwist:
         {
-            self.renderer = [[TwistRenderer alloc] init];
+            self.renderer = [[DHTwistRenderer alloc] init];
         }
             break;
         case AnimationTypeClothLine:
         {
             self.settings.duration = 3.f;
-            self.renderer = [[ClothLineRenderer alloc] init];
+            self.renderer = [[DHClothLineRenderer alloc] init];
         }
             break;
         case AnimationTypeShredder:
         {
             self.settings.columnCount = 12;
             self.settings.duration = 3.f;
-            self.renderer = [[ShredderRenderer alloc] init];
+            self.renderer = [[DHShredderRenderer alloc] init];
         }
             break;
         case AnimationTypeSwitch:
         {
-            self.renderer = [[SwitchRenderer alloc] init];
+            self.renderer = [[DHSwitchRenderer alloc] init];
         }
             break;
         case AnimationTypeGrid:
         {
-            self.renderer = [[GridRenderer alloc] init];
+            self.renderer = [[DHGridRenderer alloc] init];
         }
             break;
         case AnimationTypeConfetti:
         {
-            self.renderer = [[ConfettiRenderer alloc] init];
+            self.renderer = [[DHConfettiRenderer alloc] init];
         }
             break;
         case AnimationTypePush:
         {
-            self.renderer = [[PushRenderer alloc] init];
+            self.renderer = [[DHPushRenderer alloc] init];
         }
             break;
         case AnimationTypeReveal:
         {
-            self.renderer = [[RevealRenderer alloc] init];
+            self.renderer = [[DHRevealRenderer alloc] init];
         }
             break;
         case AnimationTypeDrop:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
-            self.renderer = [[DropRenderer alloc] init];
+            self.renderer = [[DHDropRenderer alloc] init];
         }
         default:
             break;

@@ -16,6 +16,7 @@ typedef struct {
     float rotation;
     GLKVector3 originalCenter;
     GLKVector3 targetCenter;
+    BOOL rotating;
 }SceneMeshVertex;
 
 @interface SceneMesh : NSObject {

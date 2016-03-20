@@ -12,9 +12,9 @@ layout(location = 2) in vec2 a_texCoords;
 
 out vec2 v_texCoords;
 
-const float initialSwingRatio = 0.02;
-const float transitionRatio = 0.15;
-const float finalSwingRatio = 0.83;
+const float initialSwingRatio = 0.1;
+const float transitionRatio = 0.2;
+const float finalSwingRatio = 0.7;
 const float finalSwingCycle = 0.8;
 
 const float pi = 3.141592657;

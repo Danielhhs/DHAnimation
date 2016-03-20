@@ -72,6 +72,9 @@
     glEnableVertexAttribArray(6);
     glVertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, targetCenter));
     
+    glEnableVertexAttribArray(7);
+    glVertexAttribPointer(7, 1, GL_BOOL, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotating));
+    
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 }
 
