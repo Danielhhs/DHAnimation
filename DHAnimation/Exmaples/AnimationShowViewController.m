@@ -20,6 +20,7 @@
 #import "DHRevealRenderer.h"
 #import "DHDropRenderer.h"
 #import "DHMosaicRenderer.h"
+#import "DHFlopRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -114,6 +115,10 @@
             self.renderer = [[DHMosaicRenderer alloc] init];
         }
             break;
+        case AnimationTypeFlop:
+        {
+            self.renderer = [[DHFlopRenderer alloc] init];
+        }
         default:
             break;
     }

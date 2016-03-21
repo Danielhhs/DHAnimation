@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeReveal = 9,
     AnimationTypeDrop = 10,
     AnimationTypeMosaic = 11,
+    AnimationTypeFlop = 12,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
