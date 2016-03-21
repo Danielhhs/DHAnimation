@@ -91,6 +91,8 @@
             break;
         case AnimationTypeConfetti:
         {
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            self.settings.duration = 2;
             self.renderer = [[DHConfettiRenderer alloc] init];
         }
             break;

@@ -55,7 +55,7 @@
     self.srcMesh = [[SceneMesh alloc] initWithView:fromView columnCount:1 rowCount:fromView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO];
     self.dstMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:toView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO];
     self.cylinderRadius = fromView.bounds.size.height / 2 / CENTER_ANGLE;
-    self.targetCylinderCenter = GLKVector3Make(0, fromView.bounds.size.height * 0.75, -self.cylinderRadius * (cosf(CENTER_ANGLE / 2)));
+    self.targetCylinderCenter = GLKVector3Make(0, fromView.bounds.size.height / 2 + self.cylinderRadius * sinf(CENTER_ANGLE / 2), -self.cylinderRadius * (cosf(CENTER_ANGLE / 2)));
 }
 
 - (void) setupUniformsForSourceProgram

@@ -45,12 +45,12 @@
 {
     GLKVector3 center = originalCenter;
     center.z = 500;
-    if (x < self.columnCount / 2) {
+    if (x % 4 < 2) {
         center.x -= arc4random() % 100;
     } else {
         center.x += arc4random() % 100;
     }
-    if (y < self.rowCount / 2) {
+    if (y % 4 / 2) {
         center.y -= arc4random() % 100;
     } else {
         center.y += arc4random() % 100;

@@ -9,7 +9,7 @@
 #import "DHConfettiRenderer.h"
 #import "DHConfettiSourceMesh.h"
 
-#define CONFETTI_EDGE 10
+#define CONFETTI_EDGE 8
 
 @interface DHConfettiRenderer() {
     GLuint srcColumnWidthLoc, srcColumnHeightLoc;
