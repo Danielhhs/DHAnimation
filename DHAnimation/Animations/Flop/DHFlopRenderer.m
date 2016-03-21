@@ -11,6 +11,7 @@
     GLuint srcScreenHeightLoc, dstScreenHeightLoc;
     GLuint srcCylinderRadiusLoc, dstCylinderRadiusLoc;
     GLuint srcTargetCenterLoc, dstTargetCenterLoc;
+    GLuint srcCenterAngleLoc, dstCenterAngleLoc;
 }
 @property (nonatomic) GLKVector3 targetCylinderCenter;
 @property (nonatomic) GLfloat cylinderRadius;
@@ -40,11 +41,13 @@
     srcScreenHeightLoc = glGetUniformLocation(srcProgram, "u_screenHeight");
     srcCylinderRadiusLoc = glGetUniformLocation(srcProgram, "u_cylinderRadius");
     srcTargetCenterLoc = glGetUniformLocation(srcProgram, "u_targetCenter");
+    srcCenterAngleLoc = glGetUniformLocation(srcProgram, "u_centerAngle");
     
     glUseProgram(dstProgram);
     dstScreenHeightLoc = glGetUniformLocation(dstProgram, "u_screenHeight");
     dstCylinderRadiusLoc = glGetUniformLocation(dstProgram, "u_cylinderRadius");
     dstTargetCenterLoc = glGetUniformLocation(dstProgram, "u_targetCenter");
+    dstCenterAngleLoc = glGetUniformLocation(dstProgram, "u_centerAngle");
 }
 
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
@@ -52,7 +55,7 @@
     self.srcMesh = [[SceneMesh alloc] initWithView:fromView columnCount:1 rowCount:fromView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO];
     self.dstMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:toView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO];
     self.cylinderRadius = fromView.bounds.size.height / 2 / CENTER_ANGLE;
-    self.targetCylinderCenter = GLKVector3Make(0, fromView.bounds.size.height / 2 + self.cylinderRadius * sinf(CENTER_ANGLE / 2), -self.cylinderRadius * (cosf(CENTER_ANGLE / 2)));
+    self.targetCylinderCenter = GLKVector3Make(0, fromView.bounds.size.height * 0.75, -self.cylinderRadius * (cosf(CENTER_ANGLE / 2)));
 }
 
 - (void) setupUniformsForSourceProgram
@@ -60,6 +63,7 @@
     glUniform1f(srcScreenHeightLoc, self.animationView.bounds.size.height);
     glUniform1f(srcCylinderRadiusLoc, self.cylinderRadius);
     glUniform3fv(srcTargetCenterLoc, 1, self.targetCylinderCenter.v);
+    glUniform1f(srcCenterAngleLoc, CENTER_ANGLE);
 }
 
 - (void) setupUniformsForDestinationProgram
@@ -67,6 +71,7 @@
     glUniform1f(dstScreenHeightLoc, self.animationView.bounds.size.height);
     glUniform1f(dstCylinderRadiusLoc, self.cylinderRadius);
     glUniform3fv(dstTargetCenterLoc, 1, self.targetCylinderCenter.v);
+    glUniform1f(dstCenterAngleLoc, CENTER_ANGLE);
 }
 
 - (void) setupMvpMatrixWithView:(UIView *)view
