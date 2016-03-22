@@ -22,6 +22,7 @@
 #import "DHMosaicRenderer.h"
 #import "DHFlopRenderer.h"
 #import "DHCoverRenderer.h"
+#import "DHFlipRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -128,6 +129,10 @@
             self.renderer = [[DHCoverRenderer alloc] init];
         }
             break;
+        case AnimationTypeFlip:
+        {
+            self.renderer = [[DHFlipRenderer alloc] init];
+        }
         default:
             break;
     }

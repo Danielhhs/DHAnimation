@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeMosaic = 11,
     AnimationTypeFlop = 12,
     AnimationTypeCover = 13,
+    AnimationTypeFlip = 14,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
