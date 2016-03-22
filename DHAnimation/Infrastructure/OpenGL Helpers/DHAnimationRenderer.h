@@ -73,6 +73,10 @@
 @property (nonatomic, strong) SceneMesh * srcMesh;
 @property (nonatomic, strong) SceneMesh * dstMesh;
 
+//Override this method to prepare for drawing, like enabling Culling
+- (void) prepareToDrawDestinationFace;
+- (void) prepareToDrawSourceFace;
+
 #pragma mark - Animation APIs
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
 

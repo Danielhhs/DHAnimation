@@ -21,6 +21,7 @@
 #import "DHDropRenderer.h"
 #import "DHMosaicRenderer.h"
 #import "DHFlopRenderer.h"
+#import "DHCoverRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -121,6 +122,12 @@
         {
             self.renderer = [[DHFlopRenderer alloc] init];
         }
+            break;
+        case AnimationTypeCover:
+        {
+            self.renderer = [[DHCoverRenderer alloc] init];
+        }
+            break;
         default:
             break;
     }

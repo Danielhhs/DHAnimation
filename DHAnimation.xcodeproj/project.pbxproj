@@ -49,6 +49,11 @@
 		548737CE1C9F84220006042F /* FlopSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737CD1C9F84220006042F /* FlopSourceFragment.glsl */; };
 		548737D01C9F842E0006042F /* FlopDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737CF1C9F842E0006042F /* FlopDestinationVertex.glsl */; };
 		548737D21C9F84390006042F /* FlopDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737D11C9F84390006042F /* FlopDestinationFragment.glsl */; };
+		548737F21CA0EBF10006042F /* DHCoverRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548737F11CA0EBF10006042F /* DHCoverRenderer.m */; };
+		548737F41CA0EBFF0006042F /* CoverSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737F31CA0EBFF0006042F /* CoverSourceVertex.glsl */; };
+		548737F61CA0EC090006042F /* CoverSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737F51CA0EC090006042F /* CoverSourceFragment.glsl */; };
+		548737F81CA0EC150006042F /* CoverDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737F71CA0EC150006042F /* CoverDestinationVertex.glsl */; };
+		548737FA1CA0EC200006042F /* CoverDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737F91CA0EC200006042F /* CoverDestinationFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -192,6 +197,12 @@
 		548737CD1C9F84220006042F /* FlopSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopSourceFragment.glsl; sourceTree = "<group>"; };
 		548737CF1C9F842E0006042F /* FlopDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopDestinationVertex.glsl; sourceTree = "<group>"; };
 		548737D11C9F84390006042F /* FlopDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopDestinationFragment.glsl; sourceTree = "<group>"; };
+		548737F01CA0EBF10006042F /* DHCoverRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCoverRenderer.h; sourceTree = "<group>"; };
+		548737F11CA0EBF10006042F /* DHCoverRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCoverRenderer.m; sourceTree = "<group>"; };
+		548737F31CA0EBFF0006042F /* CoverSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverSourceVertex.glsl; sourceTree = "<group>"; };
+		548737F51CA0EC090006042F /* CoverSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverSourceFragment.glsl; sourceTree = "<group>"; };
+		548737F71CA0EC150006042F /* CoverDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverDestinationVertex.glsl; sourceTree = "<group>"; };
+		548737F91CA0EC200006042F /* CoverDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverDestinationFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -410,6 +421,19 @@
 			path = Flop;
 			sourceTree = "<group>";
 		};
+		548737EF1CA0E8B80006042F /* Cover */ = {
+			isa = PBXGroup;
+			children = (
+				548737F01CA0EBF10006042F /* DHCoverRenderer.h */,
+				548737F11CA0EBF10006042F /* DHCoverRenderer.m */,
+				548737F31CA0EBFF0006042F /* CoverSourceVertex.glsl */,
+				548737F51CA0EC090006042F /* CoverSourceFragment.glsl */,
+				548737F71CA0EC150006042F /* CoverDestinationVertex.glsl */,
+				548737F91CA0EC200006042F /* CoverDestinationFragment.glsl */,
+			);
+			path = Cover;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +527,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				548737EF1CA0E8B80006042F /* Cover */,
 				548737C71C9F83EC0006042F /* Flop */,
 				54E4B5391C9BA82800FB4EC2 /* Mosaic */,
 				54E4B52D1C9B975200FB4EC2 /* Drop */,
@@ -816,6 +841,8 @@
 				545F0A171C99048D00CE03E3 /* ConfettiDestinationFragment.glsl in Resources */,
 				54E4B5421C9BAB8600FB4EC2 /* MosaicDestinationVertex.glsl in Resources */,
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
+				548737F41CA0EBFF0006042F /* CoverSourceVertex.glsl in Resources */,
+				548737F61CA0EC090006042F /* CoverSourceFragment.glsl in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				54E2645F1C8EBDDA00FFB67E /* DoorWayDestinationFragment.glsl in Resources */,
 				54E264811C8FC5AC00FFB67E /* 5.jpg in Resources */,
@@ -826,6 +853,7 @@
 				54EB21461C9171D40016A023 /* TwistSourceVertex.glsl in Resources */,
 				54E264601C8EBDDA00FFB67E /* DoorWayDestinationVertex.glsl in Resources */,
 				545F0A0B1C98114900CE03E3 /* GridDestinationFragment.glsl in Resources */,
+				548737F81CA0EC150006042F /* CoverDestinationVertex.glsl in Resources */,
 				54EB214C1C9172040016A023 /* TwistDestinationFragment.glsl in Resources */,
 				548737CE1C9F84220006042F /* FlopSourceFragment.glsl in Resources */,
 				548737D21C9F84390006042F /* FlopDestinationFragment.glsl in Resources */,
@@ -840,6 +868,7 @@
 				54E4B5401C9BAB7B00FB4EC2 /* MosaicSourceFragment.glsl in Resources */,
 				54E4B5381C9B9AFA00FB4EC2 /* DropDestinationFragment.glsl in Resources */,
 				545F0A131C99047100CE03E3 /* ConfettiSourceFragment.glsl in Resources */,
+				548737FA1CA0EC200006042F /* CoverDestinationFragment.glsl in Resources */,
 				54E264641C8EBDDA00FFB67E /* DoorWaySourceVertex.glsl in Resources */,
 				5446987C1C97D29900FF5EFA /* ShredderVertex.glsl in Resources */,
 				54E264071C8EBCBF00FFB67E /* Main.storyboard in Resources */,
@@ -879,6 +908,7 @@
 				54EC58481C902680009D812C /* DHCubeMesh.m in Sources */,
 				54EC58491C902680009D812C /* DHCubeRenderer.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,
+				548737F21CA0EBF10006042F /* DHCoverRenderer.m in Sources */,
 				54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */,
 				54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */,
 				54E264631C8EBDDA00FFB67E /* DHDoorWaySourceMesh.m in Sources */,

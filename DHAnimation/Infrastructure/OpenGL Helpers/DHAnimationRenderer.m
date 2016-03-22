@@ -76,6 +76,7 @@
     [self setupDrawingContext];
     [self setupMvpMatrixWithView:view];
     
+    [self prepareToDrawDestinationFace];
     glUseProgram(dstProgram);
     glUniform1f(dstPercentLoc, self.percent);
     glUniform1i(dstDirectionLoc, self.direction);
@@ -86,6 +87,7 @@
     glUniform1i(dstSamplerLoc, 0);
     [self.dstMesh drawEntireMesh];
     
+    [self prepareToDrawSourceFace];
     glUseProgram(srcProgram);
     glUniform1f(srcPercentLoc, self.percent);
     glUniform1i(srcDirectionLoc, self.direction);
@@ -115,6 +117,16 @@
         }
         [self tearDownGL];
     }
+}
+
+- (void) prepareToDrawDestinationFace
+{
+    
+}
+
+- (void) prepareToDrawSourceFace
+{
+    
 }
 
 #pragma mark - OpenGL
