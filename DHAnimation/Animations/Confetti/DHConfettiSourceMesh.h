@@ -8,6 +8,8 @@
 
 #import "SceneMesh.h"
 
+#define CONFETTI_DEPTH -1000
+
 @interface DHConfettiSourceMesh : SceneMesh
 
 @end

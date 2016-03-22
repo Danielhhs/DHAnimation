@@ -44,17 +44,11 @@
 - (GLKVector3) targetCenterForVertexAtX:(NSInteger)x y:(NSInteger)y originalCenter:(GLKVector3)originalCenter
 {
     GLKVector3 center = originalCenter;
-    center.z = 500;
-    if (x % 4 < 2) {
-        center.x -= arc4random() % 100;
-    } else {
-        center.x += arc4random() % 100;
-    }
-    if (y % 4 / 2) {
-        center.y -= arc4random() % 100;
-    } else {
-        center.y += arc4random() % 100;
-    }
+    center.z = -1 * CONFETTI_DEPTH;
+    GLfloat xOffset = arc4random() % 100 - 50.f;
+    center.x += xOffset;
+    GLfloat yOffset = arc4random() % 100 - 50.f;
+    center.y += yOffset;
     return center;
 }
 

@@ -9,10 +9,11 @@
 #import "DHConfettiRenderer.h"
 #import "DHConfettiSourceMesh.h"
 
-#define CONFETTI_EDGE 8
+#define GRIDS_PER_ROW 60
 
 @interface DHConfettiRenderer() {
     GLuint srcColumnWidthLoc, srcColumnHeightLoc;
+    GLuint dstDepthLoc;
 }
 @end
 
@@ -34,7 +35,8 @@
 #pragma mark - Override
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
-    self.srcMesh = [[DHConfettiSourceMesh alloc] initWithView:fromView columnCount:fromView.bounds.size.width / CONFETTI_EDGE rowCount:fromView.bounds.size.height / CONFETTI_EDGE splitTexturesOnEachGrid:YES columnMajored:YES];
+    
+    self.srcMesh = [[DHConfettiSourceMesh alloc] initWithView:fromView columnCount:GRIDS_PER_ROW rowCount:fromView.bounds.size.height / fromView.bounds.size.width * GRIDS_PER_ROW splitTexturesOnEachGrid:YES columnMajored:YES];
     self.dstMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES];
 }
 
@@ -44,12 +46,20 @@
     glUseProgram(srcProgram);
     srcColumnWidthLoc = glGetUniformLocation(srcProgram, "u_columnWidth");
     srcColumnHeightLoc = glGetUniformLocation(srcProgram, "u_columnHeight");
+    
+    glUseProgram(dstProgram);
+    dstDepthLoc = glGetUniformLocation(dstProgram, "u_depth");
 }
 
 - (void) setupUniformsForSourceProgram
 {
-    glUniform1f(srcColumnWidthLoc, CONFETTI_EDGE);
-    glUniform1f(srcColumnHeightLoc, CONFETTI_EDGE);
+    glUniform1f(srcColumnWidthLoc, self.animationView.bounds.size.width / GRIDS_PER_ROW);
+    glUniform1f(srcColumnHeightLoc, self.animationView.bounds.size.width / GRIDS_PER_ROW);
+}
+
+- (void) setupUniformsForDestinationProgram
+{
+    glUniform1f(dstDepthLoc, CONFETTI_DEPTH);
 }
 
 - (void) setupDrawingContext
