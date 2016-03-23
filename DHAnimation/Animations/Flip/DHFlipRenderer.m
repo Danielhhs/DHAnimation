@@ -69,7 +69,7 @@
 
 - (void) prepareToDrawSourceFace
 {
-    glCullFace(GL_FRONT);
+//    glCullFace(GL_FRONT);
 }
 
 @end

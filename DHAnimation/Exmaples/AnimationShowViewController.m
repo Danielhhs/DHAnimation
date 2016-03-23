@@ -23,6 +23,7 @@
 #import "DHFlopRenderer.h"
 #import "DHCoverRenderer.h"
 #import "DHFlipRenderer.h"
+#import "DHReflectionRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -133,6 +134,13 @@
         {
             self.renderer = [[DHFlipRenderer alloc] init];
         }
+            break;
+        case AnimationTypeReflection:
+        {
+            self.renderer = [[DHReflectionRenderer alloc] init];
+        }
+            break;
+        
         default:
             break;
     }

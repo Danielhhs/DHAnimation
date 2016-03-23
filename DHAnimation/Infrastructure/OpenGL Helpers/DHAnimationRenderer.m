@@ -76,16 +76,16 @@
     [self setupDrawingContext];
     [self setupMvpMatrixWithView:view];
     
-    [self prepareToDrawDestinationFace];
-    glUseProgram(dstProgram);
-    glUniform1f(dstPercentLoc, self.percent);
-    glUniform1i(dstDirectionLoc, self.direction);
-    [self setupUniformsForDestinationProgram];
-    [self.dstMesh prepareToDraw];
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, dstTexture);
-    glUniform1i(dstSamplerLoc, 0);
-    [self.dstMesh drawEntireMesh];
+//    [self prepareToDrawDestinationFace];
+//    glUseProgram(dstProgram);
+//    glUniform1f(dstPercentLoc, self.percent);
+//    glUniform1i(dstDirectionLoc, self.direction);
+//    [self setupUniformsForDestinationProgram];
+//    [self.dstMesh prepareToDraw];
+//    glActiveTexture(GL_TEXTURE0);
+//    glBindTexture(GL_TEXTURE_2D, dstTexture);
+//    glUniform1i(dstSamplerLoc, 0);
+//    [self.dstMesh drawEntireMesh];
     
     [self prepareToDrawSourceFace];
     glUseProgram(srcProgram);

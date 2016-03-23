@@ -59,6 +59,11 @@
 		548738011CA155050006042F /* FlipDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548738001CA155050006042F /* FlipDestinationVertex.glsl */; };
 		548738031CA155BC0006042F /* FlipDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548738021CA155BC0006042F /* FlipDestinationFragment.glsl */; };
 		548738061CA155CB0006042F /* DHFlipRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548738051CA155CB0006042F /* DHFlipRenderer.m */; };
+		54E192EA1CA2294400B29852 /* DHReflectionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E192E91CA2294400B29852 /* DHReflectionRenderer.m */; };
+		54E192EC1CA2295500B29852 /* ReflectionSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E192EB1CA2295500B29852 /* ReflectionSourceVertex.glsl */; };
+		54E192EE1CA2296100B29852 /* ReflectionSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E192ED1CA2296100B29852 /* ReflectionSourceFragment.glsl */; };
+		54E192F01CA2296E00B29852 /* ReflectionDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E192EF1CA2296E00B29852 /* ReflectionDestinationVertex.glsl */; };
+		54E192F21CA2297A00B29852 /* ReflectionDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54E192F11CA2297A00B29852 /* ReflectionDestinationFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* ViewController.m */; };
@@ -214,6 +219,12 @@
 		548738021CA155BC0006042F /* FlipDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlipDestinationFragment.glsl; sourceTree = "<group>"; };
 		548738041CA155CB0006042F /* DHFlipRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlipRenderer.h; sourceTree = "<group>"; };
 		548738051CA155CB0006042F /* DHFlipRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlipRenderer.m; sourceTree = "<group>"; };
+		54E192E81CA2294400B29852 /* DHReflectionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHReflectionRenderer.h; sourceTree = "<group>"; };
+		54E192E91CA2294400B29852 /* DHReflectionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHReflectionRenderer.m; sourceTree = "<group>"; };
+		54E192EB1CA2295500B29852 /* ReflectionSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceVertex.glsl; sourceTree = "<group>"; };
+		54E192ED1CA2296100B29852 /* ReflectionSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceFragment.glsl; sourceTree = "<group>"; };
+		54E192EF1CA2296E00B29852 /* ReflectionDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationVertex.glsl; sourceTree = "<group>"; };
+		54E192F11CA2297A00B29852 /* ReflectionDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -458,6 +469,20 @@
 			path = Flip;
 			sourceTree = "<group>";
 		};
+		54E192E71CA2292F00B29852 /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				54E192E81CA2294400B29852 /* DHReflectionRenderer.h */,
+				54E192E91CA2294400B29852 /* DHReflectionRenderer.m */,
+				54E192EB1CA2295500B29852 /* ReflectionSourceVertex.glsl */,
+				54E192ED1CA2296100B29852 /* ReflectionSourceFragment.glsl */,
+				54E192EF1CA2296E00B29852 /* ReflectionDestinationVertex.glsl */,
+				54E192F11CA2297A00B29852 /* ReflectionDestinationFragment.glsl */,
+			);
+			name = Reflection;
+			path = DoorWay/Reflection;
+			sourceTree = "<group>";
+		};
 		54E263F01C8EBCBF00FFB67E = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +576,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				54E192E71CA2292F00B29852 /* Reflection */,
 				548737FB1CA154A30006042F /* Flip */,
 				548737EF1CA0E8B80006042F /* Cover */,
 				548737C71C9F83EC0006042F /* Flop */,
@@ -832,11 +858,13 @@
 				54E4B51C1C9AD51200FB4EC2 /* PushSourceFragment.glsl in Resources */,
 				544698411C96D78700FF5EFA /* ClothLineDestinationFragment.glsl in Resources */,
 				54EB21481C9171E10016A023 /* TwistSourceFragment.glsl in Resources */,
+				54E192EC1CA2295500B29852 /* ReflectionSourceVertex.glsl in Resources */,
 				544698721C97D29900FF5EFA /* ShredderBackPieceVertex.glsl in Resources */,
 				544698751C97D29900FF5EFA /* ShredderFragment.glsl in Resources */,
 				544698711C97D29900FF5EFA /* ShredderBackPieceFragment.glsl in Resources */,
 				54E4B51E1C9AD51D00FB4EC2 /* PushDestinationVertex.glsl in Resources */,
 				54E264821C8FC5AC00FFB67E /* 6.jpg in Resources */,
+				54E192F21CA2297A00B29852 /* ReflectionDestinationFragment.glsl in Resources */,
 				54EC58451C902680009D812C /* CubeDestinationFragment.glsl in Resources */,
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
 				54EC584A1C902680009D812C /* CubeSourceFragment.glsl in Resources */,
@@ -851,7 +879,9 @@
 				545F0A071C98112300CE03E3 /* GridSourceFragment.glsl in Resources */,
 				54E4B5251C9B8EE200FB4EC2 /* RevealSourceFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
+				54E192EE1CA2296100B29852 /* ReflectionSourceFragment.glsl in Resources */,
 				54EC584C1C902680009D812C /* CubeSourceVertex.glsl in Resources */,
+				54E192F01CA2296E00B29852 /* ReflectionDestinationVertex.glsl in Resources */,
 				545F0A111C99046400CE03E3 /* ConfettiSourceVertex.glsl in Resources */,
 				54E264621C8EBDDA00FFB67E /* DoorWaySourceFragment.glsl in Resources */,
 				548738011CA155050006042F /* FlipDestinationVertex.glsl in Resources */,
@@ -964,6 +994,7 @@
 				545F0A1A1C9907F300CE03E3 /* DHConfettiSourceMesh.m in Sources */,
 				544698771C97D29900FF5EFA /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
 				54E264611C8EBDDA00FFB67E /* DHDoorWayRenderer.m in Sources */,
+				54E192EA1CA2294400B29852 /* DHReflectionRenderer.m in Sources */,
 				54EC584B1C902680009D812C /* DHCubeSourceMesh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
