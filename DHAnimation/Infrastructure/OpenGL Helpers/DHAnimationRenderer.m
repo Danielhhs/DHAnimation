@@ -76,16 +76,16 @@
     [self setupDrawingContext];
     [self setupMvpMatrixWithView:view];
     
-//    [self prepareToDrawDestinationFace];
-//    glUseProgram(dstProgram);
-//    glUniform1f(dstPercentLoc, self.percent);
-//    glUniform1i(dstDirectionLoc, self.direction);
-//    [self setupUniformsForDestinationProgram];
-//    [self.dstMesh prepareToDraw];
-//    glActiveTexture(GL_TEXTURE0);
-//    glBindTexture(GL_TEXTURE_2D, dstTexture);
-//    glUniform1i(dstSamplerLoc, 0);
-//    [self.dstMesh drawEntireMesh];
+    [self prepareToDrawDestinationFace];
+    glUseProgram(dstProgram);
+    glUniform1f(dstPercentLoc, self.percent);
+    glUniform1i(dstDirectionLoc, self.direction);
+    [self setupUniformsForDestinationProgram];
+    [self.dstMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, dstTexture);
+    glUniform1i(dstSamplerLoc, 0);
+    [self.dstMesh drawEntireMesh];
     
     [self prepareToDrawSourceFace];
     glUseProgram(srcProgram);
@@ -103,8 +103,7 @@
 {
     self.elapsedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
-        GLfloat populatedTime = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
-        self.percent = populatedTime / self.duration;
+        [self populatePercent];
         [self.animationView display];
     } else {
         self.percent = 1;
@@ -222,5 +221,11 @@
 - (void) setupDrawingContext
 {
     
+}
+
+- (void) populatePercent
+{
+    GLfloat populatedTime = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
+    self.percent = populatedTime / self.duration;
 }
 @end

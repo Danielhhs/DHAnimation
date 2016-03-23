@@ -56,6 +56,10 @@
 //Create textures for fromView and toView; default implementation create simple texture for fromView and toView;
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView;
 
+//Override this method to populate the current percentage of animation process;
+//Default implementation is to populate the percent by timinigFunction;
+- (void) populatePercent;
+
 //Set up default mvp matrix; Override if necessary
 //modelview = translation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24))
 //projection = perspective(M_PI / 12, view.bounds.size.width / view.bounds.size.height, 1, 10000);

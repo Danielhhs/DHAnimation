@@ -24,6 +24,7 @@
 #import "DHCoverRenderer.h"
 #import "DHFlipRenderer.h"
 #import "DHReflectionRenderer.h"
+#import "DHSpinDismissRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -140,7 +141,10 @@
             self.renderer = [[DHReflectionRenderer alloc] init];
         }
             break;
-        
+        case AnimationTypeRotateDismiss:
+        {
+            self.renderer = [[DHSpinDismissRenderer alloc] init];
+        }
         default:
             break;
     }
