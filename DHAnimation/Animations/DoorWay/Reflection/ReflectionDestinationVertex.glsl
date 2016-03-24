@@ -9,20 +9,24 @@ layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
 
 out vec2 v_texCoords;
+out vec3 v_normal;
 
 vec4 updatedPosition()
 {
     vec4 position = a_position;
     
-    float rotation = u_maxRotation * u_percent;
-    position.x = u_screenWidth * cos(rotation);
-    position.z = -1.f * u_screenWidth * sin(rotation);
+    if (a_position.x == 0.f) {
+        position.z = u_screenWidth;
+    } else {
+        position.x = 0.f;
+    }
     
     return position;
 }
 
 void main() {
     vec4 position = updatedPosition();
-    gl_Position = u_mvpMatrix * a_position;
+    gl_Position = u_mvpMatrix * position;
     v_texCoords = a_texCoords;
+    v_normal = vec3(1.f, 0.f, 0.f);
 }

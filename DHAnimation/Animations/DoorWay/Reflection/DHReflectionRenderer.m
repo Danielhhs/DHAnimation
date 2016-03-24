@@ -12,7 +12,8 @@
 
 @interface DHReflectionRenderer () {
     GLuint srcScreenWidthLoc, dstScreenWidthLoc;
-    GLuint srcMaxRotationLoc, dstMaxRotationLoc;
+    GLuint srcRotatePositionLoc, dstRotatePositionLoc;
+    GLuint srcModelViewMatrixLoc, dstModelViewMatrixLoc;
 }
 
 @end
@@ -37,23 +38,42 @@
     [super setupGL];
     glUseProgram(srcProgram);
     srcScreenWidthLoc = glGetUniformLocation(srcProgram, "u_screenWidth");
-    srcMaxRotationLoc = glGetUniformLocation(srcProgram, "u_maxRotation");
+    srcRotatePositionLoc = glGetUniformLocation(srcProgram, "u_rotatePosition");
+    srcModelViewMatrixLoc = glGetUniformLocation(srcProgram, "u_modelViewMatrix");
     
     glUseProgram(dstProgram);
     dstScreenWidthLoc = glGetUniformLocation(dstProgram, "u_screenWidth");
-    dstMaxRotationLoc = glGetUniformLocation(dstProgram, "u_maxRotation");
+    dstRotatePositionLoc = glGetUniformLocation(dstProgram, "u_rotatePosition");
+    dstModelViewMatrixLoc = glGetUniformLocation(dstProgram, "u_modelViewMatrix");
 }
 
 - (void) setupUniformsForSourceProgram
 {
     glUniform1f(srcScreenWidthLoc, self.animationView.bounds.size.width);
-    glUniform1f(srcMaxRotationLoc, MAX_ROTATION);
+    glUniform1f(srcRotatePositionLoc, self.animationView.bounds.size.width * 0.618);
 }
 
 - (void) setupUniformsForDestinationProgram
 {
     glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
-    glUniform1f(dstMaxRotationLoc, MAX_ROTATION);
+    glUniform1f(dstRotatePositionLoc, self.animationView.bounds.size.width * 0.618);
 }
 
+- (void) setupMvpMatrixWithView:(UIView *)view
+{
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2 + view.bounds.size.width * self.percent, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24) - sin(self.percent * M_PI) * 300);
+    GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 0, -sin(self.percent * M_PI_2), 0, -cos(self.percent * M_PI_2), 0, 1, 0);
+    GLfloat aspect = view.bounds.size.width / view.bounds.size.height;
+    GLKMatrix4 projectioin = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), aspect, 1, 10000);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(modelMatrix, viewMatrix);
+    GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(projectioin, modelViewMatrix);
+    
+    glUseProgram(srcProgram);
+    glUniformMatrix4fv(srcMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniformMatrix4fv(srcModelViewMatrixLoc, 1, GL_FALSE, modelViewMatrix.m);
+    
+    glUseProgram(dstProgram);
+    glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniformMatrix4fv(dstModelViewMatrixLoc, 1, GL_FALSE, modelViewMatrix.m);
+}
 @end
