@@ -25,6 +25,7 @@
 #import "DHFlipRenderer.h"
 #import "DHReflectionRenderer.h"
 #import "DHSpinDismissRenderer.h"
+#import "DHRippleRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -145,6 +146,12 @@
         {
             self.renderer = [[DHSpinDismissRenderer alloc] init];
         }
+            break;
+        case AnimationTypeRipple:
+        {
+            self.renderer = [[DHRippleRenderer alloc] init];
+        }
+            break;
         default:
             break;
     }
