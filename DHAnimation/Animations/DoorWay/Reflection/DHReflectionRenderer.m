@@ -61,8 +61,21 @@
 
 - (void) setupMvpMatrixWithView:(UIView *)view
 {
-    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2 + view.bounds.size.width * self.percent, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24) - sin(self.percent * M_PI) * 300);
-    GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 0, -sin(self.percent * M_PI_2), 0, -cos(self.percent * M_PI_2), 0, 1, 0);
+    GLfloat xOffset = 0.f;
+    if (self.direction == AnimationDirectionLeftToRight) {
+        xOffset = view.bounds.size.width * self.percent;
+    }
+    float zOffset = 0.f;
+    if (self.direction != AnimationDirectionLeftToRight) {
+        zOffset = view.bounds.size.width * self.percent;
+    }
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2 + xOffset, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24) + zOffset - sin(self.percent * M_PI) * 300);
+    
+    int direction = 1;
+    if (self.direction == AnimationDirectionLeftToRight) {
+        direction = -1;
+    }
+    GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 0, direction * sin(self.percent * M_PI_2), 0, -cos(self.percent * M_PI_2), 0, 1, 0);
     GLfloat aspect = view.bounds.size.width / view.bounds.size.height;
     GLKMatrix4 projectioin = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), aspect, 1, 10000);
     GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(modelMatrix, viewMatrix);

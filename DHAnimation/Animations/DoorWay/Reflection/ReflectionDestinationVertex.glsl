@@ -4,6 +4,7 @@ uniform mat4 u_mvpMatrix;
 uniform float u_percent;
 uniform float u_screenWidth;
 uniform float u_maxRotation;
+uniform int u_direction;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -15,10 +16,18 @@ vec4 updatedPosition()
 {
     vec4 position = a_position;
     
-    if (a_position.x == 0.f) {
-        position.z = u_screenWidth;
+    if (u_direction == 0) {
+        if (a_position.x == 0.f) {
+            position.z = u_screenWidth;
+        } else {
+            position.x = 0.f;
+        }
     } else {
-        position.x = 0.f;
+        if (a_position.x == 0.f) {
+            position.x = u_screenWidth;
+        } else {
+            position.z = u_screenWidth;
+        }
     }
     
     return position;
