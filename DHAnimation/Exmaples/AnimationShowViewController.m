@@ -26,6 +26,7 @@
 #import "DHReflectionRenderer.h"
 #import "DHSpinDismissRenderer.h"
 #import "DHRippleRenderer.h"
+#import "DHResolvingDoorRenderer.h"
 
 @interface AnimationShowViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
@@ -152,6 +153,11 @@
             self.renderer = [[DHRippleRenderer alloc] init];
         }
             break;
+        case AnimationTypeResolvingDoor:
+        {
+            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
+            self.renderer = [[DHResolvingDoorRenderer alloc] init];
+        }
         default:
             break;
     }

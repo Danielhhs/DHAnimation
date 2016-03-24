@@ -48,6 +48,11 @@
 		547874C91CA3E91B00012F76 /* RippleSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874C81CA3E91B00012F76 /* RippleSourceFragment.glsl */; };
 		547874CB1CA3E92400012F76 /* RippleDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874CA1CA3E92400012F76 /* RippleDestinationVertex.glsl */; };
 		547874CD1CA3E93100012F76 /* RippleDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874CC1CA3E93100012F76 /* RippleDestinationFragment.glsl */; };
+		547874D21CA4083B00012F76 /* DHResolvingDoorRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547874D11CA4083B00012F76 /* DHResolvingDoorRenderer.m */; };
+		547874D41CA4085100012F76 /* ResolvingDoorSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874D31CA4085100012F76 /* ResolvingDoorSourceVertex.glsl */; };
+		547874D61CA4086400012F76 /* ResolvingDoorSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874D51CA4086400012F76 /* ResolvingDoorSourceFragment.glsl */; };
+		547874D81CA408D900012F76 /* ResolvingDoorDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874D71CA408D900012F76 /* ResolvingDoorDestinationVertex.glsl */; };
+		547874DA1CA40A5300012F76 /* ResolvingDoorDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547874D91CA40A5300012F76 /* ResolvingDoorDestinationFragment.glsl */; };
 		548737C61C9EAC2C0006042F /* DHMosaicBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 548737C51C9EAC2C0006042F /* DHMosaicBackMesh.m */; };
 		548737CA1C9F83FA0006042F /* DHFlopRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548737C91C9F83FA0006042F /* DHFlopRenderer.m */; };
 		548737CC1C9F84160006042F /* FlopSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548737CB1C9F84160006042F /* FlopSourceVertex.glsl */; };
@@ -213,6 +218,12 @@
 		547874C81CA3E91B00012F76 /* RippleSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleSourceFragment.glsl; sourceTree = "<group>"; };
 		547874CA1CA3E92400012F76 /* RippleDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleDestinationVertex.glsl; sourceTree = "<group>"; };
 		547874CC1CA3E93100012F76 /* RippleDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleDestinationFragment.glsl; sourceTree = "<group>"; };
+		547874D01CA4083B00012F76 /* DHResolvingDoorRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHResolvingDoorRenderer.h; sourceTree = "<group>"; };
+		547874D11CA4083B00012F76 /* DHResolvingDoorRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHResolvingDoorRenderer.m; sourceTree = "<group>"; };
+		547874D31CA4085100012F76 /* ResolvingDoorSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorSourceVertex.glsl; sourceTree = "<group>"; };
+		547874D51CA4086400012F76 /* ResolvingDoorSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorSourceFragment.glsl; sourceTree = "<group>"; };
+		547874D71CA408D900012F76 /* ResolvingDoorDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorDestinationVertex.glsl; sourceTree = "<group>"; };
+		547874D91CA40A5300012F76 /* ResolvingDoorDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorDestinationFragment.glsl; sourceTree = "<group>"; };
 		548737C41C9EAC2C0006042F /* DHMosaicBackMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicBackMesh.h; sourceTree = "<group>"; };
 		548737C51C9EAC2C0006042F /* DHMosaicBackMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicBackMesh.m; sourceTree = "<group>"; };
 		548737C81C9F83FA0006042F /* DHFlopRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlopRenderer.h; sourceTree = "<group>"; };
@@ -461,6 +472,19 @@
 			path = Ripple;
 			sourceTree = "<group>";
 		};
+		547874CF1CA4082A00012F76 /* Resolving Door */ = {
+			isa = PBXGroup;
+			children = (
+				547874D01CA4083B00012F76 /* DHResolvingDoorRenderer.h */,
+				547874D11CA4083B00012F76 /* DHResolvingDoorRenderer.m */,
+				547874D31CA4085100012F76 /* ResolvingDoorSourceVertex.glsl */,
+				547874D51CA4086400012F76 /* ResolvingDoorSourceFragment.glsl */,
+				547874D71CA408D900012F76 /* ResolvingDoorDestinationVertex.glsl */,
+				547874D91CA40A5300012F76 /* ResolvingDoorDestinationFragment.glsl */,
+			);
+			path = "Resolving Door";
+			sourceTree = "<group>";
+		};
 		548737C71C9F83EC0006042F /* Flop */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +642,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				547874CF1CA4082A00012F76 /* Resolving Door */,
 				547874C21CA3E8EE00012F76 /* Ripple */,
 				54E193021CA2433A00B29852 /* RotateDismiss */,
 				54E192E71CA2292F00B29852 /* Reflection */,
@@ -927,8 +952,10 @@
 				54E4B5251C9B8EE200FB4EC2 /* RevealSourceFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
 				54E192EE1CA2296100B29852 /* ReflectionSourceFragment.glsl in Resources */,
+				547874D61CA4086400012F76 /* ResolvingDoorSourceFragment.glsl in Resources */,
 				54EC584C1C902680009D812C /* CubeSourceVertex.glsl in Resources */,
 				547874CB1CA3E92400012F76 /* RippleDestinationVertex.glsl in Resources */,
+				547874D41CA4085100012F76 /* ResolvingDoorSourceVertex.glsl in Resources */,
 				54E192F01CA2296E00B29852 /* ReflectionDestinationVertex.glsl in Resources */,
 				545F0A111C99046400CE03E3 /* ConfettiSourceVertex.glsl in Resources */,
 				54E264621C8EBDDA00FFB67E /* DoorWaySourceFragment.glsl in Resources */,
@@ -949,11 +976,13 @@
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
 				548737F41CA0EBFF0006042F /* CoverSourceVertex.glsl in Resources */,
 				548737F61CA0EC090006042F /* CoverSourceFragment.glsl in Resources */,
+				547874D81CA408D900012F76 /* ResolvingDoorDestinationVertex.glsl in Resources */,
 				547874C91CA3E91B00012F76 /* RippleSourceFragment.glsl in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				54E2645F1C8EBDDA00FFB67E /* DoorWayDestinationFragment.glsl in Resources */,
 				54E264811C8FC5AC00FFB67E /* 5.jpg in Resources */,
 				5446983B1C96D56200FF5EFA /* ClothLineSourceVertex.glsl in Resources */,
+				547874DA1CA40A5300012F76 /* ResolvingDoorDestinationFragment.glsl in Resources */,
 				54EB214A1C9171F60016A023 /* TwistDestinationVertex.glsl in Resources */,
 				54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */,
 				544698731C97D29900FF5EFA /* ShredderConfettiFragment.glsl in Resources */,
@@ -1045,6 +1074,7 @@
 				54EC58461C902680009D812C /* DHCubeDestinationMesh.m in Sources */,
 				545F0A1A1C9907F300CE03E3 /* DHConfettiSourceMesh.m in Sources */,
 				544698771C97D29900FF5EFA /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
+				547874D21CA4083B00012F76 /* DHResolvingDoorRenderer.m in Sources */,
 				54E264611C8EBDDA00FFB67E /* DHDoorWayRenderer.m in Sources */,
 				54E192EA1CA2294400B29852 /* DHReflectionRenderer.m in Sources */,
 				54EC584B1C902680009D812C /* DHCubeSourceMesh.m in Sources */,

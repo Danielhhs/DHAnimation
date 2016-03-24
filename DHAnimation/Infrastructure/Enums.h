@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, AnimationType) {
     AnimationTypeReflection = 15,
     AnimationTypeRotateDismiss = 16,
     AnimationTypeRipple = 17,
+    AnimationTypeResolvingDoor = 18,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
