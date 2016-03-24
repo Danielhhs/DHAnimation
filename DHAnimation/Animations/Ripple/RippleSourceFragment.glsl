@@ -15,7 +15,7 @@ void main() {
     vec2 pos = -1.f + 2.0 * gl_FragCoord.xy / u_resolution;
     float cLength = length(pos);
     
-    vec2 uv = gl_FragCoord.xy/u_resolution.xy+(pos/cLength)*cos(cLength*24.0-u_time*8.0)*0.03;
+    vec2 uv = gl_FragCoord.xy/u_resolution.xy+(pos/cLength)*cos(cLength*18.0-u_time*10.0)*0.03;
     vec3 col = texture(s_tex,uv).xyz;
     
     out_color = vec4(col,1.f - u_percent);
