@@ -140,7 +140,7 @@
 		54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E2647A1C8FC5AC00FFB67E /* 8.jpg */; };
 		54E264851C8FC5AC00FFB67E /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E2647B1C8FC5AC00FFB67E /* 9.jpg */; };
 		54E264881C8FC74000FFB67E /* AnimationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264871C8FC74000FFB67E /* AnimationSettingViewController.m */; };
-		54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58111C8FD25F009D812C /* DHAnimationRenderer.m */; };
+		54EC581B1C8FD25F009D812C /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58111C8FD25F009D812C /* DHTransitionRenderer.m */; };
 		54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58131C8FD25F009D812C /* OpenGLHelper.m */; };
 		54EC581D1C8FD25F009D812C /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58151C8FD25F009D812C /* SceneMesh.m */; };
 		54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58171C8FD25F009D812C /* TextureHelper.m */; };
@@ -343,8 +343,8 @@
 		54E2647B1C8FC5AC00FFB67E /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		54E264861C8FC74000FFB67E /* AnimationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationSettingViewController.h; sourceTree = "<group>"; };
 		54E264871C8FC74000FFB67E /* AnimationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationSettingViewController.m; sourceTree = "<group>"; };
-		54EC58101C8FD25F009D812C /* DHAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAnimationRenderer.h; sourceTree = "<group>"; };
-		54EC58111C8FD25F009D812C /* DHAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAnimationRenderer.m; sourceTree = "<group>"; };
+		54EC58101C8FD25F009D812C /* DHTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionRenderer.h; sourceTree = "<group>"; };
+		54EC58111C8FD25F009D812C /* DHTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionRenderer.m; sourceTree = "<group>"; };
 		54EC58121C8FD25F009D812C /* OpenGLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLHelper.h; sourceTree = "<group>"; };
 		54EC58131C8FD25F009D812C /* OpenGLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLHelper.m; sourceTree = "<group>"; };
 		54EC58141C8FD25F009D812C /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
@@ -834,8 +834,8 @@
 		54EC580F1C8FD25F009D812C /* OpenGL Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				54EC58101C8FD25F009D812C /* DHAnimationRenderer.h */,
-				54EC58111C8FD25F009D812C /* DHAnimationRenderer.m */,
+				54EC58101C8FD25F009D812C /* DHTransitionRenderer.h */,
+				54EC58111C8FD25F009D812C /* DHTransitionRenderer.m */,
 				54EC58121C8FD25F009D812C /* OpenGLHelper.h */,
 				54EC58131C8FD25F009D812C /* OpenGLHelper.m */,
 				54EC58141C8FD25F009D812C /* SceneMesh.h */,
@@ -1108,7 +1108,7 @@
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				547875D01CA4D61B00012F76 /* DHCoverRenderer.m in Sources */,
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,
-				54EC581B1C8FD25F009D812C /* DHAnimationRenderer.m in Sources */,
+				54EC581B1C8FD25F009D812C /* DHTransitionRenderer.m in Sources */,
 				547876241CA4D61B00012F76 /* DHSwitchRenderer.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
 				547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */,

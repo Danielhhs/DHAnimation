@@ -8,26 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, AnimationType) {
-    AnimationTypeDoorWay = 0,
-    AnimationTypeCube = 1,
-    AnimationTypeTwist = 2,
-    AnimationTypeClothLine = 3,
-    AnimationTypeShredder = 4,
-    AnimationTypeSwitch = 5,
-    AnimationTypeGrid = 6,
-    AnimationTypeConfetti = 7,
-    AnimationTypePush = 8,
-    AnimationTypeReveal = 9,
-    AnimationTypeDrop = 10,
-    AnimationTypeMosaic = 11,
-    AnimationTypeFlop = 12,
-    AnimationTypeCover = 13,
-    AnimationTypeFlip = 14,
-    AnimationTypeReflection = 15,
-    AnimationTypeRotateDismiss = 16,
-    AnimationTypeRipple = 17,
-    AnimationTypeResolvingDoor = 18,
+typedef NS_ENUM(NSInteger, TransitionType) {
+    TransitionTypeDoorWay = 0,
+    TransitionTypeCube = 1,
+    TransitionTypeTwist = 2,
+    TransitionTypeClothLine = 3,
+    TransitionTypeShredder = 4,
+    TransitionTypeSwitch = 5,
+    TransitionTypeGrid = 6,
+    TransitionTypeConfetti = 7,
+    TransitionTypePush = 8,
+    TransitionTypeReveal = 9,
+    TransitionTypeDrop = 10,
+    TransitionTypeMosaic = 11,
+    TransitionTypeFlop = 12,
+    TransitionTypeCover = 13,
+    TransitionTypeFlip = 14,
+    TransitionTypeReflection = 15,
+    TransitionTypeRotateDismiss = 16,
+    TransitionTypeRipple = 17,
+    TransitionTypeResolvingDoor = 18,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

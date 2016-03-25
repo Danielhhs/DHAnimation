@@ -6,12 +6,12 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHAnimationRenderer.h"
+#import "DHTransitionRenderer.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
 
-@implementation DHAnimationRenderer
+@implementation DHTransitionRenderer
 
 #pragma mark - Public Animation APIs
 - (void) performAnimationWithSettings:(DHAnimationSettings *)settings

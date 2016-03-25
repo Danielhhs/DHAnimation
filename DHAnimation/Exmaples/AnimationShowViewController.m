@@ -55,105 +55,105 @@
 {
     [self updateAnimationSettings];
     switch (self.animationType) {
-        case AnimationTypeDoorWay:
+        case TransitionTypeDoorWay:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
             self.renderer = [[DHDoorWayRenderer alloc] init];
         }
             break;
-        case AnimationTypeCube:
+        case TransitionTypeCube:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
             self.renderer = [[DHCubeRenderer alloc] init];
         }
             break;
-        case AnimationTypeTwist:
+        case TransitionTypeTwist:
         {
             self.renderer = [[DHTwistRenderer alloc] init];
         }
             break;
-        case AnimationTypeClothLine:
+        case TransitionTypeClothLine:
         {
             self.settings.duration = 3.f;
             self.renderer = [[DHClothLineRenderer alloc] init];
         }
             break;
-        case AnimationTypeShredder:
+        case TransitionTypeShredder:
         {
             self.settings.columnCount = 12;
             self.settings.duration = 3.f;
             self.renderer = [[DHShredderRenderer alloc] init];
         }
             break;
-        case AnimationTypeSwitch:
+        case TransitionTypeSwitch:
         {
             self.renderer = [[DHSwitchRenderer alloc] init];
         }
             break;
-        case AnimationTypeGrid:
+        case TransitionTypeGrid:
         {
             self.renderer = [[DHGridRenderer alloc] init];
         }
             break;
-        case AnimationTypeConfetti:
+        case TransitionTypeConfetti:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
             self.settings.duration = 2;
             self.renderer = [[DHConfettiRenderer alloc] init];
         }
             break;
-        case AnimationTypePush:
+        case TransitionTypePush:
         {
             self.renderer = [[DHPushRenderer alloc] init];
         }
             break;
-        case AnimationTypeReveal:
+        case TransitionTypeReveal:
         {
             self.renderer = [[DHRevealRenderer alloc] init];
         }
             break;
-        case AnimationTypeDrop:
+        case TransitionTypeDrop:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
             self.renderer = [[DHDropRenderer alloc] init];
         }
             break;
-        case AnimationTypeMosaic:
+        case TransitionTypeMosaic:
         {
             self.renderer = [[DHMosaicRenderer alloc] init];
         }
             break;
-        case AnimationTypeFlop:
+        case TransitionTypeFlop:
         {
             self.renderer = [[DHFlopRenderer alloc] init];
         }
             break;
-        case AnimationTypeCover:
+        case TransitionTypeCover:
         {
             self.renderer = [[DHCoverRenderer alloc] init];
         }
             break;
-        case AnimationTypeFlip:
+        case TransitionTypeFlip:
         {
             self.renderer = [[DHFlipRenderer alloc] init];
         }
             break;
-        case AnimationTypeReflection:
+        case TransitionTypeReflection:
         {
             self.renderer = [[DHReflectionRenderer alloc] init];
         }
             break;
-        case AnimationTypeRotateDismiss:
+        case TransitionTypeRotateDismiss:
         {
             self.renderer = [[DHSpinDismissRenderer alloc] init];
         }
             break;
-        case AnimationTypeRipple:
+        case TransitionTypeRipple:
         {
             self.renderer = [[DHRippleRenderer alloc] init];
         }
             break;
-        case AnimationTypeResolvingDoor:
+        case TransitionTypeResolvingDoor:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
             self.renderer = [[DHResolvingDoorRenderer alloc] init];
