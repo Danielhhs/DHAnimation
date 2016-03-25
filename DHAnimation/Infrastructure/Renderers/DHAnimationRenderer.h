@@ -10,7 +10,7 @@
 #import "DHAnimationSettings.h"
 #import "SceneMesh.h"
 
-@interface DHTransitionRenderer : NSObject<GLKViewDelegate> {
+@interface DHAnimationRenderer : NSObject<GLKViewDelegate> {
     GLuint srcProgram, dstProgram;
     GLuint srcTexture, dstTexture;
     GLuint srcMvpLoc, srcSamplerLoc;
