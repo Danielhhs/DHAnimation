@@ -155,7 +155,7 @@
             break;
         case TransitionTypeResolvingDoor:
         {
-            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
+            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
             self.renderer = [[DHResolvingDoorRenderer alloc] init];
         }
         default:
