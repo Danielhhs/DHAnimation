@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHTransitionRenderer.h"
+#import "DHAnimationRenderer.h"
 #import "NSBKeyframeAnimationFunctions.h"
 
-@interface DHDoorWayRenderer : DHTransitionRenderer
+@interface DHDoorWayRenderer : DHAnimationRenderer
 
 @end

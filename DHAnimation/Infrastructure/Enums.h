@@ -30,6 +30,10 @@ typedef NS_ENUM(NSInteger, TransitionType) {
     TransitionTypeResolvingDoor = 18,
 };
 
+typedef NS_ENUM(NSInteger, ParticleAnimationType) {
+    ParticleAnimationTypeShimmer = 0,
+};
+
 typedef NS_ENUM(NSInteger, AnimationDirection) {
     AnimationDirectionLeftToRight = 0,
     AnimationDirectionRightToLeft = 1,

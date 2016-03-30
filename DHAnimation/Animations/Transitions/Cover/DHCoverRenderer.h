@@ -6,8 +6,8 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHTransitionRenderer.h"
+#import "DHAnimationRenderer.h"
 
-@interface DHCoverRenderer : DHTransitionRenderer
+@interface DHCoverRenderer : DHAnimationRenderer
 
 @end

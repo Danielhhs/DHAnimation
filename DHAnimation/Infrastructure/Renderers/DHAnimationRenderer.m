@@ -206,6 +206,7 @@
     
     glUseProgram(dstProgram);
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    self.mvpMatrix = mvpMatrix;
 }
 
 - (void) setupUniformsForSourceProgram

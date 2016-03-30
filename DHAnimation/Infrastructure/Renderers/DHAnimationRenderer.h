@@ -31,6 +31,7 @@
 @property (nonatomic, weak) UIView *fromView;
 @property (nonatomic, weak) UIView *toView;
 @property (nonatomic) NSInteger columnCount;
+@property (nonatomic) GLKMatrix4 mvpMatrix;
 
 @property (nonatomic, strong) NSString *srcVertexShaderFileName;
 @property (nonatomic, strong) NSString *srcFragmentShaderFileName;

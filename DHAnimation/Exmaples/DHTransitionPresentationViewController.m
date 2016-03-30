@@ -6,7 +6,7 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "AnimationShowViewController.h"
+#import "DHTransitionPresentationViewController.h"
 #import "DHDoorWayRenderer.h"
 #import "DHCubeRenderer.h"
 #import "DHTwistRenderer.h"
@@ -28,13 +28,13 @@
 #import "DHRippleRenderer.h"
 #import "DHResolvingDoorRenderer.h"
 
-@interface AnimationShowViewController ()
+@interface DHTransitionPresentationViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
 @property (nonatomic, strong) UIImageView *fromView;
 @property (nonatomic, strong) UIImageView *toView;
 @end
 
-@implementation AnimationShowViewController
+@implementation DHTransitionPresentationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -176,7 +176,7 @@
     self.toView.image = [self randomImage];
     self.settings.toView = self.toView;
     self.settings.containerView = self.view;
-    __weak AnimationShowViewController *weakSelf = self;
+    __weak DHTransitionPresentationViewController *weakSelf = self;
     self.settings.completion = ^{
         [weakSelf.view addSubview:weakSelf.toView];
         [weakSelf.fromView removeFromSuperview];

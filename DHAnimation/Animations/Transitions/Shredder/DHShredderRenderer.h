@@ -7,9 +7,9 @@
 //
 
 #import <GLKit/GLKit.h>
-#import "DHTransitionRenderer.h"
+#import "DHAnimationRenderer.h"
 
-@interface DHShredderRenderer : DHTransitionRenderer
+@interface DHShredderRenderer : DHAnimationRenderer
 
 
 @end

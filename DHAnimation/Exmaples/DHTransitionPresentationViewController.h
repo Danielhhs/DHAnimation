@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Enums.h"
 #import "NSBKeyframeAnimationFunctions.h"
-#import "DHTransitionRenderer.h"
-@interface AnimationShowViewController : UIViewController
+#import "DHAnimationRenderer.h"
+@interface DHTransitionPresentationViewController : UIViewController
 
 @property (nonatomic) TransitionType animationType;
-@property (nonatomic, strong) DHTransitionRenderer *renderer;
+@property (nonatomic, strong) DHAnimationRenderer *renderer;
 
 - (void) performAnimation;
 

@@ -7,7 +7,7 @@
 //
 
 #import "TransitionTypeChooseViewController.h"
-#import "AnimationShowViewController.h"
+#import "DHTransitionPresentationViewController.h"
 @interface TransitionTypeChooseViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *animations;
 @property (nonatomic) NSInteger selectedIndex;
@@ -57,8 +57,8 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:NSClassFromString(@"AnimationShowViewController")]) {
-        AnimationShowViewController *viewController = (AnimationShowViewController *)segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[DHTransitionPresentationViewController class]]) {
+        DHTransitionPresentationViewController *viewController = (DHTransitionPresentationViewController *)segue.destinationViewController;
         viewController.animationType = self.selectedIndex;
     }
 }

@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHTransitionRenderer.h"
+#import "DHAnimationRenderer.h"
 
-@interface DHDropRenderer : DHTransitionRenderer
+@interface DHDropRenderer : DHAnimationRenderer
 
 
 @end

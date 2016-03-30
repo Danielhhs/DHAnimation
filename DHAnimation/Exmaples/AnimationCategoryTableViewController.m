@@ -33,6 +33,8 @@
 {
     if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"showTransitions" sender:self];
+    } else if (indexPath.row == 2) {
+        [self performSegueWithIdentifier:@"ParticleAnimations" sender:self];
     }
 }
 @end
