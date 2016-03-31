@@ -61,6 +61,9 @@
 //Default implementation is to populate the percent by timinigFunction;
 - (void) populatePercent;
 
+//Override this method to update any mesh properties or unfiorms in update: method;
+- (void) updateMeshesAndUniforms;
+
 //Set up default mvp matrix; Override if necessary
 //modelview = translation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24))
 //projection = perspective(M_PI / 12, view.bounds.size.width / view.bounds.size.height, 1, 10000);

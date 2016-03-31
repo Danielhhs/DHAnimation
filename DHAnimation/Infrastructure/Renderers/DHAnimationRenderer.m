@@ -104,6 +104,7 @@
     self.elapsedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
         [self populatePercent];
+        [self updateMeshesAndUniforms];
         [self.animationView display];
     } else {
         self.percent = 1;
@@ -228,5 +229,10 @@
 {
     GLfloat populatedTime = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
     self.percent = populatedTime / self.duration;
+}
+
+- (void) updateMeshesAndUniforms
+{
+    
 }
 @end

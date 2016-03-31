@@ -15,7 +15,7 @@ out vec2 v_texCoords;
 const float initialSwingRatio = 0.1;
 const float transitionRatio = 0.2;
 const float finalSwingRatio = 0.7;
-const float finalSwingCycle = 0.8;
+const float finalSwingCycle = 0.5;
 
 const float pi = 3.141592657;
 const float amplitude = pi / 10.f;
