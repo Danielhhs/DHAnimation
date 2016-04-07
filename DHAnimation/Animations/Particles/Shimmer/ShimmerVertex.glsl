@@ -1,45 +1,31 @@
 #version 300 es
 
 uniform mat4 u_mvpMatrix;
-uniform float u_cellWidth;
-uniform float u_cellHeight;
 uniform float u_percent;
+uniform mat4 u_rotationMatrix;
 
-layout(location = 0) in vec4 a_position;
-layout(location = 2) in vec2 a_texCoords;
+layout(location = 0) in vec4 a_startingPosition;
+layout(location = 1) in float a_size;
+layout(location = 2) in float a_targetSize;
+layout(location = 3) in vec4 a_targettingPosition;
+layout(location = 4) in vec2 a_texCoords;
 
 out vec2 v_texCoords;
 
-const float pi = 3.1415927;
-const float pi_4 = pi / 4.f;
-
-vec4 updatedPosition() {
-    vec4 position = a_position;
-    float centerX = u_cellWidth / 2.f;
-    float centerY = u_cellHeight / 2.f;
-    float r = sqrt(centerX * centerX + centerY * centerY);
-    float rotation = u_percent * pi * 2.f;
-    float rotationOffset = 0.f;
-    if (a_position.x == 0.f) {
-        if (a_position.y == 0.f) {
-            rotationOffset = pi + pi_4;
-        } else {
-            rotationOffset = -pi_4;
-        }
-    } else {
-        if (a_position.y == 0.f) {
-            rotationOffset = pi - pi_4;
-        } else {
-            rotationOffset = pi_4;
-        }
-    }
-    position.x = centerX + r * sin(rotationOffset + rotation);
-    position.y = centerY + r * cos(rotationOffset + rotation);
-    return position;
-}
+const float transitionRatio = 0.7;
+const float maxScale = 1.6;
 
 void main() {
-    vec4 position = updatedPosition();
-    gl_Position = u_mvpMatrix * position;
+    if (u_percent <= transitionRatio) {
+        vec4 currentPosition = a_startingPosition + (a_targettingPosition - a_startingPosition) * (u_percent / transitionRatio);
+        gl_Position = u_mvpMatrix * currentPosition;
+        gl_PointSize = a_size + (a_targetSize - a_size) * (u_percent / transitionRatio);
+    } else {
+        gl_Position = u_mvpMatrix * a_targettingPosition;
+        float middleX = (1.f - transitionRatio) / 2.f;
+        float a = (1.f - maxScale) / (middleX * middleX);
+        float scale = a * (u_percent - transitionRatio - middleX) * (u_percent - transitionRatio - middleX) + maxScale;
+        gl_PointSize = a_targetSize * scale;
+    }
     v_texCoords = a_texCoords;
 }

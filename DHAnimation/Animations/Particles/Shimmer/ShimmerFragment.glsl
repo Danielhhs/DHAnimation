@@ -3,35 +3,27 @@
 precision highp float;
 
 uniform sampler2D s_tex;
-uniform int u_blurAmount;
-uniform float u_blurScale;
-uniform float u_blurStrength;
-uniform vec2 u_resolution;
-
-in vec2 v_texCoords;
+uniform float u_percent;
+uniform mat4 u_rotationMatrix;
+uniform sampler2D s_texBack;
 
 layout(location = 0) out vec4 out_color;
 
-float Gaussian(float x, float deviation) {
-    return (1.0 / sqrt(2.0 * 3.141592 * deviation)) * exp(-((x * x) / (2.0 * deviation)));
-}
+in vec2 v_texCoords;
+
+const vec4 whiteColor = vec4(1.f, 1.f, 1.f, 1.f);
 
 void main() {
-    float halfBlur = float(u_blurAmount) * 0.5;
-    vec4 color = vec4(0.f);
-    vec4 texture_color = vec4(0.f);
     
-    float deviation = halfBlur * 0.35;
-    deviation *= deviation;
-    float strength = 1.f - u_blurStrength;
+    vec4 background_color = texture(s_texBack, v_texCoords);
+    vec2 texCoord = (u_rotationMatrix * vec4(gl_PointCoord, 0.f, 1.f)).xy;
     
-    for (int i = 0; i < 10; ++i) {
-        if (i >= u_blurAmount) {
-            break;
-        }
-        float offset = float(i) - halfBlur;
-        texture_color = texture(s_tex, v_texCoords + vec2(offset * 1.f * u_blurScale, 0.f)) * Gaussian(offset * strength, deviation);
-        color += texture_color;
+    out_color = texture(s_tex, texCoord);
+    
+    if (out_color.r < 0.1 && out_color.g < 0.1 && out_color.b < 0.1) {
+        discard;
+    } else {
+        out_color = whiteColor - (whiteColor - background_color) * u_percent;
+        out_color.a = 0.8 - 0.5 * u_percent;
     }
-    out_color = clamp(color, 0.f, 1.f);
 }

@@ -1,17 +1,14 @@
 //
-//  DHShimmerRenderer.h
-//  DHAnimation
+//  ShimmerRenderer.h
+//  Shimmer
 //
-//  Created by Huang Hongsen on 3/30/16.
+//  Created by Huang Hongsen on 4/1/16.
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHAnimationRenderer.h"
+#import <GLKit/GLKit.h>
 
-@interface DHShimmerRenderer : DHAnimationRenderer
+@interface DHShimmerRenderer : NSObject
 
-@property (nonatomic) int blurAmount;
-@property (nonatomic) CGFloat blurScale;
-@property (nonatomic) CGFloat blurStrength;
-
+- (void) startAnimationForView:(UIView *)view inContainerView:(UIView *)containerView completion:(void (^)(void))completion;;
 @end

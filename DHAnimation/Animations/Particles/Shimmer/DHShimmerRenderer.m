@@ -1,68 +1,171 @@
 //
-//  DHShimmerRenderer.m
-//  DHAnimation
+//  ShimmerRenderer.m
+//  Shimmer
 //
-//  Created by Huang Hongsen on 3/30/16.
+//  Created by Huang Hongsen on 4/1/16.
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
 #import "DHShimmerRenderer.h"
+#import "OpenGLHelper.h"
 #import "TextureHelper.h"
-@interface DHShimmerRenderer() {
-    GLuint blurAmountLoc, blurStrengthLoc, blurScaleLoc;
-    GLuint resolutionLoc, sampler2Loc;
-    GLuint cellWidthLoc, cellHeightLoc;
-}
-@end
+#import <OpenGLES/ES3/glext.h>
+#import "DHShimmerBackgroundMesh.h"
+#import "DHShimmerParticleEffect.h"
+#import "DHShiningStarEffect.h"
 
+@interface DHShimmerRenderer ()<GLKViewDelegate> {
+    GLuint backgroundProgram;
+    GLuint backgroundTexture;
+    GLuint backgroundMvpLoc, backgroundMeshSamplerLoc, backgroundPercentLoc;
+    GLKMatrix4 mvpMatrix;
+}
+@property (nonatomic, strong) EAGLContext *context;
+@property (nonatomic, strong) GLKView *animationView;
+@property (nonatomic, strong) NSMutableData *shiningStarData;
+@property (nonatomic, strong) CADisplayLink *displayLink;
+@property (nonatomic) NSTimeInterval elapsedTime;
+@property (nonatomic) NSInteger numberOfParticles;
+@property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, weak) UIView *targetView;
+@property (nonatomic) CGFloat percent;
+@property (nonatomic) NSTimeInterval duration;
+@property (nonatomic, strong) void(^completion)(void);
+@property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
+@property (nonatomic) NSInteger columnCount;
+@property (nonatomic) NSInteger rowCount;
+@property (nonatomic, strong) DHShimmerParticleEffect *shimmerEffect;
+@property (nonatomic, strong) DHShiningStarEffect *starEffect;
+@property (nonatomic, strong) NSMutableArray *offsetData;
+@end
 @implementation DHShimmerRenderer
 
-- (instancetype) init
+- (void) startAnimationForView:(UIView *)view inContainerView:(UIView *)containerView completion:(void (^)(void))completion
 {
-    self = [super init];
-    if (self) {
-        self.srcVertexShaderFileName = @"ShimmerVertex.glsl";
-        self.srcFragmentShaderFileName = @"ShimmerFragment.glsl";
-        self.blurAmount = 5;
-        self.blurScale = 0.02;
-        self.blurStrength = 0.5;
-    }
-    return self;
-}
-
-- (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
-{
-    srcTexture = [TextureHelper setupTextureWithView:fromView];
+    self.elapsedTime = 0.f;
+    self.percent = 0.f;
+    self.duration = 2;
+    self.completion = completion;
+    self.targetView = view;
+    self.containerView = containerView;
+    self.rowCount = 15;
+    self.columnCount = 10;
+    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+    
+    [self setupGL];
+    [self setupMvpMatrixWithView:containerView];
+    [self generateOffsetData];
+    
+    [self setupShimmerEffect];
+    [self setupShiningStarEffect];
+    [self setupParticleTexture];
+    
+    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    [self.backgroundMesh updateWithOffsetData:self.offsetData];
+    self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
+    self.animationView.delegate = self;
+    
+    [containerView addSubview:self.animationView];
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void) setupGL
 {
-    [super setupGL];
-    glUseProgram(srcProgram);
-    blurAmountLoc = glGetUniformLocation(srcProgram, "u_blurAmount");
-    blurScaleLoc = glGetUniformLocation(srcProgram, "u_blurScale");
-    blurStrengthLoc = glGetUniformLocation(srcProgram, "u_blurStrength");
-    resolutionLoc = glGetUniformLocation(srcProgram, "u_resolution");
-    sampler2Loc = glGetUniformLocation(srcProgram, "s_tex2");
-    cellWidthLoc = glGetUniformLocation(srcProgram, "u_cellWidth");
-    cellHeightLoc = glGetUniformLocation(srcProgram, "u_cellHeight");
+    [EAGLContext setCurrentContext:self.context];
+    
+    backgroundProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ShimmerBackgroundVertex.glsl" fragmentShaderSrc:@"ShimmerBackgroundFragment.glsl"];
+    backgroundMvpLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
+    backgroundMeshSamplerLoc = glGetUniformLocation(backgroundProgram, "s_tex");
+    backgroundPercentLoc = glGetUniformLocation(backgroundProgram, "u_percent");
+    
+    glClearColor(0, 0, 0, 1);
 }
 
-- (void) setupUniformsForSourceProgram
+- (void) setupParticleTexture
 {
-    glUniform1i(blurAmountLoc, self.blurAmount);
-    glUniform1f(blurScaleLoc, self.blurScale);
-    glUniform1f(blurStrengthLoc, self.blurStrength);
-    glUniform2f(resolutionLoc, self.animationView.bounds.size.width, self.animationView.bounds.size.height);
-    glUniform1i(sampler2Loc, 1);
-    glUniform1f(cellWidthLoc, self.animationView.bounds.size.width);
-    glUniform1f(cellHeightLoc, self.animationView.bounds.size.height);
+    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
-- (void) updateMeshesAndUniforms
+- (void) update:(CADisplayLink *)displayLink
 {
-    self.blurScale = -1 * fabs(sinf(M_PI * 2 * self.percent) * 0.02);
-    self.blurStrength = -1 * fabs(sinf(M_PI * 2 * self.percent));
+    self.elapsedTime += displayLink.duration;
+    self.percent = self.elapsedTime / self.duration;
+    self.shimmerEffect.percent = self.percent;
+    self.starEffect.elapsedTime = self.elapsedTime;
+    if (self.elapsedTime < self.duration) {
+        [self.animationView display];
+    } else {
+        self.percent = 1;
+        [self.animationView display];
+        [displayLink invalidate];
+        self.displayLink = nil;
+        [self.animationView removeFromSuperview];
+        if (self.completion) {
+            self.completion();
+        }
+    }
 }
 
+- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
+{
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    [self.shimmerEffect draw];
+    
+    glUseProgram(backgroundProgram);
+    glUniformMatrix4fv(backgroundMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    [self.backgroundMesh prepareToDraw];
+    glUniform1f(backgroundPercentLoc, self.percent);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, backgroundTexture);
+    glUniform1f(backgroundMeshSamplerLoc, 0);
+    [self.backgroundMesh drawEntireMesh];
+    
+    [self.starEffect draw];
+}
+
+- (GLfloat) randomOffset
+{
+    int random = (arc4random() % 500 - 250);
+    return random;
+}
+
+- (void) setupMvpMatrixWithView:(UIView *)view
+{
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
+    GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
+    GLKMatrix4 modelView = GLKMatrix4Multiply(viewMatrix, modelMatrix);
+    GLKMatrix4 projection = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), view.bounds.size.width / view.bounds.size.height, 0.1, 10000);
+    
+    mvpMatrix = GLKMatrix4Multiply(projection, modelView);
+}
+
+- (void) setupShimmerEffect
+{
+    self.shimmerEffect = [[DHShimmerParticleEffect alloc] initWithContext:self.context columnCount:self.columnCount rowCount:self.rowCount targetView:self.targetView containerView:self.containerView offsetData:self.offsetData];
+    self.shimmerEffect.mvpMatrix = mvpMatrix;
+}
+
+- (void) generateOffsetData
+{
+    self.offsetData = [NSMutableArray array];
+    for (int x = 0; x < self.columnCount; x++) {
+        for (int y = 0; y < self.rowCount; y++) {
+            [self.offsetData addObject:@([self randomOffset])];
+            [self.offsetData addObject:@([self randomOffset])];
+            [self.offsetData addObject:@([self randomOffset])];
+        }
+    }
+}
+
+- (void) setupShiningStarEffect
+{
+    self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageNamed:@"ShiningStar.png"] targetView:self.targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
+    self.starEffect.mvpMatrix = mvpMatrix;
+}
 @end

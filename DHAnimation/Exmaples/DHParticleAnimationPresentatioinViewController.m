@@ -42,7 +42,12 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     } completion:^(BOOL finished) {
-        [self.renderer performAnimationWithSettings:self.settings];
+        __weak DHParticleAnimationPresentatioinViewController *weakSelf = self;
+        [self.renderer startAnimationForView:self.fromView inContainerView:self.view completion:^{
+            [UIView animateWithDuration:0.5 animations:^{
+                weakSelf.navigationController.navigationBar.transform = CGAffineTransformIdentity;
+            } completion:nil];
+        }];
     }];
 }
 
@@ -62,7 +67,7 @@
 - (UIImageView *)fromView
 {
     if (!_fromView) {
-        _fromView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
         _fromView.image = [self randomImage];
     }
     return _fromView;
@@ -70,9 +75,8 @@
 
 - (UIImage *)randomImage
 {
-//    int randomNumber = arc4random() % 10;
-//    return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
-    return [UIImage imageNamed:@"star_white.png"];
+    int randomNumber = arc4random() % 10;
+    return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
 }
 
 @end
