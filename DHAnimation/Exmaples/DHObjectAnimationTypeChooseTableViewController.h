@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DHParticleAnimationTypeChooseTableViewController : UITableViewController
+@interface DHObjectAnimationTypeChooseTableViewController : UITableViewController
 
 @end

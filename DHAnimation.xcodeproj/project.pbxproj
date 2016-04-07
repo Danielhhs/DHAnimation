@@ -20,8 +20,8 @@
 		5420C0201CB64528001C789C /* ShimmerVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0181CB64528001C789C /* ShimmerVertex.glsl */; };
 		5420C0211CB64528001C789C /* ShiningStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0191CB64528001C789C /* ShiningStar.png */; };
 		5420C0221CB64528001C789C /* star_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 5420C01A1CB64528001C789C /* star_white.png */; };
-		545617091CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.m */; };
-		5456170D1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.m */; };
+		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
+		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
 		547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */; };
 		547875C21CA4D61B00012F76 /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */; };
 		547875C31CA4D61B00012F76 /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */; };
@@ -199,10 +199,10 @@
 		5420C0181CB64528001C789C /* ShimmerVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShimmerVertex.glsl; sourceTree = "<group>"; };
 		5420C0191CB64528001C789C /* ShiningStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShiningStar.png; sourceTree = "<group>"; };
 		5420C01A1CB64528001C789C /* star_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_white.png; sourceTree = "<group>"; };
-		545617071CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHParticleAnimationTypeChooseTableViewController.h; sourceTree = "<group>"; };
-		545617081CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHParticleAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
-		5456170B1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHParticleAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
-		5456170C1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHParticleAnimationPresentatioinViewController.m; sourceTree = "<group>"; };
+		545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationTypeChooseTableViewController.h; sourceTree = "<group>"; };
+		545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
+		5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
+		5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationPresentatioinViewController.m; sourceTree = "<group>"; };
 		547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceFragment.glsl; sourceTree = "<group>"; };
@@ -433,10 +433,10 @@
 		5456170E1CA7AC2A002D5C04 /* Particle Animation */ = {
 			isa = PBXGroup;
 			children = (
-				545617071CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.h */,
-				545617081CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.m */,
-				5456170B1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.h */,
-				5456170C1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.m */,
+				545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */,
+				545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */,
+				5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */,
+				5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */,
 			);
 			name = "Particle Animation";
 			sourceTree = "<group>";
@@ -1186,8 +1186,8 @@
 				547875D81CA4D61B00012F76 /* DHCubeSourceMesh.m in Sources */,
 				547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */,
 				547876381CA50E2700012F76 /* DHAnimationRenderer.m in Sources */,
-				545617091CA7AAE6002D5C04 /* DHParticleAnimationTypeChooseTableViewController.m in Sources */,
-				5456170D1CA7AC21002D5C04 /* DHParticleAnimationPresentatioinViewController.m in Sources */,
+				545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */,
+				5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */,
 				547876181CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,
 				5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */,

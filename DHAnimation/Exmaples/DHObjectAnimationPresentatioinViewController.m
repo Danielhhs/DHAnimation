@@ -6,17 +6,17 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHParticleAnimationPresentatioinViewController.h"
+#import "DHObjectAnimationPresentatioinViewController.h"
 #import "DHAnimationSettings.h"
 #import "AnimationSettingViewController.h"
 #import "DHShimmerRenderer.h"
-@interface DHParticleAnimationPresentatioinViewController ()
+@interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHAnimationSettings *settings;
 @property (nonatomic, strong) DHShimmerRenderer *renderer;
 @property (nonatomic, strong) UIImageView *fromView;
 @end
 
-@implementation DHParticleAnimationPresentatioinViewController
+@implementation DHObjectAnimationPresentatioinViewController
 
 
 - (void)viewDidLoad {
@@ -42,7 +42,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     } completion:^(BOOL finished) {
-        __weak DHParticleAnimationPresentatioinViewController *weakSelf = self;
+        __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
         [self.renderer startAnimationForView:self.fromView inContainerView:self.view completion:^{
             [UIView animateWithDuration:0.5 animations:^{
                 weakSelf.navigationController.navigationBar.transform = CGAffineTransformIdentity;
@@ -56,7 +56,7 @@
     self.settings.containerView = self.view;
     self.settings.fromView = self.fromView;
     self.settings.duration = 5;
-    __weak DHParticleAnimationPresentatioinViewController *weakSelf = self;
+    __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
         [UIView animateWithDuration:0.5 animations:^{
             weakSelf.navigationController.navigationBar.transform = CGAffineTransformIdentity;

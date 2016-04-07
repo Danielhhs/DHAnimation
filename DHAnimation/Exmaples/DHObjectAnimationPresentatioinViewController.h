@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Enums.h"
 
-@interface DHParticleAnimationPresentatioinViewController : UIViewController
+@interface DHObjectAnimationPresentatioinViewController : UIViewController
 @property (nonatomic) ParticleAnimationType animationType;
 @end

@@ -6,14 +6,14 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHParticleAnimationTypeChooseTableViewController.h"
-#import "DHParticleAnimationPresentatioinViewController.h"
-@interface DHParticleAnimationTypeChooseTableViewController ()
+#import "DHObjectAnimationTypeChooseTableViewController.h"
+#import "DHObjectAnimationPresentatioinViewController.h"
+@interface DHObjectAnimationTypeChooseTableViewController ()
 @property (nonatomic, strong) NSArray *animations;
 @property (nonatomic) NSInteger selectedAnimationType;
 @end
 
-@implementation DHParticleAnimationTypeChooseTableViewController
+@implementation DHObjectAnimationTypeChooseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,8 +57,8 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[DHParticleAnimationPresentatioinViewController class]]) {
-        DHParticleAnimationPresentatioinViewController *dstVC = (DHParticleAnimationPresentatioinViewController *)segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[DHObjectAnimationPresentatioinViewController class]]) {
+        DHObjectAnimationPresentatioinViewController *dstVC = (DHObjectAnimationPresentatioinViewController *)segue.destinationViewController;
         dstVC.animationType = self.selectedAnimationType;
     }
 }
