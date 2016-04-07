@@ -20,6 +20,7 @@
 		5420C0201CB64528001C789C /* ShimmerVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0181CB64528001C789C /* ShimmerVertex.glsl */; };
 		5420C0211CB64528001C789C /* ShiningStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0191CB64528001C789C /* ShiningStar.png */; };
 		5420C0221CB64528001C789C /* star_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 5420C01A1CB64528001C789C /* star_white.png */; };
+		5420C0251CB65D95001C789C /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0241CB65D95001C789C /* DHObjectAnimationSettings.m */; };
 		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
 		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
 		547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */; };
@@ -133,7 +134,7 @@
 		5478762D1CA4D61B00012F76 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BF1CA4D61B00012F76 /* TwistSourceFragment.glsl */; };
 		5478762E1CA4D61B00012F76 /* TwistSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875C01CA4D61B00012F76 /* TwistSourceVertex.glsl */; };
 		547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */; };
-		547876381CA50E2700012F76 /* DHAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHAnimationRenderer.m */; };
+		547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHTransitionRenderer.m */; };
 		5478764A1CA5118400012F76 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* SceneMesh.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
@@ -145,7 +146,7 @@
 		54E264221C8EBCBF00FFB67E /* DHAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264211C8EBCBF00FFB67E /* DHAnimationUITests.m */; };
 		54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */; };
 		54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* Enums.m */; };
-		54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHAnimationSettings.m */; };
+		54E264701C8ED4A600FFB67E /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
 		54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264721C8FC5AC00FFB67E /* 0.jpg */; };
 		54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264731C8FC5AC00FFB67E /* 1.jpg */; };
 		54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264741C8FC5AC00FFB67E /* 2.jpg */; };
@@ -199,6 +200,8 @@
 		5420C0181CB64528001C789C /* ShimmerVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShimmerVertex.glsl; sourceTree = "<group>"; };
 		5420C0191CB64528001C789C /* ShiningStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShiningStar.png; sourceTree = "<group>"; };
 		5420C01A1CB64528001C789C /* star_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_white.png; sourceTree = "<group>"; };
+		5420C0231CB65D95001C789C /* DHObjectAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DHObjectAnimationSettings.h; path = ../Exmaples/DHObjectAnimationSettings.h; sourceTree = "<group>"; };
+		5420C0241CB65D95001C789C /* DHObjectAnimationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DHObjectAnimationSettings.m; path = ../Exmaples/DHObjectAnimationSettings.m; sourceTree = "<group>"; };
 		545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationTypeChooseTableViewController.h; sourceTree = "<group>"; };
 		545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
 		5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
@@ -346,8 +349,8 @@
 		547875C01CA4D61B00012F76 /* TwistSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceVertex.glsl; sourceTree = "<group>"; };
 		547876321CA4D91800012F76 /* AnimationCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCategoryTableViewController.h; sourceTree = "<group>"; };
 		547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCategoryTableViewController.m; sourceTree = "<group>"; };
-		547876361CA50E2700012F76 /* DHAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAnimationRenderer.h; sourceTree = "<group>"; };
-		547876371CA50E2700012F76 /* DHAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAnimationRenderer.m; sourceTree = "<group>"; };
+		547876361CA50E2700012F76 /* DHTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionRenderer.h; sourceTree = "<group>"; };
+		547876371CA50E2700012F76 /* DHTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionRenderer.m; sourceTree = "<group>"; };
 		547876481CA5118400012F76 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
 		547876491CA5118400012F76 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -370,8 +373,8 @@
 		54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionPresentationViewController.m; sourceTree = "<group>"; };
 		54E2646B1C8EC62F00FFB67E /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		54E2646C1C8EC62F00FFB67E /* Enums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enums.m; sourceTree = "<group>"; };
-		54E2646E1C8ED4A600FFB67E /* DHAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAnimationSettings.h; sourceTree = "<group>"; };
-		54E2646F1C8ED4A600FFB67E /* DHAnimationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAnimationSettings.m; sourceTree = "<group>"; };
+		54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionSettings.h; sourceTree = "<group>"; };
+		54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionSettings.m; sourceTree = "<group>"; };
 		54E264721C8FC5AC00FFB67E /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		54E264731C8FC5AC00FFB67E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		54E264741C8FC5AC00FFB67E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -430,7 +433,7 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
-		5456170E1CA7AC2A002D5C04 /* Particle Animation */ = {
+		5456170E1CA7AC2A002D5C04 /* ObjectAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */,
@@ -438,7 +441,7 @@
 				5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */,
 				5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */,
 			);
-			name = "Particle Animation";
+			name = ObjectAnimation;
 			sourceTree = "<group>";
 		};
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
@@ -790,8 +793,8 @@
 		547876351CA50E2700012F76 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
-				547876361CA50E2700012F76 /* DHAnimationRenderer.h */,
-				547876371CA50E2700012F76 /* DHAnimationRenderer.m */,
+				547876361CA50E2700012F76 /* DHTransitionRenderer.h */,
+				547876371CA50E2700012F76 /* DHTransitionRenderer.m */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -880,8 +883,10 @@
 				54EC58181C8FD25F009D812C /* Timing Function */,
 				54E2646B1C8EC62F00FFB67E /* Enums.h */,
 				54E2646C1C8EC62F00FFB67E /* Enums.m */,
-				54E2646E1C8ED4A600FFB67E /* DHAnimationSettings.h */,
-				54E2646F1C8ED4A600FFB67E /* DHAnimationSettings.m */,
+				5420C0231CB65D95001C789C /* DHObjectAnimationSettings.h */,
+				5420C0241CB65D95001C789C /* DHObjectAnimationSettings.m */,
+				54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */,
+				54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -889,7 +894,7 @@
 		54E264521C8EBDD700FFB67E /* Exmaples */ = {
 			isa = PBXGroup;
 			children = (
-				5456170E1CA7AC2A002D5C04 /* Particle Animation */,
+				5456170E1CA7AC2A002D5C04 /* ObjectAnimation */,
 				5456170A1CA7AC02002D5C04 /* Transitions */,
 				547876321CA4D91800012F76 /* AnimationCategoryTableViewController.h */,
 				547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */,
@@ -1185,11 +1190,11 @@
 				547876161CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m in Sources */,
 				547875D81CA4D61B00012F76 /* DHCubeSourceMesh.m in Sources */,
 				547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */,
-				547876381CA50E2700012F76 /* DHAnimationRenderer.m in Sources */,
+				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,
 				545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */,
 				5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */,
 				547876181CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
-				54E264701C8ED4A600FFB67E /* DHAnimationSettings.m in Sources */,
+				54E264701C8ED4A600FFB67E /* DHTransitionSettings.m in Sources */,
 				5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */,
 				5478761A1CA4D61B00012F76 /* DHShredderRenderer.m in Sources */,
 				547875C51CA4D61B00012F76 /* DHClothLineRenderer.m in Sources */,
@@ -1211,6 +1216,7 @@
 				547875CB1CA4D61B00012F76 /* DHConfettiSourceMesh.m in Sources */,
 				547875DA1CA4D61B00012F76 /* DHDoorWaySourceMesh.m in Sources */,
 				54E264881C8FC74000FFB67E /* AnimationSettingViewController.m in Sources */,
+				5420C0251CB65D95001C789C /* DHObjectAnimationSettings.m in Sources */,
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				547875D01CA4D61B00012F76 /* DHCoverRenderer.m in Sources */,
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,

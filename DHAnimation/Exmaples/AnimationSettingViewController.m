@@ -34,7 +34,7 @@
     [self updateSettings];
 }
 
-- (void) setSettings:(DHAnimationSettings *)settings
+- (void) setSettings:(DHTransitionSettings *)settings
 {
     _settings = settings;
     [self updateSettings];

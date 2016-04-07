@@ -6,15 +6,15 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHAnimationRenderer.h"
+#import "DHTransitionRenderer.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
 
-@implementation DHAnimationRenderer
+@implementation DHTransitionRenderer
 
 #pragma mark - Public Animation APIs
-- (void) performAnimationWithSettings:(DHAnimationSettings *)settings
+- (void) performAnimationWithSettings:(DHTransitionSettings *)settings
 {
     [self startAnimationFromView:settings.fromView toView:settings.toView inContainerView:settings.containerView columnCount:settings.columnCount duration:settings.duration direction:settings.animationDirection timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
 }
@@ -72,7 +72,8 @@
 #pragma mark - Drawing
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     [self setupDrawingContext];
     [self setupMvpMatrixWithView:view];
     

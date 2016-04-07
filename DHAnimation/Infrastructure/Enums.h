@@ -41,6 +41,11 @@ typedef NS_ENUM(NSInteger, AnimationDirection) {
     AnimationDirectionBottomToTop = 3,
 };
 
+typedef NS_ENUM(NSInteger, AnimationEvent) {
+    AnimationEventBuiltIn = 0,
+    AnimationEventBuiltOut = 1,
+};
+
 @interface Enums : NSObject
 
 @end

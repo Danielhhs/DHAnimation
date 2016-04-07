@@ -7,9 +7,9 @@
 //
 
 #import <GLKit/GLKit.h>
-#import "DHAnimationRenderer.h"
+#import "DHTransitionRenderer.h"
 #import "NSBKeyframeAnimationFunctions.h"
 #import "DHCubeMesh.h"
-@interface DHCubeRenderer : DHAnimationRenderer
+@interface DHCubeRenderer : DHTransitionRenderer
 
 @end

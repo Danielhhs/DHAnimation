@@ -29,7 +29,7 @@
 #import "DHResolvingDoorRenderer.h"
 
 @interface DHTransitionPresentationViewController ()
-@property (nonatomic, strong) DHAnimationSettings *settings;
+@property (nonatomic, strong) DHTransitionSettings *settings;
 @property (nonatomic, strong) UIImageView *fromView;
 @property (nonatomic, strong) UIImageView *toView;
 @end
@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settings = [DHAnimationSettings defaultSettings];
+    self.settings = [DHTransitionSettings defaultSettings];
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];

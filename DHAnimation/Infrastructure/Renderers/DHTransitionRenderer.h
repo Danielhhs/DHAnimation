@@ -7,10 +7,10 @@
 //
 
 #import <GLKit/GLKit.h>
-#import "DHAnimationSettings.h"
+#import "DHTransitionSettings.h"
 #import "SceneMesh.h"
 
-@interface DHAnimationRenderer : NSObject<GLKViewDelegate> {
+@interface DHTransitionRenderer : NSObject<GLKViewDelegate> {
     GLuint srcProgram, dstProgram;
     GLuint srcTexture, dstTexture;
     GLuint srcMvpLoc, srcSamplerLoc;
@@ -86,7 +86,7 @@
 - (void) prepareToDrawSourceFace;
 
 #pragma mark - Animation APIs
-- (void) performAnimationWithSettings:(DHAnimationSettings *)settings;
+- (void) performAnimationWithSettings:(DHTransitionSettings *)settings;
 
 //Default direction : Left to Right; TimingFunction : EaseInOutCubic; Column Count: 1; Completion : nil
 - (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;

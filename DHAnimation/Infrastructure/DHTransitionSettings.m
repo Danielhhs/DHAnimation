@@ -6,13 +6,13 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHAnimationSettings.h"
+#import "DHTransitionSettings.h"
 
-@implementation DHAnimationSettings
+@implementation DHTransitionSettings
 
-+ (DHAnimationSettings *) defaultSettings
++ (DHTransitionSettings *) defaultSettings
 {
-    DHAnimationSettings *settings = [[DHAnimationSettings alloc] init];
+    DHTransitionSettings *settings = [[DHTransitionSettings alloc] init];
     settings.duration = 1.f;
     settings.timingFunction = DHTimingFunctionLinear;
     settings.columnCount = 1;

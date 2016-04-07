@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Enums.h"
 #import "DHTimingFunctionHelper.h"
-@interface DHAnimationSettings : NSObject
+@interface DHTransitionSettings : NSObject
 @property (nonatomic) AnimationDirection animationDirection;
 @property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic) NSTimeInterval duration;
@@ -22,5 +22,5 @@
 
 @property (nonatomic) BOOL partialAnimation;
 
-+ (DHAnimationSettings *)defaultSettings;
++ (DHTransitionSettings *)defaultSettings;
 @end
