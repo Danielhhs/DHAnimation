@@ -8,12 +8,28 @@
 
 #import "SceneMesh.h"
 
+@interface SceneMesh ()
+@property (nonatomic) CGFloat originX;
+@property (nonatomic) CGFloat originY;
+@end
+
 @implementation SceneMesh
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored
 {
+    return [self initWithView:view  containerView:nil columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:splitTexture columnMajored:columnMajored];
+}
+
+- (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored
+{
     self = [super init];
     if (self) {
+        _originX = view.frame.origin.x;
+        if (containerView) {
+            _originY = containerView.bounds.size.height - CGRectGetMaxY(view.frame);
+        } else {
+            _originY = 0;
+        }
         _columnCount = columnCount;
         _rowCount = rowCount;
         if (splitTexture) {
@@ -150,16 +166,16 @@
         for (int y = 0; y < rowCount; y++) {
             CGFloat vy = uy * y;
             index = (x * rowCount + y) * 4;
-            vertices[index + 0].position = GLKVector3Make(vx * view.bounds.size.width, vy * view.bounds.size.height, 0);
+            vertices[index + 0].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
             vertices[index + 0].texCoords = GLKVector2Make(vx, 1 - vy);
             
-            vertices[index + 1].position = GLKVector3Make((vx + ux) * view.bounds.size.width, vy * view.bounds.size.height, 0);
+            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
             vertices[index + 1].texCoords = GLKVector2Make(vx + ux, 1 - vy);
             
-            vertices[index + 2].position = GLKVector3Make(vx * view.bounds.size.width, (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 2].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
             vertices[index + 2].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
             
-            vertices[index + 3].position = GLKVector3Make((vx + ux) * view.bounds.size.width, (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
             vertices[index + 3].texCoords = GLKVector2Make(vx + ux, 1 - (vy + uy));
             
             vertices[index + 0].columnStartPosition = vertices[index + 0].position;
@@ -186,16 +202,16 @@
         for (int x = 0; x < columnCount; x++) {
             CGFloat vx = ux * x;
             index = y * columnCount + x;
-            vertices[index + 0].position = GLKVector3Make(vx * view.bounds.size.width, vy * view.bounds.size.height, 0);
+            vertices[index + 0].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
             vertices[index + 0].texCoords = GLKVector2Make(vx, 1 - vy);
             
-            vertices[index + 1].position = GLKVector3Make(vy * view.bounds.size.width, (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 1].position = GLKVector3Make(self.originX + vy * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
             vertices[index + 1].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
             
-            vertices[index + 2].position = GLKVector3Make((vx + ux) * view.bounds.size.width, vy * view.bounds.size.height, 0);
+            vertices[index + 2].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
             vertices[index + 2].texCoords = GLKVector2Make(vx + ux, 1 - vy);
             
-            vertices[index + 3].position = GLKVector3Make((vx + ux) * view.bounds.size.width, (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
             vertices[index + 3].texCoords = GLKVector2Make(vx + ux, 1 - (vy + uy));
             
             vertices[index + 0].columnStartPosition = vertices[index + 0].position;
@@ -235,8 +251,8 @@
         CGFloat vx = x * ux;
         for (int y = 0; y <= rowCount; y++) {
             CGFloat vy = uy * y;
-            vertices[x * (rowCount + 1) + y].position.x = vx * view.bounds.size.width;
-            vertices[x * (rowCount + 1) + y].position.y = vy * view.bounds.size.height;
+            vertices[x * (rowCount + 1) + y].position.x = self.originX + vx * view.bounds.size.width;
+            vertices[x * (rowCount + 1) + y].position.y = self.originY + vy * view.bounds.size.height;
             vertices[x * (rowCount + 1) + y].position.z = 0;
             vertices[x * (rowCount + 1) + y].texCoords = GLKVector2Make(vx, 1 - vy);
             vertices[x * (rowCount + 1) + y].normal = GLKVector3Make(0, 0, 1);
@@ -265,8 +281,8 @@
         CGFloat vy = y * uy;
         for (int x = 0; x <= columnCount; x++) {
             CGFloat vx = ux * x;
-            vertices[y * (columnCount + 1) + x].position.x = vx * view.bounds.size.width;
-            vertices[y * (columnCount + 1) + x].position.y = vy * view.bounds.size.height;
+            vertices[y * (columnCount + 1) + x].position.x = self.originX + vx * view.bounds.size.width;
+            vertices[y * (columnCount + 1) + x].position.y = self.originY + vy * view.bounds.size.height;
             vertices[y * (columnCount + 1) + x].position.z = 0;
             vertices[y * (columnCount + 1) + x].texCoords = GLKVector2Make(vx, 1 - vy);
             vertices[y * (columnCount + 1) + x].normal = GLKVector3Make(0, 0, 1);

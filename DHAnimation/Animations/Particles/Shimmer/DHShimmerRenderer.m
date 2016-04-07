@@ -60,7 +60,7 @@
     [self setupShiningStarEffect];
     [self setupParticleTexture];
     
-    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
     [self.backgroundMesh updateWithOffsetData:self.offsetData];
     self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
     self.animationView.delegate = self;
@@ -115,8 +115,6 @@
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    [self.shimmerEffect draw];
-    
     glUseProgram(backgroundProgram);
     glUniformMatrix4fv(backgroundMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.backgroundMesh prepareToDraw];
@@ -125,6 +123,8 @@
     glBindTexture(GL_TEXTURE_2D, backgroundTexture);
     glUniform1f(backgroundMeshSamplerLoc, 0);
     [self.backgroundMesh drawEntireMesh];
+    
+    [self.shimmerEffect draw];
     
     [self.starEffect draw];
 }

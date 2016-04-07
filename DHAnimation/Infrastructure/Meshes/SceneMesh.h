@@ -35,6 +35,7 @@ typedef struct {
 @property (nonatomic) NSInteger rowCount;
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored;
+- (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored;
 - (instancetype) initWithVerticesData:(NSData *)verticesData indicesData:(NSData *)indicesData;
 - (void) prepareToDraw;
 - (void) drawIndicesWithMode:(GLenum)mode startIndex:(GLuint)index indicesCount:(size_t)indicesCount;
