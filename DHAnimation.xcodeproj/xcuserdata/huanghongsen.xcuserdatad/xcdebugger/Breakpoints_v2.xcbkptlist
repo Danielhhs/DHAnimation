@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Particles/Shimmer/DHShimmerRenderer.m"
-            timestampString = "481167617.888863"
+            timestampString = "481797003.854835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264">
+            startingLineNumber = "250"
+            endingLineNumber = "250">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -200,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Particles/Shimmer/DHShimmerRenderer.m"
-            timestampString = "481167617.888863"
+            timestampString = "481797003.854835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-update:"
             landmarkType = "5">
          </BreakpointContent>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Particles/Shimmer/DHShimmerRenderer.m"
-            timestampString = "481167617.888863"
+            timestampString = "481797003.854835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-setupGL"
             landmarkType = "5">
          </BreakpointContent>

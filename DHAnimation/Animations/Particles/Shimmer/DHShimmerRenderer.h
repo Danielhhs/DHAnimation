@@ -7,8 +7,8 @@
 //
 
 #import <GLKit/GLKit.h>
+#import "DHObjectAnimationRenderer.h"
 
-@interface DHShimmerRenderer : NSObject
+@interface DHShimmerRenderer : DHObjectAnimationRenderer
 
-- (void) startAnimationForView:(UIView *)view inContainerView:(UIView *)containerView completion:(void (^)(void))completion;;
 @end

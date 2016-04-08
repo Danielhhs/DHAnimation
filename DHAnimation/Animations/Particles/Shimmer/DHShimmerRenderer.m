@@ -20,17 +20,8 @@
     GLuint backgroundMvpLoc, backgroundMeshSamplerLoc, backgroundPercentLoc;
     GLKMatrix4 mvpMatrix;
 }
-@property (nonatomic, strong) EAGLContext *context;
-@property (nonatomic, strong) GLKView *animationView;
 @property (nonatomic, strong) NSMutableData *shiningStarData;
-@property (nonatomic, strong) CADisplayLink *displayLink;
-@property (nonatomic) NSTimeInterval elapsedTime;
 @property (nonatomic) NSInteger numberOfParticles;
-@property (nonatomic, weak) UIView *containerView;
-@property (nonatomic, weak) UIView *targetView;
-@property (nonatomic) CGFloat percent;
-@property (nonatomic) NSTimeInterval duration;
-@property (nonatomic, strong) void(^completion)(void);
 @property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) NSInteger rowCount;
@@ -40,14 +31,9 @@
 @end
 @implementation DHShimmerRenderer
 
-- (void) startAnimationForView:(UIView *)view inContainerView:(UIView *)containerView completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    self.elapsedTime = 0.f;
-    self.percent = 0.f;
-    self.duration = 2;
-    self.completion = completion;
-    self.targetView = view;
-    self.containerView = containerView;
+    [super startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:completion];
     self.rowCount = 15;
     self.columnCount = 10;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];

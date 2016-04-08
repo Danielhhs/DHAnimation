@@ -141,9 +141,9 @@ typedef struct {
     CGFloat cellWidth = self.targetView.bounds.size.width / self.columnCount;
     CGFloat cellHeight = self.targetView.bounds.size.height / self.rowCount;
     for (int x = 0; x < self.columnCount; x++) {
-        CGFloat xPos = self.targetView.frame.origin.x + cellWidth * x;
+        CGFloat xPos = self.targetView.frame.origin.x + cellWidth * x + cellWidth / 2;
         for (int y = 0; y < self.rowCount; y++) {
-            CGFloat yPos = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame) + cellHeight * y;
+            CGFloat yPos = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame) + cellHeight * y + cellHeight / 2;
             DHShimmerParticleAttributes particle;
             particle.targettingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
             
