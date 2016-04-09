@@ -6,10 +6,10 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "AnimationSettingViewController.h"
+#import "DHTransitionSettingViewController.h"
 #import "DHTimingFunctionHelper.h"
 
-@interface AnimationSettingViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface DHTransitionSettingViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UISlider *durationSlider;
 @property (weak, nonatomic) IBOutlet UIPickerView *timingFunctionPicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *directionSegment;
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @end
 
-@implementation AnimationSettingViewController
+@implementation DHTransitionSettingViewController
 - (void) viewDidLoad
 {
     [super viewDidLoad];

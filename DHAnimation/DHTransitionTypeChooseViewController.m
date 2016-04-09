@@ -6,14 +6,14 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "TransitionTypeChooseViewController.h"
+#import "DHTransitionTypeChooseViewController.h"
 #import "DHTransitionPresentationViewController.h"
-@interface TransitionTypeChooseViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface DHTransitionTypeChooseViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *animations;
 @property (nonatomic) NSInteger selectedIndex;
 @end
 
-@implementation TransitionTypeChooseViewController
+@implementation DHTransitionTypeChooseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

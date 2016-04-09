@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DHTransitionSettings.h"
-@interface AnimationSettingViewController : UIViewController
+@interface DHTransitionSettingViewController : UIViewController
 @property (nonatomic, strong) DHTransitionSettings *settings;
 @end

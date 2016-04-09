@@ -12,7 +12,7 @@
 #import "DHTwistRenderer.h"
 #import "DHClothLineRenderer.h"
 #import "DHShredderRenderer.h"
-#import "AnimationSettingViewController.h"
+#import "DHTransitionSettingViewController.h"
 #import "DHSwitchRenderer.h"
 #import "DHGridRenderer.h"
 #import "DHConfettiRenderer.h"
@@ -46,7 +46,7 @@
 
 - (void) showSettingsPanel
 {
-    AnimationSettingViewController *settingsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@                                                          "AnimationSettingViewController"];
+    DHTransitionSettingViewController *settingsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@                                                          "AnimationSettingViewController"];
     settingsController.settings = self.settings;
     [self.navigationController pushViewController:settingsController animated:YES];
 }

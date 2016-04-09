@@ -8,12 +8,13 @@
 
 #import "DHObjectAnimationPresentatioinViewController.h"
 #import "DHObjectAnimationSettings.h"
-#import "AnimationSettingViewController.h"
+#import "DHTransitionSettingViewController.h"
 #import "DHShimmerRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHShimmerRenderer *renderer;
 @property (nonatomic, strong) UIImageView *fromView;
+@property (nonatomic, strong) UIImageView *toView;
 @end
 
 @implementation DHObjectAnimationPresentatioinViewController
@@ -49,7 +50,8 @@
 - (void) updateAnimationSettings
 {
     self.settings.containerView = self.view;
-    self.settings.targetView = self.fromView;
+    self.settings.animateInView = self.fromView;
+    self.settings.animateOutView = self.toView;
     self.settings.duration = 2;
     self.settings.event = AnimationEventBuiltOut;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
@@ -67,6 +69,15 @@
         _fromView.image = [self randomImage];
     }
     return _fromView;
+}
+
+- (UIImageView *) toView
+{
+    if (!_toView) {
+        _toView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        _toView.image = [self randomImage];
+    }
+    return _toView;
 }
 
 - (UIImage *)randomImage

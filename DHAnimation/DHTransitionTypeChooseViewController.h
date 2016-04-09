@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TransitionTypeChooseViewController : UIViewController
+@interface DHTransitionTypeChooseViewController : UIViewController
 
 
 @end
