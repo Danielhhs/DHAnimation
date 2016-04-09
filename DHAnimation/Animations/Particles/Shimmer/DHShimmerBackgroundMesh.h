@@ -7,10 +7,10 @@
 //
 
 #import "SceneMesh.h"
-
+#import "Enums.h"
 @interface DHShimmerBackgroundMesh : SceneMesh
 
 @property (nonatomic, strong) NSArray *offsetData;
 
-- (void) updateWithOffsetData:(NSArray *)offsetData;
+- (void) updateWithOffsetData:(NSArray *)offsetData event:(AnimationEvent)event;
 @end

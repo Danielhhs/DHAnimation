@@ -51,6 +51,7 @@
     self.settings.containerView = self.view;
     self.settings.targetView = self.fromView;
     self.settings.duration = 2;
+    self.settings.event = AnimationEventBuiltOut;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
         [UIView animateWithDuration:0.5 animations:^{

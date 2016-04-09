@@ -17,7 +17,7 @@
 @interface DHShimmerRenderer ()<GLKViewDelegate> {
     GLuint backgroundProgram;
     GLuint backgroundTexture;
-    GLuint backgroundMvpLoc, backgroundMeshSamplerLoc, backgroundPercentLoc;
+    GLuint backgroundMvpLoc, backgroundMeshSamplerLoc, backgroundPercentLoc, backgroundEventLoc;
     GLKMatrix4 mvpMatrix;
 }
 @property (nonatomic, strong) NSMutableData *shiningStarData;
@@ -47,7 +47,7 @@
     [self setupParticleTexture];
     
     self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
-    [self.backgroundMesh updateWithOffsetData:self.offsetData];
+    [self.backgroundMesh updateWithOffsetData:self.offsetData event:self.event];
     self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
     self.animationView.delegate = self;
     
@@ -64,6 +64,7 @@
     backgroundMvpLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
     backgroundMeshSamplerLoc = glGetUniformLocation(backgroundProgram, "s_tex");
     backgroundPercentLoc = glGetUniformLocation(backgroundProgram, "u_percent");
+    backgroundEventLoc = glGetUniformLocation(backgroundProgram, "u_event");
     
     glClearColor(0, 0, 0, 1);
 }
@@ -105,6 +106,7 @@
     glUniformMatrix4fv(backgroundMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.backgroundMesh prepareToDraw];
     glUniform1f(backgroundPercentLoc, self.percent);
+    glUniform1i(backgroundEventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, backgroundTexture);
     glUniform1f(backgroundMeshSamplerLoc, 0);
@@ -133,7 +135,7 @@
 
 - (void) setupShimmerEffect
 {
-    self.shimmerEffect = [[DHShimmerParticleEffect alloc] initWithContext:self.context columnCount:self.columnCount rowCount:self.rowCount targetView:self.targetView containerView:self.containerView offsetData:self.offsetData];
+    self.shimmerEffect = [[DHShimmerParticleEffect alloc] initWithContext:self.context columnCount:self.columnCount rowCount:self.rowCount targetView:self.targetView containerView:self.containerView offsetData:self.offsetData event:self.event];
     self.shimmerEffect.mvpMatrix = mvpMatrix;
 }
 

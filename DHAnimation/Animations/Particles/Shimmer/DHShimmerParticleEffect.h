@@ -7,12 +7,15 @@
 //
 
 #import "DHParticleEffect.h"
+#import "Enums.h"
 
 @interface DHShimmerParticleEffect : DHParticleEffect
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) NSInteger rowCount;
 @property (nonatomic, strong) NSArray *offsetData;
+@property (nonatomic) AnimationEvent event;
+@property (nonatomic) AnimationDirection direction;
 
-- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData;
+- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(AnimationEvent)event;
 
 @end

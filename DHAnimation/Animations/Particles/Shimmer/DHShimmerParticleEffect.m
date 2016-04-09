@@ -24,14 +24,14 @@ typedef struct {
     GLuint texture, backgroundTexture;
     GLuint vertexBuffer;
     GLuint vertexArray;
-    GLuint mvpLoc, samplerLoc, backgroundSamplerLoc, percentLoc, rotationMatrixLoc;
+    GLuint mvpLoc, samplerLoc, backgroundSamplerLoc, percentLoc, rotationMatrixLoc, eventLoc;
 }
 @property (nonatomic, strong) NSMutableData *particleData;
 @end
 
 @implementation DHShimmerParticleEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData
+- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(AnimationEvent)event
 {
     self = [super init];
     if (self) {
@@ -41,6 +41,7 @@ typedef struct {
         self.targetView = targetView;
         self.containerView = containerView;
         _offsetData = offsetData;
+        _event = event;
         [self setupEffect];
         [self generateParticlesData];
         [self prepareToDraw];
@@ -59,6 +60,7 @@ typedef struct {
     percentLoc = glGetUniformLocation(program, "u_percent");
     rotationMatrixLoc = glGetUniformLocation(program, "u_rotationMatrix");
     backgroundSamplerLoc = glGetUniformLocation(program, "s_texBack");
+    eventLoc = glGetUniformLocation(program, "u_event");
     
     texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:@"star_white.png"]];
     backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
@@ -104,6 +106,9 @@ typedef struct {
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     
     float a_angle = self.percent * M_PI_2;
+    if (self.event == AnimationEventBuiltOut) {
+        a_angle *= -1;
+    }
     float cosAngle = cos(a_angle);
     float sinAngle = sin(a_angle);
     GLKMatrix4 transInMat = GLKMatrix4Make(1.0, 0.0, 0.0, 0.0,
@@ -127,7 +132,7 @@ typedef struct {
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, backgroundTexture);
     glUniform1i(backgroundSamplerLoc, 1);
-    
+    glUniform1i(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
@@ -145,18 +150,29 @@ typedef struct {
         for (int y = 0; y < self.rowCount; y++) {
             CGFloat yPos = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame) + cellHeight * y + cellHeight / 2;
             DHShimmerParticleAttributes particle;
-            particle.targettingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
             
             NSInteger index = x * self.rowCount + y;
             GLKVector3 offset = GLKVector3Make([self.offsetData[index] doubleValue], [self.offsetData[index + 1] doubleValue], [self.offsetData[index + 2] doubleValue]);
-            particle.startingPosition = GLKVector3Add(particle.targettingPosition, offset);
-            particle.originalSize = [self randomPointSize] / 5;
-            particle.texCoords = GLKVector2Make((GLfloat)x / (GLfloat)self.columnCount, (GLfloat)y / (GLfloat)self.rowCount);
-            if (x == 0 || x == self.columnCount - 1) {
-                particle.targetSize = cellHeight * [UIScreen mainScreen].scale * 5 * [self randomScale];
+            if (self.event == AnimationEventBuiltIn) {
+                particle.targettingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
+                particle.startingPosition = GLKVector3Add(particle.targettingPosition, offset);
+                particle.originalSize = [self randomPointSize] / 5;
+                if (x == 0 || x == self.columnCount - 1) {
+                    particle.targetSize = cellHeight * [UIScreen mainScreen].scale * 5 * [self randomScale];
+                } else {
+                    particle.targetSize = cellHeight * [UIScreen mainScreen].scale * 3 * [self randomScale];
+                }
             } else {
-                particle.targetSize = cellHeight * [UIScreen mainScreen].scale * 3 * [self randomScale];
+                particle.startingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
+                particle.targettingPosition = GLKVector3Add(particle.startingPosition, offset);
+                particle.targetSize = [self randomPointSize] / 5;
+                if (x == 0 || x == self.columnCount - 1) {
+                    particle.originalSize = cellHeight * [UIScreen mainScreen].scale * 5 * [self randomScale];
+                } else {
+                    particle.originalSize = cellHeight * [UIScreen mainScreen].scale * 3 * [self randomScale];
+                }
             }
+            particle.texCoords = GLKVector2Make((GLfloat)x / (GLfloat)self.columnCount, (GLfloat)y / (GLfloat)self.rowCount);
             if (x == 0 || x == self.columnCount - 1 || y == 0 || y == self.rowCount - 1) {
                 particle.isEdge = 1;
             } else {
