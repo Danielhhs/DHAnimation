@@ -20,11 +20,7 @@ typedef struct {
 }DHShimmerParticleAttributes;
 
 @interface DHShimmerParticleEffect () {
-    GLuint program;
-    GLuint texture, backgroundTexture;
-    GLuint vertexBuffer;
-    GLuint vertexArray;
-    GLuint mvpLoc, samplerLoc, backgroundSamplerLoc, percentLoc, rotationMatrixLoc, eventLoc;
+    GLuint rotationMatrixLoc;
 }
 @property (nonatomic, strong) NSMutableData *particleData;
 @end
@@ -42,7 +38,11 @@ typedef struct {
         self.containerView = containerView;
         _offsetData = offsetData;
         _event = event;
-        [self setupEffect];
+        self.vertexShaderFileName = @"ShimmerVertex.glsl";
+        self.fragmentShaderFileName = @"ShimmerFragment.glsl";
+        [self setupGL];
+        texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:@"star_white.png"]];
+        backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
         [self generateParticlesData];
         [self prepareToDraw];
     }
@@ -50,23 +50,10 @@ typedef struct {
 }
 
 
-- (void) setupEffect
+- (void) setupExtraUniforms
 {
-    [EAGLContext setCurrentContext:self.context];
-    program = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ShimmerVertex.glsl" fragmentShaderSrc:@"ShimmerFragment.glsl"];
-    glUseProgram(program);
-    mvpLoc = glGetUniformLocation(program, "u_mvpMatrix");
-    samplerLoc = glGetUniformLocation(program, "s_tex");
-    percentLoc = glGetUniformLocation(program, "u_percent");
     rotationMatrixLoc = glGetUniformLocation(program, "u_rotationMatrix");
-    backgroundSamplerLoc = glGetUniformLocation(program, "s_texBack");
-    eventLoc = glGetUniformLocation(program, "u_event");
-    
-    texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:@"star_white.png"]];
-    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
 }
-
-
 
 - (void) prepareToDraw
 {

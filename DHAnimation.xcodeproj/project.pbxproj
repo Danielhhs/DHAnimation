@@ -24,6 +24,7 @@
 		5420C0591CB8B0E6001C789C /* star_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 5420C04A1CB8B0E6001C789C /* star_white.png */; };
 		5420C05A1CB8B0E6001C789C /* DHSparkleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C04D1CB8B0E6001C789C /* DHSparkleRenderer.m */; };
 		5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C05C1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m */; };
+		5420C0601CB8C1E1001C789C /* DHSparkleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C05F1CB8C1E1001C789C /* DHSparkleEffect.m */; };
 		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
 		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
 		547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */; };
@@ -211,6 +212,8 @@
 		5420C04D1CB8B0E6001C789C /* DHSparkleRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSparkleRenderer.m; sourceTree = "<group>"; };
 		5420C05B1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationSettingsViewController.h; sourceTree = "<group>"; };
 		5420C05C1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationSettingsViewController.m; sourceTree = "<group>"; };
+		5420C05E1CB8C1E1001C789C /* DHSparkleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSparkleEffect.h; sourceTree = "<group>"; };
+		5420C05F1CB8C1E1001C789C /* DHSparkleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSparkleEffect.m; sourceTree = "<group>"; };
 		545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationTypeChooseTableViewController.h; sourceTree = "<group>"; };
 		545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
 		5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 			children = (
 				5420C04C1CB8B0E6001C789C /* DHSparkleRenderer.h */,
 				5420C04D1CB8B0E6001C789C /* DHSparkleRenderer.m */,
+				5420C05E1CB8C1E1001C789C /* DHSparkleEffect.h */,
+				5420C05F1CB8C1E1001C789C /* DHSparkleEffect.m */,
 			);
 			path = Sparkle;
 			sourceTree = "<group>";
@@ -1227,6 +1232,7 @@
 				54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */,
 				5420C0501CB8B0E6001C789C /* DHShimmerRenderer.m in Sources */,
 				547875FF1CA4D61B00012F76 /* DHPushRenderer.m in Sources */,
+				5420C0601CB8C1E1001C789C /* DHSparkleEffect.m in Sources */,
 				54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */,
 				547875D91CA4D61B00012F76 /* DHDoorWayRenderer.m in Sources */,
 				5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */,
