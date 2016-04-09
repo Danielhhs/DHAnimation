@@ -66,7 +66,7 @@
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
 {
-    [self startAnimationForAnimateInView:settings.animateInView animateOutView:settings.animateOutView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:settings.timingFunction completion:settings.completion];
+    [self startAnimationForAnimateInView:settings.animateInView animateOutView:settings.animateOutView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
 }
 
 @end

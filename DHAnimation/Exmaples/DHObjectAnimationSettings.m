@@ -16,7 +16,7 @@
     settings.duration = 2.f;
     settings.event = AnimationEventBuiltIn;
     settings.direction = AnimationDirectionLeftToRight;
-    settings.timingFunction = NSBKeyframeAnimationFunctionLinear;
+    settings.timingFunction = DHTimingFunctionLinear;
     settings.completion = nil;
     return settings;
 }

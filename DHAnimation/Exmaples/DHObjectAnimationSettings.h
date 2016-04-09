@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Enums.h"
-#import "NSBKeyframeAnimationFunctions.h"
+#import "DHTimingFunctionHelper.h"
 @interface DHObjectAnimationSettings : NSObject
 
 @property (nonatomic) NSTimeInterval duration;
@@ -17,7 +17,7 @@
 @property (nonatomic, weak) UIView *animateInView;
 @property (nonatomic, weak) UIView *animateOutView;
 @property (nonatomic, weak) UIView *containerView;
-@property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
+@property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic, strong) void (^completion)(void);
 
 + (DHObjectAnimationSettings *)defaultSettings;

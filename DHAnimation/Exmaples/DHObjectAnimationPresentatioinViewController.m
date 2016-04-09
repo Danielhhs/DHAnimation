@@ -10,6 +10,7 @@
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettingViewController.h"
 #import "DHShimmerRenderer.h"
+#import "DHObjectAnimationSettingsViewController.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHShimmerRenderer *renderer;
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     self.settings = [DHObjectAnimationSettings defaultSettings];
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
@@ -31,7 +33,9 @@
 
 - (void) showSettingsPanel
 {
-    
+    DHObjectAnimationSettingsViewController *settingsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DHObjectAnimationSettingsViewController"];
+    settingsController.settings = self.settings;
+    [self.navigationController pushViewController:settingsController animated:YES];
 }
 
 - (void) performAnimation
@@ -47,13 +51,21 @@
 
 - (void) updateAnimationSettings
 {
+    [self.fromView removeFromSuperview];
+    [self.toView removeFromSuperview];
+    if (self.settings.event == AnimationEventBuiltOut) {
+        [self.view addSubview:self.toView];
+    }
     self.settings.containerView = self.view;
     self.settings.animateInView = self.fromView;
     self.settings.animateOutView = self.toView;
-    self.settings.duration = 2;
-    self.settings.event = AnimationEventBuiltIn;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
+        if (weakSelf.settings.event == AnimationEventBuiltIn) {
+            [weakSelf.view addSubview:weakSelf.fromView];
+        } else {
+            [weakSelf.toView removeFromSuperview];
+        }
         [UIView animateWithDuration:0.5 animations:^{
             weakSelf.navigationController.navigationBar.transform = CGAffineTransformIdentity;
         } completion:nil];
