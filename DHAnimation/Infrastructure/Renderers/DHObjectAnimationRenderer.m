@@ -10,50 +10,49 @@
 
 @implementation DHObjectAnimationRenderer
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration completion:nil];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration completion:nil];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration completion:(void (^)(void))completion
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration timingFunction:NSBKeyframeAnimationFunctionLinear completion:completion];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration timingFunction:NSBKeyframeAnimationFunctionLinear completion:completion];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:AnimationEventBuiltIn direction:direction];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration event:AnimationEventBuiltIn direction:direction];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:event direction:AnimationDirectionLeftToRight];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:AnimationDirectionLeftToRight];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:event direction:direction timingFunction:NSBKeyframeAnimationFunctionLinear];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:NSBKeyframeAnimationFunctionLinear];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:nil];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:nil];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration timingFunction:timingFunction completion:nil];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration timingFunction:timingFunction completion:nil];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion
 {
-    [self startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:AnimationEventBuiltIn direction:AnimationDirectionLeftToRight timingFunction:timingFunction completion:completion];
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration event:AnimationEventBuiltIn direction:AnimationDirectionLeftToRight timingFunction:timingFunction completion:completion];
 }
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    self.animateInView = animateInView;
-    self.animateOutView = animateOutView;
+    self.targetView = targetView;
     self.containerView = containerView;
     self.duration = duration;
     self.event = event;
@@ -66,7 +65,7 @@
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
 {
-    [self startAnimationForAnimateInView:settings.animateInView animateOutView:settings.animateOutView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
+    [self startAnimationForView:settings.targetView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
 }
 
 @end

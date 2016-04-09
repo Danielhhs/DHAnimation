@@ -56,9 +56,9 @@
     if (self.settings.event == AnimationEventBuiltOut) {
         [self.view addSubview:self.toView];
     }
+    self.fromView.image = [self randomImage];
     self.settings.containerView = self.view;
-    self.settings.animateInView = self.fromView;
-    self.settings.animateOutView = self.toView;
+    self.settings.targetView = self.fromView;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
         if (weakSelf.settings.event == AnimationEventBuiltIn) {

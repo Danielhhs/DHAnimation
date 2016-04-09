@@ -22,10 +22,12 @@
 @property (nonatomic, weak) EAGLContext *context;
 @property (nonatomic, strong) NSString *vertexShaderFileName;
 @property (nonatomic, strong) NSString *fragmentShaderFileName;
+@property (nonatomic, strong) NSString *particleImageName;
 
 - (void) prepareToDraw;
 - (void) draw;
 - (void) setupGL;
 - (void) setupExtraUniforms;
+- (void) setupTextures;
 - (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView;
 @end

@@ -8,6 +8,7 @@
 
 #import "DHParticleEffect.h"
 #import "OpenGLHelper.h"
+#import "TextureHelper.h"
 @implementation DHParticleEffect
 
 - (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView
@@ -18,6 +19,7 @@
         _targetView = targetView;
         _containerView = containerView;
         [self setupGL];
+        [self setupTextures];
     }
     return self;
 }
@@ -48,6 +50,12 @@
 - (void) setupExtraUniforms
 {
     
+}
+
+- (void) setupTextures
+{
+    texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:self.particleImageName]];
+    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
 @end

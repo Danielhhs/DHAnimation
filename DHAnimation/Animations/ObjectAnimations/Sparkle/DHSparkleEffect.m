@@ -15,7 +15,17 @@
 
 @implementation DHSparkleEffect
 
-- (void) setupGL
+- (NSString *) vertexShaderFileName
+{
+    return @"SparkleVertex.glsl";
+}
+
+- (NSString *) fragmentShaderFileName
+{
+    return @"SparkleFragment.glsl";
+}
+
+- (void) setupExtraUniforms
 {
 }
 

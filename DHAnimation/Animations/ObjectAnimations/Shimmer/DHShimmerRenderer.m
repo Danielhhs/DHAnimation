@@ -31,9 +31,9 @@
 @end
 @implementation DHShimmerRenderer
 
-- (void) startAnimationForAnimateInView:(UIView *)animateInView animateOutView:(UIView *)animateOutView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    [super startAnimationForAnimateInView:animateInView animateOutView:animateOutView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:completion];
+    [super startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:completion];
     self.rowCount = 15;
     self.columnCount = 10;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
@@ -46,7 +46,7 @@
     [self setupShiningStarEffect];
     [self setupParticleTexture];
     
-    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.animateInView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
     [self.backgroundMesh updateWithOffsetData:self.offsetData event:self.event];
     self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
     self.animationView.delegate = self;
@@ -71,11 +71,7 @@
 
 - (void) setupParticleTexture
 {
-    if (self.event == AnimationEventBuiltIn) {
-        backgroundTexture = [TextureHelper setupTextureWithView:self.animateInView];
-    } else {
-        backgroundTexture = [TextureHelper setupTextureWithView:self.animateOutView];
-    }
+    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
 - (void) update:(CADisplayLink *)displayLink
@@ -139,8 +135,7 @@
 
 - (void) setupShimmerEffect
 {
-    UIView *targetView = (self.event == AnimationEventBuiltIn) ? self.animateInView : self.animateOutView;
-    self.shimmerEffect = [[DHShimmerParticleEffect alloc] initWithContext:self.context columnCount:self.columnCount rowCount:self.rowCount targetView:targetView containerView:self.containerView offsetData:self.offsetData event:self.event];
+    self.shimmerEffect = [[DHShimmerParticleEffect alloc] initWithContext:self.context columnCount:self.columnCount rowCount:self.rowCount targetView:self.targetView containerView:self.containerView offsetData:self.offsetData event:self.event];
     self.shimmerEffect.mvpMatrix = mvpMatrix;
 }
 
@@ -158,8 +153,7 @@
 
 - (void) setupShiningStarEffect
 {
-    UIView *targetView = (self.event == AnimationEventBuiltIn) ? self.animateInView : self.animateOutView;
-    self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageNamed:@"ShiningStar.png"] targetView:targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
+    self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageNamed:@"ShiningStar.png"] targetView:self.targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
     self.starEffect.mvpMatrix = mvpMatrix;
 }
 @end

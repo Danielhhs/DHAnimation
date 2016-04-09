@@ -40,9 +40,9 @@ typedef struct {
         _event = event;
         self.vertexShaderFileName = @"ShimmerVertex.glsl";
         self.fragmentShaderFileName = @"ShimmerFragment.glsl";
+        self.particleImageName = @"star_white.png";
         [self setupGL];
-        texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:@"star_white.png"]];
-        backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
+        [self setupTextures];
         [self generateParticlesData];
         [self prepareToDraw];
     }
