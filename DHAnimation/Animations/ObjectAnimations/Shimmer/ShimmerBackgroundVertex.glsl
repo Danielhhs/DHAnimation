@@ -2,6 +2,7 @@
 
 uniform mat4 u_mvpMatrix;
 uniform float u_percent;
+uniform float u_animationEvent;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -13,9 +14,13 @@ const float transitionRatio = 0.7;
 
 vec4 updatedPosition()
 {
-    if (u_percent < transitionRatio) {
-    vec4 position = a_originalCenter + (a_position - a_originalCenter) * u_percent / transitionRatio;
-    return position;
+    float percent = u_percent;
+    if (u_animationEvent != 0.f) {
+        percent = 1.f - u_percent;
+    }
+    if (percent < transitionRatio) {
+        vec4 position = a_originalCenter + (a_position - a_originalCenter) * percent / transitionRatio;
+        return position;
     } else {
         return a_position;
     }

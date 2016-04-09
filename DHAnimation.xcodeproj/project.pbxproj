@@ -441,10 +441,10 @@
 				5420C0421CB8B0E6001C789C /* DHShiningStarEffect.m */,
 				5420C0431CB8B0E6001C789C /* ShimmerBackgroundFragment.glsl */,
 				5420C0441CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl */,
-				5420C0451CB8B0E6001C789C /* ShimmerFragment.glsl */,
 				5420C0461CB8B0E6001C789C /* ShimmerShiningStarFragment.glsl */,
 				5420C0471CB8B0E6001C789C /* ShimmerShiningStarVertex.glsl */,
 				5420C0481CB8B0E6001C789C /* ShimmerVertex.glsl */,
+				5420C0451CB8B0E6001C789C /* ShimmerFragment.glsl */,
 				5420C0491CB8B0E6001C789C /* ShiningStar.png */,
 				5420C04A1CB8B0E6001C789C /* star_white.png */,
 			);

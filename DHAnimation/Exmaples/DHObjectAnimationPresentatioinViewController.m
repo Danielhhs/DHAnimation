@@ -31,9 +31,7 @@
 
 - (void) showSettingsPanel
 {
-//    AnimationSettingViewController *settingsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@                                                          "AnimationSettingViewController"];
-//    settingsController.settings = self.settings;
-//    [self.navigationController pushViewController:settingsController animated:YES];
+    
 }
 
 - (void) performAnimation
@@ -53,7 +51,7 @@
     self.settings.animateInView = self.fromView;
     self.settings.animateOutView = self.toView;
     self.settings.duration = 2;
-    self.settings.event = AnimationEventBuiltOut;
+    self.settings.event = AnimationEventBuiltIn;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
         [UIView animateWithDuration:0.5 animations:^{

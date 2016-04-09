@@ -107,7 +107,7 @@ typedef struct {
     
     float a_angle = self.percent * M_PI_2;
     if (self.event == AnimationEventBuiltOut) {
-        a_angle *= -1;
+        a_angle = M_PI_2 - a_angle;
     }
     float cosAngle = cos(a_angle);
     float sinAngle = sin(a_angle);
@@ -132,7 +132,7 @@ typedef struct {
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, backgroundTexture);
     glUniform1i(backgroundSamplerLoc, 1);
-    glUniform1i(eventLoc, self.event);
+    glUniform1f(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);

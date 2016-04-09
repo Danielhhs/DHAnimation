@@ -64,7 +64,7 @@
     backgroundMvpLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
     backgroundMeshSamplerLoc = glGetUniformLocation(backgroundProgram, "s_tex");
     backgroundPercentLoc = glGetUniformLocation(backgroundProgram, "u_percent");
-    backgroundEventLoc = glGetUniformLocation(backgroundProgram, "u_event");
+    backgroundEventLoc = glGetUniformLocation(backgroundProgram, "u_animationEvent");
     
     glClearColor(0, 0, 0, 1);
 }
@@ -110,7 +110,7 @@
     glUniformMatrix4fv(backgroundMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.backgroundMesh prepareToDraw];
     glUniform1f(backgroundPercentLoc, self.percent);
-    glUniform1i(backgroundEventLoc, self.event);
+    glUniform1f(backgroundEventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, backgroundTexture);
     glUniform1f(backgroundMeshSamplerLoc, 0);
