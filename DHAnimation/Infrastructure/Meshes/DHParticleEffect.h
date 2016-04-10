@@ -13,7 +13,7 @@
     GLuint texture, backgroundTexture;
     GLuint vertexBuffer;
     GLuint vertexArray;
-    GLuint mvpLoc, samplerLoc, backgroundSamplerLoc, percentLoc, directionLoc, eventLoc;
+    GLuint mvpLoc, samplerLoc, backgroundSamplerLoc, percentLoc, directionLoc, eventLoc, elapsedTimeLoc;
 }
 @property (nonatomic) GLKMatrix4 mvpMatrix;
 @property (nonatomic) GLfloat percent;
@@ -23,11 +23,15 @@
 @property (nonatomic, strong) NSString *vertexShaderFileName;
 @property (nonatomic, strong) NSString *fragmentShaderFileName;
 @property (nonatomic, strong) NSString *particleImageName;
+@property (nonatomic, strong) NSMutableData *particleData;
+@property (nonatomic) NSTimeInterval elapsedTime;
 
 - (void) prepareToDraw;
 - (void) draw;
 - (void) setupGL;
 - (void) setupExtraUniforms;
 - (void) setupTextures;
+- (void) generateParticlesData;
 - (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView;
+- (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent;
 @end

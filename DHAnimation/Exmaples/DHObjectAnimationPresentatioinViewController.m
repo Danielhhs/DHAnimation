@@ -10,10 +10,11 @@
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettingViewController.h"
 #import "DHShimmerRenderer.h"
+#import "DHSparkleRenderer.h"
 #import "DHObjectAnimationSettingsViewController.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
-@property (nonatomic, strong) DHShimmerRenderer *renderer;
+@property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
 @property (nonatomic, strong) UIImageView *fromView;
 @property (nonatomic, strong) UIImageView *toView;
 @end
@@ -41,7 +42,16 @@
 - (void) performAnimation
 {
     [self updateAnimationSettings];
-    self.renderer = [[DHShimmerRenderer alloc] init];
+    switch (self.animationType) {
+        case ObjectAnimationTypeShimmer:
+            self.renderer = [[DHShimmerRenderer alloc] init];
+            break;
+        case ObjectAnimationTypeSparkle:
+            self.renderer = [[DHSparkleRenderer alloc] init];
+            break;
+        default:
+            break;
+    }
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     } completion:^(BOOL finished) {

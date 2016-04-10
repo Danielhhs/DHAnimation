@@ -22,7 +22,6 @@ typedef struct {
 @interface DHShimmerParticleEffect () {
     GLuint rotationMatrixLoc;
 }
-@property (nonatomic, strong) NSMutableData *particleData;
 @end
 
 @implementation DHShimmerParticleEffect

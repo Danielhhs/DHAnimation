@@ -20,6 +20,7 @@
         _containerView = containerView;
         [self setupGL];
         [self setupTextures];
+        [self generateParticlesData];
     }
     return self;
 }
@@ -44,6 +45,7 @@
     percentLoc = glGetUniformLocation(program, "u_percent");
     backgroundSamplerLoc = glGetUniformLocation(program, "s_texBack");
     eventLoc = glGetUniformLocation(program, "u_event");
+    elapsedTimeLoc = glGetUniformLocation(program, "u_elapsedTime");
     [self setupExtraUniforms];
 }
 
@@ -56,6 +58,15 @@
 {
     texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:self.particleImageName]];
     backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
+}
+
+- (void) generateParticlesData
+{
+}
+
+- (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
+{
+    
 }
 
 @end

@@ -25,7 +25,6 @@ typedef struct {
     GLuint texture;
     GLuint vertexBuffer, vertexArray;
 }
-@property (nonatomic, strong) NSMutableData *particleData;
 @property (nonatomic) NSInteger starsPerSecond;
 @property (nonatomic) NSTimeInterval starLifeTime;
 @end

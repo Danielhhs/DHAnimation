@@ -68,4 +68,18 @@
     [self startAnimationForView:settings.targetView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
 }
 
+- (void) setupMvpMatrixWithView:(UIView *)view
+{
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
+    GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
+    GLKMatrix4 modelView = GLKMatrix4Multiply(viewMatrix, modelMatrix);
+    GLKMatrix4 projection = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), view.bounds.size.width / view.bounds.size.height, 0.1, 10000);
+    
+    mvpMatrix = GLKMatrix4Multiply(projection, modelView);
+}
+
+- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
+{
+    
+}
 @end

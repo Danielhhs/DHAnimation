@@ -8,7 +8,9 @@
 
 #import <GLKit/GLKit.h>
 #import "DHObjectAnimationSettings.h"
-@interface DHObjectAnimationRenderer : NSObject
+@interface DHObjectAnimationRenderer : NSObject <GLKViewDelegate> {
+    GLKMatrix4 mvpMatrix;
+}
 
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, strong) GLKView *animationView;
@@ -36,4 +38,7 @@
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings;
 
+
+
+- (void) setupMvpMatrixWithView:(UIView *)view;
 @end
