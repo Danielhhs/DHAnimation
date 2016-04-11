@@ -18,6 +18,7 @@ typedef struct {
     GLfloat size;
 }DHSparkleAttributes;
 
+
 @interface DHSparkleEffect() {
 }
 
@@ -86,22 +87,24 @@ typedef struct {
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
     self.elapsedTime = elapsedTime;
-    for (int y = 0; y < self.rowCount; y++) {
-        CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + (y + 0.5) * self.yResolution;
-        for (int i = 0; i < 3; i++) {
-            DHSparkleAttributes sparkle;
-            sparkle.emitterPosition = GLKVector3Make(percent * self.targetView.frame.size.width + self.targetView.frame.origin.x, yPos, self.targetView.frame.size.height / 2 );
-            sparkle.size = [self randomSize];
-            sparkle.emitterGravity = [self gravityForSize:sparkle.size];
-            sparkle.emitterVelocity = [self velocityForSize:sparkle.size];
-            sparkle.emitTime = elapsedTime;
-            sparkle.lifeTime = 1.f;
-            NSInteger firstInvalidSpot = [self indexForFirstFadedParticle];
-            if (firstInvalidSpot == -1) {
-                [self.particleData appendBytes:&sparkle length:sizeof(sparkle)];
-            } else {
-                [self setSparkle:sparkle atIndex:firstInvalidSpot];
-            }
+    if (percent > 1 - SPARKLE_LIFE_TIME_RATIO) {
+        return;
+    }
+    for (int y = 0; y < 4; y++) {
+        CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + arc4random() % (int)self.targetView.frame.size.height;
+        CGFloat xPos = percent / (1 - SPARKLE_LIFE_TIME_RATIO) * self.targetView.frame.size.width + self.targetView.frame.origin.x - (int)arc4random() % 10;
+        DHSparkleAttributes sparkle;
+        sparkle.emitterPosition = GLKVector3Make(xPos, yPos, self.targetView.frame.size.height / 2 );
+        sparkle.size = [self randomSize];
+        sparkle.emitterGravity = [self gravityForSize:sparkle.size];
+        sparkle.emitterVelocity = [self velocityForSize:sparkle.size];
+        sparkle.emitTime = elapsedTime;
+        sparkle.lifeTime = self.duration * SPARKLE_LIFE_TIME_RATIO;
+        NSInteger firstInvalidSpot = [self indexForFirstFadedParticle];
+        if (firstInvalidSpot == -1) {
+            [self.particleData appendBytes:&sparkle length:sizeof(sparkle)];
+        } else {
+            [self setSparkle:sparkle atIndex:firstInvalidSpot];
         }
     }
 }
@@ -113,12 +116,12 @@ typedef struct {
 
 - (CGFloat) randomVelocityComponent
 {
-    return (arc4random() % 500 - 250) / 3;
+    return ((int)arc4random() % 300 - 150) / (GLfloat)3;
 }
 
 - (GLKVector3) gravityForSize:(CGFloat)size
 {
-    return GLKVector3Make(0, size / self.maxPointSize * -200, 0);
+    return GLKVector3Make(0, size / self.maxPointSize * -100, 0);
 }
 
 - (GLKVector3) velocityForSize:(CGFloat)size

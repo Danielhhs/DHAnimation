@@ -20,5 +20,9 @@ void main() {
     float elapsedTime = u_elapsedTime - a_emitTime;
     vec4 position = updatedPosition(elapsedTime);
     gl_Position = u_mvpMatrix * position;
-    gl_PointSize = a_size * (1.f - (elapsedTime / a_lifeTime));
+    if (elapsedTime > a_lifeTime) {
+        gl_PointSize = 0.f;
+    } else {
+        gl_PointSize = a_size * (1.f - (elapsedTime / a_lifeTime));
+    }
 }

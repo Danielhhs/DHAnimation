@@ -58,6 +58,7 @@
     self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:self.rowCount columnCount:self.columnCount];
     self.sparkleEffect.mvpMatrix = mvpMatrix;
     self.sparkleEffect.rowCount = 7;
+    self.sparkleEffect.duration = self.duration;
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -71,7 +72,7 @@
     [self.backgroundMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1f(percentLoc, self.percent);
+    glUniform1f(percentLoc, self.percent / (1 - SPARKLE_LIFE_TIME_RATIO / 2));
     glUniform1i(samplerLoc, 0);
     glUniform1f(directionLoc, self.direction);
     glUniform1f(eventLoc, self.event);

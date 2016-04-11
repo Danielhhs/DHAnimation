@@ -8,5 +8,7 @@
 
 #import "DHParticleEffect.h"
 
+#define SPARKLE_LIFE_TIME_RATIO 0.2
+
 @interface DHSparkleEffect : DHParticleEffect
 @end

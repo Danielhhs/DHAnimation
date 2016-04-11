@@ -254,22 +254,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/ObjectAnimations/Sparkle/DHSparkleRenderer.m"
-            timestampString = "482048243.377615"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-glkView:drawInRect:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -290,11 +274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Sparkle/DHSparkleRenderer.m"
-            timestampString = "482047842.202683"
+            timestampString = "482056047.157789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106">
+            startingLineNumber = "108"
+            endingLineNumber = "108">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -303,13 +287,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Meshes/SceneMesh.m"
-            timestampString = "482045539.182053"
+            filePath = "DHAnimation/Animations/ObjectAnimations/Sparkle/DHSparkleEffect.m"
+            timestampString = "482057111.627401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-initWithView:containerView:columnCount:rowCount:splitTexturesOnEachGrid:columnMajored:"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-updateWithElapsedTime:percent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -320,12 +304,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Sparkle/DHSparkleEffect.m"
-            timestampString = "482050735.619777"
+            timestampString = "482057111.627401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-setRowCount:"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-updateWithElapsedTime:percent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
