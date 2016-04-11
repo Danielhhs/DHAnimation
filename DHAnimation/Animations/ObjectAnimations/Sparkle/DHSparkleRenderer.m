@@ -89,7 +89,7 @@
 {
     self.elapsedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
-        self.percent = self.elapsedTime / self.duration;
+        self.percent = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
         [self.sparkleEffect updateWithElapsedTime:self.elapsedTime percent:self.percent];
         [self.animationView display];
     } else {
