@@ -48,6 +48,10 @@
 
 - (void) setupGL;
 - (void) setupTextures;
+- (void) setupMeshes;
+- (void) setupEffects;
+- (void) drawFrame;
+- (void) updateAdditionalComponents;
 
 - (void) setupMvpMatrixWithView:(UIView *)view;
 @end

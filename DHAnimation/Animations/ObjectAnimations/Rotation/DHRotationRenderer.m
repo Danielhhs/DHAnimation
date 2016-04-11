@@ -9,36 +9,34 @@
 #import "DHRotationRenderer.h"
 #import "SceneMesh.h"
 @interface DHRotationRenderer()
-@property (nonatomic, strong) SceneMesh *backgroundMesh;
+@property (nonatomic, strong) SceneMesh *mesh;
 @end
 
 @implementation DHRotationRenderer
 
-- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (NSString *) vertexShaderName
 {
-    [super startAnimationForView:targetView inContainerView:containerView duration:duration columnCount:columnCount rowCount:rowCount event:event direction:direction timingFunction:timingFunction completion:completion];
-    
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    [self setupGL];
-    
-    self.backgroundMesh = [[SceneMesh alloc] initWithView:targetView containerView:containerView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
-    [self setupTextures];
-    
-    self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
-    self.animationView.delegate = self;
-    
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    return @"ObjectRotationVertex.glsl";
 }
 
-- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
+- (NSString *) fragmentShaderName
 {
-    
+    return @"ObjectRotationFragment.glsl";
 }
 
-- (void) update:(CADisplayLink *)displayLink
+- (void) setupMeshes
 {
-    
+    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 
+- (void) drawFrame
+{
+    glUseProgram(program);
+    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    [self.mesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1i(samplerLoc, 0);
+    [self.mesh drawEntireMesh];
+}
 @end

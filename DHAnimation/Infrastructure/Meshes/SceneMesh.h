@@ -45,4 +45,6 @@ typedef struct {
 - (void) destroyGL;
 
 - (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
+
+- (void) printVertices;
 @end

@@ -308,4 +308,11 @@
 {
     
 }
+
+- (void) printVertices
+{
+    for (int i = 0; i < self.vertexCount; i++) {
+        NSLog(@"Vertices[%d].position = (%g, %g, %g)", i, vertices[i].position.x, vertices[i].position.y, vertices[i].position.z);
+    }
+}
 @end

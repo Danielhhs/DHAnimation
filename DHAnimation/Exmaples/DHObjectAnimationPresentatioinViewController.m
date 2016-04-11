@@ -12,6 +12,7 @@
 #import "DHShimmerRenderer.h"
 #import "DHSparkleRenderer.h"
 #import "DHObjectAnimationSettingsViewController.h"
+#import "DHRotationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -48,6 +49,9 @@
             break;
         case ObjectAnimationTypeSparkle:
             self.renderer = [[DHSparkleRenderer alloc] init];
+            break;
+        case ObjectAnimationTypeRotation:
+            self.renderer = [[DHRotationRenderer alloc] init];
             break;
         default:
             break;

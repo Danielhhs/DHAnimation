@@ -70,6 +70,21 @@
     self.percent = 0.f;
     self.columnCount = columnCount;
     self.rowCount = rowCount;
+    
+    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+    [self setupGL];
+    [self setupMvpMatrixWithView:containerView];
+    
+    [self setupMeshes];
+    [self setupEffects];
+    [self setupTextures];
+    
+    self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
+    self.animationView.delegate = self;
+    
+    [containerView addSubview:self.animationView];
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
@@ -91,8 +106,11 @@
 {
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    [self drawFrame];
 }
 
 - (void) setupGL
@@ -110,8 +128,48 @@
     glClearColor(0, 0, 0, 1);
 }
 
+
+
+- (void) update:(CADisplayLink *)displayLink
+{
+    self.elapsedTime += displayLink.duration;
+    if (self.elapsedTime < self.duration) {
+        self.percent = self.timingFunction(self.elapsedTime * 1000, 0, self.duration, self.duration * 1000);
+        [self updateAdditionalComponents];
+        [self.animationView display];
+    } else {
+        [self.animationView display];
+        [self.displayLink invalidate];
+        self.displayLink = nil;
+        [self.animationView removeFromSuperview];
+        if (self.completion) {
+            self.completion();
+        }
+    }
+}
+
+- (void) drawFrame
+{
+    
+}
+
 - (void) setupTextures
 {
     texture = [TextureHelper setupTextureWithView:self.targetView];
+}
+
+- (void) setupMeshes
+{
+    
+}
+
+- (void) setupEffects
+{
+    
+}
+
+- (void) updateAdditionalComponents
+{
+    
 }
 @end

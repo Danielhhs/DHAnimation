@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, TransitionType) {
 typedef NS_ENUM(NSInteger, ObjectAnimationType) {
     ObjectAnimationTypeShimmer = 0,
     ObjectAnimationTypeSparkle = 1,
+    ObjectAnimationTypeRotation = 2,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

@@ -147,6 +147,8 @@
 		54A768401CBB49B800826929 /* SparkleBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */; };
 		54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */; };
 		54A768461CBB70F200826929 /* DHRotationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768451CBB70F200826929 /* DHRotationRenderer.m */; };
+		54A768481CBBAAF600826929 /* ObjectRotationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */; };
+		54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m */; };
@@ -380,6 +382,8 @@
 		54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleBackgroundFragment.glsl; sourceTree = "<group>"; };
 		54A768441CBB70F200826929 /* DHRotationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRotationRenderer.h; sourceTree = "<group>"; };
 		54A768451CBB70F200826929 /* DHRotationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRotationRenderer.m; sourceTree = "<group>"; };
+		54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectRotationVertex.glsl; sourceTree = "<group>"; };
+		54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectRotationFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -860,6 +864,8 @@
 			children = (
 				54A768441CBB70F200826929 /* DHRotationRenderer.h */,
 				54A768451CBB70F200826929 /* DHRotationRenderer.m */,
+				54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */,
+				54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */,
 			);
 			path = Rotation;
 			sourceTree = "<group>";
@@ -1169,6 +1175,7 @@
 				5478760C1CA4D61B00012F76 /* RevealSourceFragment.glsl in Resources */,
 				547876071CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl in Resources */,
 				547876281CA4D61B00012F76 /* SwitchSourceVertex.glsl in Resources */,
+				54A768481CBBAAF600826929 /* ObjectRotationVertex.glsl in Resources */,
 				54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */,
 				5478762E1CA4D61B00012F76 /* TwistSourceVertex.glsl in Resources */,
 				547876231CA4D61B00012F76 /* ShredderVertex.glsl in Resources */,
@@ -1197,6 +1204,7 @@
 				547875C81CA4D61B00012F76 /* ConfettiSourceFragment.glsl in Resources */,
 				547876201CA4D61B00012F76 /* ShredderFragment.glsl in Resources */,
 				547875F21CA4D61B00012F76 /* FlopSourceVertex.glsl in Resources */,
+				54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				5478760B1CA4D61B00012F76 /* RevealDestinationVertex.glsl in Resources */,
 				547875D41CA4D61B00012F76 /* CubeSourceVertex.glsl in Resources */,
