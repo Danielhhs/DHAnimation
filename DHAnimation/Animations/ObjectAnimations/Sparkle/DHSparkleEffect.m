@@ -124,7 +124,7 @@ typedef struct {
 
 - (GLKVector3) gravityForSize:(CGFloat)size
 {
-    return GLKVector3Make(0, size / self.maxPointSize * -100, 0);
+    return GLKVector3Make(0, size / self.maxPointSize * -200, 0);
 }
 
 - (GLKVector3) velocityForSize:(CGFloat)size

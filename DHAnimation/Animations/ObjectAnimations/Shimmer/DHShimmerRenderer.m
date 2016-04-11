@@ -127,4 +127,14 @@
     self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageNamed:@"ShiningStar.png"] targetView:self.targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
     self.starEffect.mvpMatrix = mvpMatrix;
 }
+
+- (NSString *) vertexShaderName
+{
+    return @"ShimmerBackgroundVertex.glsl";
+}
+
+- (NSString *) fragmentShaderName
+{
+    return @"ShimmerBackgroundFragment.glsl";
+}
 @end
