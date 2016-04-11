@@ -31,8 +31,8 @@ typedef struct {
     self = [super init];
     if (self) {
         self.context = context;
-        _columnCount = columnCount;
-        _rowCount = rowCount;
+        self.columnCount = columnCount;
+        self.rowCount = rowCount;
         self.targetView = targetView;
         self.containerView = containerView;
         _offsetData = offsetData;

@@ -18,21 +18,21 @@ typedef struct {
     GLfloat size;
 }DHSparkleAttributes;
 
-#define MAX_SPARKLE_SIZE 100
-
 @interface DHSparkleEffect() {
 }
 
 @property (nonatomic) NSInteger numberOfParticles;
 @property (nonatomic) CGFloat yResolution;
+@property (nonatomic) CGFloat maxPointSize;
 @end
 
 @implementation DHSparkleEffect
 
 - (void) setRowCount:(NSInteger)rowCount
 {
-    _rowCount = rowCount;
+    [super setRowCount:rowCount];
     self.yResolution = self.targetView.frame.size.height / rowCount;
+    self.maxPointSize = self.yResolution * [UIScreen mainScreen].scale;
 }
 
 - (NSString *) vertexShaderFileName
@@ -86,8 +86,8 @@ typedef struct {
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
     self.elapsedTime = elapsedTime;
-    for (int y = 0; y < self.rowCount; y++) {
-        CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + y * self.yResolution;
+    for (int y = 0; y < self.rowCount - 1; y++) {
+        CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + (y + 0.5) * self.yResolution;
         for (int i = 0; i < 5; i++) {
             DHSparkleAttributes sparkle;
             sparkle.emitterPosition = GLKVector3Make(percent * self.targetView.frame.size.width + self.targetView.frame.origin.x, yPos, self.targetView.frame.size.height / 2 );
@@ -108,7 +108,7 @@ typedef struct {
 
 - (CGFloat) randomSize
 {
-    return arc4random() % (MAX_SPARKLE_SIZE - 20) + 20;
+    return arc4random() % ((int)self.maxPointSize - 20) + 20;
 }
 
 - (CGFloat) randomVelocityComponent
@@ -118,12 +118,12 @@ typedef struct {
 
 - (GLKVector3) gravityForSize:(CGFloat)size
 {
-    return GLKVector3Make(0, size / MAX_SPARKLE_SIZE * -200, 0);
+    return GLKVector3Make(0, size / self.maxPointSize * -200, 0);
 }
 
 - (GLKVector3) velocityForSize:(CGFloat)size
 {
-    CGFloat factor = size / MAX_SPARKLE_SIZE * (2 - size / MAX_SPARKLE_SIZE);
+    CGFloat factor = size / self.maxPointSize * (2 - size / self.maxPointSize);
     return GLKVector3Make(-fabs([self randomVelocityComponent] / factor), [self randomVelocityComponent] / factor, [self randomVelocityComponent] / factor);
 }
 

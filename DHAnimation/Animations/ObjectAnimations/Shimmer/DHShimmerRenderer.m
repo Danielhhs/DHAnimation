@@ -15,15 +15,10 @@
 #import "DHShiningStarEffect.h"
 
 @interface DHShimmerRenderer () {
-    GLuint backgroundProgram;
-    GLuint backgroundTexture;
-    GLuint backgroundMvpLoc, backgroundMeshSamplerLoc, backgroundPercentLoc, backgroundEventLoc;
 }
 @property (nonatomic, strong) NSMutableData *shiningStarData;
 @property (nonatomic) NSInteger numberOfParticles;
 @property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
-@property (nonatomic) NSInteger columnCount;
-@property (nonatomic) NSInteger rowCount;
 @property (nonatomic, strong) DHShimmerParticleEffect *shimmerEffect;
 @property (nonatomic, strong) DHShiningStarEffect *starEffect;
 @property (nonatomic, strong) NSMutableArray *offsetData;
@@ -43,7 +38,7 @@
     
     [self setupShimmerEffect];
     [self setupShiningStarEffect];
-    [self setupParticleTexture];
+    [self setupTextures];
     
     self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
     [self.backgroundMesh updateWithOffsetData:self.offsetData event:self.event];
@@ -55,22 +50,9 @@
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
-- (void) setupGL
+- (void) setupTextures
 {
-    [EAGLContext setCurrentContext:self.context];
-    
-    backgroundProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ShimmerBackgroundVertex.glsl" fragmentShaderSrc:@"ShimmerBackgroundFragment.glsl"];
-    backgroundMvpLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
-    backgroundMeshSamplerLoc = glGetUniformLocation(backgroundProgram, "s_tex");
-    backgroundPercentLoc = glGetUniformLocation(backgroundProgram, "u_percent");
-    backgroundEventLoc = glGetUniformLocation(backgroundProgram, "u_animationEvent");
-    
-    glClearColor(0, 0, 0, 1);
-}
-
-- (void) setupParticleTexture
-{
-    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
+    texture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
 - (void) update:(CADisplayLink *)displayLink
@@ -101,14 +83,14 @@
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    glUseProgram(backgroundProgram);
-    glUniformMatrix4fv(backgroundMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUseProgram(program);
+    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.backgroundMesh prepareToDraw];
-    glUniform1f(backgroundPercentLoc, self.percent);
-    glUniform1f(backgroundEventLoc, self.event);
+    glUniform1f(percentLoc, self.percent);
+    glUniform1f(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, backgroundTexture);
-    glUniform1f(backgroundMeshSamplerLoc, 0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1f(samplerLoc, 0);
     [self.backgroundMesh drawEntireMesh];
     
     [self.shimmerEffect draw];

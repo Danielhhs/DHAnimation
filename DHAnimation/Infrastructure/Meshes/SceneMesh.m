@@ -257,6 +257,7 @@
             vertices[x * (rowCount + 1) + y].texCoords = GLKVector2Make(vx, 1 - vy);
             vertices[x * (rowCount + 1) + y].normal = GLKVector3Make(0, 0, 1);
             vertices[x * (rowCount + 1) + y].rotation = 0;
+            NSLog(@"vertices[%lu].position = (%g, %g, %g)", x * (rowCount + 1) + y, vertices[x * (rowCount + 1) + y].position.x, vertices[x * (rowCount + 1) + y].position.y, vertices[x * (rowCount + 1) + y].position.z);
         }
     }
     for (NSInteger x = 0; x < columnCount; x++) {

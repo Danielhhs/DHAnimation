@@ -18,6 +18,8 @@
 @property (nonatomic, weak) UIView *containerView;
 @property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic, strong) void (^completion)(void);
+@property (nonatomic) NSInteger rowCount;
+@property (nonatomic) NSInteger columnCount;
 
 + (DHObjectAnimationSettings *)defaultSettings;
 @end

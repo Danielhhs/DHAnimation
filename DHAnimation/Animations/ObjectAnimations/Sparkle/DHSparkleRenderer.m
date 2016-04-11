@@ -8,22 +8,26 @@
 
 #import "DHSparkleRenderer.h"
 #import "DHSparkleEffect.h"
+#import "SceneMesh.h"
 @interface DHSparkleRenderer() {
-    
+    GLuint xRangeLoc;
 }
 @property (nonatomic, strong) DHSparkleEffect *sparkleEffect;
+@property (nonatomic, strong) SceneMesh *backgroundMesh;
 @end
 
 @implementation DHSparkleRenderer
 
-- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    [super startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:completion];
+    [super startAnimationForView:targetView inContainerView:containerView duration:duration columnCount:columnCount rowCount:rowCount event:event direction:direction timingFunction:timingFunction completion:completion];
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    
+    [self setupGL];
     [self setupMvpMatrixWithView:containerView];
-    
     [self setupSparkleEffect];
+    
+    self.backgroundMesh = [[SceneMesh alloc] initWithView:targetView containerView:containerView columnCount:targetView.frame.size.width rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES];
+    [self setupTextures];
     
     self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
     self.animationView.delegate = self;
@@ -33,9 +37,25 @@
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
+- (void) setupGL
+{
+    [super setupGL];
+    xRangeLoc = glGetUniformLocation(program, "u_targetXPositionRange");
+}
+
+- (NSString *) vertexShaderName
+{
+    return @"SparkleBackgroundVertex.glsl";
+}
+
+- (NSString *) fragmentShaderName
+{
+    return @"SparkleBackgrounFragment.glsl";
+}
+
 - (void) setupSparkleEffect
 {
-    self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView];
+    self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:self.rowCount columnCount:self.columnCount];
     self.sparkleEffect.mvpMatrix = mvpMatrix;
     self.sparkleEffect.rowCount = 7;
 }
@@ -46,6 +66,18 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
+    
+    glUseProgram(program);
+    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniform2f(xRangeLoc, self.targetView.frame.origin.x, CGRectGetMaxX(self.targetView.frame));
+    [self.backgroundMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1i(samplerLoc, 0);
+    glUniform1f(directionLoc, self.direction);
+    glUniform1f(eventLoc, self.event);
+    [self.backgroundMesh drawEntireMesh];
+    
     [self.sparkleEffect prepareToDraw];
     [self.sparkleEffect draw];
 }
@@ -68,5 +100,4 @@
         }
     }
 }
-
 @end

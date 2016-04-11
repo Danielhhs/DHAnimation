@@ -144,6 +144,8 @@
 		547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */; };
 		547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHTransitionRenderer.m */; };
 		5478764A1CA5118400012F76 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* SceneMesh.m */; };
+		54A768401CBB49B800826929 /* SparkleBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */; };
+		54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m */; };
@@ -373,6 +375,8 @@
 		547876371CA50E2700012F76 /* DHTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionRenderer.m; sourceTree = "<group>"; };
 		547876481CA5118400012F76 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
 		547876491CA5118400012F76 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleBackgroundVertex.glsl; sourceTree = "<group>"; };
+		54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleBackgroundFragment.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 				5420C05F1CB8C1E1001C789C /* DHSparkleEffect.m */,
 				5420C0651CB8FA2C001C789C /* SparkleVertex.glsl */,
 				5420C0671CB8FA3B001C789C /* SparkleFragment.glsl */,
+				54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */,
+				54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */,
 				5420C0691CB9F135001C789C /* Sparkle2.png */,
 				5420C0611CB8CA6E001C789C /* Sparkle.png */,
 			);
@@ -1102,6 +1108,7 @@
 				547875E51CA4D61B00012F76 /* DropDestinationFragment.glsl in Resources */,
 				5420C0661CB8FA2C001C789C /* SparkleVertex.glsl in Resources */,
 				547875C71CA4D61B00012F76 /* ConfettiDestinationVertex.glsl in Resources */,
+				54A768401CBB49B800826929 /* SparkleBackgroundVertex.glsl in Resources */,
 				5478761B1CA4D61B00012F76 /* Shredder.png in Resources */,
 				5420C0571CB8B0E6001C789C /* ShimmerVertex.glsl in Resources */,
 				547875EB1CA4D61B00012F76 /* FlipDestinationVertex.glsl in Resources */,
@@ -1149,6 +1156,7 @@
 				5478760C1CA4D61B00012F76 /* RevealSourceFragment.glsl in Resources */,
 				547876071CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl in Resources */,
 				547876281CA4D61B00012F76 /* SwitchSourceVertex.glsl in Resources */,
+				54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */,
 				5478762E1CA4D61B00012F76 /* TwistSourceVertex.glsl in Resources */,
 				547876231CA4D61B00012F76 /* ShredderVertex.glsl in Resources */,
 				54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */,

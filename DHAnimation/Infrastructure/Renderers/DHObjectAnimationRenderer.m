@@ -7,6 +7,8 @@
 //
 
 #import "DHObjectAnimationRenderer.h"
+#import "OpenGLHelper.h"
+#import "TextureHelper.h"
 
 @implementation DHObjectAnimationRenderer
 
@@ -52,6 +54,11 @@
 
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
+    [self startAnimationForView:targetView inContainerView:containerView duration:duration columnCount:1 rowCount:1 event:event direction:direction timingFunction:timingFunction completion:completion];
+}
+
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+{
     self.targetView = targetView;
     self.containerView = containerView;
     self.duration = duration;
@@ -61,6 +68,8 @@
     self.completion = completion;
     self.elapsedTime = 0.f;
     self.percent = 0.f;
+    self.columnCount = columnCount;
+    self.rowCount = rowCount;
 }
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
@@ -81,5 +90,25 @@
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     
+}
+
+- (void) setupGL
+{
+    [EAGLContext setCurrentContext:self.context];
+    
+    program = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ShimmerBackgroundVertex.glsl" fragmentShaderSrc:@"ShimmerBackgroundFragment.glsl"];
+    glUseProgram(program);
+    mvpLoc = glGetUniformLocation(program, "u_mvpMatrix");
+    samplerLoc = glGetUniformLocation(program, "s_tex");
+    percentLoc = glGetUniformLocation(program, "u_percent");
+    eventLoc = glGetUniformLocation(program, "u_animationEvent");
+    directionLoc = glGetUniformLocation(program, "u_animationDirection");
+    
+    glClearColor(0, 0, 0, 1);
+}
+
+- (void) setupTextures
+{
+    texture = [TextureHelper setupTextureWithView:self.targetView];
 }
 @end

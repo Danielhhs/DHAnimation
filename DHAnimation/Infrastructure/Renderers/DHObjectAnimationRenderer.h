@@ -10,6 +10,9 @@
 #import "DHObjectAnimationSettings.h"
 @interface DHObjectAnimationRenderer : NSObject <GLKViewDelegate> {
     GLKMatrix4 mvpMatrix;
+    GLuint program;
+    GLuint texture;
+    GLuint mvpLoc, samplerLoc, percentLoc, eventLoc, directionLoc;
 }
 
 @property (nonatomic, strong) EAGLContext *context;
@@ -25,6 +28,10 @@
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic) AnimationEvent event;
 @property (nonatomic) AnimationDirection direction;
+@property (nonatomic) NSInteger rowCount;
+@property (nonatomic) NSInteger columnCount;
+@property (nonatomic, strong) NSString *vertexShaderName;
+@property (nonatomic, strong) NSString *fragmentShaderName;
 
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration completion:(void(^)(void))completion;
@@ -36,9 +43,11 @@
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction;
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings;
 
-
+- (void) setupGL;
+- (void) setupTextures;
 
 - (void) setupMvpMatrixWithView:(UIView *)view;
 @end

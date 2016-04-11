@@ -10,8 +10,6 @@
 #import "Enums.h"
 
 @interface DHShimmerParticleEffect : DHParticleEffect
-@property (nonatomic) NSInteger columnCount;
-@property (nonatomic) NSInteger rowCount;
 @property (nonatomic, strong) NSArray *offsetData;
 @property (nonatomic) AnimationEvent event;
 @property (nonatomic) AnimationDirection direction;

@@ -26,6 +26,8 @@
 @property (nonatomic, strong) NSMutableData *particleData;
 @property (nonatomic) NSTimeInterval elapsedTime;
 @property (nonatomic) NSTimeInterval duration;
+@property (nonatomic) NSInteger columnCount;
+@property (nonatomic) NSInteger rowCount;
 
 - (void) prepareToDraw;
 - (void) draw;
@@ -33,6 +35,6 @@
 - (void) setupExtraUniforms;
 - (void) setupTextures;
 - (void) generateParticlesData;
-- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView;
+- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView rowCount:(NSInteger)rowCount columnCount:(NSInteger) columnCount;
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent;
 @end
