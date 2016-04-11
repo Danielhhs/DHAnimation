@@ -7,8 +7,12 @@
 //
 
 #import "DHParticleEffect.h"
+#import "Enums.h"
 
 #define SPARKLE_LIFE_TIME_RATIO 0.2
 
 @interface DHSparkleEffect : DHParticleEffect
+
+@property (nonatomic) AnimationDirection direction;
+
 @end

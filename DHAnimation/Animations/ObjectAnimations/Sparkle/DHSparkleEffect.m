@@ -93,6 +93,9 @@ typedef struct {
     for (int y = 0; y < 4; y++) {
         CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + arc4random() % (int)self.targetView.frame.size.height;
         CGFloat xPos = percent / (1 - SPARKLE_LIFE_TIME_RATIO) * self.targetView.frame.size.width + self.targetView.frame.origin.x - (int)arc4random() % 10;
+        if (self.direction != AnimationDirectionLeftToRight) {
+            xPos = (1 - percent / (1 - SPARKLE_LIFE_TIME_RATIO)) * self.targetView.frame.size.width + self.targetView.frame.origin.x + (int)arc4random() % 10;
+        }
         DHSparkleAttributes sparkle;
         sparkle.emitterPosition = GLKVector3Make(xPos, yPos, self.targetView.frame.size.height / 2 );
         sparkle.size = [self randomSize];
@@ -127,7 +130,11 @@ typedef struct {
 - (GLKVector3) velocityForSize:(CGFloat)size
 {
     CGFloat factor = size / self.maxPointSize * (2 - size / self.maxPointSize);
-    return GLKVector3Make(-fabs([self randomVelocityComponent] / factor), [self randomVelocityComponent] / factor, [self randomVelocityComponent] / factor);
+    CGFloat xVelocity = fabs([self randomVelocityComponent] / factor);
+    if (self.direction == AnimationDirectionLeftToRight) {
+        xVelocity *= -1;
+    }
+    return GLKVector3Make(xVelocity, [self randomVelocityComponent] / factor, [self randomVelocityComponent] / factor);
 }
 
 - (void) prepareToDraw

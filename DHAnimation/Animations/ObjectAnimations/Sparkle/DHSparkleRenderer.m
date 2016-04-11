@@ -59,6 +59,7 @@
     self.sparkleEffect.mvpMatrix = mvpMatrix;
     self.sparkleEffect.rowCount = 7;
     self.sparkleEffect.duration = self.duration;
+    self.sparkleEffect.direction = self.direction;
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
