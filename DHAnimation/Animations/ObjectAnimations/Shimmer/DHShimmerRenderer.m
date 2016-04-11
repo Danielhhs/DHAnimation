@@ -25,9 +25,9 @@
 @end
 @implementation DHShimmerRenderer
 
-- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    [super startAnimationForView:targetView inContainerView:containerView duration:duration event:event direction:direction timingFunction:timingFunction completion:completion];
+    [super startAnimationForView:targetView inContainerView:containerView duration:duration columnCount:columnCount rowCount:rowCount event:event direction:direction timingFunction:timingFunction completion:completion];
     self.rowCount = 15;
     self.columnCount = 10;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];

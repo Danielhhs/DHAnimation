@@ -146,6 +146,7 @@
 		5478764A1CA5118400012F76 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* SceneMesh.m */; };
 		54A768401CBB49B800826929 /* SparkleBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */; };
 		54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */; };
+		54A768461CBB70F200826929 /* DHRotationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768451CBB70F200826929 /* DHRotationRenderer.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m */; };
@@ -377,6 +378,8 @@
 		547876491CA5118400012F76 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleBackgroundVertex.glsl; sourceTree = "<group>"; };
 		54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleBackgroundFragment.glsl; sourceTree = "<group>"; };
+		54A768441CBB70F200826929 /* DHRotationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRotationRenderer.h; sourceTree = "<group>"; };
+		54A768451CBB70F200826929 /* DHRotationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRotationRenderer.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -515,6 +518,7 @@
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				54A768431CBB70D500826929 /* Rotation */,
 				5420C03A1CB8B0E6001C789C /* Shimmer */,
 				5420C04B1CB8B0E6001C789C /* Sparkle */,
 			);
@@ -849,6 +853,15 @@
 				547876491CA5118400012F76 /* SceneMesh.m */,
 			);
 			path = Meshes;
+			sourceTree = "<group>";
+		};
+		54A768431CBB70D500826929 /* Rotation */ = {
+			isa = PBXGroup;
+			children = (
+				54A768441CBB70F200826929 /* DHRotationRenderer.h */,
+				54A768451CBB70F200826929 /* DHRotationRenderer.m */,
+			);
+			path = Rotation;
 			sourceTree = "<group>";
 		};
 		54E263F01C8EBCBF00FFB67E = {
@@ -1276,6 +1289,7 @@
 				547875F31CA4D61B00012F76 /* DHGridRenderer.m in Sources */,
 				547876191CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m in Sources */,
 				547876171CA4D61B00012F76 /* DHShredderMesh.m in Sources */,
+				54A768461CBB70F200826929 /* DHRotationRenderer.m in Sources */,
 				547876091CA4D61B00012F76 /* DHRevealRenderer.m in Sources */,
 				5478762A1CA4D61B00012F76 /* DHTwistRenderer.m in Sources */,
 				547876041CA4D61B00012F76 /* DHResolvingDoorRenderer.m in Sources */,

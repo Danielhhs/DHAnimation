@@ -74,7 +74,7 @@
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
 {
-    [self startAnimationForView:settings.targetView inContainerView:settings.containerView duration:settings.duration event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
+    [self startAnimationForView:settings.targetView inContainerView:settings.containerView duration:settings.duration columnCount:settings.columnCount rowCount:settings.rowCount event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
 }
 
 - (void) setupMvpMatrixWithView:(UIView *)view
@@ -89,14 +89,17 @@
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    
+    glEnable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 - (void) setupGL
 {
     [EAGLContext setCurrentContext:self.context];
     
-    program = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ShimmerBackgroundVertex.glsl" fragmentShaderSrc:@"ShimmerBackgroundFragment.glsl"];
+    program = [OpenGLHelper loadProgramWithVertexShaderSrc:self.vertexShaderName fragmentShaderSrc:self.fragmentShaderName];
     glUseProgram(program);
     mvpLoc = glGetUniformLocation(program, "u_mvpMatrix");
     samplerLoc = glGetUniformLocation(program, "s_tex");

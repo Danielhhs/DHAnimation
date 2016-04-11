@@ -32,7 +32,7 @@ typedef struct {
 {
     [super setRowCount:rowCount];
     self.yResolution = self.targetView.frame.size.height / rowCount;
-    self.maxPointSize = self.yResolution * [UIScreen mainScreen].scale;
+    self.maxPointSize = self.yResolution * [UIScreen mainScreen].scale * 1.8;
 }
 
 - (NSString *) vertexShaderFileName
@@ -86,9 +86,9 @@ typedef struct {
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
     self.elapsedTime = elapsedTime;
-    for (int y = 0; y < self.rowCount - 1; y++) {
+    for (int y = 0; y < self.rowCount; y++) {
         CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + (y + 0.5) * self.yResolution;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             DHSparkleAttributes sparkle;
             sparkle.emitterPosition = GLKVector3Make(percent * self.targetView.frame.size.width + self.targetView.frame.origin.x, yPos, self.targetView.frame.size.height / 2 );
             sparkle.size = [self randomSize];
@@ -160,9 +160,9 @@ typedef struct {
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     glUniform1f(elapsedTimeLoc, self.elapsedTime);
     
-    glActiveTexture(GL_TEXTURE0);
+    glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, texture);
-    glUniform1i(samplerLoc, 0);
+    glUniform1i(samplerLoc, 1);
     glDrawArrays(GL_POINTS, 0, (GLsizei)[self.particleData length] / sizeof(DHSparkleAttributes));
 }
 

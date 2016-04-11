@@ -26,7 +26,7 @@
     [self setupMvpMatrixWithView:containerView];
     [self setupSparkleEffect];
     
-    self.backgroundMesh = [[SceneMesh alloc] initWithView:targetView containerView:containerView columnCount:targetView.frame.size.width rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES];
+    self.backgroundMesh = [[SceneMesh alloc] initWithView:targetView containerView:containerView columnCount:targetView.frame.size.width rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
     [self setupTextures];
     
     self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
@@ -50,7 +50,7 @@
 
 - (NSString *) fragmentShaderName
 {
-    return @"SparkleBackgrounFragment.glsl";
+    return @"SparkleBackgroundFragment.glsl";
 }
 
 - (void) setupSparkleEffect
@@ -64,20 +64,21 @@
 {
     glEnable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
     
     glUseProgram(program);
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform2f(xRangeLoc, self.targetView.frame.origin.x, CGRectGetMaxX(self.targetView.frame));
+    glUniform2f(xRangeLoc, self.targetView.frame.origin.x * [UIScreen mainScreen].scale, CGRectGetMaxX(self.targetView.frame) * [UIScreen mainScreen].scale);
     [self.backgroundMesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1f(percentLoc, self.percent);
     glUniform1i(samplerLoc, 0);
     glUniform1f(directionLoc, self.direction);
     glUniform1f(eventLoc, self.event);
     [self.backgroundMesh drawEntireMesh];
     
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     [self.sparkleEffect prepareToDraw];
     [self.sparkleEffect draw];
 }
