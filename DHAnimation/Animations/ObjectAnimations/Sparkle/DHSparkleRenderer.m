@@ -37,6 +37,7 @@
 {
     self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView];
     self.sparkleEffect.mvpMatrix = mvpMatrix;
+    self.sparkleEffect.rowCount = 7;
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect

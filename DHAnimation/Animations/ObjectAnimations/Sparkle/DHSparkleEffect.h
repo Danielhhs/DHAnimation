@@ -9,5 +9,5 @@
 #import "DHParticleEffect.h"
 
 @interface DHSparkleEffect : DHParticleEffect
-
+@property (nonatomic) NSInteger rowCount;
 @end

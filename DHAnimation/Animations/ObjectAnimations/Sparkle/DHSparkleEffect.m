@@ -18,12 +18,22 @@ typedef struct {
     GLfloat size;
 }DHSparkleAttributes;
 
+#define MAX_SPARKLE_SIZE 100
+
 @interface DHSparkleEffect() {
 }
 
+@property (nonatomic) NSInteger numberOfParticles;
+@property (nonatomic) CGFloat yResolution;
 @end
 
 @implementation DHSparkleEffect
+
+- (void) setRowCount:(NSInteger)rowCount
+{
+    _rowCount = rowCount;
+    self.yResolution = self.targetView.frame.size.height / rowCount;
+}
 
 - (NSString *) vertexShaderFileName
 {
@@ -49,29 +59,72 @@ typedef struct {
     self.particleData = [NSMutableData data];
 }
 
+- (DHSparkleAttributes) sparkleAtIndex:(NSInteger) index
+{
+    DHSparkleAttributes *sparkles = (DHSparkleAttributes *)[self.particleData bytes];
+    return sparkles[index];
+}
+
+- (void) setSparkle:(DHSparkleAttributes)sparkle atIndex:(NSInteger)index
+{
+    DHSparkleAttributes *sparkles = (DHSparkleAttributes *)[self.particleData bytes];
+    sparkles[index] = sparkle;
+}
+
+- (NSInteger) indexForFirstFadedParticle
+{
+    NSInteger result = -1;
+    for (int i = 0; i < self.numberOfParticles; i++) {
+        DHSparkleAttributes sparkle = [self sparkleAtIndex:i];
+        if (sparkle.emitTime + sparkle.lifeTime < self.elapsedTime) {
+            return i;
+        }
+    }
+    return result;
+}
+
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
     self.elapsedTime = elapsedTime;
-    for (int i = 0; i < 5; i++) {
-        DHSparkleAttributes sparkle;
-        sparkle.emitterPosition = GLKVector3Make(percent * self.targetView.frame.size.width + self.targetView.frame.origin.x, CGRectGetMidY(self.targetView.frame), self.targetView.frame.size.height / 2 );
-        sparkle.emitterGravity = GLKVector3Make(0, -10, 0);
-        sparkle.emitterVelocity = GLKVector3Make(-fabs([self randomVelocityComponent]), [self randomVelocityComponent], 0);
-        sparkle.emitTime = elapsedTime;
-        sparkle.lifeTime = 1.f;
-        sparkle.size = [self randomSize];
-        [self.particleData appendBytes:&sparkle length:sizeof(sparkle)];
+    for (int y = 0; y < self.rowCount; y++) {
+        CGFloat yPos = self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame) + y * self.yResolution;
+        for (int i = 0; i < 5; i++) {
+            DHSparkleAttributes sparkle;
+            sparkle.emitterPosition = GLKVector3Make(percent * self.targetView.frame.size.width + self.targetView.frame.origin.x, yPos, self.targetView.frame.size.height / 2 );
+            sparkle.size = [self randomSize];
+            sparkle.emitterGravity = [self gravityForSize:sparkle.size];
+            sparkle.emitterVelocity = [self velocityForSize:sparkle.size];
+            sparkle.emitTime = elapsedTime;
+            sparkle.lifeTime = 1.f;
+            NSInteger firstInvalidSpot = [self indexForFirstFadedParticle];
+            if (firstInvalidSpot == -1) {
+                [self.particleData appendBytes:&sparkle length:sizeof(sparkle)];
+            } else {
+                [self setSparkle:sparkle atIndex:firstInvalidSpot];
+            }
+        }
     }
 }
 
 - (CGFloat) randomSize
 {
-    return arc4random() % 75;
+    return arc4random() % (MAX_SPARKLE_SIZE - 20) + 20;
 }
 
 - (CGFloat) randomVelocityComponent
 {
-    return arc4random() % 200 - 100;
+    return (arc4random() % 500 - 250) / 3;
+}
+
+- (GLKVector3) gravityForSize:(CGFloat)size
+{
+    return GLKVector3Make(0, size / MAX_SPARKLE_SIZE * -200, 0);
+}
+
+- (GLKVector3) velocityForSize:(CGFloat)size
+{
+    CGFloat factor = size / MAX_SPARKLE_SIZE * (2 - size / MAX_SPARKLE_SIZE);
+    return GLKVector3Make(-fabs([self randomVelocityComponent] / factor), [self randomVelocityComponent] / factor, [self randomVelocityComponent] / factor);
 }
 
 - (void) prepareToDraw
@@ -111,5 +164,10 @@ typedef struct {
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
     glDrawArrays(GL_POINTS, 0, (GLsizei)[self.particleData length] / sizeof(DHSparkleAttributes));
+}
+
+- (NSInteger) numberOfParticles
+{
+    return [self.particleData length] / sizeof(DHSparkleAttributes);
 }
 @end

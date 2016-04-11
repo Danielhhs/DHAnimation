@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSString *particleImageName;
 @property (nonatomic, strong) NSMutableData *particleData;
 @property (nonatomic) NSTimeInterval elapsedTime;
+@property (nonatomic) NSTimeInterval duration;
 
 - (void) prepareToDraw;
 - (void) draw;
