@@ -14,8 +14,7 @@
 #import "DHShimmerParticleEffect.h"
 #import "DHShiningStarEffect.h"
 
-@interface DHShimmerRenderer () {
-}
+@interface DHShimmerRenderer ()
 @property (nonatomic, strong) NSMutableData *shiningStarData;
 @property (nonatomic) NSInteger numberOfParticles;
 @property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
@@ -25,29 +24,21 @@
 @end
 @implementation DHShimmerRenderer
 
-- (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) setupEffects
 {
-    [super startAnimationForView:targetView inContainerView:containerView duration:duration columnCount:columnCount rowCount:rowCount event:event direction:direction timingFunction:timingFunction completion:completion];
-    self.rowCount = 15;
-    self.columnCount = 10;
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    
-    [self setupGL];
-    [self setupMvpMatrixWithView:containerView];
-    [self generateOffsetData];
-    
     [self setupShimmerEffect];
     [self setupShiningStarEffect];
-    [self setupTextures];
-    
+}
+
+- (void) additionalSetUp
+{
+    [self generateOffsetData];
+}
+
+- (void) setupMeshes
+{
     self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
     [self.backgroundMesh updateWithOffsetData:self.offsetData event:self.event];
-    self.animationView = [[GLKView alloc] initWithFrame:containerView.frame context:self.context];
-    self.animationView.delegate = self;
-    
-    [containerView addSubview:self.animationView];
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void) setupTextures
@@ -55,34 +46,15 @@
     texture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
-- (void) update:(CADisplayLink *)displayLink
+- (void) updateAdditionalComponents
 {
-    self.elapsedTime += displayLink.duration;
     self.percent = self.elapsedTime / self.duration;
     self.shimmerEffect.percent = self.percent;
     self.starEffect.elapsedTime = self.elapsedTime;
-    if (self.elapsedTime < self.duration) {
-        [self.animationView display];
-    } else {
-        self.percent = 1;
-        [self.animationView display];
-        [displayLink invalidate];
-        self.displayLink = nil;
-        [self.animationView removeFromSuperview];
-        if (self.completion) {
-            self.completion();
-        }
-    }
 }
 
-- (void) glkView:(GLKView *)view drawInRect:(CGRect)rect
+- (void) drawFrame
 {
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
     glUseProgram(program);
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.backgroundMesh prepareToDraw];

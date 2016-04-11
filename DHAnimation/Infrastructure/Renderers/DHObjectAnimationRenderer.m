@@ -74,7 +74,7 @@
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     [self setupGL];
     [self setupMvpMatrixWithView:containerView];
-    
+    [self additionalSetUp];
     [self setupMeshes];
     [self setupEffects];
     [self setupTextures];
@@ -128,7 +128,10 @@
     glClearColor(0, 0, 0, 1);
 }
 
-
+- (void) additionalSetUp
+{
+    
+}
 
 - (void) update:(CADisplayLink *)displayLink
 {

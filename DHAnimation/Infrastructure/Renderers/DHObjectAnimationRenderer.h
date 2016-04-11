@@ -52,6 +52,7 @@
 - (void) setupEffects;
 - (void) drawFrame;
 - (void) updateAdditionalComponents;
+- (void) additionalSetUp;   //Happens before set up effect and mesh
 
 - (void) setupMvpMatrixWithView:(UIView *)view;
 @end

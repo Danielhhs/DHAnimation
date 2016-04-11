@@ -44,8 +44,11 @@
 {
     [self updateAnimationSettings];
     switch (self.animationType) {
-        case ObjectAnimationTypeShimmer:
+        case ObjectAnimationTypeShimmer: {
             self.renderer = [[DHShimmerRenderer alloc] init];
+            self.settings.rowCount = 15;
+            self.settings.columnCount = 10;
+        }
             break;
         case ObjectAnimationTypeSparkle:
             self.renderer = [[DHSparkleRenderer alloc] init];
