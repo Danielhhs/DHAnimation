@@ -8,7 +8,9 @@
 
 #import "DHRotationRenderer.h"
 #import "SceneMesh.h"
-@interface DHRotationRenderer()
+@interface DHRotationRenderer() {
+    GLuint targetCenterLoc, rotationRadiusLoc;
+}
 @property (nonatomic, strong) SceneMesh *mesh;
 @end
 
@@ -24,6 +26,13 @@
     return @"ObjectRotationFragment.glsl";
 }
 
+- (void) setupGL
+{
+    [super setupGL];
+    targetCenterLoc = glGetUniformLocation(program, "u_targetCenter");
+    rotationRadiusLoc = glGetUniformLocation(program, "u_rotationRadius");
+}
+
 - (void) setupMeshes
 {
     self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
@@ -33,6 +42,11 @@
 {
     glUseProgram(program);
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniform2f(targetCenterLoc, self.targetView.center.x, self.targetView.center.y);
+    glUniform1f(rotationRadiusLoc, self.rotationRadius);
+    glUniform1f(percentLoc, self.percent);
+    glUniform1f(eventLoc, self.event);
+    glUniform1f(directionLoc, self.direction);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);

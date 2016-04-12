@@ -53,8 +53,11 @@
         case ObjectAnimationTypeSparkle:
             self.renderer = [[DHSparkleRenderer alloc] init];
             break;
-        case ObjectAnimationTypeRotation:
+        case ObjectAnimationTypeRotation:{
             self.renderer = [[DHRotationRenderer alloc] init];
+            DHRotationRenderer *rotationRenderer = (DHRotationRenderer *)self.renderer;
+            rotationRenderer.rotationRadius = 500;
+        }
             break;
         default:
             break;

@@ -9,5 +9,5 @@
 #import "DHObjectAnimationRenderer.h"
 
 @interface DHRotationRenderer : DHObjectAnimationRenderer
-
+@property (nonatomic) CGFloat rotationRadius;
 @end
