@@ -7,26 +7,26 @@
 //
 
 #import "DHTransitionPresentationViewController.h"
-#import "DHDoorWayRenderer.h"
-#import "DHCubeRenderer.h"
-#import "DHTwistRenderer.h"
-#import "DHClothLineRenderer.h"
-#import "DHShredderRenderer.h"
+#import "DHDoorWayTransitionRenderer.h"
+#import "DHCubeTransitionRenderer.h"
+#import "DHTwistTransitionRenderer.h"
+#import "DHClothLineTransitionRenderer.h"
+#import "DHShredderTransitionRenderer.h"
 #import "DHTransitionSettingViewController.h"
-#import "DHSwitchRenderer.h"
-#import "DHGridRenderer.h"
-#import "DHConfettiRenderer.h"
-#import "DHPushRenderer.h"
-#import "DHRevealRenderer.h"
-#import "DHDropRenderer.h"
-#import "DHMosaicRenderer.h"
-#import "DHFlopRenderer.h"
-#import "DHCoverRenderer.h"
-#import "DHFlipRenderer.h"
-#import "DHReflectionRenderer.h"
-#import "DHSpinDismissRenderer.h"
-#import "DHRippleRenderer.h"
-#import "DHResolvingDoorRenderer.h"
+#import "DHSwitchTransitionRenderer.h"
+#import "DHGridTransitionRenderer.h"
+#import "DHConfettiTransitionRenderer.h"
+#import "DHPushTransitionRenderer.h"
+#import "DHRevealTransitionRenderer.h"
+#import "DHDropTransitionRenderer.h"
+#import "DHMosaicTransitionRenderer.h"
+#import "DHFlopTransitionRenderer.h"
+#import "DHCoverTransitionRenderer.h"
+#import "DHFlipTransitionRenderer.h"
+#import "DHReflectionTransitionRenderer.h"
+#import "DHSpinDismissTransitionRenderer.h"
+#import "DHRippleTransitionRenderer.h"
+#import "DHResolvingDoorTransitionRenderer.h"
 
 @interface DHTransitionPresentationViewController ()
 @property (nonatomic, strong) DHTransitionSettings *settings;
@@ -58,105 +58,105 @@
         case TransitionTypeDoorWay:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
-            self.renderer = [[DHDoorWayRenderer alloc] init];
+            self.renderer = [[DHDoorWayTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeCube:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-            self.renderer = [[DHCubeRenderer alloc] init];
+            self.renderer = [[DHCubeTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeTwist:
         {
-            self.renderer = [[DHTwistRenderer alloc] init];
+            self.renderer = [[DHTwistTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeClothLine:
         {
             self.settings.duration = 3.f;
-            self.renderer = [[DHClothLineRenderer alloc] init];
+            self.renderer = [[DHClothLineTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeShredder:
         {
             self.settings.columnCount = 12;
             self.settings.duration = 3.f;
-            self.renderer = [[DHShredderRenderer alloc] init];
+            self.renderer = [[DHShredderTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeSwitch:
         {
-            self.renderer = [[DHSwitchRenderer alloc] init];
+            self.renderer = [[DHSwitchTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeGrid:
         {
-            self.renderer = [[DHGridRenderer alloc] init];
+            self.renderer = [[DHGridTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeConfetti:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
             self.settings.duration = 2;
-            self.renderer = [[DHConfettiRenderer alloc] init];
+            self.renderer = [[DHConfettiTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypePush:
         {
-            self.renderer = [[DHPushRenderer alloc] init];
+            self.renderer = [[DHPushTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeReveal:
         {
-            self.renderer = [[DHRevealRenderer alloc] init];
+            self.renderer = [[DHRevealTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeDrop:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
-            self.renderer = [[DHDropRenderer alloc] init];
+            self.renderer = [[DHDropTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeMosaic:
         {
-            self.renderer = [[DHMosaicRenderer alloc] init];
+            self.renderer = [[DHMosaicTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeFlop:
         {
-            self.renderer = [[DHFlopRenderer alloc] init];
+            self.renderer = [[DHFlopTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeCover:
         {
-            self.renderer = [[DHCoverRenderer alloc] init];
+            self.renderer = [[DHCoverTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeFlip:
         {
-            self.renderer = [[DHFlipRenderer alloc] init];
+            self.renderer = [[DHFlipTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeReflection:
         {
-            self.renderer = [[DHReflectionRenderer alloc] init];
+            self.renderer = [[DHReflectionTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeRotateDismiss:
         {
-            self.renderer = [[DHSpinDismissRenderer alloc] init];
+            self.renderer = [[DHSpinDismissTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeRipple:
         {
-            self.renderer = [[DHRippleRenderer alloc] init];
+            self.renderer = [[DHRippleTransitionRenderer alloc] init];
         }
             break;
         case TransitionTypeResolvingDoor:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-            self.renderer = [[DHResolvingDoorRenderer alloc] init];
+            self.renderer = [[DHResolvingDoorTransitionRenderer alloc] init];
         }
         default:
             break;

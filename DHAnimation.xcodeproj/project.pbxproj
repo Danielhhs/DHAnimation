@@ -35,92 +35,87 @@
 		547875C21CA4D61B00012F76 /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */; };
 		547875C31CA4D61B00012F76 /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */; };
 		547875C41CA4D61B00012F76 /* ClothLineSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875241CA4D61B00012F76 /* ClothLineSourceVertex.glsl */; };
-		547875C51CA4D61B00012F76 /* DHClothLineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875261CA4D61B00012F76 /* DHClothLineRenderer.m */; };
+		547875C51CA4D61B00012F76 /* DHClothLineTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875261CA4D61B00012F76 /* DHClothLineTransitionRenderer.m */; };
 		547875C61CA4D61B00012F76 /* ConfettiDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875281CA4D61B00012F76 /* ConfettiDestinationFragment.glsl */; };
 		547875C71CA4D61B00012F76 /* ConfettiDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875291CA4D61B00012F76 /* ConfettiDestinationVertex.glsl */; };
 		547875C81CA4D61B00012F76 /* ConfettiSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478752A1CA4D61B00012F76 /* ConfettiSourceFragment.glsl */; };
 		547875C91CA4D61B00012F76 /* ConfettiSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478752B1CA4D61B00012F76 /* ConfettiSourceVertex.glsl */; };
-		547875CA1CA4D61B00012F76 /* DHConfettiRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478752D1CA4D61B00012F76 /* DHConfettiRenderer.m */; };
+		547875CA1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478752D1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m */; };
 		547875CB1CA4D61B00012F76 /* DHConfettiSourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478752F1CA4D61B00012F76 /* DHConfettiSourceMesh.m */; };
 		547875CC1CA4D61B00012F76 /* CoverDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875311CA4D61B00012F76 /* CoverDestinationFragment.glsl */; };
 		547875CD1CA4D61B00012F76 /* CoverDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875321CA4D61B00012F76 /* CoverDestinationVertex.glsl */; };
 		547875CE1CA4D61B00012F76 /* CoverSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875331CA4D61B00012F76 /* CoverSourceFragment.glsl */; };
 		547875CF1CA4D61B00012F76 /* CoverSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875341CA4D61B00012F76 /* CoverSourceVertex.glsl */; };
-		547875D01CA4D61B00012F76 /* DHCoverRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875361CA4D61B00012F76 /* DHCoverRenderer.m */; };
+		547875D01CA4D61B00012F76 /* DHCoverTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875361CA4D61B00012F76 /* DHCoverTransitionRenderer.m */; };
 		547875D11CA4D61B00012F76 /* CubeDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875381CA4D61B00012F76 /* CubeDestinationFragment.glsl */; };
 		547875D21CA4D61B00012F76 /* CubeDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875391CA4D61B00012F76 /* CubeDestinationVertex.glsl */; };
 		547875D31CA4D61B00012F76 /* CubeSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478753A1CA4D61B00012F76 /* CubeSourceFragment.glsl */; };
 		547875D41CA4D61B00012F76 /* CubeSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478753B1CA4D61B00012F76 /* CubeSourceVertex.glsl */; };
 		547875D51CA4D61B00012F76 /* DHCubeDestinationMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478753D1CA4D61B00012F76 /* DHCubeDestinationMesh.m */; };
 		547875D61CA4D61B00012F76 /* DHCubeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478753F1CA4D61B00012F76 /* DHCubeMesh.m */; };
-		547875D71CA4D61B00012F76 /* DHCubeRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875411CA4D61B00012F76 /* DHCubeRenderer.m */; };
+		547875D71CA4D61B00012F76 /* DHCubeTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875411CA4D61B00012F76 /* DHCubeTransitionRenderer.m */; };
 		547875D81CA4D61B00012F76 /* DHCubeSourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875431CA4D61B00012F76 /* DHCubeSourceMesh.m */; };
-		547875D91CA4D61B00012F76 /* DHDoorWayRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875461CA4D61B00012F76 /* DHDoorWayRenderer.m */; };
+		547875D91CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875461CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m */; };
 		547875DA1CA4D61B00012F76 /* DHDoorWaySourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875481CA4D61B00012F76 /* DHDoorWaySourceMesh.m */; };
 		547875DB1CA4D61B00012F76 /* DoorWayDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875491CA4D61B00012F76 /* DoorWayDestinationFragment.glsl */; };
 		547875DC1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754A1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl */; };
 		547875DD1CA4D61B00012F76 /* DoorWaySourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754B1CA4D61B00012F76 /* DoorWaySourceFragment.glsl */; };
 		547875DE1CA4D61B00012F76 /* DoorWaySourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754C1CA4D61B00012F76 /* DoorWaySourceVertex.glsl */; };
-		547875DF1CA4D61B00012F76 /* DHReflectionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478754F1CA4D61B00012F76 /* DHReflectionRenderer.m */; };
-		547875E01CA4D61B00012F76 /* ReflectionDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875501CA4D61B00012F76 /* ReflectionDestinationFragment.glsl */; };
-		547875E11CA4D61B00012F76 /* ReflectionDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875511CA4D61B00012F76 /* ReflectionDestinationVertex.glsl */; };
-		547875E21CA4D61B00012F76 /* ReflectionSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875521CA4D61B00012F76 /* ReflectionSourceFragment.glsl */; };
-		547875E31CA4D61B00012F76 /* ReflectionSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875531CA4D61B00012F76 /* ReflectionSourceVertex.glsl */; };
-		547875E41CA4D61B00012F76 /* DHDropRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875561CA4D61B00012F76 /* DHDropRenderer.m */; };
+		547875E41CA4D61B00012F76 /* DHDropTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875561CA4D61B00012F76 /* DHDropTransitionRenderer.m */; };
 		547875E51CA4D61B00012F76 /* DropDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875571CA4D61B00012F76 /* DropDestinationFragment.glsl */; };
 		547875E61CA4D61B00012F76 /* DropDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875581CA4D61B00012F76 /* DropDestinationVertex.glsl */; };
 		547875E71CA4D61B00012F76 /* DropSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875591CA4D61B00012F76 /* DropSourceFragment.glsl */; };
 		547875E81CA4D61B00012F76 /* DropSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755A1CA4D61B00012F76 /* DropSourceVertex.glsl */; };
-		547875E91CA4D61B00012F76 /* DHFlipRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478755D1CA4D61B00012F76 /* DHFlipRenderer.m */; };
+		547875E91CA4D61B00012F76 /* DHFlipTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478755D1CA4D61B00012F76 /* DHFlipTransitionRenderer.m */; };
 		547875EA1CA4D61B00012F76 /* FlipDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755E1CA4D61B00012F76 /* FlipDestinationFragment.glsl */; };
 		547875EB1CA4D61B00012F76 /* FlipDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755F1CA4D61B00012F76 /* FlipDestinationVertex.glsl */; };
 		547875EC1CA4D61B00012F76 /* FlipSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875601CA4D61B00012F76 /* FlipSourceFragment.glsl */; };
 		547875ED1CA4D61B00012F76 /* FlipSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875611CA4D61B00012F76 /* FlipSourceVertex.glsl */; };
-		547875EE1CA4D61B00012F76 /* DHFlopRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875641CA4D61B00012F76 /* DHFlopRenderer.m */; };
+		547875EE1CA4D61B00012F76 /* DHFlopTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875641CA4D61B00012F76 /* DHFlopTransitionRenderer.m */; };
 		547875EF1CA4D61B00012F76 /* FlopDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875651CA4D61B00012F76 /* FlopDestinationFragment.glsl */; };
 		547875F01CA4D61B00012F76 /* FlopDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875661CA4D61B00012F76 /* FlopDestinationVertex.glsl */; };
 		547875F11CA4D61B00012F76 /* FlopSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875671CA4D61B00012F76 /* FlopSourceFragment.glsl */; };
 		547875F21CA4D61B00012F76 /* FlopSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875681CA4D61B00012F76 /* FlopSourceVertex.glsl */; };
-		547875F31CA4D61B00012F76 /* DHGridRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478756B1CA4D61B00012F76 /* DHGridRenderer.m */; };
+		547875F31CA4D61B00012F76 /* DHGridTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478756B1CA4D61B00012F76 /* DHGridTransitionRenderer.m */; };
 		547875F41CA4D61B00012F76 /* GridDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756C1CA4D61B00012F76 /* GridDestinationFragment.glsl */; };
 		547875F51CA4D61B00012F76 /* GridDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756D1CA4D61B00012F76 /* GridDestinationVertex.glsl */; };
 		547875F61CA4D61B00012F76 /* GridSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756E1CA4D61B00012F76 /* GridSourceFragment.glsl */; };
 		547875F71CA4D61B00012F76 /* GridSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756F1CA4D61B00012F76 /* GridSourceVertex.glsl */; };
 		547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875721CA4D61B00012F76 /* DHMosaicBackMesh.m */; };
 		547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875741CA4D61B00012F76 /* DHMosaicMesh.m */; };
-		547875FA1CA4D61B00012F76 /* DHMosaicRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875761CA4D61B00012F76 /* DHMosaicRenderer.m */; };
+		547875FA1CA4D61B00012F76 /* DHMosaicTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875761CA4D61B00012F76 /* DHMosaicTransitionRenderer.m */; };
 		547875FB1CA4D61B00012F76 /* MosaicDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875771CA4D61B00012F76 /* MosaicDestinationFragment.glsl */; };
 		547875FC1CA4D61B00012F76 /* MosaicDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875781CA4D61B00012F76 /* MosaicDestinationVertex.glsl */; };
 		547875FD1CA4D61B00012F76 /* MosaicSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875791CA4D61B00012F76 /* MosaicSourceFragment.glsl */; };
 		547875FE1CA4D61B00012F76 /* MosaicSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757A1CA4D61B00012F76 /* MosaicSourceVertex.glsl */; };
-		547875FF1CA4D61B00012F76 /* DHPushRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478757D1CA4D61B00012F76 /* DHPushRenderer.m */; };
+		547875FF1CA4D61B00012F76 /* DHPushTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478757D1CA4D61B00012F76 /* DHPushTransitionRenderer.m */; };
 		547876001CA4D61B00012F76 /* PushDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757E1CA4D61B00012F76 /* PushDestinationFragment.glsl */; };
 		547876011CA4D61B00012F76 /* PushDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757F1CA4D61B00012F76 /* PushDestinationVertex.glsl */; };
 		547876021CA4D61B00012F76 /* PushSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875801CA4D61B00012F76 /* PushSourceFragment.glsl */; };
 		547876031CA4D61B00012F76 /* PushSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875811CA4D61B00012F76 /* PushSourceVertex.glsl */; };
-		547876041CA4D61B00012F76 /* DHResolvingDoorRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875851CA4D61B00012F76 /* DHResolvingDoorRenderer.m */; };
+		547876041CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875851CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m */; };
 		547876051CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875861CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl */; };
 		547876061CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875871CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl */; };
 		547876071CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875881CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl */; };
 		547876081CA4D61B00012F76 /* ResolvingDoorSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875891CA4D61B00012F76 /* ResolvingDoorSourceVertex.glsl */; };
-		547876091CA4D61B00012F76 /* DHRevealRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478758C1CA4D61B00012F76 /* DHRevealRenderer.m */; };
+		547876091CA4D61B00012F76 /* DHRevealTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478758C1CA4D61B00012F76 /* DHRevealTransitionRenderer.m */; };
 		5478760A1CA4D61B00012F76 /* RevealDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758D1CA4D61B00012F76 /* RevealDestinationFragment.glsl */; };
 		5478760B1CA4D61B00012F76 /* RevealDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758E1CA4D61B00012F76 /* RevealDestinationVertex.glsl */; };
 		5478760C1CA4D61B00012F76 /* RevealSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758F1CA4D61B00012F76 /* RevealSourceFragment.glsl */; };
 		5478760D1CA4D61B00012F76 /* RevealSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875901CA4D61B00012F76 /* RevealSourceVertex.glsl */; };
-		5478760E1CA4D61B00012F76 /* DHRippleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875931CA4D61B00012F76 /* DHRippleRenderer.m */; };
+		5478760E1CA4D61B00012F76 /* DHRippleTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875931CA4D61B00012F76 /* DHRippleTransitionRenderer.m */; };
 		5478760F1CA4D61B00012F76 /* RippleDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875941CA4D61B00012F76 /* RippleDestinationFragment.glsl */; };
 		547876101CA4D61B00012F76 /* RippleDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875951CA4D61B00012F76 /* RippleDestinationVertex.glsl */; };
 		547876111CA4D61B00012F76 /* RippleSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875961CA4D61B00012F76 /* RippleSourceFragment.glsl */; };
 		547876121CA4D61B00012F76 /* RippleSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875971CA4D61B00012F76 /* RippleSourceVertex.glsl */; };
-		547876131CA4D61B00012F76 /* DHSpinDismissRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478759A1CA4D61B00012F76 /* DHSpinDismissRenderer.m */; };
+		547876131CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478759A1CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m */; };
 		547876141CA4D61B00012F76 /* SpinDismissFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478759B1CA4D61B00012F76 /* SpinDismissFragment.glsl */; };
 		547876151CA4D61B00012F76 /* SpinDismissVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478759C1CA4D61B00012F76 /* SpinDismissVertex.glsl */; };
 		547876161CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478759F1CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m */; };
 		547876171CA4D61B00012F76 /* DHShredderMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A11CA4D61B00012F76 /* DHShredderMesh.m */; };
 		547876181CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A31CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m */; };
 		547876191CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A51CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m */; };
-		5478761A1CA4D61B00012F76 /* DHShredderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A71CA4D61B00012F76 /* DHShredderRenderer.m */; };
+		5478761A1CA4D61B00012F76 /* DHShredderTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A71CA4D61B00012F76 /* DHShredderTransitionRenderer.m */; };
 		5478761B1CA4D61B00012F76 /* Shredder.png in Resources */ = {isa = PBXBuildFile; fileRef = 547875A81CA4D61B00012F76 /* Shredder.png */; };
 		5478761C1CA4D61B00012F76 /* ShredderBackPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875A91CA4D61B00012F76 /* ShredderBackPieceFragment.glsl */; };
 		5478761D1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AA1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl */; };
@@ -130,13 +125,13 @@
 		547876211CA4D61B00012F76 /* ShredderPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AE1CA4D61B00012F76 /* ShredderPieceFragment.glsl */; };
 		547876221CA4D61B00012F76 /* ShredderPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AF1CA4D61B00012F76 /* ShredderPieceVertex.glsl */; };
 		547876231CA4D61B00012F76 /* ShredderVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B01CA4D61B00012F76 /* ShredderVertex.glsl */; };
-		547876241CA4D61B00012F76 /* DHSwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875B31CA4D61B00012F76 /* DHSwitchRenderer.m */; };
+		547876241CA4D61B00012F76 /* DHSwitchTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875B31CA4D61B00012F76 /* DHSwitchTransitionRenderer.m */; };
 		547876251CA4D61B00012F76 /* SwitchDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B41CA4D61B00012F76 /* SwitchDestinationFragment.glsl */; };
 		547876261CA4D61B00012F76 /* SwitchDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B51CA4D61B00012F76 /* SwitchDestinationVertex.glsl */; };
 		547876271CA4D61B00012F76 /* SwitchSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B61CA4D61B00012F76 /* SwitchSourceFragment.glsl */; };
 		547876281CA4D61B00012F76 /* SwitchSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B71CA4D61B00012F76 /* SwitchSourceVertex.glsl */; };
 		547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875BA1CA4D61B00012F76 /* DHTwistMesh.m */; };
-		5478762A1CA4D61B00012F76 /* DHTwistRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875BC1CA4D61B00012F76 /* DHTwistRenderer.m */; };
+		5478762A1CA4D61B00012F76 /* DHTwistTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875BC1CA4D61B00012F76 /* DHTwistTransitionRenderer.m */; };
 		5478762B1CA4D61B00012F76 /* TwistDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BD1CA4D61B00012F76 /* TwistDestinationFragment.glsl */; };
 		5478762C1CA4D61B00012F76 /* TwistDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BE1CA4D61B00012F76 /* TwistDestinationVertex.glsl */; };
 		5478762D1CA4D61B00012F76 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BF1CA4D61B00012F76 /* TwistSourceFragment.glsl */; };
@@ -149,6 +144,11 @@
 		54A768461CBB70F200826929 /* DHRotationAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768451CBB70F200826929 /* DHRotationAnimationRenderer.m */; };
 		54A768481CBBAAF600826929 /* ObjectRotationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */; };
 		54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */; };
+		54A7688C1CBCA17C00826929 /* DHReflectionTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768871CBCA17C00826929 /* DHReflectionTransitionRenderer.m */; };
+		54A7688D1CBCA17C00826929 /* ReflectionDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768881CBCA17C00826929 /* ReflectionDestinationFragment.glsl */; };
+		54A7688E1CBCA17C00826929 /* ReflectionDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768891CBCA17C00826929 /* ReflectionDestinationVertex.glsl */; };
+		54A7688F1CBCA17C00826929 /* ReflectionSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7688A1CBCA17C00826929 /* ReflectionSourceFragment.glsl */; };
+		54A768901CBCA17C00826929 /* ReflectionSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7688B1CBCA17C00826929 /* ReflectionSourceVertex.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m */; };
@@ -235,22 +235,22 @@
 		547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceFragment.glsl; sourceTree = "<group>"; };
 		547875241CA4D61B00012F76 /* ClothLineSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceVertex.glsl; sourceTree = "<group>"; };
-		547875251CA4D61B00012F76 /* DHClothLineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHClothLineRenderer.h; sourceTree = "<group>"; };
-		547875261CA4D61B00012F76 /* DHClothLineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHClothLineRenderer.m; sourceTree = "<group>"; };
+		547875251CA4D61B00012F76 /* DHClothLineTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHClothLineTransitionRenderer.h; sourceTree = "<group>"; };
+		547875261CA4D61B00012F76 /* DHClothLineTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHClothLineTransitionRenderer.m; sourceTree = "<group>"; };
 		547875281CA4D61B00012F76 /* ConfettiDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConfettiDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875291CA4D61B00012F76 /* ConfettiDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConfettiDestinationVertex.glsl; sourceTree = "<group>"; };
 		5478752A1CA4D61B00012F76 /* ConfettiSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConfettiSourceFragment.glsl; sourceTree = "<group>"; };
 		5478752B1CA4D61B00012F76 /* ConfettiSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConfettiSourceVertex.glsl; sourceTree = "<group>"; };
-		5478752C1CA4D61B00012F76 /* DHConfettiRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConfettiRenderer.h; sourceTree = "<group>"; };
-		5478752D1CA4D61B00012F76 /* DHConfettiRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConfettiRenderer.m; sourceTree = "<group>"; };
+		5478752C1CA4D61B00012F76 /* DHConfettiTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConfettiTransitionRenderer.h; sourceTree = "<group>"; };
+		5478752D1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConfettiTransitionRenderer.m; sourceTree = "<group>"; };
 		5478752E1CA4D61B00012F76 /* DHConfettiSourceMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConfettiSourceMesh.h; sourceTree = "<group>"; };
 		5478752F1CA4D61B00012F76 /* DHConfettiSourceMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConfettiSourceMesh.m; sourceTree = "<group>"; };
 		547875311CA4D61B00012F76 /* CoverDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875321CA4D61B00012F76 /* CoverDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875331CA4D61B00012F76 /* CoverSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverSourceFragment.glsl; sourceTree = "<group>"; };
 		547875341CA4D61B00012F76 /* CoverSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoverSourceVertex.glsl; sourceTree = "<group>"; };
-		547875351CA4D61B00012F76 /* DHCoverRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCoverRenderer.h; sourceTree = "<group>"; };
-		547875361CA4D61B00012F76 /* DHCoverRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCoverRenderer.m; sourceTree = "<group>"; };
+		547875351CA4D61B00012F76 /* DHCoverTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCoverTransitionRenderer.h; sourceTree = "<group>"; };
+		547875361CA4D61B00012F76 /* DHCoverTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCoverTransitionRenderer.m; sourceTree = "<group>"; };
 		547875381CA4D61B00012F76 /* CubeDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CubeDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875391CA4D61B00012F76 /* CubeDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CubeDestinationVertex.glsl; sourceTree = "<group>"; };
 		5478753A1CA4D61B00012F76 /* CubeSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CubeSourceFragment.glsl; sourceTree = "<group>"; };
@@ -259,44 +259,38 @@
 		5478753D1CA4D61B00012F76 /* DHCubeDestinationMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCubeDestinationMesh.m; sourceTree = "<group>"; };
 		5478753E1CA4D61B00012F76 /* DHCubeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCubeMesh.h; sourceTree = "<group>"; };
 		5478753F1CA4D61B00012F76 /* DHCubeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCubeMesh.m; sourceTree = "<group>"; };
-		547875401CA4D61B00012F76 /* DHCubeRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCubeRenderer.h; sourceTree = "<group>"; };
-		547875411CA4D61B00012F76 /* DHCubeRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCubeRenderer.m; sourceTree = "<group>"; };
+		547875401CA4D61B00012F76 /* DHCubeTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCubeTransitionRenderer.h; sourceTree = "<group>"; };
+		547875411CA4D61B00012F76 /* DHCubeTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCubeTransitionRenderer.m; sourceTree = "<group>"; };
 		547875421CA4D61B00012F76 /* DHCubeSourceMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCubeSourceMesh.h; sourceTree = "<group>"; };
 		547875431CA4D61B00012F76 /* DHCubeSourceMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCubeSourceMesh.m; sourceTree = "<group>"; };
-		547875451CA4D61B00012F76 /* DHDoorWayRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDoorWayRenderer.h; sourceTree = "<group>"; };
-		547875461CA4D61B00012F76 /* DHDoorWayRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDoorWayRenderer.m; sourceTree = "<group>"; };
+		547875451CA4D61B00012F76 /* DHDoorWayTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDoorWayTransitionRenderer.h; sourceTree = "<group>"; };
+		547875461CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDoorWayTransitionRenderer.m; sourceTree = "<group>"; };
 		547875471CA4D61B00012F76 /* DHDoorWaySourceMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDoorWaySourceMesh.h; sourceTree = "<group>"; };
 		547875481CA4D61B00012F76 /* DHDoorWaySourceMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDoorWaySourceMesh.m; sourceTree = "<group>"; };
 		547875491CA4D61B00012F76 /* DoorWayDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoorWayDestinationFragment.glsl; sourceTree = "<group>"; };
 		5478754A1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoorWayDestinationVertex.glsl; sourceTree = "<group>"; };
 		5478754B1CA4D61B00012F76 /* DoorWaySourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoorWaySourceFragment.glsl; sourceTree = "<group>"; };
 		5478754C1CA4D61B00012F76 /* DoorWaySourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DoorWaySourceVertex.glsl; sourceTree = "<group>"; };
-		5478754E1CA4D61B00012F76 /* DHReflectionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHReflectionRenderer.h; sourceTree = "<group>"; };
-		5478754F1CA4D61B00012F76 /* DHReflectionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHReflectionRenderer.m; sourceTree = "<group>"; };
-		547875501CA4D61B00012F76 /* ReflectionDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationFragment.glsl; sourceTree = "<group>"; };
-		547875511CA4D61B00012F76 /* ReflectionDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationVertex.glsl; sourceTree = "<group>"; };
-		547875521CA4D61B00012F76 /* ReflectionSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceFragment.glsl; sourceTree = "<group>"; };
-		547875531CA4D61B00012F76 /* ReflectionSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceVertex.glsl; sourceTree = "<group>"; };
-		547875551CA4D61B00012F76 /* DHDropRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDropRenderer.h; sourceTree = "<group>"; };
-		547875561CA4D61B00012F76 /* DHDropRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDropRenderer.m; sourceTree = "<group>"; };
+		547875551CA4D61B00012F76 /* DHDropTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDropTransitionRenderer.h; sourceTree = "<group>"; };
+		547875561CA4D61B00012F76 /* DHDropTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDropTransitionRenderer.m; sourceTree = "<group>"; };
 		547875571CA4D61B00012F76 /* DropDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875581CA4D61B00012F76 /* DropDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875591CA4D61B00012F76 /* DropSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropSourceFragment.glsl; sourceTree = "<group>"; };
 		5478755A1CA4D61B00012F76 /* DropSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DropSourceVertex.glsl; sourceTree = "<group>"; };
-		5478755C1CA4D61B00012F76 /* DHFlipRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlipRenderer.h; sourceTree = "<group>"; };
-		5478755D1CA4D61B00012F76 /* DHFlipRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlipRenderer.m; sourceTree = "<group>"; };
+		5478755C1CA4D61B00012F76 /* DHFlipTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlipTransitionRenderer.h; sourceTree = "<group>"; };
+		5478755D1CA4D61B00012F76 /* DHFlipTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlipTransitionRenderer.m; sourceTree = "<group>"; };
 		5478755E1CA4D61B00012F76 /* FlipDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlipDestinationFragment.glsl; sourceTree = "<group>"; };
 		5478755F1CA4D61B00012F76 /* FlipDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlipDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875601CA4D61B00012F76 /* FlipSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlipSourceFragment.glsl; sourceTree = "<group>"; };
 		547875611CA4D61B00012F76 /* FlipSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlipSourceVertex.glsl; sourceTree = "<group>"; };
-		547875631CA4D61B00012F76 /* DHFlopRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlopRenderer.h; sourceTree = "<group>"; };
-		547875641CA4D61B00012F76 /* DHFlopRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlopRenderer.m; sourceTree = "<group>"; };
+		547875631CA4D61B00012F76 /* DHFlopTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlopTransitionRenderer.h; sourceTree = "<group>"; };
+		547875641CA4D61B00012F76 /* DHFlopTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlopTransitionRenderer.m; sourceTree = "<group>"; };
 		547875651CA4D61B00012F76 /* FlopDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875661CA4D61B00012F76 /* FlopDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875671CA4D61B00012F76 /* FlopSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopSourceFragment.glsl; sourceTree = "<group>"; };
 		547875681CA4D61B00012F76 /* FlopSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlopSourceVertex.glsl; sourceTree = "<group>"; };
-		5478756A1CA4D61B00012F76 /* DHGridRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGridRenderer.h; sourceTree = "<group>"; };
-		5478756B1CA4D61B00012F76 /* DHGridRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGridRenderer.m; sourceTree = "<group>"; };
+		5478756A1CA4D61B00012F76 /* DHGridTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGridTransitionRenderer.h; sourceTree = "<group>"; };
+		5478756B1CA4D61B00012F76 /* DHGridTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGridTransitionRenderer.m; sourceTree = "<group>"; };
 		5478756C1CA4D61B00012F76 /* GridDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationFragment.glsl; sourceTree = "<group>"; };
 		5478756D1CA4D61B00012F76 /* GridDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridDestinationVertex.glsl; sourceTree = "<group>"; };
 		5478756E1CA4D61B00012F76 /* GridSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GridSourceFragment.glsl; sourceTree = "<group>"; };
@@ -305,38 +299,38 @@
 		547875721CA4D61B00012F76 /* DHMosaicBackMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicBackMesh.m; sourceTree = "<group>"; };
 		547875731CA4D61B00012F76 /* DHMosaicMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicMesh.h; sourceTree = "<group>"; };
 		547875741CA4D61B00012F76 /* DHMosaicMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicMesh.m; sourceTree = "<group>"; };
-		547875751CA4D61B00012F76 /* DHMosaicRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicRenderer.h; sourceTree = "<group>"; };
-		547875761CA4D61B00012F76 /* DHMosaicRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicRenderer.m; sourceTree = "<group>"; };
+		547875751CA4D61B00012F76 /* DHMosaicTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMosaicTransitionRenderer.h; sourceTree = "<group>"; };
+		547875761CA4D61B00012F76 /* DHMosaicTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMosaicTransitionRenderer.m; sourceTree = "<group>"; };
 		547875771CA4D61B00012F76 /* MosaicDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875781CA4D61B00012F76 /* MosaicDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875791CA4D61B00012F76 /* MosaicSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicSourceFragment.glsl; sourceTree = "<group>"; };
 		5478757A1CA4D61B00012F76 /* MosaicSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MosaicSourceVertex.glsl; sourceTree = "<group>"; };
-		5478757C1CA4D61B00012F76 /* DHPushRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPushRenderer.h; sourceTree = "<group>"; };
-		5478757D1CA4D61B00012F76 /* DHPushRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPushRenderer.m; sourceTree = "<group>"; };
+		5478757C1CA4D61B00012F76 /* DHPushTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPushTransitionRenderer.h; sourceTree = "<group>"; };
+		5478757D1CA4D61B00012F76 /* DHPushTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPushTransitionRenderer.m; sourceTree = "<group>"; };
 		5478757E1CA4D61B00012F76 /* PushDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushDestinationFragment.glsl; sourceTree = "<group>"; };
 		5478757F1CA4D61B00012F76 /* PushDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875801CA4D61B00012F76 /* PushSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushSourceFragment.glsl; sourceTree = "<group>"; };
 		547875811CA4D61B00012F76 /* PushSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushSourceVertex.glsl; sourceTree = "<group>"; };
-		547875841CA4D61B00012F76 /* DHResolvingDoorRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHResolvingDoorRenderer.h; sourceTree = "<group>"; };
-		547875851CA4D61B00012F76 /* DHResolvingDoorRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHResolvingDoorRenderer.m; sourceTree = "<group>"; };
+		547875841CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHResolvingDoorTransitionRenderer.h; sourceTree = "<group>"; };
+		547875851CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHResolvingDoorTransitionRenderer.m; sourceTree = "<group>"; };
 		547875861CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875871CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875881CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorSourceFragment.glsl; sourceTree = "<group>"; };
 		547875891CA4D61B00012F76 /* ResolvingDoorSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ResolvingDoorSourceVertex.glsl; sourceTree = "<group>"; };
-		5478758B1CA4D61B00012F76 /* DHRevealRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRevealRenderer.h; sourceTree = "<group>"; };
-		5478758C1CA4D61B00012F76 /* DHRevealRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRevealRenderer.m; sourceTree = "<group>"; };
+		5478758B1CA4D61B00012F76 /* DHRevealTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRevealTransitionRenderer.h; sourceTree = "<group>"; };
+		5478758C1CA4D61B00012F76 /* DHRevealTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRevealTransitionRenderer.m; sourceTree = "<group>"; };
 		5478758D1CA4D61B00012F76 /* RevealDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealDestinationFragment.glsl; sourceTree = "<group>"; };
 		5478758E1CA4D61B00012F76 /* RevealDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealDestinationVertex.glsl; sourceTree = "<group>"; };
 		5478758F1CA4D61B00012F76 /* RevealSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealSourceFragment.glsl; sourceTree = "<group>"; };
 		547875901CA4D61B00012F76 /* RevealSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RevealSourceVertex.glsl; sourceTree = "<group>"; };
-		547875921CA4D61B00012F76 /* DHRippleRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRippleRenderer.h; sourceTree = "<group>"; };
-		547875931CA4D61B00012F76 /* DHRippleRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRippleRenderer.m; sourceTree = "<group>"; };
+		547875921CA4D61B00012F76 /* DHRippleTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRippleTransitionRenderer.h; sourceTree = "<group>"; };
+		547875931CA4D61B00012F76 /* DHRippleTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRippleTransitionRenderer.m; sourceTree = "<group>"; };
 		547875941CA4D61B00012F76 /* RippleDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875951CA4D61B00012F76 /* RippleDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875961CA4D61B00012F76 /* RippleSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleSourceFragment.glsl; sourceTree = "<group>"; };
 		547875971CA4D61B00012F76 /* RippleSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RippleSourceVertex.glsl; sourceTree = "<group>"; };
-		547875991CA4D61B00012F76 /* DHSpinDismissRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSpinDismissRenderer.h; sourceTree = "<group>"; };
-		5478759A1CA4D61B00012F76 /* DHSpinDismissRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSpinDismissRenderer.m; sourceTree = "<group>"; };
+		547875991CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSpinDismissTransitionRenderer.h; sourceTree = "<group>"; };
+		5478759A1CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSpinDismissTransitionRenderer.m; sourceTree = "<group>"; };
 		5478759B1CA4D61B00012F76 /* SpinDismissFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpinDismissFragment.glsl; sourceTree = "<group>"; };
 		5478759C1CA4D61B00012F76 /* SpinDismissVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpinDismissVertex.glsl; sourceTree = "<group>"; };
 		5478759E1CA4D61B00012F76 /* DHShredderConfettiSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHShredderConfettiSceneMesh.h; sourceTree = "<group>"; };
@@ -347,8 +341,8 @@
 		547875A31CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderPaperBackPieceSceneMesh.m; sourceTree = "<group>"; };
 		547875A41CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHShredderPaperPieceSceneMesh.h; sourceTree = "<group>"; };
 		547875A51CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderPaperPieceSceneMesh.m; sourceTree = "<group>"; };
-		547875A61CA4D61B00012F76 /* DHShredderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHShredderRenderer.h; sourceTree = "<group>"; };
-		547875A71CA4D61B00012F76 /* DHShredderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderRenderer.m; sourceTree = "<group>"; };
+		547875A61CA4D61B00012F76 /* DHShredderTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHShredderTransitionRenderer.h; sourceTree = "<group>"; };
+		547875A71CA4D61B00012F76 /* DHShredderTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderTransitionRenderer.m; sourceTree = "<group>"; };
 		547875A81CA4D61B00012F76 /* Shredder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shredder.png; sourceTree = "<group>"; };
 		547875A91CA4D61B00012F76 /* ShredderBackPieceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderBackPieceFragment.glsl; sourceTree = "<group>"; };
 		547875AA1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderBackPieceVertex.glsl; sourceTree = "<group>"; };
@@ -358,16 +352,16 @@
 		547875AE1CA4D61B00012F76 /* ShredderPieceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderPieceFragment.glsl; sourceTree = "<group>"; };
 		547875AF1CA4D61B00012F76 /* ShredderPieceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderPieceVertex.glsl; sourceTree = "<group>"; };
 		547875B01CA4D61B00012F76 /* ShredderVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShredderVertex.glsl; sourceTree = "<group>"; };
-		547875B21CA4D61B00012F76 /* DHSwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSwitchRenderer.h; sourceTree = "<group>"; };
-		547875B31CA4D61B00012F76 /* DHSwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSwitchRenderer.m; sourceTree = "<group>"; };
+		547875B21CA4D61B00012F76 /* DHSwitchTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSwitchTransitionRenderer.h; sourceTree = "<group>"; };
+		547875B31CA4D61B00012F76 /* DHSwitchTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSwitchTransitionRenderer.m; sourceTree = "<group>"; };
 		547875B41CA4D61B00012F76 /* SwitchDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875B51CA4D61B00012F76 /* SwitchDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875B61CA4D61B00012F76 /* SwitchSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchSourceFragment.glsl; sourceTree = "<group>"; };
 		547875B71CA4D61B00012F76 /* SwitchSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwitchSourceVertex.glsl; sourceTree = "<group>"; };
 		547875B91CA4D61B00012F76 /* DHTwistMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTwistMesh.h; sourceTree = "<group>"; };
 		547875BA1CA4D61B00012F76 /* DHTwistMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTwistMesh.m; sourceTree = "<group>"; };
-		547875BB1CA4D61B00012F76 /* DHTwistRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTwistRenderer.h; sourceTree = "<group>"; };
-		547875BC1CA4D61B00012F76 /* DHTwistRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTwistRenderer.m; sourceTree = "<group>"; };
+		547875BB1CA4D61B00012F76 /* DHTwistTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTwistTransitionRenderer.h; sourceTree = "<group>"; };
+		547875BC1CA4D61B00012F76 /* DHTwistTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTwistTransitionRenderer.m; sourceTree = "<group>"; };
 		547875BD1CA4D61B00012F76 /* TwistDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875BE1CA4D61B00012F76 /* TwistDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875BF1CA4D61B00012F76 /* TwistSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TwistSourceFragment.glsl; sourceTree = "<group>"; };
@@ -384,6 +378,12 @@
 		54A768451CBB70F200826929 /* DHRotationAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRotationAnimationRenderer.m; sourceTree = "<group>"; };
 		54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectRotationVertex.glsl; sourceTree = "<group>"; };
 		54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectRotationFragment.glsl; sourceTree = "<group>"; };
+		54A768861CBCA17C00826929 /* DHReflectionTransitionRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHReflectionTransitionRenderer.h; sourceTree = "<group>"; };
+		54A768871CBCA17C00826929 /* DHReflectionTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHReflectionTransitionRenderer.m; sourceTree = "<group>"; };
+		54A768881CBCA17C00826929 /* ReflectionDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationFragment.glsl; sourceTree = "<group>"; };
+		54A768891CBCA17C00826929 /* ReflectionDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionDestinationVertex.glsl; sourceTree = "<group>"; };
+		54A7688A1CBCA17C00826929 /* ReflectionSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceFragment.glsl; sourceTree = "<group>"; };
+		54A7688B1CBCA17C00826929 /* ReflectionSourceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReflectionSourceVertex.glsl; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E263FD1C8EBCBF00FFB67E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54E263FF1C8EBCBF00FFB67E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -532,6 +532,7 @@
 		5478751F1CA4D61B00012F76 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				54A768851CBCA17C00826929 /* Reflection */,
 				547875201CA4D61B00012F76 /* ClothLine */,
 				547875271CA4D61B00012F76 /* Confetti */,
 				547875301CA4D61B00012F76 /* Cover */,
@@ -543,7 +544,6 @@
 				547875691CA4D61B00012F76 /* Grid */,
 				547875701CA4D61B00012F76 /* Mosaic */,
 				5478757B1CA4D61B00012F76 /* Push */,
-				547875821CA4D61B00012F76 /* Reflection */,
 				547875831CA4D61B00012F76 /* Resolving Door */,
 				5478758A1CA4D61B00012F76 /* Reveal */,
 				547875911CA4D61B00012F76 /* Ripple */,
@@ -562,8 +562,8 @@
 				547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */,
 				547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */,
 				547875241CA4D61B00012F76 /* ClothLineSourceVertex.glsl */,
-				547875251CA4D61B00012F76 /* DHClothLineRenderer.h */,
-				547875261CA4D61B00012F76 /* DHClothLineRenderer.m */,
+				547875251CA4D61B00012F76 /* DHClothLineTransitionRenderer.h */,
+				547875261CA4D61B00012F76 /* DHClothLineTransitionRenderer.m */,
 			);
 			path = ClothLine;
 			sourceTree = "<group>";
@@ -575,8 +575,8 @@
 				547875291CA4D61B00012F76 /* ConfettiDestinationVertex.glsl */,
 				5478752A1CA4D61B00012F76 /* ConfettiSourceFragment.glsl */,
 				5478752B1CA4D61B00012F76 /* ConfettiSourceVertex.glsl */,
-				5478752C1CA4D61B00012F76 /* DHConfettiRenderer.h */,
-				5478752D1CA4D61B00012F76 /* DHConfettiRenderer.m */,
+				5478752C1CA4D61B00012F76 /* DHConfettiTransitionRenderer.h */,
+				5478752D1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m */,
 				5478752E1CA4D61B00012F76 /* DHConfettiSourceMesh.h */,
 				5478752F1CA4D61B00012F76 /* DHConfettiSourceMesh.m */,
 			);
@@ -590,8 +590,8 @@
 				547875321CA4D61B00012F76 /* CoverDestinationVertex.glsl */,
 				547875331CA4D61B00012F76 /* CoverSourceFragment.glsl */,
 				547875341CA4D61B00012F76 /* CoverSourceVertex.glsl */,
-				547875351CA4D61B00012F76 /* DHCoverRenderer.h */,
-				547875361CA4D61B00012F76 /* DHCoverRenderer.m */,
+				547875351CA4D61B00012F76 /* DHCoverTransitionRenderer.h */,
+				547875361CA4D61B00012F76 /* DHCoverTransitionRenderer.m */,
 			);
 			path = Cover;
 			sourceTree = "<group>";
@@ -607,8 +607,8 @@
 				5478753D1CA4D61B00012F76 /* DHCubeDestinationMesh.m */,
 				5478753E1CA4D61B00012F76 /* DHCubeMesh.h */,
 				5478753F1CA4D61B00012F76 /* DHCubeMesh.m */,
-				547875401CA4D61B00012F76 /* DHCubeRenderer.h */,
-				547875411CA4D61B00012F76 /* DHCubeRenderer.m */,
+				547875401CA4D61B00012F76 /* DHCubeTransitionRenderer.h */,
+				547875411CA4D61B00012F76 /* DHCubeTransitionRenderer.m */,
 				547875421CA4D61B00012F76 /* DHCubeSourceMesh.h */,
 				547875431CA4D61B00012F76 /* DHCubeSourceMesh.m */,
 			);
@@ -618,37 +618,23 @@
 		547875441CA4D61B00012F76 /* DoorWay */ = {
 			isa = PBXGroup;
 			children = (
-				547875451CA4D61B00012F76 /* DHDoorWayRenderer.h */,
-				547875461CA4D61B00012F76 /* DHDoorWayRenderer.m */,
+				547875451CA4D61B00012F76 /* DHDoorWayTransitionRenderer.h */,
+				547875461CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m */,
 				547875471CA4D61B00012F76 /* DHDoorWaySourceMesh.h */,
 				547875481CA4D61B00012F76 /* DHDoorWaySourceMesh.m */,
 				547875491CA4D61B00012F76 /* DoorWayDestinationFragment.glsl */,
 				5478754A1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl */,
 				5478754B1CA4D61B00012F76 /* DoorWaySourceFragment.glsl */,
 				5478754C1CA4D61B00012F76 /* DoorWaySourceVertex.glsl */,
-				5478754D1CA4D61B00012F76 /* Reflection */,
 			);
 			path = DoorWay;
-			sourceTree = "<group>";
-		};
-		5478754D1CA4D61B00012F76 /* Reflection */ = {
-			isa = PBXGroup;
-			children = (
-				5478754E1CA4D61B00012F76 /* DHReflectionRenderer.h */,
-				5478754F1CA4D61B00012F76 /* DHReflectionRenderer.m */,
-				547875501CA4D61B00012F76 /* ReflectionDestinationFragment.glsl */,
-				547875511CA4D61B00012F76 /* ReflectionDestinationVertex.glsl */,
-				547875521CA4D61B00012F76 /* ReflectionSourceFragment.glsl */,
-				547875531CA4D61B00012F76 /* ReflectionSourceVertex.glsl */,
-			);
-			path = Reflection;
 			sourceTree = "<group>";
 		};
 		547875541CA4D61B00012F76 /* Drop */ = {
 			isa = PBXGroup;
 			children = (
-				547875551CA4D61B00012F76 /* DHDropRenderer.h */,
-				547875561CA4D61B00012F76 /* DHDropRenderer.m */,
+				547875551CA4D61B00012F76 /* DHDropTransitionRenderer.h */,
+				547875561CA4D61B00012F76 /* DHDropTransitionRenderer.m */,
 				547875571CA4D61B00012F76 /* DropDestinationFragment.glsl */,
 				547875581CA4D61B00012F76 /* DropDestinationVertex.glsl */,
 				547875591CA4D61B00012F76 /* DropSourceFragment.glsl */,
@@ -660,8 +646,8 @@
 		5478755B1CA4D61B00012F76 /* Flip */ = {
 			isa = PBXGroup;
 			children = (
-				5478755C1CA4D61B00012F76 /* DHFlipRenderer.h */,
-				5478755D1CA4D61B00012F76 /* DHFlipRenderer.m */,
+				5478755C1CA4D61B00012F76 /* DHFlipTransitionRenderer.h */,
+				5478755D1CA4D61B00012F76 /* DHFlipTransitionRenderer.m */,
 				5478755E1CA4D61B00012F76 /* FlipDestinationFragment.glsl */,
 				5478755F1CA4D61B00012F76 /* FlipDestinationVertex.glsl */,
 				547875601CA4D61B00012F76 /* FlipSourceFragment.glsl */,
@@ -673,8 +659,8 @@
 		547875621CA4D61B00012F76 /* Flop */ = {
 			isa = PBXGroup;
 			children = (
-				547875631CA4D61B00012F76 /* DHFlopRenderer.h */,
-				547875641CA4D61B00012F76 /* DHFlopRenderer.m */,
+				547875631CA4D61B00012F76 /* DHFlopTransitionRenderer.h */,
+				547875641CA4D61B00012F76 /* DHFlopTransitionRenderer.m */,
 				547875651CA4D61B00012F76 /* FlopDestinationFragment.glsl */,
 				547875661CA4D61B00012F76 /* FlopDestinationVertex.glsl */,
 				547875671CA4D61B00012F76 /* FlopSourceFragment.glsl */,
@@ -686,8 +672,8 @@
 		547875691CA4D61B00012F76 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
-				5478756A1CA4D61B00012F76 /* DHGridRenderer.h */,
-				5478756B1CA4D61B00012F76 /* DHGridRenderer.m */,
+				5478756A1CA4D61B00012F76 /* DHGridTransitionRenderer.h */,
+				5478756B1CA4D61B00012F76 /* DHGridTransitionRenderer.m */,
 				5478756C1CA4D61B00012F76 /* GridDestinationFragment.glsl */,
 				5478756D1CA4D61B00012F76 /* GridDestinationVertex.glsl */,
 				5478756E1CA4D61B00012F76 /* GridSourceFragment.glsl */,
@@ -703,8 +689,8 @@
 				547875721CA4D61B00012F76 /* DHMosaicBackMesh.m */,
 				547875731CA4D61B00012F76 /* DHMosaicMesh.h */,
 				547875741CA4D61B00012F76 /* DHMosaicMesh.m */,
-				547875751CA4D61B00012F76 /* DHMosaicRenderer.h */,
-				547875761CA4D61B00012F76 /* DHMosaicRenderer.m */,
+				547875751CA4D61B00012F76 /* DHMosaicTransitionRenderer.h */,
+				547875761CA4D61B00012F76 /* DHMosaicTransitionRenderer.m */,
 				547875771CA4D61B00012F76 /* MosaicDestinationFragment.glsl */,
 				547875781CA4D61B00012F76 /* MosaicDestinationVertex.glsl */,
 				547875791CA4D61B00012F76 /* MosaicSourceFragment.glsl */,
@@ -716,8 +702,8 @@
 		5478757B1CA4D61B00012F76 /* Push */ = {
 			isa = PBXGroup;
 			children = (
-				5478757C1CA4D61B00012F76 /* DHPushRenderer.h */,
-				5478757D1CA4D61B00012F76 /* DHPushRenderer.m */,
+				5478757C1CA4D61B00012F76 /* DHPushTransitionRenderer.h */,
+				5478757D1CA4D61B00012F76 /* DHPushTransitionRenderer.m */,
 				5478757E1CA4D61B00012F76 /* PushDestinationFragment.glsl */,
 				5478757F1CA4D61B00012F76 /* PushDestinationVertex.glsl */,
 				547875801CA4D61B00012F76 /* PushSourceFragment.glsl */,
@@ -726,18 +712,11 @@
 			path = Push;
 			sourceTree = "<group>";
 		};
-		547875821CA4D61B00012F76 /* Reflection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reflection;
-			sourceTree = "<group>";
-		};
 		547875831CA4D61B00012F76 /* Resolving Door */ = {
 			isa = PBXGroup;
 			children = (
-				547875841CA4D61B00012F76 /* DHResolvingDoorRenderer.h */,
-				547875851CA4D61B00012F76 /* DHResolvingDoorRenderer.m */,
+				547875841CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.h */,
+				547875851CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m */,
 				547875861CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl */,
 				547875871CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl */,
 				547875881CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl */,
@@ -749,8 +728,8 @@
 		5478758A1CA4D61B00012F76 /* Reveal */ = {
 			isa = PBXGroup;
 			children = (
-				5478758B1CA4D61B00012F76 /* DHRevealRenderer.h */,
-				5478758C1CA4D61B00012F76 /* DHRevealRenderer.m */,
+				5478758B1CA4D61B00012F76 /* DHRevealTransitionRenderer.h */,
+				5478758C1CA4D61B00012F76 /* DHRevealTransitionRenderer.m */,
 				5478758D1CA4D61B00012F76 /* RevealDestinationFragment.glsl */,
 				5478758E1CA4D61B00012F76 /* RevealDestinationVertex.glsl */,
 				5478758F1CA4D61B00012F76 /* RevealSourceFragment.glsl */,
@@ -762,8 +741,8 @@
 		547875911CA4D61B00012F76 /* Ripple */ = {
 			isa = PBXGroup;
 			children = (
-				547875921CA4D61B00012F76 /* DHRippleRenderer.h */,
-				547875931CA4D61B00012F76 /* DHRippleRenderer.m */,
+				547875921CA4D61B00012F76 /* DHRippleTransitionRenderer.h */,
+				547875931CA4D61B00012F76 /* DHRippleTransitionRenderer.m */,
 				547875941CA4D61B00012F76 /* RippleDestinationFragment.glsl */,
 				547875951CA4D61B00012F76 /* RippleDestinationVertex.glsl */,
 				547875961CA4D61B00012F76 /* RippleSourceFragment.glsl */,
@@ -775,8 +754,8 @@
 		547875981CA4D61B00012F76 /* RotateDismiss */ = {
 			isa = PBXGroup;
 			children = (
-				547875991CA4D61B00012F76 /* DHSpinDismissRenderer.h */,
-				5478759A1CA4D61B00012F76 /* DHSpinDismissRenderer.m */,
+				547875991CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.h */,
+				5478759A1CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m */,
 				5478759B1CA4D61B00012F76 /* SpinDismissFragment.glsl */,
 				5478759C1CA4D61B00012F76 /* SpinDismissVertex.glsl */,
 			);
@@ -794,8 +773,8 @@
 				547875A31CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m */,
 				547875A41CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.h */,
 				547875A51CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m */,
-				547875A61CA4D61B00012F76 /* DHShredderRenderer.h */,
-				547875A71CA4D61B00012F76 /* DHShredderRenderer.m */,
+				547875A61CA4D61B00012F76 /* DHShredderTransitionRenderer.h */,
+				547875A71CA4D61B00012F76 /* DHShredderTransitionRenderer.m */,
 				547875A81CA4D61B00012F76 /* Shredder.png */,
 				547875A91CA4D61B00012F76 /* ShredderBackPieceFragment.glsl */,
 				547875AA1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl */,
@@ -812,8 +791,8 @@
 		547875B11CA4D61B00012F76 /* Switch */ = {
 			isa = PBXGroup;
 			children = (
-				547875B21CA4D61B00012F76 /* DHSwitchRenderer.h */,
-				547875B31CA4D61B00012F76 /* DHSwitchRenderer.m */,
+				547875B21CA4D61B00012F76 /* DHSwitchTransitionRenderer.h */,
+				547875B31CA4D61B00012F76 /* DHSwitchTransitionRenderer.m */,
 				547875B41CA4D61B00012F76 /* SwitchDestinationFragment.glsl */,
 				547875B51CA4D61B00012F76 /* SwitchDestinationVertex.glsl */,
 				547875B61CA4D61B00012F76 /* SwitchSourceFragment.glsl */,
@@ -827,8 +806,8 @@
 			children = (
 				547875B91CA4D61B00012F76 /* DHTwistMesh.h */,
 				547875BA1CA4D61B00012F76 /* DHTwistMesh.m */,
-				547875BB1CA4D61B00012F76 /* DHTwistRenderer.h */,
-				547875BC1CA4D61B00012F76 /* DHTwistRenderer.m */,
+				547875BB1CA4D61B00012F76 /* DHTwistTransitionRenderer.h */,
+				547875BC1CA4D61B00012F76 /* DHTwistTransitionRenderer.m */,
 				547875BD1CA4D61B00012F76 /* TwistDestinationFragment.glsl */,
 				547875BE1CA4D61B00012F76 /* TwistDestinationVertex.glsl */,
 				547875BF1CA4D61B00012F76 /* TwistSourceFragment.glsl */,
@@ -868,6 +847,19 @@
 				54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */,
 			);
 			path = Rotation;
+			sourceTree = "<group>";
+		};
+		54A768851CBCA17C00826929 /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				54A768861CBCA17C00826929 /* DHReflectionTransitionRenderer.h */,
+				54A768871CBCA17C00826929 /* DHReflectionTransitionRenderer.m */,
+				54A768881CBCA17C00826929 /* ReflectionDestinationFragment.glsl */,
+				54A768891CBCA17C00826929 /* ReflectionDestinationVertex.glsl */,
+				54A7688A1CBCA17C00826929 /* ReflectionSourceFragment.glsl */,
+				54A7688B1CBCA17C00826929 /* ReflectionSourceVertex.glsl */,
+			);
+			path = Reflection;
 			sourceTree = "<group>";
 		};
 		54E263F01C8EBCBF00FFB67E = {
@@ -1127,6 +1119,7 @@
 				547875E51CA4D61B00012F76 /* DropDestinationFragment.glsl in Resources */,
 				5420C0661CB8FA2C001C789C /* SparkleVertex.glsl in Resources */,
 				547875C71CA4D61B00012F76 /* ConfettiDestinationVertex.glsl in Resources */,
+				54A7688E1CBCA17C00826929 /* ReflectionDestinationVertex.glsl in Resources */,
 				54A768401CBB49B800826929 /* SparkleBackgroundVertex.glsl in Resources */,
 				5478761B1CA4D61B00012F76 /* Shredder.png in Resources */,
 				5420C0571CB8B0E6001C789C /* ShimmerVertex.glsl in Resources */,
@@ -1144,21 +1137,19 @@
 				547875FB1CA4D61B00012F76 /* MosaicDestinationFragment.glsl in Resources */,
 				547875F01CA4D61B00012F76 /* FlopDestinationVertex.glsl in Resources */,
 				547875F11CA4D61B00012F76 /* FlopSourceFragment.glsl in Resources */,
-				547875E21CA4D61B00012F76 /* ReflectionSourceFragment.glsl in Resources */,
 				5420C06A1CB9F135001C789C /* Sparkle2.png in Resources */,
 				547875DE1CA4D61B00012F76 /* DoorWaySourceVertex.glsl in Resources */,
-				547875E31CA4D61B00012F76 /* ReflectionSourceVertex.glsl in Resources */,
 				5478760D1CA4D61B00012F76 /* RevealSourceVertex.glsl in Resources */,
 				5478762B1CA4D61B00012F76 /* TwistDestinationFragment.glsl in Resources */,
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
 				547875EA1CA4D61B00012F76 /* FlipDestinationFragment.glsl in Resources */,
+				54A7688D1CBCA17C00826929 /* ReflectionDestinationFragment.glsl in Resources */,
 				547875E61CA4D61B00012F76 /* DropDestinationVertex.glsl in Resources */,
 				5478762C1CA4D61B00012F76 /* TwistDestinationVertex.glsl in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				547875EF1CA4D61B00012F76 /* FlopDestinationFragment.glsl in Resources */,
 				547875CF1CA4D61B00012F76 /* CoverSourceVertex.glsl in Resources */,
 				547875FD1CA4D61B00012F76 /* MosaicSourceFragment.glsl in Resources */,
-				547875E01CA4D61B00012F76 /* ReflectionDestinationFragment.glsl in Resources */,
 				547876211CA4D61B00012F76 /* ShredderPieceFragment.glsl in Resources */,
 				547875D31CA4D61B00012F76 /* CubeSourceFragment.glsl in Resources */,
 				5420C0561CB8B0E6001C789C /* ShimmerShiningStarVertex.glsl in Resources */,
@@ -1182,18 +1173,19 @@
 				54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */,
 				547875DB1CA4D61B00012F76 /* DoorWayDestinationFragment.glsl in Resources */,
 				547876141CA4D61B00012F76 /* SpinDismissFragment.glsl in Resources */,
+				54A768901CBCA17C00826929 /* ReflectionSourceVertex.glsl in Resources */,
 				54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */,
 				547875E81CA4D61B00012F76 /* DropSourceVertex.glsl in Resources */,
 				547876271CA4D61B00012F76 /* SwitchSourceFragment.glsl in Resources */,
 				5420C0621CB8CA6E001C789C /* Sparkle.png in Resources */,
 				547875C41CA4D61B00012F76 /* ClothLineSourceVertex.glsl in Resources */,
 				547876221CA4D61B00012F76 /* ShredderPieceVertex.glsl in Resources */,
-				547875E11CA4D61B00012F76 /* ReflectionDestinationVertex.glsl in Resources */,
 				547875CC1CA4D61B00012F76 /* CoverDestinationFragment.glsl in Resources */,
 				5420C0531CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl in Resources */,
 				547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */,
 				5478761F1CA4D61B00012F76 /* ShredderConfettiVertex.glsl in Resources */,
 				54E264851C8FC5AC00FFB67E /* 9.jpg in Resources */,
+				54A7688F1CBCA17C00826929 /* ReflectionSourceFragment.glsl in Resources */,
 				547876121CA4D61B00012F76 /* RippleSourceVertex.glsl in Resources */,
 				547875ED1CA4D61B00012F76 /* FlipSourceVertex.glsl in Resources */,
 				547876011CA4D61B00012F76 /* PushDestinationVertex.glsl in Resources */,
@@ -1248,7 +1240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */,
-				547875FA1CA4D61B00012F76 /* DHMosaicRenderer.m in Sources */,
+				547875FA1CA4D61B00012F76 /* DHMosaicTransitionRenderer.m in Sources */,
 				54EC581C1C8FD25F009D812C /* OpenGLHelper.m in Sources */,
 				547875D61CA4D61B00012F76 /* DHCubeMesh.m in Sources */,
 				547876161CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m in Sources */,
@@ -1261,49 +1253,49 @@
 				547876181CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
 				54E264701C8ED4A600FFB67E /* DHTransitionSettings.m in Sources */,
 				5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */,
-				5478761A1CA4D61B00012F76 /* DHShredderRenderer.m in Sources */,
+				5478761A1CA4D61B00012F76 /* DHShredderTransitionRenderer.m in Sources */,
 				5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */,
-				547875C51CA4D61B00012F76 /* DHClothLineRenderer.m in Sources */,
+				547875C51CA4D61B00012F76 /* DHClothLineTransitionRenderer.m in Sources */,
 				547875D51CA4D61B00012F76 /* DHCubeDestinationMesh.m in Sources */,
-				547875E41CA4D61B00012F76 /* DHDropRenderer.m in Sources */,
-				547875DF1CA4D61B00012F76 /* DHReflectionRenderer.m in Sources */,
+				547875E41CA4D61B00012F76 /* DHDropTransitionRenderer.m in Sources */,
 				5420C04F1CB8B0E6001C789C /* DHShimmerParticleEffect.m in Sources */,
-				547876131CA4D61B00012F76 /* DHSpinDismissRenderer.m in Sources */,
+				547876131CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m in Sources */,
 				5478764A1CA5118400012F76 /* SceneMesh.m in Sources */,
-				547875E91CA4D61B00012F76 /* DHFlipRenderer.m in Sources */,
-				547875CA1CA4D61B00012F76 /* DHConfettiRenderer.m in Sources */,
+				547875E91CA4D61B00012F76 /* DHFlipTransitionRenderer.m in Sources */,
+				547875CA1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m in Sources */,
 				5420C0511CB8B0E6001C789C /* DHShiningStarEffect.m in Sources */,
 				547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */,
 				54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */,
 				5420C0501CB8B0E6001C789C /* DHShimmerAnimationRenderer.m in Sources */,
-				547875FF1CA4D61B00012F76 /* DHPushRenderer.m in Sources */,
+				547875FF1CA4D61B00012F76 /* DHPushTransitionRenderer.m in Sources */,
 				5420C0601CB8C1E1001C789C /* DHSparkleEffect.m in Sources */,
 				54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */,
-				547875D91CA4D61B00012F76 /* DHDoorWayRenderer.m in Sources */,
+				547875D91CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m in Sources */,
 				5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */,
-				547875D71CA4D61B00012F76 /* DHCubeRenderer.m in Sources */,
+				547875D71CA4D61B00012F76 /* DHCubeTransitionRenderer.m in Sources */,
 				547875CB1CA4D61B00012F76 /* DHConfettiSourceMesh.m in Sources */,
 				547875DA1CA4D61B00012F76 /* DHDoorWaySourceMesh.m in Sources */,
 				54E264881C8FC74000FFB67E /* DHTransitionSettingViewController.m in Sources */,
 				5420C0251CB65D95001C789C /* DHObjectAnimationSettings.m in Sources */,
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
-				547875D01CA4D61B00012F76 /* DHCoverRenderer.m in Sources */,
+				54A7688C1CBCA17C00826929 /* DHReflectionTransitionRenderer.m in Sources */,
+				547875D01CA4D61B00012F76 /* DHCoverTransitionRenderer.m in Sources */,
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,
-				547876241CA4D61B00012F76 /* DHSwitchRenderer.m in Sources */,
+				547876241CA4D61B00012F76 /* DHSwitchTransitionRenderer.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
 				547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */,
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,
 				5420C0281CB663C2001C789C /* DHObjectAnimationRenderer.m in Sources */,
-				547875F31CA4D61B00012F76 /* DHGridRenderer.m in Sources */,
+				547875F31CA4D61B00012F76 /* DHGridTransitionRenderer.m in Sources */,
 				547876191CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m in Sources */,
 				547876171CA4D61B00012F76 /* DHShredderMesh.m in Sources */,
 				54A768461CBB70F200826929 /* DHRotationAnimationRenderer.m in Sources */,
-				547876091CA4D61B00012F76 /* DHRevealRenderer.m in Sources */,
-				5478762A1CA4D61B00012F76 /* DHTwistRenderer.m in Sources */,
-				547876041CA4D61B00012F76 /* DHResolvingDoorRenderer.m in Sources */,
+				547876091CA4D61B00012F76 /* DHRevealTransitionRenderer.m in Sources */,
+				5478762A1CA4D61B00012F76 /* DHTwistTransitionRenderer.m in Sources */,
+				547876041CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m in Sources */,
 				54E263FE1C8EBCBF00FFB67E /* main.m in Sources */,
-				5478760E1CA4D61B00012F76 /* DHRippleRenderer.m in Sources */,
-				547875EE1CA4D61B00012F76 /* DHFlopRenderer.m in Sources */,
+				5478760E1CA4D61B00012F76 /* DHRippleTransitionRenderer.m in Sources */,
+				547875EE1CA4D61B00012F76 /* DHFlopTransitionRenderer.m in Sources */,
 				54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
