@@ -14,6 +14,7 @@
 #import "DHObjectAnimationSettingsViewController.h"
 #import "DHRotationAnimationRenderer.h"
 #import "DHConfettiAnimationRenderer.h"
+#import "DHBlindsAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -68,6 +69,13 @@
             self.settings.columnCount = self.settings.targetView.frame.size.width / 10;
             self.settings.rowCount = self.settings.columnCount * self.settings.targetView.frame.size.width / self.settings.targetView.frame.size.height;
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+        }
+            break;
+        case ObjectAnimationTypeBlinds: {
+            self.renderer = [[DHBlindsAnimationRenderer alloc] init];
+            self.settings.columnCount = 5;
+            self.settings.rowCount = 1;
+            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
         default:
             break;

@@ -1,22 +1,24 @@
 //
-//  DHConfettiAnimationRenderer.m
+//  DHBlindsAnimationRenderer.m
 //  DHAnimation
 //
 //  Created by Huang Hongsen on 4/12/16.
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHConfettiAnimationRenderer.h"
-#import "DHConfettiSourceMesh.h"
-@interface DHConfettiAnimationRenderer() {
+#import "DHBlindsAnimationRenderer.h"
+#import "SceneMesh.h"
+
+@interface DHBlindsAnimationRenderer() {
     GLuint columnWidthLoc, columnHeightLoc;
 }
-@property (nonatomic, strong) DHConfettiSourceMesh *mesh;
+@property (nonatomic, strong) SceneMesh *mesh;
 @property (nonatomic) CGFloat columnWidth;
 @property (nonatomic) CGFloat columnHeight;
 @end
 
-@implementation DHConfettiAnimationRenderer
+@implementation DHBlindsAnimationRenderer
+
 - (void) setupGL
 {
     [super setupGL];
@@ -28,11 +30,18 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    BOOL columMajored = YES;
+    if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
+        columMajored = NO;
+    }
+    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:columMajored];
+    [self.mesh printVertices];
 }
 
 - (void) drawFrame
 {
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
     [super drawFrame];
     glUniform1f(columnWidthLoc, self.columnWidth);
     glUniform1f(columnHeightLoc, self.columnHeight);
@@ -46,11 +55,11 @@
 #pragma mark - Shaders
 - (NSString *) vertexShaderName
 {
-    return @"ConfettiAnimationVertex.glsl";
+    return @"BlindsAnimationVertex.glsl";
 }
 
 - (NSString *) fragmentShaderName
 {
-    return @"ConfettiAnimationFragment.glsl";
+    return @"BlindsAnimationFragment.glsl";
 }
 @end

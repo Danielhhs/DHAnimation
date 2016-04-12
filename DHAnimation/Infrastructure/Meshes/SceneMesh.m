@@ -201,15 +201,15 @@
         CGFloat vy = uy * y;
         for (int x = 0; x < columnCount; x++) {
             CGFloat vx = ux * x;
-            index = y * columnCount + x;
+            index = (y * columnCount + x) * 4;
             vertices[index + 0].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
             vertices[index + 0].texCoords = GLKVector2Make(vx, 1 - vy);
             
-            vertices[index + 1].position = GLKVector3Make(self.originX + vy * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
-            vertices[index + 1].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
+            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
+            vertices[index + 1].texCoords = GLKVector2Make(vx + ux, 1 - vy);
             
-            vertices[index + 2].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
-            vertices[index + 2].texCoords = GLKVector2Make(vx + ux, 1 - vy);
+            vertices[index + 2].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 2].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
             
             vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
             vertices[index + 3].texCoords = GLKVector2Make(vx + ux, 1 - (vy + uy));
