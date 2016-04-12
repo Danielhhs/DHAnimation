@@ -8,6 +8,6 @@
 
 #import "DHObjectAnimationRenderer.h"
 
-@interface DHSparkleRenderer : DHObjectAnimationRenderer
+@interface DHSparkleAnimationRenderer : DHObjectAnimationRenderer
 
 @end

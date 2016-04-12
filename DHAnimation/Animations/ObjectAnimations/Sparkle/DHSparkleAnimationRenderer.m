@@ -6,17 +6,17 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHSparkleRenderer.h"
+#import "DHSparkleAnimationRenderer.h"
 #import "DHSparkleEffect.h"
 #import "SceneMesh.h"
-@interface DHSparkleRenderer() {
+@interface DHSparkleAnimationRenderer() {
     GLuint xRangeLoc;
 }
 @property (nonatomic, strong) DHSparkleEffect *sparkleEffect;
 @property (nonatomic, strong) SceneMesh *backgroundMesh;
 @end
 
-@implementation DHSparkleRenderer
+@implementation DHSparkleAnimationRenderer
 - (void) setupGL
 {
     [super setupGL];

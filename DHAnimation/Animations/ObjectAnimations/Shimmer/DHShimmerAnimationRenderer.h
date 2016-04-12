@@ -9,6 +9,6 @@
 #import <GLKit/GLKit.h>
 #import "DHObjectAnimationRenderer.h"
 
-@interface DHShimmerRenderer : DHObjectAnimationRenderer
+@interface DHShimmerAnimationRenderer : DHObjectAnimationRenderer
 
 @end

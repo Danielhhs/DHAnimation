@@ -6,15 +6,15 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHRotationRenderer.h"
+#import "DHRotationAnimationRenderer.h"
 #import "SceneMesh.h"
-@interface DHRotationRenderer() {
+@interface DHRotationAnimationRenderer() {
     GLuint targetCenterLoc, rotationRadiusLoc, targetWidthLoc;
 }
 @property (nonatomic, strong) SceneMesh *mesh;
 @end
 
-@implementation DHRotationRenderer
+@implementation DHRotationAnimationRenderer
 
 - (NSString *) vertexShaderName
 {

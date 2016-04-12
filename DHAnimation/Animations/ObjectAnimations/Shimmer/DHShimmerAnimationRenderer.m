@@ -6,7 +6,7 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHShimmerRenderer.h"
+#import "DHShimmerAnimationRenderer.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
 #import <OpenGLES/ES3/glext.h>
@@ -14,7 +14,7 @@
 #import "DHShimmerParticleEffect.h"
 #import "DHShiningStarEffect.h"
 
-@interface DHShimmerRenderer ()
+@interface DHShimmerAnimationRenderer ()
 @property (nonatomic, strong) NSMutableData *shiningStarData;
 @property (nonatomic) NSInteger numberOfParticles;
 @property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) DHShiningStarEffect *starEffect;
 @property (nonatomic, strong) NSMutableArray *offsetData;
 @end
-@implementation DHShimmerRenderer
+@implementation DHShimmerAnimationRenderer
 
 - (void) setupEffects
 {

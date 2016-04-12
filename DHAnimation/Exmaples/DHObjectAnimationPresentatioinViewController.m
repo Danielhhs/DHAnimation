@@ -9,10 +9,10 @@
 #import "DHObjectAnimationPresentatioinViewController.h"
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettingViewController.h"
-#import "DHShimmerRenderer.h"
-#import "DHSparkleRenderer.h"
+#import "DHShimmerAnimationRenderer.h"
+#import "DHSparkleAnimationRenderer.h"
 #import "DHObjectAnimationSettingsViewController.h"
-#import "DHRotationRenderer.h"
+#import "DHRotationAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -45,17 +45,17 @@
     [self updateAnimationSettings];
     switch (self.animationType) {
         case ObjectAnimationTypeShimmer: {
-            self.renderer = [[DHShimmerRenderer alloc] init];
+            self.renderer = [[DHShimmerAnimationRenderer alloc] init];
             self.settings.rowCount = 15;
             self.settings.columnCount = 10;
         }
             break;
         case ObjectAnimationTypeSparkle:
-            self.renderer = [[DHSparkleRenderer alloc] init];
+            self.renderer = [[DHSparkleAnimationRenderer alloc] init];
             break;
         case ObjectAnimationTypeRotation:{
-            self.renderer = [[DHRotationRenderer alloc] init];
-            DHRotationRenderer *rotationRenderer = (DHRotationRenderer *)self.renderer;
+            self.renderer = [[DHRotationAnimationRenderer alloc] init];
+            DHRotationAnimationRenderer *rotationRenderer = (DHRotationAnimationRenderer *)self.renderer;
             rotationRenderer.rotationRadius = 300;
             self.settings.duration = 1.f;
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
