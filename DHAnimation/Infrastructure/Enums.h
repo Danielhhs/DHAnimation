@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, ObjectAnimationType) {
     ObjectAnimationTypeShimmer = 0,
     ObjectAnimationTypeSparkle = 1,
     ObjectAnimationTypeRotation = 2,
+    ObjectAnimationTypeConfetti = 3,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

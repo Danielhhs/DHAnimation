@@ -27,7 +27,11 @@
     vertices[index + 2].originalCenter = center;
     vertices[index + 3].originalCenter = center;
     
-    GLKVector3 targetCenter = [self targetCenterForVertexAtX:x y:y originalCenter:center];
+    CGFloat columnWidth = vertices[index + 1].position.x - vertices[index + 0].position.x;
+    if (columnWidth == 0) {
+        columnWidth = vertices[index + 2].position.x - vertices[index + 0].position.x;
+    }
+    GLKVector3 targetCenter = [self targetCenterForVertexAtX:x y:y originalCenter:center columnWidth:columnWidth];
     vertices[index + 0].targetCenter = targetCenter;
     vertices[index + 1].targetCenter = targetCenter;
     vertices[index + 2].targetCenter = targetCenter;
@@ -41,13 +45,14 @@
     vertices[index + 3].rotation = rotation;
 }
 
-- (GLKVector3) targetCenterForVertexAtX:(NSInteger)x y:(NSInteger)y originalCenter:(GLKVector3)originalCenter
+- (GLKVector3) targetCenterForVertexAtX:(NSInteger)x y:(NSInteger)y originalCenter:(GLKVector3)originalCenter columnWidth:(CGFloat)columnWidth
 {
     GLKVector3 center = originalCenter;
+    int maxOffset = columnWidth * 3;
     center.z = -1 * CONFETTI_DEPTH;
-    GLfloat xOffset = arc4random() % 100 - 50.f;
+    GLfloat xOffset = (int)arc4random() % (maxOffset * 2) - maxOffset;
     center.x += xOffset;
-    GLfloat yOffset = arc4random() % 100 - 50.f;
+    GLfloat yOffset = (int)arc4random() % (maxOffset * 2) - maxOffset;
     center.y += yOffset;
     return center;
 }

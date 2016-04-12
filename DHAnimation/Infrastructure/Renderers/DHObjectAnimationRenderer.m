@@ -154,7 +154,11 @@
 
 - (void) drawFrame
 {
-    
+    glUseProgram(program);
+    glUniform1f(eventLoc, self.event);
+    glUniform1f(directionLoc, self.direction);
+    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniform1f(percentLoc, self.percent);
 }
 
 - (void) setupTextures

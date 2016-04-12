@@ -13,6 +13,7 @@
 #import "DHSparkleAnimationRenderer.h"
 #import "DHObjectAnimationSettingsViewController.h"
 #import "DHRotationAnimationRenderer.h"
+#import "DHConfettiAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -61,6 +62,13 @@
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
             break;
+        case ObjectAnimationTypeConfetti: {
+            self.renderer = [[DHConfettiAnimationRenderer alloc] init];
+            self.settings.duration = 1.5;
+            self.settings.columnCount = self.settings.targetView.frame.size.width / 10;
+            self.settings.rowCount = self.settings.columnCount * self.settings.targetView.frame.size.width / self.settings.targetView.frame.size.height;
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+        }
         default:
             break;
     }

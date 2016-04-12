@@ -33,6 +33,31 @@
 @property (nonatomic, strong) NSString *vertexShaderName;
 @property (nonatomic, strong) NSString *fragmentShaderName;
 
+//Override this method to set up more uniform locations; Default implementation will set up unfiorms: u_mvpMatrix, s_tex, u_percent, u_direction, u_event; If you need these uniforms, just call super's implementation;
+- (void) setupGL;
+
+//Happens before set up effect and mesh; Override this method to set up some common data for both effects and meshes;
+- (void) additionalSetUp;
+
+//Set up meshes; You MUST override this method if you need to draw with some meshes. Default implementation is empty;
+- (void) setupMeshes;
+
+//Set up effects; Default implementation is empty;
+- (void) setupEffects;
+
+//Set up textures; default implementation just set up a texture with targetView;
+- (void) setupTextures;
+
+//Update your own data on every display link duration; default update is to update the elapsedTime and percent;
+- (void) updateAdditionalComponents;
+
+//Any drawing code would have to be writtin here; Default implementation just set the default uniform values;
+- (void) drawFrame;
+
+
+- (void) setupMvpMatrixWithView:(UIView *)view;
+
+#pragma mark - Animation APIs
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration completion:(void(^)(void))completion;
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration event:(AnimationEvent)event;
@@ -46,13 +71,5 @@
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(AnimationEvent)event direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings;
 
-- (void) setupGL;
-- (void) setupTextures;
-- (void) setupMeshes;
-- (void) setupEffects;
-- (void) drawFrame;
-- (void) updateAdditionalComponents;
-- (void) additionalSetUp;   //Happens before set up effect and mesh
 
-- (void) setupMvpMatrixWithView:(UIView *)view;
 @end
