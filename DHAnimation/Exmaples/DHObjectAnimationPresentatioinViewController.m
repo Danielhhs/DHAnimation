@@ -56,7 +56,7 @@
         case ObjectAnimationTypeRotation:{
             self.renderer = [[DHRotationRenderer alloc] init];
             DHRotationRenderer *rotationRenderer = (DHRotationRenderer *)self.renderer;
-            rotationRenderer.rotationRadius = 500;
+            rotationRenderer.rotationRadius = 300;
         }
             break;
         default:

@@ -4,9 +4,11 @@ uniform mat4 u_mvpMatrix;
 uniform vec2 u_targetCenter;
 uniform float u_percent;
 uniform float u_rotationRadius;
+uniform float u_targetWidth;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
+layout(location = 3) in vec4 a_columnStartPosition;
 
 out vec2 v_texCoords;
 
@@ -18,7 +20,13 @@ vec4 updatedPosition()
     vec3 rotationCenterToTargetCenter = vec3(u_rotationRadius * sin(rotation), 0.f , u_rotationRadius * cos(rotation));
     vec3 vertexToTargetCenter = a_position.xyz - vec3(u_targetCenter, a_position.z);
     vec3 rotationCenter = vec3(u_targetCenter, -u_rotationRadius);
-    vec4 position = vec4(rotationCenter + rotationCenterToTargetCenter + vertexToTargetCenter, 1.f);
+    vec3 vertexRotationVector;
+    if (a_position.x == a_columnStartPosition.x) {
+        vertexRotationVector = vec3(u_targetWidth / 2.f * (1.f - cos(rotation)), 0.f, u_targetWidth / 2.f * sin(rotation));
+    } else {
+        vertexRotationVector = vec3(-u_targetWidth / 2.f * (1.f - cos(rotation)), 0.f, -u_targetWidth / 2.f * sin(rotation));
+    }
+    vec4 position = vec4(rotationCenter + rotationCenterToTargetCenter + vertexToTargetCenter + vertexRotationVector, 1.f);
     return position;
 }
 

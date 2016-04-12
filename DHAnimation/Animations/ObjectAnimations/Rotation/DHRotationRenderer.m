@@ -9,7 +9,7 @@
 #import "DHRotationRenderer.h"
 #import "SceneMesh.h"
 @interface DHRotationRenderer() {
-    GLuint targetCenterLoc, rotationRadiusLoc;
+    GLuint targetCenterLoc, rotationRadiusLoc, targetWidthLoc;
 }
 @property (nonatomic, strong) SceneMesh *mesh;
 @end
@@ -31,6 +31,7 @@
     [super setupGL];
     targetCenterLoc = glGetUniformLocation(program, "u_targetCenter");
     rotationRadiusLoc = glGetUniformLocation(program, "u_rotationRadius");
+    targetWidthLoc = glGetUniformLocation(program, "u_targetWidth");
 }
 
 - (void) setupMeshes
@@ -47,6 +48,7 @@
     glUniform1f(percentLoc, self.percent);
     glUniform1f(eventLoc, self.event);
     glUniform1f(directionLoc, self.direction);
+    glUniform1f(targetWidthLoc, self.targetView.frame.size.width);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
