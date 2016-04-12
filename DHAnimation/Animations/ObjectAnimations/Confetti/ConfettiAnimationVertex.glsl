@@ -24,14 +24,27 @@ vec4 updatedPosition()
     float rotation = a_rotation * percent;
     
     vec3 vertexToCenter = vec3(0.f);
-    if (a_position.x < a_originalCenter.x && a_position.y > a_originalCenter.y) {
-        vertexToCenter.y = u_columnWidth / 2.f * sqrt(2.f);
-    } else if (a_position.x > a_originalCenter.x && a_position.y > a_originalCenter.y) {
-        vertexToCenter.x += u_columnWidth * sqrt(2.f) / 2.f;
-    } else if (a_position.x < a_originalCenter.x && a_position.y < a_originalCenter.y) {
-        vertexToCenter.x -= u_columnWidth / 2.f * sqrt(2.f);
+    if (percent > 0.1) {
+        if (a_position.x < a_originalCenter.x && a_position.y > a_originalCenter.y) {
+            vertexToCenter.y = u_columnWidth / 2.f * sqrt(2.f);
+        } else if (a_position.x > a_originalCenter.x && a_position.y > a_originalCenter.y) {
+            vertexToCenter.x += u_columnWidth * sqrt(2.f) / 2.f;
+        } else if (a_position.x < a_originalCenter.x && a_position.y < a_originalCenter.y) {
+            vertexToCenter.x -= u_columnWidth / 2.f * sqrt(2.f);
+        } else {
+            vertexToCenter.y -= u_columnWidth / 2.f * sqrt(2.f);
+        }
     } else {
-        vertexToCenter.y -= u_columnWidth / 2.f * sqrt(2.f);
+        if (a_position.x < a_originalCenter.x) {
+            vertexToCenter.x = -u_columnWidth / 2.f;
+        } else {
+            vertexToCenter.x = u_columnWidth / 2.f;
+        }
+        if (a_position.y < a_originalCenter.y) {
+            vertexToCenter.y = -u_columnWidth / 2.f;
+        } else {
+            vertexToCenter.y = u_columnWidth / 2.f;
+        }
     }
     vertexToCenter.y *= cos(rotation);
     vertexToCenter.z *= sin(rotation);
