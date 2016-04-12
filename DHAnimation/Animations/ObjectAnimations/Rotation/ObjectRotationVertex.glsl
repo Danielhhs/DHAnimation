@@ -5,6 +5,8 @@ uniform vec2 u_targetCenter;
 uniform float u_percent;
 uniform float u_rotationRadius;
 uniform float u_targetWidth;
+uniform float u_direction;
+uniform float u_event;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -16,7 +18,14 @@ const float pi = 3.1415927;
 
 vec4 updatedPosition()
 {
-    float rotation = pi * u_percent;
+    float percent = u_percent;
+    if (u_event != 1.f) {
+        percent = 1.f - u_percent;
+    }
+    float rotation = pi * percent;
+    if (u_direction != 0.f) {
+        rotation *= -1.f;
+    }
     vec3 rotationCenterToTargetCenter = vec3(u_rotationRadius * sin(rotation), 0.f , u_rotationRadius * cos(rotation));
     vec3 vertexToTargetCenter = a_position.xyz - vec3(u_targetCenter, a_position.z);
     vec3 rotationCenter = vec3(u_targetCenter, -u_rotationRadius);

@@ -4,7 +4,7 @@ precision highp float;
 
 uniform sampler2D s_tex;
 uniform float u_percent;
-uniform float u_animationEvent;
+uniform float u_event;
 
 in vec2 v_texCoords;
 
@@ -12,7 +12,7 @@ layout(location = 0) out vec4 out_color;
 
 void main() {
     float percent = u_percent;
-    if (u_animationEvent != 0.f) {
+    if (u_event != 0.f) {
         percent = 1.f - percent;
     }
     out_color = texture(s_tex, v_texCoords);

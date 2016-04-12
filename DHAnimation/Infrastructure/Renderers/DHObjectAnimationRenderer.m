@@ -122,8 +122,8 @@
     mvpLoc = glGetUniformLocation(program, "u_mvpMatrix");
     samplerLoc = glGetUniformLocation(program, "s_tex");
     percentLoc = glGetUniformLocation(program, "u_percent");
-    eventLoc = glGetUniformLocation(program, "u_animationEvent");
-    directionLoc = glGetUniformLocation(program, "u_animationDirection");
+    eventLoc = glGetUniformLocation(program, "u_event");
+    directionLoc = glGetUniformLocation(program, "u_direction");
     
     glClearColor(0, 0, 0, 1);
 }

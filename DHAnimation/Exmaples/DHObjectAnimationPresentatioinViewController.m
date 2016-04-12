@@ -57,6 +57,8 @@
             self.renderer = [[DHRotationRenderer alloc] init];
             DHRotationRenderer *rotationRenderer = (DHRotationRenderer *)self.renderer;
             rotationRenderer.rotationRadius = 300;
+            self.settings.duration = 1.f;
+            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
             break;
         default:

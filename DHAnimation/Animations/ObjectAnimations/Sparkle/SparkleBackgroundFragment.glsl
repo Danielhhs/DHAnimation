@@ -5,8 +5,8 @@ precision highp float;
 uniform sampler2D s_tex;
 uniform vec2 u_targetXPositionRange;
 uniform float u_percent;
-uniform float u_animationEvent;
-uniform float u_animationDirection;
+uniform float u_event;
+uniform float u_direction;
 
 in vec2 v_texCoords;
 
@@ -16,8 +16,8 @@ void main() {
     out_color = texture(s_tex, v_texCoords);
     float range = u_targetXPositionRange.y - u_targetXPositionRange.x;
     
-    if (u_animationEvent == 0.f) {
-        if (u_animationDirection == 0.f) {
+    if (u_event == 0.f) {
+        if (u_direction == 0.f) {
             if (gl_FragCoord.x > u_targetXPositionRange.x + range * u_percent) {
                 discard;
             }
@@ -27,7 +27,7 @@ void main() {
             }
         }
     } else {
-        if (u_animationDirection == 0.f) {
+        if (u_direction == 0.f) {
             if (gl_FragCoord.x < u_targetXPositionRange.x + range * u_percent) {
                 discard;
             }
