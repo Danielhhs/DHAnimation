@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger, ObjectAnimationType) {
     ObjectAnimationTypeRotation = 2,
     ObjectAnimationTypeConfetti = 3,
     ObjectAnimationTypeBlinds = 4,
+    ObjectAnimationTypeFirework = 5,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {

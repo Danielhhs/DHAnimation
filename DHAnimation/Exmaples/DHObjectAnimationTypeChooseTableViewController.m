@@ -66,7 +66,7 @@
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds"];
+        _animations = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework"];
     }
     return _animations;
 }

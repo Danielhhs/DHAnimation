@@ -15,6 +15,7 @@
 #import "DHRotationAnimationRenderer.h"
 #import "DHConfettiAnimationRenderer.h"
 #import "DHBlindsAnimationRenderer.h"
+#import "DHFireworkAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -76,6 +77,11 @@
             self.settings.columnCount = 5;
             self.settings.rowCount = 1;
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
+        }
+            break;
+        case ObjectAnimationTypeFirework: {
+            self.renderer = [[DHFireworkAnimationRenderer alloc] init];
+            self.settings.duration = 2.f;
         }
         default:
             break;
