@@ -15,6 +15,7 @@ layout(location = 6) in float a_size;
 layout(location = 7) in float a_shouldUpdatePosition;
 layout(location = 8) in float a_offset;
 
+
 vec4 updatedPosition()
 {
     vec3 position = a_emissionPosition + normalize(a_emissionDirection) * a_offset;
@@ -22,7 +23,7 @@ vec4 updatedPosition()
     if (a_shouldUpdatePosition == 0.f) {
         time = (a_emissionTime - u_emissionTime);
     }
-    position = a_emissionVelocity * time * a_emissionDirection + a_emissionPosition + 0.5 * (a_emissionForce) * time * time;
+    position = a_emissionVelocity * time * normalize(a_emissionDirection) + a_emissionPosition + 0.5 * (a_emissionForce) * time * time;
     return vec4(position, 1.f);
 }
 

@@ -17,7 +17,6 @@ typedef struct {
     GLfloat lifeTime;
     GLfloat size;
     GLfloat shouldUpdatePosition;
-    GLfloat offset;
 }DHFireworkParticleAttributes;
 
 @interface DHFireworkEffect () {
@@ -66,13 +65,15 @@ typedef struct {
         DHFireworkParticleAttributes fireworkParticle;
         fireworkParticle.emissionPosition = self.emissionPosition;
         fireworkParticle.emissionTime = self.emissionTime;
+        GLfloat yForce = -75;
         GLfloat yDirection = sin(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2);
         if (yDirection < 0) {
             yDirection /= 2;
+            yForce /= 3;
         }
         fireworkParticle.emissionDirection = GLKVector3Make(cos(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2), yDirection, 0.1);
         fireworkParticle.emissionVelocity = arc4random() % 38 + 38;
-        fireworkParticle.emissionForce = GLKVector3Make(-fireworkParticle.emissionVelocity / self.duration / 2 * cos(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2), -25, 50);
+        fireworkParticle.emissionForce = GLKVector3Make(-fireworkParticle.emissionVelocity / self.duration / 2 * cos(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2), yForce, 50);
         fireworkParticle.lifeTime = self.duration;
         fireworkParticle.size = 30;
         fireworkParticle.shouldUpdatePosition = 1.f;
@@ -103,14 +104,6 @@ typedef struct {
         fireworkParticle.size = 10;
         fireworkParticle.shouldUpdatePosition = 0.f;
         [self.particleData appendBytes:&fireworkParticle length:sizeof(fireworkParticle)];
-        for (int j = 0; j < 5; j++) {
-            DHFireworkParticleAttributes left = [self fireworkParticleForOriginalParticle:fireworkParticle offset:-j * fireworkParticle.size];
-            [self.particleData appendBytes:&left length:sizeof(left)];
-        }
-        for (int j = 0; j < 5; j++) {
-            DHFireworkParticleAttributes right = [self fireworkParticleForOriginalParticle:fireworkParticle offset:j * fireworkParticle.size];
-            [self.particleData appendBytes:&right length:sizeof(right)];
-        }
     }
 }
 
@@ -125,7 +118,6 @@ typedef struct {
     particle.size = original.size;
     particle.shouldUpdatePosition = original.shouldUpdatePosition;
     particle.emissionForce = original.emissionForce;
-    particle.offset = offset;
     return particle;
 }
 
@@ -164,9 +156,6 @@ typedef struct {
     
     glEnableVertexAttribArray(7);
     glVertexAttribPointer(7, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, shouldUpdatePosition));
-    
-    glEnableVertexAttribArray(8);
-    glVertexAttribPointer(8, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, offset));
     
 }
 
