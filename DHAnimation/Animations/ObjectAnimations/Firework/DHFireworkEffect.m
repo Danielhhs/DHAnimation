@@ -12,7 +12,7 @@ typedef struct {
     GLKVector3 emissionPosition;
     GLKVector3 emissionDirection;
     GLfloat emissionVelocity;
-    GLKVector3 emissionForce;
+    GLfloat emissionForce;
     GLfloat emissionTime;
     GLfloat lifeTime;
     GLfloat size;
@@ -20,7 +20,7 @@ typedef struct {
 }DHFireworkParticleAttributes;
 
 @interface DHFireworkEffect () {
-    GLuint emissionTimeLoc;
+    GLuint emissionTimeLoc, gravityLoc;;
 }
 @property (nonatomic) GLKVector3 gravity;
 @end
@@ -65,15 +65,13 @@ typedef struct {
         DHFireworkParticleAttributes fireworkParticle;
         fireworkParticle.emissionPosition = self.emissionPosition;
         fireworkParticle.emissionTime = self.emissionTime;
-        GLfloat yForce = -75;
         GLfloat yDirection = sin(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2);
         if (yDirection < 0) {
             yDirection /= 2;
-            yForce /= 3;
         }
         fireworkParticle.emissionDirection = GLKVector3Make(cos(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2), yDirection, 0.1);
-        fireworkParticle.emissionVelocity = arc4random() % 38 + 38;
-        fireworkParticle.emissionForce = GLKVector3Make(-fireworkParticle.emissionVelocity / self.duration / 2 * cos(i / (float)FIREWORK_BRANCH_COUNT * M_PI * 2), yForce, 50);
+        fireworkParticle.emissionVelocity = arc4random() % 100 + 100;
+        fireworkParticle.emissionForce = 2 * (fireworkParticle.emissionVelocity * self.duration - self.explosionRadius) / self.duration / self.duration;
         fireworkParticle.lifeTime = self.duration;
         fireworkParticle.size = 30;
         fireworkParticle.shouldUpdatePosition = 1.f;
@@ -84,6 +82,7 @@ typedef struct {
 - (void) setupExtraUniforms
 {
     emissionTimeLoc = glGetUniformLocation(program, "u_emissionTime");
+    gravityLoc = glGetUniformLocation(program, "u_gravity");
 }
 
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
@@ -143,7 +142,7 @@ typedef struct {
     glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, emissionVelocity));
     
     glEnableVertexAttribArray(3);
-    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, emissionForce));
+    glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, emissionForce));
     
     glEnableVertexAttribArray(4);
     glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkParticleAttributes), NULL + offsetof(DHFireworkParticleAttributes, emissionTime));
@@ -172,6 +171,7 @@ typedef struct {
     glUniform1f(percentLoc, self.percent);
     glUniform1f(elapsedTimeLoc, self.elapsedTime);
     glUniform1f(emissionTimeLoc, self.emissionTime);
+    glUniform3f(gravityLoc, 0, -50, 0);
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);

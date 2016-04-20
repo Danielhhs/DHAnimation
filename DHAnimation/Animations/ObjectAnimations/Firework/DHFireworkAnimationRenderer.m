@@ -46,7 +46,7 @@
 
 - (GLfloat) randomExplosionRadius
 {
-    return ((arc4random() % 100) / 100.f * (MAX_EXPLOSION_RATIO - MIN_EXPLOSION_RATIO) + MIN_EXPLOSION_RATIO) * self.containerView.frame.size.width;
+    return ((arc4random() % 50) / 50.f * (MAX_EXPLOSION_RATIO - MIN_EXPLOSION_RATIO) + MIN_EXPLOSION_RATIO) * self.containerView.frame.size.width;
 }
 
 - (GLKVector3) randomEmissionPosition
