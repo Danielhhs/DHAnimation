@@ -16,6 +16,7 @@
 #import "DHConfettiAnimationRenderer.h"
 #import "DHBlindsAnimationRenderer.h"
 #import "DHFireworkAnimationRenderer.h"
+#import "DHBlurAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -83,6 +84,11 @@
             self.renderer = [[DHFireworkAnimationRenderer alloc] init];
             self.settings.duration = 2.f;
         }
+            break;
+        case ObjectAnimationTypeBlur: {
+            self.renderer = [[DHBlurAnimationRenderer alloc] init];
+        }
+            break;
         default:
             break;
     }
