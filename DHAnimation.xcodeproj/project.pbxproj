@@ -139,6 +139,9 @@
 		547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */; };
 		547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHTransitionRenderer.m */; };
 		5478764A1CA5118400012F76 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* SceneMesh.m */; };
+		548EDF151CC8BC8C005E997B /* DHFlipAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF141CC8BC8C005E997B /* DHFlipAnimationRenderer.m */; };
+		548EDF171CC8BCA1005E997B /* ObjectFlipVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF161CC8BCA1005E997B /* ObjectFlipVertex.glsl */; };
+		548EDF191CC8BCAC005E997B /* ObjectFlipFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF181CC8BCAC005E997B /* ObjectFlipFragment.glsl */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
 		549FBC751CC773C8000E1ABF /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
 		549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
@@ -385,6 +388,10 @@
 		547876371CA50E2700012F76 /* DHTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionRenderer.m; sourceTree = "<group>"; };
 		547876481CA5118400012F76 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
 		547876491CA5118400012F76 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		548EDF131CC8BC8C005E997B /* DHFlipAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlipAnimationRenderer.h; sourceTree = "<group>"; };
+		548EDF141CC8BC8C005E997B /* DHFlipAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlipAnimationRenderer.m; sourceTree = "<group>"; };
+		548EDF161CC8BCA1005E997B /* ObjectFlipVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFlipVertex.glsl; sourceTree = "<group>"; };
+		548EDF181CC8BCAC005E997B /* ObjectFlipFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFlipFragment.glsl; sourceTree = "<group>"; };
 		549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBlurAnimationRenderer.h; sourceTree = "<group>"; };
 		549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBlurAnimationRenderer.m; sourceTree = "<group>"; };
 		549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlurAnimationVertex.glsl; sourceTree = "<group>"; };
@@ -553,6 +560,7 @@
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				548EDF121CC8BC78005E997B /* Flip */,
 				549FBC701CC773A8000E1ABF /* Blur */,
 				54A768A41CBD040600826929 /* Firework */,
 				54A7689C1CBCE28C00826929 /* Blinds */,
@@ -871,6 +879,17 @@
 				547876491CA5118400012F76 /* SceneMesh.m */,
 			);
 			path = Meshes;
+			sourceTree = "<group>";
+		};
+		548EDF121CC8BC78005E997B /* Flip */ = {
+			isa = PBXGroup;
+			children = (
+				548EDF131CC8BC8C005E997B /* DHFlipAnimationRenderer.h */,
+				548EDF141CC8BC8C005E997B /* DHFlipAnimationRenderer.m */,
+				548EDF161CC8BCA1005E997B /* ObjectFlipVertex.glsl */,
+				548EDF181CC8BCAC005E997B /* ObjectFlipFragment.glsl */,
+			);
+			path = Flip;
 			sourceTree = "<group>";
 		};
 		549FBC701CC773A8000E1ABF /* Blur */ = {
@@ -1196,6 +1215,7 @@
 				547875E71CA4D61B00012F76 /* DropSourceFragment.glsl in Resources */,
 				547876001CA4D61B00012F76 /* PushDestinationFragment.glsl in Resources */,
 				5478762D1CA4D61B00012F76 /* TwistSourceFragment.glsl in Resources */,
+				548EDF171CC8BCA1005E997B /* ObjectFlipVertex.glsl in Resources */,
 				547875D21CA4D61B00012F76 /* CubeDestinationVertex.glsl in Resources */,
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
 				547875E51CA4D61B00012F76 /* DropDestinationFragment.glsl in Resources */,
@@ -1208,6 +1228,7 @@
 				5420C0571CB8B0E6001C789C /* ShimmerVertex.glsl in Resources */,
 				547875EB1CA4D61B00012F76 /* FlipDestinationVertex.glsl in Resources */,
 				5478761D1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl in Resources */,
+				548EDF191CC8BCAC005E997B /* ObjectFlipFragment.glsl in Resources */,
 				547875DD1CA4D61B00012F76 /* DoorWaySourceFragment.glsl in Resources */,
 				5478760A1CA4D61B00012F76 /* RevealDestinationFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
@@ -1362,6 +1383,7 @@
 				5420C0501CB8B0E6001C789C /* DHShimmerAnimationRenderer.m in Sources */,
 				547875FF1CA4D61B00012F76 /* DHPushTransitionRenderer.m in Sources */,
 				5420C0601CB8C1E1001C789C /* DHSparkleEffect.m in Sources */,
+				548EDF151CC8BC8C005E997B /* DHFlipAnimationRenderer.m in Sources */,
 				54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */,
 				547875D91CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m in Sources */,
 				5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */,

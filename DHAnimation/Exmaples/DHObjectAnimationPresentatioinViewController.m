@@ -17,6 +17,7 @@
 #import "DHBlindsAnimationRenderer.h"
 #import "DHFireworkAnimationRenderer.h"
 #import "DHBlurAnimationRenderer.h"
+#import "DHFlipAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -87,6 +88,11 @@
             break;
         case ObjectAnimationTypeBlur: {
             self.renderer = [[DHBlurAnimationRenderer alloc] init];
+        }
+            break;
+        case ObjectAnimationTypeFlip: {
+            self.renderer = [[DHFlipAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
         default:

@@ -35,7 +35,6 @@
         columMajored = NO;
     }
     self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:columMajored];
-    [self.mesh printVertices];
 }
 
 - (void) drawFrame
