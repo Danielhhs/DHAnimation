@@ -18,6 +18,7 @@
 #import "DHFireworkAnimationRenderer.h"
 #import "DHBlurAnimationRenderer.h"
 #import "DHFlipAnimationRenderer.h"
+#import "DHDropAnimationRenderer.h"
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -95,6 +96,10 @@
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
+        case ObjectAnimationTypeDrop: {
+            self.renderer = [[DHDropAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
+        }
         default:
             break;
     }
