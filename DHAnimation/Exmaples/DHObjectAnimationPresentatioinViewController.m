@@ -105,7 +105,7 @@
             break;
         case ObjectAnimationTypePivot: {
             self.renderer = [[DHPivotAnimationRenderer alloc] init];
-            self.settings.duration = 1.f;
+//            self.settings.duration = 1.f;
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
         default:

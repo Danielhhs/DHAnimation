@@ -35,13 +35,40 @@
 - (void) drawFrame
 {
     [super drawFrame];
-    glUniform3f(anchorPointLoc, self.targetView.frame.origin.x, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
-    glUniform1f(yOffsetLoc, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    GLKVector3 anchorPoint = [self anchorPoint];
+    glUniform3fv(anchorPointLoc, 1, anchorPoint.v);
+    GLfloat yOffset = [self yOffset];
+    glUniform1f(yOffsetLoc, yOffset);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
     [self.mesh drawEntireMesh];
+}
+
+- (GLKVector3) anchorPoint
+{
+    switch (self.direction) {
+        case AnimationDirectionLeftToRight:
+        case AnimationDirectionTopToBottom:
+            return GLKVector3Make(self.targetView.frame.origin.x, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
+        case AnimationDirectionBottomToTop:
+        case AnimationDirectionRightToLeft:
+            return GLKVector3Make(CGRectGetMaxX(self.targetView.frame), self.containerView.frame.size.height - self.targetView.frame.origin.y, 0);
+    }
+}
+
+- (GLfloat) yOffset
+{
+    switch (self.direction) {
+        case AnimationDirectionLeftToRight:
+        case AnimationDirectionTopToBottom:
+            return self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame);
+        case AnimationDirectionBottomToTop:
+        case AnimationDirectionRightToLeft:
+            return -self.containerView.frame.size.height + self.targetView.frame.origin.y;
+    }
+
 }
 
 @end

@@ -20,7 +20,10 @@ vec4 updatedPosition()
         percent = 1.f - u_percent;
     }
     vec4 position = a_position;
-    float radius = distance(a_position.xyz, u_anchorPoint);;
+    float xSign = 1.f;
+    float ySign = 1.f;
+    float rotationDirection = 1.f;
+    float radius = distance(a_position.xyz, u_anchorPoint);
     float angle = 0.f;
     if (a_position.x == u_anchorPoint.x) {
         if (a_position.y != u_anchorPoint.y) {
@@ -32,12 +35,26 @@ vec4 updatedPosition()
             angle = pi / 2.f;
         }
     }
-    if (a_position.x != u_anchorPoint.x && a_position.y != u_anchorPoint.y) {
-        angle = pi / 4.f;
+    if (a_position.x < u_anchorPoint.x) {
+        xSign = -1.f;
+        rotationDirection = -1.f;
     }
-    float rotation = angle - percent * pi / 4.f;
-    position.x = radius * sin(rotation) + u_anchorPoint.x;
-    position.y = radius * cos(rotation) + u_anchorPoint.y;
+    if (a_position.y < u_anchorPoint.y) {
+        ySign = -1.f;
+        rotationDirection = -1.f;
+    }
+    if (a_position.x != u_anchorPoint.x && a_position.y != u_anchorPoint.y) {
+        if (a_position.x < u_anchorPoint.x) {
+            angle = pi / 4.f * 7.f;
+        } else {
+            angle = pi / 4.f;
+        }
+        xSign = 1.f;
+    }
+    float rotation = angle - rotationDirection * percent * pi / 4.f;
+    
+    position.x = xSign * radius * sin(rotation) + u_anchorPoint.x;
+    position.y = ySign * radius * cos(rotation) + u_anchorPoint.y;
     
     position.y += u_yOffset * percent;
     
