@@ -22,6 +22,7 @@
 #import "DHPivotAnimationRenderer.h"
 #import "DHPopAnimationRenderer.h"
 #import "DHScaleAnimationRenderer.h"
+#import "DHScaleBigAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -121,6 +122,10 @@
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
+        case ObjectAnimationTypeScaleBig: {
+            self.renderer = [[DHScaleBigAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
+        }
         default:
             break;
     }
