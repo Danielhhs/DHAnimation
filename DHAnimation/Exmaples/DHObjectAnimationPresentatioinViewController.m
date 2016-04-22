@@ -23,6 +23,7 @@
 #import "DHPopAnimationRenderer.h"
 #import "DHScaleAnimationRenderer.h"
 #import "DHScaleBigAnimationRenderer.h"
+#import "DHSpinAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -125,6 +126,11 @@
         case ObjectAnimationTypeScaleBig: {
             self.renderer = [[DHScaleBigAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
+        }
+            break;
+        case ObjectAnimationTypeSpin: {
+            self.renderer = [[DHSpinAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
         default:
             break;
