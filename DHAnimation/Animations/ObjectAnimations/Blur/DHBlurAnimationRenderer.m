@@ -7,12 +7,10 @@
 //
 
 #import "DHBlurAnimationRenderer.h"
-#import "SceneMesh.h"
 #import "TextureHelper.h"
 @interface DHBlurAnimationRenderer() {
     GLuint scaleLoc, resolutionLoc, elapsedTimeLoc;
 }
-@property (nonatomic, strong) SceneMesh *mesh;
 @end
 
 @implementation DHBlurAnimationRenderer

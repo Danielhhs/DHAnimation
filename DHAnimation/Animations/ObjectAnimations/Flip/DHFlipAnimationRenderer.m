@@ -7,13 +7,11 @@
 //
 
 #import "DHFlipAnimationRenderer.h"
-#import "SceneMesh.h"
 #import "TextureHelper.h"
 
 @interface DHFlipAnimationRenderer() {
     GLuint centerLoc, columnWidthLoc;
 }
-@property (nonatomic, strong) SceneMesh *mesh;
 @end
 
 @implementation DHFlipAnimationRenderer
@@ -33,11 +31,6 @@
 - (NSString *) fragmentShaderName
 {
     return @"ObjectFlipFragment.glsl";
-}
-
-- (void) setupMeshes
-{
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 
 - (void) drawFrame

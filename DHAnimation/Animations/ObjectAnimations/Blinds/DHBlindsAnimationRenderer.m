@@ -7,12 +7,10 @@
 //
 
 #import "DHBlindsAnimationRenderer.h"
-#import "SceneMesh.h"
 
 @interface DHBlindsAnimationRenderer() {
     GLuint columnWidthLoc, columnHeightLoc;
 }
-@property (nonatomic, strong) SceneMesh *mesh;
 @property (nonatomic) CGFloat columnWidth;
 @property (nonatomic) CGFloat columnHeight;
 @end

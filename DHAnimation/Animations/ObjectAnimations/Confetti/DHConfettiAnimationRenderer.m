@@ -11,7 +11,6 @@
 @interface DHConfettiAnimationRenderer() {
     GLuint columnWidthLoc, columnHeightLoc;
 }
-@property (nonatomic, strong) DHConfettiSourceMesh *mesh;
 @property (nonatomic) CGFloat columnWidth;
 @property (nonatomic) CGFloat columnHeight;
 @end

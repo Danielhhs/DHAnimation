@@ -19,6 +19,8 @@
 #import "DHBlurAnimationRenderer.h"
 #import "DHFlipAnimationRenderer.h"
 #import "DHDropAnimationRenderer.h"
+#import "DHPivotAnimationRenderer.h"
+
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
@@ -99,6 +101,12 @@
         case ObjectAnimationTypeDrop: {
             self.renderer = [[DHDropAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
+        }
+            break;
+        case ObjectAnimationTypePivot: {
+            self.renderer = [[DHPivotAnimationRenderer alloc] init];
+            self.settings.duration = 1.f;
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
         default:
             break;

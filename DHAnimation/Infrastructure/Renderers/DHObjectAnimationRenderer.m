@@ -170,7 +170,7 @@
 
 - (void) setupMeshes
 {
-    
+    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 
 - (void) setupEffects
