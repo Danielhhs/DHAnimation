@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, ObjectAnimationType) {
     ObjectAnimationTypeFlip = 7,
     ObjectAnimationTypeDrop = 8,
     ObjectAnimationTypePivot = 9,
+    ObjectAnimationTypePop = 10,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
