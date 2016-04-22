@@ -21,6 +21,7 @@
 #import "DHDropAnimationRenderer.h"
 #import "DHPivotAnimationRenderer.h"
 #import "DHPopAnimationRenderer.h"
+#import "DHScaleAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -114,6 +115,12 @@
             self.renderer = [[DHPopAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
         }
+            break;
+        case ObjectAnimationTypeScale: {
+            self.renderer = [[DHScaleAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
+        }
+            break;
         default:
             break;
     }
