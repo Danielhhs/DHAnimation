@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, ObjectAnimationType) {
     ObjectAnimationTypeScaleBig = 12,
     ObjectAnimationTypeSpin = 13,
     ObjectAnimationTypeTwirl = 14,
+    ObjectAnimationTypeDissolve = 15,
 };
 
 typedef NS_ENUM(NSInteger, AnimationDirection) {
