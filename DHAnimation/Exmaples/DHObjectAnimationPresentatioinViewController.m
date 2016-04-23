@@ -26,6 +26,7 @@
 #import "DHSpinAnimationRenderer.h"
 #import "DHTwirlAnimationRenderer.h"
 #import "DHDissolveAnimationRenderer.h"
+#import "DHSkidAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -142,6 +143,10 @@
             break;
         case ObjectAnimationTypeDissolve: {
             self.renderer = [[DHDissolveAnimationRenderer alloc] init];
+        }
+            break;
+        case ObjectAnimationTypeSkid: {
+            self.renderer = [[DHSkidAnimationRenderer alloc] init];
         }
         default:
             break;
