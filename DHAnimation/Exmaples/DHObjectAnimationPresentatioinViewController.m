@@ -24,6 +24,7 @@
 #import "DHScaleAnimationRenderer.h"
 #import "DHScaleBigAnimationRenderer.h"
 #import "DHSpinAnimationRenderer.h"
+#import "DHTwirlAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -131,6 +132,11 @@
         case ObjectAnimationTypeSpin: {
             self.renderer = [[DHSpinAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
+        }
+            break;
+        case ObjectAnimationTypeTwirl: {
+            self.renderer = [[DHTwirlAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
         }
         default:
             break;
