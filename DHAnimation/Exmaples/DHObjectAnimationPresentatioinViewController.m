@@ -27,6 +27,7 @@
 #import "DHTwirlAnimationRenderer.h"
 #import "DHDissolveAnimationRenderer.h"
 #import "DHSkidAnimationRenderer.h"
+#import "DHFlameAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -147,6 +148,10 @@
             break;
         case ObjectAnimationTypeSkid: {
             self.renderer = [[DHSkidAnimationRenderer alloc] init];
+        }
+            break;
+        case ObjectAnimationTypeFlame: {
+            self.renderer = [[DHFlameAnimationRenderer alloc] init];
         }
         default:
             break;

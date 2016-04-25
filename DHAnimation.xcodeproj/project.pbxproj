@@ -169,6 +169,12 @@
 		548EDF871CCB6092005E997B /* DHSkidAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF861CCB6092005E997B /* DHSkidAnimationRenderer.m */; };
 		548EDF891CCB609E005E997B /* ObjectSkidVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF881CCB609E005E997B /* ObjectSkidVertex.glsl */; };
 		548EDF8B1CCB60A9005E997B /* ObjectSkidFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF8A1CCB60A9005E997B /* ObjectSkidFragment.glsl */; };
+		548EDF961CCCA45D005E997B /* DHFlameAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF951CCCA45D005E997B /* DHFlameAnimationRenderer.m */; };
+		548EDF981CCCA46C005E997B /* ObjectFlameVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF971CCCA46C005E997B /* ObjectFlameVertex.glsl */; };
+		548EDF9A1CCCA47B005E997B /* ObjectFlameFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF991CCCA47B005E997B /* ObjectFlameFragment.glsl */; };
+		548EDFAE1CCE0D11005E997B /* Flame.png in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAD1CCE0D11005E997B /* Flame.png */; };
+		548EDFB01CCE15BE005E997B /* FlameBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */; };
+		548EDFB21CCE15CC005E997B /* FlameBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
 		549FBC751CC773C8000E1ABF /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
 		549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
@@ -455,6 +461,13 @@
 		548EDF861CCB6092005E997B /* DHSkidAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSkidAnimationRenderer.m; sourceTree = "<group>"; };
 		548EDF881CCB609E005E997B /* ObjectSkidVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectSkidVertex.glsl; sourceTree = "<group>"; };
 		548EDF8A1CCB60A9005E997B /* ObjectSkidFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectSkidFragment.glsl; sourceTree = "<group>"; };
+		548EDF941CCCA45D005E997B /* DHFlameAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFlameAnimationRenderer.h; sourceTree = "<group>"; };
+		548EDF951CCCA45D005E997B /* DHFlameAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFlameAnimationRenderer.m; sourceTree = "<group>"; };
+		548EDF971CCCA46C005E997B /* ObjectFlameVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFlameVertex.glsl; sourceTree = "<group>"; };
+		548EDF991CCCA47B005E997B /* ObjectFlameFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFlameFragment.glsl; sourceTree = "<group>"; };
+		548EDFAD1CCE0D11005E997B /* Flame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flame.png; sourceTree = "<group>"; };
+		548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlameBackgroundVertex.glsl; sourceTree = "<group>"; };
+		548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlameBackgroundFragment.glsl; sourceTree = "<group>"; };
 		549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBlurAnimationRenderer.h; sourceTree = "<group>"; };
 		549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBlurAnimationRenderer.m; sourceTree = "<group>"; };
 		549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlurAnimationVertex.glsl; sourceTree = "<group>"; };
@@ -623,6 +636,7 @@
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				548EDF8C1CCCA3EB005E997B /* Flame */,
 				548EDF841CCB6084005E997B /* Skid */,
 				548EDF7C1CCB5D75005E997B /* Dissolve */,
 				548EDF741CCB563F005E997B /* Twirl */,
@@ -1063,6 +1077,20 @@
 			path = Skid;
 			sourceTree = "<group>";
 		};
+		548EDF8C1CCCA3EB005E997B /* Flame */ = {
+			isa = PBXGroup;
+			children = (
+				548EDF941CCCA45D005E997B /* DHFlameAnimationRenderer.h */,
+				548EDF951CCCA45D005E997B /* DHFlameAnimationRenderer.m */,
+				548EDF971CCCA46C005E997B /* ObjectFlameVertex.glsl */,
+				548EDF991CCCA47B005E997B /* ObjectFlameFragment.glsl */,
+				548EDFAD1CCE0D11005E997B /* Flame.png */,
+				548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */,
+				548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */,
+			);
+			path = Flame;
+			sourceTree = "<group>";
+		};
 		549FBC701CC773A8000E1ABF /* Blur */ = {
 			isa = PBXGroup;
 			children = (
@@ -1410,6 +1438,7 @@
 				547875DD1CA4D61B00012F76 /* DoorWaySourceFragment.glsl in Resources */,
 				5478760A1CA4D61B00012F76 /* RevealDestinationFragment.glsl in Resources */,
 				54E2647F1C8FC5AC00FFB67E /* 3.jpg in Resources */,
+				548EDF9A1CCCA47B005E997B /* ObjectFlameFragment.glsl in Resources */,
 				547875C31CA4D61B00012F76 /* ClothLineSourceFragment.glsl in Resources */,
 				547875C61CA4D61B00012F76 /* ConfettiDestinationFragment.glsl in Resources */,
 				54E2640C1C8EBCBF00FFB67E /* LaunchScreen.storyboard in Resources */,
@@ -1433,7 +1462,9 @@
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				547875EF1CA4D61B00012F76 /* FlopDestinationFragment.glsl in Resources */,
 				547875CF1CA4D61B00012F76 /* CoverSourceVertex.glsl in Resources */,
+				548EDFAE1CCE0D11005E997B /* Flame.png in Resources */,
 				547875FD1CA4D61B00012F76 /* MosaicSourceFragment.glsl in Resources */,
+				548EDF981CCCA46C005E997B /* ObjectFlameVertex.glsl in Resources */,
 				547876211CA4D61B00012F76 /* ShredderPieceFragment.glsl in Resources */,
 				547875D31CA4D61B00012F76 /* CubeSourceFragment.glsl in Resources */,
 				5420C0561CB8B0E6001C789C /* ShimmerShiningStarVertex.glsl in Resources */,
@@ -1456,6 +1487,7 @@
 				5478762E1CA4D61B00012F76 /* TwistSourceVertex.glsl in Resources */,
 				548EDF891CCB609E005E997B /* ObjectSkidVertex.glsl in Resources */,
 				54A768A11CBCE2B000826929 /* BlindsAnimationVertex.glsl in Resources */,
+				548EDFB21CCE15CC005E997B /* FlameBackgroundFragment.glsl in Resources */,
 				547876231CA4D61B00012F76 /* ShredderVertex.glsl in Resources */,
 				549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */,
 				548EDF7B1CCB5675005E997B /* ObjectTwirlFragment.glsl in Resources */,
@@ -1468,6 +1500,7 @@
 				547875E81CA4D61B00012F76 /* DropSourceVertex.glsl in Resources */,
 				547876271CA4D61B00012F76 /* SwitchSourceFragment.glsl in Resources */,
 				5420C0621CB8CA6E001C789C /* Sparkle.png in Resources */,
+				548EDFB01CCE15BE005E997B /* FlameBackgroundVertex.glsl in Resources */,
 				547875C41CA4D61B00012F76 /* ClothLineSourceVertex.glsl in Resources */,
 				547876221CA4D61B00012F76 /* ShredderPieceVertex.glsl in Resources */,
 				548EDF701CCA258E005E997B /* ObjectSpinFragment.glsl in Resources */,
@@ -1564,6 +1597,7 @@
 				547875D51CA4D61B00012F76 /* DHCubeDestinationMesh.m in Sources */,
 				547875E41CA4D61B00012F76 /* DHDropTransitionRenderer.m in Sources */,
 				54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */,
+				548EDF961CCCA45D005E997B /* DHFlameAnimationRenderer.m in Sources */,
 				5420C04F1CB8B0E6001C789C /* DHShimmerParticleEffect.m in Sources */,
 				547876131CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m in Sources */,
 				548EDF771CCB5656005E997B /* DHTwirlAnimationRenderer.m in Sources */,
