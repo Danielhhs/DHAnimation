@@ -11,7 +11,6 @@
 @interface DHRotationAnimationRenderer() {
     GLuint targetCenterLoc, rotationRadiusLoc, targetWidthLoc;
 }
-@property (nonatomic, strong) SceneMesh *mesh;
 @end
 
 @implementation DHRotationAnimationRenderer
