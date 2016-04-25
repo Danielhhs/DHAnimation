@@ -152,6 +152,7 @@
             break;
         case ObjectAnimationTypeFlame: {
             self.renderer = [[DHFlameAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
         default:
             break;

@@ -55,8 +55,8 @@
     [self.backgroundMesh drawEntireMesh];
     
     [super drawFrame];
-    glUniform2f(resolutionLoc, self.targetView.frame.size.width * 2, self.targetView.frame.size.height * 3);
-    glUniform4f(rectLoc, CGRectGetMinX(self.targetView.frame) * 2, (self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame)) * 2, CGRectGetMaxX(self.targetView.frame) * 2, (self.containerView.frame.size.height - CGRectGetMinY(self.targetView.frame)) * 2);
+    glUniform2f(resolutionLoc, self.targetView.frame.size.width * 2.5, self.targetView.frame.size.height * 2.5);
+    glUniform4f(rectLoc, (CGRectGetMinX(self.targetView.frame) - self.targetView.frame.size.width * 0.1) * 2, (self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame)) * 2, (CGRectGetMaxX(self.targetView.frame) + self.targetView.frame.size.width * 0.1) * 2, (self.containerView.frame.size.height - CGRectGetMinY(self.targetView.frame) + self.targetView.frame.size.height * 0.2) * 2);
     glUniform1f(timeLoc, self.elapsedTime);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -67,7 +67,8 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    UIView *tmpView = [[UIView alloc] initWithFrame:CGRectInset(self.targetView.frame, -self.targetView.frame.size.width * 0.2, -self.targetView.frame.size.height * 0.2)];
+    self.mesh = [[SceneMesh alloc] initWithView:tmpView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
     self.backgroundMesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 

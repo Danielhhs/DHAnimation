@@ -74,9 +74,9 @@ float getNoise(vec3 v, float curl);
 
 void main()
 {
-    if (gl_FragCoord.x >= u_rect.x && gl_FragCoord.x < u_rect.z && gl_FragCoord.y >= u_rect.y && gl_FragCoord.y <= u_rect.w) {
+    if (gl_FragCoord.x >= u_rect.x && gl_FragCoord.x <= u_rect.z && gl_FragCoord.y >= u_rect.y && gl_FragCoord.y <= u_rect.w) {
         vec2 resolution = u_resolution;
-        resolution.y = u_resolution.y * (0.5 + u_percent / 2.f);
+        resolution.y = u_resolution.y * (0.5 + u_percent);
         vec2 uv = (gl_FragCoord.xy - u_rect.xy) / resolution.xy;
         float speed = noiseUpSpeed + (1.f + 3.f * u_percent);
         vec3 noisePos = vec3(uv * noiseScale - vec2(0, uTime * speed), uTime * noiseTimeScale);
