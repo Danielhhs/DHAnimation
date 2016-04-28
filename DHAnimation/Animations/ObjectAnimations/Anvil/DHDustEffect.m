@@ -8,6 +8,7 @@
 
 #import "DHDustEffect.h"
 #import "TextureHelper.h"
+#import "NSBKeyframeAnimationFunctions.h"
 typedef struct {
     GLKVector3 position;
     GLKVector3 targetPosition;
@@ -16,13 +17,12 @@ typedef struct {
     GLfloat rotation;
 } DHDustEffectAttributes;
 
-#define PARTICLE_COUNT 500
-#define DUST_RADIUS 300
+#define PARTICLE_COUNT 100
 #define MAX_PARTICLE_SIZE 1000
 
 @implementation DHDustEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth
+- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius
 {
     self = [super init];
     if (self) {
@@ -30,6 +30,7 @@ typedef struct {
         _emitPosition = emitPosition;
         _direction = direction;
         _dustWidth = dustWidth;
+        _emissionRadius = radius;
         [self setupGL];
         [self setupTextures];
         [self generateParticlesData];
@@ -71,7 +72,7 @@ typedef struct {
     GLKVector3 position;
     position.x = self.emitPosition.x + [self randomPercent] * self.dustWidth;
     position.y = self.emitPosition.y + [self randomPercent] * [self maxYForX:position.x - self.emitPosition.x];
-    position.z = self.emitPosition.z;
+    position.z = self.emitPosition.z + [self randomPercent] * [self maxZForX:position.x - self.emitPosition.x y:position.y - self.emitPosition.y];
     return position;
 }
 
@@ -82,25 +83,25 @@ typedef struct {
 
 - (GLfloat) maxYForX:(GLfloat)x
 {
-    float y = sqrt(DUST_RADIUS * DUST_RADIUS - x * x);
-    y = DUST_RADIUS - y;
+    float y = sqrt(self.emissionRadius * self.emissionRadius - x * x);
+    y = self.emissionRadius - y;
     return y;
 }
 
 - (GLfloat) maxZForX:(GLfloat)x y:(GLfloat)y
 {
     float z;
-    if (x * x + y * y > DUST_RADIUS * DUST_RADIUS) {
+    if (x * x + y * y > self.emissionRadius * self.emissionRadius) {
         z =  0;
     } else {
-        z = sqrt(DUST_RADIUS * DUST_RADIUS - x * x - y * y);
+        z = sqrt(self.emissionRadius * self.emissionRadius - x * x - y * y);
     }
     return z;
 }
 
 - (GLfloat) targetPointSizeForYPosition:(GLfloat)yPosition originalSize:(GLfloat)originalSize
 {
-    GLfloat maxYPosition = sqrt(DUST_RADIUS * DUST_RADIUS - self.dustWidth * self.dustWidth);
+    GLfloat maxYPosition = sqrt(self.emissionRadius * self.emissionRadius - self.dustWidth * self.dustWidth);
     return yPosition / maxYPosition * MAX_PARTICLE_SIZE + originalSize;
 }
 
@@ -130,9 +131,6 @@ typedef struct {
 
 - (void) draw
 {
-    glEnable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glUseProgram(program);
@@ -152,4 +150,11 @@ typedef struct {
 {
     texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:self.particleImageName]];
 }
+
+- (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
+{
+    elapsedTime = elapsedTime - self.startTime;
+    self.percent = NSBKeyframeAnimationFunctionEaseOutExpo(elapsedTime * 1000, 0, 1, (self.duration - self.startTime) * 1000);
+}
+
 @end

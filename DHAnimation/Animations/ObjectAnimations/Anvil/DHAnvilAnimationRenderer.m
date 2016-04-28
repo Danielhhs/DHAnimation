@@ -11,9 +11,9 @@
 #import "DHDustEffect.h"
 @interface DHAnvilAnimationRenderer () {
     GLuint yOffsetLoc, timeLoc, resolutionLoc;
-    GLuint cubeTexture;
 }
 @property (nonatomic, strong) DHDustEffect *effect;
+@property (nonatomic) NSTimeInterval fallTime;
 @end
 
 @implementation DHAnvilAnimationRenderer
@@ -24,6 +24,7 @@
     yOffsetLoc = glGetUniformLocation(program, "u_yOffset");
     timeLoc = glGetUniformLocation(program, "u_time");
     resolutionLoc = glGetUniformLocation(program, "u_resolution");
+    self.fallTime = 0.3;
 }
 
 - (NSString *) vertexShaderName
@@ -55,8 +56,10 @@
 
 - (void) setupEffects
 {
-    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2) direction:DHDustEmissionDirectionHorizontal dustWidth:self.targetView.frame.size.width * 1.5 / 2];
+    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2) direction:DHDustEmissionDirectionHorizontal dustWidth:self.targetView.frame.size.width * 1.5 / 2 emissionRadius:300];
     self.effect.mvpMatrix = mvpMatrix;
+    self.effect.startTime = self.fallTime;
+    self.effect.duration = self.duration - self.fallTime;
 }
 
 - (void) updateAdditionalComponents

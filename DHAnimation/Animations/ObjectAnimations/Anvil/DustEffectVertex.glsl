@@ -37,4 +37,7 @@ void main() {
     resultMat[3][1] = resultMat[3][1] + resultMat[0][1] * -0.5 + resultMat[1][1] * -0.5;
     resultMat[3][2] = resultMat[3][2] + resultMat[0][2] * -0.5 + resultMat[1][2] * -0.5;
     v_rotation = resultMat;
+    if (u_percent < 0.f) {
+        gl_PointSize = 0.f;
+    }
 }

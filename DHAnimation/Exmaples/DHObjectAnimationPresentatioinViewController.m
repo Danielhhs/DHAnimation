@@ -159,7 +159,7 @@
         case ObjectAnimationAnvil: {
             self.renderer = [[DHAnvilAnimationRenderer alloc] init];
             self.settings.duration = 2.f;
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
         }
         default:
             break;
@@ -216,6 +216,12 @@
 {
     int randomNumber = arc4random() % 10;
     return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.transform = CGAffineTransformIdentity;
+    [super viewWillDisappear:animated];
 }
 
 @end
