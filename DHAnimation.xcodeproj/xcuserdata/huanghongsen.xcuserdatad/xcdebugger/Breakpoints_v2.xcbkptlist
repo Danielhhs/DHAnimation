@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "482033374.737583"
+            timestampString = "483524407.251377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116">
+            startingLineNumber = "117"
+            endingLineNumber = "117">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "482033374.737583"
+            timestampString = "483524407.251377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165">
+            startingLineNumber = "166"
+            endingLineNumber = "166">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "482033374.737583"
+            timestampString = "483524407.251377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172">
+            startingLineNumber = "173"
+            endingLineNumber = "173">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -532,6 +532,22 @@
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "-draw"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/ObjectAnimations/Anvil/DHDustEffect.m"
+            timestampString = "483528409.510896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-targetPointSizeForYPosition:originalSize:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

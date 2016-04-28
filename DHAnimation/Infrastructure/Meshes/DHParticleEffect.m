@@ -68,7 +68,8 @@
 
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
-    
+    self.percent = percent;
+    self.elapsedTime = elapsedTime;
 }
 
 @end

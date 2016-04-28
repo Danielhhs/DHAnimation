@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540AFA531CD1FD94004EF919 /* dust.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA521CD1FD94004EF919 /* dust.png */; };
 		5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0111CB64507001C789C /* DHParticleEffect.m */; };
 		5420C0281CB663C2001C789C /* DHObjectAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0271CB663C2001C789C /* DHObjectAnimationRenderer.m */; };
 		5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C03C1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m */; };
@@ -250,6 +251,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		540AFA521CD1FD94004EF919 /* dust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dust.png; sourceTree = "<group>"; };
 		5420C0101CB64507001C789C /* DHParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHParticleEffect.h; sourceTree = "<group>"; };
 		5420C0111CB64507001C789C /* DHParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHParticleEffect.m; sourceTree = "<group>"; };
 		5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationRenderer.h; sourceTree = "<group>"; };
@@ -1320,6 +1322,7 @@
 		54F64CC71CCF473800AFBCF8 /* Anvil */ = {
 			isa = PBXGroup;
 			children = (
+				540AFA521CD1FD94004EF919 /* dust.png */,
 				54F64CC81CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.h */,
 				54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */,
 				54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */,
@@ -1439,6 +1442,7 @@
 				548EDF6B1CCA1246005E997B /* ObjectScaleBigFragment.glsl in Resources */,
 				548EDF431CC90B59005E997B /* ObjectPivotVertex.glsl in Resources */,
 				5478760F1CA4D61B00012F76 /* RippleDestinationFragment.glsl in Resources */,
+				540AFA531CD1FD94004EF919 /* dust.png in Resources */,
 				547876251CA4D61B00012F76 /* SwitchDestinationFragment.glsl in Resources */,
 				54E264821C8FC5AC00FFB67E /* 6.jpg in Resources */,
 				5420C0591CB8B0E6001C789C /* star_white.png in Resources */,

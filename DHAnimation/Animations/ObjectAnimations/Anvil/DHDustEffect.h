@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
 
 @property (nonatomic) GLKVector3 emitPosition;
 @property (nonatomic) DHDustEmissionDirection direction;
-@property (nonatomic) GLfloat dustHeight;
 @property (nonatomic) GLfloat dustWidth;
+
+- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth;
 @end
