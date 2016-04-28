@@ -28,6 +28,7 @@
 #import "DHDissolveAnimationRenderer.h"
 #import "DHSkidAnimationRenderer.h"
 #import "DHFlameAnimationRenderer.h"
+#import "DHAnvilAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -153,6 +154,11 @@
         case ObjectAnimationTypeFlame: {
             self.renderer = [[DHFlameAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+        }
+            break;
+        case ObjectAnimationAnvil: {
+            self.renderer = [[DHAnvilAnimationRenderer alloc] init];
+            self.settings.duration = 2.f;
         }
         default:
             break;
