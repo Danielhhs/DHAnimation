@@ -17,7 +17,12 @@ typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
 
 @interface DHDustEffect : DHParticleEffect
 
+//If you are using emission for single direction, like left & right, this is the position where the emission happens;
+//If you are using emission for all directions, this is the left-most position for the emission; also, you need to set the emissionWidth to indicate the range for emission
 @property (nonatomic) GLKVector3 emitPosition;
+@property (nonatomic) GLfloat emissionWidth;    //Only necessary for emission for all horizontal directions;
+@property (nonatomic) int numberOfEmissions;    //Only necessary for emission for all horizontal directions;
+
 @property (nonatomic) DHDustEmissionDirection direction;
 @property (nonatomic) GLfloat dustWidth;
 @property (nonatomic) NSTimeInterval startTime;

@@ -57,7 +57,9 @@
 - (void) setupEffects
 {
     self.effect = [[DHDustEffect alloc] initWithContext:self.context];
-    self.effect.emitPosition = GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2);
+    self.effect.emitPosition = GLKVector3Make(CGRectGetMinX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2);
+    self.effect.emissionWidth = self.targetView.frame.size.width;
+    self.effect.numberOfEmissions = 10;
     self.effect.direction = DHDustEmissionDirectionHorizontal;
     self.effect.dustWidth = self.targetView.frame.size.width * 1.5 / 2;
     self.effect.emissionRadius = self.targetView.frame.size.width * 1.5;

@@ -19,9 +19,25 @@ typedef struct {
 
 #define PARTICLE_COUNT 100
 #define MAX_PARTICLE_SIZE 1000
+@interface DHDustEffect() {
+    
+}
+@property (nonatomic) GLKVector3 emitDirection;
+@property (nonatomic) GLuint numberOfParticles;
+@end
 
 @implementation DHDustEffect
 
+- (instancetype) initWithContext:(EAGLContext *)context
+{
+    self = [super initWithContext:context];
+    if (self) {
+        _numberOfEmissions = 10;
+    }
+    return self;
+}
+
+#pragma mark - Resource Files
 - (NSString *) vertexShaderFileName
 {
     return @"DustEffectVertex.glsl";
@@ -40,29 +56,41 @@ typedef struct {
 - (void) generateParticlesData
 {
     self.particleData = [NSMutableData data];
-    for (int i = 0; i < PARTICLE_COUNT; i++) {
+    if (self.direction == DHDustEmissionDirectionLeft || self.direction == DHDustEmissionDirectionRight) {
+        [self generateDustParticlesForSingleDirection:self.direction emissionPosition:self.emitPosition];
+    } else {
+        [self generateDustParticlesForAllDirections];
+    }
+}
+
+#pragma mark - Generate Particle Data For Single Direction
+- (void) generateDustParticlesForSingleDirection:(DHDustEmissionDirection)direction emissionPosition:(GLKVector3)emissionPosition
+{
+    self.numberOfParticles = PARTICLE_COUNT;
+    if (direction == DHDustEmissionDirectionLeft) {
+        self.emitDirection = GLKVector3Make(-1, 0, 0);
+    } else if (direction == DHDustEmissionDirectionRight) {
+        self.emitDirection = GLKVector3Make(1, 0, 0);
+    }
+    for (int i = 0; i < self.numberOfParticles; i++) {
         DHDustEffectAttributes dust;
-        dust.position = self.emitPosition;
+        dust.position = emissionPosition;
         dust.pointSize = 5.f;
-        dust.targetPosition = [self randomTargetPosition];
-        dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - self.emitPosition.y originalSize:dust.pointSize];
+        dust.targetPosition = [self randomTargetPositionForSingleDirectionForEmissionPosition:emissionPosition];
+        dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
         dust.rotation = [self randomPercent] * M_PI * 4;
         [self.particleData appendBytes:&dust length:sizeof(dust)];
     }
 }
 
-- (GLKVector3) randomTargetPosition
+- (GLKVector3) randomTargetPositionForSingleDirectionForEmissionPosition:(GLKVector3)emissionPosition
 {
     GLKVector3 position;
-    position.x = self.emitPosition.x + [self randomPercent] * self.dustWidth;
-    position.y = self.emitPosition.y + [self randomPercent] * [self maxYForX:position.x - self.emitPosition.x];
-    position.z = self.emitPosition.z;
+    GLfloat xDirection = self.emitDirection.x > 0 ? 1 : -1;
+    position.x = emissionPosition.x + [self randomPercent] * self.dustWidth * xDirection;
+    position.y = emissionPosition.y + [self randomPercent] * [self maxYForX:position.x - emissionPosition.x];
+    position.z = emissionPosition.z + [self randomPercent] * self.emissionRadius * self.emitDirection.z;
     return position;
-}
-
-- (GLfloat) randomPercent
-{
-    return arc4random() % 100 / 100.f;
 }
 
 - (GLfloat) maxYForX:(GLfloat)x
@@ -89,6 +117,46 @@ typedef struct {
     return yPosition / maxYPosition * MAX_PARTICLE_SIZE + originalSize;
 }
 
+#pragma mark - Generate Particle Data For Horizontal Direction
+- (void) generateDustParticlesForAllDirections
+{
+    GLfloat spaceBetweenEmitters = self.emissionWidth / self.numberOfEmissions;
+//    for (int i = 1; i < self.numberOfEmissions - 1; i++) {
+//        GLKVector3 emissionPosition = GLKVector3Make(self.emitPosition.x + i * spaceBetweenEmitters, self.emitPosition.y, self.emitPosition.z);
+//        for (int i = 0; i < PARTICLE_COUNT; i++) {
+//            DHDustEffectAttributes dust;
+//            dust.position = emissionPosition;
+//            dust.pointSize = 5.f;
+//            dust.rotation = [self randomPercent] * M_PI * 4;
+//            dust.targetPosition = [self randomTargetPositionForAllDirectionsForEmissionPosition:emissionPosition];
+//            dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
+//            [self.particleData appendBytes:&dust length:sizeof(dust)];
+//        }
+//    }
+    [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionLeft emissionPosition:self.emitPosition];
+    GLKVector3 rightEmitPosition = self.emitPosition;
+    rightEmitPosition.x += self.emissionWidth;
+    [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionRight emissionPosition:rightEmitPosition];
+    self.numberOfParticles = 2 * PARTICLE_COUNT;
+}
+
+- (GLKVector3) randomTargetPositionForAllDirectionsForEmissionPosition:(GLKVector3)emissionPosition
+{
+    GLfloat spaceBetweenEmitters = self.emissionWidth / self.numberOfEmissions;
+    GLKVector3 position;
+    GLfloat xOffset = [self randomPercent] * spaceBetweenEmitters * 2 - spaceBetweenEmitters;
+    position.x = emissionPosition.x + xOffset;
+    position.z = emissionPosition.z + [self randomPercent] * self.emissionRadius;
+    position.y = [self maxYForX:position.z - emissionPosition.z];
+    return position;
+}
+
+- (GLfloat) randomPercent
+{
+    return arc4random() % 100 / 100.f;
+}
+
+#pragma mark - Drawing
 - (void) prepareToDraw
 {
     if (vertexBuffer == 0) {
@@ -126,7 +194,7 @@ typedef struct {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
-    glDrawArrays(GL_POINTS, 0, PARTICLE_COUNT);
+    glDrawArrays(GL_POINTS, 0, self.numberOfParticles);
     
 }
 
