@@ -34,6 +34,7 @@ typedef struct {
     self = [super initWithContext:context];
     if (self) {
         _numberOfEmissions = 10;
+        _numberOfParticlesPerEmission = 10;
     }
     return self;
 }
@@ -81,6 +82,7 @@ typedef struct {
         dust.targetPosition = [self randomTargetPositionForSingleDirectionForEmissionPosition:emissionPosition];
         dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
         dust.rotation = [self randomPercent] * M_PI * 4;
+        dust.targetPosition.y += self.emissionRadius / 3.f * [self randomPercent];
         [self.particleData appendBytes:&dust length:sizeof(dust)];
     }
 }
@@ -124,13 +126,14 @@ typedef struct {
 {
     for (int i = 1; i < self.emissionWidth - 1; i++) {
         GLKVector3 emissionPosition = GLKVector3Make(self.emitPosition.x + i, self.emitPosition.y, self.emitPosition.z);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < self.numberOfParticlesPerEmission; i++) {
             DHDustEffectAttributes dust;
             dust.position = emissionPosition;
             dust.pointSize = 5.f;
             dust.rotation = [self randomPercent] * M_PI * 4;
             dust.targetPosition = [self randomTargetPositionForAllDirectionsForEmissionPosition:emissionPosition];
             dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
+            dust.targetPosition.y += self.emissionRadius / 3.f * [self randomPercent];
             [self.particleData appendBytes:&dust length:sizeof(dust)];
         }
     }
@@ -138,17 +141,17 @@ typedef struct {
     GLKVector3 rightEmitPosition = self.emitPosition;
     rightEmitPosition.x += self.emissionWidth;
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionRight emissionPosition:rightEmitPosition];
-    self.numberOfParticles = PARTICLE_COUNT * 2 + 5 * self.emissionWidth;
+    self.numberOfParticles = PARTICLE_COUNT * 2 + self.numberOfParticlesPerEmission * self.emissionWidth;
 }
 
 - (GLKVector3) randomTargetPositionForAllDirectionsForEmissionPosition:(GLKVector3)emissionPosition
 {
     GLKVector3 position;
-    GLfloat angle = (emissionPosition.x - self.emitPosition.x) / self.emissionWidth * M_PI * 2;
-    GLfloat xOffset = self.emissionRadius * cos(angle);
+    GLfloat angle = (emissionPosition.x - self.emitPosition.x) / self.emissionWidth * M_PI;
+    GLfloat xOffset = -self.dustWidth / 2 * cos(angle);
     position.x = emissionPosition.x + xOffset;
     position.z = emissionPosition.z + [self randomPercent] * self.emissionRadius;
-    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 7;
+    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 7 * [self randomPercent];
     position.y = emissionPosition.y + yOffset;
     return position;
 }

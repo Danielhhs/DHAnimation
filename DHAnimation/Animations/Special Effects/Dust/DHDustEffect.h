@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
 @property (nonatomic) GLKVector3 emitPosition;
 @property (nonatomic) GLfloat emissionWidth;    //Only necessary for emission for all horizontal directions;
 @property (nonatomic) int numberOfEmissions;    //Only necessary for emission for all horizontal directions;
+@property (nonatomic) int numberOfParticlesPerEmission; //Only necessary for emission for all horizontal directions;
 
 @property (nonatomic) DHDustEmissionDirection direction;
 @property (nonatomic) GLfloat dustWidth;

@@ -41,7 +41,7 @@
 {
     [super drawFrame];
     glUniform2f(resolutionLoc, self.containerView.frame.size.width, self.containerView.frame.size.height);
-    glUniform1f(yOffsetLoc, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    glUniform1f(yOffsetLoc, CGRectGetMaxY(self.targetView.frame));
     glUniform1f(timeLoc, self.elapsedTime);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
@@ -57,12 +57,12 @@
 - (void) setupEffects
 {
     self.effect = [[DHDustEffect alloc] initWithContext:self.context];
-    self.effect.emitPosition = GLKVector3Make(CGRectGetMinX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2);
+    self.effect.emitPosition = GLKVector3Make(CGRectGetMinX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
     self.effect.emissionWidth = self.targetView.frame.size.width;
     self.effect.numberOfEmissions = 10;
     self.effect.direction = DHDustEmissionDirectionHorizontal;
-    self.effect.dustWidth = self.targetView.frame.size.width * 1.5 / 2;
-    self.effect.emissionRadius = self.targetView.frame.size.width * 1.5;
+    self.effect.dustWidth = self.targetView.frame.size.width / 2;
+    self.effect.emissionRadius = self.targetView.frame.size.width;
     self.effect.timingFuntion = DHTimingFunctionEaseOutExpo;
     self.effect.mvpMatrix = mvpMatrix;
     self.effect.startTime = self.fallTime;

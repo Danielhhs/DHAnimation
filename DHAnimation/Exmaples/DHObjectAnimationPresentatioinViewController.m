@@ -158,7 +158,6 @@
             break;
         case ObjectAnimationAnvil: {
             self.renderer = [[DHAnvilAnimationRenderer alloc] init];
-            self.settings.duration = 2.f;
             self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
         }
         default:
