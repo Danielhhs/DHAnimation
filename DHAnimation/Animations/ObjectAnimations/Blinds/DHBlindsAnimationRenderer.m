@@ -59,4 +59,10 @@
 {
     return @"BlindsAnimationFragment.glsl";
 }
+
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+}
 @end

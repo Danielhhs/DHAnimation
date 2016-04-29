@@ -89,4 +89,8 @@
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
 }
 
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionTop)];
+}
 @end

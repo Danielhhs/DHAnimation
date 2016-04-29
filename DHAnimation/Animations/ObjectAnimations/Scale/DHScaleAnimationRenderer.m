@@ -43,4 +43,9 @@
     glUniform1i(samplerLoc, 0);
     [self.mesh drawEntireMesh];
 }
+
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

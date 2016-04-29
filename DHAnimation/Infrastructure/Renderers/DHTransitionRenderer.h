@@ -28,6 +28,7 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic) CGFloat percent;
 @property (nonatomic) AnimationDirection direction;
+@property (nonatomic, strong) NSArray *allowedDirection;
 @property (nonatomic, weak) UIView *fromView;
 @property (nonatomic, weak) UIView *toView;
 @property (nonatomic) NSInteger columnCount;

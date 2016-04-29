@@ -107,4 +107,9 @@
 {
     glCullFace(GL_FRONT);
 }
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionTop)];
+}
 @end

@@ -54,4 +54,9 @@
     }
 }
 
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionTop)];
+}
 @end

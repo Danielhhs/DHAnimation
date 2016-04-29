@@ -6,8 +6,10 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
+@class DHTransitionRenderer;
+@class DHObjectAnimationRenderer;
 typedef NS_ENUM(NSInteger, TransitionType) {
     TransitionTypeDoorWay = 0,
     TransitionTypeCube = 1,
@@ -64,6 +66,20 @@ typedef NS_ENUM(NSInteger, AnimationEvent) {
     AnimationEventBuiltOut = 1,
 };
 
-@interface Enums : NSObject
+typedef NS_ENUM(NSInteger, AllowedAnimationDirection) {
+    AllowedAnimationDirectionLeft = 1,
+    AllowedAnimationDirectionRight = 1 << 1,
+    AllowedAnimationDirectionTop = 1 << 2,
+    AllowedAnimationDirectionBottom = 1 << 3,
+};
+
+@interface DHConstans : NSObject
+
++ (NSArray *) transitions;
++ (NSArray *) builtInAnimations;
++ (NSArray *) builtOutAnimations;
+
++ (DHTransitionRenderer *)transitionRendererForName:(NSString *)transitionName;
++ (DHObjectAnimationRenderer *) animationRendererForName:(NSString *)animationName;
 
 @end

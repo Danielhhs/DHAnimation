@@ -161,4 +161,9 @@
     }
     return rotation;
 }
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+}
 @end

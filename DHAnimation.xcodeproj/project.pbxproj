@@ -24,6 +24,142 @@
 		540AFA7B1CD2E65C004EF919 /* Sparkle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6A1CD2E65C004EF919 /* Sparkle2.png */; };
 		540AFA7C1CD2E65C004EF919 /* SparkleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6B1CD2E65C004EF919 /* SparkleFragment.glsl */; };
 		540AFA7D1CD2E65C004EF919 /* SparkleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6C1CD2E65C004EF919 /* SparkleVertex.glsl */; };
+		540AFA951CD34E5E004EF919 /* DHAnimationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA941CD34E5E004EF919 /* DHAnimationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		540AFA9C1CD34E5E004EF919 /* DHAnimationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540AFA921CD34E5E004EF919 /* DHAnimationFramework.framework */; };
+		540AFAA11CD34E5E004EF919 /* DHAnimationFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFAA01CD34E5E004EF919 /* DHAnimationFrameworkTests.m */; };
+		54101B061CD34F9A002B10D0 /* DustEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA591CD2E65C004EF919 /* DustEffectFragment.glsl */; };
+		54101B071CD34F9A002B10D0 /* DustEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA5A1CD2E65C004EF919 /* DustEffectVertex.glsl */; };
+		54101B081CD34F9A002B10D0 /* ShimmerFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA601CD2E65C004EF919 /* ShimmerFragment.glsl */; };
+		54101B091CD34F9A002B10D0 /* ShimmerShiningStarFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA611CD2E65C004EF919 /* ShimmerShiningStarFragment.glsl */; };
+		54101B0A1CD34F9A002B10D0 /* ShimmerShiningStarVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA621CD2E65C004EF919 /* ShimmerShiningStarVertex.glsl */; };
+		54101B0B1CD34F9A002B10D0 /* ShimmerVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA631CD2E65C004EF919 /* ShimmerVertex.glsl */; };
+		54101B0C1CD34F9A002B10D0 /* SparkleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6B1CD2E65C004EF919 /* SparkleFragment.glsl */; };
+		54101B0D1CD34F9A002B10D0 /* SparkleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6C1CD2E65C004EF919 /* SparkleVertex.glsl */; };
+		54101B0E1CD34F9A002B10D0 /* ObjectAnvilVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */; };
+		54101B0F1CD34F9A002B10D0 /* ObjectAnvilFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCD1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl */; };
+		54101B101CD34F9A002B10D0 /* ObjectFlameVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF971CCCA46C005E997B /* ObjectFlameVertex.glsl */; };
+		54101B111CD34F9A002B10D0 /* ObjectFlameFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF991CCCA47B005E997B /* ObjectFlameFragment.glsl */; };
+		54101B121CD34F9A002B10D0 /* FlameBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */; };
+		54101B131CD34F9A002B10D0 /* FlameBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */; };
+		54101B141CD34F9A002B10D0 /* ObjectSkidVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF881CCB609E005E997B /* ObjectSkidVertex.glsl */; };
+		54101B151CD34F9A002B10D0 /* ObjectSkidFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF8A1CCB60A9005E997B /* ObjectSkidFragment.glsl */; };
+		54101B161CD34F9A002B10D0 /* ObjectDissolveVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF7D1CCB5D83005E997B /* ObjectDissolveVertex.glsl */; };
+		54101B171CD34F9A002B10D0 /* ObjectDissolveFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF7F1CCB5D8E005E997B /* ObjectDissolveFragment.glsl */; };
+		54101B181CD34F9A002B10D0 /* ObjectTwirlVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF781CCB5668005E997B /* ObjectTwirlVertex.glsl */; };
+		54101B191CD34F9A002B10D0 /* ObjectTwirlFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF7A1CCB5675005E997B /* ObjectTwirlFragment.glsl */; };
+		54101B1A1CD34F9A002B10D0 /* ObjectSpinVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF6D1CCA2584005E997B /* ObjectSpinVertex.glsl */; };
+		54101B1B1CD34F9A002B10D0 /* ObjectSpinFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF6F1CCA258E005E997B /* ObjectSpinFragment.glsl */; };
+		54101B1C1CD34F9A002B10D0 /* ObjectScaleBigVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF681CCA123B005E997B /* ObjectScaleBigVertex.glsl */; };
+		54101B1D1CD34F9A002B10D0 /* ObjectScaleBigFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF6A1CCA1246005E997B /* ObjectScaleBigFragment.glsl */; };
+		54101B1E1CD34F9A002B10D0 /* ObjectScaleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF5D1CCA01CC005E997B /* ObjectScaleVertex.glsl */; };
+		54101B1F1CD34F9A002B10D0 /* ObjectScaleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF5F1CCA01D6005E997B /* ObjectScaleFragment.glsl */; };
+		54101B201CD34F9A002B10D0 /* ObjectPopVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF581CC9FDFC005E997B /* ObjectPopVertex.glsl */; };
+		54101B211CD34F9A002B10D0 /* ObjectPopFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF5A1CC9FE09005E997B /* ObjectPopFragment.glsl */; };
+		54101B221CD34F9A002B10D0 /* ObjectPivotVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF421CC90B59005E997B /* ObjectPivotVertex.glsl */; };
+		54101B231CD34F9A002B10D0 /* ObjectPivotFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF441CC90B65005E997B /* ObjectPivotFragment.glsl */; };
+		54101B241CD34F9A002B10D0 /* ObjectDropVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF3A1CC8DE6E005E997B /* ObjectDropVertex.glsl */; };
+		54101B251CD34F9A002B10D0 /* ObjectDropFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF3C1CC8E08E005E997B /* ObjectDropFragment.glsl */; };
+		54101B261CD34F9A002B10D0 /* ObjectFlipVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF161CC8BCA1005E997B /* ObjectFlipVertex.glsl */; };
+		54101B271CD34F9A002B10D0 /* ObjectFlipFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF181CC8BCAC005E997B /* ObjectFlipFragment.glsl */; };
+		54101B281CD34F9A002B10D0 /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
+		54101B291CD34F9A002B10D0 /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
+		54101B2A1CD34F9A002B10D0 /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AB1CBD044C00826929 /* FireworkVertex.glsl */; };
+		54101B2B1CD34F9A002B10D0 /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AD1CBD045600826929 /* FireworkFragment.glsl */; };
+		54101B2C1CD34F9A002B10D0 /* BlindsAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768A01CBCE2B000826929 /* BlindsAnimationVertex.glsl */; };
+		54101B2D1CD34F9A002B10D0 /* BlindsAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768A21CBCE2BE00826929 /* BlindsAnimationFragment.glsl */; };
+		54101B2E1CD34F9A002B10D0 /* ConfettiAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768951CBCA46100826929 /* ConfettiAnimationVertex.glsl */; };
+		54101B2F1CD34F9A002B10D0 /* ConfettiAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768971CBCA46D00826929 /* ConfettiAnimationFragment.glsl */; };
+		54101B301CD34F9A002B10D0 /* ObjectRotationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768471CBBAAF600826929 /* ObjectRotationVertex.glsl */; };
+		54101B311CD34F9A002B10D0 /* ObjectRotationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768491CBBAB0200826929 /* ObjectRotationFragment.glsl */; };
+		54101B321CD34F9A002B10D0 /* ShimmerBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0431CB8B0E6001C789C /* ShimmerBackgroundFragment.glsl */; };
+		54101B331CD34F9A002B10D0 /* ShimmerBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0441CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl */; };
+		54101B341CD34F9A002B10D0 /* SparkleBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7683F1CBB49B800826929 /* SparkleBackgroundVertex.glsl */; };
+		54101B351CD34F9A002B10D0 /* SparkleBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768411CBB49C400826929 /* SparkleBackgroundFragment.glsl */; };
+		54101B361CD34F9A002B10D0 /* ReflectionDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768881CBCA17C00826929 /* ReflectionDestinationFragment.glsl */; };
+		54101B371CD34F9A002B10D0 /* ReflectionDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768891CBCA17C00826929 /* ReflectionDestinationVertex.glsl */; };
+		54101B381CD34F9A002B10D0 /* ReflectionSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7688A1CBCA17C00826929 /* ReflectionSourceFragment.glsl */; };
+		54101B391CD34F9A002B10D0 /* ReflectionSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A7688B1CBCA17C00826929 /* ReflectionSourceVertex.glsl */; };
+		54101B3A1CD34F9A002B10D0 /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */; };
+		54101B3B1CD34F9A002B10D0 /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */; };
+		54101B3C1CD34F9A002B10D0 /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */; };
+		54101B3D1CD34F9A002B10D0 /* ClothLineSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875241CA4D61B00012F76 /* ClothLineSourceVertex.glsl */; };
+		54101B3E1CD34F9A002B10D0 /* ConfettiDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875281CA4D61B00012F76 /* ConfettiDestinationFragment.glsl */; };
+		54101B3F1CD34F9A002B10D0 /* ConfettiDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875291CA4D61B00012F76 /* ConfettiDestinationVertex.glsl */; };
+		54101B401CD34F9A002B10D0 /* ConfettiSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478752A1CA4D61B00012F76 /* ConfettiSourceFragment.glsl */; };
+		54101B411CD34F9A002B10D0 /* ConfettiSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478752B1CA4D61B00012F76 /* ConfettiSourceVertex.glsl */; };
+		54101B421CD34F9A002B10D0 /* CoverDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875311CA4D61B00012F76 /* CoverDestinationFragment.glsl */; };
+		54101B431CD34F9A002B10D0 /* CoverDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875321CA4D61B00012F76 /* CoverDestinationVertex.glsl */; };
+		54101B441CD34F9A002B10D0 /* CoverSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875331CA4D61B00012F76 /* CoverSourceFragment.glsl */; };
+		54101B451CD34F9A002B10D0 /* CoverSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875341CA4D61B00012F76 /* CoverSourceVertex.glsl */; };
+		54101B461CD34F9A002B10D0 /* CubeDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875381CA4D61B00012F76 /* CubeDestinationFragment.glsl */; };
+		54101B471CD34F9A002B10D0 /* CubeDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875391CA4D61B00012F76 /* CubeDestinationVertex.glsl */; };
+		54101B481CD34F9A002B10D0 /* CubeSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478753A1CA4D61B00012F76 /* CubeSourceFragment.glsl */; };
+		54101B491CD34F9A002B10D0 /* CubeSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478753B1CA4D61B00012F76 /* CubeSourceVertex.glsl */; };
+		54101B4A1CD34F9A002B10D0 /* DoorWayDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875491CA4D61B00012F76 /* DoorWayDestinationFragment.glsl */; };
+		54101B4B1CD34F9A002B10D0 /* DoorWayDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754A1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl */; };
+		54101B4C1CD34F9A002B10D0 /* DoorWaySourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754B1CA4D61B00012F76 /* DoorWaySourceFragment.glsl */; };
+		54101B4D1CD34F9A002B10D0 /* DoorWaySourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478754C1CA4D61B00012F76 /* DoorWaySourceVertex.glsl */; };
+		54101B4E1CD34F9A002B10D0 /* DropDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875571CA4D61B00012F76 /* DropDestinationFragment.glsl */; };
+		54101B4F1CD34F9A002B10D0 /* DropDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875581CA4D61B00012F76 /* DropDestinationVertex.glsl */; };
+		54101B501CD34F9A002B10D0 /* DropSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875591CA4D61B00012F76 /* DropSourceFragment.glsl */; };
+		54101B511CD34F9A002B10D0 /* DropSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755A1CA4D61B00012F76 /* DropSourceVertex.glsl */; };
+		54101B521CD34F9A002B10D0 /* FlipDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755E1CA4D61B00012F76 /* FlipDestinationFragment.glsl */; };
+		54101B531CD34F9A002B10D0 /* FlipDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478755F1CA4D61B00012F76 /* FlipDestinationVertex.glsl */; };
+		54101B541CD34F9A002B10D0 /* FlipSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875601CA4D61B00012F76 /* FlipSourceFragment.glsl */; };
+		54101B551CD34F9A002B10D0 /* FlipSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875611CA4D61B00012F76 /* FlipSourceVertex.glsl */; };
+		54101B561CD34F9A002B10D0 /* FlopDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875651CA4D61B00012F76 /* FlopDestinationFragment.glsl */; };
+		54101B571CD34F9A002B10D0 /* FlopDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875661CA4D61B00012F76 /* FlopDestinationVertex.glsl */; };
+		54101B581CD34F9A002B10D0 /* FlopSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875671CA4D61B00012F76 /* FlopSourceFragment.glsl */; };
+		54101B591CD34F9A002B10D0 /* FlopSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875681CA4D61B00012F76 /* FlopSourceVertex.glsl */; };
+		54101B5A1CD34F9A002B10D0 /* GridDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756C1CA4D61B00012F76 /* GridDestinationFragment.glsl */; };
+		54101B5B1CD34F9A002B10D0 /* GridDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756D1CA4D61B00012F76 /* GridDestinationVertex.glsl */; };
+		54101B5C1CD34F9A002B10D0 /* GridSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756E1CA4D61B00012F76 /* GridSourceFragment.glsl */; };
+		54101B5D1CD34F9A002B10D0 /* GridSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478756F1CA4D61B00012F76 /* GridSourceVertex.glsl */; };
+		54101B5E1CD34F9A002B10D0 /* MosaicDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875771CA4D61B00012F76 /* MosaicDestinationFragment.glsl */; };
+		54101B5F1CD34F9A002B10D0 /* MosaicDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875781CA4D61B00012F76 /* MosaicDestinationVertex.glsl */; };
+		54101B601CD34F9A002B10D0 /* MosaicSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875791CA4D61B00012F76 /* MosaicSourceFragment.glsl */; };
+		54101B611CD34F9A002B10D0 /* MosaicSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757A1CA4D61B00012F76 /* MosaicSourceVertex.glsl */; };
+		54101B621CD34F9A002B10D0 /* PushDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757E1CA4D61B00012F76 /* PushDestinationFragment.glsl */; };
+		54101B631CD34F9A002B10D0 /* PushDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478757F1CA4D61B00012F76 /* PushDestinationVertex.glsl */; };
+		54101B641CD34F9A002B10D0 /* PushSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875801CA4D61B00012F76 /* PushSourceFragment.glsl */; };
+		54101B651CD34F9A002B10D0 /* PushSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875811CA4D61B00012F76 /* PushSourceVertex.glsl */; };
+		54101B661CD34F9A002B10D0 /* ResolvingDoorDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875861CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl */; };
+		54101B671CD34F9A002B10D0 /* ResolvingDoorDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875871CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl */; };
+		54101B681CD34F9A002B10D0 /* ResolvingDoorSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875881CA4D61B00012F76 /* ResolvingDoorSourceFragment.glsl */; };
+		54101B691CD34F9A002B10D0 /* ResolvingDoorSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875891CA4D61B00012F76 /* ResolvingDoorSourceVertex.glsl */; };
+		54101B6A1CD34F9A002B10D0 /* RevealDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758D1CA4D61B00012F76 /* RevealDestinationFragment.glsl */; };
+		54101B6B1CD34F9A002B10D0 /* RevealDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758E1CA4D61B00012F76 /* RevealDestinationVertex.glsl */; };
+		54101B6C1CD34F9A002B10D0 /* RevealSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478758F1CA4D61B00012F76 /* RevealSourceFragment.glsl */; };
+		54101B6D1CD34F9A002B10D0 /* RevealSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875901CA4D61B00012F76 /* RevealSourceVertex.glsl */; };
+		54101B6E1CD34F9A002B10D0 /* RippleDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875941CA4D61B00012F76 /* RippleDestinationFragment.glsl */; };
+		54101B6F1CD34F9A002B10D0 /* RippleDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875951CA4D61B00012F76 /* RippleDestinationVertex.glsl */; };
+		54101B701CD34F9A002B10D0 /* RippleSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875961CA4D61B00012F76 /* RippleSourceFragment.glsl */; };
+		54101B711CD34F9A002B10D0 /* RippleSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875971CA4D61B00012F76 /* RippleSourceVertex.glsl */; };
+		54101B721CD34F9A002B10D0 /* SpinDismissFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478759B1CA4D61B00012F76 /* SpinDismissFragment.glsl */; };
+		54101B731CD34F9A002B10D0 /* SpinDismissVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5478759C1CA4D61B00012F76 /* SpinDismissVertex.glsl */; };
+		54101B741CD34F9A002B10D0 /* ShredderBackPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875A91CA4D61B00012F76 /* ShredderBackPieceFragment.glsl */; };
+		54101B751CD34F9A002B10D0 /* ShredderBackPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AA1CA4D61B00012F76 /* ShredderBackPieceVertex.glsl */; };
+		54101B761CD34F9A002B10D0 /* ShredderConfettiFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AB1CA4D61B00012F76 /* ShredderConfettiFragment.glsl */; };
+		54101B771CD34F9A002B10D0 /* ShredderConfettiVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AC1CA4D61B00012F76 /* ShredderConfettiVertex.glsl */; };
+		54101B781CD34F9A002B10D0 /* ShredderFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AD1CA4D61B00012F76 /* ShredderFragment.glsl */; };
+		54101B791CD34F9A002B10D0 /* ShredderPieceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AE1CA4D61B00012F76 /* ShredderPieceFragment.glsl */; };
+		54101B7A1CD34F9A002B10D0 /* ShredderPieceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875AF1CA4D61B00012F76 /* ShredderPieceVertex.glsl */; };
+		54101B7B1CD34F9B002B10D0 /* ShredderVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B01CA4D61B00012F76 /* ShredderVertex.glsl */; };
+		54101B7C1CD34F9B002B10D0 /* SwitchDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B41CA4D61B00012F76 /* SwitchDestinationFragment.glsl */; };
+		54101B7D1CD34F9B002B10D0 /* SwitchDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B51CA4D61B00012F76 /* SwitchDestinationVertex.glsl */; };
+		54101B7E1CD34F9B002B10D0 /* SwitchSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B61CA4D61B00012F76 /* SwitchSourceFragment.glsl */; };
+		54101B7F1CD34F9B002B10D0 /* SwitchSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875B71CA4D61B00012F76 /* SwitchSourceVertex.glsl */; };
+		54101B801CD34F9B002B10D0 /* TwistDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BD1CA4D61B00012F76 /* TwistDestinationFragment.glsl */; };
+		54101B811CD34F9B002B10D0 /* TwistDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BE1CA4D61B00012F76 /* TwistDestinationVertex.glsl */; };
+		54101B821CD34F9B002B10D0 /* TwistSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875BF1CA4D61B00012F76 /* TwistSourceFragment.glsl */; };
+		54101B831CD34F9B002B10D0 /* TwistSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875C01CA4D61B00012F76 /* TwistSourceVertex.glsl */; };
+		54101B841CD34FA4002B10D0 /* dust.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA581CD2E65C004EF919 /* dust.png */; };
+		54101B851CD34FA4002B10D0 /* ShiningStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA641CD2E65C004EF919 /* ShiningStar.png */; };
+		54101B861CD34FA4002B10D0 /* star_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA651CD2E65C004EF919 /* star_white.png */; };
+		54101B871CD34FA4002B10D0 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA691CD2E65C004EF919 /* Sparkle.png */; };
+		54101B881CD34FA4002B10D0 /* Sparkle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6A1CD2E65C004EF919 /* Sparkle2.png */; };
+		54101B891CD34FA4002B10D0 /* Flame.png in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAD1CCE0D11005E997B /* Flame.png */; };
+		54101B8A1CD34FA4002B10D0 /* Shredder.png in Resources */ = {isa = PBXBuildFile; fileRef = 547875A81CA4D61B00012F76 /* Shredder.png */; };
 		5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0111CB64507001C789C /* DHParticleEffect.m */; };
 		5420C0281CB663C2001C789C /* DHObjectAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0271CB663C2001C789C /* DHObjectAnimationRenderer.m */; };
 		5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C03C1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m */; };
@@ -178,6 +314,139 @@
 		548EDFAE1CCE0D11005E997B /* Flame.png in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAD1CCE0D11005E997B /* Flame.png */; };
 		548EDFB01CCE15BE005E997B /* FlameBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */; };
 		548EDFB21CCE15CC005E997B /* FlameBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */; };
+		5490CD561CD34EF900C93002 /* DHDustEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA561CD2E65C004EF919 /* DHDustEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD571CD34EF900C93002 /* DHShimmerParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA5C1CD2E65C004EF919 /* DHShimmerParticleEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD581CD34EF900C93002 /* DHShiningStarEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA5E1CD2E65C004EF919 /* DHShiningStarEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD591CD34EF900C93002 /* DHSparkleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA671CD2E65C004EF919 /* DHSparkleEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5A1CD34EF900C93002 /* DHAnvilAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54F64CC81CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5B1CD34EF900C93002 /* DHFlameAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF941CCCA45D005E997B /* DHFlameAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5C1CD34EF900C93002 /* DHSkidAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF851CCB6092005E997B /* DHSkidAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5D1CD34EF900C93002 /* DHDissolveAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF811CCB5D9D005E997B /* DHDissolveAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5E1CD34EF900C93002 /* DHTwirlAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF751CCB5656005E997B /* DHTwirlAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD5F1CD34EF900C93002 /* DHSpinAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF711CCA25AC005E997B /* DHSpinAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD601CD34EF900C93002 /* DHScaleBigAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF651CCA118B005E997B /* DHScaleBigAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD611CD34EF900C93002 /* DHScaleAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF611CCA01E8005E997B /* DHScaleAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD621CD34EF900C93002 /* DHPopAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF551CC9FDEF005E997B /* DHPopAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD631CD34EF900C93002 /* DHPivotAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF3F1CC90B4A005E997B /* DHPivotAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD641CD34EF900C93002 /* DHDropAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF371CC8DE5B005E997B /* DHDropAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD651CD34EF900C93002 /* DHFlipAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 548EDF131CC8BC8C005E997B /* DHFlipAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD661CD34EF900C93002 /* DHBlurAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD671CD34EF900C93002 /* DHFireworkEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A768A51CBD041900826929 /* DHFireworkEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD681CD34EF900C93002 /* DHFireworkAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A768A81CBD042E00826929 /* DHFireworkAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD691CD34EF900C93002 /* DHBlindsAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A7689D1CBCE2A000826929 /* DHBlindsAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6A1CD34EF900C93002 /* DHConfettiAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A768921CBCA3EF00826929 /* DHConfettiAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6B1CD34EF900C93002 /* DHRotationAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A768441CBB70F200826929 /* DHRotationAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6C1CD34EF900C93002 /* DHShimmerBackgroundMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420C03B1CB8B0E6001C789C /* DHShimmerBackgroundMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420C03F1CB8B0E6001C789C /* DHShimmerAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420C04C1CB8B0E6001C789C /* DHSparkleAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A768861CBCA17C00826929 /* DHReflectionTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875251CA4D61B00012F76 /* DHClothLineTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478752C1CA4D61B00012F76 /* DHConfettiTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD721CD34EF900C93002 /* DHConfettiSourceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478752E1CA4D61B00012F76 /* DHConfettiSourceMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD731CD34EF900C93002 /* DHCoverTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875351CA4D61B00012F76 /* DHCoverTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD741CD34EF900C93002 /* DHCubeDestinationMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478753C1CA4D61B00012F76 /* DHCubeDestinationMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD751CD34EF900C93002 /* DHCubeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478753E1CA4D61B00012F76 /* DHCubeMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD761CD34EF900C93002 /* DHCubeTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875401CA4D61B00012F76 /* DHCubeTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD771CD34EF900C93002 /* DHCubeSourceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875421CA4D61B00012F76 /* DHCubeSourceMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD781CD34EF900C93002 /* DHDoorWayTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875451CA4D61B00012F76 /* DHDoorWayTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD791CD34EF900C93002 /* DHDoorWaySourceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875471CA4D61B00012F76 /* DHDoorWaySourceMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7A1CD34EF900C93002 /* DHDropTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875551CA4D61B00012F76 /* DHDropTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7B1CD34EF900C93002 /* DHFlipTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478755C1CA4D61B00012F76 /* DHFlipTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7C1CD34EF900C93002 /* DHFlopTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875631CA4D61B00012F76 /* DHFlopTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7D1CD34EF900C93002 /* DHGridTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478756A1CA4D61B00012F76 /* DHGridTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7E1CD34EF900C93002 /* DHMosaicBackMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875711CA4D61B00012F76 /* DHMosaicBackMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD7F1CD34EF900C93002 /* DHMosaicMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875731CA4D61B00012F76 /* DHMosaicMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD801CD34EF900C93002 /* DHMosaicTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875751CA4D61B00012F76 /* DHMosaicTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD811CD34EF900C93002 /* DHPushTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478757C1CA4D61B00012F76 /* DHPushTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD821CD34EF900C93002 /* DHResolvingDoorTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875841CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD831CD34EF900C93002 /* DHRevealTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478758B1CA4D61B00012F76 /* DHRevealTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD841CD34EF900C93002 /* DHRippleTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875921CA4D61B00012F76 /* DHRippleTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD851CD34EF900C93002 /* DHSpinDismissTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875991CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD861CD34EF900C93002 /* DHShredderConfettiSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478759E1CA4D61B00012F76 /* DHShredderConfettiSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD871CD34EF900C93002 /* DHShredderMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875A01CA4D61B00012F76 /* DHShredderMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD881CD34EF900C93002 /* DHShredderPaperBackPieceSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875A21CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD891CD34EF900C93002 /* DHShredderPaperPieceSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875A41CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8A1CD34EF900C93002 /* DHShredderTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875A61CA4D61B00012F76 /* DHShredderTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8B1CD34EF900C93002 /* DHSwitchTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875B21CA4D61B00012F76 /* DHSwitchTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8C1CD34EF900C93002 /* DHTwistMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875B91CA4D61B00012F76 /* DHTwistMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547875BB1CA4D61B00012F76 /* DHTwistTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420C0101CB64507001C789C /* DHParticleEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD8F1CD34EF900C93002 /* SceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 547876481CA5118400012F76 /* SceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD901CD34EF900C93002 /* DHTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547876361CA50E2700012F76 /* DHTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD911CD34EF900C93002 /* DHObjectAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD921CD34EF900C93002 /* OpenGLHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC58121C8FD25F009D812C /* OpenGLHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC58161C8FD25F009D812C /* TextureHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC581A1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC58201C8FD325009D812C /* DHTimingFunctionHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD961CD34EF900C93002 /* DHConstans.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E2646B1C8EC62F00FFB67E /* DHConstans.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD991CD34F2600C93002 /* DHDustEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFA571CD2E65C004EF919 /* DHDustEffect.m */; };
+		5490CD9A1CD34F2600C93002 /* DHShimmerParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFA5D1CD2E65C004EF919 /* DHShimmerParticleEffect.m */; };
+		5490CD9B1CD34F2600C93002 /* DHShiningStarEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFA5F1CD2E65C004EF919 /* DHShiningStarEffect.m */; };
+		5490CD9C1CD34F2600C93002 /* DHSparkleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFA681CD2E65C004EF919 /* DHSparkleEffect.m */; };
+		5490CD9D1CD34F2600C93002 /* DHAnvilAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */; };
+		5490CD9E1CD34F2600C93002 /* DHFlameAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF951CCCA45D005E997B /* DHFlameAnimationRenderer.m */; };
+		5490CD9F1CD34F2600C93002 /* DHSkidAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF861CCB6092005E997B /* DHSkidAnimationRenderer.m */; };
+		5490CDA01CD34F2600C93002 /* DHDissolveAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF821CCB5D9D005E997B /* DHDissolveAnimationRenderer.m */; };
+		5490CDA11CD34F2600C93002 /* DHTwirlAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF761CCB5656005E997B /* DHTwirlAnimationRenderer.m */; };
+		5490CDA21CD34F2600C93002 /* DHSpinAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF721CCA25AC005E997B /* DHSpinAnimationRenderer.m */; };
+		5490CDA31CD34F2600C93002 /* DHScaleBigAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF661CCA118B005E997B /* DHScaleBigAnimationRenderer.m */; };
+		5490CDA41CD34F2600C93002 /* DHScaleAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF621CCA01E8005E997B /* DHScaleAnimationRenderer.m */; };
+		5490CDA51CD34F2600C93002 /* DHPopAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF561CC9FDEF005E997B /* DHPopAnimationRenderer.m */; };
+		5490CDA61CD34F2600C93002 /* DHPivotAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF401CC90B4A005E997B /* DHPivotAnimationRenderer.m */; };
+		5490CDA71CD34F2600C93002 /* DHDropAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF381CC8DE5B005E997B /* DHDropAnimationRenderer.m */; };
+		5490CDA81CD34F2600C93002 /* DHFlipAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF141CC8BC8C005E997B /* DHFlipAnimationRenderer.m */; };
+		5490CDA91CD34F2600C93002 /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
+		5490CDAA1CD34F2600C93002 /* DHFireworkEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768A61CBD041900826929 /* DHFireworkEffect.m */; };
+		5490CDAB1CD34F2600C93002 /* DHFireworkAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */; };
+		5490CDAC1CD34F2600C93002 /* DHBlindsAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7689E1CBCE2A000826929 /* DHBlindsAnimationRenderer.m */; };
+		5490CDAD1CD34F2600C93002 /* DHConfettiAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768931CBCA3EF00826929 /* DHConfettiAnimationRenderer.m */; };
+		5490CDAE1CD34F2600C93002 /* DHRotationAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768451CBB70F200826929 /* DHRotationAnimationRenderer.m */; };
+		5490CDAF1CD34F2600C93002 /* DHShimmerBackgroundMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C03C1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m */; };
+		5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0401CB8B0E6001C789C /* DHShimmerAnimationRenderer.m */; };
+		5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C04D1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m */; };
+		5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768871CBCA17C00826929 /* DHReflectionTransitionRenderer.m */; };
+		5490CDB31CD34F2600C93002 /* DHClothLineTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875261CA4D61B00012F76 /* DHClothLineTransitionRenderer.m */; };
+		5490CDB41CD34F2600C93002 /* DHConfettiTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478752D1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m */; };
+		5490CDB51CD34F2600C93002 /* DHConfettiSourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478752F1CA4D61B00012F76 /* DHConfettiSourceMesh.m */; };
+		5490CDB61CD34F2600C93002 /* DHCoverTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875361CA4D61B00012F76 /* DHCoverTransitionRenderer.m */; };
+		5490CDB71CD34F2600C93002 /* DHCubeDestinationMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478753D1CA4D61B00012F76 /* DHCubeDestinationMesh.m */; };
+		5490CDB81CD34F2600C93002 /* DHCubeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478753F1CA4D61B00012F76 /* DHCubeMesh.m */; };
+		5490CDB91CD34F2600C93002 /* DHCubeTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875411CA4D61B00012F76 /* DHCubeTransitionRenderer.m */; };
+		5490CDBA1CD34F2600C93002 /* DHCubeSourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875431CA4D61B00012F76 /* DHCubeSourceMesh.m */; };
+		5490CDBB1CD34F2600C93002 /* DHDoorWayTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875461CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m */; };
+		5490CDBC1CD34F2600C93002 /* DHDoorWaySourceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875481CA4D61B00012F76 /* DHDoorWaySourceMesh.m */; };
+		5490CDBD1CD34F2600C93002 /* DHDropTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875561CA4D61B00012F76 /* DHDropTransitionRenderer.m */; };
+		5490CDBE1CD34F2600C93002 /* DHFlipTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478755D1CA4D61B00012F76 /* DHFlipTransitionRenderer.m */; };
+		5490CDBF1CD34F2600C93002 /* DHFlopTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875641CA4D61B00012F76 /* DHFlopTransitionRenderer.m */; };
+		5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478756B1CA4D61B00012F76 /* DHGridTransitionRenderer.m */; };
+		5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875721CA4D61B00012F76 /* DHMosaicBackMesh.m */; };
+		5490CDC21CD34F2600C93002 /* DHMosaicMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875741CA4D61B00012F76 /* DHMosaicMesh.m */; };
+		5490CDC31CD34F2600C93002 /* DHMosaicTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875761CA4D61B00012F76 /* DHMosaicTransitionRenderer.m */; };
+		5490CDC41CD34F2600C93002 /* DHPushTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478757D1CA4D61B00012F76 /* DHPushTransitionRenderer.m */; };
+		5490CDC51CD34F2600C93002 /* DHResolvingDoorTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875851CA4D61B00012F76 /* DHResolvingDoorTransitionRenderer.m */; };
+		5490CDC61CD34F2600C93002 /* DHRevealTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478758C1CA4D61B00012F76 /* DHRevealTransitionRenderer.m */; };
+		5490CDC71CD34F2600C93002 /* DHRippleTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875931CA4D61B00012F76 /* DHRippleTransitionRenderer.m */; };
+		5490CDC81CD34F2600C93002 /* DHSpinDismissTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478759A1CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m */; };
+		5490CDC91CD34F2600C93002 /* DHShredderConfettiSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5478759F1CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m */; };
+		5490CDCA1CD34F2600C93002 /* DHShredderMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A11CA4D61B00012F76 /* DHShredderMesh.m */; };
+		5490CDCB1CD34F2600C93002 /* DHShredderPaperBackPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A31CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m */; };
+		5490CDCC1CD34F2600C93002 /* DHShredderPaperPieceSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A51CA4D61B00012F76 /* DHShredderPaperPieceSceneMesh.m */; };
+		5490CDCD1CD34F2600C93002 /* DHShredderTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875A71CA4D61B00012F76 /* DHShredderTransitionRenderer.m */; };
+		5490CDCE1CD34F2600C93002 /* DHSwitchTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875B31CA4D61B00012F76 /* DHSwitchTransitionRenderer.m */; };
+		5490CDCF1CD34F2600C93002 /* DHTwistMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875BA1CA4D61B00012F76 /* DHTwistMesh.m */; };
+		5490CDD01CD34F2600C93002 /* DHTwistTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547875BC1CA4D61B00012F76 /* DHTwistTransitionRenderer.m */; };
+		5490CDD11CD34F2600C93002 /* DHParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0111CB64507001C789C /* DHParticleEffect.m */; };
+		5490CDD21CD34F2600C93002 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* SceneMesh.m */; };
+		5490CDD31CD34F2600C93002 /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHTransitionRenderer.m */; };
+		5490CDD41CD34F2600C93002 /* DHObjectAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0271CB663C2001C789C /* DHObjectAnimationRenderer.m */; };
+		5490CDD51CD34F2600C93002 /* OpenGLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58131C8FD25F009D812C /* OpenGLHelper.m */; };
+		5490CDD61CD34F2600C93002 /* TextureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58171C8FD25F009D812C /* TextureHelper.m */; };
+		5490CDD71CD34F2600C93002 /* DHTimingFunctionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58211C8FD325009D812C /* DHTimingFunctionHelper.m */; };
+		5490CDD81CD34F2600C93002 /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
+		5490CDD91CD34F2600C93002 /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */; };
+		5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58191C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
 		549FBC751CC773C8000E1ABF /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
 		549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
@@ -211,7 +480,7 @@
 		54E264171C8EBCBF00FFB67E /* DHAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264161C8EBCBF00FFB67E /* DHAnimationTests.m */; };
 		54E264221C8EBCBF00FFB67E /* DHAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264211C8EBCBF00FFB67E /* DHAnimationUITests.m */; };
 		54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */; };
-		54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* Enums.m */; };
+		54E2646D1C8EC62F00FFB67E /* DHConstans.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* DHConstans.m */; };
 		54E264701C8ED4A600FFB67E /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
 		54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264721C8FC5AC00FFB67E /* 0.jpg */; };
 		54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264731C8FC5AC00FFB67E /* 1.jpg */; };
@@ -234,6 +503,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		540AFA9D1CD34E5E004EF919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54E263F11C8EBCBF00FFB67E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 540AFA911CD34E5E004EF919;
+			remoteInfo = DHAnimationFramework;
+		};
 		54E264131C8EBCBF00FFB67E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 54E263F11C8EBCBF00FFB67E /* Project object */;
@@ -272,6 +548,12 @@
 		540AFA6A1CD2E65C004EF919 /* Sparkle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle2.png; sourceTree = "<group>"; };
 		540AFA6B1CD2E65C004EF919 /* SparkleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleFragment.glsl; sourceTree = "<group>"; };
 		540AFA6C1CD2E65C004EF919 /* SparkleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SparkleVertex.glsl; sourceTree = "<group>"; };
+		540AFA921CD34E5E004EF919 /* DHAnimationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DHAnimationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		540AFA941CD34E5E004EF919 /* DHAnimationFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHAnimationFramework.h; sourceTree = "<group>"; };
+		540AFA961CD34E5E004EF919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		540AFA9B1CD34E5E004EF919 /* DHAnimationFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHAnimationFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		540AFAA01CD34E5E004EF919 /* DHAnimationFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHAnimationFrameworkTests.m; sourceTree = "<group>"; };
+		540AFAA21CD34E5E004EF919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5420C0101CB64507001C789C /* DHParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHParticleEffect.h; sourceTree = "<group>"; };
 		5420C0111CB64507001C789C /* DHParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHParticleEffect.m; sourceTree = "<group>"; };
 		5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationRenderer.h; sourceTree = "<group>"; };
@@ -478,6 +760,8 @@
 		548EDFAD1CCE0D11005E997B /* Flame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flame.png; sourceTree = "<group>"; };
 		548EDFAF1CCE15BE005E997B /* FlameBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlameBackgroundVertex.glsl; sourceTree = "<group>"; };
 		548EDFB11CCE15CC005E997B /* FlameBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlameBackgroundFragment.glsl; sourceTree = "<group>"; };
+		5490CDDF1CD34F5300C93002 /* DHAnimationBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHAnimationBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5490CDE11CD34F5300C93002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBlurAnimationRenderer.h; sourceTree = "<group>"; };
 		549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBlurAnimationRenderer.m; sourceTree = "<group>"; };
 		549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlurAnimationVertex.glsl; sourceTree = "<group>"; };
@@ -528,8 +812,8 @@
 		54E264231C8EBCBF00FFB67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54E264671C8EC2FF00FFB67E /* DHTransitionPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionPresentationViewController.h; sourceTree = "<group>"; };
 		54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionPresentationViewController.m; sourceTree = "<group>"; };
-		54E2646B1C8EC62F00FFB67E /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
-		54E2646C1C8EC62F00FFB67E /* Enums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enums.m; sourceTree = "<group>"; };
+		54E2646B1C8EC62F00FFB67E /* DHConstans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConstans.h; sourceTree = "<group>"; };
+		54E2646C1C8EC62F00FFB67E /* DHConstans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConstans.m; sourceTree = "<group>"; };
 		54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionSettings.h; sourceTree = "<group>"; };
 		54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionSettings.m; sourceTree = "<group>"; };
 		54E264721C8FC5AC00FFB67E /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
@@ -559,6 +843,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		540AFA8E1CD34E5E004EF919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		540AFA981CD34E5E004EF919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				540AFA9C1CD34E5E004EF919 /* DHAnimationFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5490CDDC1CD34F5300C93002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54E263F61C8EBCBF00FFB67E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,6 +939,24 @@
 				540AFA6C1CD2E65C004EF919 /* SparkleVertex.glsl */,
 			);
 			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		540AFA931CD34E5E004EF919 /* DHAnimationFramework */ = {
+			isa = PBXGroup;
+			children = (
+				540AFA941CD34E5E004EF919 /* DHAnimationFramework.h */,
+				540AFA961CD34E5E004EF919 /* Info.plist */,
+			);
+			path = DHAnimationFramework;
+			sourceTree = "<group>";
+		};
+		540AFA9F1CD34E5E004EF919 /* DHAnimationFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				540AFAA01CD34E5E004EF919 /* DHAnimationFrameworkTests.m */,
+				540AFAA21CD34E5E004EF919 /* Info.plist */,
+			);
+			path = DHAnimationFrameworkTests;
 			sourceTree = "<group>";
 		};
 		5420C03A1CB8B0E6001C789C /* Shimmer */ = {
@@ -1144,6 +1468,14 @@
 			path = Flame;
 			sourceTree = "<group>";
 		};
+		5490CDE01CD34F5300C93002 /* DHAnimationBundle */ = {
+			isa = PBXGroup;
+			children = (
+				5490CDE11CD34F5300C93002 /* Info.plist */,
+			);
+			path = DHAnimationBundle;
+			sourceTree = "<group>";
+		};
 		549FBC701CC773A8000E1ABF /* Blur */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,6 +1552,9 @@
 				54E263FB1C8EBCBF00FFB67E /* DHAnimation */,
 				54E264151C8EBCBF00FFB67E /* DHAnimationTests */,
 				54E264201C8EBCBF00FFB67E /* DHAnimationUITests */,
+				540AFA931CD34E5E004EF919 /* DHAnimationFramework */,
+				540AFA9F1CD34E5E004EF919 /* DHAnimationFrameworkTests */,
+				5490CDE01CD34F5300C93002 /* DHAnimationBundle */,
 				54E263FA1C8EBCBF00FFB67E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1230,6 +1565,9 @@
 				54E263F91C8EBCBF00FFB67E /* DHAnimation.app */,
 				54E264121C8EBCBF00FFB67E /* DHAnimationTests.xctest */,
 				54E2641D1C8EBCBF00FFB67E /* DHAnimationUITests.xctest */,
+				540AFA921CD34E5E004EF919 /* DHAnimationFramework.framework */,
+				540AFA9B1CD34E5E004EF919 /* DHAnimationFrameworkTests.xctest */,
+				5490CDDF1CD34F5300C93002 /* DHAnimationBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1285,8 +1623,8 @@
 				547876351CA50E2700012F76 /* Renderers */,
 				54EC580F1C8FD25F009D812C /* OpenGL Helpers */,
 				54EC58181C8FD25F009D812C /* Timing Function */,
-				54E2646B1C8EC62F00FFB67E /* Enums.h */,
-				54E2646C1C8EC62F00FFB67E /* Enums.m */,
+				54E2646B1C8EC62F00FFB67E /* DHConstans.h */,
+				54E2646C1C8EC62F00FFB67E /* DHConstans.m */,
 				54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */,
 				54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */,
 				54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */,
@@ -1369,7 +1707,138 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		540AFA8F1CD34E5E004EF919 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				540AFA951CD34E5E004EF919 /* DHAnimationFramework.h in Headers */,
+				5490CD561CD34EF900C93002 /* DHDustEffect.h in Headers */,
+				5490CD571CD34EF900C93002 /* DHShimmerParticleEffect.h in Headers */,
+				5490CD581CD34EF900C93002 /* DHShiningStarEffect.h in Headers */,
+				5490CD591CD34EF900C93002 /* DHSparkleEffect.h in Headers */,
+				5490CD5A1CD34EF900C93002 /* DHAnvilAnimationRenderer.h in Headers */,
+				5490CD5B1CD34EF900C93002 /* DHFlameAnimationRenderer.h in Headers */,
+				5490CD5C1CD34EF900C93002 /* DHSkidAnimationRenderer.h in Headers */,
+				5490CD5D1CD34EF900C93002 /* DHDissolveAnimationRenderer.h in Headers */,
+				5490CD5E1CD34EF900C93002 /* DHTwirlAnimationRenderer.h in Headers */,
+				5490CD5F1CD34EF900C93002 /* DHSpinAnimationRenderer.h in Headers */,
+				5490CD601CD34EF900C93002 /* DHScaleBigAnimationRenderer.h in Headers */,
+				5490CD611CD34EF900C93002 /* DHScaleAnimationRenderer.h in Headers */,
+				5490CD621CD34EF900C93002 /* DHPopAnimationRenderer.h in Headers */,
+				5490CD631CD34EF900C93002 /* DHPivotAnimationRenderer.h in Headers */,
+				5490CD641CD34EF900C93002 /* DHDropAnimationRenderer.h in Headers */,
+				5490CD651CD34EF900C93002 /* DHFlipAnimationRenderer.h in Headers */,
+				5490CD661CD34EF900C93002 /* DHBlurAnimationRenderer.h in Headers */,
+				5490CD671CD34EF900C93002 /* DHFireworkEffect.h in Headers */,
+				5490CD681CD34EF900C93002 /* DHFireworkAnimationRenderer.h in Headers */,
+				5490CD691CD34EF900C93002 /* DHBlindsAnimationRenderer.h in Headers */,
+				5490CD6A1CD34EF900C93002 /* DHConfettiAnimationRenderer.h in Headers */,
+				5490CD6B1CD34EF900C93002 /* DHRotationAnimationRenderer.h in Headers */,
+				5490CD6C1CD34EF900C93002 /* DHShimmerBackgroundMesh.h in Headers */,
+				5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */,
+				5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */,
+				5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */,
+				5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */,
+				5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */,
+				5490CD721CD34EF900C93002 /* DHConfettiSourceMesh.h in Headers */,
+				5490CD731CD34EF900C93002 /* DHCoverTransitionRenderer.h in Headers */,
+				5490CD741CD34EF900C93002 /* DHCubeDestinationMesh.h in Headers */,
+				5490CD751CD34EF900C93002 /* DHCubeMesh.h in Headers */,
+				5490CD761CD34EF900C93002 /* DHCubeTransitionRenderer.h in Headers */,
+				5490CD771CD34EF900C93002 /* DHCubeSourceMesh.h in Headers */,
+				5490CD781CD34EF900C93002 /* DHDoorWayTransitionRenderer.h in Headers */,
+				5490CD791CD34EF900C93002 /* DHDoorWaySourceMesh.h in Headers */,
+				5490CD7A1CD34EF900C93002 /* DHDropTransitionRenderer.h in Headers */,
+				5490CD7B1CD34EF900C93002 /* DHFlipTransitionRenderer.h in Headers */,
+				5490CD7C1CD34EF900C93002 /* DHFlopTransitionRenderer.h in Headers */,
+				5490CD7D1CD34EF900C93002 /* DHGridTransitionRenderer.h in Headers */,
+				5490CD7E1CD34EF900C93002 /* DHMosaicBackMesh.h in Headers */,
+				5490CD7F1CD34EF900C93002 /* DHMosaicMesh.h in Headers */,
+				5490CD801CD34EF900C93002 /* DHMosaicTransitionRenderer.h in Headers */,
+				5490CD811CD34EF900C93002 /* DHPushTransitionRenderer.h in Headers */,
+				5490CD821CD34EF900C93002 /* DHResolvingDoorTransitionRenderer.h in Headers */,
+				5490CD831CD34EF900C93002 /* DHRevealTransitionRenderer.h in Headers */,
+				5490CD841CD34EF900C93002 /* DHRippleTransitionRenderer.h in Headers */,
+				5490CD851CD34EF900C93002 /* DHSpinDismissTransitionRenderer.h in Headers */,
+				5490CD861CD34EF900C93002 /* DHShredderConfettiSceneMesh.h in Headers */,
+				5490CD871CD34EF900C93002 /* DHShredderMesh.h in Headers */,
+				5490CD881CD34EF900C93002 /* DHShredderPaperBackPieceSceneMesh.h in Headers */,
+				5490CD891CD34EF900C93002 /* DHShredderPaperPieceSceneMesh.h in Headers */,
+				5490CD8A1CD34EF900C93002 /* DHShredderTransitionRenderer.h in Headers */,
+				5490CD8B1CD34EF900C93002 /* DHSwitchTransitionRenderer.h in Headers */,
+				5490CD8C1CD34EF900C93002 /* DHTwistMesh.h in Headers */,
+				5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */,
+				5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */,
+				5490CD8F1CD34EF900C93002 /* SceneMesh.h in Headers */,
+				5490CD901CD34EF900C93002 /* DHTransitionRenderer.h in Headers */,
+				5490CD911CD34EF900C93002 /* DHObjectAnimationRenderer.h in Headers */,
+				5490CD921CD34EF900C93002 /* OpenGLHelper.h in Headers */,
+				5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */,
+				5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */,
+				5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */,
+				5490CD961CD34EF900C93002 /* DHConstans.h in Headers */,
+				5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */,
+				5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		540AFA911CD34E5E004EF919 /* DHAnimationFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 540AFAA31CD34E5E004EF919 /* Build configuration list for PBXNativeTarget "DHAnimationFramework" */;
+			buildPhases = (
+				540AFA8D1CD34E5E004EF919 /* Sources */,
+				540AFA8E1CD34E5E004EF919 /* Frameworks */,
+				540AFA8F1CD34E5E004EF919 /* Headers */,
+				540AFA901CD34E5E004EF919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DHAnimationFramework;
+			productName = DHAnimationFramework;
+			productReference = 540AFA921CD34E5E004EF919 /* DHAnimationFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		540AFA9A1CD34E5E004EF919 /* DHAnimationFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 540AFAA61CD34E5E004EF919 /* Build configuration list for PBXNativeTarget "DHAnimationFrameworkTests" */;
+			buildPhases = (
+				540AFA971CD34E5E004EF919 /* Sources */,
+				540AFA981CD34E5E004EF919 /* Frameworks */,
+				540AFA991CD34E5E004EF919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				540AFA9E1CD34E5E004EF919 /* PBXTargetDependency */,
+			);
+			name = DHAnimationFrameworkTests;
+			productName = DHAnimationFrameworkTests;
+			productReference = 540AFA9B1CD34E5E004EF919 /* DHAnimationFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5490CDDE1CD34F5300C93002 /* DHAnimationBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5490CDE21CD34F5300C93002 /* Build configuration list for PBXNativeTarget "DHAnimationBundle" */;
+			buildPhases = (
+				5490CDDB1CD34F5300C93002 /* Sources */,
+				5490CDDC1CD34F5300C93002 /* Frameworks */,
+				5490CDDD1CD34F5300C93002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DHAnimationBundle;
+			productName = DHAnimationBundle;
+			productReference = 5490CDDF1CD34F5300C93002 /* DHAnimationBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		54E263F81C8EBCBF00FFB67E /* DHAnimation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54E264261C8EBCBF00FFB67E /* Build configuration list for PBXNativeTarget "DHAnimation" */;
@@ -1432,6 +1901,15 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = cn.daniel;
 				TargetAttributes = {
+					540AFA911CD34E5E004EF919 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					540AFA9A1CD34E5E004EF919 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					5490CDDE1CD34F5300C93002 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					54E263F81C8EBCBF00FFB67E = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 69JC3H46Q9;
@@ -1462,11 +1940,168 @@
 				54E263F81C8EBCBF00FFB67E /* DHAnimation */,
 				54E264111C8EBCBF00FFB67E /* DHAnimationTests */,
 				54E2641C1C8EBCBF00FFB67E /* DHAnimationUITests */,
+				540AFA911CD34E5E004EF919 /* DHAnimationFramework */,
+				540AFA9A1CD34E5E004EF919 /* DHAnimationFrameworkTests */,
+				5490CDDE1CD34F5300C93002 /* DHAnimationBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		540AFA901CD34E5E004EF919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		540AFA991CD34E5E004EF919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5490CDDD1CD34F5300C93002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54101B841CD34FA4002B10D0 /* dust.png in Resources */,
+				54101B851CD34FA4002B10D0 /* ShiningStar.png in Resources */,
+				54101B861CD34FA4002B10D0 /* star_white.png in Resources */,
+				54101B871CD34FA4002B10D0 /* Sparkle.png in Resources */,
+				54101B881CD34FA4002B10D0 /* Sparkle2.png in Resources */,
+				54101B891CD34FA4002B10D0 /* Flame.png in Resources */,
+				54101B8A1CD34FA4002B10D0 /* Shredder.png in Resources */,
+				54101B061CD34F9A002B10D0 /* DustEffectFragment.glsl in Resources */,
+				54101B071CD34F9A002B10D0 /* DustEffectVertex.glsl in Resources */,
+				54101B081CD34F9A002B10D0 /* ShimmerFragment.glsl in Resources */,
+				54101B091CD34F9A002B10D0 /* ShimmerShiningStarFragment.glsl in Resources */,
+				54101B0A1CD34F9A002B10D0 /* ShimmerShiningStarVertex.glsl in Resources */,
+				54101B0B1CD34F9A002B10D0 /* ShimmerVertex.glsl in Resources */,
+				54101B0C1CD34F9A002B10D0 /* SparkleFragment.glsl in Resources */,
+				54101B0D1CD34F9A002B10D0 /* SparkleVertex.glsl in Resources */,
+				54101B0E1CD34F9A002B10D0 /* ObjectAnvilVertex.glsl in Resources */,
+				54101B0F1CD34F9A002B10D0 /* ObjectAnvilFragment.glsl in Resources */,
+				54101B101CD34F9A002B10D0 /* ObjectFlameVertex.glsl in Resources */,
+				54101B111CD34F9A002B10D0 /* ObjectFlameFragment.glsl in Resources */,
+				54101B121CD34F9A002B10D0 /* FlameBackgroundVertex.glsl in Resources */,
+				54101B131CD34F9A002B10D0 /* FlameBackgroundFragment.glsl in Resources */,
+				54101B141CD34F9A002B10D0 /* ObjectSkidVertex.glsl in Resources */,
+				54101B151CD34F9A002B10D0 /* ObjectSkidFragment.glsl in Resources */,
+				54101B161CD34F9A002B10D0 /* ObjectDissolveVertex.glsl in Resources */,
+				54101B171CD34F9A002B10D0 /* ObjectDissolveFragment.glsl in Resources */,
+				54101B181CD34F9A002B10D0 /* ObjectTwirlVertex.glsl in Resources */,
+				54101B191CD34F9A002B10D0 /* ObjectTwirlFragment.glsl in Resources */,
+				54101B1A1CD34F9A002B10D0 /* ObjectSpinVertex.glsl in Resources */,
+				54101B1B1CD34F9A002B10D0 /* ObjectSpinFragment.glsl in Resources */,
+				54101B1C1CD34F9A002B10D0 /* ObjectScaleBigVertex.glsl in Resources */,
+				54101B1D1CD34F9A002B10D0 /* ObjectScaleBigFragment.glsl in Resources */,
+				54101B1E1CD34F9A002B10D0 /* ObjectScaleVertex.glsl in Resources */,
+				54101B1F1CD34F9A002B10D0 /* ObjectScaleFragment.glsl in Resources */,
+				54101B201CD34F9A002B10D0 /* ObjectPopVertex.glsl in Resources */,
+				54101B211CD34F9A002B10D0 /* ObjectPopFragment.glsl in Resources */,
+				54101B221CD34F9A002B10D0 /* ObjectPivotVertex.glsl in Resources */,
+				54101B231CD34F9A002B10D0 /* ObjectPivotFragment.glsl in Resources */,
+				54101B241CD34F9A002B10D0 /* ObjectDropVertex.glsl in Resources */,
+				54101B251CD34F9A002B10D0 /* ObjectDropFragment.glsl in Resources */,
+				54101B261CD34F9A002B10D0 /* ObjectFlipVertex.glsl in Resources */,
+				54101B271CD34F9A002B10D0 /* ObjectFlipFragment.glsl in Resources */,
+				54101B281CD34F9A002B10D0 /* BlurAnimationVertex.glsl in Resources */,
+				54101B291CD34F9A002B10D0 /* BlurAnimationFragment.glsl in Resources */,
+				54101B2A1CD34F9A002B10D0 /* FireworkVertex.glsl in Resources */,
+				54101B2B1CD34F9A002B10D0 /* FireworkFragment.glsl in Resources */,
+				54101B2C1CD34F9A002B10D0 /* BlindsAnimationVertex.glsl in Resources */,
+				54101B2D1CD34F9A002B10D0 /* BlindsAnimationFragment.glsl in Resources */,
+				54101B2E1CD34F9A002B10D0 /* ConfettiAnimationVertex.glsl in Resources */,
+				54101B2F1CD34F9A002B10D0 /* ConfettiAnimationFragment.glsl in Resources */,
+				54101B301CD34F9A002B10D0 /* ObjectRotationVertex.glsl in Resources */,
+				54101B311CD34F9A002B10D0 /* ObjectRotationFragment.glsl in Resources */,
+				54101B321CD34F9A002B10D0 /* ShimmerBackgroundFragment.glsl in Resources */,
+				54101B331CD34F9A002B10D0 /* ShimmerBackgroundVertex.glsl in Resources */,
+				54101B341CD34F9A002B10D0 /* SparkleBackgroundVertex.glsl in Resources */,
+				54101B351CD34F9A002B10D0 /* SparkleBackgroundFragment.glsl in Resources */,
+				54101B361CD34F9A002B10D0 /* ReflectionDestinationFragment.glsl in Resources */,
+				54101B371CD34F9A002B10D0 /* ReflectionDestinationVertex.glsl in Resources */,
+				54101B381CD34F9A002B10D0 /* ReflectionSourceFragment.glsl in Resources */,
+				54101B391CD34F9A002B10D0 /* ReflectionSourceVertex.glsl in Resources */,
+				54101B3A1CD34F9A002B10D0 /* ClothLineDestinationFragment.glsl in Resources */,
+				54101B3B1CD34F9A002B10D0 /* ClothLineDestinationVertex.glsl in Resources */,
+				54101B3C1CD34F9A002B10D0 /* ClothLineSourceFragment.glsl in Resources */,
+				54101B3D1CD34F9A002B10D0 /* ClothLineSourceVertex.glsl in Resources */,
+				54101B3E1CD34F9A002B10D0 /* ConfettiDestinationFragment.glsl in Resources */,
+				54101B3F1CD34F9A002B10D0 /* ConfettiDestinationVertex.glsl in Resources */,
+				54101B401CD34F9A002B10D0 /* ConfettiSourceFragment.glsl in Resources */,
+				54101B411CD34F9A002B10D0 /* ConfettiSourceVertex.glsl in Resources */,
+				54101B421CD34F9A002B10D0 /* CoverDestinationFragment.glsl in Resources */,
+				54101B431CD34F9A002B10D0 /* CoverDestinationVertex.glsl in Resources */,
+				54101B441CD34F9A002B10D0 /* CoverSourceFragment.glsl in Resources */,
+				54101B451CD34F9A002B10D0 /* CoverSourceVertex.glsl in Resources */,
+				54101B461CD34F9A002B10D0 /* CubeDestinationFragment.glsl in Resources */,
+				54101B471CD34F9A002B10D0 /* CubeDestinationVertex.glsl in Resources */,
+				54101B481CD34F9A002B10D0 /* CubeSourceFragment.glsl in Resources */,
+				54101B491CD34F9A002B10D0 /* CubeSourceVertex.glsl in Resources */,
+				54101B4A1CD34F9A002B10D0 /* DoorWayDestinationFragment.glsl in Resources */,
+				54101B4B1CD34F9A002B10D0 /* DoorWayDestinationVertex.glsl in Resources */,
+				54101B4C1CD34F9A002B10D0 /* DoorWaySourceFragment.glsl in Resources */,
+				54101B4D1CD34F9A002B10D0 /* DoorWaySourceVertex.glsl in Resources */,
+				54101B4E1CD34F9A002B10D0 /* DropDestinationFragment.glsl in Resources */,
+				54101B4F1CD34F9A002B10D0 /* DropDestinationVertex.glsl in Resources */,
+				54101B501CD34F9A002B10D0 /* DropSourceFragment.glsl in Resources */,
+				54101B511CD34F9A002B10D0 /* DropSourceVertex.glsl in Resources */,
+				54101B521CD34F9A002B10D0 /* FlipDestinationFragment.glsl in Resources */,
+				54101B531CD34F9A002B10D0 /* FlipDestinationVertex.glsl in Resources */,
+				54101B541CD34F9A002B10D0 /* FlipSourceFragment.glsl in Resources */,
+				54101B551CD34F9A002B10D0 /* FlipSourceVertex.glsl in Resources */,
+				54101B561CD34F9A002B10D0 /* FlopDestinationFragment.glsl in Resources */,
+				54101B571CD34F9A002B10D0 /* FlopDestinationVertex.glsl in Resources */,
+				54101B581CD34F9A002B10D0 /* FlopSourceFragment.glsl in Resources */,
+				54101B591CD34F9A002B10D0 /* FlopSourceVertex.glsl in Resources */,
+				54101B5A1CD34F9A002B10D0 /* GridDestinationFragment.glsl in Resources */,
+				54101B5B1CD34F9A002B10D0 /* GridDestinationVertex.glsl in Resources */,
+				54101B5C1CD34F9A002B10D0 /* GridSourceFragment.glsl in Resources */,
+				54101B5D1CD34F9A002B10D0 /* GridSourceVertex.glsl in Resources */,
+				54101B5E1CD34F9A002B10D0 /* MosaicDestinationFragment.glsl in Resources */,
+				54101B5F1CD34F9A002B10D0 /* MosaicDestinationVertex.glsl in Resources */,
+				54101B601CD34F9A002B10D0 /* MosaicSourceFragment.glsl in Resources */,
+				54101B611CD34F9A002B10D0 /* MosaicSourceVertex.glsl in Resources */,
+				54101B621CD34F9A002B10D0 /* PushDestinationFragment.glsl in Resources */,
+				54101B631CD34F9A002B10D0 /* PushDestinationVertex.glsl in Resources */,
+				54101B641CD34F9A002B10D0 /* PushSourceFragment.glsl in Resources */,
+				54101B651CD34F9A002B10D0 /* PushSourceVertex.glsl in Resources */,
+				54101B661CD34F9A002B10D0 /* ResolvingDoorDestinationFragment.glsl in Resources */,
+				54101B671CD34F9A002B10D0 /* ResolvingDoorDestinationVertex.glsl in Resources */,
+				54101B681CD34F9A002B10D0 /* ResolvingDoorSourceFragment.glsl in Resources */,
+				54101B691CD34F9A002B10D0 /* ResolvingDoorSourceVertex.glsl in Resources */,
+				54101B6A1CD34F9A002B10D0 /* RevealDestinationFragment.glsl in Resources */,
+				54101B6B1CD34F9A002B10D0 /* RevealDestinationVertex.glsl in Resources */,
+				54101B6C1CD34F9A002B10D0 /* RevealSourceFragment.glsl in Resources */,
+				54101B6D1CD34F9A002B10D0 /* RevealSourceVertex.glsl in Resources */,
+				54101B6E1CD34F9A002B10D0 /* RippleDestinationFragment.glsl in Resources */,
+				54101B6F1CD34F9A002B10D0 /* RippleDestinationVertex.glsl in Resources */,
+				54101B701CD34F9A002B10D0 /* RippleSourceFragment.glsl in Resources */,
+				54101B711CD34F9A002B10D0 /* RippleSourceVertex.glsl in Resources */,
+				54101B721CD34F9A002B10D0 /* SpinDismissFragment.glsl in Resources */,
+				54101B731CD34F9A002B10D0 /* SpinDismissVertex.glsl in Resources */,
+				54101B741CD34F9A002B10D0 /* ShredderBackPieceFragment.glsl in Resources */,
+				54101B751CD34F9A002B10D0 /* ShredderBackPieceVertex.glsl in Resources */,
+				54101B761CD34F9A002B10D0 /* ShredderConfettiFragment.glsl in Resources */,
+				54101B771CD34F9A002B10D0 /* ShredderConfettiVertex.glsl in Resources */,
+				54101B781CD34F9A002B10D0 /* ShredderFragment.glsl in Resources */,
+				54101B791CD34F9A002B10D0 /* ShredderPieceFragment.glsl in Resources */,
+				54101B7A1CD34F9A002B10D0 /* ShredderPieceVertex.glsl in Resources */,
+				54101B7B1CD34F9B002B10D0 /* ShredderVertex.glsl in Resources */,
+				54101B7C1CD34F9B002B10D0 /* SwitchDestinationFragment.glsl in Resources */,
+				54101B7D1CD34F9B002B10D0 /* SwitchDestinationVertex.glsl in Resources */,
+				54101B7E1CD34F9B002B10D0 /* SwitchSourceFragment.glsl in Resources */,
+				54101B7F1CD34F9B002B10D0 /* SwitchSourceVertex.glsl in Resources */,
+				54101B801CD34F9B002B10D0 /* TwistDestinationFragment.glsl in Resources */,
+				54101B811CD34F9B002B10D0 /* TwistDestinationVertex.glsl in Resources */,
+				54101B821CD34F9B002B10D0 /* TwistSourceFragment.glsl in Resources */,
+				54101B831CD34F9B002B10D0 /* TwistSourceVertex.glsl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54E263F71C8EBCBF00FFB67E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1637,6 +2272,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		540AFA8D1CD34E5E004EF919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */,
+				5490CD991CD34F2600C93002 /* DHDustEffect.m in Sources */,
+				5490CD9A1CD34F2600C93002 /* DHShimmerParticleEffect.m in Sources */,
+				5490CD9B1CD34F2600C93002 /* DHShiningStarEffect.m in Sources */,
+				5490CD9C1CD34F2600C93002 /* DHSparkleEffect.m in Sources */,
+				5490CD9D1CD34F2600C93002 /* DHAnvilAnimationRenderer.m in Sources */,
+				5490CD9E1CD34F2600C93002 /* DHFlameAnimationRenderer.m in Sources */,
+				5490CD9F1CD34F2600C93002 /* DHSkidAnimationRenderer.m in Sources */,
+				5490CDA01CD34F2600C93002 /* DHDissolveAnimationRenderer.m in Sources */,
+				5490CDA11CD34F2600C93002 /* DHTwirlAnimationRenderer.m in Sources */,
+				5490CDA21CD34F2600C93002 /* DHSpinAnimationRenderer.m in Sources */,
+				5490CDA31CD34F2600C93002 /* DHScaleBigAnimationRenderer.m in Sources */,
+				5490CDA41CD34F2600C93002 /* DHScaleAnimationRenderer.m in Sources */,
+				5490CDA51CD34F2600C93002 /* DHPopAnimationRenderer.m in Sources */,
+				5490CDA61CD34F2600C93002 /* DHPivotAnimationRenderer.m in Sources */,
+				5490CDA71CD34F2600C93002 /* DHDropAnimationRenderer.m in Sources */,
+				5490CDA81CD34F2600C93002 /* DHFlipAnimationRenderer.m in Sources */,
+				5490CDA91CD34F2600C93002 /* DHBlurAnimationRenderer.m in Sources */,
+				5490CDAA1CD34F2600C93002 /* DHFireworkEffect.m in Sources */,
+				5490CDAB1CD34F2600C93002 /* DHFireworkAnimationRenderer.m in Sources */,
+				5490CDAC1CD34F2600C93002 /* DHBlindsAnimationRenderer.m in Sources */,
+				5490CDAD1CD34F2600C93002 /* DHConfettiAnimationRenderer.m in Sources */,
+				5490CDAE1CD34F2600C93002 /* DHRotationAnimationRenderer.m in Sources */,
+				5490CDAF1CD34F2600C93002 /* DHShimmerBackgroundMesh.m in Sources */,
+				5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */,
+				5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */,
+				5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */,
+				5490CDB31CD34F2600C93002 /* DHClothLineTransitionRenderer.m in Sources */,
+				5490CDB41CD34F2600C93002 /* DHConfettiTransitionRenderer.m in Sources */,
+				5490CDB51CD34F2600C93002 /* DHConfettiSourceMesh.m in Sources */,
+				5490CDB61CD34F2600C93002 /* DHCoverTransitionRenderer.m in Sources */,
+				5490CDB71CD34F2600C93002 /* DHCubeDestinationMesh.m in Sources */,
+				5490CDB81CD34F2600C93002 /* DHCubeMesh.m in Sources */,
+				5490CDB91CD34F2600C93002 /* DHCubeTransitionRenderer.m in Sources */,
+				5490CDBA1CD34F2600C93002 /* DHCubeSourceMesh.m in Sources */,
+				5490CDBB1CD34F2600C93002 /* DHDoorWayTransitionRenderer.m in Sources */,
+				5490CDBC1CD34F2600C93002 /* DHDoorWaySourceMesh.m in Sources */,
+				5490CDBD1CD34F2600C93002 /* DHDropTransitionRenderer.m in Sources */,
+				5490CDBE1CD34F2600C93002 /* DHFlipTransitionRenderer.m in Sources */,
+				5490CDBF1CD34F2600C93002 /* DHFlopTransitionRenderer.m in Sources */,
+				5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */,
+				5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */,
+				5490CDC21CD34F2600C93002 /* DHMosaicMesh.m in Sources */,
+				5490CDC31CD34F2600C93002 /* DHMosaicTransitionRenderer.m in Sources */,
+				5490CDC41CD34F2600C93002 /* DHPushTransitionRenderer.m in Sources */,
+				5490CDC51CD34F2600C93002 /* DHResolvingDoorTransitionRenderer.m in Sources */,
+				5490CDC61CD34F2600C93002 /* DHRevealTransitionRenderer.m in Sources */,
+				5490CDC71CD34F2600C93002 /* DHRippleTransitionRenderer.m in Sources */,
+				5490CDC81CD34F2600C93002 /* DHSpinDismissTransitionRenderer.m in Sources */,
+				5490CDC91CD34F2600C93002 /* DHShredderConfettiSceneMesh.m in Sources */,
+				5490CDCA1CD34F2600C93002 /* DHShredderMesh.m in Sources */,
+				5490CDCB1CD34F2600C93002 /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
+				5490CDCC1CD34F2600C93002 /* DHShredderPaperPieceSceneMesh.m in Sources */,
+				5490CDCD1CD34F2600C93002 /* DHShredderTransitionRenderer.m in Sources */,
+				5490CDCE1CD34F2600C93002 /* DHSwitchTransitionRenderer.m in Sources */,
+				5490CDCF1CD34F2600C93002 /* DHTwistMesh.m in Sources */,
+				5490CDD01CD34F2600C93002 /* DHTwistTransitionRenderer.m in Sources */,
+				5490CDD11CD34F2600C93002 /* DHParticleEffect.m in Sources */,
+				5490CDD21CD34F2600C93002 /* SceneMesh.m in Sources */,
+				5490CDD31CD34F2600C93002 /* DHTransitionRenderer.m in Sources */,
+				5490CDD41CD34F2600C93002 /* DHObjectAnimationRenderer.m in Sources */,
+				5490CDD51CD34F2600C93002 /* OpenGLHelper.m in Sources */,
+				5490CDD61CD34F2600C93002 /* TextureHelper.m in Sources */,
+				5490CDD71CD34F2600C93002 /* DHTimingFunctionHelper.m in Sources */,
+				5490CDD81CD34F2600C93002 /* DHTransitionSettings.m in Sources */,
+				5490CDD91CD34F2600C93002 /* DHObjectAnimationSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		540AFA971CD34E5E004EF919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				540AFAA11CD34E5E004EF919 /* DHAnimationFrameworkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5490CDDB1CD34F5300C93002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54E263F51C8EBCBF00FFB67E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1697,7 +2420,7 @@
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,
 				547876241CA4D61B00012F76 /* DHSwitchTransitionRenderer.m in Sources */,
 				54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */,
-				54E2646D1C8EC62F00FFB67E /* Enums.m in Sources */,
+				54E2646D1C8EC62F00FFB67E /* DHConstans.m in Sources */,
 				540AFA6D1CD2E65C004EF919 /* DHDustEffect.m in Sources */,
 				54A768941CBCA3EF00826929 /* DHConfettiAnimationRenderer.m in Sources */,
 				547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */,
@@ -1739,6 +2462,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		540AFA9E1CD34E5E004EF919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 540AFA911CD34E5E004EF919 /* DHAnimationFramework */;
+			targetProxy = 540AFA9D1CD34E5E004EF919 /* PBXContainerItemProxy */;
+		};
 		54E264141C8EBCBF00FFB67E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 54E263F81C8EBCBF00FFB67E /* DHAnimation */;
@@ -1771,6 +2499,106 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		540AFAA41CD34E5E004EF919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DHAnimationFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		540AFAA51CD34E5E004EF919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DHAnimationFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		540AFAA71CD34E5E004EF919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = DHAnimationFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		540AFAA81CD34E5E004EF919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = DHAnimationFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5490CDE31CD34F5300C93002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DHAnimationBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		5490CDE41CD34F5300C93002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DHAnimationBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.daniel.DHAnimationBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		54E264241C8EBCBF00FFB67E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1932,6 +2760,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		540AFAA31CD34E5E004EF919 /* Build configuration list for PBXNativeTarget "DHAnimationFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				540AFAA41CD34E5E004EF919 /* Debug */,
+				540AFAA51CD34E5E004EF919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		540AFAA61CD34E5E004EF919 /* Build configuration list for PBXNativeTarget "DHAnimationFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				540AFAA71CD34E5E004EF919 /* Debug */,
+				540AFAA81CD34E5E004EF919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5490CDE21CD34F5300C93002 /* Build configuration list for PBXNativeTarget "DHAnimationBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5490CDE31CD34F5300C93002 /* Debug */,
+				5490CDE41CD34F5300C93002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		54E263F41C8EBCBF00FFB67E /* Build configuration list for PBXProject "DHAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

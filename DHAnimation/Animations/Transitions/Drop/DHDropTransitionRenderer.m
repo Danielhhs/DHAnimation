@@ -69,4 +69,9 @@
     glUniform1i(dstSamplerLoc, 0);
     [self.dstMesh drawEntireMesh];
 }
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionTop)];
+}
 @end

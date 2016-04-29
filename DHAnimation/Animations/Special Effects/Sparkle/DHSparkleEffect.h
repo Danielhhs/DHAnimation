@@ -7,7 +7,7 @@
 //
 
 #import "DHParticleEffect.h"
-#import "Enums.h"
+#import "DHConstans.h"
 
 #define SPARKLE_LIFE_TIME_RATIO 0.2
 

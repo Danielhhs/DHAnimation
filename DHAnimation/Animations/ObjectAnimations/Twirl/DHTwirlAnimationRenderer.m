@@ -45,4 +45,9 @@
     [self.mesh drawEntireMesh];
 }
 
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft)];
+}
 @end

@@ -73,4 +73,8 @@
     [self.sparkleEffect updateWithElapsedTime:self.elapsedTime percent:self.percent];
 }
 
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight)];
+}
 @end

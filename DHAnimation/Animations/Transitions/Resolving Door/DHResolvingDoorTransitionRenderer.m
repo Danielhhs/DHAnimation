@@ -72,4 +72,9 @@
         self.percent = PREPARE_RATIO + PAUSE_RATIO + populatedTime / self.duration;
     }
 }
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft)];
+}
 @end

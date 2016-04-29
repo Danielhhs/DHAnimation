@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Enums.h"
+#import "DHConstans.h"
 
 @interface DHObjectAnimationPresentatioinViewController : UIViewController
 @property (nonatomic) ObjectAnimationType animationType;

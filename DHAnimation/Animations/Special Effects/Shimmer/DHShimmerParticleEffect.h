@@ -7,7 +7,7 @@
 //
 
 #import "DHParticleEffect.h"
-#import "Enums.h"
+#import "DHConstans.h"
 
 @interface DHShimmerParticleEffect : DHParticleEffect
 @property (nonatomic, strong) NSArray *offsetData;

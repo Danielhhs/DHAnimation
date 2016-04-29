@@ -76,4 +76,9 @@
     }
 }
 
+
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

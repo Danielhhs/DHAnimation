@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Enums.h"
+#import "DHConstans.h"
 #import "DHTimingFunctionHelper.h"
 @interface DHObjectAnimationSettings : NSObject
 

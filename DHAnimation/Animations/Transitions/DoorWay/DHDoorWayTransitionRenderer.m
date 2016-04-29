@@ -63,4 +63,9 @@
 {
     glUniform1f(srcColumnWidthLoc, self.animationView.bounds.size.width / 2);
 }
+
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

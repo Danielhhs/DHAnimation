@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Enums.h"
+#import "DHConstans.h"
 #import "NSBKeyframeAnimationFunctions.h"
 #import "DHTransitionRenderer.h"
 @interface DHTransitionPresentationViewController : UIViewController

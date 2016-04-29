@@ -137,4 +137,8 @@
     dstColumnWidthLoc = glGetUniformLocation(dstProgram, "u_columnWidth");
 }
 
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

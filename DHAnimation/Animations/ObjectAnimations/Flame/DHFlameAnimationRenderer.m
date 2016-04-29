@@ -72,4 +72,8 @@
     self.backgroundMesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
 }
 
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionBottom)];
+}
 @end

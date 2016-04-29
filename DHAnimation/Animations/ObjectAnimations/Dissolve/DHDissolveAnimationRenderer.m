@@ -30,4 +30,8 @@
     [self.mesh drawEntireMesh];
 }
 
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

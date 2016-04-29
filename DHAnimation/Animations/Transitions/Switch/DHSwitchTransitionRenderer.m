@@ -87,4 +87,8 @@
     dstScreenHeightLoc = glGetUniformLocation(dstProgram, "u_screenHeight");
 }
 
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+}
 @end

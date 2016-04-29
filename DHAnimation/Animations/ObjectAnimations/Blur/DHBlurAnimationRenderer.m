@@ -51,4 +51,9 @@
     return @"BlurAnimationFragment.glsl";
 }
 
+
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

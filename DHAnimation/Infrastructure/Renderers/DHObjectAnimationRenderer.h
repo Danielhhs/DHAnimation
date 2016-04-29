@@ -29,6 +29,7 @@
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic) AnimationEvent event;
 @property (nonatomic) AnimationDirection direction;
+@property (nonatomic, strong) NSArray *allowedDirections;
 @property (nonatomic) NSInteger rowCount;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic, strong) NSString *vertexShaderName;

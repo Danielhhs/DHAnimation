@@ -48,4 +48,8 @@
     glUniform1f(dstScreenWidthLoc, self.animationView.bounds.size.width);
 }
 
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight)];
+}
 @end

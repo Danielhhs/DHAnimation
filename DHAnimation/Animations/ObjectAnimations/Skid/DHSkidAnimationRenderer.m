@@ -73,4 +73,9 @@
     [self.effect updateWithElapsedTime:self.elapsedTime percent:self.percent];
 }
 
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft)];
+}
 @end

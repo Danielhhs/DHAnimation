@@ -89,4 +89,9 @@
     glUniformMatrix4fv(dstMvpLoc, 1, GL_FALSE, mvpMatrix.m);
     glUniformMatrix4fv(dstModelViewMatrixLoc, 1, GL_FALSE, modelViewMatrix.m);
 }
+
+- (NSArray *) allowedDirections
+{
+    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight)];
+}
 @end

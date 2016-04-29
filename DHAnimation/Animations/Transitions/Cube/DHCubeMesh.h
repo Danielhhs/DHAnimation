@@ -7,7 +7,7 @@
 //
 
 #import "SceneMesh.h"
-#import "Enums.h"
+#import "DHConstans.h"
 @interface DHCubeMesh : SceneMesh
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(AnimationDirection)direction;

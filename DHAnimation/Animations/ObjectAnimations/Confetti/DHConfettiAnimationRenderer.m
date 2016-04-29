@@ -52,4 +52,9 @@
 {
     return @"ConfettiAnimationFragment.glsl";
 }
+
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
 @end

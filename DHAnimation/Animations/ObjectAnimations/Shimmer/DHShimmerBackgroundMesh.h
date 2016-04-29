@@ -7,7 +7,7 @@
 //
 
 #import "SceneMesh.h"
-#import "Enums.h"
+#import "DHConstans.h"
 @interface DHShimmerBackgroundMesh : SceneMesh
 
 @property (nonatomic, strong) NSArray *offsetData;

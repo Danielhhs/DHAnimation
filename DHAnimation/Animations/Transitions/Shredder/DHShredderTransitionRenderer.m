@@ -331,4 +331,9 @@
     self.context = nil;
 }
 
+- (NSArray *) allowedDirections
+{
+    return nil;
+}
+
 @end

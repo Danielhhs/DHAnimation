@@ -9,9 +9,39 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DHAnimationBundle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>DHAnimationFramework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>DHAnimationLib.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>540AFA911CD34E5E004EF919</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>540AFA9A1CD34E5E004EF919</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5490CDDE1CD34F5300C93002</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>54E263F81C8EBCBF00FFB67E</key>
 		<dict>
 			<key>primary</key>
