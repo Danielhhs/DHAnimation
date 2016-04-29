@@ -82,7 +82,6 @@ typedef struct {
         dust.targetPosition = [self randomTargetPositionForSingleDirectionForEmissionPosition:emissionPosition];
         dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
         dust.rotation = [self randomPercent] * M_PI * 4;
-        dust.targetPosition.y += self.emissionRadius / 3.f * [self randomPercent];
         [self.particleData appendBytes:&dust length:sizeof(dust)];
     }
 }
@@ -133,7 +132,6 @@ typedef struct {
             dust.rotation = [self randomPercent] * M_PI * 4;
             dust.targetPosition = [self randomTargetPositionForAllDirectionsForEmissionPosition:emissionPosition];
             dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
-            dust.targetPosition.y += self.emissionRadius / 3.f * [self randomPercent];
             [self.particleData appendBytes:&dust length:sizeof(dust)];
         }
     }
