@@ -30,13 +30,13 @@
 
 - (void) setupEffects
 {
-    self.fireworkEffects = [NSMutableArray array];
-    for (int i = 0; i < self.duration * EXPLOSION_COUNT_PER_SECOND; i++) {
-        DHFireworkEffect *effect = [[DHFireworkEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:1 columnCount:1 emissionPosition:[self randomEmissionPosition] emissionRadius:[self randomExplosionRadius]];
-        effect.explosionRadius = [self randomExplosionRadius];
-        effect.mvpMatrix = mvpMatrix;
-        [self.fireworkEffects addObject:effect];
-    }
+//    self.fireworkEffects = [NSMutableArray array];
+//    for (int i = 0; i < self.duration * EXPLOSION_COUNT_PER_SECOND; i++) {
+//        DHFireworkEffect *effect = [[DHFireworkEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:1 columnCount:1 emissionPosition:[self randomEmissionPosition] emissionRadius:[self randomExplosionRadius]];
+//        effect.explosionRadius = [self randomExplosionRadius];
+//        effect.mvpMatrix = mvpMatrix;
+//        [self.fireworkEffects addObject:effect];
+//    }
 }
 
 - (NSTimeInterval) randomEmissionTime

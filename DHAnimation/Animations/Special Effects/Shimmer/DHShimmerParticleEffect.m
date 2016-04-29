@@ -184,4 +184,10 @@ typedef struct {
     GLfloat scale = 1 + ((int) (arc4random() % 100) - 50) / (GLfloat)500;
     return scale;
 }
+
+- (void) setupTextures
+{
+    texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:self.particleImageName]];
+    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
+}
 @end

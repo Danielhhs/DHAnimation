@@ -33,11 +33,16 @@
 
 - (void) setupEffects
 {
-    self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:self.rowCount columnCount:self.columnCount];
+    self.sparkleEffect = [[DHSparkleEffect alloc] initWithContext:self.context];
+    self.sparkleEffect.targetView = self.targetView;
+    self.sparkleEffect.containerView = self.containerView;
+    self.sparkleEffect.rowCount = self.rowCount;
+    self.sparkleEffect.columnCount = self.columnCount;
     self.sparkleEffect.mvpMatrix = mvpMatrix;
     self.sparkleEffect.rowCount = 7;
     self.sparkleEffect.duration = self.duration;
     self.sparkleEffect.direction = self.direction;
+    [self.sparkleEffect generateParticlesData];
 }
 
 - (void) setupMeshes

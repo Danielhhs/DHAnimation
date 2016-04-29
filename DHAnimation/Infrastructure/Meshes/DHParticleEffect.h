@@ -35,6 +35,6 @@
 - (void) setupExtraUniforms;
 - (void) setupTextures;
 - (void) generateParticlesData;
-- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView rowCount:(NSInteger)rowCount columnCount:(NSInteger) columnCount;
+- (instancetype) initWithContext:(EAGLContext *)context;
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent;
 @end

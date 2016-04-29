@@ -24,5 +24,4 @@ typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
 @property (nonatomic) GLfloat emissionRadius;
 @property (nonatomic) DHTimingFunction timingFuntion;
 
-- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius timingFunction:(DHTimingFunction)timingFunction;
 @end

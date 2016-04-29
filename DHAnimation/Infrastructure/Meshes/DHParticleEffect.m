@@ -11,18 +11,13 @@
 #import "TextureHelper.h"
 @implementation DHParticleEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView rowCount:(NSInteger)rowCount columnCount:(NSInteger)columnCount
+- (instancetype) initWithContext:(EAGLContext *)context
 {
     self = [super init];
     if (self) {
         _context = context;
-        _targetView = targetView;
-        _containerView = containerView;
-        _rowCount = rowCount;
-        _columnCount = columnCount;
         [self setupGL];
         [self setupTextures];
-        [self generateParticlesData];
     }
     return self;
 }
@@ -59,7 +54,6 @@
 - (void) setupTextures
 {
     texture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:self.particleImageName]];
-    backgroundTexture = [TextureHelper setupTextureWithView:self.targetView];
 }
 
 - (void) generateParticlesData

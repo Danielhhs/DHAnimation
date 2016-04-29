@@ -31,19 +31,6 @@ typedef struct {
 
 @implementation DHFireworkEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView rowCount:(NSInteger)rowCount columnCount:(NSInteger)columnCount emissionPosition:(GLKVector3)emissionPosition emissionRadius:(GLfloat)emissionRadius
-{
-    self = [super initWithContext:context targetView:targetView containerView:containerView rowCount:rowCount columnCount:columnCount];
-    if (self) {
-        _emissionPosition = emissionPosition;
-        _explosionRadius = emissionRadius;
-        self.duration = 2.f;
-        self.gravity = GLKVector3Make(0, -50, 0);
-        [self setupFireworkData];
-    }
-    return self;
-}
-
 - (NSString *) vertexShaderFileName
 {
     return @"FireworkVertex.glsl";

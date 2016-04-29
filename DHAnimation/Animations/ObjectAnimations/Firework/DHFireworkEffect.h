@@ -14,6 +14,4 @@
 @property (nonatomic) GLKVector3 emissionPosition;
 @property (nonatomic) GLfloat explosionRadius;
 
-- (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)targetView containerView:(UIView *)containerView rowCount:(NSInteger)rowCount columnCount:(NSInteger)columnCount emissionPosition:(GLKVector3)emissionPosition emissionRadius:(GLfloat)emissionRadius;
-
 @end

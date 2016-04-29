@@ -22,23 +22,6 @@ typedef struct {
 
 @implementation DHDustEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius timingFunction:(DHTimingFunction)timingFunction
-{
-    self = [super init];
-    if (self) {
-        self.context = context;
-        _emitPosition = emitPosition;
-        _direction = direction;
-        _dustWidth = dustWidth;
-        _emissionRadius = radius;
-        _timingFuntion = timingFunction;
-        [self setupGL];
-        [self setupTextures];
-        [self generateParticlesData];
-    }
-    return self;
-}
-
 - (NSString *) vertexShaderFileName
 {
     return @"DustEffectVertex.glsl";
@@ -73,7 +56,7 @@ typedef struct {
     GLKVector3 position;
     position.x = self.emitPosition.x + [self randomPercent] * self.dustWidth;
     position.y = self.emitPosition.y + [self randomPercent] * [self maxYForX:position.x - self.emitPosition.x];
-    position.z = self.emitPosition.z + [self randomPercent] * [self maxZForX:position.x - self.emitPosition.x y:position.y - self.emitPosition.y];
+    position.z = self.emitPosition.z;
     return position;
 }
 
