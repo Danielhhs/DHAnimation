@@ -56,7 +56,7 @@
 
 - (void) setupEffects
 {
-    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2) direction:DHDustEmissionDirectionHorizontal dustWidth:self.targetView.frame.size.width * 1.5 / 2 emissionRadius:300];
+    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.containerView.frame.size.height / 2) direction:DHDustEmissionDirectionHorizontal dustWidth:self.targetView.frame.size.width * 1.5 / 2 emissionRadius:300 timingFunction:DHTimingFunctionEaseOutExpo];
     self.effect.mvpMatrix = mvpMatrix;
     self.effect.startTime = self.fallTime;
     self.effect.duration = self.duration - self.fallTime;

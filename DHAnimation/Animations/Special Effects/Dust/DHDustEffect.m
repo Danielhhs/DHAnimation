@@ -22,7 +22,7 @@ typedef struct {
 
 @implementation DHDustEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius
+- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius timingFunction:(DHTimingFunction)timingFunction
 {
     self = [super init];
     if (self) {
@@ -31,6 +31,7 @@ typedef struct {
         _direction = direction;
         _dustWidth = dustWidth;
         _emissionRadius = radius;
+        _timingFuntion = timingFunction;
         [self setupGL];
         [self setupTextures];
         [self generateParticlesData];
@@ -154,7 +155,8 @@ typedef struct {
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent
 {
     elapsedTime = elapsedTime - self.startTime;
-    self.percent = NSBKeyframeAnimationFunctionEaseOutExpo(elapsedTime * 1000, 0, 1, (self.duration - self.startTime) * 1000);
+    NSBKeyframeAnimationFunction function = [DHTimingFunctionHelper functionForTimingFunction:self.timingFuntion];
+    self.percent = function(elapsedTime * 1000, 0, 1, (self.duration - self.startTime) * 1000);
 }
 
 @end

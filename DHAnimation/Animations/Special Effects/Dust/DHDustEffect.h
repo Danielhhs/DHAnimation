@@ -7,6 +7,7 @@
 //
 
 #import "DHParticleEffect.h"
+#import "DHTimingFunctionHelper.h"
 
 typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
     DHDustEmissionDirectionLeft = 0,
@@ -21,6 +22,7 @@ typedef NS_ENUM(NSInteger, DHDustEmissionDirection) {
 @property (nonatomic) GLfloat dustWidth;
 @property (nonatomic) NSTimeInterval startTime;
 @property (nonatomic) GLfloat emissionRadius;
+@property (nonatomic) DHTimingFunction timingFuntion;
 
-- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius;
+- (instancetype) initWithContext:(EAGLContext *)context emitPosition:(GLKVector3)emitPosition direction:(DHDustEmissionDirection)direction dustWidth:(GLfloat)dustWidth emissionRadius:(GLfloat)radius timingFunction:(DHTimingFunction)timingFunction;
 @end

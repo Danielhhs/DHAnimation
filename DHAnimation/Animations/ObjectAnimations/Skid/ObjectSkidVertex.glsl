@@ -39,7 +39,7 @@ vec4 updatedPosition() {
         } else {
             position.x = a_position.x + u_resolution.x * c_forwardPercent / 2.f - percent * (u_resolution.x * c_forwardPercent / 2.f);
         }
-    } else {
+    } else if (u_percent < u_slidingTime + c_forwardTime + c_backwardTime + c_recoverTime) {
         float percent = (u_percent - u_slidingTime - c_forwardTime - c_backwardTime) / c_recoverTime;
         if (a_position.y > u_center.y) {
             position.x = a_position.x - u_resolution.x * c_backwardPercent + u_resolution.x * c_backwardPercent * percent;

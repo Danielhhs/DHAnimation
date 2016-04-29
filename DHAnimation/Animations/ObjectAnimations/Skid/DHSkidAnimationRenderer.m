@@ -15,7 +15,7 @@
 @property (nonatomic, strong) DHDustEffect *effect;
 @end
 
-#define SLIDING_TIME_RATIO 0.5
+#define SLIDING_TIME_RATIO 0.3
 
 @implementation DHSkidAnimationRenderer
 
@@ -56,7 +56,7 @@
 
 - (void) setupEffects
 {
-    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMaxX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.targetView.frame.size.height / 2) direction:DHDustEmissionDirectionLeft dustWidth:self.targetView.frame.size.width emissionRadius:300];
+    self.effect = [[DHDustEffect alloc] initWithContext:self.context emitPosition:GLKVector3Make(CGRectGetMaxX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.targetView.frame.size.height / 2) direction:DHDustEmissionDirectionLeft dustWidth:self.targetView.frame.size.width emissionRadius:300 timingFunction:DHTimingFunctionEaseOutCubic];
     self.effect.mvpMatrix = mvpMatrix;
     self.effect.startTime = self.duration * SLIDING_TIME_RATIO;
     self.effect.duration = self.duration;
