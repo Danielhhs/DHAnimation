@@ -554,32 +554,40 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
-            timestampString = "483588685.486975"
+            timestampString = "483590515.429728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-generateDustParticlesForAllDirections"
             landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po dust.targetPointSize">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
-            timestampString = "483588176.586319"
+            timestampString = "483589335.428094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-generateDustParticlesForSingleDirection:emissionPosition:"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-targetPointSizeForYPosition:originalSize:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -590,12 +598,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
-            timestampString = "483588497.650891"
+            timestampString = "483589335.428094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-randomTargetPositionForSingleDirectionForEmissionPosition:"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-maxYForX:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
+            timestampString = "483590515.429728"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-randomTargetPositionForAllDirectionsForEmissionPosition:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
