@@ -7,12 +7,12 @@
 //
 
 #import "DHParticleEffect.h"
-#import "DHConstans.h"
+#import "DHConstants.h"
 
 #define SPARKLE_LIFE_TIME_RATIO 0.2
 
 @interface DHSparkleEffect : DHParticleEffect
 
-@property (nonatomic) AnimationDirection direction;
+@property (nonatomic) DHAnimationDirection direction;
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import "SceneMesh.h"
-#import "DHConstans.h"
+#import "DHConstants.h"
 @interface DHTwistMesh : SceneMesh
 
-- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(AnimationDirection)direction;
+- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(DHAnimationDirection)direction;
 
 @end

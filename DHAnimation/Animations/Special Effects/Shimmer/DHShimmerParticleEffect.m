@@ -26,7 +26,7 @@ typedef struct {
 
 @implementation DHShimmerParticleEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(AnimationEvent)event
+- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(DHAnimationEvent)event
 {
     self = [super init];
     if (self) {
@@ -92,7 +92,7 @@ typedef struct {
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     
     float a_angle = self.percent * M_PI_2;
-    if (self.event == AnimationEventBuiltOut) {
+    if (self.event == DHAnimationEventBuiltOut) {
         a_angle = M_PI_2 - a_angle;
     }
     float cosAngle = cos(a_angle);
@@ -139,7 +139,7 @@ typedef struct {
             
             NSInteger index = x * self.rowCount + y;
             GLKVector3 offset = GLKVector3Make([self.offsetData[index] doubleValue], [self.offsetData[index + 1] doubleValue], [self.offsetData[index + 2] doubleValue]);
-            if (self.event == AnimationEventBuiltIn) {
+            if (self.event == DHAnimationEventBuiltIn) {
                 particle.targettingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
                 particle.startingPosition = GLKVector3Add(particle.targettingPosition, offset);
                 particle.originalSize = [self randomPointSize] / 5;

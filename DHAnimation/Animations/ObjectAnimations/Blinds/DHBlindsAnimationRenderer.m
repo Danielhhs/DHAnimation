@@ -29,7 +29,7 @@
 - (void) setupMeshes
 {
     BOOL columMajored = YES;
-    if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
+    if (self.direction == DHAnimationDirectionBottomToTop || self.direction == DHAnimationDirectionTopToBottom) {
         columMajored = NO;
     }
     self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:columMajored];
@@ -63,6 +63,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight), @(DHAllowedAnimationDirectionTop), @(DHAllowedAnimationDirectionBottom)];
 }
 @end

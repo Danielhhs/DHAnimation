@@ -122,12 +122,12 @@
 - (void) initializeAnimationContext
 {
     switch (self.direction) {
-        case AnimationDirectionTopToBottom:
-        case AnimationDirectionBottomToTop:
+        case DHAnimationDirectionTopToBottom:
+        case DHAnimationDirectionBottomToTop:
             self.edgeWidth = self.fromView.frame.size.height / self.columnCount;
             break;
-        case AnimationDirectionLeftToRight:
-        case AnimationDirectionRightToLeft:
+        case DHAnimationDirectionLeftToRight:
+        case DHAnimationDirectionRightToLeft:
             self.edgeWidth = self.fromView.frame.size.width / self.columnCount;
             break;
         default:
@@ -138,6 +138,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight), @(DHAllowedAnimationDirectionTop), @(DHAllowedAnimationDirectionBottom)];
 }
 @end

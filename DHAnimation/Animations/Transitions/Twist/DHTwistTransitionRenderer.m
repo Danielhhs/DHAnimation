@@ -38,7 +38,7 @@
 #pragma mark - Public Animation APIs
 - (void) initializeAnimationContext
 {
-    if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
+    if (self.direction == DHAnimationDirectionBottomToTop || self.direction == DHAnimationDirectionTopToBottom) {
         self.centerPosition = self.fromView.bounds.size.width / 2;
     } else {
         self.centerPosition = self.fromView.bounds.size.height / 2;
@@ -125,7 +125,7 @@
     BOOL columnMajored = YES;
     NSInteger columnCount = fromView.bounds.size.width;
     NSInteger rowCount = 1;
-    if (self.direction == AnimationDirectionBottomToTop || self.direction == AnimationDirectionTopToBottom) {
+    if (self.direction == DHAnimationDirectionBottomToTop || self.direction == DHAnimationDirectionTopToBottom) {
         columnMajored = NO;
         columnCount = 1;
         rowCount = fromView.bounds.size.height;
@@ -137,7 +137,7 @@
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     srcTexture = [TextureHelper setupTextureWithView:fromView];
-    if (self.direction == AnimationDirectionLeftToRight || self.direction == AnimationDirectionRightToLeft) {
+    if (self.direction == DHAnimationDirectionLeftToRight || self.direction == DHAnimationDirectionRightToLeft) {
         dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:NO flipVertical:YES];
     } else {
         dstTexture = [TextureHelper setupTextureWithView:toView flipHorizontal:YES];
@@ -146,7 +146,7 @@
 
 - (CGFloat) transitionBasedOnDirection:(CGFloat)transition
 {
-    if (self.direction == AnimationDirectionLeftToRight || self.direction == AnimationDirectionTopToBottom) {
+    if (self.direction == DHAnimationDirectionLeftToRight || self.direction == DHAnimationDirectionTopToBottom) {
         transition = MIN(transition, 1);
     } else {
         transition = MAX(1 - transition, 0);
@@ -156,7 +156,7 @@
 
 - (CGFloat) rotationBasedOnDirection:(CGFloat)rotation
 {
-    if (self.direction == AnimationDirectionRightToLeft || self.direction == AnimationDirectionBottomToTop) {
+    if (self.direction == DHAnimationDirectionRightToLeft || self.direction == DHAnimationDirectionBottomToTop) {
         rotation *= -1;
     }
     return rotation;
@@ -164,6 +164,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight), @(DHAllowedAnimationDirectionTop), @(DHAllowedAnimationDirectionBottom)];
 }
 @end

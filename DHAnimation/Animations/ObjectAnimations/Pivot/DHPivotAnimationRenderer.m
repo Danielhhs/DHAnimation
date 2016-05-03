@@ -49,11 +49,11 @@
 - (GLKVector3) anchorPoint
 {
     switch (self.direction) {
-        case AnimationDirectionLeftToRight:
-        case AnimationDirectionTopToBottom:
+        case DHAnimationDirectionLeftToRight:
+        case DHAnimationDirectionTopToBottom:
             return GLKVector3Make(self.targetView.frame.origin.x, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
-        case AnimationDirectionBottomToTop:
-        case AnimationDirectionRightToLeft:
+        case DHAnimationDirectionBottomToTop:
+        case DHAnimationDirectionRightToLeft:
             return GLKVector3Make(CGRectGetMaxX(self.targetView.frame), self.containerView.frame.size.height - self.targetView.frame.origin.y, 0);
     }
 }
@@ -61,11 +61,11 @@
 - (GLfloat) yOffset
 {
     switch (self.direction) {
-        case AnimationDirectionLeftToRight:
-        case AnimationDirectionTopToBottom:
+        case DHAnimationDirectionLeftToRight:
+        case DHAnimationDirectionTopToBottom:
             return self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame);
-        case AnimationDirectionBottomToTop:
-        case AnimationDirectionRightToLeft:
+        case DHAnimationDirectionBottomToTop:
+        case DHAnimationDirectionRightToLeft:
             return -self.containerView.frame.size.height + self.targetView.frame.origin.y;
     }
 
@@ -73,6 +73,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight)];
 }
 @end

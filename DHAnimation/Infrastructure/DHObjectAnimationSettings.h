@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DHConstans.h"
-#import "DHTimingFunctionHelper.h"
+#import "DHConstants.h"
+#import "DHTimingFunctionHelper.h" 
+
 @interface DHObjectAnimationSettings : NSObject
 
 @property (nonatomic) NSTimeInterval duration;
-@property (nonatomic) AnimationDirection direction;
-@property (nonatomic) AnimationEvent event;
+@property (nonatomic) DHAnimationDirection direction;
+@property (nonatomic) DHAnimationEvent event;
 @property (nonatomic, weak) UIView *targetView;
 @property (nonatomic, weak) UIView *containerView;
 @property (nonatomic) DHTimingFunction timingFunction;

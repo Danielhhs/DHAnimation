@@ -21,30 +21,30 @@
 
 - (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration
 {
-    [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:AnimationDirectionLeftToRight];
+    [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:DHAnimationDirectionLeftToRight];
 }
 
-- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(DHAnimationDirection)direction
 {
     [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:direction completion:nil];
 }
 
-- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction completion:(void (^)(void))completion
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(DHAnimationDirection)direction completion:(void (^)(void))completion
 {
     [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:direction timingFunction:NSBKeyframeAnimationFunctionLinear completion:completion];
 }
 
-- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction
 {
     [self startAnimationFromView:fromView toView:toView inContainerView:containerView duration:duration direction:direction timingFunction:timingFunction completion:nil];
 }
 
-- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
     [self startAnimationFromView:fromView toView:toView inContainerView:containerView columnCount:1 duration:duration direction:direction timingFunction:timingFunction completion:completion];
 }
 
-- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView columnCount:(NSInteger)columnCount duration:(NSTimeInterval)duration direction:(AnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) startAnimationFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView columnCount:(NSInteger)columnCount duration:(NSTimeInterval)duration direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
     self.duration = duration;
     self.elapsedTime = 0.f;

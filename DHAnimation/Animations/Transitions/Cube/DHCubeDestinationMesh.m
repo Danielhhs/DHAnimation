@@ -10,7 +10,7 @@
 
 @implementation DHCubeDestinationMesh
 
-- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(AnimationDirection)direction
+- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(DHAnimationDirection)direction
 {
     self.vertexCount = 4 * columnCount;
     self.indexCount = 6 * columnCount;
@@ -34,25 +34,25 @@
     return [self initWithVerticesData:vertexData indicesData:indexData];
 }
 
-- (void) setupVerticesForView:(UIView *)view direction:(AnimationDirection)direction
+- (void) setupVerticesForView:(UIView *)view direction:(DHAnimationDirection)direction
 {
     switch (direction) {
-        case AnimationDirectionRightToLeft:
+        case DHAnimationDirectionRightToLeft:
         {
             [self setupVerticesForRightToLeftForView:view];
         }
             break;
-        case AnimationDirectionLeftToRight:
+        case DHAnimationDirectionLeftToRight:
         {
             [self setupVerticesForLeftToRightForView:view];
         }
             break;
-        case AnimationDirectionTopToBottom:
+        case DHAnimationDirectionTopToBottom:
         {
             [self setupVerticesForTopToBottomForView:view];
         }
             break;
-        case AnimationDirectionBottomToTop:
+        case DHAnimationDirectionBottomToTop:
         {
             [self setupVerticesForBottomToTopForView:view];
         }

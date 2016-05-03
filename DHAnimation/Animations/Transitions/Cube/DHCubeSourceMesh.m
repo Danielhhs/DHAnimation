@@ -10,7 +10,7 @@
 
 @implementation DHCubeSourceMesh
 
-- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(AnimationDirection)direction
+- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(DHAnimationDirection)direction
 {
     self.vertexCount = 4 * columnCount;
     self.indexCount = 6 * columnCount;
@@ -18,7 +18,7 @@
     vertices = malloc(self.vertexCount * sizeof(SceneMeshVertex));
     indices = malloc(sizeof(GLuint) * self.indexCount);
     
-    if (direction == AnimationDirectionTopToBottom || direction == AnimationDirectionBottomToTop) {
+    if (direction == DHAnimationDirectionTopToBottom || direction == DHAnimationDirectionBottomToTop) {
         [self generateVerticesForVerticalTransitionWithView:view];
     } else {
         [self generateVerticesForHorizontalTransitionWithView:view];

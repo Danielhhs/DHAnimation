@@ -378,7 +378,7 @@
 		5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC58161C8FD25F009D812C /* TextureHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC581A1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC58201C8FD325009D812C /* DHTimingFunctionHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5490CD961CD34EF900C93002 /* DHConstans.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E2646B1C8EC62F00FFB67E /* DHConstans.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5490CD961CD34EF900C93002 /* DHConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E2646B1C8EC62F00FFB67E /* DHConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5490CD991CD34F2600C93002 /* DHDustEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFA571CD2E65C004EF919 /* DHDustEffect.m */; };
@@ -480,7 +480,7 @@
 		54E264171C8EBCBF00FFB67E /* DHAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264161C8EBCBF00FFB67E /* DHAnimationTests.m */; };
 		54E264221C8EBCBF00FFB67E /* DHAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264211C8EBCBF00FFB67E /* DHAnimationUITests.m */; };
 		54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */; };
-		54E2646D1C8EC62F00FFB67E /* DHConstans.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* DHConstans.m */; };
+		54E2646D1C8EC62F00FFB67E /* DHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* DHConstants.m */; };
 		54E264701C8ED4A600FFB67E /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
 		54E2647C1C8FC5AC00FFB67E /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264721C8FC5AC00FFB67E /* 0.jpg */; };
 		54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54E264731C8FC5AC00FFB67E /* 1.jpg */; };
@@ -812,8 +812,8 @@
 		54E264231C8EBCBF00FFB67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54E264671C8EC2FF00FFB67E /* DHTransitionPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionPresentationViewController.h; sourceTree = "<group>"; };
 		54E264681C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionPresentationViewController.m; sourceTree = "<group>"; };
-		54E2646B1C8EC62F00FFB67E /* DHConstans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConstans.h; sourceTree = "<group>"; };
-		54E2646C1C8EC62F00FFB67E /* DHConstans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConstans.m; sourceTree = "<group>"; };
+		54E2646B1C8EC62F00FFB67E /* DHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConstants.h; sourceTree = "<group>"; };
+		54E2646C1C8EC62F00FFB67E /* DHConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHConstants.m; sourceTree = "<group>"; };
 		54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTransitionSettings.h; sourceTree = "<group>"; };
 		54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionSettings.m; sourceTree = "<group>"; };
 		54E264721C8FC5AC00FFB67E /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
@@ -1623,8 +1623,8 @@
 				547876351CA50E2700012F76 /* Renderers */,
 				54EC580F1C8FD25F009D812C /* OpenGL Helpers */,
 				54EC58181C8FD25F009D812C /* Timing Function */,
-				54E2646B1C8EC62F00FFB67E /* DHConstans.h */,
-				54E2646C1C8EC62F00FFB67E /* DHConstans.m */,
+				54E2646B1C8EC62F00FFB67E /* DHConstants.h */,
+				54E2646C1C8EC62F00FFB67E /* DHConstants.m */,
 				54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */,
 				54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */,
 				54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */,
@@ -1777,7 +1777,7 @@
 				5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */,
 				5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */,
 				5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */,
-				5490CD961CD34EF900C93002 /* DHConstans.h in Headers */,
+				5490CD961CD34EF900C93002 /* DHConstants.h in Headers */,
 				5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */,
 				5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */,
 			);
@@ -2420,7 +2420,7 @@
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,
 				547876241CA4D61B00012F76 /* DHSwitchTransitionRenderer.m in Sources */,
 				54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */,
-				54E2646D1C8EC62F00FFB67E /* DHConstans.m in Sources */,
+				54E2646D1C8EC62F00FFB67E /* DHConstants.m in Sources */,
 				540AFA6D1CD2E65C004EF919 /* DHDustEffect.m in Sources */,
 				54A768941CBCA3EF00826929 /* DHConfettiAnimationRenderer.m in Sources */,
 				547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */,

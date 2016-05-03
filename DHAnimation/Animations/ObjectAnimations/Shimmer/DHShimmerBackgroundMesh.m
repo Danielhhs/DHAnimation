@@ -10,14 +10,14 @@
 
 @implementation DHShimmerBackgroundMesh
 
-- (void) updateWithOffsetData:(NSArray *)offsetData event:(AnimationEvent)event
+- (void) updateWithOffsetData:(NSArray *)offsetData event:(DHAnimationEvent)event
 {
     _offsetData = offsetData;
     for (int x = 0; x < self.columnCount; x++) {
         for (int y = 0; y < self.rowCount; y++) {
             NSInteger idx = x * self.rowCount + y;
             GLKVector3 offset = GLKVector3Make([self.offsetData[idx] doubleValue], [self.offsetData[idx + 1] doubleValue], [self.offsetData[idx + 2] doubleValue]);
-//            if (event == AnimationEventBuiltOut) {
+//            if (event == DHAnimationEventBuiltOut) {
 //                vertices[idx * 4 + 0].originalCenter = vertices[idx * 4 + 0].position;
 //                vertices[idx * 4 + 0].position = GLKVector3Add(vertices[idx * 4 + 0].position, offset);
 //                

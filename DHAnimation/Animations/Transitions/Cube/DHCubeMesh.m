@@ -9,7 +9,7 @@
 #import "DHCubeMesh.h"
 
 @implementation DHCubeMesh
-- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(AnimationDirection)direction
+- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(DHAnimationDirection)direction
 {
     return nil;
 }

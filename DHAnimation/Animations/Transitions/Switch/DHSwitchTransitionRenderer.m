@@ -89,6 +89,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight), @(AllowedAnimationDirectionTop), @(AllowedAnimationDirectionBottom)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight), @(DHAllowedAnimationDirectionTop), @(DHAllowedAnimationDirectionBottom)];
 }
 @end

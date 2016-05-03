@@ -61,16 +61,16 @@
 {
     [self updateAnimationSettings];
     switch (self.animationType) {
-        case ObjectAnimationTypeShimmer: {
+        case DHObjectAnimationTypeShimmer: {
             self.renderer = [[DHShimmerAnimationRenderer alloc] init];
             self.settings.rowCount = 15;
             self.settings.columnCount = 10;
         }
             break;
-        case ObjectAnimationTypeSparkle:
+        case DHObjectAnimationTypeSparkle:
             self.renderer = [[DHSparkleAnimationRenderer alloc] init];
             break;
-        case ObjectAnimationTypeRotation:{
+        case DHObjectAnimationTypeRotation:{
             self.renderer = [[DHRotationAnimationRenderer alloc] init];
             DHRotationAnimationRenderer *rotationRenderer = (DHRotationAnimationRenderer *)self.renderer;
             rotationRenderer.rotationRadius = 300;
@@ -78,7 +78,7 @@
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
             break;
-        case ObjectAnimationTypeConfetti: {
+        case DHObjectAnimationTypeConfetti: {
             self.renderer = [[DHConfettiAnimationRenderer alloc] init];
             self.settings.duration = 1.5;
             self.settings.columnCount = self.settings.targetView.frame.size.width / 10;
@@ -86,77 +86,77 @@
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
             break;
-        case ObjectAnimationTypeBlinds: {
+        case DHObjectAnimationTypeBlinds: {
             self.renderer = [[DHBlindsAnimationRenderer alloc] init];
             self.settings.columnCount = 5;
             self.settings.rowCount = 1;
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
             break;
-        case ObjectAnimationTypeFirework: {
+        case DHObjectAnimationTypeFirework: {
             self.renderer = [[DHFireworkAnimationRenderer alloc] init];
             self.settings.duration = 2.f;
         }
             break;
-        case ObjectAnimationTypeBlur: {
+        case DHObjectAnimationTypeBlur: {
             self.renderer = [[DHBlurAnimationRenderer alloc] init];
         }
             break;
-        case ObjectAnimationTypeFlip: {
+        case DHObjectAnimationTypeFlip: {
             self.renderer = [[DHFlipAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
-        case ObjectAnimationTypeDrop: {
+        case DHObjectAnimationTypeDrop: {
             self.renderer = [[DHDropAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
         }
             break;
-        case ObjectAnimationTypePivot: {
+        case DHObjectAnimationTypePivot: {
             self.renderer = [[DHPivotAnimationRenderer alloc] init];
             self.settings.duration = 1.f;
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
             break;
-        case ObjectAnimationTypePop: {
+        case DHObjectAnimationTypePop: {
             self.renderer = [[DHPopAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
         }
             break;
-        case ObjectAnimationTypeScale: {
+        case DHObjectAnimationTypeScale: {
             self.renderer = [[DHScaleAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
-        case ObjectAnimationTypeScaleBig: {
+        case DHObjectAnimationTypeScaleBig: {
             self.renderer = [[DHScaleBigAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
-        case ObjectAnimationTypeSpin: {
+        case DHObjectAnimationTypeSpin: {
             self.renderer = [[DHSpinAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
         }
             break;
-        case ObjectAnimationTypeTwirl: {
+        case DHObjectAnimationTypeTwirl: {
             self.renderer = [[DHTwirlAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
         }
             break;
-        case ObjectAnimationTypeDissolve: {
+        case DHObjectAnimationTypeDissolve: {
             self.renderer = [[DHDissolveAnimationRenderer alloc] init];
         }
             break;
-        case ObjectAnimationTypeSkid: {
+        case DHObjectAnimationTypeSkid: {
             self.renderer = [[DHSkidAnimationRenderer alloc] init];
         }
             break;
-        case ObjectAnimationTypeFlame: {
+        case DHObjectAnimationTypeFlame: {
             self.renderer = [[DHFlameAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
             break;
-        case ObjectAnimationAnvil: {
+        case DHObjectAnimationAnvil: {
             self.renderer = [[DHAnvilAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
         }
@@ -174,7 +174,7 @@
 {
     [self.fromView removeFromSuperview];
     [self.toView removeFromSuperview];
-    if (self.settings.event == AnimationEventBuiltOut) {
+    if (self.settings.event == DHAnimationEventBuiltOut) {
         [self.view addSubview:self.toView];
     }
     self.fromView.image = [self randomImage];
@@ -182,7 +182,7 @@
     self.settings.targetView = self.fromView;
     __weak DHObjectAnimationPresentatioinViewController *weakSelf = self;
     self.settings.completion = ^{
-        if (weakSelf.settings.event == AnimationEventBuiltIn) {
+        if (weakSelf.settings.event == DHAnimationEventBuiltIn) {
             [weakSelf.view addSubview:weakSelf.fromView];
         } else {
             [weakSelf.toView removeFromSuperview];

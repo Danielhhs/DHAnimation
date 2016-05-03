@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DHConstans.h"
+#import "DHConstants.h"
 #import "NSBKeyframeAnimationFunctions.h"
 #import "DHTransitionRenderer.h"
 @interface DHTransitionPresentationViewController : UIViewController
 
-@property (nonatomic) TransitionType animationType;
+@property (nonatomic) DHTransitionType animationType;
 @property (nonatomic, strong) DHTransitionRenderer *renderer;
 
 - (void) performAnimation;

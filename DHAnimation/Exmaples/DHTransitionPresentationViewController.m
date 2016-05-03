@@ -55,105 +55,105 @@
 {
     [self updateAnimationSettings];
     switch (self.animationType) {
-        case TransitionTypeDoorWay:
+        case DHTransitionTypeDoorWay:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
             self.renderer = [[DHDoorWayTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeCube:
+        case DHTransitionTypeCube:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
             self.renderer = [[DHCubeTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeTwist:
+        case DHTransitionTypeTwist:
         {
             self.renderer = [[DHTwistTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeClothLine:
+        case DHTransitionTypeClothLine:
         {
             self.settings.duration = 3.f;
             self.renderer = [[DHClothLineTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeShredder:
+        case DHTransitionTypeShredder:
         {
             self.settings.columnCount = 12;
             self.settings.duration = 3.f;
             self.renderer = [[DHShredderTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeSwitch:
+        case DHTransitionTypeSwitch:
         {
             self.renderer = [[DHSwitchTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeGrid:
+        case DHTransitionTypeGrid:
         {
             self.renderer = [[DHGridTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeConfetti:
+        case DHTransitionTypeConfetti:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
             self.settings.duration = 2;
             self.renderer = [[DHConfettiTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypePush:
+        case DHTransitionTypePush:
         {
             self.renderer = [[DHPushTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeReveal:
+        case DHTransitionTypeReveal:
         {
             self.renderer = [[DHRevealTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeDrop:
+        case DHTransitionTypeDrop:
         {
             self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
             self.renderer = [[DHDropTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeMosaic:
+        case DHTransitionTypeMosaic:
         {
             self.renderer = [[DHMosaicTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeFlop:
+        case DHTransitionTypeFlop:
         {
             self.renderer = [[DHFlopTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeCover:
+        case DHTransitionTypeCover:
         {
             self.renderer = [[DHCoverTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeFlip:
+        case DHTransitionTypeFlip:
         {
             self.renderer = [[DHFlipTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeReflection:
+        case DHTransitionTypeReflection:
         {
             self.renderer = [[DHReflectionTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeRotateDismiss:
+        case DHTransitionTypeRotateDismiss:
         {
             self.renderer = [[DHSpinDismissTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeRipple:
+        case DHTransitionTypeRipple:
         {
             self.renderer = [[DHRippleTransitionRenderer alloc] init];
         }
             break;
-        case TransitionTypeResolvingDoor:
+        case DHTransitionTypeResolvingDoor:
         {
             self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
             self.renderer = [[DHResolvingDoorTransitionRenderer alloc] init];

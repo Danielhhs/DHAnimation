@@ -28,9 +28,9 @@
     return self;
 }
 
-- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(AnimationDirection)direction
+- (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(DHAnimationDirection)direction
 {
-    if (direction == AnimationDirectionLeftToRight || direction == AnimationDirectionTopToBottom) {
+    if (direction == DHAnimationDirectionLeftToRight || direction == DHAnimationDirectionTopToBottom) {
         [self updateForwardWithRotation:rotation transition:transition];
     } else {
         [self updateBackwardWithRotation:rotation transition:transition];

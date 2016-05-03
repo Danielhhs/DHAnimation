@@ -58,7 +58,7 @@
 //Helpers and Infrastructure classes
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettings.h"
-#import "Enums.h"
+#import "DHConstants.h"
 #import "DHParticleEffect.h"
 #import "SceneMesh.h"
 #import "OpenGLHelper.h"

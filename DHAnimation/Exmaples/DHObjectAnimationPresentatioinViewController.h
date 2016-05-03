@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DHConstans.h"
+#import "DHConstants.h"
 
 @interface DHObjectAnimationPresentatioinViewController : UIViewController
-@property (nonatomic) ObjectAnimationType animationType;
+@property (nonatomic) DHObjectAnimationType animationType;
 @end

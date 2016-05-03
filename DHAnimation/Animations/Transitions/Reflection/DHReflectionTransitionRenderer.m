@@ -62,17 +62,17 @@
 - (void) setupMvpMatrixWithView:(UIView *)view
 {
     GLfloat xOffset = 0.f;
-    if (self.direction == AnimationDirectionLeftToRight) {
+    if (self.direction == DHAnimationDirectionLeftToRight) {
         xOffset = view.bounds.size.width * self.percent;
     }
     float zOffset = 0.f;
-    if (self.direction != AnimationDirectionLeftToRight) {
+    if (self.direction != DHAnimationDirectionLeftToRight) {
         zOffset = view.bounds.size.width * self.percent;
     }
     GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2 + xOffset, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24) + zOffset - sin(self.percent * M_PI) * 300);
     
     int direction = 1;
-    if (self.direction == AnimationDirectionLeftToRight) {
+    if (self.direction == DHAnimationDirectionLeftToRight) {
         direction = -1;
     }
     GLKMatrix4 viewMatrix = GLKMatrix4MakeLookAt(0, 0, 0, direction * sin(self.percent * M_PI_2), 0, -cos(self.percent * M_PI_2), 0, 1, 0);
@@ -92,6 +92,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionLeft), @(AllowedAnimationDirectionRight)];
+    return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight)];
 }
 @end

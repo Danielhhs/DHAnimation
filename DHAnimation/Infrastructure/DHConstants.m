@@ -6,7 +6,7 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHConstans.h"
+#import "DHConstants.h"
 #import "DHShimmerAnimationRenderer.h"
 #import "DHSparkleAnimationRenderer.h"
 #import "DHRotationAnimationRenderer.h"
@@ -50,7 +50,7 @@
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
 static NSArray *builtOutAnimationsArray;
-@implementation DHConstans
+@implementation DHConstants
 
 + (NSArray *) transitions
 {

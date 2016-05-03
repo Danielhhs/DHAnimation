@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DHConstans.h"
+#import "DHConstants.h"
 #import "DHTimingFunctionHelper.h"
 @interface DHTransitionSettings : NSObject
-@property (nonatomic) AnimationDirection animationDirection;
+@property (nonatomic) DHAnimationDirection animationDirection;
 @property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) void (^completion)(void);

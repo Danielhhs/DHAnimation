@@ -14,8 +14,8 @@
 {
     DHObjectAnimationSettings *settings = [[DHObjectAnimationSettings alloc] init];
     settings.duration = 2.f;
-    settings.event = AnimationEventBuiltIn;
-    settings.direction = AnimationDirectionLeftToRight;
+    settings.event = DHAnimationEventBuiltIn;
+    settings.direction = DHAnimationDirectionLeftToRight;
     settings.timingFunction = DHTimingFunctionLinear;
     settings.completion = nil;
     settings.rowCount = 1;

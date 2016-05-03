@@ -7,13 +7,13 @@
 //
 
 #import "DHParticleEffect.h"
-#import "DHConstans.h"
+#import "DHConstants.h"
 
 @interface DHShimmerParticleEffect : DHParticleEffect
 @property (nonatomic, strong) NSArray *offsetData;
-@property (nonatomic) AnimationEvent event;
-@property (nonatomic) AnimationDirection direction;
+@property (nonatomic) DHAnimationEvent event;
+@property (nonatomic) DHAnimationDirection direction;
 
-- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(AnimationEvent)event;
+- (instancetype) initWithContext:(EAGLContext *)context columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount targetView:(UIView *)targetView containerView:(UIView *)containerView offsetData:(NSArray *)offsetData event:(DHAnimationEvent)event;
 
 @end

@@ -47,7 +47,7 @@
 
 - (void) setupTextures
 {
-    if (self.event == AnimationEventBuiltIn) {
+    if (self.event == DHAnimationEventBuiltIn) {
         texture = [TextureHelper setupTextureWithView:self.targetView flipHorizontal:YES];
     } else {
         texture = [TextureHelper setupTextureWithView:self.targetView];
@@ -57,6 +57,6 @@
 
 - (NSArray *) allowedDirections
 {
-    return @[@(AllowedAnimationDirectionTop)];
+    return @[@(DHAllowedAnimationDirectionTop)];
 }
 @end
