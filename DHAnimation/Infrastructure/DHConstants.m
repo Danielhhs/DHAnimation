@@ -161,4 +161,103 @@ static NSArray *builtOutAnimationsArray;
     }
     return nil;
 }
+
++ (NSString *) animationNameForAnimationType:(DHObjectAnimationType)animationType
+{
+    switch (animationType) {
+        case DHObjectAnimationTypePop:
+            return @"Pop";
+        case DHObjectAnimationTypeBlur:
+            return @"Blur";
+        case DHObjectAnimationTypeDrop:
+            return @"Drop";
+        case DHObjectAnimationTypeFlip:
+            return @"Flip";
+        case DHObjectAnimationTypeNone:
+            return @"None";
+        case DHObjectAnimationTypeSkid:
+            return @"Skid";
+        case DHObjectAnimationTypeSpin:
+            return @"Spin";
+        case DHObjectAnimationTypeAnvil:
+            return @"Anvil";
+        case DHObjectAnimationTypeFlame:
+            return @"Flame";
+        case DHObjectAnimationTypePivot:
+            return @"Pivot";
+        case DHObjectAnimationTypeScale:
+            return @"Scale";
+        case DHObjectAnimationTypeTwirl:
+            return @"Twirl";
+        case DHObjectAnimationTypeBlinds:
+            return @"Blinds";
+        case DHObjectAnimationTypeShimmer:
+            return @"Shimmer";
+        case DHObjectAnimationTypeSparkle:
+            return @"Sparkle";
+        case DHObjectAnimationTypeConfetti:
+            return @"Confetti";
+        case DHObjectAnimationTypeDissolve:
+            return @"Dissolve";
+        case DHObjectAnimationTypeFirework:
+            return @"Firework";
+        case DHObjectAnimationTypeRotation:
+            return @"Rotation";
+        case DHObjectAnimationTypeScaleBig:
+            return @"Scale Big";
+    }
+    return @"None";
+}
+
++ (NSString *) transitionNameForTransitionType:(DHTransitionType)transitionType
+{
+    switch (transitionType) {
+        case DHTransitionTypeCube:
+            return @"Cube";
+        case DHTransitionTypeSwitch:
+            return @"Switch";
+        case DHTransitionTypeDrop:
+            return @"Drop";
+        case DHTransitionTypeFlip:
+            return @"Flip";
+        case DHTransitionTypeFlop:
+            return @"Flop";
+        case DHTransitionTypeGrid:
+            return @"Grid";
+        case DHTransitionTypeNone:
+            return @"None";
+        case DHTransitionTypePush:
+            return @"Push";
+        case DHTransitionTypeCover:
+            return @"Cover";
+        case DHTransitionTypeTwist:
+            return @"Twist";
+        case DHTransitionTypeMosaic:
+            return @"Mosaic";
+        case DHTransitionTypeReveal:
+            return @"Reveal";
+        case DHTransitionTypeRipple:
+            return @"Ripple";
+        case DHTransitionTypeDoorWay:
+            return @"Doorway";
+        case DHTransitionTypeConfetti:
+            return @"Confetti";
+        case DHTransitionTypeShredder:
+            return @"Shredder";
+        case DHTransitionTypeClothLine:
+            return @"Cloth line";
+        case DHTransitionTypeReflection:
+            return @"Reflection";
+        case DHTransitionTypeResolvingDoor:
+            return @"Resolving Door";
+        case DHTransitionTypeRotateDismiss:
+            return @"Rotate Dismiss";
+    }
+    return @"None";
+}
+
++ (DHObjectAnimationType) animationTypeFromAnimationName:(NSString *)animationName
+{
+    return [[DHConstants builtInAnimations] indexOfObject:animationName];
+}
 @end

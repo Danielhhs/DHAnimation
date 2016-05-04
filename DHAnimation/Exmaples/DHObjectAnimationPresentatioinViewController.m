@@ -156,7 +156,7 @@
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
             break;
-        case DHObjectAnimationAnvil: {
+        case DHObjectAnimationTypeAnvil: {
             self.renderer = [[DHAnvilAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
         }
@@ -197,6 +197,7 @@
 {
     if (!_fromView) {
         _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 4);
         _fromView.image = [self randomImage];
     }
     return _fromView;

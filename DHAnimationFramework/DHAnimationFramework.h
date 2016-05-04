@@ -80,6 +80,11 @@
 #import "DHShredderPaperBackPieceSceneMesh.h"
 #import "DHShredderPaperPieceSceneMesh.h"
 #import "DHTwistMesh.h"
+#import "DHDustEffect.h"
+#import "DHFireworkEffect.h"
+#import "DHShimmerParticleEffect.h"
+#import "DHShiningStarEffect.h"
+#import "DHSparkleEffect.h"
 //! Project version number for DHAnimationFramework.
 FOUNDATION_EXPORT double DHAnimationFrameworkVersionNumber;
 

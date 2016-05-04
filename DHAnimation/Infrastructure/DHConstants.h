@@ -11,6 +11,7 @@
 @class DHTransitionRenderer;
 @class DHObjectAnimationRenderer;
 typedef NS_ENUM(NSInteger, DHTransitionType) {
+    DHTransitionTypeNone = -1,
     DHTransitionTypeDoorWay = 0,
     DHTransitionTypeCube = 1,
     DHTransitionTypeTwist = 2,
@@ -33,6 +34,7 @@ typedef NS_ENUM(NSInteger, DHTransitionType) {
 };
 
 typedef NS_ENUM(NSInteger, DHObjectAnimationType) {
+    DHObjectAnimationTypeNone = -1,
     DHObjectAnimationTypeShimmer = 0,
     DHObjectAnimationTypeSparkle = 1,
     DHObjectAnimationTypeRotation = 2,
@@ -51,7 +53,7 @@ typedef NS_ENUM(NSInteger, DHObjectAnimationType) {
     DHObjectAnimationTypeDissolve = 15,
     DHObjectAnimationTypeSkid = 16,
     DHObjectAnimationTypeFlame = 17,
-    DHObjectAnimationAnvil = 18,
+    DHObjectAnimationTypeAnvil = 18,
 };
 
 typedef NS_ENUM(NSInteger, DHAnimationDirection) {
@@ -81,5 +83,8 @@ typedef NS_ENUM(NSInteger, DHAllowedAnimationDirection) {
 
 + (DHTransitionRenderer *)transitionRendererForName:(NSString *)transitionName;
 + (DHObjectAnimationRenderer *) animationRendererForName:(NSString *)animationName;
++ (NSString *) animationNameForAnimationType:(DHObjectAnimationType) animationType;
++ (NSString *) transitionNameForTransitionType:(DHTransitionType) transitionType;
++ (DHObjectAnimationType) animationTypeFromAnimationName:(NSString *)animationName;
 
 @end

@@ -9,6 +9,13 @@
 #import "DHObjectAnimationRenderer.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
+@interface DHObjectAnimationRenderer() {
+    GLuint backgroundProgram;
+    GLuint backgroundMVPLoc, backgroundSamplerLoc;
+    GLuint backgroundTexture;
+}
+@property (nonatomic, strong) SceneMesh *backgroundMesh;
+@end
 
 @implementation DHObjectAnimationRenderer
 
@@ -75,6 +82,8 @@
     [self setupGL];
     [self setupMvpMatrixWithView:containerView];
     [self additionalSetUp];
+    
+    [self setupBackground];
     [self setupMeshes];
     [self setupEffects];
     [self setupTextures];
@@ -110,6 +119,14 @@
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
+    glUseProgram(backgroundProgram);
+    glUniformMatrix4fv(backgroundMVPLoc, 1, GL_FALSE, mvpMatrix.m);
+    [self.backgroundMesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, backgroundTexture);
+    glUniform1i(backgroundSamplerLoc, 0);
+    [self.backgroundMesh drawEntireMesh];
+    
     [self drawFrame];
 }
 
@@ -126,6 +143,10 @@
         eventLoc = glGetUniformLocation(program, "u_event");
         directionLoc = glGetUniformLocation(program, "u_direction");
     }
+    
+    backgroundProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ObjectBackgroundVertex.glsl" fragmentShaderSrc:@"ObjectBackgroundFragment.glsl"];
+    backgroundMVPLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
+    backgroundSamplerLoc = glGetUniformLocation(backgroundProgram, "s_tex");
     
     glClearColor(0, 0, 0, 1);
 }
@@ -176,6 +197,12 @@
 - (void) setupEffects
 {
     
+}
+
+- (void) setupBackground
+{
+    self.backgroundMesh = [[SceneMesh alloc] initWithView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    backgroundTexture = [TextureHelper setupTextureWithView:self.containerView];
 }
 
 - (void) updateAdditionalComponents

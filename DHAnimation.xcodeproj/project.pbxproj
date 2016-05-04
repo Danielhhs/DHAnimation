@@ -160,6 +160,10 @@
 		54101B881CD34FA4002B10D0 /* Sparkle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA6A1CD2E65C004EF919 /* Sparkle2.png */; };
 		54101B891CD34FA4002B10D0 /* Flame.png in Resources */ = {isa = PBXBuildFile; fileRef = 548EDFAD1CCE0D11005E997B /* Flame.png */; };
 		54101B8A1CD34FA4002B10D0 /* Shredder.png in Resources */ = {isa = PBXBuildFile; fileRef = 547875A81CA4D61B00012F76 /* Shredder.png */; };
+		54126CD61CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54126CD51CD98C08008AF45E /* ObjectBackgroundVertex.glsl */; };
+		54126CD71CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54126CD51CD98C08008AF45E /* ObjectBackgroundVertex.glsl */; };
+		54126CD91CD98C17008AF45E /* ObjectBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54126CD81CD98C17008AF45E /* ObjectBackgroundFragment.glsl */; };
+		54126CDA1CD98C17008AF45E /* ObjectBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54126CD81CD98C17008AF45E /* ObjectBackgroundFragment.glsl */; };
 		5420C0121CB64507001C789C /* DHParticleEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0111CB64507001C789C /* DHParticleEffect.m */; };
 		5420C0281CB663C2001C789C /* DHObjectAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C0271CB663C2001C789C /* DHObjectAnimationRenderer.m */; };
 		5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C03C1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m */; };
@@ -470,6 +474,7 @@
 		54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */; };
 		54A768AC1CBD044C00826929 /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AB1CBD044C00826929 /* FireworkVertex.glsl */; };
 		54A768AE1CBD045600826929 /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AD1CBD045600826929 /* FireworkFragment.glsl */; };
+		54C1B2561CD8775C007A936E /* DHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* DHConstants.m */; };
 		54C61C0E1CCF0ECC002336FD /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
@@ -554,6 +559,8 @@
 		540AFA9B1CD34E5E004EF919 /* DHAnimationFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHAnimationFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		540AFAA01CD34E5E004EF919 /* DHAnimationFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHAnimationFrameworkTests.m; sourceTree = "<group>"; };
 		540AFAA21CD34E5E004EF919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54126CD51CD98C08008AF45E /* ObjectBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectBackgroundVertex.glsl; sourceTree = "<group>"; };
+		54126CD81CD98C17008AF45E /* ObjectBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectBackgroundFragment.glsl; sourceTree = "<group>"; };
 		5420C0101CB64507001C789C /* DHParticleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHParticleEffect.h; sourceTree = "<group>"; };
 		5420C0111CB64507001C789C /* DHParticleEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHParticleEffect.m; sourceTree = "<group>"; };
 		5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationRenderer.h; sourceTree = "<group>"; };
@@ -1329,6 +1336,8 @@
 				547876371CA50E2700012F76 /* DHTransitionRenderer.m */,
 				5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */,
 				5420C0271CB663C2001C789C /* DHObjectAnimationRenderer.m */,
+				54126CD51CD98C08008AF45E /* ObjectBackgroundVertex.glsl */,
+				54126CD81CD98C17008AF45E /* ObjectBackgroundFragment.glsl */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -2048,6 +2057,7 @@
 				54101B4E1CD34F9A002B10D0 /* DropDestinationFragment.glsl in Resources */,
 				54101B4F1CD34F9A002B10D0 /* DropDestinationVertex.glsl in Resources */,
 				54101B501CD34F9A002B10D0 /* DropSourceFragment.glsl in Resources */,
+				54126CD71CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */,
 				54101B511CD34F9A002B10D0 /* DropSourceVertex.glsl in Resources */,
 				54101B521CD34F9A002B10D0 /* FlipDestinationFragment.glsl in Resources */,
 				54101B531CD34F9A002B10D0 /* FlipDestinationVertex.glsl in Resources */,
@@ -2087,6 +2097,7 @@
 				54101B751CD34F9A002B10D0 /* ShredderBackPieceVertex.glsl in Resources */,
 				54101B761CD34F9A002B10D0 /* ShredderConfettiFragment.glsl in Resources */,
 				54101B771CD34F9A002B10D0 /* ShredderConfettiVertex.glsl in Resources */,
+				54126CDA1CD98C17008AF45E /* ObjectBackgroundFragment.glsl in Resources */,
 				54101B781CD34F9A002B10D0 /* ShredderFragment.glsl in Resources */,
 				54101B791CD34F9A002B10D0 /* ShredderPieceFragment.glsl in Resources */,
 				54101B7A1CD34F9A002B10D0 /* ShredderPieceVertex.glsl in Resources */,
@@ -2122,6 +2133,7 @@
 				547875D21CA4D61B00012F76 /* CubeDestinationVertex.glsl in Resources */,
 				548EDF691CCA123B005E997B /* ObjectScaleBigVertex.glsl in Resources */,
 				54E264801C8FC5AC00FFB67E /* 4.jpg in Resources */,
+				54126CD91CD98C17008AF45E /* ObjectBackgroundFragment.glsl in Resources */,
 				547875E51CA4D61B00012F76 /* DropDestinationFragment.glsl in Resources */,
 				54A768AC1CBD044C00826929 /* FireworkVertex.glsl in Resources */,
 				548EDF451CC90B65005E997B /* ObjectPivotFragment.glsl in Resources */,
@@ -2249,6 +2261,7 @@
 				547875DC1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl in Resources */,
 				547875FE1CA4D61B00012F76 /* MosaicSourceVertex.glsl in Resources */,
 				548EDF791CCB5668005E997B /* ObjectTwirlVertex.glsl in Resources */,
+				54126CD61CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */,
 				5478761C1CA4D61B00012F76 /* ShredderBackPieceFragment.glsl in Resources */,
 				547876051CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl in Resources */,
 				547875EC1CA4D61B00012F76 /* FlipSourceFragment.glsl in Resources */,
@@ -2276,6 +2289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C1B2561CD8775C007A936E /* DHConstants.m in Sources */,
 				5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */,
 				5490CD991CD34F2600C93002 /* DHDustEffect.m in Sources */,
 				5490CD9A1CD34F2600C93002 /* DHShimmerParticleEffect.m in Sources */,
