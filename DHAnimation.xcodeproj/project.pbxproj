@@ -176,6 +176,7 @@
 		5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C05C1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m */; };
 		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
 		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
+		546F51741CDC2C5600DA3B0C /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 546F51731CDC2C5600DA3B0C /* image.png */; };
 		547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */; };
 		547875C21CA4D61B00012F76 /* ClothLineDestinationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */; };
 		547875C31CA4D61B00012F76 /* ClothLineSourceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */; };
@@ -731,6 +732,7 @@
 		545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
 		5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
 		5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationPresentatioinViewController.m; sourceTree = "<group>"; };
+		546F51731CDC2C5600DA3B0C /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		547875211CA4D61B00012F76 /* ClothLineDestinationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationFragment.glsl; sourceTree = "<group>"; };
 		547875221CA4D61B00012F76 /* ClothLineDestinationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineDestinationVertex.glsl; sourceTree = "<group>"; };
 		547875231CA4D61B00012F76 /* ClothLineSourceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClothLineSourceFragment.glsl; sourceTree = "<group>"; };
@@ -1174,6 +1176,7 @@
 		5456170E1CA7AC2A002D5C04 /* ObjectAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				546F51731CDC2C5600DA3B0C /* image.png */,
 				545617071CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.h */,
 				545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */,
 				5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */,
@@ -2479,6 +2482,7 @@
 				547876141CA4D61B00012F76 /* SpinDismissFragment.glsl in Resources */,
 				54A768961CBCA46100826929 /* ConfettiAnimationVertex.glsl in Resources */,
 				54A768901CBCA17C00826929 /* ReflectionSourceVertex.glsl in Resources */,
+				546F51741CDC2C5600DA3B0C /* image.png in Resources */,
 				54E2647D1C8FC5AC00FFB67E /* 1.jpg in Resources */,
 				547875E81CA4D61B00012F76 /* DropSourceVertex.glsl in Resources */,
 				547876271CA4D61B00012F76 /* SwitchSourceFragment.glsl in Resources */,

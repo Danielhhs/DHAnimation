@@ -11,5 +11,10 @@ layout(location = 0) out vec4 out_color;
 
 void main() {
     out_color = texture(s_tex, v_texCoords);
-    out_color.a = u_percent * u_percent;
+    
+    if (out_color.a < 0.1) {
+        discard;
+    } else {
+        out_color.a = u_percent * u_percent;
+    }
 }

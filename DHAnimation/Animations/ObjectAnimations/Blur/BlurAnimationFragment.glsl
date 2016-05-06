@@ -47,10 +47,15 @@ vec3 BlurredPixel (vec2 uv) {
 }
 
 void main() {
-    float percent = u_percent;
-    if (u_event == 1.f) {
-        percent = 1.f - u_percent;
+    vec4 texture_color = texture(s_tex, v_texCoords);
+    if (texture_color.a < 0.1) {
+        discard;
+    } else {
+        float percent = u_percent;
+        if (u_event == 1.f) {
+            percent = 1.f - u_percent;
+        }
+        out_color = vec4(BlurredPixel(v_texCoords), percent);
     }
-    out_color = vec4(BlurredPixel(v_texCoords), percent);
 }
 

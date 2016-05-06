@@ -17,5 +17,10 @@ void main() {
     }
     float alpha = min(1.f, percent);
     out_color = texture(s_tex, v_texCoords);
-    out_color.a = alpha;
+    
+    if (out_color.a < 0.1) {
+        discard;
+    } else {
+        out_color.a = alpha;
+    }
 }

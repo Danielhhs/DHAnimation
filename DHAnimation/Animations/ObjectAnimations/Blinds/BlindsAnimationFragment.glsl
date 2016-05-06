@@ -10,4 +10,8 @@ layout (location = 0) out vec4 out_color;
 
 void main() {
     out_color = texture(s_tex, v_texCoords);
+    
+    if (out_color.a < 0.1) {
+        discard;
+    }
 }

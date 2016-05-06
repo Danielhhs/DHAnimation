@@ -116,12 +116,12 @@
     CGFloat screenScale = [UIScreen mainScreen].scale;
     CGFloat textureWidth = rect.size.width * screenScale;
     CGFloat textureHeight = rect.size.height * screenScale;
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, screenScale);
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, screenScale);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextClearRect(context, view.bounds);
     [view.layer renderInContext:context];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
+    UIGraphicsEndImageContext();
     [self drawRect:rect onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
         if (flipHorizontal) {
             CGContextTranslateCTM(context, textureWidth, 0);
@@ -142,10 +142,11 @@
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, (size_t)textureWidth, (size_t)textureHeight, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
-    CGContextClearRect(context, rect);
+//    CGContextClearRect(context, rect);
     CGContextSaveGState(context);
     drawBlock(context);
     CGContextRestoreGState(context);
+    UIImage *image = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
     
     GLubyte *data = CGBitmapContextGetData(context);
     glActiveTexture(GL_TEXTURE0);
