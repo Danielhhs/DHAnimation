@@ -142,11 +142,9 @@
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, (size_t)textureWidth, (size_t)textureHeight, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
-//    CGContextClearRect(context, rect);
     CGContextSaveGState(context);
     drawBlock(context);
     CGContextRestoreGState(context);
-    UIImage *image = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
     
     GLubyte *data = CGBitmapContextGetData(context);
     glActiveTexture(GL_TEXTURE0);
