@@ -87,4 +87,5 @@ typedef NS_ENUM(NSInteger, DHAllowedAnimationDirection) {
 + (NSString *) transitionNameForTransitionType:(DHTransitionType) transitionType;
 + (DHObjectAnimationType) animationTypeFromAnimationName:(NSString *)animationName;
 
++ (NSString *) resourcePathForFile:(NSString *)fileName ofType:(NSString *)fileType;
 @end

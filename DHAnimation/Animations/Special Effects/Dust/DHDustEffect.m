@@ -10,6 +10,7 @@
 #import "TextureHelper.h"
 #import "NSBKeyframeAnimationFunctions.h"
 #import <OpenGLES/ES3/glext.h>
+#import "DHConstants.h"
 typedef struct {
     GLKVector3 position;
     GLKVector3 targetPosition;
@@ -52,7 +53,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"dust.png";
+    return [DHConstants resourcePathForFile:@"dust" ofType:@"png"];
 }
 
 - (void) generateParticlesData

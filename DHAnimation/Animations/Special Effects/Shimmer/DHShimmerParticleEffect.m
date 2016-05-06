@@ -39,7 +39,7 @@ typedef struct {
         _event = event;
         self.vertexShaderFileName = @"ShimmerVertex.glsl";
         self.fragmentShaderFileName = @"ShimmerFragment.glsl";
-        self.particleImageName = @"star_white.png";
+        self.particleImageName = [DHConstants resourcePathForFile:@"star_white" ofType:@"png"];
         [self setupGL];
         [self setupTextures];
         [self generateParticlesData];

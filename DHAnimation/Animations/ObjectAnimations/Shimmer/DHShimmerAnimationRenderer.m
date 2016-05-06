@@ -13,6 +13,7 @@
 #import "DHShimmerBackgroundMesh.h"
 #import "DHShimmerParticleEffect.h"
 #import "DHShiningStarEffect.h"
+#import "DHConstants.h"
 
 @interface DHShimmerAnimationRenderer ()
 @property (nonatomic, strong) NSMutableData *shiningStarData;
@@ -96,7 +97,7 @@
 
 - (void) setupShiningStarEffect
 {
-    self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageNamed:@"ShiningStar.png"] targetView:self.targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
+    self.starEffect = [[DHShiningStarEffect alloc] initWithContext:self.context starImage:[UIImage imageWithContentsOfFile:[DHConstants resourcePathForFile:@"ShiningStar" ofType:@"png"]] targetView:self.targetView containerView:self.containerView duration:self.duration starsPerSecond:6 starLifeTime:0.382];
     self.starEffect.mvpMatrix = mvpMatrix;
 }
 

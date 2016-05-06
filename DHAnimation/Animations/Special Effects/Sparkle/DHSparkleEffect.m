@@ -48,7 +48,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"Sparkle2.png";
+    return [DHConstants resourcePathForFile:@"Sparkle2" ofType:@"png"];
 }
 
 - (void) setupExtraUniforms

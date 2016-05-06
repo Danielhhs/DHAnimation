@@ -260,4 +260,10 @@ static NSArray *builtOutAnimationsArray;
 {
     return [[DHConstants builtInAnimations] indexOfObject:animationName];
 }
+
++ (NSString *) resourcePathForFile:(NSString *)fileName ofType:(NSString *)fileType
+{
+    NSBundle *bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
+    return [bundle pathForResource:fileName ofType:fileType];
+}
 @end
