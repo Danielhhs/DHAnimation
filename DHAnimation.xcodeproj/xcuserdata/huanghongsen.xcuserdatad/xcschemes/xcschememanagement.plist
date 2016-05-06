@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>DHAnimationLibrary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>540AFA9A1CD34E5E004EF919</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54126F931CDAD6E7008AF45E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

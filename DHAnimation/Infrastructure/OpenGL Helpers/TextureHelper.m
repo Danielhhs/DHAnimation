@@ -118,6 +118,7 @@
     CGFloat textureHeight = rect.size.height * screenScale;
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, screenScale);
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClearRect(context, view.bounds);
     [view.layer renderInContext:context];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
@@ -137,9 +138,9 @@
 + (void) drawRect:(CGRect)rect onTexture:(GLuint)texture textureWidth:(CGFloat)textureWidth textureHeight:(CGFloat)textureHeight drawBlock:(void (^)(CGContextRef context))drawBlock
 {
     size_t bitsPerComponent = 8;
-    size_t bytesPerRow = textureWidth * 4;
+    size_t bytesPerRow = (size_t)textureWidth * 4;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(NULL, textureWidth, textureHeight, bitsPerComponent, bytesPerRow, colorSpace, 1);
+    CGContextRef context = CGBitmapContextCreate(NULL, (size_t)textureWidth, (size_t)textureHeight, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
     CGContextClearRect(context, rect);
     CGContextSaveGState(context);

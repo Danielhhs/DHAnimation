@@ -45,7 +45,6 @@
             break;
         case DHObjectAnimationTypeFirework:
         case DHObjectAnimationTypeDissolve:
-        case DHObjectAnimationTypeConfetti:
         case DHObjectAnimationTypeShimmer:
         case DHObjectAnimationTypePivot:
         case DHObjectAnimationTypeSkid:
@@ -68,6 +67,16 @@
         }
         case DHObjectAnimationTypeSparkle: {
             settings.timingFunction = DHTimingFunctionLinear;
+        }
+            
+        case DHObjectAnimationTypeConfetti: {
+            if (event == DHAnimationEventBuiltIn) {
+                settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            } else {
+                settings.timingFunction = DHTimingFunctionEaseInCubic;
+            }
+            settings.columnCount = 30;
+            settings.rowCount = 30;
         }
             break;
     }
