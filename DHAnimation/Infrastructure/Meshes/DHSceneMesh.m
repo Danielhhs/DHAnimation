@@ -31,7 +31,7 @@
         _columnCount = columnCount;
         _rowCount = rowCount;
         
-        [self generateVerticesAndIndicesForView:view columnCount:columnCount rowCount:rowCount columnMajored:columnMajored rotateTexture:rotateTexture];
+        [self generateVerticesAndIndicesForView:view containerView:containerView columnCount:columnCount rowCount:rowCount columnMajored:columnMajored rotateTexture:rotateTexture];
         
         _verticesData = [NSData dataWithBytes:vertices length:self.verticesSize];
         _indicesData = [NSData dataWithBytes:indices length:self.indicesSize];
@@ -122,7 +122,7 @@
 }
 
 #pragma mark - Generate vertices and indices
-- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture
+- (void) generateVerticesAndIndicesForView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture
 {
     
 }

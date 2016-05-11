@@ -9,7 +9,7 @@
 #import "DHConsecutiveTextureSceneMesh.h"
 
 @implementation DHConsecutiveTextureSceneMesh
-- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture
+- (void) generateVerticesAndIndicesForView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture
 {
     self.vertexCount = (rowCount + 1) * (columnCount + 1);
     self.indexCount = rowCount * columnCount * 6;

@@ -9,7 +9,7 @@
 #import "DHSplitTextureSceneMesh.h"
 
 @implementation DHSplitTextureSceneMesh
-- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture
+- (void) generateVerticesAndIndicesForView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture
 {
     self.vertexCount = columnCount * rowCount * 4;
     self.indexCount = columnCount * rowCount * 6;
@@ -23,6 +23,21 @@
         [self generateColumnMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount];
     } else {
         [self generateRowMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount];
+    }
+    
+    if (rotateTexture == NO) {
+        float angle = atan(view.transform.c / view.transform.a);
+        GLKMatrix4 transformMatrix = GLKMatrix4MakeTranslation(-(self.originX + view.bounds.size.width / 2), -(containerView.frame.size.height - CGRectGetMaxY(view.frame) + view.bounds.size.height / 2), 0);
+        GLKMatrix4 rotationMatrix = GLKMatrix4MakeRotation(angle, 0, 0, 1);
+        transformMatrix = GLKMatrix4Multiply(rotationMatrix, transformMatrix);
+        GLKMatrix4 translateBackMatrix = GLKMatrix4MakeTranslation(self.originX + view.frame.size.width / 2, containerView.frame.size.height - CGRectGetMaxY(view.frame) + view.frame.size.height / 2, 0);
+        transformMatrix = GLKMatrix4Multiply(translateBackMatrix, transformMatrix);
+        
+        for (int i = 0; i < self.vertexCount; i++) {
+            GLKVector4 rotatedPos = GLKVector4Make(vertices[i].position.x, vertices[i].position.y, vertices[i].position.z, 1);
+            rotatedPos = GLKMatrix4MultiplyVector4(transformMatrix, rotatedPos);
+            vertices[i].position = GLKVector3Make(rotatedPos.x, rotatedPos.y, rotatedPos.z );
+        }
     }
     
     int index = 0;

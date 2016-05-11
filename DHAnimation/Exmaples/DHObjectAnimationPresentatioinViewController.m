@@ -197,7 +197,7 @@
 {
     if (!_fromView) {
         _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
-//        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 4);
+        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
     }
@@ -217,7 +217,6 @@
 {
     int randomNumber = arc4random() % 10;
     return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
-//    return [UIImage imageNamed:@"image.png"];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
