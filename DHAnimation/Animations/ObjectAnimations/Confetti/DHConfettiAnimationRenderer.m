@@ -27,7 +27,7 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
 }
 
 - (void) drawFrame

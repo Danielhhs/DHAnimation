@@ -186,8 +186,8 @@
 
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
-    self.srcMesh = [[SceneMesh alloc] initWithView:fromView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES];
-    self.dstMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES];
+    self.srcMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES rotateTexture:YES];
+    self.dstMesh = [DHSceneMeshFactory sceneMeshForView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES rotateTexture:YES];
 }
 
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView

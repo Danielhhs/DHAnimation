@@ -47,7 +47,7 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.targetView.frame.size.width rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:self.targetView.frame.size.width rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 - (void) drawFrame

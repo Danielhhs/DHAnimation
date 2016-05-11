@@ -14,7 +14,7 @@
     GLuint backgroundProgram;
     GLuint backgroundMVPLoc, backgroundSamplerLoc, backgroundPercentLoc;
 }
-@property (nonatomic, strong) SceneMesh *backgroundMesh;
+@property (nonatomic, strong) DHSceneMesh *backgroundMesh;
 @end
 
 @implementation DHFlameAnimationRenderer
@@ -68,8 +68,8 @@
 - (void) setupMeshes
 {
     UIView *tmpView = [[UIView alloc] initWithFrame:CGRectInset(self.targetView.frame, -self.targetView.frame.size.width * 0.2, -self.targetView.frame.size.height * 0.2)];
-    self.mesh = [[SceneMesh alloc] initWithView:tmpView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
-    self.backgroundMesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:tmpView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    self.backgroundMesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 - (NSArray *) allowedDirections

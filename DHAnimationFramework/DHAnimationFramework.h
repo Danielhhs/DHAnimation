@@ -60,7 +60,7 @@
 #import "DHTransitionSettings.h"
 #import "DHConstants.h"
 #import "DHParticleEffect.h"
-#import "SceneMesh.h"
+#import "DHSceneMesh.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
@@ -72,7 +72,6 @@
 #import "DHCubeDestinationMesh.h"
 #import "DHCubeMesh.h"
 #import "DHCubeSourceMesh.h"
-#import "DHDoorWaySourceMesh.h"
 #import "DHMosaicBackMesh.h"
 #import "DHMosaicMesh.h"
 #import "DHShredderConfettiSceneMesh.h"
@@ -85,6 +84,9 @@
 #import "DHShimmerParticleEffect.h"
 #import "DHShiningStarEffect.h"
 #import "DHSparkleEffect.h"
+#import "DHConsecutiveTextureSceneMesh.h"
+#import "DHSplitTextureSceneMesh.h"
+#import "DHSceneMeshFactory.h"
 //! Project version number for DHAnimationFramework.
 FOUNDATION_EXPORT double DHAnimationFrameworkVersionNumber;
 

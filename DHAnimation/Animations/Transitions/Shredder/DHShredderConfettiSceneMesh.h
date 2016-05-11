@@ -6,9 +6,9 @@
 //  Copyright © 2015 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHSceneMesh.h"
 
-@interface DHShredderConfettiSceneMesh : SceneMesh
+@interface DHShredderConfettiSceneMesh : DHSceneMesh
 - (instancetype) initWithScreenWidth:(size_t)screenWidth
                         screenHeight:(size_t)screenHeight
                       numberOfPieces:(NSInteger)numberOfPieces

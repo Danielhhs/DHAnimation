@@ -19,7 +19,7 @@ typedef struct {
     BOOL rotating;
 }SceneMeshVertex;
 
-@interface SceneMesh : NSObject {
+@interface DHSceneMesh : NSObject {
     GLuint vertexBuffer;
     GLuint indexBuffer;
     SceneMeshVertex *vertices;
@@ -33,9 +33,11 @@ typedef struct {
 @property (nonatomic) NSInteger indicesSize;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) NSInteger rowCount;
+@property (nonatomic) CGFloat originX;
+@property (nonatomic) CGFloat originY;
 
-- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored;
-- (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored;
+- (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture;
+- (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture;
 - (instancetype) initWithVerticesData:(NSData *)verticesData indicesData:(NSData *)indicesData;
 - (void) prepareToDraw;
 - (void) drawIndicesWithMode:(GLenum)mode startIndex:(GLuint)index indicesCount:(size_t)indicesCount;
@@ -47,4 +49,9 @@ typedef struct {
 - (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
 
 - (void) printVertices;
+
+- (void) generateVerticesAndIndicesForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture;
+
+
+
 @end

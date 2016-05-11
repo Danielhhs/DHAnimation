@@ -8,7 +8,7 @@
 
 #import <GLKit/GLKit.h>
 #import "DHTransitionSettings.h"
-#import "SceneMesh.h"
+#import "DHSceneMeshFactory.h"
 
 @interface DHTransitionRenderer : NSObject<GLKViewDelegate> {
     GLuint srcProgram, dstProgram;
@@ -79,8 +79,8 @@
 - (void) setupDrawingContext;
 
 //Override the getters of these properties to provide your meshes to be used for tear down GL;
-@property (nonatomic, strong) SceneMesh * srcMesh;
-@property (nonatomic, strong) SceneMesh * dstMesh;
+@property (nonatomic, strong) DHSceneMesh * srcMesh;
+@property (nonatomic, strong) DHSceneMesh * dstMesh;
 
 //Override this method to prepare for drawing, like enabling Culling
 - (void) prepareToDrawDestinationFace;

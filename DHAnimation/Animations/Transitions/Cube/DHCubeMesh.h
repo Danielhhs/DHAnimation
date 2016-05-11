@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHSceneMesh.h"
 #import "DHConstants.h"
-@interface DHCubeMesh : SceneMesh
+@interface DHCubeMesh : DHSceneMesh
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount transitionDirection:(DHAnimationDirection)direction;
 

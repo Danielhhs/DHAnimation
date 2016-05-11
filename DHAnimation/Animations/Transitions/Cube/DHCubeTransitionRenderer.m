@@ -103,12 +103,12 @@
     dstFaceEdgeWidthLoc = glGetUniformLocation(dstProgram, "u_edgeWidth");
 }
 
-- (SceneMesh *) srcMesh
+- (DHSceneMesh *) srcMesh
 {
     return self.sourceMesh;
 }
 
-- (SceneMesh *) dstMesh
+- (DHSceneMesh *) dstMesh
 {
     return self.destinationMesh;
 }

@@ -113,16 +113,16 @@
     for (int i = 0; i < self.gridCount; i++) {
         [self.gridIndexNotRotating addObject:@(i)];
     }
-    self.sourceMesh = [[DHMosaicMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
-    self.destinationMesh = [[DHMosaicBackMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.sourceMesh = [[DHMosaicMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    self.destinationMesh = [[DHMosaicBackMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
-- (SceneMesh *) srcMesh
+- (DHSceneMesh *) srcMesh
 {
     return self.sourceMesh;
 }
 
-- (SceneMesh *) dstMesh
+- (DHSceneMesh *) dstMesh
 {
     return self.destinationMesh;
 }

@@ -32,7 +32,7 @@
     if (self.direction == DHAnimationDirectionBottomToTop || self.direction == DHAnimationDirectionTopToBottom) {
         columMajored = NO;
     }
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:columMajored];
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:columMajored rotateTexture:NO];
 }
 
 - (void) drawFrame

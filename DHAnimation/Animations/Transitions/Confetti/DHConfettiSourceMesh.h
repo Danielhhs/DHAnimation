@@ -6,10 +6,10 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHSplitTextureSceneMesh.h"
 
 #define CONFETTI_DEPTH -1000
 
-@interface DHConfettiSourceMesh : SceneMesh
+@interface DHConfettiSourceMesh : DHSplitTextureSceneMesh
 
 @end

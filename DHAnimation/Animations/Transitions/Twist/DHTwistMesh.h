@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHConsecutiveTextureSceneMesh.h"
 #import "DHConstants.h"
-@interface DHTwistMesh : SceneMesh
+@interface DHTwistMesh : DHConsecutiveTextureSceneMesh
 
 - (void) updateWithRotation:(CGFloat)rotation transition:(CGFloat)transition direction:(DHAnimationDirection)direction;
 

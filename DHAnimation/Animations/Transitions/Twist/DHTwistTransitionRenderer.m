@@ -110,12 +110,12 @@
     dstCenterPositionLoc = glGetUniformLocation(dstProgram, "u_centerPosition");
 }
 
-- (SceneMesh *) srcMesh
+- (DHSceneMesh *) srcMesh
 {
     return self.sourceMesh;
 }
 
-- (SceneMesh *) dstMesh
+- (DHSceneMesh *) dstMesh
 {
     return self.destinationMesh;
 }
@@ -130,8 +130,8 @@
         columnCount = 1;
         rowCount = fromView.bounds.size.height;
     }
-    self.sourceMesh = [[DHTwistMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
-    self.destinationMesh = [[DHTwistMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored];
+    self.sourceMesh = [[DHTwistMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored rotateTexture:YES];
+    self.destinationMesh = [[DHTwistMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored rotateTexture:YES];
 }
 
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView

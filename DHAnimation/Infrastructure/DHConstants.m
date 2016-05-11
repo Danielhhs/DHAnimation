@@ -263,7 +263,8 @@ static NSArray *builtOutAnimationsArray;
 
 + (NSString *) resourcePathForFile:(NSString *)fileName ofType:(NSString *)fileType
 {
-    NSBundle *bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
+//    NSBundle *bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
+    NSBundle *bundle = [NSBundle mainBundle];
     return [bundle pathForResource:fileName ofType:fileType];
 }
 @end

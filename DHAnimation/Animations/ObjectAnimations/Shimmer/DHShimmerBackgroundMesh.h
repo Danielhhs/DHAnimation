@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHSplitTextureSceneMesh.h"
 #import "DHConstants.h"
-@interface DHShimmerBackgroundMesh : SceneMesh
+@interface DHShimmerBackgroundMesh : DHSplitTextureSceneMesh
 
 @property (nonatomic, strong) NSArray *offsetData;
 

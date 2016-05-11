@@ -7,7 +7,7 @@
 //
 
 #import "DHRotationAnimationRenderer.h"
-#import "SceneMesh.h"
+#import "DHSceneMesh.h"
 @interface DHRotationAnimationRenderer() {
     GLuint targetCenterLoc, rotationRadiusLoc, targetWidthLoc;
 }
@@ -35,7 +35,7 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 - (void) drawFrame

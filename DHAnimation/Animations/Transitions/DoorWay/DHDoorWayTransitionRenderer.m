@@ -9,14 +9,13 @@
 #import "DHDoorWayTransitionRenderer.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
-#import "DHDoorWaySourceMesh.h"
 #import "DHTimingFunctionHelper.h"
 
 @interface DHDoorWayTransitionRenderer() {
     GLuint srcColumnWidthLoc;
 }
-@property (nonatomic, strong) DHDoorWaySourceMesh *sourceMesh;
-@property (nonatomic, strong) SceneMesh *destinamtionMesh;
+@property (nonatomic, strong) DHSceneMesh *sourceMesh;
+@property (nonatomic, strong) DHSceneMesh *destinamtionMesh;
 @end
 
 @implementation DHDoorWayTransitionRenderer
@@ -36,12 +35,12 @@
 }
 
 #pragma mark - Override
-- (SceneMesh *) srcMesh
+- (DHSceneMesh *) srcMesh
 {
     return self.sourceMesh;
 }
 
-- (SceneMesh *) dstMesh
+- (DHSceneMesh *) dstMesh
 {
     return self.destinamtionMesh;
 }
@@ -55,8 +54,8 @@
 
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
-    self.sourceMesh = [[DHDoorWaySourceMesh alloc] initWithView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
-    self.destinamtionMesh = [[SceneMesh alloc] initWithView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.sourceMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    self.destinamtionMesh = [DHSceneMeshFactory sceneMeshForView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 - (void)setupUniformsForSourceProgram

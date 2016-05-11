@@ -42,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     self.settings = [DHObjectAnimationSettings defaultSettings];
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
@@ -216,8 +216,8 @@
 - (UIImage *)randomImage
 {
     int randomNumber = arc4random() % 10;
-//    return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
-    return [UIImage imageNamed:@"image.png"];
+    return [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", randomNumber]];
+//    return [UIImage imageNamed:@"image.png"];
 }
 
 - (void) viewWillDisappear:(BOOL)animated

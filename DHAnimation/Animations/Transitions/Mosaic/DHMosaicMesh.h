@@ -6,9 +6,9 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "SceneMesh.h"
+#import "DHSplitTextureSceneMesh.h"
 
-@interface DHMosaicMesh : SceneMesh
+@interface DHMosaicMesh : DHSplitTextureSceneMesh
 
 - (void) updateWithIndicesItemsStartedRotation:(NSArray *)items incrementedRotation:(CGFloat)increment;
 

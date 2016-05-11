@@ -8,7 +8,7 @@
 
 #import <GLKit/GLKit.h>
 #import "DHObjectAnimationSettings.h"
-#import "SceneMesh.h"
+#import "DHSceneMeshFactory.h"
 @interface DHObjectAnimationRenderer : NSObject <GLKViewDelegate> {
     GLKMatrix4 mvpMatrix;
     GLuint program;
@@ -34,7 +34,7 @@
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic, strong) NSString *vertexShaderName;
 @property (nonatomic, strong) NSString *fragmentShaderName;
-@property (nonatomic, strong) SceneMesh *mesh;
+@property (nonatomic, strong) DHSceneMesh *mesh;
 
 //Override this method to set up more uniform locations; Default implementation will set up unfiorms: u_mvpMatrix, s_tex, u_percent, u_direction, u_event; If you need these uniforms, just call super's implementation;
 - (void) setupGL;

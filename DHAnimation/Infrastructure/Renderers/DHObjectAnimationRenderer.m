@@ -14,7 +14,7 @@
     GLuint backgroundMVPLoc, backgroundSamplerLoc;
     GLuint backgroundTexture;
 }
-@property (nonatomic, strong) SceneMesh *backgroundMesh;
+@property (nonatomic, strong) DHSceneMesh *backgroundMesh;
 @end
 
 @implementation DHObjectAnimationRenderer
@@ -191,7 +191,7 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[SceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 - (void) setupEffects
@@ -201,7 +201,7 @@
 
 - (void) setupBackground
 {
-    self.backgroundMesh = [[SceneMesh alloc] initWithView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES];
+    self.backgroundMesh = [DHSceneMeshFactory sceneMeshForView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
     backgroundTexture = [TextureHelper setupTextureWithView:self.containerView];
 }
 
