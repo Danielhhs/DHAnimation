@@ -23,13 +23,12 @@
     return settings;
 }
 
-+ (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event
++ (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view
 {
     DHObjectAnimationSettings *settings = [DHObjectAnimationSettings defaultSettings];
     switch (animationType) {
         case DHObjectAnimationTypeScaleBig:
         case DHObjectAnimationTypeRotation:
-        case DHObjectAnimationTypeBlinds:
         case DHObjectAnimationTypeTwirl:
         case DHObjectAnimationTypeScale:
         case DHObjectAnimationTypeFlame:
@@ -43,9 +42,19 @@
             }
         }
             break;
+            
+        case DHObjectAnimationTypeBlinds:{
+            if (event == DHAnimationEventBuiltIn) {
+                settings.timingFunction = DHTimingFunctionEaseOutBack;
+            } else {
+                settings.timingFunction = DHTimingFunctionEaseInBack;
+            }
+            settings.rowCount = 5;
+            settings.columnCount = 5;
+        }
+            break;
         case DHObjectAnimationTypeFirework:
         case DHObjectAnimationTypeDissolve:
-        case DHObjectAnimationTypeShimmer:
         case DHObjectAnimationTypePivot:
         case DHObjectAnimationTypeSkid:
         case DHObjectAnimationTypeBlur:{
@@ -54,6 +63,17 @@
             } else {
                 settings.timingFunction = DHTimingFunctionEaseInCubic;
             }
+        }
+            break;
+            
+        case DHObjectAnimationTypeShimmer: {
+            if (event == DHAnimationEventBuiltIn) {
+                settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            } else {
+                settings.timingFunction = DHTimingFunctionEaseInCubic;
+            }
+            settings.columnCount = 20;
+            settings.rowCount = settings.columnCount * view.bounds.size.height / view.bounds.size.width;
         }
             break;
         case DHObjectAnimationTypeDrop: {

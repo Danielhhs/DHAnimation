@@ -23,5 +23,5 @@
 @property (nonatomic) NSInteger columnCount;
 
 + (DHObjectAnimationSettings *)defaultSettings;
-+ (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event;
++ (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view;
 @end
