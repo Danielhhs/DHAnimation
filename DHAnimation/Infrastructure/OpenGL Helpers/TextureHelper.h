@@ -12,6 +12,8 @@
 
 + (GLuint) setupTextureWithView:(UIView *)view;
 
++ (GLuint) setupTextureWithView:(UIView *)view rotate:(BOOL)rotate;
+
 + (GLuint) setupTextureWithView:(UIView *)view flipHorizontal:(BOOL)flipHorizontal;
 
 + (GLuint) setupTextureWithView:(UIView *)view flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical;
@@ -21,6 +23,8 @@
 + (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal;
 
 + (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical;
+
++ (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical rotate:(BOOL)rotate;
 
 + (GLuint) setupTextureWithImage:(UIImage *)image;
 

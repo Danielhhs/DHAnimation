@@ -16,6 +16,11 @@
     return [TextureHelper setupTextureWithView:view inRect:view.bounds];
 }
 
++ (GLuint) setupTextureWithView:(UIView *)view rotate:(BOOL)rotate
+{
+    return [TextureHelper setupTextureWithView:view inRect:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height) flipHorizontal:NO flipVertical:NO rotate:rotate];
+}
+
 + (GLuint) setupTextureWithView:(UIView *)view flipHorizontal:(BOOL)flipHorizontal
 {
     return [TextureHelper setupTextureWithView:view inRect:view.bounds flipHorizontal:flipHorizontal];
@@ -38,9 +43,14 @@
 
 + (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
 {
+    return [TextureHelper setupTextureWithView:view inRect:rect flipHorizontal:flipHorizontal flipVertical:flipVertical rotate:NO];
+}
+
++ (GLuint) setupTextureWithView:(UIView *)view inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical rotate:(BOOL)rotate
+{
     GLuint texture = [TextureHelper generateTexture];
     
-    [TextureHelper drawRect:rect inView:view onTexture:texture flipHorizontal:flipHorizontal flipVertical:flipVertical];
+    [TextureHelper drawRect:rect inView:view onTexture:texture flipHorizontal:flipHorizontal flipVertical:flipVertical rotate:rotate];
     
     return texture;
 }
@@ -73,6 +83,7 @@
 
 + (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
 {
+    
     GLuint texture = [TextureHelper generateTexture];
     [TextureHelper drawRect:rect inImage:image onTexture:texture flipHorizontal:flipHorizontal flipVertical:flipVertical];
     return texture;
@@ -111,14 +122,21 @@
     }];
 }
 
-+ (void) drawRect:(CGRect)rect inView:(UIView *)view onTexture:(GLuint)texture flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical
++ (void) drawRect:(CGRect)rect inView:(UIView *)view onTexture:(GLuint)texture flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical rotate:(BOOL)rotate
 {
     CGFloat screenScale = [UIScreen mainScreen].scale;
     CGFloat textureWidth = rect.size.width * screenScale;
     CGFloat textureHeight = rect.size.height * screenScale;
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, screenScale);
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, screenScale);
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    if (rotate) {
+        CGFloat angle = atan(-view.transform.c / view.transform.a);
+        CGContextTranslateCTM(context, view.bounds.size.height * sin(angle), 0);
+        CGContextRotateCTM(context, angle);
+    }
     [view.layer renderInContext:context];
+    CGContextRestoreGState(context);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
     UIGraphicsEndImageContext();

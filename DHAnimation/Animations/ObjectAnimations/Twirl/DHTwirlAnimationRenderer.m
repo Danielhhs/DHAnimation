@@ -7,6 +7,7 @@
 //
 
 #import "DHTwirlAnimationRenderer.h"
+#import "TextureHelper.h"
 
 @interface DHTwirlAnimationRenderer() {
     GLuint centerLoc, resolutionLoc;
@@ -43,6 +44,16 @@
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
     [self.mesh drawEntireMesh];
+}
+
+- (void) setupMeshes
+{
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+}
+
+- (void) setupTextures
+{
+    texture = [TextureHelper setupTextureWithView:self.targetView rotate:YES];
 }
 
 

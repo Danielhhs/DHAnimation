@@ -20,9 +20,9 @@
     indices = malloc(self.indicesSize);
     
     if (columnMajor) {
-        [self generateColumnMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount];
+        [self generateColumnMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount rotateTexture:rotateTexture];
     } else {
-        [self generateRowMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount];
+        [self generateRowMajoredVerticesForSplitTextureForView:view columnCount:columnCount rowCount:rowCount rotateTexture:rotateTexture];
     }
     
     if (rotateTexture == NO) {
@@ -55,8 +55,12 @@
 }
 
 
-- (void) generateColumnMajoredVerticesForSplitTextureForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
+- (void) generateColumnMajoredVerticesForSplitTextureForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount rotateTexture:(BOOL)rotateTexture
 {
+    CGRect rect = view.bounds;
+    if (rotateTexture) {
+        rect = view.frame;
+    }
     NSInteger index = 0;
     CGFloat ux = 1.f / columnCount;
     CGFloat uy = 1.f / rowCount;
@@ -65,16 +69,16 @@
         for (int y = 0; y < rowCount; y++) {
             CGFloat vy = uy * y;
             index = (x * rowCount + y) * 4;
-            vertices[index + 0].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
+            vertices[index + 0].position = GLKVector3Make(self.originX + vx * rect.size.width, self.originY + vy * rect.size.height, 0);
             vertices[index + 0].texCoords = GLKVector2Make(vx, 1 - vy);
             
-            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
+            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * rect.size.width, self.originY + vy * rect.size.height, 0);
             vertices[index + 1].texCoords = GLKVector2Make(vx + ux, 1 - vy);
             
-            vertices[index + 2].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 2].position = GLKVector3Make(self.originX + vx * rect.size.width, self.originY + (vy + uy) * rect.size.height, 0);
             vertices[index + 2].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
             
-            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * rect.size.width, self.originY + (vy + uy) * rect.size.height, 0);
             vertices[index + 3].texCoords = GLKVector2Make(vx + ux, 1 - (vy + uy));
             
             vertices[index + 0].columnStartPosition = vertices[index + 0].position;
@@ -92,8 +96,12 @@
 }
 
 
-- (void) generateRowMajoredVerticesForSplitTextureForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount
+- (void) generateRowMajoredVerticesForSplitTextureForView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount rotateTexture:(BOOL)rotateTexture
 {
+    CGRect rect = view.bounds;
+    if (rotateTexture) {
+        rect = view.frame;
+    }
     NSInteger index = 0;
     CGFloat ux = 1.f / columnCount;
     CGFloat uy = 1.f / rowCount;
@@ -102,16 +110,16 @@
         for (int x = 0; x < columnCount; x++) {
             CGFloat vx = ux * x;
             index = (y * columnCount + x) * 4;
-            vertices[index + 0].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
+            vertices[index + 0].position = GLKVector3Make(self.originX + vx * rect.size.width, self.originY + vy * rect.size.height, 0);
             vertices[index + 0].texCoords = GLKVector2Make(vx, 1 - vy);
             
-            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + vy * view.bounds.size.height, 0);
+            vertices[index + 1].position = GLKVector3Make(self.originX + (vx + ux) * rect.size.width, self.originY + vy * rect.size.height, 0);
             vertices[index + 1].texCoords = GLKVector2Make(vx + ux, 1 - vy);
             
-            vertices[index + 2].position = GLKVector3Make(self.originX + vx * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 2].position = GLKVector3Make(self.originX + vx * rect.size.width, self.originY + (vy + uy) * rect.size.height, 0);
             vertices[index + 2].texCoords = GLKVector2Make(vx, 1 - (vy + uy));
             
-            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * view.bounds.size.width, self.originY + (vy + uy) * view.bounds.size.height, 0);
+            vertices[index + 3].position = GLKVector3Make(self.originX + (vx + ux) * rect.size.width, self.originY + (vy + uy) * rect.size.height, 0);
             vertices[index + 3].texCoords = GLKVector2Make(vx + ux, 1 - (vy + uy));
             
             vertices[index + 0].columnStartPosition = vertices[index + 0].position;

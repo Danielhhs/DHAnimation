@@ -8,6 +8,7 @@
 
 #import "DHConfettiAnimationRenderer.h"
 #import "DHConfettiSourceMesh.h"
+#import "TextureHelper.h"
 @interface DHConfettiAnimationRenderer() {
     GLuint columnWidthLoc, columnHeightLoc;
 }
@@ -27,7 +28,12 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
+    self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+}
+
+- (void) setupTextures
+{
+    texture = [TextureHelper setupTextureWithView:self.targetView rotate:YES];
 }
 
 - (void) drawFrame

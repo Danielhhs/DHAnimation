@@ -48,10 +48,15 @@
 - (void) setupTextures
 {
     if (self.event == DHAnimationEventBuiltIn) {
-        texture = [TextureHelper setupTextureWithView:self.targetView flipHorizontal:YES];
+        texture = [TextureHelper setupTextureWithView:self.targetView inRect:CGRectMake(0, 0, self.targetView.frame.size.width, self.targetView.frame.size.height) flipHorizontal:YES flipVertical:NO rotate:YES];
     } else {
-        texture = [TextureHelper setupTextureWithView:self.targetView];
+        texture = [TextureHelper setupTextureWithView:self.targetView rotate:YES];
     }
+}
+
+- (void) setupMeshes
+{
+    self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
 }
 
 
