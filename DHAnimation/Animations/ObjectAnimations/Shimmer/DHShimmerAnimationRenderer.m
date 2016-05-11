@@ -18,7 +18,7 @@
 @interface DHShimmerAnimationRenderer ()
 @property (nonatomic, strong) NSMutableData *shiningStarData;
 @property (nonatomic) NSInteger numberOfParticles;
-@property (nonatomic, strong) DHShimmerBackgroundMesh *backgroundMesh;
+@property (nonatomic, strong) DHShimmerBackgroundMesh *shimmerBackgroundMesh;
 @property (nonatomic, strong) DHShimmerParticleEffect *shimmerEffect;
 @property (nonatomic, strong) DHShiningStarEffect *starEffect;
 @property (nonatomic, strong) NSMutableArray *offsetData;
@@ -38,8 +38,8 @@
 
 - (void) setupMeshes
 {
-    self.backgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
-    [self.backgroundMesh updateWithOffsetData:self.offsetData event:self.event];
+    self.shimmerBackgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES];
+    [self.shimmerBackgroundMesh updateWithOffsetData:self.offsetData event:self.event];
 }
 
 - (void) setupTextures
@@ -58,13 +58,13 @@
 {
     glUseProgram(program);
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    [self.backgroundMesh prepareToDraw];
+    [self.shimmerBackgroundMesh prepareToDraw];
     glUniform1f(percentLoc, self.percent);
     glUniform1f(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1f(samplerLoc, 0);
-    [self.backgroundMesh drawEntireMesh];
+    [self.shimmerBackgroundMesh drawEntireMesh];
     
     [self.shimmerEffect draw];
     

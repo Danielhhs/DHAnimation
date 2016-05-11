@@ -25,7 +25,7 @@ void main() {
     
     out_color = texture(s_tex, texCoord);
     
-    if (out_color.r < 0.1 && out_color.g < 0.1 && out_color.b < 0.1) {
+    if ((out_color.r < 0.1 && out_color.g < 0.1 && out_color.b < 0.1) || out_color.a < 0.1) {
         discard;
     } else {
         out_color = whiteColor - (whiteColor - background_color) * percent;
