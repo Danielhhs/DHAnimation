@@ -177,7 +177,7 @@
 		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
 		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
 		546F51C21CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F51C11CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m */; };
-		546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F51C31CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h */; };
+		546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F51C31CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		546F51C61CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F51C41CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m */; };
 		546F51C71CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F51C41CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m */; };
 		546F51C81CE2DF3900DA3B0C /* DHSplitTextureSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F51C01CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
