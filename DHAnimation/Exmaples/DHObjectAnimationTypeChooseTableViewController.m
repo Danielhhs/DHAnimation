@@ -66,7 +66,7 @@
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = [DHConstants builtInAnimations];
+        _animations = [DHConstants allAnimations];
     }
     return _animations;
 }

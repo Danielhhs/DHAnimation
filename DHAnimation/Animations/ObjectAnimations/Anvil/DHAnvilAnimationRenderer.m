@@ -61,8 +61,8 @@
     self.effect.emissionWidth = self.targetView.frame.size.width;
     self.effect.numberOfEmissions = 10;
     self.effect.direction = DHDustEmissionDirectionHorizontal;
-    self.effect.dustWidth = self.targetView.frame.size.width / 2;
-    self.effect.emissionRadius = self.targetView.frame.size.width;
+    self.effect.dustWidth = self.targetView.frame.size.width;
+    self.effect.emissionRadius = self.targetView.frame.size.width * 1.5;
     self.effect.timingFuntion = DHTimingFunctionEaseOutExpo;
     self.effect.mvpMatrix = mvpMatrix;
     self.effect.startTime = self.fallTime;

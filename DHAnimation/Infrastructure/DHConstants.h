@@ -81,6 +81,7 @@ typedef NS_ENUM(NSInteger, DHAllowedAnimationDirection) {
 + (NSArray *) transitions;
 + (NSArray *) builtInAnimations;
 + (NSArray *) builtOutAnimations;
++ (NSArray *) allAnimations;
 
 + (DHTransitionRenderer *)transitionRendererForName:(NSString *)transitionName;
 + (DHObjectAnimationRenderer *) animationRendererForName:(NSString *)animationName;

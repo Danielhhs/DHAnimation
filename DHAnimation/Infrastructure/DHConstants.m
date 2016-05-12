@@ -51,6 +51,7 @@
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
 static NSArray *builtOutAnimationsArray;
+static NSArray *allAnimationsArray;
 @implementation DHConstants
 
 + (NSArray *) transitions
@@ -64,7 +65,7 @@ static NSArray *builtOutAnimationsArray;
 + (NSArray *) builtInAnimations
 {
     if (builtInAnimationsArray == nil) {
-        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion"];
+        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil"];
     }
     return builtInAnimationsArray;
 }
@@ -75,6 +76,14 @@ static NSArray *builtOutAnimationsArray;
         builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion"];
     }
     return builtOutAnimationsArray;
+}
+
++ (NSArray *) allAnimations
+{
+    if (allAnimationsArray == nil) {
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion"];
+    }
+    return allAnimationsArray;
 }
 
 + (DHObjectAnimationRenderer *) animationRendererForName:(NSString *)animationName
@@ -263,7 +272,7 @@ static NSArray *builtOutAnimationsArray;
 
 + (DHObjectAnimationType) animationTypeFromAnimationName:(NSString *)animationName
 {
-    return [[DHConstants builtInAnimations] indexOfObject:animationName];
+    return [[DHConstants allAnimations] indexOfObject:animationName];
 }
 
 + (NSString *) resourcePathForFile:(NSString *)fileName ofType:(NSString *)fileType

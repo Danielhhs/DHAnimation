@@ -34,6 +34,7 @@
         case DHObjectAnimationTypeFlame:
         case DHObjectAnimationTypeSpin:
         case DHObjectAnimationTypeFlip:
+        case DHObjectAnimationTypeFaceExplosion:
         case DHObjectAnimationTypePop: {
             if (event == DHAnimationEventBuiltIn) {
                 settings.timingFunction = DHTimingFunctionEaseOutBack;
