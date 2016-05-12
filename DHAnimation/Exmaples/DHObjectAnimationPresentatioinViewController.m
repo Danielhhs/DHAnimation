@@ -29,6 +29,7 @@
 #import "DHSkidAnimationRenderer.h"
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
+#import "DHFaceExplosionAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -159,6 +160,11 @@
         case DHObjectAnimationTypeAnvil: {
             self.renderer = [[DHAnvilAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
+        }
+            break;
+        case DHObjectAnimationTypeFaceExplosion: {
+            self.renderer = [[DHFaceExplosionAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
         default:
             break;

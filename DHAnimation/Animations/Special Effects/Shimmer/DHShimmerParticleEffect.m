@@ -131,6 +131,7 @@ typedef struct {
     self.particleData = [NSMutableData data];
     CGFloat cellWidth = self.targetView.bounds.size.width / self.columnCount;
     CGFloat cellHeight = self.targetView.bounds.size.height / self.rowCount;
+    
     for (int x = 0; x < self.columnCount; x++) {
         CGFloat xPos = self.targetView.frame.origin.x + cellWidth * x + cellWidth / 2;
         for (int y = 0; y < self.rowCount; y++) {
@@ -140,7 +141,8 @@ typedef struct {
             NSInteger index = x * self.rowCount + y;
             GLKVector3 offset = GLKVector3Make([self.offsetData[index] doubleValue], [self.offsetData[index + 1] doubleValue], [self.offsetData[index + 2] doubleValue]);
             if (self.event == DHAnimationEventBuiltIn) {
-                particle.targettingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
+                particle.targettingPosition = [self rotatedPosition:GLKVector3Make(xPos, yPos, 0)];
+                
                 particle.startingPosition = GLKVector3Add(particle.targettingPosition, offset);
                 particle.originalSize = [self randomPointSize] / 5;
                 if (x == 0 || x == self.columnCount - 1) {
@@ -149,7 +151,7 @@ typedef struct {
                     particle.targetSize = cellHeight * [UIScreen mainScreen].scale * 3 * [self randomScale];
                 }
             } else {
-                particle.startingPosition = GLKVector3Make(xPos, yPos, self.targetView.bounds.size.height / 2);
+                particle.startingPosition = [self rotatedPosition:GLKVector3Make(xPos, yPos, 0)];
                 particle.targettingPosition = GLKVector3Add(particle.startingPosition, offset);
                 particle.targetSize = [self randomPointSize] / 5;
                 if (x == 0 || x == self.columnCount - 1) {

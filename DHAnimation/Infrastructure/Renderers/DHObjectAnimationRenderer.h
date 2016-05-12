@@ -57,8 +57,9 @@
 //Any drawing code would have to be writtin here; Default implementation just set the default uniform values;
 - (void) drawFrame;
 
-
 - (void) setupMvpMatrixWithView:(UIView *)view;
+
+- (void) tearDownGL;
 
 #pragma mark - Animation APIs
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;

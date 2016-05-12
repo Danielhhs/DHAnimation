@@ -37,4 +37,5 @@
 - (void) generateParticlesData;
 - (instancetype) initWithContext:(EAGLContext *)context;
 - (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(GLfloat)percent;
+- (GLKVector3) rotatedPosition:(GLKVector3)position;
 @end

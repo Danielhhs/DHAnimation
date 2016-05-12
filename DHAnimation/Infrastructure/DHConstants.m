@@ -26,6 +26,7 @@
 #import "DHSkidAnimationRenderer.h"
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
+#import "DHFaceExplosionAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -63,7 +64,7 @@ static NSArray *builtOutAnimationsArray;
 + (NSArray *) builtInAnimations
 {
     if (builtInAnimationsArray == nil) {
-        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil"];
+        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion"];
     }
     return builtInAnimationsArray;
 }
@@ -71,7 +72,7 @@ static NSArray *builtOutAnimationsArray;
 + (NSArray *) builtOutAnimations
 {
     if (builtOutAnimationsArray == nil) {
-        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve"];
+        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion"];
     }
     return builtOutAnimationsArray;
 }
@@ -114,6 +115,8 @@ static NSArray *builtOutAnimationsArray;
         return [[DHFlameAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Anvil"]) {
         return [[DHAnvilAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Face Explosion"]) {
+        return [[DHFaceExplosionAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -205,6 +208,8 @@ static NSArray *builtOutAnimationsArray;
             return @"Rotation";
         case DHObjectAnimationTypeScaleBig:
             return @"Scale Big";
+        case DHObjectAnimationTypeFaceExplosion:
+            return @"Face Explosion";
     }
     return @"None";
 }

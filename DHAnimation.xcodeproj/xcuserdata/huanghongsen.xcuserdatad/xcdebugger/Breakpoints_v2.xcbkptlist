@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "483584339.313799"
+            timestampString = "484732181.620594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111">
+            startingLineNumber = "129"
+            endingLineNumber = "129">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "483584339.313799"
+            timestampString = "484732181.620594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "178"
+            endingLineNumber = "178">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Meshes/DHParticleEffect.m"
-            timestampString = "483584339.313799"
+            timestampString = "484732181.620594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167">
+            startingLineNumber = "185"
+            endingLineNumber = "185">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -581,22 +581,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Meshes/DHSplitTextureSceneMesh.m"
-            timestampString = "484640222.334381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-generateVerticesAndIndicesForView:containerView:columnCount:rowCount:columnMajored:rotateTexture:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Shimmer/DHShimmerBackgroundMesh.m"
             timestampString = "484643039.966881"
             startingColumnNumber = "9223372036854775807"
@@ -613,29 +597,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/TextureHelper.m"
-            timestampString = "484650751.098447"
+            filePath = "DHAnimation/Animations/Special Effects/FaceExplosion/DHFaceExplosionEffect.m"
+            timestampString = "484732010.526394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "+drawRect:inView:onTexture:flipHorizontal:flipVertical:rotate:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/OpenGL Helpers/TextureHelper.m"
-            timestampString = "484653461.960876"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "+drawRect:inView:onTexture:flipHorizontal:flipVertical:rotate:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-generateParticlesData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

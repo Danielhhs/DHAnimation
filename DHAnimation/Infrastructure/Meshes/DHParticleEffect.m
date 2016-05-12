@@ -66,4 +66,22 @@
     self.elapsedTime = elapsedTime;
 }
 
+- (GLKVector3) rotatedPosition:(GLKVector3)position
+{
+    CGFloat originX = self.targetView.frame.origin.x;
+    
+    UIView *view = self.targetView;
+    GLKMatrix4 transformMatrix = GLKMatrix4Identity;
+    if (!CGAffineTransformIsIdentity(view.transform)) {
+        float angle = atan(view.transform.c / view.transform.a);
+        transformMatrix = GLKMatrix4MakeTranslation(-(originX + view.bounds.size.width / 2), -(self.containerView.frame.size.height - CGRectGetMaxY(view.frame) + view.bounds.size.height / 2), 0);
+        GLKMatrix4 rotationMatrix = GLKMatrix4MakeRotation(angle, 0, 0, 1);
+        transformMatrix = GLKMatrix4Multiply(rotationMatrix, transformMatrix);
+        GLKMatrix4 translateBackMatrix = GLKMatrix4MakeTranslation(originX + view.frame.size.width / 2, self.containerView.frame.size.height - CGRectGetMaxY(view.frame) + view.frame.size.height / 2, 0);
+        transformMatrix = GLKMatrix4Multiply(translateBackMatrix, transformMatrix);
+    }
+    GLKVector4 rotatedPos = GLKVector4Make(position.x, position.y, position.z, 1);
+    rotatedPos = GLKMatrix4MultiplyVector4(transformMatrix, rotatedPos);
+    return GLKVector3Make(rotatedPos.x, rotatedPos.y, rotatedPos.z);
+}
 @end
