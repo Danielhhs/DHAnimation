@@ -59,9 +59,9 @@
     self.effect = [[DHDustEffect alloc] initWithContext:self.context];
     self.effect.emitPosition = GLKVector3Make(CGRectGetMinX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
     self.effect.emissionWidth = self.targetView.frame.size.width;
-    self.effect.numberOfEmissions = 10;
+    self.effect.numberOfEmissions = 15;
     self.effect.direction = DHDustEmissionDirectionHorizontal;
-    self.effect.dustWidth = self.targetView.frame.size.width;
+    self.effect.dustWidth = self.targetView.frame.size.width * 0.5;
     self.effect.emissionRadius = self.targetView.frame.size.width * 1.5;
     self.effect.timingFuntion = DHTimingFunctionEaseOutExpo;
     self.effect.mvpMatrix = mvpMatrix;

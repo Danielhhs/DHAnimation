@@ -60,7 +60,7 @@
     self.effect.emitPosition = GLKVector3Make(CGRectGetMaxX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), self.targetView.frame.size.height / 2);
     self.effect.direction = DHDustEmissionDirectionRight;
     self.effect.dustWidth = self.targetView.frame.size.width;
-    self.effect.emissionRadius = self.targetView.frame.size.width ;
+    self.effect.emissionRadius = self.targetView.frame.size.width * 1.5;
     self.effect.timingFuntion = DHTimingFunctionEaseOutCubic;
     self.effect.mvpMatrix = mvpMatrix;
     self.effect.startTime = self.duration * SLIDING_TIME_RATIO;

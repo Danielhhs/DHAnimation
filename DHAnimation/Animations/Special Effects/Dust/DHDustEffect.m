@@ -138,7 +138,7 @@ typedef struct {
     }
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionLeft emissionPosition:self.emitPosition];
     GLKVector3 rightEmitPosition = self.emitPosition;
-    rightEmitPosition.x += self.emissionWidth;
+    rightEmitPosition.x += self.targetView.frame.size.width / 2;
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionRight emissionPosition:rightEmitPosition];
     self.numberOfParticles = PARTICLE_COUNT * 2 + self.numberOfParticlesPerEmission * self.emissionWidth;
 }

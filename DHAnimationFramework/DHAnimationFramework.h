@@ -32,6 +32,7 @@
 #import "DHSkidAnimationRenderer.h"
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
+#import "DHFaceExplosionAnimationRenderer.h"
 
 //Transition Renderers
 #import "DHTransitionRenderer.h"
@@ -60,6 +61,7 @@
 #import "DHTransitionSettings.h"
 #import "DHConstants.h"
 #import "DHParticleEffect.h"
+#import "DHFaceExplosionEffect.h"
 #import "DHSceneMesh.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"

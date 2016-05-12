@@ -202,7 +202,7 @@
 - (UIImageView *)fromView
 {
     if (!_fromView) {
-        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
         _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
@@ -213,7 +213,7 @@
 - (UIImageView *) toView
 {
     if (!_toView) {
-        _toView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        _toView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
         _toView.image = [self randomImage];
     }
     return _toView;
