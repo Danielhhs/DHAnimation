@@ -132,7 +132,11 @@
     CGContextSaveGState(context);
     if (rotate) {
         CGFloat angle = atan(-view.transform.c / view.transform.a);
-        CGContextTranslateCTM(context, view.bounds.size.height * sin(angle), 0);
+        if (angle > -M_PI && angle < 0) {
+            CGContextTranslateCTM(context, 0, fabs(view.bounds.size.width * sin(angle)));
+        } else {
+            CGContextTranslateCTM(context, view.bounds.size.height * sin(angle), 0);
+        }
         CGContextRotateCTM(context, angle);
     }
     [view.layer renderInContext:context];
