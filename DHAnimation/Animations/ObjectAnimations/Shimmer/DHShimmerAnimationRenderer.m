@@ -115,4 +115,11 @@
 {
     return nil;
 }
+
+- (void) tearDownSpecificGLResources
+{
+    [self.shimmerEffect tearDownGL];
+    [self.starEffect tearDownGL];
+    [self.shimmerBackgroundMesh tearDown];
+}
 @end

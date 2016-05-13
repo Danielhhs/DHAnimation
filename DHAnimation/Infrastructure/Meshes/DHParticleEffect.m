@@ -9,6 +9,7 @@
 #import "DHParticleEffect.h"
 #import "OpenGLHelper.h"
 #import "TextureHelper.h"
+#import <OpenGLES/ES3/glext.h>
 @implementation DHParticleEffect
 
 - (instancetype) initWithContext:(EAGLContext *)context
@@ -83,5 +84,34 @@
     GLKVector4 rotatedPos = GLKVector4Make(position.x, position.y, position.z, 1);
     rotatedPos = GLKMatrix4MultiplyVector4(transformMatrix, rotatedPos);
     return GLKVector3Make(rotatedPos.x, rotatedPos.y, rotatedPos.z);
+}
+
+- (void) tearDownGL
+{
+    [EAGLContext setCurrentContext:self.context];
+    if (texture) {
+        glDeleteTextures(1, &texture);
+        texture = 0;
+    }
+    if (backgroundTexture) {
+        glDeleteTextures(1, &backgroundTexture);
+        backgroundTexture = 0;
+    }
+    if (vertexArray) {
+        glDeleteVertexArrays(1, &vertexArray);
+        vertexArray = 0;
+    }
+    if (vertexBuffer) {
+        glDeleteBuffers(1, &vertexBuffer);
+        vertexBuffer = 0;
+    }
+    if (program) {
+        glDeleteProgram(program);
+        program = 0;
+    }
+    
+    [EAGLContext setCurrentContext:nil];
+    self.context = nil;
+    
 }
 @end

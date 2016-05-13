@@ -77,4 +77,9 @@
 {
     return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight)];
 }
+
+- (void) tearDownSpecificGLResources
+{
+    [self.sparkleEffect tearDownGL];
+}
 @end

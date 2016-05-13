@@ -212,6 +212,24 @@
 
 - (void) tearDownGL
 {
+    [EAGLContext setCurrentContext:self.context];
+    [self.mesh tearDown];
+    [self.backgroundMesh tearDown];
+    if (texture) {
+        glDeleteTextures(1, &texture);
+        texture = 0;
+    }
+    if (program) {
+        glDeleteProgram(program);
+        program = 0;
+    }
+    [self tearDownSpecificGLResources];
+    [EAGLContext setCurrentContext:nil];
+    self.context = nil;
+}
+
+- (void) tearDownSpecificGLResources
+{
     
 }
 @end

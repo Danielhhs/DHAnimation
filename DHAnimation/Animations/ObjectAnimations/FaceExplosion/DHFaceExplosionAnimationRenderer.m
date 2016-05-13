@@ -54,4 +54,9 @@
 {
     [self.effect updateWithElapsedTime:self.elapsedTime percent:self.percent];
 }
+
+- (void) tearDownSpecificGLResources
+{
+    [self.effect tearDownGL];
+}
 @end

@@ -59,7 +59,8 @@
 
 - (void) setupMvpMatrixWithView:(UIView *)view;
 
-- (void) tearDownGL;
+//Override this method to release the resources retained by your own renderer, like meshes, vertex arrays and effects;
+- (void) tearDownSpecificGLResources;
 
 #pragma mark - Animation APIs
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView duration:(NSTimeInterval)duration;

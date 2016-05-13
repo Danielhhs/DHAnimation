@@ -79,4 +79,9 @@
 {
     return @[@(DHAllowedAnimationDirectionTop)];
 }
+
+- (void) tearDownSpecificGLResources
+{
+    [self.effect tearDownGL];
+}
 @end
