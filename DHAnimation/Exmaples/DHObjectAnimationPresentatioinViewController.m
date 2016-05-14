@@ -36,6 +36,7 @@
 @property (nonatomic, strong) DHObjectAnimationRenderer *renderer;
 @property (nonatomic, strong) UIImageView *fromView;
 @property (nonatomic, strong) UIImageView *toView;
+@property (nonatomic, strong) GLKView *animationView;
 @end
 
 @implementation DHObjectAnimationPresentatioinViewController
@@ -44,7 +45,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    self.animationView = [[GLKView alloc] initWithFrame:self.view.bounds context:[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]];
+    [self.view addSubview:self.animationView];
     self.settings = [DHObjectAnimationSettings defaultSettings];
+    self.settings.animationView = self.animationView;
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];

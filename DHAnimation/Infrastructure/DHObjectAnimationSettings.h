@@ -6,7 +6,7 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 #import "DHConstants.h"
 #import "DHTimingFunctionHelper.h" 
 
@@ -21,6 +21,8 @@
 @property (nonatomic, strong) void (^completion)(void);
 @property (nonatomic) NSInteger rowCount;
 @property (nonatomic) NSInteger columnCount;
+@property (nonatomic, weak) GLKView *animationView;
+@property (nonatomic, strong) UIImage *background;
 
 + (DHObjectAnimationSettings *)defaultSettings;
 + (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view;

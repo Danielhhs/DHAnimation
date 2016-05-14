@@ -281,4 +281,9 @@ static NSArray *allAnimationsArray;
 //    NSBundle *bundle = [NSBundle mainBundle];
     return [bundle pathForResource:fileName ofType:fileType];
 }
+
++ (DHTransitionType) transitionTypeForTransitionName:(NSString *)transitionName
+{
+    return [transitionsArray indexOfObject:transitionName];
+}
 @end
