@@ -19,6 +19,7 @@
 @property (nonatomic, weak) UIView *containerView;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) NSInteger rowCount;
+@property (nonatomic, strong) NSArray *allowedDirections;
 
 @property (nonatomic) BOOL partialAnimation;
 

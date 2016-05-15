@@ -286,4 +286,18 @@ static NSArray *allAnimationsArray;
 {
     return [transitionsArray indexOfObject:transitionName];
 }
+
++ (NSString *) animationDirectionNameForAnimationDirection:(DHAnimationDirection)direction
+{
+    switch (direction) {
+        case DHAnimationDirectionLeftToRight:
+            return @"Left to Right";
+        case DHAnimationDirectionRightToLeft:
+            return @"Right to Left";
+        case DHAnimationDirectionBottomToTop:
+            return @"Bottom to Top";
+        case DHAnimationDirectionTopToBottom:
+            return @"Top to Bottom";
+    }
+}
 @end

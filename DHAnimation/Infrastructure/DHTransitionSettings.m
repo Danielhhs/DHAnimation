@@ -19,4 +19,74 @@
     settings.rowCount = 1;
     return settings;
 }
+
++ (DHTransitionSettings *) defaultSettingsForTransitionType:(DHTransitionType)transitionType
+{
+    DHTransitionSettings *settings = [DHTransitionSettings defaultSettings];
+    switch (transitionType) {
+        case DHTransitionTypeCube: {
+            settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            settings.allowedDirections = [DHTransitionSettings allowedDirectionAll];
+        }
+            break;
+        case DHTransitionTypeDrop: {
+            settings.timingFunction = DHTimingFunctionEaseOutBounce;
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
+            break;
+        case DHTransitionTypeFlip: {
+            settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            settings.allowedDirections = [DHTransitionSettings allowedDirectionHorizontal];
+        }
+            break;
+        case DHTransitionTypeFlop: {
+            settings.timingFunction = DHTimingFunctionLinear;
+        }
+            break;
+        case DHTransitionTypeReflection:
+        case DHTransitionTypeClothLine:
+        case DHTransitionTypePush:
+        case DHTransitionTypeReveal:
+        case DHTransitionTypeGrid: {
+            settings.allowedDirections = [DHTransitionSettings allowedDirectionHorizontal];
+        }
+            break;
+        case DHTransitionTypeRipple:
+        case DHTransitionTypeMosaic:
+        case DHTransitionTypeSwitch:
+        case DHTransitionTypeResolvingDoor:
+        case DHTransitionTypeCover: {
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
+            break;
+        case DHTransitionTypeTwist: {
+            settings.allowedDirections = [DHTransitionSettings allowedDirectionAll];
+        }
+            break;
+        case DHTransitionTypeConfetti:
+        case DHTransitionTypeDoorWay: {
+            settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
+            break;
+        default:
+            break;
+    }
+    return settings;
+}
+
++ (NSArray *) allowedDirectionHorizontal
+{
+    return @[@(DHAnimationDirectionLeftToRight), @(DHAnimationDirectionRightToLeft)];
+}
+
++ (NSArray *) allowedDirectionVertical
+{
+    return @[@(DHAnimationDirectionTopToBottom), @(DHAnimationDirectionBottomToTop)];
+}
+
++ (NSArray *) allowedDirectionAll
+{
+    return @[@(DHAnimationDirectionLeftToRight), @(DHAnimationDirectionRightToLeft), @(DHAnimationDirectionTopToBottom), @(DHAnimationDirectionBottomToTop)];
+}
 @end
