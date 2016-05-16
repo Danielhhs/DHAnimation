@@ -33,6 +33,7 @@
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
 #import "DHFaceExplosionAnimationRenderer.h"
+#import "DHBackgroundRenderer.h"
 
 //Transition Renderers
 #import "DHTransitionRenderer.h"

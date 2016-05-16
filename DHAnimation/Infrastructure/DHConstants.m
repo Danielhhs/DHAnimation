@@ -253,7 +253,7 @@ static NSArray *allAnimationsArray;
         case DHTransitionTypeRipple:
             return @"Ripple";
         case DHTransitionTypeDoorWay:
-            return @"Doorway";
+            return @"DoorWay";
         case DHTransitionTypeConfetti:
             return @"Confetti";
         case DHTransitionTypeShredder:

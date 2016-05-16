@@ -12,6 +12,5 @@
 @interface DHFaceExplosionEffect : DHParticleEffect
 - (instancetype) initWithContext:(EAGLContext *)context targetView:(UIView *)view containerView:(UIView *)containerView;
 
-@property (nonatomic) NSTimeInterval duration;
 @property (nonatomic) NSTimeInterval startTime;
 @end
