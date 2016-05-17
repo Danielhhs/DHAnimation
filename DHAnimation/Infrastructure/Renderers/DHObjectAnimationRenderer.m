@@ -79,6 +79,7 @@
     self.rowCount = rowCount;
     self.containerViewSnapshot = background;
     
+    self.animationView = animationView;
     self.context = animationView.context;
     [self setupGL];
     [self setupMvpMatrixWithView:containerView];
@@ -89,19 +90,21 @@
     [self setupEffects];
     [self setupTextures];
     
-    self.animationView = animationView;
-    self.animationView.delegate = self;
-    
-    if (containerView != self.animationView) {
-        [containerView addSubview:self.animationView];
-    }
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings
 {
     [self startAnimationForView:settings.targetView inContainerView:settings.containerView background:settings.background animationView:settings.animationView duration:settings.duration columnCount:settings.columnCount rowCount:settings.rowCount event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
+}
+
+- (void) startAnimation{
+    self.animationView.delegate = self;
+    
+    if (self.containerView != self.animationView) {
+        [self.containerView addSubview:self.animationView];
+    }
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void) setupMvpMatrixWithView:(UIView *)view

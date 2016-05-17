@@ -79,4 +79,5 @@
 - (void) startAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) performAnimationWithSettings:(DHObjectAnimationSettings *)settings;
 
+- (void) startAnimation;
 @end
