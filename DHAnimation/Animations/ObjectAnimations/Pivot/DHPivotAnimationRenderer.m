@@ -50,6 +50,7 @@
 - (void) setupMeshes
 {
     self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.mesh printVertices];
 }
 
 - (void) setupTextures
@@ -74,7 +75,7 @@
     switch (self.direction) {
         case DHAnimationDirectionLeftToRight:
         case DHAnimationDirectionTopToBottom:
-            return self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame);
+            return CGRectGetMaxY(self.targetView.frame);
         case DHAnimationDirectionBottomToTop:
         case DHAnimationDirectionRightToLeft:
             return -self.containerView.frame.size.height + self.targetView.frame.origin.y;

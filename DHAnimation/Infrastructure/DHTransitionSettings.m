@@ -63,7 +63,11 @@
             settings.allowedDirections = [DHTransitionSettings allowedDirectionAll];
         }
             break;
-        case DHTransitionTypeConfetti:
+        case DHTransitionTypeConfetti:{
+            settings.timingFunction = DHTimingFunctionEaseOutExpo;
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
+            break;
         case DHTransitionTypeDoorWay: {
             settings.timingFunction = DHTimingFunctionEaseOutCubic;
             settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];

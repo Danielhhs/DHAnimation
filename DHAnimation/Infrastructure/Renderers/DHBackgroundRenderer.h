@@ -9,7 +9,8 @@
 #import "DHObjectAnimationRenderer.h"
 
 @interface DHBackgroundRenderer : DHObjectAnimationRenderer
-
 + (DHBackgroundRenderer *)backgroundRenderer;
 
+@property (nonatomic, strong) DHObjectAnimationSettings *settings;
+- (void) drawBackground;
 @end

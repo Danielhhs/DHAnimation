@@ -52,6 +52,8 @@
 //Set up textures; default implementation just set up a texture with targetView;
 - (void) setupTextures;
 
+- (void) setupBackground;
+
 //Update your own data on every display link duration; default update is to update the elapsedTime and percent;
 - (void) updateAdditionalComponents;
 

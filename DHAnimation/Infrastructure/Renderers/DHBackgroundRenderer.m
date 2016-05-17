@@ -16,8 +16,29 @@ static DHBackgroundRenderer *sharedInstance;
 {
     if (sharedInstance == nil) {
         sharedInstance = [[DHBackgroundRenderer alloc] init];
+        sharedInstance.settings = [DHObjectAnimationSettings defaultSettings];
     }
     return sharedInstance;
 }
 
+
+- (void) drawFrame
+{
+    [super drawFrame];
+}
+
+- (void) drawBackground
+{
+    [sharedInstance performAnimationWithSettings:sharedInstance.settings];
+}
+
+- (void) setupMeshes
+{
+    
+}
+
+- (void) setupTextures
+{
+    
+}
 @end
