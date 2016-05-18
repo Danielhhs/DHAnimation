@@ -9,7 +9,7 @@
 #import "DHBlurAnimationRenderer.h"
 #import "TextureHelper.h"
 @interface DHBlurAnimationRenderer() {
-    GLuint scaleLoc, resolutionLoc, elapsedTimeLoc;
+    GLuint radiusLoc, resolutionLoc, elapsedTimeLoc, directionLoc;
 }
 @end
 
@@ -18,9 +18,10 @@
 - (void) setupGL
 {
     [super setupGL];
-    scaleLoc = glGetUniformLocation(program, "u_scale");
+    radiusLoc = glGetUniformLocation(program, "u_radius");
     resolutionLoc = glGetUniformLocation(program, "u_resolution");
     elapsedTimeLoc = glGetUniformLocation(program, "u_elapsedTime");
+    directionLoc = glGetUniformLocation(program, "u_dir");
 }
 
 - (void) setupMeshes
@@ -31,8 +32,9 @@
 - (void) drawFrame
 {
     [super drawFrame];
-    glUniform2f(scaleLoc, 0, 1.f / self.targetView.frame.size.height);
-    glUniform2f(resolutionLoc, self.targetView.frame.size.width, self.targetView.frame.size.height);
+    glUniform1f(radiusLoc, 7.f);
+    glUniform1f(resolutionLoc, 3.f);
+    glUniform2f(directionLoc, 1.f, 0.f);
     glUniform1f(elapsedTimeLoc, self.elapsedTime);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);

@@ -3,59 +3,31 @@
 precision highp float;
 
 uniform sampler2D s_tex;
-uniform float u_event;
-uniform float u_percent;
-uniform vec2 u_resolution;
-uniform float u_elapsedTime;
+
+uniform float u_resolution;
+uniform float u_radius;
+uniform vec2 u_dir;
 
 in vec2 v_texCoords;
-
-const int c_samplesX = 11;
-const int c_samplesY = 11;
-
-const int c_halfSamplesX = c_samplesX / 2;
-const int c_halfSamplesY = c_samplesY / 2;
+in vec2 v_blurTexCoords[14];
 
 layout(location = 0) out vec4 out_color;
 
-float Gaussian(float sigma, float x) {
-    return exp(-(x * x) / (2.f * sigma * sigma));
-}
-
-vec3 BlurredPixel (vec2 uv) {
-    float percent = u_percent;
-    if (u_event == 1.f) {
-        percent = 1.f - u_percent;
-    }
-    float c_sigmaX = (percent * 0.5 + 0.5) * 20.f;
-    float c_sigmaY = c_sigmaX;
-    
-    float total  = 0.f;
-    vec3 ret = vec3(0.f);
-    vec2 pixelSize = 1.f / u_resolution.xy;
-    for (int iy = 0; iy < c_samplesY; ++iy) {
-        float fy = Gaussian(c_sigmaY, float(iy) - float(c_halfSamplesY));
-        float offsetY = float(iy - c_halfSamplesY) * pixelSize.y;
-        for (int ix = 0; ix < c_samplesX; ++ix) {
-            float fx = Gaussian(c_sigmaX, float(ix) - float(c_halfSamplesX));
-            float offsetX = float(ix - c_halfSamplesX) * pixelSize.x;
-            total += fx * fy;
-            ret += texture(s_tex, uv + vec2(offsetX, offsetY)).rgb * fx * fy;
-        }
-    }
-    return ret / total;
-}
-
 void main() {
-    vec4 texture_color = texture(s_tex, v_texCoords);
-    if (texture_color.a < 0.1) {
-        discard;
-    } else {
-        float percent = u_percent;
-        if (u_event == 1.f) {
-            percent = 1.f - u_percent;
-        }
-        out_color = vec4(BlurredPixel(v_texCoords), percent);
-    }
+    out_color = vec4(0.0);
+    out_color += texture(s_tex, v_blurTexCoords[ 0])*0.0044299121055113265;
+    out_color += texture(s_tex, v_blurTexCoords[ 1])*0.00895781211794;
+    out_color += texture(s_tex, v_blurTexCoords[ 2])*0.0215963866053;
+    out_color += texture(s_tex, v_blurTexCoords[ 3])*0.0443683338718;
+    out_color += texture(s_tex, v_blurTexCoords[ 4])*0.0776744219933;
+    out_color += texture(s_tex, v_blurTexCoords[ 5])*0.115876621105;
+    out_color += texture(s_tex, v_blurTexCoords[ 6])*0.147308056121;
+    out_color += texture(s_tex, v_texCoords         )*0.159576912161;
+    out_color += texture(s_tex, v_blurTexCoords[ 7])*0.147308056121;
+    out_color += texture(s_tex, v_blurTexCoords[ 8])*0.115876621105;
+    out_color += texture(s_tex, v_blurTexCoords[ 9])*0.0776744219933;
+    out_color += texture(s_tex, v_blurTexCoords[10])*0.0443683338718;
+    out_color += texture(s_tex, v_blurTexCoords[11])*0.0215963866053;
+    out_color += texture(s_tex, v_blurTexCoords[12])*0.00895781211794;
+    out_color += texture(s_tex, v_blurTexCoords[13])*0.0044299121055113265;
 }
-
