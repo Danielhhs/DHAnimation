@@ -36,8 +36,10 @@
 {
     GLuint shader = glCreateShader(type);
     
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
-//    NSBundle *bundle = [NSBundle mainBundle];
+    NSBundle *bundle = [NSBundle mainBundle];
+    if ([[[NSBundle mainBundle] infoDictionary][@"FrameworkTarget"] boolValue])  {
+        bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
+    }
     NSString *srcPath = [[bundle resourcePath] stringByAppendingPathComponent:sourceFileName];
     
     const char *src = [[NSString stringWithContentsOfFile:srcPath encoding:NSUTF8StringEncoding error:NULL] cStringUsingEncoding:NSUTF8StringEncoding];

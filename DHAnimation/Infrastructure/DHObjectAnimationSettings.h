@@ -26,4 +26,6 @@
 
 + (DHObjectAnimationSettings *)defaultSettings;
 + (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view;
+
++ (NSArray *) allowedDirectionsForAnimation:(DHObjectAnimationType)animation;
 @end

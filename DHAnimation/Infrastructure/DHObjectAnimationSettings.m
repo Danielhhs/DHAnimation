@@ -104,4 +104,52 @@
     return settings;
 }
 
++ (NSArray *) allowedDirectionsForAnimation:(DHObjectAnimationType)animation
+{
+    switch (animation) {
+        case DHObjectAnimationTypePop:
+        case DHObjectAnimationTypeBlur:
+        case DHObjectAnimationTypeFlip:
+        case DHObjectAnimationTypeSpin:
+        case DHObjectAnimationTypeScale:
+        case DHObjectAnimationTypeTwirl:
+        case DHObjectAnimationTypeShimmer:
+        case DHObjectAnimationTypeFlame:
+        case DHObjectAnimationTypeConfetti:
+        case DHObjectAnimationTypeDissolve:
+        case DHObjectAnimationTypeFirework:
+        case DHObjectAnimationTypeScaleBig:
+        case DHObjectAnimationTypeFaceExplosion:
+        case DHObjectAnimationTypeNone:
+            return nil;
+        case DHObjectAnimationTypeDrop:
+        case DHObjectAnimationTypeAnvil:
+            return @[@(DHAnimationDirectionTopToBottom)];
+        case DHObjectAnimationTypeSkid:
+        case DHObjectAnimationTypeRotation:
+        case DHObjectAnimationTypeSparkle:
+            return [DHObjectAnimationSettings allowedDirectionHorizontal];
+        case DHObjectAnimationTypePivot:
+        case DHObjectAnimationTypeBlinds:
+            return [DHObjectAnimationSettings allowedDirectionAll];
+        default:
+            break;
+    }
+    return nil;
+}
+
++ (NSArray *) allowedDirectionHorizontal
+{
+    return @[@(DHAnimationDirectionLeftToRight), @(DHAnimationDirectionRightToLeft)];
+}
+
++ (NSArray *) allowedDirectionVertical
+{
+    return @[@(DHAnimationDirectionTopToBottom), @(DHAnimationDirectionBottomToTop)];
+}
+
++ (NSArray *) allowedDirectionAll
+{
+    return @[@(DHAnimationDirectionLeftToRight), @(DHAnimationDirectionRightToLeft), @(DHAnimationDirectionTopToBottom), @(DHAnimationDirectionBottomToTop)];
+}
 @end

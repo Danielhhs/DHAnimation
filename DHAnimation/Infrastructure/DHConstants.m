@@ -277,8 +277,10 @@ static NSArray *allAnimationsArray;
 
 + (NSString *) resourcePathForFile:(NSString *)fileName ofType:(NSString *)fileType
 {
-    NSBundle *bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
-//    NSBundle *bundle = [NSBundle mainBundle];
+    NSBundle *bundle = [NSBundle mainBundle];
+    if ([[[NSBundle mainBundle] infoDictionary][@"FrameworkTarget"] boolValue])  {
+        bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"DHAnimationBundle" ofType:@"bundle"]];
+    }
     return [bundle pathForResource:fileName ofType:fileType];
 }
 

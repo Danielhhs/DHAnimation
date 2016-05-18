@@ -176,7 +176,8 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     } completion:^(BOOL finished) {
-        [self.renderer performAnimationWithSettings:self.settings];
+        [self.renderer prepareAnimationWithSettings:self.settings];
+        [self.renderer startAnimation];
     }];
 }
 

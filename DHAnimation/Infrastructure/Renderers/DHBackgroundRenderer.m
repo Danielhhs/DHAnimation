@@ -29,7 +29,8 @@ static DHBackgroundRenderer *sharedInstance;
 
 - (void) drawBackground
 {
-    [sharedInstance performAnimationWithSettings:sharedInstance.settings];
+    [sharedInstance prepareAnimationWithSettings:sharedInstance.settings];
+    [sharedInstance startAnimation];
 }
 
 - (void) setupMeshes
