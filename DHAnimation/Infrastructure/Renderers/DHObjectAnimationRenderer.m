@@ -61,10 +61,10 @@
 
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
 {
-    [self prepareAnimationForView:targetView inContainerView:containerView background:background animationView:animationView duration:duration columnCount:1 rowCount:1 event:event direction:direction timingFunction:timingFunction completion:completion];
+    [self prepareAnimationForView:targetView inContainerView:containerView background:background animationView:animationView duration:duration columnCount:1 rowCount:1 event:event direction:direction timingFunction:timingFunction beforeAnimationPreparation:nil completion:completion];
 }
 
-- (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void (^)(void))completion
+- (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction beforeAnimationPreparation:(void(^)(void))beforeAnimation completion:(void (^)(void))completion
 {
     self.targetView = targetView;
     self.containerView = containerView;
@@ -73,8 +73,7 @@
     self.direction = direction;
     self.timingFunction = timingFunction;
     self.completion = completion;
-    self.elapsedTime = 0.f;
-    self.percent = 0.f;
+    self.beforeAnimation = beforeAnimation;
     self.columnCount = columnCount;
     self.rowCount = rowCount;
     self.containerViewSnapshot = background;
@@ -94,14 +93,20 @@
 
 - (void) prepareAnimationWithSettings:(DHObjectAnimationSettings *)settings
 {
-    [self prepareAnimationForView:settings.targetView inContainerView:settings.containerView background:settings.background animationView:settings.animationView duration:settings.duration columnCount:settings.columnCount rowCount:settings.rowCount event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] completion:settings.completion];
+    [self prepareAnimationForView:settings.targetView inContainerView:settings.containerView background:settings.background animationView:settings.animationView duration:settings.duration columnCount:settings.columnCount rowCount:settings.rowCount event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] beforeAnimationPreparation:settings.beforeAnimation completion:settings.completion];
 }
 
 - (void) startAnimation{
+    self.elapsedTime = 0.f;
+    self.percent = 0.f;
     self.animationView.delegate = self;
     
     if (self.containerView != self.animationView) {
         [self.containerView addSubview:self.animationView];
+    }
+    [self.animationView display];
+    if (self.beforeAnimation) {
+        self.beforeAnimation();
     }
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];

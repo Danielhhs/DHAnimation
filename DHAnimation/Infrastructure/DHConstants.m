@@ -57,7 +57,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) transitions
 {
     if (transitionsArray == nil) {
-        transitionsArray = @[@"DoorWay", @"Cube", @"Twist", @"ClothLine", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal", @"Drop", @"Mosaic", @"Flop", @"Cover", @"Flip", @"Reflection", @"Rotate Dismiss", @"Ripple", @"Resolving Door"];
+        transitionsArray = @[@"DoorWay", @"Cube", @"Twist", @"Cloth Line", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal", @"Drop", @"Mosaic", @"Flop", @"Cover", @"Flip", @"Reflection", @"Rotate Dismiss", @"Ripple", @"Resolving Door"];
     }
     return transitionsArray;
 }
@@ -138,7 +138,7 @@ static NSArray *allAnimationsArray;
         return [[DHCubeTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Twist"]) {
         return [[DHTwistTransitionRenderer alloc] init];
-    } else if ([transitionName isEqualToString:@"ClothLine"]) {
+    } else if ([transitionName isEqualToString:@"Cloth Line"]) {
         return [[DHClothLineTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Shredder"]) {
         return [[DHShredderTransitionRenderer alloc] init];
@@ -225,49 +225,11 @@ static NSArray *allAnimationsArray;
 
 + (NSString *) transitionNameForTransitionType:(DHTransitionType)transitionType
 {
-    switch (transitionType) {
-        case DHTransitionTypeCube:
-            return @"Cube";
-        case DHTransitionTypeSwitch:
-            return @"Switch";
-        case DHTransitionTypeDrop:
-            return @"Drop";
-        case DHTransitionTypeFlip:
-            return @"Flip";
-        case DHTransitionTypeFlop:
-            return @"Flop";
-        case DHTransitionTypeGrid:
-            return @"Grid";
-        case DHTransitionTypeNone:
-            return @"None";
-        case DHTransitionTypePush:
-            return @"Push";
-        case DHTransitionTypeCover:
-            return @"Cover";
-        case DHTransitionTypeTwist:
-            return @"Twist";
-        case DHTransitionTypeMosaic:
-            return @"Mosaic";
-        case DHTransitionTypeReveal:
-            return @"Reveal";
-        case DHTransitionTypeRipple:
-            return @"Ripple";
-        case DHTransitionTypeDoorWay:
-            return @"DoorWay";
-        case DHTransitionTypeConfetti:
-            return @"Confetti";
-        case DHTransitionTypeShredder:
-            return @"Shredder";
-        case DHTransitionTypeClothLine:
-            return @"Cloth line";
-        case DHTransitionTypeReflection:
-            return @"Reflection";
-        case DHTransitionTypeResolvingDoor:
-            return @"Resolving Door";
-        case DHTransitionTypeRotateDismiss:
-            return @"Rotate Dismiss";
+    if (transitionType == DHTransitionTypeNone) {
+        return @"None";
+    } else {
+        return [DHConstants transitions][transitionType];
     }
-    return @"None";
 }
 
 + (DHObjectAnimationType) animationTypeFromAnimationName:(NSString *)animationName
@@ -293,13 +255,13 @@ static NSArray *allAnimationsArray;
 {
     switch (direction) {
         case DHAnimationDirectionLeftToRight:
-            return @"Left to Right";
+            return @"Left";
         case DHAnimationDirectionRightToLeft:
-            return @"Right to Left";
+            return @"Right";
         case DHAnimationDirectionBottomToTop:
-            return @"Bottom to Top";
+            return @"Bottom";
         case DHAnimationDirectionTopToBottom:
-            return @"Top to Bottom";
+            return @"Top";
     }
 }
 @end

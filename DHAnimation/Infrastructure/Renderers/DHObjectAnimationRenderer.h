@@ -27,6 +27,7 @@
 @property (nonatomic) CGFloat percent;
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) void(^completion)(void);
+@property (nonatomic, strong) void(^beforeAnimation)(void);
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic) DHAnimationEvent event;
 @property (nonatomic) DHAnimationDirection direction;
@@ -76,7 +77,7 @@
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction;
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
-- (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction completion:(void(^)(void))completion;
+- (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount event:(DHAnimationEvent)event direction:(DHAnimationDirection)direction timingFunction:(NSBKeyframeAnimationFunction)timingFunction beforeAnimationPreparation:(void(^)(void))beforeAnimation completion:(void(^)(void))completion;
 - (void) prepareAnimationWithSettings:(DHObjectAnimationSettings *)settings;
 
 - (void) startAnimation;

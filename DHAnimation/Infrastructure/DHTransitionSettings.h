@@ -24,4 +24,5 @@
 @property (nonatomic) BOOL partialAnimation;
 
 + (DHTransitionSettings *)defaultSettings;
++ (DHTransitionSettings *) defaultSettingsForTransitionType:(DHTransitionType)transitionType;
 @end

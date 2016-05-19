@@ -19,6 +19,7 @@
 @property (nonatomic, weak) UIView *containerView;
 @property (nonatomic) DHTimingFunction timingFunction;
 @property (nonatomic, strong) void (^completion)(void);
+@property (nonatomic, strong) void (^beforeAnimation)(void);
 @property (nonatomic) NSInteger rowCount;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic, weak) GLKView *animationView;

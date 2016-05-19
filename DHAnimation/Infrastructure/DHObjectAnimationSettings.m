@@ -18,6 +18,7 @@
     settings.direction = DHAnimationDirectionLeftToRight;
     settings.timingFunction = DHTimingFunctionLinear;
     settings.completion = nil;
+    settings.beforeAnimation = nil;
     settings.rowCount = 1;
     settings.columnCount = 1;
     return settings;
