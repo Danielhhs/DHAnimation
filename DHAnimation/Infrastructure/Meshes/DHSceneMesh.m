@@ -105,10 +105,14 @@
 {
     if (vertexBuffer != 0) {
         glDeleteBuffers(1, &vertexBuffer);
+        vertexBuffer = 0;
     }
     if (indexBuffer != 0) {
         glDeleteBuffers(1, &indexBuffer);
+        indexBuffer = 0;
     }
+//    free(vertices);
+//    free(indices);
 }
 
 - (void) drawEntireMesh

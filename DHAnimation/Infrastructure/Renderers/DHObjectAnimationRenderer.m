@@ -176,12 +176,16 @@
         [self updateAdditionalComponents];
         [self.animationView display];
     } else {
+        self.percent = 1.f;
         [self.animationView display];
+        if (self.completion) {
+            self.completion();
+        }
         [self.displayLink invalidate];
         self.animationView.delegate = nil;
         self.displayLink = nil;
-        if (self.completion) {
-            self.completion();
+        if ([self shouldTearDownGL]) {
+            [self tearDownGL];
         }
     }
 }
@@ -242,5 +246,15 @@
 - (void) tearDownSpecificGLResources
 {
     
+}
+
+- (void) dealloc
+{
+    [self tearDownGL];
+}
+
+- (BOOL) shouldTearDownGL
+{
+    return YES;
 }
 @end

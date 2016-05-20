@@ -4,9 +4,8 @@ precision highp float;
 
 uniform sampler2D s_tex;
 
-uniform float u_resolution;
-uniform float u_radius;
-uniform vec2 u_dir;
+uniform float u_percent;
+uniform float u_event;
 
 in vec2 v_texCoords;
 in vec2 v_blurTexCoords[14];
@@ -30,4 +29,9 @@ void main() {
     out_color += texture(s_tex, v_blurTexCoords[11])*0.0215963866053;
     out_color += texture(s_tex, v_blurTexCoords[12])*0.00895781211794;
     out_color += texture(s_tex, v_blurTexCoords[13])*0.0044299121055113265;
+    float percent = u_percent;
+    if (u_event == 1.f) {
+        percent = 1.f - u_percent;
+    }
+    out_color.a = percent * percent;
 }

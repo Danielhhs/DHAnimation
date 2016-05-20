@@ -66,6 +66,9 @@
 //Override this method to release the resources retained by your own renderer, like meshes, vertex arrays and effects;
 - (void) tearDownSpecificGLResources;
 
+//Override this method to tell whether the GL properties should be cleared when animation is done;
+- (BOOL) shouldTearDownGL;
+
 #pragma mark - Animation APIs
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration;
 - (void) prepareAnimationForView:(UIView *)targetView inContainerView:(UIView *)containerView background:(UIImage *)background animationView:(GLKView *)animationView duration:(NSTimeInterval)duration completion:(void(^)(void))completion;

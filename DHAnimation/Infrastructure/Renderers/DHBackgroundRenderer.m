@@ -42,4 +42,9 @@ static DHBackgroundRenderer *sharedInstance;
 {
     
 }
+
+- (BOOL) shouldTearDownGL
+{
+    return NO;
+}
 @end

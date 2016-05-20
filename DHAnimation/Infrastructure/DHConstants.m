@@ -27,6 +27,7 @@
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
 #import "DHFaceExplosionAnimationRenderer.h"
+#import "DHCompressAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -73,7 +74,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) builtOutAnimations
 {
     if (builtOutAnimationsArray == nil) {
-        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion"];
+        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress"];
     }
     return builtOutAnimationsArray;
 }
@@ -81,7 +82,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) allAnimations
 {
     if (allAnimationsArray == nil) {
-        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion"];
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress"];
     }
     return allAnimationsArray;
 }
@@ -126,6 +127,8 @@ static NSArray *allAnimationsArray;
         return [[DHAnvilAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Face Explosion"]) {
         return [[DHFaceExplosionAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Compress"]) {
+        return [[DHCompressAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -219,6 +222,8 @@ static NSArray *allAnimationsArray;
             return @"Scale Big";
         case DHObjectAnimationTypeFaceExplosion:
             return @"Face Explosion";
+        case DHObjectAnimationTypeCompress:
+            return @"Compress";
     }
     return @"None";
 }

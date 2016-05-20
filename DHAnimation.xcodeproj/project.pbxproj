@@ -179,6 +179,9 @@
 		5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C05C1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m */; };
 		545617091CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */; };
 		5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */; };
+		546141D01CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 546141CE1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		546141D11CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 546141CF1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m */; };
+		546141D21CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 546141CF1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m */; };
 		546F51C21CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F51C11CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m */; };
 		546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F51C31CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		546F51C61CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F51C41CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m */; };
@@ -634,6 +637,8 @@
 		54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */; };
 		54A768AC1CBD044C00826929 /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AB1CBD044C00826929 /* FireworkVertex.glsl */; };
 		54A768AE1CBD045600826929 /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768AD1CBD045600826929 /* FireworkFragment.glsl */; };
+		54C141F41CEED5C100A6C9CF /* ObjectCompressVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */; };
+		54C141F61CEED5CC00A6C9CF /* ObjectCompressFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54C141F51CEED5CC00A6C9CF /* ObjectCompressFragment.glsl */; };
 		54C1B2561CD8775C007A936E /* DHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646C1C8EC62F00FFB67E /* DHConstants.m */; };
 		54C61C0E1CCF0ECC002336FD /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
@@ -757,6 +762,8 @@
 		545617081CA7AAE6002D5C04 /* DHObjectAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
 		5456170B1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationPresentatioinViewController.h; sourceTree = "<group>"; };
 		5456170C1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationPresentatioinViewController.m; sourceTree = "<group>"; };
+		546141CE1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCompressAnimationRenderer.h; sourceTree = "<group>"; };
+		546141CF1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCompressAnimationRenderer.m; sourceTree = "<group>"; };
 		546F51C01CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSplitTextureSceneMesh.h; sourceTree = "<group>"; };
 		546F51C11CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSplitTextureSceneMesh.m; sourceTree = "<group>"; };
 		546F51C31CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHConsecutiveTextureSceneMesh.h; sourceTree = "<group>"; };
@@ -990,6 +997,8 @@
 		54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFireworkAnimationRenderer.m; sourceTree = "<group>"; };
 		54A768AB1CBD044C00826929 /* FireworkVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FireworkVertex.glsl; sourceTree = "<group>"; };
 		54A768AD1CBD045600826929 /* FireworkFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FireworkFragment.glsl; sourceTree = "<group>"; };
+		54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectCompressVertex.glsl; sourceTree = "<group>"; };
+		54C141F51CEED5CC00A6C9CF /* ObjectCompressFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectCompressFragment.glsl; sourceTree = "<group>"; };
 		54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationSettings.h; sourceTree = "<group>"; };
 		54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHObjectAnimationSettings.m; sourceTree = "<group>"; };
 		54E263F91C8EBCBF00FFB67E /* DHAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1225,6 +1234,17 @@
 			name = ObjectAnimation;
 			sourceTree = "<group>";
 		};
+		546141CD1CEEAF350002AF2C /* Compress */ = {
+			isa = PBXGroup;
+			children = (
+				546141CE1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h */,
+				546141CF1CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m */,
+				54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */,
+				54C141F51CEED5CC00A6C9CF /* ObjectCompressFragment.glsl */,
+			);
+			path = Compress;
+			sourceTree = "<group>";
+		};
 		546F52021CE424AA00DA3B0C /* FaceExplosion */ = {
 			isa = PBXGroup;
 			children = (
@@ -1258,6 +1278,7 @@
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				546141CD1CEEAF350002AF2C /* Compress */,
 				546F52121CE4308600DA3B0C /* FaceExplosion */,
 				54F64CC71CCF473800AFBCF8 /* Anvil */,
 				548EDF8C1CCCA3EB005E997B /* Flame */,
@@ -1997,6 +2018,7 @@
 				5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */,
 				5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */,
 				5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */,
+				546141D01CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h in Headers */,
 				5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */,
 				5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */,
 				546F52061CE424D300DA3B0C /* DHFaceExplosionEffect.h in Headers */,
@@ -2475,6 +2497,7 @@
 				548EDF6B1CCA1246005E997B /* ObjectScaleBigFragment.glsl in Resources */,
 				548EDF431CC90B59005E997B /* ObjectPivotVertex.glsl in Resources */,
 				5478760F1CA4D61B00012F76 /* RippleDestinationFragment.glsl in Resources */,
+				54C141F41CEED5C100A6C9CF /* ObjectCompressVertex.glsl in Resources */,
 				540AFA6F1CD2E65C004EF919 /* DustEffectFragment.glsl in Resources */,
 				547876251CA4D61B00012F76 /* SwitchDestinationFragment.glsl in Resources */,
 				54E264821C8FC5AC00FFB67E /* 6.jpg in Resources */,
@@ -2621,6 +2644,7 @@
 				547875FE1CA4D61B00012F76 /* MosaicSourceVertex.glsl in Resources */,
 				548EDF791CCB5668005E997B /* ObjectTwirlVertex.glsl in Resources */,
 				54126CD61CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */,
+				54C141F61CEED5CC00A6C9CF /* ObjectCompressFragment.glsl in Resources */,
 				5478761C1CA4D61B00012F76 /* ShredderBackPieceFragment.glsl in Resources */,
 				547876051CA4D61B00012F76 /* ResolvingDoorDestinationFragment.glsl in Resources */,
 				547875EC1CA4D61B00012F76 /* FlipSourceFragment.glsl in Resources */,
@@ -2676,6 +2700,7 @@
 				5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */,
 				5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */,
 				5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */,
+				546141D21CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */,
 				5490CDB31CD34F2600C93002 /* DHClothLineTransitionRenderer.m in Sources */,
 				5490CDB41CD34F2600C93002 /* DHConfettiTransitionRenderer.m in Sources */,
 				5490CDB51CD34F2600C93002 /* DHConfettiSourceMesh.m in Sources */,
@@ -2831,6 +2856,7 @@
 				54A768A71CBD041900826929 /* DHFireworkEffect.m in Sources */,
 				547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */,
 				546F51C61CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */,
+				546141D11CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */,
 				540AFA791CD2E65C004EF919 /* DHSparkleEffect.m in Sources */,
 				549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */,
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,

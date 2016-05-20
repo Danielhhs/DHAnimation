@@ -170,6 +170,10 @@
             self.renderer = [[DHFaceExplosionAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
+        case DHObjectAnimationTypeCompress: {
+            self.renderer = [[DHCompressAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+        }
         default:
             break;
     }

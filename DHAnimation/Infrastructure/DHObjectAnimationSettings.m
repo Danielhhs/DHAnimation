@@ -59,6 +59,7 @@
         case DHObjectAnimationTypeDissolve:
         case DHObjectAnimationTypePivot:
         case DHObjectAnimationTypeSkid:
+        case DHObjectAnimationTypeCompress:
         case DHObjectAnimationTypeBlur:{
             if (event == DHAnimationEventBuiltIn) {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
@@ -74,7 +75,7 @@
             } else {
                 settings.timingFunction = DHTimingFunctionEaseInCubic;
             }
-            settings.columnCount = 20;
+            settings.columnCount = 15;
             settings.rowCount = settings.columnCount * view.bounds.size.height / view.bounds.size.width;
         }
             break;
