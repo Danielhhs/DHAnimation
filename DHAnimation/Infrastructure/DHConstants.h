@@ -42,20 +42,19 @@ typedef NS_ENUM(NSInteger, DHObjectAnimationType) {
     DHObjectAnimationTypeBlinds = 4,
     DHObjectAnimationTypeFirework = 5,
     DHObjectAnimationTypeBlur = 6,
-    DHObjectAnimationTypeFlip = 7,
-    DHObjectAnimationTypeDrop = 8,
-    DHObjectAnimationTypePivot = 9,
-    DHObjectAnimationTypePop = 10,
-    DHObjectAnimationTypeScale = 11,
-    DHObjectAnimationTypeScaleBig = 12,
-    DHObjectAnimationTypeSpin = 13,
-    DHObjectAnimationTypeTwirl = 14,
-    DHObjectAnimationTypeDissolve = 15,
-    DHObjectAnimationTypeSkid = 16,
-    DHObjectAnimationTypeFlame = 17,
-    DHObjectAnimationTypeAnvil = 18,
-    DHObjectAnimationTypeFaceExplosion = 19,
-    DHObjectAnimationTypeCompress = 20
+    DHObjectAnimationTypeDrop = 7,
+    DHObjectAnimationTypePivot = 8,
+    DHObjectAnimationTypePop = 9,
+    DHObjectAnimationTypeScale = 10,
+    DHObjectAnimationTypeScaleBig = 11,
+    DHObjectAnimationTypeSpin = 12,
+    DHObjectAnimationTypeTwirl = 13,
+    DHObjectAnimationTypeDissolve = 14,
+    DHObjectAnimationTypeSkid = 15,
+    DHObjectAnimationTypeFlame = 16,
+    DHObjectAnimationTypeAnvil = 17,
+    DHObjectAnimationTypeFaceExplosion = 18,
+    DHObjectAnimationTypeCompress = 19
 };
 
 typedef NS_ENUM(NSInteger, DHAnimationDirection) {

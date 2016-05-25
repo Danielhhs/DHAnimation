@@ -108,7 +108,9 @@
     CGFloat screenScale = [UIScreen mainScreen].scale;
     CGFloat textureWidth = rect.size.width * screenScale;
     CGFloat textureHeight = rect.size.height * screenScale;
-    UIImage *imageToDraw = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
+    CGImageRef tmpImage = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale));
+    UIImage *imageToDraw = [UIImage imageWithCGImage:tmpImage];
+    CGImageRelease(tmpImage);
     [self drawRect:rect onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
         if (flipHorizontal) {
             CGContextTranslateCTM(context, textureWidth, 0);
@@ -142,7 +144,9 @@
     [view drawViewHierarchyInRect:CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height) afterScreenUpdates:YES];
     CGContextRestoreGState(context);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale))];
+    CGImageRef tmpImage = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(rect.origin.x * screenScale, rect.origin.y * screenScale, rect.size.width * screenScale, rect.size.height * screenScale));
+    image = [UIImage imageWithCGImage:tmpImage];
+    CGImageRelease(tmpImage);
     UIGraphicsEndImageContext();
     [self drawRect:rect onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
         if (flipHorizontal) {

@@ -33,7 +33,7 @@
 - (void) drawFrame
 {
     [super drawFrame];
-    glUniform1f(targetPositionLoc, self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    glUniform1f(targetPositionLoc, CGRectGetMaxY(self.targetView.frame));
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);

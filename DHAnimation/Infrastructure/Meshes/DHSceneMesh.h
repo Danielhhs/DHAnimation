@@ -22,6 +22,7 @@ typedef struct {
 @interface DHSceneMesh : NSObject {
     GLuint vertexBuffer;
     GLuint indexBuffer;
+    GLuint vertexArray;
     SceneMeshVertex *vertices;
     GLuint *indices;
 }
@@ -52,6 +53,6 @@ typedef struct {
 
 - (void) generateVerticesAndIndicesForView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajor rotateTexture:(BOOL)rotateTexture;
 
-
+- (BOOL) needToUpdateBufferData;
 
 @end

@@ -7,8 +7,10 @@
 //
 
 #import "DHSceneMesh.h"
+#import <OpenGLES/ES3/glext.h>
 
 @interface DHSceneMesh ()
+@property (nonatomic) BOOL bufferDataBumped;
 @end
 
 @implementation DHSceneMesh
@@ -33,8 +35,10 @@
         
         [self generateVerticesAndIndicesForView:view containerView:containerView columnCount:columnCount rowCount:rowCount columnMajored:columnMajored rotateTexture:rotateTexture];
         
-        _verticesData = [NSData dataWithBytes:vertices length:self.verticesSize];
+        _verticesData = [NSData dataWithBytesNoCopy:vertices length:self.verticesSize freeWhenDone:YES];
         _indicesData = [NSData dataWithBytes:indices length:self.indicesSize];
+        [self prepareToDraw];
+        self.bufferDataBumped = YES;
     }
     return self;
 }
@@ -45,48 +49,55 @@
     if (self) {
         self.verticesData = verticesData;
         self.indicesData = indicesData;
+        [self prepareToDraw];
+        self.bufferDataBumped = YES;
     }
     return self;
 }
 
 - (void) prepareToDraw
 {
-    if (vertexBuffer == 0 && [self.verticesData length] > 0) {
-        glGenBuffers(1, &vertexBuffer);
+    if (self.bufferDataBumped == NO) {
+        if (vertexBuffer == 0 && [self.verticesData length] > 0) {
+            glGenBuffers(1, &vertexBuffer);
+            glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+            glGenVertexArrays(1, &vertexArray);
+            glBindVertexArray(vertexArray);
+            glBufferData(GL_ARRAY_BUFFER, [self.verticesData length], [self.verticesData bytes], GL_STATIC_DRAW);
+        }
+        if (indexBuffer == 0 && [self.indicesData length] > 0) {
+            glGenBuffers(1, &indexBuffer);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, [self.indicesData length], [self.indicesData bytes], GL_STATIC_DRAW);
+        }
+        
         glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-        glBufferData(GL_ARRAY_BUFFER, [self.verticesData length], [self.verticesData bytes], GL_STATIC_DRAW);
+        glEnableVertexAttribArray(0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, position));
+        
+        glEnableVertexAttribArray(1);
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, normal));
+        
+        glEnableVertexAttribArray(2);
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, texCoords));
+        
+        glEnableVertexAttribArray(3);
+        glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, columnStartPosition));
+        
+        glEnableVertexAttribArray(4);
+        glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotation));
+        
+        glEnableVertexAttribArray(5);
+        glVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, originalCenter));
+        
+        glEnableVertexAttribArray(6);
+        glVertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, targetCenter));
+        
+        glEnableVertexAttribArray(7);
+        glVertexAttribPointer(7, 1, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotating));
+        
     }
-    if (indexBuffer == 0 && [self.indicesData length] > 0) {
-        glGenBuffers(1, &indexBuffer);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, [self.indicesData length], [self.indicesData bytes], GL_STATIC_DRAW);
-    }
-    
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, position));
-    
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, normal));
-    
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, texCoords));
-    
-    glEnableVertexAttribArray(3);
-    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, columnStartPosition));
-    
-    glEnableVertexAttribArray(4);
-    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotation));
-    
-    glEnableVertexAttribArray(5);
-    glVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, originalCenter));
-    
-    glEnableVertexAttribArray(6);
-    glVertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, targetCenter));
-    
-    glEnableVertexAttribArray(7);
-    glVertexAttribPointer(7, 1, GL_BOOL, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotating));
-    
+    glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 }
 
@@ -99,6 +110,7 @@
 {
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(SceneMeshVertex) * numberOfVertices, verticies, GL_DYNAMIC_DRAW);
+    self.bufferDataBumped = NO;
 }
 
 - (void) tearDown
@@ -111,6 +123,8 @@
         glDeleteBuffers(1, &indexBuffer);
         indexBuffer = 0;
     }
+    self.verticesData = nil;
+    self.indicesData = nil;
 //    free(vertices);
 //    free(indices);
 }
@@ -118,6 +132,7 @@
 - (void) drawEntireMesh
 {
     glDrawElements(GL_TRIANGLES, (int)self.indexCount, GL_UNSIGNED_INT, NULL);
+    glBindVertexArray(0);
 }
 
 - (void) destroyGL
@@ -141,5 +156,10 @@
     for (int i = 0; i < self.vertexCount; i++) {
         NSLog(@"Vertices[%d].position = (%g, %g, %g)", i, vertices[i].position.x, vertices[i].position.y, vertices[i].position.z);
     }
+}
+
+- (BOOL) needToUpdateBufferData
+{
+    return NO;
 }
 @end

@@ -17,7 +17,6 @@
 #import "DHBlindsAnimationRenderer.h"
 #import "DHFireworkAnimationRenderer.h"
 #import "DHBlurAnimationRenderer.h"
-#import "DHFlipAnimationRenderer.h"
 #import "DHDropAnimationRenderer.h"
 #import "DHPivotAnimationRenderer.h"
 #import "DHPopAnimationRenderer.h"
@@ -105,11 +104,6 @@
             break;
         case DHObjectAnimationTypeBlur: {
             self.renderer = [[DHBlurAnimationRenderer alloc] init];
-        }
-            break;
-        case DHObjectAnimationTypeFlip: {
-            self.renderer = [[DHFlipAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
         }
             break;
         case DHObjectAnimationTypeDrop: {
@@ -212,7 +206,7 @@
 {
     if (!_fromView) {
         _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
-//        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
+        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
     }

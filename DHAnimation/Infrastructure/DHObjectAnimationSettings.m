@@ -34,7 +34,6 @@
         case DHObjectAnimationTypeScale:
         case DHObjectAnimationTypeFlame:
         case DHObjectAnimationTypeSpin:
-        case DHObjectAnimationTypeFlip:
         case DHObjectAnimationTypeFaceExplosion:
         case DHObjectAnimationTypePop: {
             if (event == DHAnimationEventBuiltIn) {
@@ -111,7 +110,6 @@
     switch (animation) {
         case DHObjectAnimationTypePop:
         case DHObjectAnimationTypeBlur:
-        case DHObjectAnimationTypeFlip:
         case DHObjectAnimationTypeSpin:
         case DHObjectAnimationTypeScale:
         case DHObjectAnimationTypeTwirl:

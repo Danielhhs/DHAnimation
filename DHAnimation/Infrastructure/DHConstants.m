@@ -14,7 +14,6 @@
 #import "DHBlindsAnimationRenderer.h"
 #import "DHFireworkAnimationRenderer.h"
 #import "DHBlurAnimationRenderer.h"
-#import "DHFlipAnimationRenderer.h"
 #import "DHDropAnimationRenderer.h"
 #import "DHPivotAnimationRenderer.h"
 #import "DHPopAnimationRenderer.h"
@@ -66,7 +65,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) builtInAnimations
 {
     if (builtInAnimationsArray == nil) {
-        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Flip", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil"];
+        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil"];
     }
     return builtInAnimationsArray;
 }
@@ -74,7 +73,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) builtOutAnimations
 {
     if (builtOutAnimationsArray == nil) {
-        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Flip", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress"];
+        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress"];
     }
     return builtOutAnimationsArray;
 }
@@ -101,8 +100,6 @@ static NSArray *allAnimationsArray;
         return [[DHBlindsAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Blur"]) {
         return [[DHBlurAnimationRenderer alloc] init];
-    } else if ([animationName isEqualToString:@"Flip"]) {
-        return [[DHFlipAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Drop"]) {
         return [[DHDropAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Pivot"]) {
@@ -186,8 +183,6 @@ static NSArray *allAnimationsArray;
             return @"Blur";
         case DHObjectAnimationTypeDrop:
             return @"Drop";
-        case DHObjectAnimationTypeFlip:
-            return @"Flip";
         case DHObjectAnimationTypeNone:
             return @"None";
         case DHObjectAnimationTypeSkid:
