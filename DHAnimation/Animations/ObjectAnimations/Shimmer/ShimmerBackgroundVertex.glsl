@@ -22,7 +22,7 @@ vec4 updatedPosition()
         vec4 position = a_originalCenter + (a_position - a_originalCenter) * percent / transitionRatio;
         return position;
     } else {
-        return a_position;
+        return a_position; 
     }
 }
 

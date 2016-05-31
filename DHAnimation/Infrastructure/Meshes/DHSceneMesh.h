@@ -36,6 +36,7 @@ typedef struct {
 @property (nonatomic) NSInteger rowCount;
 @property (nonatomic) CGFloat originX;
 @property (nonatomic) CGFloat originY;
+@property (nonatomic) BOOL bufferDataBumped;
 
 - (instancetype) initWithView:(UIView *)view columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture;
 - (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount splitTexturesOnEachGrid:(BOOL)splitTexture columnMajored:(BOOL)columnMajored rotateTexture:(BOOL)rotateTexture;

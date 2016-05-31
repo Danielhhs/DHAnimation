@@ -28,7 +28,7 @@
 - (void) setupEffects
 {
     [self setupShimmerEffect];
-    [self setupShiningStarEffect];
+    [self setupShiningStarEffect]; 
 }
 
 - (void) additionalSetUp
@@ -91,6 +91,7 @@
             [self.offsetData addObject:@([self randomOffset])];
             [self.offsetData addObject:@([self randomOffset])];
             [self.offsetData addObject:@([self randomOffset])];
+            NSLog(@"Offset Data = %@, %@, %@", self.offsetData[[self.offsetData count] - 3], self.offsetData[[self.offsetData count] - 2],self.offsetData[[self.offsetData count] - 1]);
         }
     }
 }

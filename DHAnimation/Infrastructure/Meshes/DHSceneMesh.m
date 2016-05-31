@@ -10,7 +10,6 @@
 #import <OpenGLES/ES3/glext.h>
 
 @interface DHSceneMesh ()
-@property (nonatomic) BOOL bufferDataBumped;
 @end
 
 @implementation DHSceneMesh
@@ -63,7 +62,6 @@
             glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
             glGenVertexArrays(1, &vertexArray);
             glBindVertexArray(vertexArray);
-            glBufferData(GL_ARRAY_BUFFER, [self.verticesData length], [self.verticesData bytes], GL_STATIC_DRAW);
         }
         if (indexBuffer == 0 && [self.indicesData length] > 0) {
             glGenBuffers(1, &indexBuffer);
@@ -72,6 +70,7 @@
         }
         
         glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+        glBufferData(GL_ARRAY_BUFFER, [self.verticesData length], [self.verticesData bytes], GL_STATIC_DRAW);
         glEnableVertexAttribArray(0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, position));
         
