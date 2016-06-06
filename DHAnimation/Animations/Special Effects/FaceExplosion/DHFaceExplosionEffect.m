@@ -9,7 +9,7 @@
 #import "DHFaceExplosionEffect.h"
 #import <OpenGLES/ES3/glext.h>
 #import "NSBKeyframeAnimationFunctions.h"
-#define FACE_EXPLOSION_PARTICLE_SIZE 5
+#define FACE_EXPLOSION_PARTICLE_SIZE 8
 
 typedef struct {
     GLKVector3 startingPosition;
@@ -77,7 +77,7 @@ typedef struct {
 
 - (GLfloat) randomZPosition
 {
-    return arc4random() % 200;
+    return arc4random() % 1000;
 }
 
 - (GLfloat) randomOffset

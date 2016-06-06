@@ -6,14 +6,13 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import "DHObjectAnimationTypeChooseTableViewController.h"
+#import "DHBuiltInAnimationTypeChooseTableViewController.h"
 #import "DHObjectAnimationPresentatioinViewController.h"
-@interface DHObjectAnimationTypeChooseTableViewController ()
-@property (nonatomic, strong) NSArray *animations;
+@interface DHBuiltInAnimationTypeChooseTableViewController ()
 @property (nonatomic) NSInteger selectedAnimationType;
 @end
 
-@implementation DHObjectAnimationTypeChooseTableViewController
+@implementation DHBuiltInAnimationTypeChooseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +41,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParticleAnimationCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ObjectAnimationCell" forIndexPath:indexPath];
     
     cell.textLabel.text = self.animations[indexPath.row];
     
@@ -51,8 +50,9 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedAnimationType = indexPath.row;
-    [self performSegueWithIdentifier:@"ShowParticleAnimation" sender:self];
+    NSString *animationName = self.animations[indexPath.row];
+    self.selectedAnimationType = [DHConstants animationTypeFromAnimationName:animationName];
+    [self performSegueWithIdentifier:@"ShowObjectAnimation" sender:self];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -60,16 +60,21 @@
     if ([segue.destinationViewController isKindOfClass:[DHObjectAnimationPresentatioinViewController class]]) {
         DHObjectAnimationPresentatioinViewController *dstVC = (DHObjectAnimationPresentatioinViewController *)segue.destinationViewController;
         dstVC.animationType = self.selectedAnimationType;
+        dstVC.animationEvent = self.animationEvent;
     }
 }
 
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = [DHConstants allAnimations];
+        _animations = [DHConstants builtInAnimations];
     }
     return _animations;
 }
 
+
+- (DHAnimationEvent)animationEvent {
+    return DHAnimationEventBuiltIn;
+}
 
 @end

@@ -34,7 +34,9 @@
     if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"showTransitions" sender:self];
     } else if (indexPath.row == 1) {
-        [self performSegueWithIdentifier:@"ParticleAnimations" sender:self];
+        [self performSegueWithIdentifier:@"builtInAnimations" sender:self];
+    } else if (indexPath.row == 2) {
+        [self performSegueWithIdentifier:@"builtOutAnimations" sender:self];
     }
 }
 @end

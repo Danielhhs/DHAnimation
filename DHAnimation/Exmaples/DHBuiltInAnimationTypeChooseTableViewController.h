@@ -1,5 +1,5 @@
 //
-//  DHParticleAnimationPresentatioinViewController.h
+//  ParticleAnimationTypeChooseTableViewController.h
 //  DHAnimation
 //
 //  Created by Huang Hongsen on 3/27/16.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DHConstants.h"
-
-@interface DHObjectAnimationPresentatioinViewController : UIViewController
-@property (nonatomic) DHObjectAnimationType animationType;
+@interface DHBuiltInAnimationTypeChooseTableViewController : UITableViewController
+@property (nonatomic, strong) NSArray *animations;
 @property (nonatomic) DHAnimationEvent animationEvent;
 @end

@@ -8,6 +8,7 @@
 
 #import "DHTransitionTypeChooseViewController.h"
 #import "DHTransitionPresentationViewController.h"
+#import "DHConstants.h"
 @interface DHTransitionTypeChooseViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *animations;
 @property (nonatomic) NSInteger selectedIndex;
@@ -68,7 +69,7 @@
 - (NSArray *) animations
 {
     if (!_animations) {
-        _animations = @[@"DoorWay", @"Cube", @"Twist", @"ClothLine", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal", @"Drop", @"Mosaic", @"Flop", @"Cover", @"Flip", @"Reflection", @"Rotate Dismiss", @"Ripple", @"Resolving Door"];
+        _animations = [DHConstants transitions];
     }
     return _animations;
 }

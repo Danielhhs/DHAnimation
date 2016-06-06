@@ -44,27 +44,35 @@
         }
             break;
         case DHTransitionTypeReflection:
-        case DHTransitionTypeClothLine:
         case DHTransitionTypePush:
         case DHTransitionTypeReveal:
         case DHTransitionTypeGrid: {
             settings.allowedDirections = [DHTransitionSettings allowedDirectionHorizontal];
         }
             break;
+        case DHTransitionTypeClothLine: {
+            settings.duration = 3;
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
+            break;
         case DHTransitionTypeRipple:
         case DHTransitionTypeMosaic:
         case DHTransitionTypeSwitch:
-        case DHTransitionTypeResolvingDoor:
         case DHTransitionTypeCover: {
             settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
         }
             break;
+        case DHTransitionTypeResolvingDoor: {
+            settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
+        }
         case DHTransitionTypeTwist: {
             settings.allowedDirections = [DHTransitionSettings allowedDirectionAll];
         }
             break;
         case DHTransitionTypeConfetti:{
             settings.timingFunction = DHTimingFunctionEaseOutExpo;
+            settings.duration = 2.f;
             settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
         }
             break;

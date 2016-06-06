@@ -126,7 +126,7 @@
 
 + (void) drawRect:(CGRect)rect inView:(UIView *)view onTexture:(GLuint)texture flipHorizontal:(BOOL)flipHorizontal flipVertical:(BOOL)flipVertical rotate:(BOOL)rotate
 {
-    CGFloat screenScale = [UIScreen mainScreen].scale;
+    CGFloat screenScale = 1;
     CGFloat textureWidth = rect.size.width * screenScale;
     CGFloat textureHeight = rect.size.height * screenScale;
     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, screenScale);

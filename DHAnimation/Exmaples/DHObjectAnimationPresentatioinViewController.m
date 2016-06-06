@@ -164,6 +164,7 @@
             self.renderer = [[DHFaceExplosionAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
+            break;
         case DHObjectAnimationTypeCompress: {
             self.renderer = [[DHCompressAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
@@ -183,8 +184,9 @@
 {
     [self.fromView removeFromSuperview];
     [self.toView removeFromSuperview];
+    self.settings.event = self.animationEvent;
     if (self.settings.event == DHAnimationEventBuiltOut) {
-        [self.view addSubview:self.toView];
+        [self.view addSubview:self.fromView];
     }
     self.fromView.image = [self randomImage];
     self.settings.containerView = self.view;
@@ -205,8 +207,9 @@
 - (UIImageView *)fromView
 {
     if (!_fromView) {
-        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
+        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 400, 400)];
         _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
+        _fromView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
     }
@@ -217,6 +220,7 @@
 {
     if (!_toView) {
         _toView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
+        _toView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _toView.image = [self randomImage];
     }
     return _toView;
