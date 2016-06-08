@@ -32,7 +32,6 @@
         case DHObjectAnimationTypeRotation:
         case DHObjectAnimationTypeTwirl:
         case DHObjectAnimationTypeScale:
-        case DHObjectAnimationTypeFlame:
         case DHObjectAnimationTypeSpin:
         case DHObjectAnimationTypeFaceExplosion:
         case DHObjectAnimationTypePop: {
@@ -44,6 +43,10 @@
         }
             break;
             
+        case DHObjectAnimationTypeFlame: {
+            settings.timingFunction = DHTimingFunctionEaseOutExpo;
+        }
+            break;
         case DHObjectAnimationTypeBlinds:{
             if (event == DHAnimationEventBuiltIn) {
                 settings.timingFunction = DHTimingFunctionEaseOutBack;
