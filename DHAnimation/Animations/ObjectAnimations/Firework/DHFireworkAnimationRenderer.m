@@ -10,6 +10,7 @@
 #import "DHFireworkEffect.h"
 @interface DHFireworkAnimationRenderer()
 @property (nonatomic, strong) NSMutableArray *fireworkEffects;
+@property (nonatomic, strong) DHFireworkEffect *effect;
 @end
 
 #define EXPLOSION_COUNT_PER_SECOND 3
@@ -37,6 +38,10 @@
 //        effect.mvpMatrix = mvpMatrix;
 //        [self.fireworkEffects addObject:effect];
 //    }
+    GLKVector3 emissionPosition = GLKVector3Make(100, 300, 0);
+    self.effect = [[DHFireworkEffect alloc] initWithContext:self.context exposionPosition:emissionPosition emissionTime:0];
+    self.effect.mvpMatrix = mvpMatrix;
+    self.effect.duration = 3.f;
 }
 
 - (NSTimeInterval) randomEmissionTime
@@ -61,19 +66,13 @@
 {
     [super drawFrame];
     
-    for (DHFireworkEffect *effect in self.fireworkEffects) {
-        if (effect.emissionTime < self.elapsedTime) {
-            [effect prepareToDraw];
-            [effect draw];
-        }
-    }
+    [self.effect prepareToDraw];
+    [self.effect draw];
 }
 
 - (void) updateAdditionalComponents
 {
-    for (DHFireworkEffect *effect in self.fireworkEffects) {
-        [effect updateWithElapsedTime:self.elapsedTime percent:self.percent];
-    }
+    [self.effect updateWithElapsedTime:self.elapsedTime percent:self.percent];
 }
 
 
