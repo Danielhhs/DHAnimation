@@ -38,10 +38,10 @@
 //        effect.mvpMatrix = mvpMatrix;
 //        [self.fireworkEffects addObject:effect];
 //    }
-    GLKVector3 emissionPosition = GLKVector3Make(100, 300, 0);
-    self.effect = [[DHFireworkEffect alloc] initWithContext:self.context exposionPosition:emissionPosition emissionTime:0];
+    GLKVector3 emissionPosition = GLKVector3Make(200, 380, 0);
+    self.effect = [[DHFireworkEffect alloc] initWithContext:self.context exposionPosition:emissionPosition emissionTime:0 duration:2.f];
     self.effect.mvpMatrix = mvpMatrix;
-    self.effect.duration = 3.f;
+    self.effect.color = [UIColor yellowColor];
 }
 
 - (NSTimeInterval) randomEmissionTime
