@@ -321,6 +321,8 @@
 		547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876331CA4D91800012F76 /* AnimationCategoryTableViewController.m */; };
 		547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876371CA50E2700012F76 /* DHTransitionRenderer.m */; };
 		5478764A1CA5118400012F76 /* DHSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* DHSceneMesh.m */; };
+		547F8A2C1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547F8A2B1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl */; };
+		547F8A2E1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547F8A2D1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl */; };
 		548EDF391CC8DE5B005E997B /* DHDropAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 548EDF381CC8DE5B005E997B /* DHDropAnimationRenderer.m */; };
 		548EDF3B1CC8DE6E005E997B /* ObjectDropVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF3A1CC8DE6E005E997B /* ObjectDropVertex.glsl */; };
 		548EDF3D1CC8E08E005E997B /* ObjectDropFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 548EDF3C1CC8E08E005E997B /* ObjectDropFragment.glsl */; };
@@ -925,6 +927,8 @@
 		547876371CA50E2700012F76 /* DHTransitionRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTransitionRenderer.m; sourceTree = "<group>"; };
 		547876481CA5118400012F76 /* DHSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSceneMesh.h; sourceTree = "<group>"; };
 		547876491CA5118400012F76 /* DHSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSceneMesh.m; sourceTree = "<group>"; };
+		547F8A2B1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FireworkBackgroundVertex.glsl; sourceTree = "<group>"; };
+		547F8A2D1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FireworkBackgroundFragment.glsl; sourceTree = "<group>"; };
 		548EDF371CC8DE5B005E997B /* DHDropAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDropAnimationRenderer.h; sourceTree = "<group>"; };
 		548EDF381CC8DE5B005E997B /* DHDropAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDropAnimationRenderer.m; sourceTree = "<group>"; };
 		548EDF3A1CC8DE6E005E997B /* ObjectDropVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectDropVertex.glsl; sourceTree = "<group>"; };
@@ -1818,6 +1822,8 @@
 			children = (
 				54A768A81CBD042E00826929 /* DHFireworkAnimationRenderer.h */,
 				54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */,
+				547F8A2B1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl */,
+				547F8A2D1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl */,
 			);
 			path = Firework;
 			sourceTree = "<group>";
@@ -2553,6 +2559,7 @@
 				547875FB1CA4D61B00012F76 /* MosaicDestinationFragment.glsl in Resources */,
 				547875F01CA4D61B00012F76 /* FlopDestinationVertex.glsl in Resources */,
 				54F64CCC1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl in Resources */,
+				547F8A2E1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl in Resources */,
 				547875F11CA4D61B00012F76 /* FlopSourceFragment.glsl in Resources */,
 				547875DE1CA4D61B00012F76 /* DoorWaySourceVertex.glsl in Resources */,
 				54A768981CBCA46D00826929 /* ConfettiAnimationFragment.glsl in Resources */,
@@ -2562,6 +2569,7 @@
 				54E2647E1C8FC5AC00FFB67E /* 2.jpg in Resources */,
 				547875EA1CA4D61B00012F76 /* FlipDestinationFragment.glsl in Resources */,
 				54A7688D1CBCA17C00826929 /* ReflectionDestinationFragment.glsl in Resources */,
+				547F8A2C1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl in Resources */,
 				548EDF3B1CC8DE6E005E997B /* ObjectDropVertex.glsl in Resources */,
 				547875E61CA4D61B00012F76 /* DropDestinationVertex.glsl in Resources */,
 				5478762C1CA4D61B00012F76 /* TwistDestinationVertex.glsl in Resources */,

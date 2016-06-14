@@ -18,6 +18,7 @@ typedef struct {
     GLfloat appearTime;
     GLfloat lifeTime;
     GLKVector4 color;
+    GLfloat shining;
 }DHFireworkTailAttributes;
 
 @interface DHFireworkEffect () {
@@ -65,7 +66,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"firework.png";
+    return @"dust.png";
 }
 
 - (void) generateParticlesData
@@ -101,6 +102,11 @@ typedef struct {
         particle.appearTime = self.emissionTime + appearTime;
         particle.lifeTime = self.duration / 5.f * (1.f - appearTime / self.duration);
         particle.color = GLKVector4Make(red, green, blue, alpha);
+        if(arc4random() % 10 == 0) {
+            particle.shining = 1.f;
+        } else {
+            particle.shining = 0.f;
+        }
         [self.particleData appendBytes:&particle length:sizeof(particle)];
     }
 }
@@ -132,6 +138,10 @@ typedef struct {
     
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(DHFireworkTailAttributes), NULL + offsetof(DHFireworkTailAttributes, color));
+    
+    glEnableVertexAttribArray(4);
+    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkTailAttributes), NULL + offsetof(DHFireworkTailAttributes, shining));
+    
     glBindVertexArray(0);
 }
 

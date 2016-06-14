@@ -9,7 +9,6 @@
 #import "DHFireworkAnimationRenderer.h"
 #import "DHFireworkEffect.h"
 @interface DHFireworkAnimationRenderer()
-@property (nonatomic, strong) NSMutableArray *fireworkEffects;
 @property (nonatomic, strong) DHFireworkEffect *effect;
 @end
 
@@ -19,32 +18,29 @@
 #define MIN_EXPLOSION_RATIO 0.2
 @implementation DHFireworkAnimationRenderer
 
-//- (NSString *) vertexShaderName
-//{
-//    return @"FireworkBackgroundVertex.glsl";
-//}
-//
-//- (NSString *) fragmentShaderName
-//{
-//    return @"FireworkBackgroundFragment.glsl";
-//}
+- (NSString *) vertexShaderName
+{
+    return @"FireworkBackgroundVertex.glsl";
+}
+
+- (NSString *) fragmentShaderName
+{
+    return @"FireworkBackgroundFragment.glsl";
+}
 
 - (void) setupEffects
 {
-    self.fireworkEffects = [NSMutableArray array];
-//    for (int i = 0; i < self.duration * EXPLOSION_COUNT_PER_SECOND; i++) {
-//        DHFireworkEffect *effect = [[DHFireworkEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:1 columnCount:1 emissionPosition:[self randomEmissionPosition] emissionRadius:[self randomExplosionRadius]];
-//        effect.explosionRadius = [self randomExplosionRadius];
-//        effect.mvpMatrix = mvpMatrix;
-//        [self.fireworkEffects addObject:effect];
-//    }
     self.effect = [[DHFireworkEffect alloc] initWithContext:self.context];
     self.effect.mvpMatrix = mvpMatrix;
-    for (int i = 0; i < 5; i++) {
-        GLKVector3 emissionPosition = [self randomEmissionPosition];
-        CGFloat duration = [self randomDuration];
-        CGFloat emissionTime = [self randomEmissionTimeForDuration:duration];
-        [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor]];
+    CGFloat space = self.duration - 2;
+    for (int i = 0; i < space; i++) {
+        CGFloat startTime = i;
+        for (int i = 0; i < 2; i++) {
+            GLKVector3 emissionPosition = [self randomEmissionPosition];
+            CGFloat duration = [self randomDuration];
+            CGFloat emissionTime = [self randomBetweenZeroToOne] + startTime;
+            [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor]];
+        }
     }
     [self.effect prepareToDraw];
 }
@@ -64,12 +60,10 @@
     return duration / 100.f + 2;
 }
 
-- (GLfloat) randomEmissionTimeForDuration:(CGFloat)duration
+- (CGFloat) randomBetweenZeroToOne
 {
-    GLfloat space = self.duration - duration;
-    int time = space * 100;
-    time = arc4random() % time;
-    return time / 100.f;
+    int random = arc4random() % 1000;
+    return random / 1000.f;
 }
 
 - (UIColor *) randomColor
@@ -85,6 +79,12 @@
 - (void) drawFrame
 {
     [super drawFrame];
+    
+    [self.mesh prepareToDraw];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1i(samplerLoc, 0);
+    [self.mesh drawEntireMesh];
     
     [self.effect draw];
 }
