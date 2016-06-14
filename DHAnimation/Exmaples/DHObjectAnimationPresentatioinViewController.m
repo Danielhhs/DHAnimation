@@ -45,7 +45,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
     self.animationView = [[GLKView alloc] initWithFrame:self.view.bounds context:[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]];
-    self.animationView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+//    self.animationView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     [self.view addSubview:self.animationView];
     self.settings = [DHObjectAnimationSettings defaultSettings];
     self.settings.animationView = self.animationView;

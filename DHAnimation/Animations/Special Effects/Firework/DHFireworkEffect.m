@@ -78,9 +78,9 @@ typedef struct {
 {
     for (int i = 0; i < FIREWORK_TAIL_COUNT; i++) {
         CGFloat angle = [self randomBetweenZeroToOne] * M_PI * 2;
-        CGFloat radius = [self randomBetweenZeroToOne] * 200;
+        CGFloat radius = [self randomBetweenZeroToOne] * 150;
         GLKVector3 direction = GLKVector3Normalize(GLKVector3Make(cos(angle) * radius, sin(angle) * radius, [self randomBetweenZeroToOne] * 2 * radius));
-        GLfloat velocity = 120;
+        GLfloat velocity = 100;
         GLfloat emissionTime = self.emissionTime;
         [self generateTailForDirection:direction velocity:velocity emissionTime:emissionTime];
     }

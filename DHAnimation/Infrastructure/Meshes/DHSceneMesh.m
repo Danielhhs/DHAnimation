@@ -96,8 +96,9 @@
         glVertexAttribPointer(7, 1, GL_FLOAT, GL_FALSE, sizeof(SceneMeshVertex), NULL + offsetof(SceneMeshVertex, rotating));
         
     }
-    glBindVertexArray(vertexArray);
+    glBindVertexArray(0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+    self.bufferDataBumped = YES;
 }
 
 - (void) drawIndicesWithMode:(GLenum)mode startIndex:(GLuint)index indicesCount:(size_t)indicesCount
@@ -122,14 +123,15 @@
         glDeleteBuffers(1, &indexBuffer);
         indexBuffer = 0;
     }
-    self.verticesData = nil;
-    self.indicesData = nil;
+//    self.verticesData = nil;
+//    self.indicesData = nil;
 //    free(vertices);
 //    free(indices);
 }
 
 - (void) drawEntireMesh
 {
+    glBindVertexArray(vertexArray);
     glDrawElements(GL_TRIANGLES, (int)self.indexCount, GL_UNSIGNED_INT, NULL);
     glBindVertexArray(0);
 }

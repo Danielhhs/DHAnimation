@@ -95,7 +95,7 @@
 {
     [self prepareAnimationForView:settings.targetView inContainerView:settings.containerView background:settings.background animationView:settings.animationView duration:settings.duration columnCount:settings.columnCount rowCount:settings.rowCount event:settings.event direction:settings.direction timingFunction:[DHTimingFunctionHelper functionForTimingFunction:settings.timingFunction] beforeAnimationPreparation:settings.beforeAnimation completion:settings.completion];
 }
-
+ 
 - (void) startAnimation{
     self.elapsedTime = 0.f;
     self.percent = 0.f;

@@ -11,5 +11,5 @@ layout(location = 0) out vec4 out_color;
 
 void main() {
     out_color = texture(s_tex, v_texCoords);
-    out_color.a = 1.f - u_percent;
+    out_color.a = u_percent;
 }
