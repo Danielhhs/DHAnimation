@@ -100,7 +100,7 @@
             break;
         case DHObjectAnimationTypeFirework: {
             self.renderer = [[DHFireworkAnimationRenderer alloc] init];
-            self.settings.duration = 2.f;
+            self.settings.duration = 5.f;
         }
             break;
         case DHObjectAnimationTypeBlur: {

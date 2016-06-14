@@ -17,10 +17,11 @@ typedef struct {
     GLKVector3 position;
     GLfloat appearTime;
     GLfloat lifeTime;
+    GLKVector4 color;
 }DHFireworkTailAttributes;
 
 @interface DHFireworkEffect () {
-    GLuint emissionPositionLoc, timeLoc, durationLoc, gravityLoc, colorLoc;
+    GLuint timeLoc;
     double red, green, blue, alpha;
 }
 @property (nonatomic) GLKVector3 emissionPosition;
@@ -29,25 +30,27 @@ typedef struct {
 
 @implementation DHFireworkEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context exposionPosition:(GLKVector3)position emissionTime:(GLfloat) emissionTime duration:(NSTimeInterval)duration
+- (instancetype) initWithContext:(EAGLContext *)context
 {
     self = [super initWithContext:context];
     if (self) {
-        _emissionPosition = position;
-        _emissionTime = emissionTime;
-        self.duration = duration;
         [self generateParticlesData];
     }
     return self;
 }
 
+- (void) addExplosionAtPosition:(GLKVector3)explosionPosition explosionTime:(NSTimeInterval)explosionTime duration:(NSTimeInterval)duration color:(UIColor *)color
+{
+    _emissionPosition = explosionPosition;
+    _emissionTime = explosionTime;
+    self.duration = duration;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    [self appendExplosionData];
+}
+
 - (void) setupExtraUniforms
 {
-    emissionPositionLoc = glGetUniformLocation(program, "u_emissionPosition");
     timeLoc = glGetUniformLocation(program, "u_time");
-    durationLoc = glGetUniformLocation(program, "u_duration");
-    gravityLoc = glGetUniformLocation(program, "u_gravity");
-    colorLoc = glGetUniformLocation(program, "u_color");
 }
 
 - (NSString *) vertexShaderFileName
@@ -68,6 +71,10 @@ typedef struct {
 - (void) generateParticlesData
 {
     self.particleData = [NSMutableData data];
+}
+
+- (void) appendExplosionData
+{
     for (int i = 0; i < FIREWORK_TAIL_COUNT; i++) {
         CGFloat angle = [self randomBetweenZeroToOne] * M_PI * 2;
         CGFloat radius = [self randomBetweenZeroToOne] * 200;
@@ -81,7 +88,7 @@ typedef struct {
 
 - (void) generateTailForDirection:(GLKVector3)direction velocity:(GLfloat)velocity emissionTime:(GLfloat)emissionTime
 {
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 30; i++) {
         DHFireworkTailAttributes particle;
         float appearTime = self.duration / 100.f * i;
         float t = NSBKeyframeAnimationFunctionEaseOutCubic(appearTime * 1000.f, 0.f, self.duration, self.duration * 1000.f);
@@ -92,7 +99,8 @@ typedef struct {
         GLKVector3 offset = GLKVector3Add(GLKVector3MultiplyScalar(velocityVector, t), GLKVector3MultiplyScalar(GLKVector3Make(ax, -g, 0.f), tsquare));
         particle.position = GLKVector3Add(self.emissionPosition, offset);
         particle.appearTime = self.emissionTime + appearTime;
-        particle.lifeTime = self.duration / 4.f * (1.f - appearTime / self.duration);
+        particle.lifeTime = self.duration / 5.f * (1.f - appearTime / self.duration);
+        particle.color = GLKVector4Make(red, green, blue, alpha);
         [self.particleData appendBytes:&particle length:sizeof(particle)];
     }
 }
@@ -122,6 +130,8 @@ typedef struct {
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(DHFireworkTailAttributes), NULL + offsetof(DHFireworkTailAttributes, lifeTime));
     
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(DHFireworkTailAttributes), NULL + offsetof(DHFireworkTailAttributes, color));
     glBindVertexArray(0);
 }
 
@@ -132,13 +142,8 @@ typedef struct {
     
     glUseProgram(program);
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
-    glUniform3fv(emissionPositionLoc, 1, self.emissionPosition.v);
     glUniform1f(timeLoc, self.elapsedTime);
-    glUniform1f(durationLoc, self.duration);
-    glUniform1f(gravityLoc, 100);
-    glUniform4f(colorLoc, red, green, blue, alpha);
     
-//    [self prepareToDraw];
     glBindVertexArray(vertexArray);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -152,11 +157,5 @@ typedef struct {
 {
     self.elapsedTime = elapsedTime;
     
-}
-
-- (void) setColor:(UIColor *)color
-{
-    _color = color;
-    [color getRed:&red green:&green blue:&blue alpha:&alpha];
 }
 @end

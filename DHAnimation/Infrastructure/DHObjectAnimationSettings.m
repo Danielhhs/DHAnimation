@@ -57,7 +57,6 @@
             settings.columnCount = 5;
         }
             break;
-        case DHObjectAnimationTypeFirework:
         case DHObjectAnimationTypeDissolve:
         case DHObjectAnimationTypePivot:
         case DHObjectAnimationTypeSkid:
@@ -71,6 +70,9 @@
         }
             break;
             
+        case DHObjectAnimationTypeFirework: {
+            settings.duration = 5.f;
+        }
         case DHObjectAnimationTypeShimmer: {
             if (event == DHAnimationEventBuiltIn) {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;

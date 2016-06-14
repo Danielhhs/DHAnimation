@@ -3,9 +3,9 @@
 precision highp float;
 
 uniform sampler2D s_tex;
-uniform vec4 u_color;
 
 in float v_percent;
+in vec4 v_color;
 
 layout(location = 0) out vec4 out_color;
 
@@ -18,9 +18,9 @@ void main() {
     } else {
         if (v_percent < 0.5) {
             float percent = v_percent / 0.5;
-            out_color.rgb = c_white_color + (u_color.rgb - c_white_color) * percent;
+            out_color.rgb = c_white_color + (v_color.rgb - c_white_color) * percent;
         } else {
-            out_color.rgb = u_color.rgb;
+            out_color.rgb = v_color.rgb;
         }
         out_color.a = 1.f - v_percent;
     }

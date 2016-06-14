@@ -10,8 +10,6 @@
 
 @interface DHFireworkEffect : DHParticleEffect
 
-- (instancetype) initWithContext:(EAGLContext *)context exposionPosition:(GLKVector3)position emissionTime:(GLfloat)emissionTime duration:(NSTimeInterval)duration;
-
-@property (nonatomic, strong) UIColor *color;
+- (void) addExplosionAtPosition:(GLKVector3)explosionPosition explosionTime:(NSTimeInterval)explosionTime duration:(NSTimeInterval)duration color:(UIColor *)color;
 
 @end

@@ -31,27 +31,22 @@
 
 - (void) setupEffects
 {
-//    self.fireworkEffects = [NSMutableArray array];
+    self.fireworkEffects = [NSMutableArray array];
 //    for (int i = 0; i < self.duration * EXPLOSION_COUNT_PER_SECOND; i++) {
 //        DHFireworkEffect *effect = [[DHFireworkEffect alloc] initWithContext:self.context targetView:self.targetView containerView:self.containerView rowCount:1 columnCount:1 emissionPosition:[self randomEmissionPosition] emissionRadius:[self randomExplosionRadius]];
 //        effect.explosionRadius = [self randomExplosionRadius];
 //        effect.mvpMatrix = mvpMatrix;
 //        [self.fireworkEffects addObject:effect];
 //    }
-    GLKVector3 emissionPosition = GLKVector3Make(200, 380, 0);
-    self.effect = [[DHFireworkEffect alloc] initWithContext:self.context exposionPosition:emissionPosition emissionTime:0 duration:2.f];
+    self.effect = [[DHFireworkEffect alloc] initWithContext:self.context];
     self.effect.mvpMatrix = mvpMatrix;
-    self.effect.color = [UIColor yellowColor];
-}
-
-- (NSTimeInterval) randomEmissionTime
-{
-    return (arc4random() % 100) / 100.f * self.duration * (1 - EXPLOSION_TIME_RATIO);
-}
-
-- (GLfloat) randomExplosionRadius
-{
-    return ((arc4random() % 50) / 50.f * (MAX_EXPLOSION_RATIO - MIN_EXPLOSION_RATIO) + MIN_EXPLOSION_RATIO) * self.containerView.frame.size.width;
+    for (int i = 0; i < 5; i++) {
+        GLKVector3 emissionPosition = [self randomEmissionPosition];
+        CGFloat duration = [self randomDuration];
+        CGFloat emissionTime = [self randomEmissionTimeForDuration:duration];
+        [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor]];
+    }
+    [self.effect prepareToDraw];
 }
 
 - (GLKVector3) randomEmissionPosition
@@ -62,11 +57,35 @@
     return GLKVector3Make(x, y, z);
 }
 
+- (GLfloat) randomDuration
+{
+    int duration = (self.duration - 2) * 100;
+    duration = arc4random() % duration;
+    return duration / 100.f + 2;
+}
+
+- (GLfloat) randomEmissionTimeForDuration:(CGFloat)duration
+{
+    GLfloat space = self.duration - duration;
+    int time = space * 100;
+    time = arc4random() % time;
+    return time / 100.f;
+}
+
+- (UIColor *) randomColor
+{
+    return [UIColor colorWithRed:[self randomColorComponent] green:[self randomColorComponent] blue:[self randomColorComponent] alpha:1.f];
+}
+
+- (CGFloat) randomColorComponent
+{
+    return arc4random() % 255 / 255.f;
+}
+
 - (void) drawFrame
 {
     [super drawFrame];
     
-    [self.effect prepareToDraw];
     [self.effect draw];
 }
 
