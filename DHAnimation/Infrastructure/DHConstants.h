@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, DHTransitionType) {
     DHTransitionTypeRotateDismiss = 16,
     DHTransitionTypeRipple = 17,
     DHTransitionTypeResolvingDoor = 18,
+    DHTransitionTypePageCurl = 19,
 };
 
 typedef NS_ENUM(NSInteger, DHObjectAnimationType) {

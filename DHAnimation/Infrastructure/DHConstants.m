@@ -47,6 +47,7 @@
 #import "DHSpinDismissTransitionRenderer.h"
 #import "DHRippleTransitionRenderer.h"
 #import "DHResolvingDoorTransitionRenderer.h"
+#import "DHPageCurlTransitionRenderer.h"
 
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
@@ -57,7 +58,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) transitions
 {
     if (transitionsArray == nil) {
-        transitionsArray = @[@"DoorWay", @"Cube", @"Twist", @"Cloth Line", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal", @"Drop", @"Mosaic", @"Flop", @"Cover", @"Flip", @"Reflection", @"Rotate Dismiss", @"Ripple", @"Resolving Door"];
+        transitionsArray = @[@"DoorWay", @"Cube", @"Twist", @"Cloth Line", @"Shredder", @"Switch", @"Grid", @"Confetti", @"Push", @"Reveal", @"Drop", @"Mosaic", @"Flop", @"Cover", @"Flip", @"Reflection", @"Rotate Dismiss", @"Ripple", @"Resolving Door", @"Page Curl"];
     }
     return transitionsArray;
 }
@@ -170,6 +171,8 @@ static NSArray *allAnimationsArray;
         return [[DHRippleTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Resolving Door"]) {
         return [[DHResolvingDoorTransitionRenderer alloc] init];
+    } else if ([transitionName isEqualToString:@"Page Curl"]) {
+        return [[DHPageCurlTransitionRenderer alloc] init];
     }
     return nil;
 }
