@@ -152,9 +152,15 @@
         glDeleteProgram(dstProgram);
         dstProgram = 0;
     }
+    [self tearDownExtraResource];
     self.animationView = nil;
     [EAGLContext setCurrentContext:nil];
     self.context = nil;
+}
+
+- (void) tearDownExtraResource
+{
+    
 }
 
 - (void) setupGL

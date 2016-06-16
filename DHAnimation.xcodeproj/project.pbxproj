@@ -639,6 +639,12 @@
 		54A768A11CBCE2B000826929 /* BlindsAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768A01CBCE2B000826929 /* BlindsAnimationVertex.glsl */; };
 		54A768A31CBCE2BE00826929 /* BlindsAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A768A21CBCE2BE00826929 /* BlindsAnimationFragment.glsl */; };
 		54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */; };
+		54AF7FD91D1155E800C28A32 /* BackPageGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FD81D1155E800C28A32 /* BackPageGradient.png */; };
+		54AF7FDA1D1155E800C28A32 /* BackPageGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FD81D1155E800C28A32 /* BackPageGradient.png */; };
+		54AF7FDC1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FDB1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl */; };
+		54AF7FDD1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FDB1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl */; };
+		54AF7FDF1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FDE1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl */; };
+		54AF7FE01D1157CC00C28A32 /* PageCurlBackPageFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54AF7FDE1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl */; };
 		54C141F41CEED5C100A6C9CF /* ObjectCompressVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */; };
 		54C141F61CEED5CC00A6C9CF /* ObjectCompressFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54C141F51CEED5CC00A6C9CF /* ObjectCompressFragment.glsl */; };
 		54C142001CEEDF7400A6C9CF /* ObjectCompressVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */; };
@@ -1014,6 +1020,9 @@
 		54A768A21CBCE2BE00826929 /* BlindsAnimationFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlindsAnimationFragment.glsl; sourceTree = "<group>"; };
 		54A768A81CBD042E00826929 /* DHFireworkAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFireworkAnimationRenderer.h; sourceTree = "<group>"; };
 		54A768A91CBD042E00826929 /* DHFireworkAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFireworkAnimationRenderer.m; sourceTree = "<group>"; };
+		54AF7FD81D1155E800C28A32 /* BackPageGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackPageGradient.png; sourceTree = "<group>"; };
+		54AF7FDB1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PageCurlBackPageVertex.glsl; sourceTree = "<group>"; };
+		54AF7FDE1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PageCurlBackPageFragment.glsl; sourceTree = "<group>"; };
 		54C141F31CEED5C100A6C9CF /* ObjectCompressVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectCompressVertex.glsl; sourceTree = "<group>"; };
 		54C141F51CEED5CC00A6C9CF /* ObjectCompressFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectCompressFragment.glsl; sourceTree = "<group>"; };
 		54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHObjectAnimationSettings.h; sourceTree = "<group>"; };
@@ -1663,8 +1672,11 @@
 		547F8A891D100C4200F730A5 /* PageCurl */ = {
 			isa = PBXGroup;
 			children = (
+				54AF7FD81D1155E800C28A32 /* BackPageGradient.png */,
 				547F8A8A1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h */,
 				547F8A8B1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m */,
+				54AF7FDB1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl */,
+				54AF7FDE1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl */,
 				547F8A8F1D100D7700F730A5 /* PageCurlSourceVertex.glsl */,
 				547F8A921D100D8400F730A5 /* PageCurlSourceFragment.glsl */,
 				547F8A951D100D9100F730A5 /* PageCurlDestinationVertex.glsl */,
@@ -2430,6 +2442,7 @@
 				54101B191CD34F9A002B10D0 /* ObjectTwirlFragment.glsl in Resources */,
 				546F521A1CE4685C00DA3B0C /* ObjectFaceExplosionVertex.glsl in Resources */,
 				546F521D1CE4686B00DA3B0C /* ObjectFaceExplosionFragment.glsl in Resources */,
+				54AF7FDA1D1155E800C28A32 /* BackPageGradient.png in Resources */,
 				54101B1A1CD34F9A002B10D0 /* ObjectSpinVertex.glsl in Resources */,
 				54101B1B1CD34F9A002B10D0 /* ObjectSpinFragment.glsl in Resources */,
 				54101B1C1CD34F9A002B10D0 /* ObjectScaleBigVertex.glsl in Resources */,
@@ -2459,6 +2472,7 @@
 				54101B361CD34F9A002B10D0 /* ReflectionDestinationFragment.glsl in Resources */,
 				54101B371CD34F9A002B10D0 /* ReflectionDestinationVertex.glsl in Resources */,
 				54101B381CD34F9A002B10D0 /* ReflectionSourceFragment.glsl in Resources */,
+				54AF7FE01D1157CC00C28A32 /* PageCurlBackPageFragment.glsl in Resources */,
 				54101B391CD34F9A002B10D0 /* ReflectionSourceVertex.glsl in Resources */,
 				54101B3A1CD34F9A002B10D0 /* ClothLineDestinationFragment.glsl in Resources */,
 				54C142001CEEDF7400A6C9CF /* ObjectCompressVertex.glsl in Resources */,
@@ -2520,6 +2534,7 @@
 				54101B6E1CD34F9A002B10D0 /* RippleDestinationFragment.glsl in Resources */,
 				54101B6F1CD34F9A002B10D0 /* RippleDestinationVertex.glsl in Resources */,
 				54101B701CD34F9A002B10D0 /* RippleSourceFragment.glsl in Resources */,
+				54AF7FDD1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl in Resources */,
 				54101B711CD34F9A002B10D0 /* RippleSourceVertex.glsl in Resources */,
 				54101B721CD34F9A002B10D0 /* SpinDismissFragment.glsl in Resources */,
 				54101B731CD34F9A002B10D0 /* SpinDismissVertex.glsl in Resources */,
@@ -2630,6 +2645,7 @@
 				547875C91CA4D61B00012F76 /* ConfettiSourceVertex.glsl in Resources */,
 				5420C0521CB8B0E6001C789C /* ShimmerBackgroundFragment.glsl in Resources */,
 				547875D11CA4D61B00012F76 /* CubeDestinationFragment.glsl in Resources */,
+				54AF7FDC1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl in Resources */,
 				54E264811C8FC5AC00FFB67E /* 5.jpg in Resources */,
 				547875F61CA4D61B00012F76 /* GridSourceFragment.glsl in Resources */,
 				5478760C1CA4D61B00012F76 /* RevealSourceFragment.glsl in Resources */,
@@ -2683,6 +2699,7 @@
 				547875C81CA4D61B00012F76 /* ConfettiSourceFragment.glsl in Resources */,
 				547876201CA4D61B00012F76 /* ShredderFragment.glsl in Resources */,
 				547875F21CA4D61B00012F76 /* FlopSourceVertex.glsl in Resources */,
+				54AF7FD91D1155E800C28A32 /* BackPageGradient.png in Resources */,
 				546F520D1CE42F1400DA3B0C /* FaceExplosionEffectFragment.glsl in Resources */,
 				548EDF601CCA01D6005E997B /* ObjectScaleFragment.glsl in Resources */,
 				54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */,
@@ -2692,6 +2709,7 @@
 				548EDF3D1CC8E08E005E997B /* ObjectDropFragment.glsl in Resources */,
 				547875D41CA4D61B00012F76 /* CubeSourceVertex.glsl in Resources */,
 				547875CE1CA4D61B00012F76 /* CoverSourceFragment.glsl in Resources */,
+				54AF7FDF1D1157CC00C28A32 /* PageCurlBackPageFragment.glsl in Resources */,
 				548EDF5E1CCA01CC005E997B /* ObjectScaleVertex.glsl in Resources */,
 				54E264831C8FC5AC00FFB67E /* 7.jpg in Resources */,
 				547876081CA4D61B00012F76 /* ResolvingDoorSourceVertex.glsl in Resources */,

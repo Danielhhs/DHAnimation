@@ -78,6 +78,9 @@
 //Set up drawing context, like culling, blending
 - (void) setupDrawingContext;
 
+//Override this method to tear down other resources in your own renderer
+- (void) tearDownExtraResource;
+
 //Override the getters of these properties to provide your meshes to be used for tear down GL;
 @property (nonatomic, strong) DHSceneMesh * srcMesh;
 @property (nonatomic, strong) DHSceneMesh * dstMesh;

@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Meshes/DHSceneMeshFactory.m"
-            timestampString = "487587738.565145"
+            filePath = "DHAnimation/Animations/Transitions/PageCurl/DHPageCurlTransitionRenderer.m"
+            timestampString = "487677755.367646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "+sceneMeshForView:containerView:columnCount:rowCount:splitTexturesOnEachGrid:columnMajored:rotateTexture:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-setupUniformsForSourceProgram"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

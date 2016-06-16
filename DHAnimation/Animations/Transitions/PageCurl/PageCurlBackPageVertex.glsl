@@ -11,6 +11,7 @@ layout(location = 2) in vec2 a_texCoords;
 
 out vec2 v_texCoords;
 out vec3 v_normal;
+out vec2 v_gradientTexCoords;
 
 #define M_PI 3.14159265358979323846264338327950288
 
@@ -35,6 +36,9 @@ vec4 updatedPosition() {
     v_normal = mix(vec3(0.f, 0.f, 1.f), (center - v.xyz) / u_radius, br1);
     v_normal = mix(v_normal, vec3(0.f, 0.f, -1.f), br2);
     
+    vec2 vw = v.xy - u_position;
+    float vd = dot(vw, -normal);
+    v_gradientTexCoords = vec2(-vd / u_radius, 0.5);
     return v;
 }
 
