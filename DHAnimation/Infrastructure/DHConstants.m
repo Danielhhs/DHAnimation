@@ -27,6 +27,7 @@
 #import "DHAnvilAnimationRenderer.h"
 #import "DHFaceExplosionAnimationRenderer.h"
 #import "DHCompressAnimationRenderer.h"
+#import "DHPointExplosionAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -66,7 +67,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) builtInAnimations
 {
     if (builtInAnimationsArray == nil) {
-        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil"];
+        builtInAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Point Explosion"];
     }
     return builtInAnimationsArray;
 }
@@ -82,7 +83,7 @@ static NSArray *allAnimationsArray;
 + (NSArray *) allAnimations
 {
     if (allAnimationsArray == nil) {
-        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress"];
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion"];
     }
     return allAnimationsArray;
 }
@@ -127,6 +128,8 @@ static NSArray *allAnimationsArray;
         return [[DHFaceExplosionAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Compress"]) {
         return [[DHCompressAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Point Explosion"]) {
+        return [[DHPointExplosionAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -222,6 +225,8 @@ static NSArray *allAnimationsArray;
             return @"Face Explosion";
         case DHObjectAnimationTypeCompress:
             return @"Compress";
+        case DHObjectAnimationTypePointExplosion:
+            return @"Point Explosion";
     }
     return @"None";
 }

@@ -29,6 +29,7 @@
 #import "DHFlameAnimationRenderer.h"
 #import "DHAnvilAnimationRenderer.h"
 #import "DHFaceExplosionAnimationRenderer.h"
+#import "DHPointExplosionAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -168,6 +169,10 @@
             break;
         case DHObjectAnimationTypeCompress: {
             self.renderer = [[DHCompressAnimationRenderer alloc] init];
+            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
+        }
+        case DHObjectAnimationTypePointExplosion: {
+            self.renderer = [[DHPointExplosionAnimationRenderer alloc] init];
             self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
         }
         default:

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/DHConstants.m"
-            timestampString = "487601389.763921"
+            timestampString = "487750383.507491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "+transitionRendererForName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -134,7 +134,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
@@ -153,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
-            timestampString = "487587046.835431"
+            filePath = "DHAnimation/Animations/Transitions/PageCurl/DHPageCurlTransitionRenderer.m"
+            timestampString = "487677755.367646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-startAnimation"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-setupUniformsForSourceProgram"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/Transitions/PageCurl/DHPageCurlTransitionRenderer.m"
-            timestampString = "487677755.367646"
+            filePath = "DHAnimation/Animations/Special Effects/PointExplosion/DHPointExplosionEffect.m"
+            timestampString = "487857172.087382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-setupUniformsForSourceProgram"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-draw"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

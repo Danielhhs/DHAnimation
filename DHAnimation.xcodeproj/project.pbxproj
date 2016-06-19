@@ -686,6 +686,20 @@
 		54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58171C8FD25F009D812C /* TextureHelper.m */; };
 		54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58191C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c */; };
 		54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58211C8FD325009D812C /* DHTimingFunctionHelper.m */; };
+		54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE3FC01D12368E0090A491 /* DHPointExplosionEffect.h */; };
+		54EE3FC31D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
+		54EE3FC41D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
+		54EE3FD41D123AE50090A491 /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
+		54EE3FD51D123AE50090A491 /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
+		54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
+		54EE3FD81D123AF10090A491 /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
+		54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */; };
+		54EE40071D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
+		54EE40081D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
+		54EE400A1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
+		54EE400B1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
+		54EE400D1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
+		54EE400E1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
 		54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */; };
 		54F64CCC1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */; };
 		54F64CCE1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCD1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl */; };
@@ -1075,6 +1089,14 @@
 		54EC581A1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		54EC58201C8FD325009D812C /* DHTimingFunctionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTimingFunctionHelper.h; sourceTree = "<group>"; };
 		54EC58211C8FD325009D812C /* DHTimingFunctionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTimingFunctionHelper.m; sourceTree = "<group>"; };
+		54EE3FC01D12368E0090A491 /* DHPointExplosionEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPointExplosionEffect.h; sourceTree = "<group>"; };
+		54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPointExplosionEffect.m; sourceTree = "<group>"; };
+		54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PointExplosionVertex.glsl; sourceTree = "<group>"; };
+		54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PointExplosionFragment.glsl; sourceTree = "<group>"; };
+		54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHPointExplosionAnimationRenderer.h; sourceTree = "<group>"; };
+		54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPointExplosionAnimationRenderer.m; sourceTree = "<group>"; };
+		54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectPointExplosionVertex.glsl; sourceTree = "<group>"; };
+		54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectPointExplosionFragment.glsl; sourceTree = "<group>"; };
 		54F64CC81CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAnvilAnimationRenderer.h; sourceTree = "<group>"; };
 		54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAnvilAnimationRenderer.m; sourceTree = "<group>"; };
 		54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectAnvilVertex.glsl; sourceTree = "<group>"; };
@@ -1309,6 +1331,10 @@
 		546F52031CE424BB00DA3B0C /* PointExplosion */ = {
 			isa = PBXGroup;
 			children = (
+				54EE3FC01D12368E0090A491 /* DHPointExplosionEffect.h */,
+				54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */,
+				54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */,
+				54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */,
 			);
 			path = PointExplosion;
 			sourceTree = "<group>";
@@ -1327,6 +1353,7 @@
 		5478751C1CA4D61B00012F76 /* ObjectAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				54EE3FFE1D125BF50090A491 /* PointExplosion */,
 				546141CD1CEEAF350002AF2C /* Compress */,
 				546F52121CE4308600DA3B0C /* FaceExplosion */,
 				54F64CC71CCF473800AFBCF8 /* Anvil */,
@@ -2033,6 +2060,17 @@
 			path = "Timing Function Helpers";
 			sourceTree = "<group>";
 		};
+		54EE3FFE1D125BF50090A491 /* PointExplosion */ = {
+			isa = PBXGroup;
+			children = (
+				54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */,
+				54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */,
+				54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */,
+				54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */,
+			);
+			path = PointExplosion;
+			sourceTree = "<group>";
+		};
 		54F64CC71CCF473800AFBCF8 /* Anvil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2061,6 +2099,7 @@
 				5490CD5C1CD34EF900C93002 /* DHSkidAnimationRenderer.h in Headers */,
 				5490CD5D1CD34EF900C93002 /* DHDissolveAnimationRenderer.h in Headers */,
 				5490CD5E1CD34EF900C93002 /* DHTwirlAnimationRenderer.h in Headers */,
+				54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */,
 				5490CD5F1CD34EF900C93002 /* DHSpinAnimationRenderer.h in Headers */,
 				5490CD601CD34EF900C93002 /* DHScaleBigAnimationRenderer.h in Headers */,
 				5490CD611CD34EF900C93002 /* DHScaleAnimationRenderer.h in Headers */,
@@ -2097,6 +2136,7 @@
 				5490CD7E1CD34EF900C93002 /* DHMosaicBackMesh.h in Headers */,
 				5490CD7F1CD34EF900C93002 /* DHMosaicMesh.h in Headers */,
 				5490CD801CD34EF900C93002 /* DHMosaicTransitionRenderer.h in Headers */,
+				54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */,
 				5490CD811CD34EF900C93002 /* DHPushTransitionRenderer.h in Headers */,
 				5490CD821CD34EF900C93002 /* DHResolvingDoorTransitionRenderer.h in Headers */,
 				5490CD831CD34EF900C93002 /* DHRevealTransitionRenderer.h in Headers */,
@@ -2393,10 +2433,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EE3FD81D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
 				5450633C1D067545001C44F7 /* FlameEffectFragment.glsl in Resources */,
 				545063391D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */,
+				54EE3FD51D123AE50090A491 /* PointExplosionVertex.glsl in Resources */,
 				54DEB7121D0810A300812DFA /* FireworkFragment.glsl in Resources */,
+				54EE400E1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */,
 				54DEB70F1D08109800812DFA /* FireworkVertex.glsl in Resources */,
+				54EE400B1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2624,8 +2668,10 @@
 				547F8A2C1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl in Resources */,
 				548EDF3B1CC8DE6E005E997B /* ObjectDropVertex.glsl in Resources */,
 				547F8A901D100D7700F730A5 /* PageCurlSourceVertex.glsl in Resources */,
+				54EE400D1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */,
 				547875E61CA4D61B00012F76 /* DropDestinationVertex.glsl in Resources */,
 				5478762C1CA4D61B00012F76 /* TwistDestinationVertex.glsl in Resources */,
+				54EE400A1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */,
 				54E264091C8EBCBF00FFB67E /* Assets.xcassets in Resources */,
 				547875EF1CA4D61B00012F76 /* FlopDestinationFragment.glsl in Resources */,
 				547875CF1CA4D61B00012F76 /* CoverSourceVertex.glsl in Resources */,
@@ -2703,6 +2749,7 @@
 				546F520D1CE42F1400DA3B0C /* FaceExplosionEffectFragment.glsl in Resources */,
 				548EDF601CCA01D6005E997B /* ObjectScaleFragment.glsl in Resources */,
 				54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */,
+				54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				548EDF591CC9FDFC005E997B /* ObjectPopVertex.glsl in Resources */,
 				5478760B1CA4D61B00012F76 /* RevealDestinationVertex.glsl in Resources */,
@@ -2720,6 +2767,7 @@
 				547876111CA4D61B00012F76 /* RippleSourceFragment.glsl in Resources */,
 				547876061CA4D61B00012F76 /* ResolvingDoorDestinationVertex.glsl in Resources */,
 				547875DC1CA4D61B00012F76 /* DoorWayDestinationVertex.glsl in Resources */,
+				54EE3FD41D123AE50090A491 /* PointExplosionVertex.glsl in Resources */,
 				547875FE1CA4D61B00012F76 /* MosaicSourceVertex.glsl in Resources */,
 				548EDF791CCB5668005E997B /* ObjectTwirlVertex.glsl in Resources */,
 				54126CD61CD98C08008AF45E /* ObjectBackgroundVertex.glsl in Resources */,
@@ -2793,6 +2841,7 @@
 				5490CDBE1CD34F2600C93002 /* DHFlipTransitionRenderer.m in Sources */,
 				546F51C91CE2DF3F00DA3B0C /* DHSplitTextureSceneMesh.m in Sources */,
 				5490CDBF1CD34F2600C93002 /* DHFlopTransitionRenderer.m in Sources */,
+				54EE3FC41D12368E0090A491 /* DHPointExplosionEffect.m in Sources */,
 				5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */,
 				5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */,
 				5490CDC21CD34F2600C93002 /* DHMosaicMesh.m in Sources */,
@@ -2810,6 +2859,7 @@
 				546F52171CE430A300DA3B0C /* DHFaceExplosionAnimationRenderer.m in Sources */,
 				5490CDCC1CD34F2600C93002 /* DHShredderPaperPieceSceneMesh.m in Sources */,
 				5490CDCD1CD34F2600C93002 /* DHShredderTransitionRenderer.m in Sources */,
+				54EE40081D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */,
 				5490CDCE1CD34F2600C93002 /* DHSwitchTransitionRenderer.m in Sources */,
 				5490CDCF1CD34F2600C93002 /* DHTwistMesh.m in Sources */,
 				5490CDD01CD34F2600C93002 /* DHTwistTransitionRenderer.m in Sources */,
@@ -2921,6 +2971,7 @@
 			files = (
 				546F52161CE430A300DA3B0C /* DHFaceExplosionAnimationRenderer.m in Sources */,
 				546F51C21CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m in Sources */,
+				54EE3FC31D12368E0090A491 /* DHPointExplosionEffect.m in Sources */,
 				548EDF411CC90B4A005E997B /* DHPivotAnimationRenderer.m in Sources */,
 				54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */,
 				547875FA1CA4D61B00012F76 /* DHMosaicTransitionRenderer.m in Sources */,
@@ -2934,6 +2985,7 @@
 				547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */,
 				546F51C61CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */,
 				546141D11CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */,
+				54EE40071D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */,
 				540AFA791CD2E65C004EF919 /* DHSparkleEffect.m in Sources */,
 				549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */,
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,

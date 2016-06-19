@@ -23,7 +23,7 @@ typedef struct {
 
 @interface DHFireworkEffect () {
     GLuint timeLoc;
-    double red, green, blue, alpha;
+    CGFloat red, green, blue, alpha;
 }
 @property (nonatomic) GLKVector3 emissionPosition;
 @property (nonatomic) GLfloat emissionTime;
