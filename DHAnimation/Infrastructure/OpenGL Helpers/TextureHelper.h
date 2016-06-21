@@ -8,6 +8,8 @@
 
 #import <GLKit/GLKit.h>
 
+#define NUMBER_OF_GLYPHS_PER_LINE 10
+
 @interface TextureHelper : NSObject
 
 + (GLuint) setupTextureWithView:(UIView *)view;
@@ -37,5 +39,7 @@
 + (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect flipHorizontal:(BOOL) flipHorizontal;
 
 + (GLuint) setupTextureWithImage:(UIImage *)image inRect:(CGRect)rect flipHorizontal:(BOOL) flipHorizontal flipVertical:(BOOL)flipVertical;
+
++ (GLuint) setupTextureWithAttributedString:(NSAttributedString *)attrString;
 
 @end

@@ -50,10 +50,14 @@
 #import "DHResolvingDoorTransitionRenderer.h"
 #import "DHPageCurlTransitionRenderer.h"
 
+#import "DHTextOrbitalAnimationRenderer.h"
+
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
 static NSArray *builtOutAnimationsArray;
 static NSArray *allAnimationsArray;
+static NSArray *textAnimationArray;
+
 @implementation DHConstants
 
 + (NSArray *) transitions
@@ -86,6 +90,14 @@ static NSArray *allAnimationsArray;
         allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion"];
     }
     return allAnimationsArray;
+}
+
++ (NSArray *) textAnimations
+{
+    if (textAnimationArray == nil) {
+        textAnimationArray = @[@"Orbital"];
+    }
+    return textAnimationArray;
 }
 
 + (DHObjectAnimationRenderer *) animationRendererForName:(NSString *)animationName
@@ -229,6 +241,16 @@ static NSArray *allAnimationsArray;
             return @"Point Explosion";
     }
     return @"None";
+}
+
++ (DHTextEffectRenderer *) textRendererForType:(DHTextAnimationType)type
+{
+    switch (type) {
+        case DHTextAnimationTypeOrbital:
+            return [[DHTextOrbitalAnimationRenderer alloc] init];            
+        default:
+            break;
+    }
 }
 
 + (NSString *) transitionNameForTransitionType:(DHTransitionType)transitionType

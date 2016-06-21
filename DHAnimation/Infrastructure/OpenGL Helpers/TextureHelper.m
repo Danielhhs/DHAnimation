@@ -7,6 +7,7 @@
 //
 
 #import "TextureHelper.h"
+#import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
 
 @implementation TextureHelper
@@ -173,10 +174,28 @@
     CGContextRestoreGState(context);
     
     GLubyte *data = CGBitmapContextGetData(context);
+    
+    UIImage *image = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+    
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
     CGContextRelease(context);
+}
+
++ (GLuint) setupTextureWithAttributedString:(NSAttributedString *)attrString
+{
+    GLuint texture = [TextureHelper generateTexture];
+    GLfloat textureWidth = attrString.size.width * 2;
+    GLfloat textureHeight = attrString.size.height * 2;
+    
+    [TextureHelper drawRect:CGRectMake(0, 0, textureWidth, textureHeight) onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
+        CGContextScaleCTM(context, 2.f, 2.f);
+        CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)attrString);
+        CTLineDraw(line, context);
+    }];
+    
+    return texture;
 }
 
 @end

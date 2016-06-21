@@ -37,6 +37,8 @@
         [self performSegueWithIdentifier:@"builtInAnimations" sender:self];
     } else if (indexPath.row == 2) {
         [self performSegueWithIdentifier:@"builtOutAnimations" sender:self];
+    } else if (indexPath.row == 3) {
+        [self performSegueWithIdentifier:@"textAnimations" sender:self];
     }
 }
 @end

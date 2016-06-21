@@ -491,6 +491,28 @@
 		5490CDD81CD34F2600C93002 /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
 		5490CDD91CD34F2600C93002 /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */; };
 		5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58191C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c */; };
+		549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF311D177C65007517D0 /* DHTextEffectRenderer.h */; };
+		549CCF341D177C65007517D0 /* DHTextEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */; };
+		549CCF351D177C65007517D0 /* DHTextEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */; };
+		549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF371D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h */; };
+		549CCF3A1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */; };
+		549CCF3B1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */; };
+		549CCF3D1D177D8B007517D0 /* TextOrbitalVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */; };
+		549CCF401D177D98007517D0 /* TextOrbitalFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */; };
+		549CCF441D177DD2007517D0 /* DHTextSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF421D177DD2007517D0 /* DHTextSceneMesh.h */; };
+		549CCF451D177DD2007517D0 /* DHTextSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */; };
+		549CCF461D177DD2007517D0 /* DHTextSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */; };
+		549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF471D1781EF007517D0 /* DHTextOrbitalMesh.h */; };
+		549CCF4A1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */; };
+		549CCF4B1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */; };
+		549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF4C1D179E80007517D0 /* DHTextAnimationPresentationViewController.h */; };
+		549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */; };
+		549CCF501D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */; };
+		549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */; };
+		549CCF541D17A209007517D0 /* DHTextAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */; };
+		549CCF551D17A209007517D0 /* DHTextAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */; };
+		549CCF561D17BB50007517D0 /* TextOrbitalFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */; };
+		549CCF571D17BB52007517D0 /* TextOrbitalVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
 		549FBC751CC773C8000E1ABF /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
 		549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
@@ -700,6 +722,7 @@
 		54EE400B1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
 		54EE400D1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
 		54EE400E1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
+		54EE40461D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40451D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m */; };
 		54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */; };
 		54F64CCC1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */; };
 		54F64CCE1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCD1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl */; };
@@ -1008,6 +1031,20 @@
 		548EDF991CCCA47B005E997B /* ObjectFlameFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFlameFragment.glsl; sourceTree = "<group>"; };
 		5490CDDF1CD34F5300C93002 /* DHAnimationBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHAnimationBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5490CDE11CD34F5300C93002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549CCF311D177C65007517D0 /* DHTextEffectRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextEffectRenderer.h; sourceTree = "<group>"; };
+		549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextEffectRenderer.m; sourceTree = "<group>"; };
+		549CCF371D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextOrbitalAnimationRenderer.h; sourceTree = "<group>"; };
+		549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextOrbitalAnimationRenderer.m; sourceTree = "<group>"; };
+		549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextOrbitalVertex.glsl; sourceTree = "<group>"; };
+		549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextOrbitalFragment.glsl; sourceTree = "<group>"; };
+		549CCF421D177DD2007517D0 /* DHTextSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextSceneMesh.h; sourceTree = "<group>"; };
+		549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextSceneMesh.m; sourceTree = "<group>"; };
+		549CCF471D1781EF007517D0 /* DHTextOrbitalMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextOrbitalMesh.h; sourceTree = "<group>"; };
+		549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextOrbitalMesh.m; sourceTree = "<group>"; };
+		549CCF4C1D179E80007517D0 /* DHTextAnimationPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextAnimationPresentationViewController.h; sourceTree = "<group>"; };
+		549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextAnimationPresentationViewController.m; sourceTree = "<group>"; };
+		549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextAnimationSettings.h; sourceTree = "<group>"; };
+		549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextAnimationSettings.m; sourceTree = "<group>"; };
 		549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBlurAnimationRenderer.h; sourceTree = "<group>"; };
 		549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBlurAnimationRenderer.m; sourceTree = "<group>"; };
 		549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlurAnimationVertex.glsl; sourceTree = "<group>"; };
@@ -1097,6 +1134,8 @@
 		54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPointExplosionAnimationRenderer.m; sourceTree = "<group>"; };
 		54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectPointExplosionVertex.glsl; sourceTree = "<group>"; };
 		54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectPointExplosionFragment.glsl; sourceTree = "<group>"; };
+		54EE40441D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextAnimationChooseTypeTableViewController.h; sourceTree = "<group>"; };
+		54EE40451D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextAnimationChooseTypeTableViewController.m; sourceTree = "<group>"; };
 		54F64CC81CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHAnvilAnimationRenderer.h; sourceTree = "<group>"; };
 		54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHAnvilAnimationRenderer.m; sourceTree = "<group>"; };
 		54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectAnvilVertex.glsl; sourceTree = "<group>"; };
@@ -1667,6 +1706,8 @@
 		547876351CA50E2700012F76 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
+				549CCF311D177C65007517D0 /* DHTextEffectRenderer.h */,
+				549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */,
 				547876361CA50E2700012F76 /* DHTransitionRenderer.h */,
 				547876371CA50E2700012F76 /* DHTransitionRenderer.m */,
 				5420C0261CB663C2001C789C /* DHObjectAnimationRenderer.h */,
@@ -1692,6 +1733,8 @@
 				546F51C11CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m */,
 				546F51C31CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h */,
 				546F51C41CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m */,
+				549CCF421D177DD2007517D0 /* DHTextSceneMesh.h */,
+				549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */,
 			);
 			path = Meshes;
 			sourceTree = "<group>";
@@ -1828,6 +1871,19 @@
 				5490CDE11CD34F5300C93002 /* Info.plist */,
 			);
 			path = DHAnimationBundle;
+			sourceTree = "<group>";
+		};
+		549CCF361D177CC3007517D0 /* Orbital */ = {
+			isa = PBXGroup;
+			children = (
+				549CCF371D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h */,
+				549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */,
+				549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */,
+				549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */,
+				549CCF471D1781EF007517D0 /* DHTextOrbitalMesh.h */,
+				549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */,
+			);
+			path = Orbital;
 			sourceTree = "<group>";
 		};
 		549FBC701CC773A8000E1ABF /* Blur */ = {
@@ -1991,6 +2047,8 @@
 				54EC58181C8FD25F009D812C /* Timing Function */,
 				54E2646B1C8EC62F00FFB67E /* DHConstants.h */,
 				54E2646C1C8EC62F00FFB67E /* DHConstants.m */,
+				549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */,
+				549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */,
 				54E2646E1C8ED4A600FFB67E /* DHTransitionSettings.h */,
 				54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */,
 				54C61C0C1CCF0ECC002336FD /* DHObjectAnimationSettings.h */,
@@ -2002,6 +2060,7 @@
 		54E264521C8EBDD700FFB67E /* Exmaples */ = {
 			isa = PBXGroup;
 			children = (
+				54EE40431D166FA70090A491 /* TextAnimations */,
 				5456170E1CA7AC2A002D5C04 /* BuiltInAnimation */,
 				5456170A1CA7AC02002D5C04 /* Transitions */,
 				547876321CA4D91800012F76 /* AnimationCategoryTableViewController.h */,
@@ -2013,6 +2072,7 @@
 		54E264531C8EBDDA00FFB67E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				54EE403D1D166E4E0090A491 /* Text Effects */,
 				540AFA541CD2E65C004EF919 /* Special Effects */,
 				5478751C1CA4D61B00012F76 /* ObjectAnimations */,
 				5478751F1CA4D61B00012F76 /* Transitions */,
@@ -2071,6 +2131,25 @@
 			path = PointExplosion;
 			sourceTree = "<group>";
 		};
+		54EE403D1D166E4E0090A491 /* Text Effects */ = {
+			isa = PBXGroup;
+			children = (
+				549CCF361D177CC3007517D0 /* Orbital */,
+			);
+			path = "Text Effects";
+			sourceTree = "<group>";
+		};
+		54EE40431D166FA70090A491 /* TextAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				54EE40441D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.h */,
+				54EE40451D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m */,
+				549CCF4C1D179E80007517D0 /* DHTextAnimationPresentationViewController.h */,
+				549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */,
+			);
+			path = TextAnimations;
+			sourceTree = "<group>";
+		};
 		54F64CC71CCF473800AFBCF8 /* Anvil */ = {
 			isa = PBXGroup;
 			children = (
@@ -2114,11 +2193,13 @@
 				54DEB70A1D08103500812DFA /* DHFireworkEffect.h in Headers */,
 				5490CD6B1CD34EF900C93002 /* DHRotationAnimationRenderer.h in Headers */,
 				5490CD6C1CD34EF900C93002 /* DHShimmerBackgroundMesh.h in Headers */,
+				549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */,
 				546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */,
 				5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */,
 				5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */,
 				5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */,
 				546141D01CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h in Headers */,
+				549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */,
 				5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */,
 				5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */,
 				546F52061CE424D300DA3B0C /* DHFaceExplosionEffect.h in Headers */,
@@ -2138,6 +2219,7 @@
 				5490CD801CD34EF900C93002 /* DHMosaicTransitionRenderer.h in Headers */,
 				54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */,
 				5490CD811CD34EF900C93002 /* DHPushTransitionRenderer.h in Headers */,
+				549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */,
 				5490CD821CD34EF900C93002 /* DHResolvingDoorTransitionRenderer.h in Headers */,
 				5490CD831CD34EF900C93002 /* DHRevealTransitionRenderer.h in Headers */,
 				5490CD841CD34EF900C93002 /* DHRippleTransitionRenderer.h in Headers */,
@@ -2154,16 +2236,19 @@
 				5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */,
 				5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */,
 				547F8A8C1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h in Headers */,
+				549CCF441D177DD2007517D0 /* DHTextSceneMesh.h in Headers */,
 				5490CD8F1CD34EF900C93002 /* DHSceneMesh.h in Headers */,
 				5490CD901CD34EF900C93002 /* DHTransitionRenderer.h in Headers */,
 				5490CD911CD34EF900C93002 /* DHObjectAnimationRenderer.h in Headers */,
 				5490CD921CD34EF900C93002 /* OpenGLHelper.h in Headers */,
+				549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */,
 				5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */,
 				5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */,
 				5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */,
 				5490CD961CD34EF900C93002 /* DHConstants.h in Headers */,
 				5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */,
 				5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */,
+				549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */,
 				546F51C81CE2DF3900DA3B0C /* DHSplitTextureSceneMesh.h in Headers */,
 				546F52151CE430A300DA3B0C /* DHFaceExplosionAnimationRenderer.h in Headers */,
 			);
@@ -2541,6 +2626,8 @@
 				54101B4C1CD34F9A002B10D0 /* DoorWaySourceFragment.glsl in Resources */,
 				54101B4D1CD34F9A002B10D0 /* DoorWaySourceVertex.glsl in Resources */,
 				54101B4E1CD34F9A002B10D0 /* DropDestinationFragment.glsl in Resources */,
+				549CCF561D17BB50007517D0 /* TextOrbitalFragment.glsl in Resources */,
+				549CCF571D17BB52007517D0 /* TextOrbitalVertex.glsl in Resources */,
 				54101B4F1CD34F9A002B10D0 /* DropDestinationVertex.glsl in Resources */,
 				546F520B1CE42F0000DA3B0C /* FaceExplosionEffectVertex.glsl in Resources */,
 				54101B501CD34F9A002B10D0 /* DropSourceFragment.glsl in Resources */,
@@ -2699,6 +2786,7 @@
 				54DEB70E1D08109800812DFA /* FireworkVertex.glsl in Resources */,
 				548EDF801CCB5D8E005E997B /* ObjectDissolveFragment.glsl in Resources */,
 				547876281CA4D61B00012F76 /* SwitchSourceVertex.glsl in Resources */,
+				549CCF401D177D98007517D0 /* TextOrbitalFragment.glsl in Resources */,
 				54A768481CBBAAF600826929 /* ObjectRotationVertex.glsl in Resources */,
 				54A768421CBB49C400826929 /* SparkleBackgroundFragment.glsl in Resources */,
 				5478762E1CA4D61B00012F76 /* TwistSourceVertex.glsl in Resources */,
@@ -2748,6 +2836,7 @@
 				54AF7FD91D1155E800C28A32 /* BackPageGradient.png in Resources */,
 				546F520D1CE42F1400DA3B0C /* FaceExplosionEffectFragment.glsl in Resources */,
 				548EDF601CCA01D6005E997B /* ObjectScaleFragment.glsl in Resources */,
+				549CCF3D1D177D8B007517D0 /* TextOrbitalVertex.glsl in Resources */,
 				54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */,
 				54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
@@ -2812,6 +2901,7 @@
 				5490CDA11CD34F2600C93002 /* DHTwirlAnimationRenderer.m in Sources */,
 				5490CDA21CD34F2600C93002 /* DHSpinAnimationRenderer.m in Sources */,
 				5490CDA31CD34F2600C93002 /* DHScaleBigAnimationRenderer.m in Sources */,
+				549CCF351D177C65007517D0 /* DHTextEffectRenderer.m in Sources */,
 				5490CDA41CD34F2600C93002 /* DHScaleAnimationRenderer.m in Sources */,
 				5490CDA51CD34F2600C93002 /* DHPopAnimationRenderer.m in Sources */,
 				5490CDA61CD34F2600C93002 /* DHPivotAnimationRenderer.m in Sources */,
@@ -2820,12 +2910,14 @@
 				545063361D0674CF001C44F7 /* DHFlameEffect.m in Sources */,
 				5490CDAB1CD34F2600C93002 /* DHFireworkAnimationRenderer.m in Sources */,
 				5490CDAC1CD34F2600C93002 /* DHBlindsAnimationRenderer.m in Sources */,
+				549CCF551D17A209007517D0 /* DHTextAnimationSettings.m in Sources */,
 				5490CDAD1CD34F2600C93002 /* DHConfettiAnimationRenderer.m in Sources */,
 				5490CDAE1CD34F2600C93002 /* DHRotationAnimationRenderer.m in Sources */,
 				5490CDAF1CD34F2600C93002 /* DHShimmerBackgroundMesh.m in Sources */,
 				5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */,
 				5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */,
 				5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */,
+				549CCF3B1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
 				546141D21CEEAF4B0002AF2C /* DHCompressAnimationRenderer.m in Sources */,
 				5490CDB31CD34F2600C93002 /* DHClothLineTransitionRenderer.m in Sources */,
 				5490CDB41CD34F2600C93002 /* DHConfettiTransitionRenderer.m in Sources */,
@@ -2845,6 +2937,7 @@
 				5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */,
 				5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */,
 				5490CDC21CD34F2600C93002 /* DHMosaicMesh.m in Sources */,
+				549CCF501D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,
 				54107F5C1CE812E200DE5B35 /* DHBackgroundRenderer.m in Sources */,
 				5490CDC31CD34F2600C93002 /* DHMosaicTransitionRenderer.m in Sources */,
 				5490CDC41CD34F2600C93002 /* DHPushTransitionRenderer.m in Sources */,
@@ -2870,6 +2963,8 @@
 				5490CDD31CD34F2600C93002 /* DHTransitionRenderer.m in Sources */,
 				5490CDD41CD34F2600C93002 /* DHObjectAnimationRenderer.m in Sources */,
 				546F51C71CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */,
+				549CCF4B1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */,
+				549CCF461D177DD2007517D0 /* DHTextSceneMesh.m in Sources */,
 				5490CDD51CD34F2600C93002 /* OpenGLHelper.m in Sources */,
 				5490CDD61CD34F2600C93002 /* TextureHelper.m in Sources */,
 				5490CDD71CD34F2600C93002 /* DHTimingFunctionHelper.m in Sources */,
@@ -2971,6 +3066,7 @@
 			files = (
 				546F52161CE430A300DA3B0C /* DHFaceExplosionAnimationRenderer.m in Sources */,
 				546F51C21CE2DE2400DA3B0C /* DHSplitTextureSceneMesh.m in Sources */,
+				549CCF451D177DD2007517D0 /* DHTextSceneMesh.m in Sources */,
 				54EE3FC31D12368E0090A491 /* DHPointExplosionEffect.m in Sources */,
 				548EDF411CC90B4A005E997B /* DHPivotAnimationRenderer.m in Sources */,
 				54E264691C8EC2FF00FFB67E /* DHTransitionPresentationViewController.m in Sources */,
@@ -2990,7 +3086,9 @@
 				549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */,
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,
 				5420C05A1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m in Sources */,
+				549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,
 				545617091CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m in Sources */,
+				549CCF3A1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
 				5456170D1CA7AC21002D5C04 /* DHObjectAnimationPresentatioinViewController.m in Sources */,
 				546F52071CE424D300DA3B0C /* DHFaceExplosionEffect.m in Sources */,
 				547876181CA4D61B00012F76 /* DHShredderPaperBackPieceSceneMesh.m in Sources */,
@@ -3002,6 +3100,7 @@
 				548EDF831CCB5D9D005E997B /* DHDissolveAnimationRenderer.m in Sources */,
 				5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */,
 				547875C51CA4D61B00012F76 /* DHClothLineTransitionRenderer.m in Sources */,
+				549CCF541D17A209007517D0 /* DHTextAnimationSettings.m in Sources */,
 				547875D51CA4D61B00012F76 /* DHCubeDestinationMesh.m in Sources */,
 				547875E41CA4D61B00012F76 /* DHDropTransitionRenderer.m in Sources */,
 				54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */,
@@ -3015,6 +3114,8 @@
 				548EDF871CCB6092005E997B /* DHSkidAnimationRenderer.m in Sources */,
 				547F8A8D1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m in Sources */,
 				547875CA1CA4D61B00012F76 /* DHConfettiTransitionRenderer.m in Sources */,
+				549CCF341D177C65007517D0 /* DHTextEffectRenderer.m in Sources */,
+				54EE40461D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m in Sources */,
 				547876341CA4D91800012F76 /* AnimationCategoryTableViewController.m in Sources */,
 				54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */,
 				5420C0501CB8B0E6001C789C /* DHShimmerAnimationRenderer.m in Sources */,
@@ -3026,6 +3127,7 @@
 				547875D71CA4D61B00012F76 /* DHCubeTransitionRenderer.m in Sources */,
 				547875CB1CA4D61B00012F76 /* DHConfettiSourceMesh.m in Sources */,
 				54E264881C8FC74000FFB67E /* DHTransitionSettingViewController.m in Sources */,
+				549CCF4A1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */,
 				548EDF731CCA25AC005E997B /* DHSpinAnimationRenderer.m in Sources */,
 				54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */,
 				54A7688C1CBCA17C00826929 /* DHReflectionTransitionRenderer.m in Sources */,

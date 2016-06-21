@@ -61,6 +61,55 @@
             </objects>
             <point key="canvasLocation" x="1858" y="873"/>
         </scene>
+        <!--Text Animation Choose Type Table View Controller-->
+        <scene sceneID="eNv-2J-Acn">
+            <objects>
+                <tableViewController id="hOJ-cb-9CU" customClass="DHTextAnimationChooseTypeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="O0Q-Rg-j7e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextAnimationCell" id="3fu-79-PSF">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fu-79-PSF" id="h2s-au-9Ff">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hOJ-cb-9CU" id="byQ-sk-1Gs"/>
+                            <outlet property="delegate" destination="hOJ-cb-9CU" id="Zgs-Uy-ePd"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="IM6-Us-QEw" kind="show" identifier="presentAnimation" id="V7F-FV-Kg9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="el6-MF-Idn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="2914"/>
+        </scene>
+        <!--Text Animation Presentation View Controller-->
+        <scene sceneID="mP6-dW-lRl">
+            <objects>
+                <viewController id="IM6-Us-QEw" customClass="DHTextAnimationPresentationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ssd-4K-bEL"/>
+                        <viewControllerLayoutGuide type="bottom" id="sCc-Ve-KA4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SL5-9p-1S5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8c-PP-ILw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2502" y="2731"/>
+        </scene>
         <!--Built Out Animation Type Choose Table View Controller-->
         <scene sceneID="xEm-zD-S4N">
             <objects>
@@ -90,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8V-Td-gbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="2149"/>
+            <point key="canvasLocation" x="1802" y="2234"/>
         </scene>
         <!--Built In Animation Type Choose Table View Controller-->
         <scene sceneID="bzv-FN-xw7">
@@ -121,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaA-Q5-mSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="1825"/>
+            <point key="canvasLocation" x="1763" y="1568"/>
         </scene>
         <!--Object Animation Presentatioin View Controller-->
         <scene sceneID="z2C-XQ-68j">
@@ -332,6 +381,22 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="73y-OL-2TU">
+                                        <rect key="frame" x="0.0" y="196" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="73y-OL-2TU" id="hpC-to-Qtq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text Animations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8Z-MC-PkA">
+                                                    <rect key="frame" x="8" y="8" width="120" height="25"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -346,11 +411,12 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showTransitions" id="wsb-By-cSu"/>
                         <segue destination="Dw5-Fa-ZeR" kind="show" identifier="builtInAnimations" id="ahK-OA-aYQ"/>
                         <segue destination="9fM-W6-IFg" kind="show" identifier="builtOutAnimations" id="Vtl-uF-dBc"/>
+                        <segue destination="hOJ-cb-9CU" kind="show" identifier="textAnimations" id="3yn-iI-bKK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvO-Mz-n28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="1420"/>
+            <point key="canvasLocation" x="1061" y="2043"/>
         </scene>
         <!--Transition Presentation View Controller-->
         <scene sceneID="Ij9-on-bVs">
