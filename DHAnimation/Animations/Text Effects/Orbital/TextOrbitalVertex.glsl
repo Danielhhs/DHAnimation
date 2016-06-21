@@ -48,7 +48,6 @@ vec4 updatedPosition() {
         percent = 1.f - u_percent;
     }
     vec2 a_center = vec2(u_center.x + a_radius, u_center.y);
-//    vec2 centerToPosition = a_position.xy - a_center;
     vec2 centerToPosition = rotatedPositionToCenter(a_center);
     float angle = u_rotation * percent;
     

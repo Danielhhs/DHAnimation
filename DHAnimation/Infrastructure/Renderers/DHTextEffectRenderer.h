@@ -30,6 +30,7 @@
 @property (nonatomic, weak) GLKView *animationView;
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic, strong) void (^completion)(void);
+@property (nonatomic, strong) void (^beforeAnimationAction)(void);
 @property (nonatomic) NSTimeInterval elapsedTime;
 
 @property (nonatomic, strong) CADisplayLink *displayLink;

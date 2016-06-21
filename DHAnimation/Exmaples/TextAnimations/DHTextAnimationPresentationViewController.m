@@ -14,6 +14,7 @@
 @property (nonatomic, strong) GLKView *animationView;
 @property (nonatomic, strong) DHTextEffectRenderer *renderer;
 @property (nonatomic, strong) DHTextAnimationSettings *settings;
+@property (nonatomic, strong) UILabel *label;
 @end
 
 @implementation DHTextAnimationPresentationViewController
@@ -26,27 +27,40 @@
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    label.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:38], NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    [label sizeToFit];
-    [self.view addSubview:label];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(100, 110, 0, 0)];
+//    self.label.backgroundColor = [UIColor yellowColor];
+    self.label.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:55], NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.label sizeToFit];
     // Do any additional setup after loading the view.
 }
 
 - (void) performAnimation
 {
+    
+    if (self.settings.event == DHAnimationEventBuiltOut) {
+        [self.view addSubview:self.label];
+    }
     self.renderer = [DHConstants textRendererForType:self.animationType];
     self.settings = [DHTextAnimationSettings defaultSettingForAnimationType:self.animationType];
     self.settings.animationView = self.animationView;
     self.settings.containerView = self.view;
-    self.settings.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:38], NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.settings.origin = CGPointMake(100, 100);
+    self.settings.attributedText = self.label.attributedText;
+    self.settings.textContainerView = self.label;
+    self.settings.origin = CGPointMake(self.label.frame.origin.x, self.label.frame.origin.y - 12);
     __weak DHTextAnimationPresentationViewController *weakSelf = self;
     self.settings.completion = ^{
+        if (weakSelf.settings.event == DHAnimationEventBuiltIn) {
+            [weakSelf.view addSubview:weakSelf.label];
+        }
         [UIView animateWithDuration:0.5 animations:^{
             weakSelf.navigationController.navigationBar.transform = CGAffineTransformIdentity;
         } completion:nil];
     };
+    if (self.settings.event == DHAnimationEventBuiltOut) {
+        self.settings.beforeAnimationAction = ^{
+            [weakSelf.label removeFromSuperview];
+        };
+    }
     
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);

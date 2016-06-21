@@ -18,9 +18,11 @@
 @property (nonatomic) DHAnimationDirection direction;
 @property (nonatomic) DHAnimationEvent event;
 @property (nonatomic) DHTimingFunction timingFunction;
-@property (nonatomic) void (^completion)(void);
+@property (nonatomic, strong) void (^completion)(void);
+@property (nonatomic, strong) void (^beforeAnimationAction)(void);
 @property (nonatomic, strong) NSAttributedString *attributedText;
 @property (nonatomic) CGPoint origin;
+@property (nonatomic, weak) UIView *textContainerView;
 
 + (DHTextAnimationSettings *) defaultSettings;
 + (DHTextAnimationSettings *) defaultSettingForAnimationType:(DHTextAnimationType)animationType;

@@ -513,6 +513,16 @@
 		549CCF551D17A209007517D0 /* DHTextAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */; };
 		549CCF561D17BB50007517D0 /* TextOrbitalFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */; };
 		549CCF571D17BB52007517D0 /* TextOrbitalVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */; };
+		549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF591D190402007517D0 /* DHTextFlyInAnimationRenderer.h */; };
+		549CCF5C1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
+		549CCF5D1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
+		549CCF5F1D190419007517D0 /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
+		549CCF601D190419007517D0 /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
+		549CCF621D190424007517D0 /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
+		549CCF631D190424007517D0 /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
+		549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */; };
+		549CCF671D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
+		549CCF681D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
 		549FBC751CC773C8000E1ABF /* BlurAnimationVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */; };
 		549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549FBC761CC773D4000E1ABF /* BlurAnimationFragment.glsl */; };
@@ -1045,6 +1055,12 @@
 		549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextAnimationPresentationViewController.m; sourceTree = "<group>"; };
 		549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextAnimationSettings.h; sourceTree = "<group>"; };
 		549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextAnimationSettings.m; sourceTree = "<group>"; };
+		549CCF591D190402007517D0 /* DHTextFlyInAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextFlyInAnimationRenderer.h; sourceTree = "<group>"; };
+		549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextFlyInAnimationRenderer.m; sourceTree = "<group>"; };
+		549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFlyInVertex.glsl; sourceTree = "<group>"; };
+		549CCF611D190424007517D0 /* TextFlyInFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFlyInFragment.glsl; sourceTree = "<group>"; };
+		549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextFlyInMesh.h; sourceTree = "<group>"; };
+		549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextFlyInMesh.m; sourceTree = "<group>"; };
 		549FBC711CC773B8000E1ABF /* DHBlurAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBlurAnimationRenderer.h; sourceTree = "<group>"; };
 		549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBlurAnimationRenderer.m; sourceTree = "<group>"; };
 		549FBC741CC773C8000E1ABF /* BlurAnimationVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlurAnimationVertex.glsl; sourceTree = "<group>"; };
@@ -1886,6 +1902,19 @@
 			path = Orbital;
 			sourceTree = "<group>";
 		};
+		549CCF581D190394007517D0 /* FlyIn */ = {
+			isa = PBXGroup;
+			children = (
+				549CCF591D190402007517D0 /* DHTextFlyInAnimationRenderer.h */,
+				549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */,
+				549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */,
+				549CCF611D190424007517D0 /* TextFlyInFragment.glsl */,
+				549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */,
+				549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */,
+			);
+			path = FlyIn;
+			sourceTree = "<group>";
+		};
 		549FBC701CC773A8000E1ABF /* Blur */ = {
 			isa = PBXGroup;
 			children = (
@@ -2134,6 +2163,7 @@
 		54EE403D1D166E4E0090A491 /* Text Effects */ = {
 			isa = PBXGroup;
 			children = (
+				549CCF581D190394007517D0 /* FlyIn */,
 				549CCF361D177CC3007517D0 /* Orbital */,
 			);
 			path = "Text Effects";
@@ -2206,10 +2236,12 @@
 				5490CD721CD34EF900C93002 /* DHConfettiSourceMesh.h in Headers */,
 				5490CD731CD34EF900C93002 /* DHCoverTransitionRenderer.h in Headers */,
 				5490CD741CD34EF900C93002 /* DHCubeDestinationMesh.h in Headers */,
+				549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */,
 				5490CD751CD34EF900C93002 /* DHCubeMesh.h in Headers */,
 				5490CD761CD34EF900C93002 /* DHCubeTransitionRenderer.h in Headers */,
 				5490CD771CD34EF900C93002 /* DHCubeSourceMesh.h in Headers */,
 				5490CD781CD34EF900C93002 /* DHDoorWayTransitionRenderer.h in Headers */,
+				549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */,
 				5490CD7A1CD34EF900C93002 /* DHDropTransitionRenderer.h in Headers */,
 				5490CD7B1CD34EF900C93002 /* DHFlipTransitionRenderer.h in Headers */,
 				5490CD7C1CD34EF900C93002 /* DHFlopTransitionRenderer.h in Headers */,
@@ -2518,8 +2550,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549CCF601D190419007517D0 /* TextFlyInVertex.glsl in Resources */,
 				54EE3FD81D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
 				5450633C1D067545001C44F7 /* FlameEffectFragment.glsl in Resources */,
+				549CCF631D190424007517D0 /* TextFlyInFragment.glsl in Resources */,
 				545063391D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */,
 				54EE3FD51D123AE50090A491 /* PointExplosionVertex.glsl in Resources */,
 				54DEB7121D0810A300812DFA /* FireworkFragment.glsl in Resources */,
@@ -2739,6 +2773,7 @@
 				547876101CA4D61B00012F76 /* RippleDestinationVertex.glsl in Resources */,
 				547875F41CA4D61B00012F76 /* GridDestinationFragment.glsl in Resources */,
 				547875F71CA4D61B00012F76 /* GridSourceVertex.glsl in Resources */,
+				549CCF621D190424007517D0 /* TextFlyInFragment.glsl in Resources */,
 				547875FB1CA4D61B00012F76 /* MosaicDestinationFragment.glsl in Resources */,
 				547875F01CA4D61B00012F76 /* FlopDestinationVertex.glsl in Resources */,
 				54F64CCC1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl in Resources */,
@@ -2766,6 +2801,7 @@
 				546F521C1CE4686B00DA3B0C /* ObjectFaceExplosionFragment.glsl in Resources */,
 				547875FD1CA4D61B00012F76 /* MosaicSourceFragment.glsl in Resources */,
 				548EDF981CCCA46C005E997B /* ObjectFlameVertex.glsl in Resources */,
+				549CCF5F1D190419007517D0 /* TextFlyInVertex.glsl in Resources */,
 				5455FC8D1D0D165C00B6B022 /* firework.png in Resources */,
 				547876211CA4D61B00012F76 /* ShredderPieceFragment.glsl in Resources */,
 				540AFA7D1CD2E65C004EF919 /* SparkleVertex.glsl in Resources */,
@@ -2892,6 +2928,7 @@
 				5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */,
 				5490CD991CD34F2600C93002 /* DHDustEffect.m in Sources */,
 				5490CD9A1CD34F2600C93002 /* DHShimmerParticleEffect.m in Sources */,
+				549CCF681D19053C007517D0 /* DHTextFlyInMesh.m in Sources */,
 				5490CD9B1CD34F2600C93002 /* DHShiningStarEffect.m in Sources */,
 				5490CD9C1CD34F2600C93002 /* DHSparkleEffect.m in Sources */,
 				5490CD9D1CD34F2600C93002 /* DHAnvilAnimationRenderer.m in Sources */,
@@ -2937,6 +2974,7 @@
 				5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */,
 				5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */,
 				5490CDC21CD34F2600C93002 /* DHMosaicMesh.m in Sources */,
+				549CCF5D1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */,
 				549CCF501D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,
 				54107F5C1CE812E200DE5B35 /* DHBackgroundRenderer.m in Sources */,
 				5490CDC31CD34F2600C93002 /* DHMosaicTransitionRenderer.m in Sources */,
@@ -3077,6 +3115,7 @@
 				548EDF631CCA01E8005E997B /* DHScaleAnimationRenderer.m in Sources */,
 				547875D61CA4D61B00012F76 /* DHCubeMesh.m in Sources */,
 				547876161CA4D61B00012F76 /* DHShredderConfettiSceneMesh.m in Sources */,
+				549CCF671D19053C007517D0 /* DHTextFlyInMesh.m in Sources */,
 				547875D81CA4D61B00012F76 /* DHCubeSourceMesh.m in Sources */,
 				547875F81CA4D61B00012F76 /* DHMosaicBackMesh.m in Sources */,
 				546F51C61CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */,
@@ -3137,6 +3176,7 @@
 				54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */,
 				54E2646D1C8EC62F00FFB67E /* DHConstants.m in Sources */,
 				540AFA6D1CD2E65C004EF919 /* DHDustEffect.m in Sources */,
+				549CCF5C1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */,
 				54A768941CBCA3EF00826929 /* DHConfettiAnimationRenderer.m in Sources */,
 				547876291CA4D61B00012F76 /* DHTwistMesh.m in Sources */,
 				54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */,

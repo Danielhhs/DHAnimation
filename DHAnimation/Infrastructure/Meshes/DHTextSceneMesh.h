@@ -8,19 +8,30 @@
 
 #import <GLKit/GLKit.h>
 
+typedef struct {
+    GLKVector3 position;
+    GLKVector2 texCoords;
+}DHTextAttributes;
+
 @interface DHTextSceneMesh : NSObject {
     GLuint vertexBuffer, indexBuffer;
     GLuint vertexArray;
+    GLubyte *indicies;
+    DHTextAttributes *attributes;
 }
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic) CGPoint origin;
 @property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, weak) UIView *textContainerView;
 @property (nonatomic, strong) NSAttributedString *attributedText;
 @property (nonatomic, strong) NSData *vertexData;
 @property (nonatomic, strong) NSData *indexData;
+@property (nonatomic) NSInteger vertexCount;
+@property (nonatomic) NSInteger indexCount;
 
 - (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin containerView:(UIView *)containerView;
+- (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin textContainerView:(UIView *)textContainerView containerView:(UIView *)containerView;
 
 - (void) printVertices;
 - (void) printVerticesTextureCoords;

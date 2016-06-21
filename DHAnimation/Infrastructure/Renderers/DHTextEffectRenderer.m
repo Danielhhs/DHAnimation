@@ -50,11 +50,17 @@
     self.elapsedTime = 0.f;
     self.percent = 0.f;
     self.animationView.delegate = self;
+    self.beforeAnimationAction = settings.beforeAnimationAction;
     
     [self setupGL];
     [self setupTexture];
     [self setupMeshes];
     [self setupMvpMatrixWithView:self.animationView];
+    
+    [self.animationView display];
+    if (self.beforeAnimationAction) {
+        self.beforeAnimationAction();
+    }
 }
 
 - (void) startAnimation

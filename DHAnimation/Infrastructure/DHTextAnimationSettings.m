@@ -21,6 +21,8 @@
     settings.direction = DHAnimationDirectionLeftToRight;
     settings.origin = CGPointZero;
     settings.containerView = nil;
+    settings.textContainerView = nil;
+    settings.beforeAnimationAction = nil;
     return settings;
 }
 
