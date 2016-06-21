@@ -39,6 +39,8 @@
     
     if (self.settings.event == DHAnimationEventBuiltOut) {
         [self.view addSubview:self.label];
+    } else {
+        [self.label removeFromSuperview];
     }
     self.renderer = [DHConstants textRendererForType:self.animationType];
     self.settings = [DHTextAnimationSettings defaultSettingForAnimationType:self.animationType];

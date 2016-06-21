@@ -30,11 +30,15 @@
 {
     DHTextAnimationSettings *settings = [DHTextAnimationSettings defaultSettings];
     switch (animationType) {
-        case DHTextAnimationTypeOrbital:
+        case DHTextAnimationTypeOrbital:{
             settings.timingFunction = DHTimingFunctionEaseInOutCubic;
             settings.event = DHAnimationEventBuiltOut;
             break;
-            
+        }
+        case DHTextAnimationTypeFlyIn:{
+            settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+            break;
+        }
         default:
             break;
     }

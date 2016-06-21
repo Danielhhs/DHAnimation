@@ -34,6 +34,7 @@
 - (void) setupMeshes
 {
     self.mesh = [[DHTextOrbitalMesh alloc] initWithAttributedText:self.attributedString origin:self.origin textContainerView:self.textContainerView containerView:self.containerView];
+    [self.mesh generateMeshesData];
 }
 
 - (void) drawFrame

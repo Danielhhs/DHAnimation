@@ -62,6 +62,7 @@ typedef NS_ENUM(NSInteger, DHObjectAnimationType) {
 
 typedef NS_ENUM(NSInteger, DHTextAnimationType) {
     DHTextAnimationTypeOrbital,
+    DHTextAnimationTypeFlyIn,
 };
 
 typedef NS_ENUM(NSInteger, DHAnimationDirection) {

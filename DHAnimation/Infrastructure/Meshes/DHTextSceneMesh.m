@@ -29,7 +29,6 @@
         _textContainerView = textContainerView;
         [self generateIndeciesData];
         [self generatePositionAndTexCoordsData];
-        [self generateMeshesData];
         free(attributes);
     }
     return self;

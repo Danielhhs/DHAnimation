@@ -51,6 +51,7 @@
 #import "DHPageCurlTransitionRenderer.h"
 
 #import "DHTextOrbitalAnimationRenderer.h"
+#import "DHTextFlyInAnimationRenderer.h"
 
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
@@ -95,7 +96,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) textAnimations
 {
     if (textAnimationArray == nil) {
-        textAnimationArray = @[@"Orbital"];
+        textAnimationArray = @[@"Orbital", @"Fly In"];
     }
     return textAnimationArray;
 }
@@ -247,7 +248,9 @@ static NSArray *textAnimationArray;
 {
     switch (type) {
         case DHTextAnimationTypeOrbital:
-            return [[DHTextOrbitalAnimationRenderer alloc] init];            
+            return [[DHTextOrbitalAnimationRenderer alloc] init];
+        case DHTextAnimationTypeFlyIn:
+            return [[DHTextFlyInAnimationRenderer alloc] init];
         default:
             break;
     }

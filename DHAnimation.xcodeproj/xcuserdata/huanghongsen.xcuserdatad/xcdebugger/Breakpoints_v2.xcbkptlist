@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/DHConstants.m"
-            timestampString = "488094489.363015"
+            timestampString = "488194450.287292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "+transitionRendererForName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,12 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Exmaples/TextAnimations/DHTextAnimationPresentationViewController.m"
-            timestampString = "488186737.398981"
+            timestampString = "488198127.523889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-performAnimation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -217,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Exmaples/TextAnimations/DHTextAnimationPresentationViewController.m"
-            timestampString = "488189046.860517"
+            filePath = "DHAnimation/Animations/Text Effects/FlyIn/DHTextFlyInMesh.m"
+            timestampString = "488196978.410597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-performAnimation"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-prepareToDraw"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
