@@ -26,8 +26,9 @@
 @property (nonatomic) DHAnimationEvent event;
 @property (nonatomic) DHAnimationDirection direction;
 @property (nonatomic, strong) DHTextSceneMesh *mesh;
-@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, weak) UIView *containerView;
 @property (nonatomic, weak) GLKView *animationView;
+@property (nonatomic, weak) UIView *textContainerView;
 @property (nonatomic) NSBKeyframeAnimationFunction timingFunction;
 @property (nonatomic, strong) void (^completion)(void);
 @property (nonatomic, strong) void (^beforeAnimationAction)(void);

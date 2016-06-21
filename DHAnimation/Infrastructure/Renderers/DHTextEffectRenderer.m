@@ -47,6 +47,7 @@
     self.completion = settings.completion;
     self.direction = settings.direction;
     self.containerView = settings.containerView;
+    self.textContainerView = settings.textContainerView;
     self.elapsedTime = 0.f;
     self.percent = 0.f;
     self.animationView.delegate = self;
