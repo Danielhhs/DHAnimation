@@ -10,9 +10,8 @@
 #import "DHTextFlyInMesh.h"
 
 @interface DHTextFlyInAnimationRenderer () {
-    GLuint timeLoc;
+    GLuint timeLoc, durationLoc;
 }
-@property (nonatomic) GLfloat offset;
 @end
 
 @implementation DHTextFlyInAnimationRenderer
@@ -20,7 +19,7 @@
 - (void) setupExtraUniforms
 {
     timeLoc = glGetUniformLocation(program, "u_time");
-    self.offset = MAX(-self.attributedString.size.width * 0.618, -50);
+    durationLoc = glGetUniformLocation(program, "u_duration");
 }
 
 - (NSString *) vertexShaderName
@@ -35,13 +34,17 @@
 
 - (void) setupMeshes
 {
-    self.mesh = [[DHTextFlyInMesh alloc] initWithAttributedText:self.attributedString origin:self.origin textContainerView:self.textContainerView containerView:self.containerView duration:self.duration];
+    DHTextFlyInMesh *mesh = [[DHTextFlyInMesh alloc] initWithAttributedText:self.attributedString origin:self.origin textContainerView:self.textContainerView containerView:self.containerView duration:self.duration];
+    mesh.direction = self.direction;
+    mesh.event = self.event;
+    self.mesh = mesh;
     [self.mesh generateMeshesData];
 }
 
 - (void) drawFrame
 {
     glUniform1f(timeLoc, self.elapsedTime);
+    glUniform1f(durationLoc, self.duration);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);

@@ -38,45 +38,73 @@ typedef struct {
 - (void) generateMeshesData
 {
     vertices = malloc(sizeof(DHTextFlyInAttributes) * self.vertexCount);
-    int numberOfChars = (int)[self.attributedText length];
     for (int i = 0; i < [self.attributedText length]; i++) {
         GLfloat centerX = (attributes[i * 4 + 1].position.x + attributes[i * 4 + 0].position.x) / 2;
         GLfloat centerY = (attributes[i * 4 + 2].position.y + attributes[i * 4 + 0].position.y) / 2;
         GLKVector2 center = GLKVector2Make(centerX, centerY);
-        GLfloat startTime = self.duration / numberOfChars * (numberOfChars - 1 - i);
-        GLfloat lifeTime = self.duration / (numberOfChars + 1) * i;
-        NSLog(@"%g", startTime + lifeTime);
+        GLfloat startTime = [self startTimeForCharacterAtIndex:i];
+        GLfloat lifeTime = [self lifeTimeForCharacterAtIndex:i];
+        GLfloat offset = [self offsetForCharacterWithCenterX:centerX];
         vertices[i * 4 + 0].position = attributes[i * 4 + 0].position;
         vertices[i * 4 + 0].texCoords = attributes[i * 4 + 0].texCoords;
         vertices[i * 4 + 0].center = center;
         vertices[i * 4 + 0].startTime = startTime;
         vertices[i * 4 + 0].lifeTime = lifeTime;
-        vertices[i * 4 + 0].offset = -centerX - 50;
+        vertices[i * 4 + 0].offset = offset;
         
         vertices[i * 4 + 1].position = attributes[i * 4 + 1].position;
         vertices[i * 4 + 1].texCoords = attributes[i * 4 + 1].texCoords;
         vertices[i * 4 + 1].center = center;
         vertices[i * 4 + 1].startTime = startTime;
         vertices[i * 4 + 1].lifeTime = lifeTime;
-        vertices[i * 4 + 1].offset = -centerX - 50;
+        vertices[i * 4 + 1].offset = offset;
         
         vertices[i * 4 + 2].position = attributes[i * 4 + 2].position;
         vertices[i * 4 + 2].texCoords = attributes[i * 4 + 2].texCoords;
         vertices[i * 4 + 2].center = center;
         vertices[i * 4 + 2].startTime = startTime;
         vertices[i * 4 + 2].lifeTime = lifeTime;
-        vertices[i * 4 + 2].offset = -centerX - 50;
+        vertices[i * 4 + 2].offset = offset;
         
         vertices[i * 4 + 3].position = attributes[i * 4 + 3].position;
         vertices[i * 4 + 3].texCoords = attributes[i * 4 + 3].texCoords;
         vertices[i * 4 + 3].center = center;
         vertices[i * 4 + 3].startTime = startTime;
         vertices[i * 4 + 3].lifeTime = lifeTime;
-        vertices[i * 4 + 3].offset = -centerX - 50;
+        vertices[i * 4 + 3].offset = offset;
     }
     self.vertexData = [NSData dataWithBytesNoCopy:vertices length:sizeof(DHTextFlyInAttributes) * self.vertexCount];
     self.indexData = [NSData dataWithBytes:indicies length:self.indexCount * sizeof(GLubyte)];
     [self prepareToDraw];
+}
+
+- (GLfloat) startTimeForCharacterAtIndex:(NSInteger) index
+{
+    int numberOfChars = (int)[self.attributedText length];
+    if (self.direction == DHAnimationDirectionLeftToRight) {
+        return self.duration / numberOfChars * (numberOfChars - 1 - index);
+    } else {
+        return self.duration / numberOfChars * index;
+    }
+}
+
+-(GLfloat) lifeTimeForCharacterAtIndex:(NSInteger)index
+{
+    int numberOfChars = (int)[self.attributedText length];
+    if (self.direction == DHAnimationDirectionLeftToRight) {
+        return self.duration / (numberOfChars + 1) * index;
+    } else {
+        return self.duration / (numberOfChars + 1) * (numberOfChars - 1 - index);
+    }
+}
+
+- (GLfloat) offsetForCharacterWithCenterX:(GLfloat)centerX
+{
+    if (self.direction == DHAnimationDirectionRightToLeft) {
+        return self.attributedText.size.width - centerX + 200;
+    } else {
+        return -centerX - 200;
+    }
 }
 
 - (void) prepareToDraw

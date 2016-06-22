@@ -21,7 +21,7 @@
     if (self) {
         _text = attributedText.string;
         CGFloat height = (textContainerView == nil) ? attributedText.size.height : textContainerView.frame.size.height;
-        _origin = CGPointMake(origin.x, containerView.frame.size.height - origin.y - height);
+        _origin = CGPointMake(origin.x, containerView.frame.size.height - origin.y - ceil(height));
         _containerView = containerView;
         _attributedText = attributedText;
         _vertexCount = [attributedText length] * 4;
@@ -95,10 +95,10 @@
         attributes[i * 4 + 1].position = GLKVector3Make(self.origin.x + nextCharOffset, self.origin.y, 0);
         attributes[i * 4 + 1].texCoords = GLKVector2Make(nextCharOffset / width, 1.f);
         
-        attributes[i * 4 + 2].position = GLKVector3Make(self.origin.x + offset, self.origin.y + self.attributedText.size.height, 0);
+        attributes[i * 4 + 2].position = GLKVector3Make(self.origin.x + offset, self.origin.y + ceil(self.attributedText.size.height), 0);
         attributes[i * 4 + 2].texCoords = GLKVector2Make(offset / width, 0.f);
         
-        attributes[i * 4 + 3].position = GLKVector3Make(self.origin.x + nextCharOffset, self.origin.y + self.attributedText.size.height, 0);
+        attributes[i * 4 + 3].position = GLKVector3Make(self.origin.x + nextCharOffset, self.origin.y + ceil(self.attributedText.size.height), 0);
         attributes[i * 4 + 3].texCoords = GLKVector2Make(nextCharOffset / width, 0.f);
     }
 }

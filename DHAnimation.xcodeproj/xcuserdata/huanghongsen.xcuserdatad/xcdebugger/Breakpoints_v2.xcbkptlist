@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Exmaples/TextAnimations/DHTextAnimationPresentationViewController.m"
-            timestampString = "488198127.523889"
+            timestampString = "488267069.802449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-performAnimation"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/FlyIn/DHTextFlyInMesh.m"
-            timestampString = "488250726.892124"
+            timestampString = "488267385.535912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-prepareToDraw"
             landmarkType = "5">
          </BreakpointContent>
@@ -230,16 +230,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/FlyIn/DHTextFlyInMesh.m"
-            timestampString = "488250932.546219"
+            timestampString = "488260751.629229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-generateMeshesData"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-lifeTimeForCharacterAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

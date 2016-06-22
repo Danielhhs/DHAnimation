@@ -3,6 +3,7 @@
 uniform mat4 u_mvpMatrix;
 uniform float u_event;
 uniform float u_time;
+uniform float u_duration;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 1) in vec2 a_texCoords;
@@ -19,13 +20,18 @@ float easeInOut(float t, float b, float c, float d) {
 }
 
 vec4 updatedPosition() {
-    float time = u_time - a_startTime;
+    float time = u_time;
+    if (u_event == 1.f) {
+        time = u_duration - u_time;
+    }
+    time = time - a_startTime;
     if (time < 0.f) {
         return vec4(0.f);
     } else if (time > a_lifeTime) {
         return a_position;
     }
     float percent = easeInOut(time * 1000.f, 0.f, 1.f, a_lifeTime * 1000.f);
+
     float scale = mix(0.2f, 1.f, percent);
     vec2 center = a_center;
     vec2 centerToPosition = (a_position.xy - a_center) * scale;

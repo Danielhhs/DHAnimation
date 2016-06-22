@@ -37,6 +37,8 @@
         }
         case DHTextAnimationTypeFlyIn:{
             settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+            settings.direction = DHAnimationDirectionRightToLeft;
+            settings.event = DHAnimationEventBuiltOut;
             break;
         }
         default:

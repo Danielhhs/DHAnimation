@@ -10,6 +10,7 @@
 #import <GLKit/GLKit.h>
 #import "DHTextEffectRenderer.h"
 #import "DHTextAnimationSettings.h"
+#import "DHTextAnimationSettingsViewController.h"
 @interface DHTextAnimationPresentationViewController ()
 @property (nonatomic, strong) GLKView *animationView;
 @property (nonatomic, strong) DHTextEffectRenderer *renderer;
@@ -26,7 +27,9 @@
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];
-
+    
+    self.settings = [DHTextAnimationSettings defaultSettingForAnimationType:self.animationType];
+    
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(100, 110, 0, 0)];
 //    self.label.backgroundColor = [UIColor yellowColor];
     self.label.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:55], NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -43,7 +46,6 @@
         [self.label removeFromSuperview];
     }
     self.renderer = [DHConstants textRendererForType:self.animationType];
-    self.settings = [DHTextAnimationSettings defaultSettingForAnimationType:self.animationType];
     self.settings.animationView = self.animationView;
     self.settings.containerView = self.view;
     self.settings.attributedText = self.label.attributedText;
@@ -74,7 +76,9 @@
 
 - (void) showSettingsPanel
 {
-    
+    DHTextAnimationSettingsViewController *settingsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DHTextAnimationSettingsViewController"];
+    settingsController.settings = self.settings;
+    [self.navigationController pushViewController:settingsController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
