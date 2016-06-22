@@ -9,5 +9,5 @@
 #import "DHTextSceneMesh.h"
 
 @interface DHTextFlyInMesh : DHTextSceneMesh
-- (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin textContainerView:(UIView *)textContainerView containerView:(UIView *)containerView lifeTime:(NSTimeInterval)lifeTime;
+- (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin textContainerView:(UIView *)textContainerView containerView:(UIView *)containerView duration:(NSTimeInterval)duration;
 @end

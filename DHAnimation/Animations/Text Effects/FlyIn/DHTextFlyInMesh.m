@@ -15,21 +15,22 @@ typedef struct {
     GLKVector2 center;
     GLfloat startTime;
     GLfloat lifeTime;
+    GLfloat offset;
 }DHTextFlyInAttributes;
 
 @interface DHTextFlyInMesh () {
     DHTextFlyInAttributes *vertices;
 }
-@property (nonatomic) NSTimeInterval lifeTime;
+@property (nonatomic) NSTimeInterval duration;
 @end
 
 @implementation DHTextFlyInMesh
 
-- (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin textContainerView:(UIView *)textContainerView containerView:(UIView *)containerView lifeTime:(NSTimeInterval)lifeTime
+- (instancetype) initWithAttributedText:(NSAttributedString *)attributedText origin:(CGPoint)origin textContainerView:(UIView *)textContainerView containerView:(UIView *)containerView duration:(NSTimeInterval)duration
 {
     self = [super initWithAttributedText:attributedText origin:origin textContainerView:textContainerView containerView:containerView];
     if (self) {
-        _lifeTime = lifeTime;
+        _duration = duration;
     }
     return self;
 }
@@ -37,34 +38,41 @@ typedef struct {
 - (void) generateMeshesData
 {
     vertices = malloc(sizeof(DHTextFlyInAttributes) * self.vertexCount);
-    int numberOfChars = (int)[self.attributedText length] - 1;
+    int numberOfChars = (int)[self.attributedText length];
     for (int i = 0; i < [self.attributedText length]; i++) {
         GLfloat centerX = (attributes[i * 4 + 1].position.x + attributes[i * 4 + 0].position.x) / 2;
         GLfloat centerY = (attributes[i * 4 + 2].position.y + attributes[i * 4 + 0].position.y) / 2;
         GLKVector2 center = GLKVector2Make(centerX, centerY);
+        GLfloat startTime = self.duration / numberOfChars * (numberOfChars - 1 - i);
+        GLfloat lifeTime = self.duration / (numberOfChars + 1) * i;
+        NSLog(@"%g", startTime + lifeTime);
         vertices[i * 4 + 0].position = attributes[i * 4 + 0].position;
         vertices[i * 4 + 0].texCoords = attributes[i * 4 + 0].texCoords;
         vertices[i * 4 + 0].center = center;
-        vertices[i * 4 + 0].startTime = self.lifeTime / 2 * (numberOfChars - i);
-        vertices[i * 4 + 0].lifeTime = self.lifeTime;
+        vertices[i * 4 + 0].startTime = startTime;
+        vertices[i * 4 + 0].lifeTime = lifeTime;
+        vertices[i * 4 + 0].offset = -centerX - 50;
         
         vertices[i * 4 + 1].position = attributes[i * 4 + 1].position;
         vertices[i * 4 + 1].texCoords = attributes[i * 4 + 1].texCoords;
         vertices[i * 4 + 1].center = center;
-        vertices[i * 4 + 1].startTime = self.lifeTime / 2 * (numberOfChars - i);
-        vertices[i * 4 + 1].lifeTime = self.lifeTime;
+        vertices[i * 4 + 1].startTime = startTime;
+        vertices[i * 4 + 1].lifeTime = lifeTime;
+        vertices[i * 4 + 1].offset = -centerX - 50;
         
         vertices[i * 4 + 2].position = attributes[i * 4 + 2].position;
         vertices[i * 4 + 2].texCoords = attributes[i * 4 + 2].texCoords;
         vertices[i * 4 + 2].center = center;
-        vertices[i * 4 + 2].startTime = self.lifeTime / 2 * (numberOfChars - i);
-        vertices[i * 4 + 2].lifeTime = self.lifeTime;
+        vertices[i * 4 + 2].startTime = startTime;
+        vertices[i * 4 + 2].lifeTime = lifeTime;
+        vertices[i * 4 + 2].offset = -centerX - 50;
         
         vertices[i * 4 + 3].position = attributes[i * 4 + 3].position;
         vertices[i * 4 + 3].texCoords = attributes[i * 4 + 3].texCoords;
         vertices[i * 4 + 3].center = center;
-        vertices[i * 4 + 3].startTime = self.lifeTime / 2 * (numberOfChars - i);
-        vertices[i * 4 + 3].lifeTime = self.lifeTime;
+        vertices[i * 4 + 3].startTime = startTime;
+        vertices[i * 4 + 3].lifeTime = lifeTime;
+        vertices[i * 4 + 3].offset = -centerX - 50;
     }
     self.vertexData = [NSData dataWithBytesNoCopy:vertices length:sizeof(DHTextFlyInAttributes) * self.vertexCount];
     self.indexData = [NSData dataWithBytes:indicies length:self.indexCount * sizeof(GLubyte)];
@@ -101,6 +109,9 @@ typedef struct {
     
     glEnableVertexAttribArray(4);
     glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(DHTextFlyInAttributes), NULL + offsetof(DHTextFlyInAttributes, lifeTime));
+    
+    glEnableVertexAttribArray(5);
+    glVertexAttribPointer(5, 1, GL_FLOAT, GL_FALSE, sizeof(DHTextFlyInAttributes), NULL + offsetof(DHTextFlyInAttributes, offset));
     glBindVertexArray(0);
 }
 
