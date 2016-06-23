@@ -1339,10 +1339,10 @@
 		540B89641D1BD100007ED37F /* Dance */ = {
 			isa = PBXGroup;
 			children = (
-				540B89651D1BD1BA007ED37F /* DHTextDanceMesh.h */,
-				540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */,
 				540B896A1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h */,
 				540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */,
+				540B89651D1BD1BA007ED37F /* DHTextDanceMesh.h */,
+				540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */,
 				540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */,
 				540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */,
 			);

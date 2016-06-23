@@ -9,5 +9,5 @@
 #import "DHTextEffectRenderer.h"
 
 @interface DHTextDanceAnimationRenderer : DHTextEffectRenderer
-
+@property (nonatomic) GLfloat amplitude;
 @end

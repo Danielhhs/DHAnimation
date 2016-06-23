@@ -45,6 +45,9 @@
             settings.timingFunction = DHTimingFunctionLinear;
             break;
         }
+        case DHTextAnimationTypeDance: {
+            settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+        }
         default:
             break;
     }

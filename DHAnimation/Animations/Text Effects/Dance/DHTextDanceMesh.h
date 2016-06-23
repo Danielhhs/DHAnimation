@@ -10,4 +10,6 @@
 
 @interface DHTextDanceMesh : DHTextSceneMesh
 
+@property (nonatomic) NSTimeInterval duration;
+
 @end
