@@ -10,7 +10,7 @@
 #import "DHTextFlyInMesh.h"
 
 @interface DHTextFlyInAnimationRenderer () {
-    GLuint timeLoc, durationLoc;
+    GLuint durationLoc;
 }
 @end
 
@@ -18,7 +18,6 @@
 
 - (void) setupExtraUniforms
 {
-    timeLoc = glGetUniformLocation(program, "u_time");
     durationLoc = glGetUniformLocation(program, "u_duration");
 }
 
@@ -43,7 +42,6 @@
 
 - (void) drawFrame
 {
-    glUniform1f(timeLoc, self.elapsedTime);
     glUniform1f(durationLoc, self.duration);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);

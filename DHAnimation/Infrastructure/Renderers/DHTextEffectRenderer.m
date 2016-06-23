@@ -25,6 +25,7 @@
     percentLoc = glGetUniformLocation(program, "u_percent");
     eventLoc = glGetUniformLocation(program, "u_event");
     samplerLoc = glGetUniformLocation(program, "s_tex");
+    timeLoc = glGetUniformLocation(program, "u_time");
     [self setupExtraUniforms];
     
     glClearColor(0, 0, 0, 1);
@@ -162,6 +163,7 @@
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     glUniform1f(percentLoc, self.percent);
     glUniform1f(eventLoc, self.event);
+    glUniform1f(timeLoc, self.elapsedTime);
     
     [self drawFrame];
 }

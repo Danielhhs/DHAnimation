@@ -10,7 +10,7 @@
 #import "DHTextSquishMesh.h"
 
 @interface DHTextSquishAnimationRenderer () {
-    GLuint timeLoc, offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc, squishLoc;
+    GLuint offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc, squishLoc;
 }
 @property (nonatomic) GLfloat offset;
 @property (nonatomic) NSInteger numberOfCycles;
@@ -33,7 +33,6 @@
 
 - (void) setupExtraUniforms
 {
-    timeLoc = glGetUniformLocation(program, "u_time");
     offsetLoc = glGetUniformLocation(program, "u_offset");
     durationLoc = glGetUniformLocation(program, "u_duration");
     numberOfCyclesLoc = glGetUniformLocation(program, "u_numberOfCycles");
@@ -64,7 +63,6 @@
 
 - (void) drawFrame
 {
-    glUniform1f(timeLoc, self.elapsedTime);
     glUniform1f(offsetLoc, self.offset);
     glUniform1f(durationLoc, self.duration);
     glUniform1f(numberOfCyclesLoc, self.numberOfCycles);

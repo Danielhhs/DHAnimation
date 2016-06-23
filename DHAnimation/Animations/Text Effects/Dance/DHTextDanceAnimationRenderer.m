@@ -7,7 +7,26 @@
 //
 
 #import "DHTextDanceAnimationRenderer.h"
+@interface DHTextDanceAnimationRenderer() {
+    GLuint offsetLoc;
+}
+@end
 
 @implementation DHTextDanceAnimationRenderer
+
+- (NSString *) vertexShaderName
+{
+    return @"TextDanceVertex.glsl";
+}
+
+- (NSString *) fragmentShaderName
+{
+    return @"TextDanceFragment.glsl";
+}
+
+- (void) setupExtraUniforms
+{
+    
+}
 
 @end

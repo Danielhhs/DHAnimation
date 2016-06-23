@@ -13,7 +13,7 @@
 @interface DHTextEffectRenderer : NSObject<GLKViewDelegate> {
     GLuint program;
     GLuint texture;
-    GLuint mvpLoc, percentLoc, eventLoc, samplerLoc;
+    GLuint mvpLoc, percentLoc, eventLoc, samplerLoc, timeLoc;
     
 }
 
