@@ -10,4 +10,6 @@
 
 @interface DHTextSquishAnimationRenderer : DHTextEffectRenderer
 
+@property (nonatomic) BOOL squish;
+
 @end

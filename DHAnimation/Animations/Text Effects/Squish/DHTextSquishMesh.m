@@ -12,6 +12,7 @@ typedef struct {
     GLKVector3 position;
     GLKVector2 texCoords;
     GLfloat startTime;
+    GLKVector2 center;
 }DHTextSquishAttributes;
 
 @interface DHTextSquishMesh () {
@@ -27,21 +28,26 @@ typedef struct {
     vertices = malloc(sizeof(DHTextSquishAttributes) * self.vertexCount);
     GLfloat timeGap = self.duration * 0.3 / ([self.attributedText length] - 1);
     for (int i = 0; i < [self.attributedText length]; i++) {
+        GLKVector2 center = GLKVector2Make((attributes[i * 4 + 0].position.x + attributes[i * 4 + 1].position.x) / 2, (attributes[i * 4 + 2].position.y + attributes[i * 4 + 0].position.y) / 2);
         vertices[i * 4 + 0].position = attributes[i * 4 + 0].position;
         vertices[i * 4 + 0].texCoords = attributes[i * 4 + 0].texCoords;
         vertices[i * 4 + 0].startTime = timeGap * i;
+        vertices[i * 4 + 0].center = center;
         
         vertices[i * 4 + 1].position = attributes[i * 4 + 1].position;
         vertices[i * 4 + 1].texCoords = attributes[i * 4 + 1].texCoords;
         vertices[i * 4 + 1].startTime = timeGap * i;
+        vertices[i * 4 + 1].center = center;
         
         vertices[i * 4 + 2].position = attributes[i * 4 + 2].position;
         vertices[i * 4 + 2].texCoords = attributes[i * 4 + 2].texCoords;
         vertices[i * 4 + 2].startTime = timeGap * i;
+        vertices[i * 4 + 2].center = center;
         
         vertices[i * 4 + 3].position = attributes[i * 4 + 3].position;
         vertices[i * 4 + 3].texCoords = attributes[i * 4 + 3].texCoords;
         vertices[i * 4 + 3].startTime = timeGap * i;
+        vertices[i * 4 + 3].center = center;
     }
     
     self.vertexData = [NSData dataWithBytesNoCopy:vertices length:sizeof(DHTextSquishAttributes) * self.vertexCount];
@@ -75,6 +81,8 @@ typedef struct {
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(DHTextSquishAttributes), NULL + offsetof(DHTextSquishAttributes, startTime));
     
+    glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(DHTextSquishAttributes), NULL + offsetof(DHTextSquishAttributes, center));
     glBindVertexArray(0);
 }
 

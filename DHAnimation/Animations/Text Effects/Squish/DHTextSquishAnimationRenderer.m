@@ -10,7 +10,7 @@
 #import "DHTextSquishMesh.h"
 
 @interface DHTextSquishAnimationRenderer () {
-    GLuint timeLoc, offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc;
+    GLuint timeLoc, offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc, squishLoc;
 }
 @property (nonatomic) GLfloat offset;
 @property (nonatomic) NSInteger numberOfCycles;
@@ -40,6 +40,7 @@
     coeffcientLoc = glGetUniformLocation(program, "u_coefficient");
     gravityLoc = glGetUniformLocation(program, "u_gravity");
     cycleLoc = glGetUniformLocation(program, "u_cycle");
+    squishLoc = glGetUniformLocation(program, "u_squish");
     self.offset = self.origin.y + self.attributedString.size.height;
     self.cycle = 0.618;
     self.gravity = 2 * self.offset / ((self.cycle / 2) * (self.cycle / 2));
@@ -70,6 +71,7 @@
     glUniform1f(coeffcientLoc, self.coeffient);
     glUniform1f(cycleLoc, self.cycle);
     glUniform1f(gravityLoc, self.gravity);
+    glUniform1f(squishLoc, self.squish);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
