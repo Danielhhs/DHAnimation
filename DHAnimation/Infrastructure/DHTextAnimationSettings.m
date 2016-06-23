@@ -41,6 +41,10 @@
             settings.event = DHAnimationEventBuiltOut;
             break;
         }
+        case DHTextAnimationTypeSquish: {
+            settings.timingFunction = DHTimingFunctionLinear;
+            break;
+        }
         default:
             break;
     }

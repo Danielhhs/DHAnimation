@@ -52,6 +52,7 @@
 
 #import "DHTextOrbitalAnimationRenderer.h"
 #import "DHTextFlyInAnimationRenderer.h"
+#import "DHTextSquishAnimationRenderer.h"
 
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
@@ -96,7 +97,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) textAnimations
 {
     if (textAnimationArray == nil) {
-        textAnimationArray = @[@"Orbital", @"Fly In"];
+        textAnimationArray = @[@"Orbital", @"Fly In", @"Squish"];
     }
     return textAnimationArray;
 }
@@ -251,6 +252,8 @@ static NSArray *textAnimationArray;
             return [[DHTextOrbitalAnimationRenderer alloc] init];
         case DHTextAnimationTypeFlyIn:
             return [[DHTextFlyInAnimationRenderer alloc] init];
+        case DHTextAnimationTypeSquish:
+            return [[DHTextSquishAnimationRenderer alloc] init];
         default:
             break;
     }
