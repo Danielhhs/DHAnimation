@@ -10,9 +10,13 @@
 #import "DHTextSquishMesh.h"
 
 @interface DHTextSquishAnimationRenderer () {
-    GLuint timeLoc, offsetLoc, durationLoc;
+    GLuint timeLoc, offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc;
 }
 @property (nonatomic) GLfloat offset;
+@property (nonatomic) NSInteger numberOfCycles;
+@property (nonatomic) GLfloat coeffient;
+@property (nonatomic) NSTimeInterval cycle;
+@property (nonatomic) GLfloat gravity;
 @end
 
 @implementation DHTextSquishAnimationRenderer
@@ -32,7 +36,21 @@
     timeLoc = glGetUniformLocation(program, "u_time");
     offsetLoc = glGetUniformLocation(program, "u_offset");
     durationLoc = glGetUniformLocation(program, "u_duration");
+    numberOfCyclesLoc = glGetUniformLocation(program, "u_numberOfCycles");
+    coeffcientLoc = glGetUniformLocation(program, "u_coefficient");
+    gravityLoc = glGetUniformLocation(program, "u_gravity");
+    cycleLoc = glGetUniformLocation(program, "u_cycle");
     self.offset = self.origin.y + self.attributedString.size.height;
+    self.cycle = 0.618;
+    self.gravity = 2 * self.offset / ((self.cycle / 2) * (self.cycle / 2));
+    self.numberOfCycles = ceil(self.duration / self.cycle * 2) + 1;
+    self.coeffient = 1.f;
+    for (int i = 1; i <= 20; i++) {
+        self.coeffient -= 0.05;
+        if (pow(self.coeffient, self.numberOfCycles - 1) < 0.05) {
+            break;
+        }
+    }
 }
 
 - (void) setupMeshes
@@ -48,6 +66,10 @@
     glUniform1f(timeLoc, self.elapsedTime);
     glUniform1f(offsetLoc, self.offset);
     glUniform1f(durationLoc, self.duration);
+    glUniform1f(numberOfCyclesLoc, self.numberOfCycles);
+    glUniform1f(coeffcientLoc, self.coeffient);
+    glUniform1f(cycleLoc, self.cycle);
+    glUniform1f(gravityLoc, self.gravity);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);

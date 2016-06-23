@@ -4,6 +4,10 @@ uniform mat4 u_mvpMatrix;
 uniform float u_time;
 uniform float u_offset;
 uniform float u_duration;
+uniform float u_numberOfCycles;
+uniform float u_coefficient;
+uniform float u_cycle;
+uniform float u_gravity;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 1) in vec2 a_texCoords;
@@ -12,69 +16,36 @@ layout(location = 2) in float a_startTime;
 out vec2 v_texCoords;
 
 const float c_jumping_ratio = 0.8;
-const float c_gravity = -1000.f;
-
-//vec4 updatedPosition() {
-//    float jumpingTime = u_duration * c_jumping_ratio;
-//    float time = u_time - a_startTime;
-//    
-//    float jumpCycle = sqrt(2.f * u_offset / c_gravity);
-//    float cycles = jumpingTime / jumpCycle;
-//    int numberOfCycles = int(ceil(cycles));
-//    cycles = time / jumpCycle;
-//    int currentCycle = int(floor(cycles));
-//    float amplitude = (1.f - float(currentCycle) / float(numberOfCycles)) * u_offset;
-//    float timeInCycle = time - float(currentCycle) * jumpCycle;
-//    
-//    float y = 0.f;
-//    if (currentCycle == 0) {
-//        y = 0.5 * c_gravity * time * time;
-//    } else {
-//        float velocity = sqrt(2.f * c_gravity * amplitude);
-//        y = velocity * timeInCycle - 0.5 * c_gravity * timeInCycle * timeInCycle;
-//    }
-//    vec4 position = a_position;
-//    position.y = y;
-//    return position;
-//}
+const float c_cofficient = 0.618;
 
 vec4 updatedPosition() {
     vec4 position = a_position;
-    
-    float jumpingTime = u_duration * c_jumping_ratio;
     float time = u_time - a_startTime;
     if (time < 0.f) {
         position.y += u_offset;
         return position;
-    } else if (time > jumpingTime) {
-        return position;
     }
-    float jumpCycle = sqrt(2.f * u_offset / (-1.f * c_gravity)) * 2.f;
-    float cycles = (jumpingTime - jumpCycle / 2.f) / jumpCycle + 1.f;
-    int numberOfCycles = int(ceil(cycles));
-    cycles = (time - jumpCycle / 2.f) / jumpCycle + 1.f;
-    int currentCycle = int(floor(cycles));
-    if (time < jumpCycle / 2.f) {
-        currentCycle = 0;
-    }
-    float amplitude = (1.f - float(currentCycle) / float(numberOfCycles)) * u_offset;
-    float timeInCycle = time - jumpCycle / 2.f - float(currentCycle - 1) * jumpCycle;
-    if (currentCycle == 0) {
+    float timeInCycle = time - u_cycle / 2.f;
+    float height = u_offset;
+    float cycle = u_cycle;
+    float offset = 0.f;
+    if (timeInCycle < 0.f) {
         timeInCycle = time;
-    }
-    
-    float y = a_position.y + u_offset;
-    
-    if (currentCycle == 0) {
-        y += 0.5 * c_gravity * time * time;
+        offset = u_offset - 0.5 * u_gravity * time * time;
     } else {
-        float velocity = sqrt(2.f * (-1.f * c_gravity) * amplitude);
-        y = a_position.y + velocity * timeInCycle + 0.5 * c_gravity * timeInCycle * timeInCycle;
+        while (cycle >= 0.01 && timeInCycle > 0.f) {
+            height *= u_coefficient;
+            cycle *= u_coefficient;
+            timeInCycle -= cycle;
+        }
+        timeInCycle += cycle;
+        if (cycle < 0.01) {
+            timeInCycle = 0.f;
+        }
+        float velocity = u_gravity * (cycle / 2.f);
+        offset = velocity * timeInCycle - 0.5 * u_gravity * timeInCycle * timeInCycle;
     }
-//    float time = u_time - a_startTime;
-//    float y = 0.f;
-//    y = 0.5 * c_gravity * time * time;
-    position.y = y;
+    position.y += offset;
     return position;
 }
 

@@ -62,6 +62,8 @@
 //Resources created by base class are released;
 - (void) tearDownExtraOpenGLResource;
 
+- (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(CGFloat)percent;
+
 #pragma mark - Public APIs
 //Call this method to set up animation context
 - (void) prepareAnimationWithSettings:(DHTextAnimationSettings *)settings;

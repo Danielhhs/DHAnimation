@@ -76,6 +76,7 @@
     if (self.elapsedTime < self.duration) {
         self.percent = self.timingFunction(self.elapsedTime * 1000, 0, 1, self.duration * 1000);
         [self.mesh updateWithElapsedTime:self.elapsedTime percent:self.percent];
+        [self updateWithElapsedTime:self.elapsedTime percent:self.percent];
         [self.animationView display];
     } else {
         self.percent = 1.f;
@@ -136,6 +137,11 @@
 }
 
 - (void) tearDownExtraOpenGLResource
+{
+    
+}
+
+- (void) updateWithElapsedTime:(NSTimeInterval)elapsedTime percent:(CGFloat)percent
 {
     
 }
