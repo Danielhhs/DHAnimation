@@ -26,7 +26,7 @@ typedef struct {
 {
     vertices = malloc(sizeof(DHTextDanceAttribtues) * self.vertexCount);
     for (int i = 0; i < [self.attributedText length]; i++) {
-        GLfloat startTime = self.duration * 0.1 / ([self.attributedText length] - 1) * ([self.attributedText length] - i - 1);
+        GLfloat startTime = self.duration * 0.3 / ([self.attributedText length] - 1) * ([self.attributedText length] - i - 1);
         vertices[i * 4 + 0].position = attributes[i * 4 + 0].position;
         vertices[i * 4 + 0].texCoords = attributes[i * 4 + 0].texCoords;
         vertices[i * 4 + 0].startTime = startTime;
@@ -42,7 +42,6 @@ typedef struct {
         vertices[i * 4 + 3].position = attributes[i * 4 + 3].position;
         vertices[i * 4 + 3].texCoords = attributes[i * 4 + 3].texCoords;
         vertices[i * 4 + 3].startTime = startTime;
-        NSLog(@"Start Time = %g", startTime);
     }
     self.vertexData = [NSData dataWithBytesNoCopy:vertices length:self.vertexCount * sizeof(DHTextDanceAttribtues)];
     self.indexData = [NSData dataWithBytes:indicies length:self.indexCount * sizeof(GLubyte)];
