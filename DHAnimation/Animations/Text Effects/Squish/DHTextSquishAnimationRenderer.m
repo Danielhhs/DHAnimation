@@ -13,10 +13,10 @@
     GLuint offsetLoc, durationLoc, coeffcientLoc, cycleLoc, gravityLoc, squishTimeLoc, squishFactorLoc, numberOfCyclesLoc;
 }
 @property (nonatomic) GLfloat offset;
-@property (nonatomic) NSInteger numberOfCycles;
 @property (nonatomic) GLfloat coeffient;
 @property (nonatomic) GLfloat gravity;
 @property (nonatomic) NSTimeInterval lifeTime;
+
 @end
 
 #define SQUISH_TIME_RATIO 0.9
@@ -46,7 +46,6 @@
     self.offset = self.origin.y + self.attributedString.size.height;
     GLfloat fallTime = (self.cycle) / 2 - self.squishTime;
     self.gravity = 2 * self.offset / fallTime / fallTime;
-    self.numberOfCycles = ceil(self.duration * SQUISH_TIME_RATIO / self.cycle * 2) + 1;
     self.coeffient = 1.f;
     for (int i = 1; i <= 20; i++) {
         self.coeffient -= 0.05;
@@ -66,7 +65,7 @@
 {
     DHTextSquishMesh *mesh = [[DHTextSquishMesh alloc] initWithAttributedText:self.attributedString origin:self.origin textContainerView:self.textContainerView containerView:self.containerView];
     mesh.duration = self.duration;
-    mesh.squishTimeRatio = SQUISH_TIME_RATIO;
+    mesh.squishTimeRatio = self.lifeTime / self.duration;
     self.mesh = mesh;
     [self.mesh generateMeshesData];
 }
@@ -97,7 +96,9 @@
         self.cycle = duration * 0.3;
     }
     if (self.squishTime == 0) {
-        self.squishTime = 0.25 * self.cycle;
+        self.squishTime = 0.2 * self.cycle;
+    } if (self.numberOfCycles == 0) {
+        self.numberOfCycles = 5;
     }
 }
 

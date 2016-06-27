@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Squish/TextSquishVertex.glsl"
-            timestampString = "488688828.687709"
+            timestampString = "488689889.68675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "updatedPosition()"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,12 +282,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Squish/DHTextSquishAnimationRenderer.m"
-            timestampString = "488685913.21011"
+            timestampString = "488690245.748146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-drawFrame"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-setupExtraUniforms"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

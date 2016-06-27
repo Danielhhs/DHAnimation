@@ -21,7 +21,7 @@ out vec2 v_texCoords;
 const float c_jumping_ratio = 0.8;
 const float c_cofficient = 0.618;
 
-const float c_expantionFactor = 1.7;
+const float c_expantionFactor = 1.2f;
 
 vec2 squishWithTimeAndAmount(float time, float squishTime, float squishAmount)
 {
@@ -37,31 +37,19 @@ vec2 squishWithTimeAndAmount(float time, float squishTime, float squishAmount)
 }
 
 vec2 expandWithTimeAndAmount(float time, float expandTime, float squishAmount) {
-    float magnifyTime = expandTime / 2.f;
+    float magnifyTime = expandTime;
+    vec2 centerToPosition = a_position.xy - a_center;
     if (time < magnifyTime) {
         float percent = time / magnifyTime;
         float factor = (c_expantionFactor - squishAmount) * percent + squishAmount;
-        vec2 centerToPosition = a_position.xy - a_center;
         float yOffset = (centerToPosition.y - centerToPosition.y * factor) * 2.f;
         centerToPosition.x *= (1.f / factor);
         if (a_position.y > a_center.y) {
             centerToPosition.y -= yOffset * 2.f;
         }
         return a_center + centerToPosition;
-    } else {
-        float percent = (time - magnifyTime) / (expandTime * 0.5);
-        float factor = -(c_expantionFactor - 1.f) * percent + c_expantionFactor;
-        vec2 centerToPosition = a_position.xy - a_center;
-        float yOffset = (centerToPosition.y - centerToPosition.y * factor) * 2.f;
-        centerToPosition.x *= (1.f / factor);
-        if (a_position.y < a_center.y) {
-            centerToPosition.y += (-4.f * (c_expantionFactor - 1.f) * centerToPosition.y - yOffset * 2.f);
-        } else {
-            centerToPosition.y += 4.f * (c_expantionFactor - 1.f) * centerToPosition.y;
-        }
-        return a_center + centerToPosition;
-//        return vec2(200.f, 200.f);
     }
+    return centerToPosition;
 }
 
 vec4 updatedPosition() {
@@ -108,9 +96,9 @@ vec4 updatedPosition() {
         if (cycle <= 0.01) {
             return position;
         }
-        float expandTime = squishTime * c_expantionFactor;
+        float expandTime = squishTime;
         
-        if (time < expandTime) {
+        if (time < expandTime && expandTime > 0.05) {
             position.xy = expandWithTimeAndAmount(time, expandTime, squishFactor);
         }
         if (time >= cycle - squishTime) {
