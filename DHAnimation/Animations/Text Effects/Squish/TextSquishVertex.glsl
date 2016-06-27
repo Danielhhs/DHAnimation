@@ -7,7 +7,6 @@ uniform float u_duration;
 uniform float u_coefficient;
 uniform float u_cycle;
 uniform float u_gravity;
-uniform float u_squish;
 uniform float u_squishTime;
 uniform float u_squishFactor;
 uniform float u_numberOfCycles;

@@ -26,7 +26,7 @@ typedef struct {
 - (void) generateMeshesData
 {
     vertices = malloc(sizeof(DHTextSquishAttributes) * self.vertexCount);
-    GLfloat timeGap = self.duration * 0.3 / ([self.attributedText length] - 1);
+    GLfloat timeGap = self.duration * (1.f - self.squishTimeRatio) / ([self.attributedText length] - 1);
     for (int i = 0; i < [self.attributedText length]; i++) {
         GLKVector2 center = GLKVector2Make((attributes[i * 4 + 0].position.x + attributes[i * 4 + 1].position.x) / 2, (attributes[i * 4 + 2].position.y + attributes[i * 4 + 0].position.y) / 2);
         vertices[i * 4 + 0].position = attributes[i * 4 + 0].position;

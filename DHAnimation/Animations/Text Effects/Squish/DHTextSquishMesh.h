@@ -10,4 +10,5 @@
 
 @interface DHTextSquishMesh : DHTextSceneMesh
 @property (nonatomic) NSTimeInterval duration;
+@property (nonatomic) NSTimeInterval squishTimeRatio;
 @end
