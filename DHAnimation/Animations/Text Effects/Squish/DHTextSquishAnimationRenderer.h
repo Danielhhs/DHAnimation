@@ -11,5 +11,5 @@
 @interface DHTextSquishAnimationRenderer : DHTextEffectRenderer
 
 @property (nonatomic) BOOL squish;
-
+@property (nonatomic) CGFloat squishFactor;
 @end

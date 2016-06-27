@@ -10,14 +10,17 @@
 #import "DHTextSquishMesh.h"
 
 @interface DHTextSquishAnimationRenderer () {
-    GLuint offsetLoc, durationLoc, numberOfCyclesLoc, coeffcientLoc, cycleLoc, gravityLoc, squishLoc;
+    GLuint offsetLoc, durationLoc, coeffcientLoc, cycleLoc, gravityLoc, squishLoc, squishTimeLoc, squishFactorLoc, numberOfCyclesLoc;
 }
 @property (nonatomic) GLfloat offset;
 @property (nonatomic) NSInteger numberOfCycles;
 @property (nonatomic) GLfloat coeffient;
 @property (nonatomic) NSTimeInterval cycle;
 @property (nonatomic) GLfloat gravity;
+@property (nonatomic) NSTimeInterval lifeTime;
 @end
+
+#define SQUISH_TIME 0.15
 
 @implementation DHTextSquishAnimationRenderer
 
@@ -35,21 +38,31 @@
 {
     offsetLoc = glGetUniformLocation(program, "u_offset");
     durationLoc = glGetUniformLocation(program, "u_duration");
-    numberOfCyclesLoc = glGetUniformLocation(program, "u_numberOfCycles");
     coeffcientLoc = glGetUniformLocation(program, "u_coefficient");
     gravityLoc = glGetUniformLocation(program, "u_gravity");
     cycleLoc = glGetUniformLocation(program, "u_cycle");
     squishLoc = glGetUniformLocation(program, "u_squish");
+    squishFactorLoc = glGetUniformLocation(program, "u_squishFactor");
+    squishTimeLoc = glGetUniformLocation(program, "u_squishTime");
+    numberOfCyclesLoc = glGetUniformLocation(program, "u_numberOfCycles");
     self.offset = self.origin.y + self.attributedString.size.height;
-    self.cycle = 0.618;
-    self.gravity = 2 * self.offset / ((self.cycle / 2) * (self.cycle / 2));
-    self.numberOfCycles = ceil(self.duration / self.cycle * 2) + 1;
+    self.cycle = 1.5;
+    GLfloat fallTime = (self.cycle) / 2 - SQUISH_TIME;
+    self.gravity = 2 * self.offset / fallTime / fallTime;
+    self.numberOfCycles = ceil(self.duration * 0.9 / self.cycle * 2) + 1;
     self.coeffient = 1.f;
     for (int i = 1; i <= 20; i++) {
         self.coeffient -= 0.05;
         if (pow(self.coeffient, self.numberOfCycles - 1) < 0.05) {
             break;
         }
+    }
+    NSLog(@"coefficient = %g", self.coeffient);
+    NSTimeInterval cycle = self.cycle;
+    self.lifeTime = cycle;
+    for (int i = 0; i < self.numberOfCycles - 1; i++) {
+        cycle *= self.coeffient;
+        self.lifeTime += cycle;
     }
 }
 
@@ -65,11 +78,13 @@
 {
     glUniform1f(offsetLoc, self.offset);
     glUniform1f(durationLoc, self.duration);
-    glUniform1f(numberOfCyclesLoc, self.numberOfCycles);
     glUniform1f(coeffcientLoc, self.coeffient);
     glUniform1f(cycleLoc, self.cycle);
     glUniform1f(gravityLoc, self.gravity);
     glUniform1f(squishLoc, self.squish);
+    glUniform1f(squishTimeLoc, SQUISH_TIME);
+    glUniform1f(squishFactorLoc, self.squishFactor);
+    glUniform1f(numberOfCyclesLoc, self.numberOfCycles);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);

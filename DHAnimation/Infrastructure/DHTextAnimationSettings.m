@@ -43,6 +43,7 @@
         }
         case DHTextAnimationTypeSquish: {
             settings.timingFunction = DHTimingFunctionLinear;
+            settings.duration = 5.f;
             break;
         }
         case DHTextAnimationTypeDance: {
