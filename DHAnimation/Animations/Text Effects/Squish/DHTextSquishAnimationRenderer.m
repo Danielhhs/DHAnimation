@@ -55,7 +55,7 @@
     }
     NSTimeInterval cycle = self.cycle;
     self.lifeTime = cycle;
-    for (int i = 0; i < self.numberOfCycles - 1; i++) {
+    for (int i = 0; i < self.numberOfCycles / 2 - 1; i++) {
         cycle *= self.coeffient;
         self.lifeTime += cycle;
     }
@@ -96,9 +96,9 @@
         self.cycle = duration * 0.3;
     }
     if (self.squishTime == 0) {
-        self.squishTime = 0.2 * self.cycle;
+        self.squishTime = 0.15 * self.cycle;
     } if (self.numberOfCycles == 0) {
-        self.numberOfCycles = 5;
+        self.numberOfCycles = 10;
     }
 }
 

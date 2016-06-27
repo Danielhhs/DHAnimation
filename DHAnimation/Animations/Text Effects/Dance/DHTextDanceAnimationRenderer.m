@@ -80,7 +80,7 @@
 - (GLfloat) amplitude
 {
     if (!_amplitude) {
-        _amplitude = 100;
+        _amplitude = 75;
     }
     return _amplitude;
 }
