@@ -7,14 +7,13 @@ uniform float u_duration;
 uniform float u_amplitude;
 uniform float u_cycle;
 uniform float u_singleCycleDuration;
+uniform float u_gravity;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 1) in vec2 a_texCoords;
 layout(location = 2) in float a_startTime;
 
 out vec2 v_texCoords;
-
-const float c_gravity = -1000.f;
 
 vec4 updatedPosition() {
     vec4 position = a_position;
@@ -27,8 +26,8 @@ vec4 updatedPosition() {
             timeInCycle -= u_singleCycleDuration;
         }
         timeInCycle += u_singleCycleDuration;
-        float velocity = sqrt(2.f * -c_gravity * u_amplitude);
-        float y = velocity * timeInCycle + 0.5 * c_gravity * timeInCycle * timeInCycle;
+        float velocity = u_gravity * u_singleCycleDuration / 2.f;
+        float y = velocity * timeInCycle - 0.5 * u_gravity * timeInCycle * timeInCycle;
         position.y += y;
     }
     return position;

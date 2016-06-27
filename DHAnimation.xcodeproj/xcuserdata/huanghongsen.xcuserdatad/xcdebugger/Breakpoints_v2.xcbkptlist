@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceAnimationRenderer.m"
-            timestampString = "488419855.028884"
+            timestampString = "488700963.161292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Squish/DHTextSquishAnimationRenderer.m"
-            timestampString = "488690245.748146"
+            timestampString = "488690988.842062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-setupExtraUniforms"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceAnimationRenderer.m"
+            timestampString = "488700963.161292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-setupExtraUniforms"
             landmarkType = "5">
          </BreakpointContent>

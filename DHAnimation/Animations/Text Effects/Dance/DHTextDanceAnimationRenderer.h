@@ -10,4 +10,5 @@
 
 @interface DHTextDanceAnimationRenderer : DHTextEffectRenderer
 @property (nonatomic) GLfloat amplitude;
+@property (nonatomic) GLfloat cycleLength;
 @end
