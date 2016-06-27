@@ -87,4 +87,18 @@
     [self.mesh drawEntireMesh];
 }
 
+- (void) setDuration:(NSTimeInterval)duration
+{
+    [super setDuration:duration];
+    if (self.squishFactor == 0) {
+        self.squishFactor = 0.618;
+    }
+    if (self.cycle == 0) {
+        self.cycle = duration * 0.3;
+    }
+    if (self.squishTime == 0) {
+        self.squishTime = 0.25 * self.cycle;
+    }
+}
+
 @end

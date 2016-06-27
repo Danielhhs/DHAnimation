@@ -254,11 +254,7 @@ static NSArray *textAnimationArray;
         case DHTextAnimationTypeFlyIn:
             return [[DHTextFlyInAnimationRenderer alloc] init];
         case DHTextAnimationTypeSquish: {
-            DHTextSquishAnimationRenderer *renderer = [[DHTextSquishAnimationRenderer alloc] init];
-            renderer.squishFactor = 0.5;
-            renderer.cycle = 1.5;
-            renderer.squishTime = 0.4;
-            return renderer;
+            return [[DHTextSquishAnimationRenderer alloc] init];
         }
         case DHTextAnimationTypeDance:
             return [[DHTextDanceAnimationRenderer alloc] init];

@@ -21,7 +21,7 @@ out vec2 v_texCoords;
 const float c_jumping_ratio = 0.8;
 const float c_cofficient = 0.618;
 
-const float c_expantionFactor = 1.2;
+const float c_expantionFactor = 1.7;
 
 vec2 squishWithTimeAndAmount(float time, float squishTime, float squishAmount)
 {
@@ -37,7 +37,7 @@ vec2 squishWithTimeAndAmount(float time, float squishTime, float squishAmount)
 }
 
 vec2 expandWithTimeAndAmount(float time, float expandTime, float squishAmount) {
-    float magnifyTime = expandTime / c_expantionFactor;
+    float magnifyTime = expandTime / 2.f;
     if (time < magnifyTime) {
         float percent = time / magnifyTime;
         float factor = (c_expantionFactor - squishAmount) * percent + squishAmount;
@@ -49,7 +49,7 @@ vec2 expandWithTimeAndAmount(float time, float expandTime, float squishAmount) {
         }
         return a_center + centerToPosition;
     } else {
-        float percent = (time - magnifyTime) / (expandTime * (c_expantionFactor - 1.f));
+        float percent = (time - magnifyTime) / (expandTime * 0.5);
         float factor = -(c_expantionFactor - 1.f) * percent + c_expantionFactor;
         vec2 centerToPosition = a_position.xy - a_center;
         float yOffset = (centerToPosition.y - centerToPosition.y * factor) * 2.f;
@@ -60,6 +60,7 @@ vec2 expandWithTimeAndAmount(float time, float expandTime, float squishAmount) {
             centerToPosition.y += 4.f * (c_expantionFactor - 1.f) * centerToPosition.y;
         }
         return a_center + centerToPosition;
+//        return vec2(200.f, 200.f);
     }
 }
 
@@ -109,7 +110,7 @@ vec4 updatedPosition() {
         }
         float expandTime = squishTime * c_expantionFactor;
         
-        if (time < expandTime && squishTime > 0.05) {
+        if (time < expandTime) {
             position.xy = expandWithTimeAndAmount(time, expandTime, squishFactor);
         }
         if (time >= cycle - squishTime) {

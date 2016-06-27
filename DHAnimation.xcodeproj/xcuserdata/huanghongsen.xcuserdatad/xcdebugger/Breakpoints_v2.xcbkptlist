@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Squish/TextSquishVertex.glsl"
-            timestampString = "488685775.485243"
+            timestampString = "488688828.687709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "updatedPosition()"
             landmarkType = "7">
          </BreakpointContent>
