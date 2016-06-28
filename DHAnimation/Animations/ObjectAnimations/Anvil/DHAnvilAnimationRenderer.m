@@ -9,10 +9,13 @@
 #import "DHAnvilAnimationRenderer.h"
 #import "TextureHelper.h"
 #import "DHDustEffect.h"
+#import "DHCameraShakeEffect.h"
+#import "DHPointExplosionEffect.h"
 @interface DHAnvilAnimationRenderer () {
     GLuint yOffsetLoc, timeLoc, resolutionLoc;
 }
 @property (nonatomic, strong) DHDustEffect *effect;
+@property (nonatomic, strong) DHPointExplosionEffect *pointExplosionEffect;
 @property (nonatomic) NSTimeInterval fallTime;
 @end
 
@@ -52,12 +55,13 @@
     
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     [self.effect draw];
+    [self.pointExplosionEffect draw];
 }
 
 - (void) setupEffects
 {
     self.effect = [[DHDustEffect alloc] initWithContext:self.context];
-    self.effect.emitPosition = GLKVector3Make(CGRectGetMinX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
+    self.effect.emitPosition = GLKVector3Make(CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame), 0);
     self.effect.emissionWidth = self.targetView.frame.size.width;
     self.effect.numberOfEmissions = 15;
     self.effect.direction = DHDustEmissionDirectionHorizontal;
@@ -68,11 +72,24 @@
     self.effect.startTime = self.fallTime;
     self.effect.duration = self.duration - self.fallTime;
     [self.effect generateParticlesData];
+    
+    self.pointExplosionEffect = [[DHPointExplosionEffect alloc] initWithContext:self.context emissionPosition:self.effect.emitPosition numberOfParticles:20 startTime:self.fallTime];
+    self.pointExplosionEffect.mvpMatrix = mvpMatrix;
+    self.pointExplosionEffect.duration = self.duration - self.fallTime;
 }
 
 - (void) updateAdditionalComponents
 {
+    
+    if (self.elapsedTime - self.fallTime >= 0.f && self.elapsedTime - self.fallTime < 0.2) {
+        [self updateMvpMatrixWithView:self.containerView];
+    } else {
+        [self setupMvpMatrixWithView:self.containerView];
+    }
     [self.effect updateWithElapsedTime:self.elapsedTime percent:self.percent];
+    self.effect.mvpMatrix = mvpMatrix;
+    [self.pointExplosionEffect updateWithElapsedTime:self.elapsedTime percent:self.percent];
+    self.pointExplosionEffect.mvpMatrix = mvpMatrix;
 }
 
 - (NSArray *) allowedDirections
@@ -83,5 +100,16 @@
 - (void) tearDownSpecificGLResources
 {
     [self.effect tearDownGL];
+    [self.pointExplosionEffect tearDownGL];
+}
+
+- (void) updateMvpMatrixWithView:(UIView *)view
+{
+    GLKMatrix4 modelMatrix = GLKMatrix4MakeTranslation(-view.bounds.size.width / 2, -view.bounds.size.height / 2, -view.bounds.size.height / 2 / tan(M_PI / 24));
+    GLKMatrix4 viewMatrix = [DHCameraShakeEffect shakeCameraWithElapsedTime:self.elapsedTime - self.fallTime duration:0.2 shakingFactor:0.01];
+    GLKMatrix4 modelView = GLKMatrix4Multiply(viewMatrix, modelMatrix);
+    GLKMatrix4 projection = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(15), view.bounds.size.width / view.bounds.size.height, 0.1, 10000);
+    
+    mvpMatrix = GLKMatrix4Multiply(projection, modelView);
 }
 @end

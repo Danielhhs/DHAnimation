@@ -50,6 +50,9 @@
 		540B89711D1BD1E2007ED37F /* TextDanceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */; };
 		540B89731D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
 		540B89741D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
+		540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89831D224326007ED37F /* DHCameraShakeEffect.h */; };
+		540B89861D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
+		540B89871D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
 		54101B061CD34F9A002B10D0 /* DustEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA591CD2E65C004EF919 /* DustEffectFragment.glsl */; };
 		54101B071CD34F9A002B10D0 /* DustEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA5A1CD2E65C004EF919 /* DustEffectVertex.glsl */; };
 		54101B081CD34F9A002B10D0 /* ShimmerFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA601CD2E65C004EF919 /* ShimmerFragment.glsl */; };
@@ -840,6 +843,8 @@
 		540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextDanceAnimationRenderer.m; sourceTree = "<group>"; };
 		540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextDanceVertex.glsl; sourceTree = "<group>"; };
 		540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextDanceFragment.glsl; sourceTree = "<group>"; };
+		540B89831D224326007ED37F /* DHCameraShakeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCameraShakeEffect.h; sourceTree = "<group>"; };
+		540B89841D224326007ED37F /* DHCameraShakeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCameraShakeEffect.m; sourceTree = "<group>"; };
 		54107F581CE812E200DE5B35 /* DHBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBackgroundRenderer.h; sourceTree = "<group>"; };
 		54107F591CE812E200DE5B35 /* DHBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBackgroundRenderer.m; sourceTree = "<group>"; };
 		54126CD51CD98C08008AF45E /* ObjectBackgroundVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectBackgroundVertex.glsl; sourceTree = "<group>"; };
@@ -1252,6 +1257,7 @@
 		540AFA541CD2E65C004EF919 /* Special Effects */ = {
 			isa = PBXGroup;
 			children = (
+				540B89821D2242F5007ED37F /* CameraShake */,
 				54DEB7071D08100C00812DFA /* Firework */,
 				545063311D0674AB001C44F7 /* Flame */,
 				546F52031CE424BB00DA3B0C /* PointExplosion */,
@@ -1347,6 +1353,15 @@
 				540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */,
 			);
 			path = Dance;
+			sourceTree = "<group>";
+		};
+		540B89821D2242F5007ED37F /* CameraShake */ = {
+			isa = PBXGroup;
+			children = (
+				540B89831D224326007ED37F /* DHCameraShakeEffect.h */,
+				540B89841D224326007ED37F /* DHCameraShakeEffect.m */,
+			);
+			path = CameraShake;
 			sourceTree = "<group>";
 		};
 		54126F951CDAD6E7008AF45E /* DHAnimationLibrary */ = {
@@ -2298,6 +2313,7 @@
 				5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */,
 				546141D01CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h in Headers */,
 				549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */,
+				540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */,
 				5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */,
 				5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */,
 				540B893B1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h in Headers */,
@@ -3034,6 +3050,7 @@
 				5490CDAE1CD34F2600C93002 /* DHRotationAnimationRenderer.m in Sources */,
 				5490CDAF1CD34F2600C93002 /* DHShimmerBackgroundMesh.m in Sources */,
 				5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */,
+				540B89871D224328007ED37F /* DHCameraShakeEffect.m in Sources */,
 				5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */,
 				5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */,
 				549CCF3B1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
@@ -3286,6 +3303,7 @@
 				5478760E1CA4D61B00012F76 /* DHRippleTransitionRenderer.m in Sources */,
 				547875EE1CA4D61B00012F76 /* DHFlopTransitionRenderer.m in Sources */,
 				54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */,
+				540B89861D224328007ED37F /* DHCameraShakeEffect.m in Sources */,
 				540AFA721CD2E65C004EF919 /* DHShiningStarEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

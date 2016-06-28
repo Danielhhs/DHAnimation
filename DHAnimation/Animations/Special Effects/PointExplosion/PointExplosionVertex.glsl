@@ -31,7 +31,7 @@ vec4 updatedPosition() {
 void main() {
     vec4 position = updatedPosition();
     gl_Position = u_mvpMatrix * position;
-    if (position.y < u_emissionPosition.y) {
+    if (position.y < u_emissionPosition.y || u_time < 0.f) {
         gl_PointSize = 0.f;
     } else {
         gl_PointSize = a_pointSize;

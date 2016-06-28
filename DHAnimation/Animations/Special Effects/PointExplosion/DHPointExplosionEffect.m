@@ -112,7 +112,7 @@ typedef struct {
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     glUniform3f(emissionPositionLoc, self.emissionPosition.x, self.emissionPosition.y, self.emissionPosition.z);
     glUniform1f(gravityLoc, 700);
-    glUniform1f(timeLoc, self.elapsedTime);
+    glUniform1f(timeLoc, self.elapsedTime - self.startTime);
     glUniform1f(percentLoc, self.percent);
     
     glBindVertexArray(vertexArray);
