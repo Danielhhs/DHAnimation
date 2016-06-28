@@ -138,7 +138,7 @@ typedef struct {
     }
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionLeft emissionPosition:self.emitPosition];
     GLKVector3 rightEmitPosition = self.emitPosition;
-    rightEmitPosition.x += self.targetView.frame.size.width / 2;
+    rightEmitPosition.x += self.targetView.frame.size.width;
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionRight emissionPosition:rightEmitPosition];
     self.numberOfParticles = PARTICLE_COUNT * 2 + self.numberOfParticlesPerEmission * self.emissionWidth;
 }
@@ -150,7 +150,7 @@ typedef struct {
     GLfloat xOffset = -self.dustWidth / 2 * cos(angle);
     position.x = emissionPosition.x + xOffset;
     position.z = emissionPosition.z + [self randomPercent] * self.emissionRadius;
-    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 7 * [self randomPercent];
+    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 5 * [self randomPercent];
     position.y = emissionPosition.y + yOffset;
     return position;
 }

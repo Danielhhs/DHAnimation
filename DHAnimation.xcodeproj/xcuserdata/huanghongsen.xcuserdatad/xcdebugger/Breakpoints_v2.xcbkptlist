@@ -344,14 +344,63 @@
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
+            condition = "self.emitDirection.x &gt; 0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/ObjectAnimations/Anvil/DHAnvilAnimationRenderer.m"
-            timestampString = "488788182.942726"
+            filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
+            timestampString = "488793928.958707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-setupEffects"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-randomTargetPositionForSingleDirectionForEmissionPosition:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
+            timestampString = "488793898.88778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-generateDustParticlesForSingleDirection:emissionPosition:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
+            timestampString = "488794282.858283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-generateDustParticlesForSingleDirection:emissionPosition:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Special Effects/Dust/DHDustEffect.m"
+            timestampString = "488794782.251149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-randomTargetPositionForAllDirectionsForEmissionPosition:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
