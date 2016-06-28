@@ -115,7 +115,7 @@
 - (NSTimeInterval) singleCharacterDuration
 {
     if (!_singleCharacterDuration) {
-        _singleCharacterDuration = 0.7 * self.duration;
+        _singleCharacterDuration = 0.8 * self.duration;
     }
     return _singleCharacterDuration;
 }
