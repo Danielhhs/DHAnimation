@@ -10,6 +10,8 @@ uniform float u_singleCycleDuration;
 uniform float u_gravity;
 uniform float u_squishTimeRatio;
 uniform float u_squishFactor;
+uniform float u_event;
+uniform float u_singleCharDuration;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 1) in vec2 a_texCoords;
@@ -45,8 +47,16 @@ vec2 expandWithTime(float time) {
 
 vec4 updatedPosition() {
     vec4 position = a_position;
-    float time = u_time - a_startTime;
-    float percent = time / u_duration;
+    
+    float startTime = a_startTime;
+    if (u_event == 1.f) {
+        startTime = u_duration - u_singleCharDuration - startTime;
+    }
+    float time = u_time - startTime;
+    if (u_event == 1.f) {
+        time = u_singleCharDuration - time;
+    }
+    float percent = time / u_singleCharDuration;
     if (percent <= 0.f) {
         position.x += u_offset;
         return position;
@@ -54,7 +64,7 @@ vec4 updatedPosition() {
     if (percent <= 1.f) {
         float timeInCycle = time;
         float xOffset = u_offset;
-        float xOffsetForOneCycle = -u_offset * (u_singleCycleDuration / u_duration);
+        float xOffsetForOneCycle = -u_offset * (u_singleCycleDuration / u_singleCharDuration);
         while (timeInCycle > 0.f) {
             timeInCycle -= u_singleCycleDuration;
             xOffset += xOffsetForOneCycle;

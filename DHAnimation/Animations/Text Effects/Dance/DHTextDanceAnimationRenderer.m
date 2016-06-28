@@ -9,7 +9,7 @@
 #import "DHTextDanceAnimationRenderer.h"
 #import "DHTextDanceMesh.h"
 @interface DHTextDanceAnimationRenderer() {
-    GLuint offsetLoc, durationLoc, amplitudeLoc, cycleLoc, singleCycleDurationLoc, gravityLoc, squishTimeLoc, squishFactorLoc;
+    GLuint offsetLoc, durationLoc, amplitudeLoc, cycleLoc, singleCycleDurationLoc, gravityLoc, squishTimeLoc, squishFactorLoc, singleCharacterDurationLoc;
 }
 @property (nonatomic) GLfloat offset;
 @property (nonatomic) GLfloat singleCycleDuration;
@@ -17,7 +17,6 @@
 
 @end
 
-#define TIME_CYCLE_FOR_ONE_CHAR 0.7
 
 @implementation DHTextDanceAnimationRenderer
 
@@ -41,11 +40,15 @@
     gravityLoc = glGetUniformLocation(program, "u_gravity");
     squishTimeLoc = glGetUniformLocation(program, "u_squishTimeRatio");
     squishFactorLoc = glGetUniformLocation(program, "u_squishFactor");
+    singleCharacterDurationLoc = glGetUniformLocation(program, "u_singleCharDuration");
     self.offset = -(self.origin.x + self.attributedString.size.width);
+    if (self.direction == DHAnimationDirectionRightToLeft) {
+        self.offset = self.containerView.frame.size.width - self.origin.x;
+    }
     int numberOfPasses = fabs(self.offset) / self.cycleLength;
     self.cycleLength = fabs(self.offset / numberOfPasses);
     self.amplitude = self.attributedString.size.height * 2;
-    self.singleCycleDuration = self.duration * TIME_CYCLE_FOR_ONE_CHAR / numberOfPasses;
+    self.singleCycleDuration = self.singleCharacterDuration / numberOfPasses;
     GLfloat t = self.singleCycleDuration / 2;
     self.gravity = 2 * self.amplitude / t / t;
 }
@@ -54,6 +57,8 @@
 {
     DHTextDanceMesh *mesh = [[DHTextDanceMesh alloc] initWithAttributedText:self.attributedString origin:self.origin textContainerView:self.textContainerView containerView:self.containerView];
     mesh.duration = self.duration;
+    mesh.direction = self.direction;
+    mesh.singleCharacterDurationRatio = self.singleCharacterDuration / self.duration;
     self.mesh = mesh;
     [self.mesh generateMeshesData];
 }
@@ -62,12 +67,13 @@
 {
     glUniform1f(offsetLoc, self.offset);
     glUniform1f(amplitudeLoc, self.amplitude);
-    glUniform1f(durationLoc, self.duration * TIME_CYCLE_FOR_ONE_CHAR);
+    glUniform1f(durationLoc, self.duration);
     glUniform1f(cycleLoc, self.cycleLength);
     glUniform1f(singleCycleDurationLoc, self.singleCycleDuration);
     glUniform1f(gravityLoc, self.gravity);
     glUniform1f(squishTimeLoc, self.squishTimeRatio);
     glUniform1f(squishFactorLoc, self.squishFactor);
+    glUniform1f(singleCharacterDurationLoc, self.singleCharacterDuration);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
@@ -77,7 +83,7 @@
 - (GLfloat) cycleLength
 {
     if (!_cycleLength) {
-        _cycleLength = 100;
+        _cycleLength = MAX(100, self.offset / 3);
     }
     return _cycleLength;
 }
@@ -93,7 +99,7 @@
 - (NSTimeInterval) squishTimeRatio
 {
     if (!_squishTimeRatio) {
-        _squishTimeRatio = 0.2;
+        _squishTimeRatio = 0.15;
     }
     return _squishTimeRatio;
 }
@@ -104,6 +110,14 @@
         _squishFactor = 0.8;
     }
     return _squishFactor;
+}
+
+- (NSTimeInterval) singleCharacterDuration
+{
+    if (!_singleCharacterDuration) {
+        _singleCharacterDuration = 0.7 * self.duration;
+    }
+    return _singleCharacterDuration;
 }
 
 - (GLKVector2) expandWithTime:(GLfloat)time

@@ -7,9 +7,11 @@
 //
 
 #import "DHTextSceneMesh.h"
-
+#import "DHConstants.h"
 @interface DHTextDanceMesh : DHTextSceneMesh
 
 @property (nonatomic) NSTimeInterval duration;
+@property (nonatomic) DHAnimationDirection direction;
+@property (nonatomic) GLfloat singleCharacterDurationRatio;
 
 @end

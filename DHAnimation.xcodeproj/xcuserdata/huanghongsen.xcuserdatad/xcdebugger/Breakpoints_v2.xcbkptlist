@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceAnimationRenderer.m"
-            timestampString = "488769278.439576"
+            timestampString = "488783809.623801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,12 +298,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceAnimationRenderer.m"
-            timestampString = "488769278.439576"
+            timestampString = "488784148.407824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-setupExtraUniforms"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-singleCharacterDuration"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,13 +313,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceMesh.m"
-            timestampString = "488713359.068993"
+            filePath = "DHAnimation/Animations/Text Effects/Dance/DHTextDanceAnimationRenderer.m"
+            timestampString = "488784155.400259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-generateMeshesData"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-setupExtraUniforms"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
