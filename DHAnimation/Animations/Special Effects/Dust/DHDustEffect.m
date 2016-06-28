@@ -124,14 +124,20 @@ typedef struct {
 #pragma mark - Generate Particle Data For Horizontal Direction
 - (void) generateDustParticlesForAllDirections
 {
-    for (int i = 1; i < self.emissionWidth - 1; i++) {
-        GLKVector3 emissionPosition = GLKVector3Make(self.emitPosition.x + i, self.emitPosition.y, self.emitPosition.z);
+    for (int i = 5; i < self.emissionWidth - 1; i+=5) {
+        GLKVector3 emissionPosition = self.emitPosition;
+        float angle = acosf((i - self.emissionWidth / 2) / (self.emissionWidth / 2));
+        GLKVector3 direction = GLKVector3Make(cos(angle), 0, fabs(sin(angle)));
         for (int i = 0; i < self.numberOfParticlesPerEmission; i++) {
             DHDustEffectAttributes dust;
             dust.position = emissionPosition;
             dust.pointSize = 5.f;
             dust.rotation = [self randomPercent] * M_PI * 4;
-            dust.targetPosition = [self randomTargetPositionForAllDirectionsForEmissionPosition:emissionPosition];
+            GLfloat distance = [self randomDistance];
+            GLKVector3 targetPosition = GLKVector3MultiplyScalar(direction, distance);
+            dust.targetPosition = GLKVector3Add(targetPosition, emissionPosition);
+            float yOffset = [self randomPercent] * [self maxYForDistance:distance];
+            dust.targetPosition.y = emissionPosition.y + yOffset;
             dust.targetPointSize = [self targetPointSizeForYPosition:dust.targetPosition.y - emissionPosition.y originalSize:dust.pointSize];
             [self.particleData appendBytes:&dust length:sizeof(dust)];
         }
@@ -140,9 +146,20 @@ typedef struct {
     GLKVector3 rightEmitPosition = self.emitPosition;
     rightEmitPosition.x += self.targetView.frame.size.width;
     [self generateDustParticlesForSingleDirection:DHDustEmissionDirectionRight emissionPosition:rightEmitPosition];
-    self.numberOfParticles = PARTICLE_COUNT * 2 + self.numberOfParticlesPerEmission * self.emissionWidth;
+    self.numberOfParticles = PARTICLE_COUNT * 2 + self.numberOfParticlesPerEmission * self.emissionWidth / 5;
 }
 
+- (GLfloat) randomDistance
+{
+    float random = arc4random() % 1000 / 1000.f * self.dustWidth;
+    return random;
+}
+
+- (GLfloat) maxYForDistance:(GLfloat) distance
+{
+    float maxY = sqrt(self.emissionRadius * self.emissionRadius - distance * distance);
+    return self.emissionRadius - maxY;
+}
 - (GLKVector3) randomTargetPositionForAllDirectionsForEmissionPosition:(GLKVector3)emissionPosition
 {
     GLKVector3 position;
@@ -150,7 +167,7 @@ typedef struct {
     GLfloat xOffset = -self.dustWidth / 2 * cos(angle);
     position.x = emissionPosition.x + xOffset;
     position.z = emissionPosition.z + [self randomPercent] * self.emissionRadius;
-    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 5 * [self randomPercent];
+    GLfloat yOffset = [self maxYForX:position.z - emissionPosition.z] / 3 * [self randomPercent];
     position.y = emissionPosition.y + yOffset;
     return position;
 }
