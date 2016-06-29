@@ -29,7 +29,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.animationView = [[GLKView alloc] initWithFrame:self.view.bounds context:[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]];
     [self.view addSubview:self.animationView];
-    self.settings = [DHObjectAnimationSettings defaultSettings];
+    self.settings = [DHObjectAnimationSettings defaultSettingsForAnimationType:self.animationType event:self.animationEvent forView:self.fromView];
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];
@@ -45,7 +45,6 @@
 
 - (void) performAnimation
 {
-    self.settings = [DHObjectAnimationSettings defaultSettingsForAnimationType:self.animationType event:self.animationEvent forView:self.fromView];
     [self updateAnimationSettings];
     self.renderer = [DHConstants animationRendererForName:[DHConstants animationNameForAnimationType:self.animationType]];
 

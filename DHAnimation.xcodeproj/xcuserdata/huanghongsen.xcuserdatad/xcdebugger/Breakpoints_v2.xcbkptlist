@@ -425,13 +425,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Exmaples/DHObjectAnimationPresentatioinViewController.m"
-            timestampString = "488858437.89747"
+            filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
+            timestampString = "488873276.837529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-updateAnimationSettings"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
