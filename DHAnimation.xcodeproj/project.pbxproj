@@ -37,9 +37,7 @@
 		540B89411D1A6111007ED37F /* DHTextSquishMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893F1D1A6111007ED37F /* DHTextSquishMesh.m */; };
 		540B89421D1A6111007ED37F /* DHTextSquishMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893F1D1A6111007ED37F /* DHTextSquishMesh.m */; };
 		540B89441D1A611E007ED37F /* TextSquishVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89431D1A611E007ED37F /* TextSquishVertex.glsl */; };
-		540B89451D1A611E007ED37F /* TextSquishVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89431D1A611E007ED37F /* TextSquishVertex.glsl */; };
 		540B89471D1A612A007ED37F /* TextSquishFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89461D1A612A007ED37F /* TextSquishFragment.glsl */; };
-		540B89481D1A612A007ED37F /* TextSquishFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89461D1A612A007ED37F /* TextSquishFragment.glsl */; };
 		540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89651D1BD1BA007ED37F /* DHTextDanceMesh.h */; };
 		540B89681D1BD1BB007ED37F /* DHTextDanceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */; };
 		540B89691D1BD1BB007ED37F /* DHTextDanceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */; };
@@ -47,9 +45,7 @@
 		540B896D1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */; };
 		540B896E1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */; };
 		540B89701D1BD1E2007ED37F /* TextDanceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */; };
-		540B89711D1BD1E2007ED37F /* TextDanceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */; };
 		540B89731D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
-		540B89741D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
 		540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89831D224326007ED37F /* DHCameraShakeEffect.h */; };
 		540B89861D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
 		540B89871D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
@@ -196,13 +192,25 @@
 		5420C0531CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5420C0441CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl */; };
 		5420C05A1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C04D1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m */; };
 		5420C05D1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420C05C1CB8BC33001C789C /* DHObjectAnimationSettingsViewController.m */; };
+		54445AA21D2366C50086C16A /* TextDanceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */; };
+		54445AA31D2366D50086C16A /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
+		54445AA41D2366DA0086C16A /* TextSquishVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89431D1A611E007ED37F /* TextSquishVertex.glsl */; };
+		54445AA51D2366DD0086C16A /* TextSquishFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89461D1A612A007ED37F /* TextSquishFragment.glsl */; };
+		54445AA61D2366E10086C16A /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
+		54445AA71D2366E40086C16A /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
+		54445AA91D2366EF0086C16A /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB70D1D08109800812DFA /* FireworkVertex.glsl */; };
+		54445AAA1D2366F30086C16A /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB7101D0810A300812DFA /* FireworkFragment.glsl */; };
+		54445AAB1D2366F70086C16A /* FlameEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545063371D06753C001C44F7 /* FlameEffectVertex.glsl */; };
+		54445AAC1D2366FA0086C16A /* FlameEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5450633A1D067545001C44F7 /* FlameEffectFragment.glsl */; };
+		54445AAD1D2367040086C16A /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
+		54445AAE1D2367070086C16A /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
+		54445AAF1D23671E0086C16A /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
+		54445AB01D2367240086C16A /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
 		545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 545063321D0674CF001C44F7 /* DHFlameEffect.h */; };
 		545063351D0674CF001C44F7 /* DHFlameEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 545063331D0674CF001C44F7 /* DHFlameEffect.m */; };
 		545063361D0674CF001C44F7 /* DHFlameEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 545063331D0674CF001C44F7 /* DHFlameEffect.m */; };
 		545063381D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545063371D06753C001C44F7 /* FlameEffectVertex.glsl */; };
-		545063391D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545063371D06753C001C44F7 /* FlameEffectVertex.glsl */; };
 		5450633B1D067545001C44F7 /* FlameEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5450633A1D067545001C44F7 /* FlameEffectFragment.glsl */; };
-		5450633C1D067545001C44F7 /* FlameEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5450633A1D067545001C44F7 /* FlameEffectFragment.glsl */; };
 		5450633E1D06A638001C44F7 /* flame.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5450633D1D06A638001C44F7 /* flame.gif */; };
 		5450633F1D06A638001C44F7 /* flame.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5450633D1D06A638001C44F7 /* flame.gif */; };
 		545063411D06BC8F001C44F7 /* flame.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 545063401D06BC8F001C44F7 /* flame.jpeg */; };
@@ -543,9 +551,7 @@
 		549CCF5C1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
 		549CCF5D1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
 		549CCF5F1D190419007517D0 /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
-		549CCF601D190419007517D0 /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
 		549CCF621D190424007517D0 /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
-		549CCF631D190424007517D0 /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
 		549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */; };
 		549CCF671D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
 		549CCF681D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
@@ -715,9 +721,7 @@
 		54DEB70B1D08103500812DFA /* DHFireworkEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DEB7091D08103500812DFA /* DHFireworkEffect.m */; };
 		54DEB70C1D08103500812DFA /* DHFireworkEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DEB7091D08103500812DFA /* DHFireworkEffect.m */; };
 		54DEB70E1D08109800812DFA /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB70D1D08109800812DFA /* FireworkVertex.glsl */; };
-		54DEB70F1D08109800812DFA /* FireworkVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB70D1D08109800812DFA /* FireworkVertex.glsl */; };
 		54DEB7111D0810A300812DFA /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB7101D0810A300812DFA /* FireworkFragment.glsl */; };
-		54DEB7121D0810A300812DFA /* FireworkFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54DEB7101D0810A300812DFA /* FireworkFragment.glsl */; };
 		54E263FE1C8EBCBF00FFB67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E263FD1C8EBCBF00FFB67E /* main.m */; };
 		54E264011C8EBCBF00FFB67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264001C8EBCBF00FFB67E /* AppDelegate.m */; };
 		54E264041C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E264031C8EBCBF00FFB67E /* DHTransitionTypeChooseViewController.m */; };
@@ -748,16 +752,12 @@
 		54EE3FC31D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
 		54EE3FC41D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
 		54EE3FD41D123AE50090A491 /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
-		54EE3FD51D123AE50090A491 /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
 		54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
-		54EE3FD81D123AF10090A491 /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
 		54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */; };
 		54EE40071D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
 		54EE40081D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
 		54EE400A1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
-		54EE400B1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
 		54EE400D1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
-		54EE400E1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
 		54EE40461D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40451D166FC60090A491 /* DHTextAnimationChooseTypeTableViewController.m */; };
 		54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F64CC91CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m */; };
 		54F64CCC1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54F64CCB1CCF476000AFBCF8 /* ObjectAnvilVertex.glsl */; };
@@ -2638,20 +2638,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549CCF601D190419007517D0 /* TextFlyInVertex.glsl in Resources */,
-				540B89711D1BD1E2007ED37F /* TextDanceVertex.glsl in Resources */,
-				540B89741D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */,
-				54EE3FD81D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
-				5450633C1D067545001C44F7 /* FlameEffectFragment.glsl in Resources */,
-				549CCF631D190424007517D0 /* TextFlyInFragment.glsl in Resources */,
-				545063391D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */,
-				540B89481D1A612A007ED37F /* TextSquishFragment.glsl in Resources */,
-				54EE3FD51D123AE50090A491 /* PointExplosionVertex.glsl in Resources */,
-				54DEB7121D0810A300812DFA /* FireworkFragment.glsl in Resources */,
-				540B89451D1A611E007ED37F /* TextSquishVertex.glsl in Resources */,
-				54EE400E1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */,
-				54DEB70F1D08109800812DFA /* FireworkVertex.glsl in Resources */,
-				54EE400B1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2675,7 +2661,10 @@
 				54101B8A1CD34FA4002B10D0 /* Shredder.png in Resources */,
 				54101B061CD34F9A002B10D0 /* DustEffectFragment.glsl in Resources */,
 				54101B071CD34F9A002B10D0 /* DustEffectVertex.glsl in Resources */,
+				54445AA71D2366E40086C16A /* TextFlyInFragment.glsl in Resources */,
+				54445AAB1D2366F70086C16A /* FlameEffectVertex.glsl in Resources */,
 				54C142011CEEDF7700A6C9CF /* ObjectCompressFragment.glsl in Resources */,
+				54445AA51D2366DD0086C16A /* TextSquishFragment.glsl in Resources */,
 				5455FC8E1D0D165C00B6B022 /* firework.png in Resources */,
 				54101B081CD34F9A002B10D0 /* ShimmerFragment.glsl in Resources */,
 				54101B091CD34F9A002B10D0 /* ShimmerShiningStarFragment.glsl in Resources */,
@@ -2702,6 +2691,7 @@
 				54101B1B1CD34F9A002B10D0 /* ObjectSpinFragment.glsl in Resources */,
 				54101B1C1CD34F9A002B10D0 /* ObjectScaleBigVertex.glsl in Resources */,
 				54101B1D1CD34F9A002B10D0 /* ObjectScaleBigFragment.glsl in Resources */,
+				54445AAE1D2367070086C16A /* PointExplosionFragment.glsl in Resources */,
 				54101B1E1CD34F9A002B10D0 /* ObjectScaleVertex.glsl in Resources */,
 				54101B1F1CD34F9A002B10D0 /* ObjectScaleFragment.glsl in Resources */,
 				54101B201CD34F9A002B10D0 /* ObjectPopVertex.glsl in Resources */,
@@ -2710,6 +2700,7 @@
 				54101B221CD34F9A002B10D0 /* ObjectPivotVertex.glsl in Resources */,
 				54101B231CD34F9A002B10D0 /* ObjectPivotFragment.glsl in Resources */,
 				54101B241CD34F9A002B10D0 /* ObjectDropVertex.glsl in Resources */,
+				54445AA91D2366EF0086C16A /* FireworkVertex.glsl in Resources */,
 				54101B251CD34F9A002B10D0 /* ObjectDropFragment.glsl in Resources */,
 				54101B281CD34F9A002B10D0 /* BlurAnimationVertex.glsl in Resources */,
 				54101B291CD34F9A002B10D0 /* BlurAnimationFragment.glsl in Resources */,
@@ -2724,6 +2715,7 @@
 				54101B331CD34F9A002B10D0 /* ShimmerBackgroundVertex.glsl in Resources */,
 				54101B341CD34F9A002B10D0 /* SparkleBackgroundVertex.glsl in Resources */,
 				54101B351CD34F9A002B10D0 /* SparkleBackgroundFragment.glsl in Resources */,
+				54445AA21D2366C50086C16A /* TextDanceVertex.glsl in Resources */,
 				54101B361CD34F9A002B10D0 /* ReflectionDestinationFragment.glsl in Resources */,
 				54101B371CD34F9A002B10D0 /* ReflectionDestinationVertex.glsl in Resources */,
 				54101B381CD34F9A002B10D0 /* ReflectionSourceFragment.glsl in Resources */,
@@ -2741,6 +2733,9 @@
 				54101B421CD34F9A002B10D0 /* CoverDestinationFragment.glsl in Resources */,
 				54101B431CD34F9A002B10D0 /* CoverDestinationVertex.glsl in Resources */,
 				54101B441CD34F9A002B10D0 /* CoverSourceFragment.glsl in Resources */,
+				54445AAD1D2367040086C16A /* PointExplosionVertex.glsl in Resources */,
+				54445AB01D2367240086C16A /* ObjectPointExplosionFragment.glsl in Resources */,
+				54445AAA1D2366F30086C16A /* FireworkFragment.glsl in Resources */,
 				547F8A971D100D9100F730A5 /* PageCurlDestinationVertex.glsl in Resources */,
 				54101B451CD34F9A002B10D0 /* CoverSourceVertex.glsl in Resources */,
 				54101B461CD34F9A002B10D0 /* CubeDestinationFragment.glsl in Resources */,
@@ -2779,11 +2774,13 @@
 				54101B621CD34F9A002B10D0 /* PushDestinationFragment.glsl in Resources */,
 				54101B631CD34F9A002B10D0 /* PushDestinationVertex.glsl in Resources */,
 				54101B641CD34F9A002B10D0 /* PushSourceFragment.glsl in Resources */,
+				54445AA31D2366D50086C16A /* TextDanceFragment.glsl in Resources */,
 				54101B651CD34F9A002B10D0 /* PushSourceVertex.glsl in Resources */,
 				54101B661CD34F9A002B10D0 /* ResolvingDoorDestinationFragment.glsl in Resources */,
 				54101B671CD34F9A002B10D0 /* ResolvingDoorDestinationVertex.glsl in Resources */,
 				54101B681CD34F9A002B10D0 /* ResolvingDoorSourceFragment.glsl in Resources */,
 				54101B691CD34F9A002B10D0 /* ResolvingDoorSourceVertex.glsl in Resources */,
+				54445AAF1D23671E0086C16A /* ObjectPointExplosionVertex.glsl in Resources */,
 				54101B6A1CD34F9A002B10D0 /* RevealDestinationFragment.glsl in Resources */,
 				54101B6B1CD34F9A002B10D0 /* RevealDestinationVertex.glsl in Resources */,
 				54101B6C1CD34F9A002B10D0 /* RevealSourceFragment.glsl in Resources */,
@@ -2792,6 +2789,7 @@
 				54101B6F1CD34F9A002B10D0 /* RippleDestinationVertex.glsl in Resources */,
 				54101B701CD34F9A002B10D0 /* RippleSourceFragment.glsl in Resources */,
 				54AF7FDD1D1157BF00C28A32 /* PageCurlBackPageVertex.glsl in Resources */,
+				54445AA61D2366E10086C16A /* TextFlyInVertex.glsl in Resources */,
 				54101B711CD34F9A002B10D0 /* RippleSourceVertex.glsl in Resources */,
 				54101B721CD34F9A002B10D0 /* SpinDismissFragment.glsl in Resources */,
 				54101B731CD34F9A002B10D0 /* SpinDismissVertex.glsl in Resources */,
@@ -2799,12 +2797,14 @@
 				54101B751CD34F9A002B10D0 /* ShredderBackPieceVertex.glsl in Resources */,
 				54101B761CD34F9A002B10D0 /* ShredderConfettiFragment.glsl in Resources */,
 				54101B771CD34F9A002B10D0 /* ShredderConfettiVertex.glsl in Resources */,
+				54445AAC1D2366FA0086C16A /* FlameEffectFragment.glsl in Resources */,
 				5450633F1D06A638001C44F7 /* flame.gif in Resources */,
 				54126CDA1CD98C17008AF45E /* ObjectBackgroundFragment.glsl in Resources */,
 				54101B781CD34F9A002B10D0 /* ShredderFragment.glsl in Resources */,
 				54101B791CD34F9A002B10D0 /* ShredderPieceFragment.glsl in Resources */,
 				54101B7A1CD34F9A002B10D0 /* ShredderPieceVertex.glsl in Resources */,
 				54101B7B1CD34F9B002B10D0 /* ShredderVertex.glsl in Resources */,
+				54445AA41D2366DA0086C16A /* TextSquishVertex.glsl in Resources */,
 				54101B7C1CD34F9B002B10D0 /* SwitchDestinationFragment.glsl in Resources */,
 				54101B7D1CD34F9B002B10D0 /* SwitchDestinationVertex.glsl in Resources */,
 				54101B7E1CD34F9B002B10D0 /* SwitchSourceFragment.glsl in Resources */,

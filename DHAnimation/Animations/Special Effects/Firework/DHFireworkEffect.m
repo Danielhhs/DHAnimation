@@ -9,7 +9,7 @@
 #import "DHFireworkEffect.h"
 #import <OpenGLES/ES3/glext.h>
 #import "NSBKeyframeAnimationFunctions.h"
-
+#import "DHConstants.h"
 #define FIREWORK_TAIL_COUNT 150
 #define GRAVITY 100
 
@@ -66,7 +66,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"dust.png";
+    return [DHConstants resourcePathForFile:@"dust" ofType:@"png"];
 }
 
 - (void) generateParticlesData

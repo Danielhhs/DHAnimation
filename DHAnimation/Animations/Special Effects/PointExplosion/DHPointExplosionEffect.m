@@ -55,7 +55,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"Sparkle2.png";
+    return [DHConstants resourcePathForFile:@"explosion" ofType:@"png"];
 }
 
 - (void) prepareToDraw

@@ -9,6 +9,7 @@
 #import "DHPageCurlTransitionRenderer.h"
 #import "TextureHelper.h"
 #import "OpenGLHelper.h"
+#import "DHConstants.h"
 
 @interface DHPageCurlTransitionRenderer () {
     GLuint srcPositionLoc, srcDirectionLoc, srcRadiusLoc;
@@ -87,7 +88,7 @@
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     [super setupTextureWithFromView:fromView toView:toView];
-    backTexture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:@"BackPageGradient.png"]];
+    backTexture = [TextureHelper setupTextureWithImage:[UIImage imageNamed:[DHConstants resourcePathForFile:@"BackPageGradient" ofType:@"png"]]];
 }
 
 - (void) updateMeshesAndUniforms

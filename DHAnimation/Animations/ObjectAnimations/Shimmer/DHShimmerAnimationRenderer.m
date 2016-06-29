@@ -60,7 +60,6 @@
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.shimmerBackgroundMesh prepareToDraw];
     glUniform1f(percentLoc, self.percent);
-    NSLog(@"percet= %g", self.percent);
     glUniform1f(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -92,7 +91,6 @@
             [self.offsetData addObject:@([self randomOffset])];
             [self.offsetData addObject:@([self randomOffset])];
             [self.offsetData addObject:@([self randomOffset])];
-            NSLog(@"Offset Data = %@, %@, %@", self.offsetData[[self.offsetData count] - 3], self.offsetData[[self.offsetData count] - 2],self.offsetData[[self.offsetData count] - 1]);
         }
     }
 }

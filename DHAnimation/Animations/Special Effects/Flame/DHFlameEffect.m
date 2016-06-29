@@ -57,7 +57,7 @@ typedef struct {
 
 - (NSString *) particleImageName
 {
-    return @"flame.gif";
+    return [DHConstants resourcePathForFile:@"flame" ofType:@"gif"];
 }
 
 - (void) generateParticlesData
