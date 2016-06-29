@@ -65,4 +65,12 @@
 {
     return @[@(DHAllowedAnimationDirectionLeft), @(DHAllowedAnimationDirectionRight)];
 }
+
+- (CGFloat) rotationRadius
+{
+    if (!_rotationRadius) {
+        _rotationRadius = 300;
+    }
+    return _rotationRadius;
+}
 @end

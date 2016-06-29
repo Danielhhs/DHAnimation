@@ -60,6 +60,7 @@
     glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, mvpMatrix.m);
     [self.shimmerBackgroundMesh prepareToDraw];
     glUniform1f(percentLoc, self.percent);
+    NSLog(@"percet= %g", self.percent);
     glUniform1f(eventLoc, self.event);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);

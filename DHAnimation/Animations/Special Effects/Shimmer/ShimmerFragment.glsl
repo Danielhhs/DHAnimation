@@ -20,19 +20,23 @@ void main() {
     if (u_event != 0.f) {
         percent = 1.f - u_percent;
     }
-    vec4 background_color = texture(s_texBack, v_texCoords);
-    if (background_color.a >= 0.1) {
-        vec2 texCoord = (u_rotationMatrix * vec4(gl_PointCoord, 0.f, 1.f)).xy;
-        
-        out_color = texture(s_tex, texCoord);
-        
-        if ((out_color.r < 0.1 && out_color.g < 0.1 && out_color.b < 0.1) || out_color.a < 0.1) {
-            discard;
-        } else {
-            out_color = whiteColor - (whiteColor - background_color) * percent;
-            out_color.a = 0.8 - 0.5 * percent;
-        }
-    } else {
+    if (percent <= 0.f || percent >= 1.f) {
         discard;
+    } else {
+        vec4 background_color = texture(s_texBack, v_texCoords);
+        if (background_color.a >= 0.1) {
+            vec2 texCoord = (u_rotationMatrix * vec4(gl_PointCoord, 0.f, 1.f)).xy;
+            
+            out_color = texture(s_tex, texCoord);
+            
+            if ((out_color.r < 0.1 && out_color.g < 0.1 && out_color.b < 0.1) || out_color.a < 0.1) {
+                discard;
+            } else {
+                out_color = whiteColor - (whiteColor - background_color) * percent;
+                out_color.a = 0.8 - 0.5 * percent;
+            }
+        } else {
+            discard;
+        }
     }
 }

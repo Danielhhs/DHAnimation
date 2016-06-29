@@ -9,5 +9,5 @@
 #import "DHObjectAnimationRenderer.h"
 
 @interface DHRotationAnimationRenderer : DHObjectAnimationRenderer
-@property (nonatomic) CGFloat rotationRadius;
+@property (nonatomic) CGFloat rotationRadius;   //Z-Radius of the rotation; default to be 300;
 @end

@@ -9,27 +9,9 @@
 #import "DHObjectAnimationPresentatioinViewController.h"
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettingViewController.h"
-#import "DHShimmerAnimationRenderer.h"
-#import "DHSparkleAnimationRenderer.h"
 #import "DHObjectAnimationSettingsViewController.h"
-#import "DHRotationAnimationRenderer.h"
-#import "DHConfettiAnimationRenderer.h"
-#import "DHBlindsAnimationRenderer.h"
-#import "DHFireworkAnimationRenderer.h"
-#import "DHBlurAnimationRenderer.h"
-#import "DHDropAnimationRenderer.h"
-#import "DHPivotAnimationRenderer.h"
-#import "DHPopAnimationRenderer.h"
-#import "DHScaleAnimationRenderer.h"
-#import "DHScaleBigAnimationRenderer.h"
-#import "DHSpinAnimationRenderer.h"
-#import "DHTwirlAnimationRenderer.h"
-#import "DHDissolveAnimationRenderer.h"
-#import "DHSkidAnimationRenderer.h"
-#import "DHFlameAnimationRenderer.h"
-#import "DHAnvilAnimationRenderer.h"
-#import "DHFaceExplosionAnimationRenderer.h"
-#import "DHPointExplosionAnimationRenderer.h"
+#import "DHConstants.h"
+#import "DHObjectAnimationRenderer.h"
 
 @interface DHObjectAnimationPresentatioinViewController ()
 @property (nonatomic, strong) DHObjectAnimationSettings *settings;
@@ -46,10 +28,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
     self.animationView = [[GLKView alloc] initWithFrame:self.view.bounds context:[[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]];
-//    self.animationView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     [self.view addSubview:self.animationView];
     self.settings = [DHObjectAnimationSettings defaultSettings];
-    self.settings.animationView = self.animationView;
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];
@@ -65,119 +45,10 @@
 
 - (void) performAnimation
 {
+    self.settings = [DHObjectAnimationSettings defaultSettingsForAnimationType:self.animationType event:self.animationEvent forView:self.fromView];
     [self updateAnimationSettings];
-    switch (self.animationType) {
-        case DHObjectAnimationTypeShimmer: {
-            self.renderer = [[DHShimmerAnimationRenderer alloc] init];
-            self.settings.rowCount = 15;
-            self.settings.columnCount = 10;
-        }
-            break;
-        case DHObjectAnimationTypeSparkle:
-            self.renderer = [[DHSparkleAnimationRenderer alloc] init];
-            break;
-        case DHObjectAnimationTypeRotation:{
-            self.renderer = [[DHRotationAnimationRenderer alloc] init];
-            DHRotationAnimationRenderer *rotationRenderer = (DHRotationAnimationRenderer *)self.renderer;
-            rotationRenderer.rotationRadius = 300;
-            self.settings.duration = 1.f;
-            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-        }
-            break;
-        case DHObjectAnimationTypeConfetti: {
-            self.renderer = [[DHConfettiAnimationRenderer alloc] init];
-            self.settings.duration = 1.5;
-            self.settings.columnCount = self.settings.targetView.frame.size.width / 10;
-            self.settings.rowCount = self.settings.columnCount * self.settings.targetView.frame.size.width / self.settings.targetView.frame.size.height;
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-            break;
-        case DHObjectAnimationTypeBlinds: {
-            self.renderer = [[DHBlindsAnimationRenderer alloc] init];
-            self.settings.columnCount = 5;
-            self.settings.rowCount = 1;
-            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-        }
-            break;
-        case DHObjectAnimationTypeFirework: {
-            self.renderer = [[DHFireworkAnimationRenderer alloc] init];
-            self.settings.duration = 5.f;
-        }
-            break;
-        case DHObjectAnimationTypeBlur: {
-            self.renderer = [[DHBlurAnimationRenderer alloc] init];
-        }
-            break;
-        case DHObjectAnimationTypeDrop: {
-            self.renderer = [[DHDropAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
-        }
-            break;
-        case DHObjectAnimationTypePivot: {
-            self.renderer = [[DHPivotAnimationRenderer alloc] init];
-            self.settings.duration = 1.f;
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-            break;
-        case DHObjectAnimationTypePop: {
-            self.renderer = [[DHPopAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutBounce;
-        }
-            break;
-        case DHObjectAnimationTypeScale: {
-            self.renderer = [[DHScaleAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
-        }
-            break;
-        case DHObjectAnimationTypeScaleBig: {
-            self.renderer = [[DHScaleBigAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutBack;
-        }
-            break;
-        case DHObjectAnimationTypeSpin: {
-            self.renderer = [[DHSpinAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseInOutBack;
-        }
-            break;
-        case DHObjectAnimationTypeTwirl: {
-            self.renderer = [[DHTwirlAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseInOutCubic;
-        }
-            break;
-        case DHObjectAnimationTypeDissolve: {
-            self.renderer = [[DHDissolveAnimationRenderer alloc] init];
-        }
-            break;
-        case DHObjectAnimationTypeSkid: {
-            self.renderer = [[DHSkidAnimationRenderer alloc] init];
-        }
-            break;
-        case DHObjectAnimationTypeFlame: {
-            self.renderer = [[DHFlameAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-            break;
-        case DHObjectAnimationTypeAnvil: {
-            self.renderer = [[DHAnvilAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutExpo;
-        }
-            break;
-        case DHObjectAnimationTypeFaceExplosion: {
-            self.renderer = [[DHFaceExplosionAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-            break;
-        case DHObjectAnimationTypeCompress: {
-            self.renderer = [[DHCompressAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-        case DHObjectAnimationTypePointExplosion: {
-            self.renderer = [[DHPointExplosionAnimationRenderer alloc] init];
-            self.settings.timingFunction = DHTimingFunctionEaseOutCubic;
-        }
-        default:
-            break;
-    }
+    self.renderer = [DHConstants animationRendererForName:[DHConstants animationNameForAnimationType:self.animationType]];
+
     [UIView animateWithDuration:0.5 animations:^{
         self.navigationController.navigationBar.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height);
     } completion:^(BOOL finished) {
@@ -188,6 +59,7 @@
 
 - (void) updateAnimationSettings
 {
+    self.settings.animationView = self.animationView;
     [self.fromView removeFromSuperview];
     [self.toView removeFromSuperview];
     self.settings.event = self.animationEvent;

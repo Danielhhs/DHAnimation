@@ -27,87 +27,90 @@
 + (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view
 {
     DHObjectAnimationSettings *settings = [DHObjectAnimationSettings defaultSettings];
-    switch (animationType) {
-        case DHObjectAnimationTypeScaleBig:
-        case DHObjectAnimationTypeRotation:
-        case DHObjectAnimationTypeTwirl:
-        case DHObjectAnimationTypeScale:
-        case DHObjectAnimationTypeSpin:
-        case DHObjectAnimationTypeFaceExplosion:
-        case DHObjectAnimationTypePop:
-        case DHObjectAnimationTypePointExplosion: {
-            if (event == DHAnimationEventBuiltIn) {
+        switch (animationType) {
+            case DHObjectAnimationTypeShimmer: {
+                settings.rowCount = 15;
+                settings.columnCount = 10;
+            }
+                break;
+            case DHObjectAnimationTypeRotation:{
+                settings.duration = 1.f;
+                settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            }
+                break;
+            case DHObjectAnimationTypeConfetti: {
+                settings.duration = 1.5;
+                settings.columnCount = settings.targetView.frame.size.width / 10;
+                settings.rowCount = settings.columnCount * settings.targetView.frame.size.width / settings.targetView.frame.size.height;
+                settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            }
+                break;
+            case DHObjectAnimationTypeBlinds: {
+                settings.columnCount = 5;
+                settings.rowCount = 1;
+                settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            }
+                break;
+            case DHObjectAnimationTypeFirework: {
+                settings.duration = 5.f;
+            }
+                break;
+            case DHObjectAnimationTypeDrop: {
+                settings.timingFunction = DHTimingFunctionEaseOutBounce;
+            }
+                break;
+            case DHObjectAnimationTypePivot: {
+                settings.duration = 1.f;
+                settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            }
+                break;
+            case DHObjectAnimationTypePop: {
+                settings.timingFunction = DHTimingFunctionEaseOutBounce;
+            }
+                break;
+            case DHObjectAnimationTypeScale: {
                 settings.timingFunction = DHTimingFunctionEaseOutBack;
-            } else {
-                settings.timingFunction = DHTimingFunctionEaseInBack;
             }
-        }
-            break;
-            
-        case DHObjectAnimationTypeFlame: {
-            settings.timingFunction = DHTimingFunctionEaseOutExpo;
-        }
-            break;
-        case DHObjectAnimationTypeBlinds:{
-            if (event == DHAnimationEventBuiltIn) {
+                break;
+            case DHObjectAnimationTypeScaleBig: {
                 settings.timingFunction = DHTimingFunctionEaseOutBack;
-            } else {
-                settings.timingFunction = DHTimingFunctionEaseInBack;
             }
-            settings.rowCount = 5;
-            settings.columnCount = 5;
-        }
-            break;
-        case DHObjectAnimationTypeDissolve:
-        case DHObjectAnimationTypePivot:
-        case DHObjectAnimationTypeSkid:
-        case DHObjectAnimationTypeCompress:
-        case DHObjectAnimationTypeBlur:{
-            if (event == DHAnimationEventBuiltIn) {
+                break;
+            case DHObjectAnimationTypeSpin: {
+                settings.timingFunction = DHTimingFunctionEaseInOutBack;
+            }
+                break;
+            case DHObjectAnimationTypeTwirl: {
+                settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+            }
+                break;
+            case DHObjectAnimationTypeSparkle:
+            case DHObjectAnimationTypeBlur:
+            case DHObjectAnimationTypeDissolve:
+            case DHObjectAnimationTypeSkid: {
+            }
+                break;
+            case DHObjectAnimationTypeFlame: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
-            } else {
-                settings.timingFunction = DHTimingFunctionEaseInCubic;
             }
-        }
-            break;
-            
-        case DHObjectAnimationTypeFirework: {
-            settings.duration = 5.f;
-        }
-        case DHObjectAnimationTypeShimmer: {
-            if (event == DHAnimationEventBuiltIn) {
+                break;
+            case DHObjectAnimationTypeAnvil: {
+                settings.timingFunction = DHTimingFunctionEaseOutExpo;
+            }
+                break;
+            case DHObjectAnimationTypeFaceExplosion: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
-            } else {
-                settings.timingFunction = DHTimingFunctionEaseInCubic;
             }
-            settings.columnCount = 15;
-            settings.rowCount = settings.columnCount * view.bounds.size.height / view.bounds.size.width;
-        }
-            break;
-        case DHObjectAnimationTypeDrop: {
-            settings.timingFunction = DHTimingFunctionEaseOutBounce;
-        }
-            break;
-        case DHObjectAnimationTypeNone:
-            return nil;
-        case DHObjectAnimationTypeAnvil: {
-            settings.timingFunction = DHTimingFunctionEaseOutExpo;
-        }
-        case DHObjectAnimationTypeSparkle: {
-            settings.timingFunction = DHTimingFunctionLinear;
-        }
-            
-        case DHObjectAnimationTypeConfetti: {
-            if (event == DHAnimationEventBuiltIn) {
+                break;
+            case DHObjectAnimationTypeCompress: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
-            } else {
-                settings.timingFunction = DHTimingFunctionEaseInCubic;
             }
-            settings.columnCount = 30;
-            settings.rowCount = 30;
+            case DHObjectAnimationTypePointExplosion: {
+                settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            }
+            default:
+                break;
         }
-            break;
-    }
     return settings;
 }
 

@@ -81,6 +81,9 @@
             settings.allowedDirections = @[@(DHAnimationDirectionTopToBottom)];
         }
             break;
+        case DHTransitionTypeShredder: {
+            settings.columnCount = 12;
+        }
         default:
             break;
     }

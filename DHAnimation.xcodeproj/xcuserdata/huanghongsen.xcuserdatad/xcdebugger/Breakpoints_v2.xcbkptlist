@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
-            timestampString = "487587031.762923"
+            timestampString = "488858647.605558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-setupMeshes"
             landmarkType = "5">
          </BreakpointContent>
@@ -432,6 +432,70 @@
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "-maxYForX:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
+            timestampString = "488858201.611526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-setupGL"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
+            timestampString = "488858232.819106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-prepareAnimationForView:inContainerView:background:animationView:duration:columnCount:rowCount:event:direction:timingFunction:beforeAnimationPreparation:completion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Exmaples/DHObjectAnimationPresentatioinViewController.m"
+            timestampString = "488858437.89747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Exmaples/DHObjectAnimationPresentatioinViewController.m"
+            timestampString = "488858437.89747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-updateAnimationSettings"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -177,6 +177,7 @@
         [self.animationView display];
     } else {
         self.percent = 1.f;
+        [self updateAdditionalComponents];
         [self.animationView display];
         if (self.completion) {
             self.completion();
