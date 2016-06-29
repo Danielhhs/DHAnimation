@@ -34,6 +34,12 @@
 #import "DHFaceExplosionAnimationRenderer.h"
 #import "DHCompressAnimationRenderer.h"
 #import "DHBackgroundRenderer.h"
+#import "DHTextDanceAnimationRenderer.h"
+#import "DHTextEffectRenderer.h"
+#import "DHTextSquishAnimationRenderer.h"
+#import "DHTextFlyInAnimationRenderer.h"
+#import "DHPointExplosionAnimationRenderer.h"
+#import "DHTextOrbitalAnimationRenderer.h"
 
 //Transition Renderers
 #import "DHTransitionRenderer.h"
@@ -57,10 +63,12 @@
 #import "DHShredderTransitionRenderer.h"
 #import "DHSwitchTransitionRenderer.h"
 #import "DHTwistTransitionRenderer.h"
+#import "DHPageCurlTransitionRenderer.h"
 
 //Helpers and Infrastructure classes
 #import "DHObjectAnimationSettings.h"
 #import "DHTransitionSettings.h"
+#import "DHTextAnimationSettings.h"
 #import "DHConstants.h"
 #import "DHParticleEffect.h"
 #import "DHFaceExplosionEffect.h"
@@ -71,6 +79,8 @@
 #import "TextureHelper.h"
 #import "DHTimingFunctionHelper.h"
 #import "NSBKeyframeAnimationFunctions.h"
+#import "DHPointExplosionEffect.h"
+#import "DHFlameEffect.h"
 
 //Meshes
 #import "DHShimmerBackgroundMesh.h"
@@ -92,6 +102,11 @@
 #import "DHSparkleEffect.h"
 #import "DHConsecutiveTextureSceneMesh.h"
 #import "DHSplitTextureSceneMesh.h"
+#import "DHTextOrbitalMesh.h"
+#import "DHTextSquishMesh.h"
+#import "DHTextFlyInMesh.h"
+#import "DHTextSceneMesh.h"
+#import "DHTextDanceMesh.h"
 #import "DHSceneMeshFactory.h"
 //! Project version number for DHAnimationFramework.
 FOUNDATION_EXPORT double DHAnimationFrameworkVersionNumber;

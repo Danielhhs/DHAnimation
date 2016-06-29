@@ -27,26 +27,26 @@
 		540AFA951CD34E5E004EF919 /* DHAnimationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 540AFA941CD34E5E004EF919 /* DHAnimationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540AFA9C1CD34E5E004EF919 /* DHAnimationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540AFA921CD34E5E004EF919 /* DHAnimationFramework.framework */; };
 		540AFAA11CD34E5E004EF919 /* DHAnimationFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 540AFAA01CD34E5E004EF919 /* DHAnimationFrameworkTests.m */; };
-		540B89351D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89331D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h */; };
+		540B89351D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89331D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B89361D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89341D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.m */; };
 		540B89371D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89341D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.m */; };
-		540B893B1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89391D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h */; };
+		540B893B1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89391D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B893C1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893A1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.m */; };
 		540B893D1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893A1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.m */; };
-		540B89401D1A6111007ED37F /* DHTextSquishMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B893E1D1A6111007ED37F /* DHTextSquishMesh.h */; };
+		540B89401D1A6111007ED37F /* DHTextSquishMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B893E1D1A6111007ED37F /* DHTextSquishMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B89411D1A6111007ED37F /* DHTextSquishMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893F1D1A6111007ED37F /* DHTextSquishMesh.m */; };
 		540B89421D1A6111007ED37F /* DHTextSquishMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B893F1D1A6111007ED37F /* DHTextSquishMesh.m */; };
 		540B89441D1A611E007ED37F /* TextSquishVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89431D1A611E007ED37F /* TextSquishVertex.glsl */; };
 		540B89471D1A612A007ED37F /* TextSquishFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89461D1A612A007ED37F /* TextSquishFragment.glsl */; };
-		540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89651D1BD1BA007ED37F /* DHTextDanceMesh.h */; };
+		540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89651D1BD1BA007ED37F /* DHTextDanceMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B89681D1BD1BB007ED37F /* DHTextDanceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */; };
 		540B89691D1BD1BB007ED37F /* DHTextDanceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89661D1BD1BA007ED37F /* DHTextDanceMesh.m */; };
-		540B896C1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B896A1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h */; };
+		540B896C1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B896A1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B896D1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */; };
 		540B896E1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B896B1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.m */; };
 		540B89701D1BD1E2007ED37F /* TextDanceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B896F1D1BD1E1007ED37F /* TextDanceVertex.glsl */; };
 		540B89731D1BD1EC007ED37F /* TextDanceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540B89721D1BD1EB007ED37F /* TextDanceFragment.glsl */; };
-		540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89831D224326007ED37F /* DHCameraShakeEffect.h */; };
+		540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 540B89831D224326007ED37F /* DHCameraShakeEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		540B89861D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
 		540B89871D224328007ED37F /* DHCameraShakeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 540B89841D224326007ED37F /* DHCameraShakeEffect.m */; };
 		54101B061CD34F9A002B10D0 /* DustEffectFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 540AFA591CD2E65C004EF919 /* DustEffectFragment.glsl */; };
@@ -206,7 +206,7 @@
 		54445AAE1D2367070086C16A /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
 		54445AAF1D23671E0086C16A /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
 		54445AB01D2367240086C16A /* ObjectPointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE400C1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl */; };
-		545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 545063321D0674CF001C44F7 /* DHFlameEffect.h */; };
+		545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 545063321D0674CF001C44F7 /* DHFlameEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		545063351D0674CF001C44F7 /* DHFlameEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 545063331D0674CF001C44F7 /* DHFlameEffect.m */; };
 		545063361D0674CF001C44F7 /* DHFlameEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 545063331D0674CF001C44F7 /* DHFlameEffect.m */; };
 		545063381D06753C001C44F7 /* FlameEffectVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 545063371D06753C001C44F7 /* FlameEffectVertex.glsl */; };
@@ -357,7 +357,7 @@
 		5478764A1CA5118400012F76 /* DHSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 547876491CA5118400012F76 /* DHSceneMesh.m */; };
 		547F8A2C1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547F8A2B1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl */; };
 		547F8A2E1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547F8A2D1D0FB49B00F730A5 /* FireworkBackgroundFragment.glsl */; };
-		547F8A8C1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547F8A8A1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h */; };
+		547F8A8C1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 547F8A8A1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		547F8A8D1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F8A8B1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m */; };
 		547F8A8E1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F8A8B1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m */; };
 		547F8A901D100D7700F730A5 /* PageCurlSourceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 547F8A8F1D100D7700F730A5 /* PageCurlSourceVertex.glsl */; };
@@ -525,34 +525,34 @@
 		5490CDD81CD34F2600C93002 /* DHTransitionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2646F1C8ED4A600FFB67E /* DHTransitionSettings.m */; };
 		5490CDD91CD34F2600C93002 /* DHObjectAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C61C0D1CCF0ECC002336FD /* DHObjectAnimationSettings.m */; };
 		5490CDDA1CD34F2C00C93002 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58191C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c */; };
-		549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF311D177C65007517D0 /* DHTextEffectRenderer.h */; };
+		549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF311D177C65007517D0 /* DHTextEffectRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF341D177C65007517D0 /* DHTextEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */; };
 		549CCF351D177C65007517D0 /* DHTextEffectRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF321D177C65007517D0 /* DHTextEffectRenderer.m */; };
-		549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF371D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h */; };
+		549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF371D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF3A1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */; };
 		549CCF3B1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF381D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m */; };
 		549CCF3D1D177D8B007517D0 /* TextOrbitalVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */; };
 		549CCF401D177D98007517D0 /* TextOrbitalFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */; };
-		549CCF441D177DD2007517D0 /* DHTextSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF421D177DD2007517D0 /* DHTextSceneMesh.h */; };
+		549CCF441D177DD2007517D0 /* DHTextSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF421D177DD2007517D0 /* DHTextSceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF451D177DD2007517D0 /* DHTextSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */; };
 		549CCF461D177DD2007517D0 /* DHTextSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF431D177DD2007517D0 /* DHTextSceneMesh.m */; };
-		549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF471D1781EF007517D0 /* DHTextOrbitalMesh.h */; };
+		549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF471D1781EF007517D0 /* DHTextOrbitalMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF4A1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */; };
 		549CCF4B1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF481D1781EF007517D0 /* DHTextOrbitalMesh.m */; };
-		549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF4C1D179E80007517D0 /* DHTextAnimationPresentationViewController.h */; };
+		549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF4C1D179E80007517D0 /* DHTextAnimationPresentationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */; };
 		549CCF501D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF4D1D179E80007517D0 /* DHTextAnimationPresentationViewController.m */; };
-		549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */; };
+		549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF511D17A209007517D0 /* DHTextAnimationSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF541D17A209007517D0 /* DHTextAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */; };
 		549CCF551D17A209007517D0 /* DHTextAnimationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF521D17A209007517D0 /* DHTextAnimationSettings.m */; };
 		549CCF561D17BB50007517D0 /* TextOrbitalFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3F1D177D98007517D0 /* TextOrbitalFragment.glsl */; };
 		549CCF571D17BB52007517D0 /* TextOrbitalVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF3C1D177D8B007517D0 /* TextOrbitalVertex.glsl */; };
-		549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF591D190402007517D0 /* DHTextFlyInAnimationRenderer.h */; };
+		549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF591D190402007517D0 /* DHTextFlyInAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF5C1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
 		549CCF5D1D190402007517D0 /* DHTextFlyInAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF5A1D190402007517D0 /* DHTextFlyInAnimationRenderer.m */; };
 		549CCF5F1D190419007517D0 /* TextFlyInVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF5E1D190419007517D0 /* TextFlyInVertex.glsl */; };
 		549CCF621D190424007517D0 /* TextFlyInFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 549CCF611D190424007517D0 /* TextFlyInFragment.glsl */; };
-		549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */; };
+		549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 549CCF641D19053C007517D0 /* DHTextFlyInMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549CCF671D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
 		549CCF681D19053C007517D0 /* DHTextFlyInMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 549CCF651D19053C007517D0 /* DHTextFlyInMesh.m */; };
 		549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 549FBC721CC773B8000E1ABF /* DHBlurAnimationRenderer.m */; };
@@ -748,12 +748,12 @@
 		54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58171C8FD25F009D812C /* TextureHelper.m */; };
 		54EC581F1C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58191C8FD25F009D812C /* NSBKeyframeAnimationFunctions.c */; };
 		54EC58221C8FD325009D812C /* DHTimingFunctionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EC58211C8FD325009D812C /* DHTimingFunctionHelper.m */; };
-		54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE3FC01D12368E0090A491 /* DHPointExplosionEffect.h */; };
+		54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE3FC01D12368E0090A491 /* DHPointExplosionEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54EE3FC31D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
 		54EE3FC41D12368E0090A491 /* DHPointExplosionEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE3FC11D12368E0090A491 /* DHPointExplosionEffect.m */; };
 		54EE3FD41D123AE50090A491 /* PointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD31D123AE50090A491 /* PointExplosionVertex.glsl */; };
 		54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE3FD61D123AF10090A491 /* PointExplosionFragment.glsl */; };
-		54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */; };
+		54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE40041D125CA50090A491 /* DHPointExplosionAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54EE40071D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
 		54EE40081D125CA50090A491 /* DHPointExplosionAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EE40051D125CA50090A491 /* DHPointExplosionAnimationRenderer.m */; };
 		54EE400A1D125CBE0090A491 /* ObjectPointExplosionVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54EE40091D125CBE0090A491 /* ObjectPointExplosionVertex.glsl */; };
@@ -2290,7 +2290,6 @@
 				5490CD5C1CD34EF900C93002 /* DHSkidAnimationRenderer.h in Headers */,
 				5490CD5D1CD34EF900C93002 /* DHDissolveAnimationRenderer.h in Headers */,
 				5490CD5E1CD34EF900C93002 /* DHTwirlAnimationRenderer.h in Headers */,
-				54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */,
 				5490CD5F1CD34EF900C93002 /* DHSpinAnimationRenderer.h in Headers */,
 				5490CD601CD34EF900C93002 /* DHScaleBigAnimationRenderer.h in Headers */,
 				5490CD611CD34EF900C93002 /* DHScaleAnimationRenderer.h in Headers */,
@@ -2299,46 +2298,34 @@
 				5490CD641CD34EF900C93002 /* DHDropAnimationRenderer.h in Headers */,
 				5490CD661CD34EF900C93002 /* DHBlurAnimationRenderer.h in Headers */,
 				5490CD681CD34EF900C93002 /* DHFireworkAnimationRenderer.h in Headers */,
-				545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */,
 				5490CD691CD34EF900C93002 /* DHBlindsAnimationRenderer.h in Headers */,
 				5490CD6A1CD34EF900C93002 /* DHConfettiAnimationRenderer.h in Headers */,
 				54DEB70A1D08103500812DFA /* DHFireworkEffect.h in Headers */,
-				540B896C1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h in Headers */,
 				5490CD6B1CD34EF900C93002 /* DHRotationAnimationRenderer.h in Headers */,
 				5490CD6C1CD34EF900C93002 /* DHShimmerBackgroundMesh.h in Headers */,
-				549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */,
 				546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */,
 				5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */,
 				5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */,
 				5490CD6F1CD34EF900C93002 /* DHReflectionTransitionRenderer.h in Headers */,
 				546141D01CEEAF4B0002AF2C /* DHCompressAnimationRenderer.h in Headers */,
-				549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */,
-				540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */,
 				5490CD701CD34EF900C93002 /* DHClothLineTransitionRenderer.h in Headers */,
 				5490CD711CD34EF900C93002 /* DHConfettiTransitionRenderer.h in Headers */,
-				540B893B1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h in Headers */,
 				546F52061CE424D300DA3B0C /* DHFaceExplosionEffect.h in Headers */,
 				5490CD721CD34EF900C93002 /* DHConfettiSourceMesh.h in Headers */,
 				5490CD731CD34EF900C93002 /* DHCoverTransitionRenderer.h in Headers */,
 				5490CD741CD34EF900C93002 /* DHCubeDestinationMesh.h in Headers */,
-				540B89351D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h in Headers */,
-				549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */,
 				5490CD751CD34EF900C93002 /* DHCubeMesh.h in Headers */,
 				5490CD761CD34EF900C93002 /* DHCubeTransitionRenderer.h in Headers */,
 				5490CD771CD34EF900C93002 /* DHCubeSourceMesh.h in Headers */,
 				5490CD781CD34EF900C93002 /* DHDoorWayTransitionRenderer.h in Headers */,
-				549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */,
 				5490CD7A1CD34EF900C93002 /* DHDropTransitionRenderer.h in Headers */,
 				5490CD7B1CD34EF900C93002 /* DHFlipTransitionRenderer.h in Headers */,
 				5490CD7C1CD34EF900C93002 /* DHFlopTransitionRenderer.h in Headers */,
 				5490CD7D1CD34EF900C93002 /* DHGridTransitionRenderer.h in Headers */,
 				5490CD7E1CD34EF900C93002 /* DHMosaicBackMesh.h in Headers */,
-				540B89401D1A6111007ED37F /* DHTextSquishMesh.h in Headers */,
 				5490CD7F1CD34EF900C93002 /* DHMosaicMesh.h in Headers */,
 				5490CD801CD34EF900C93002 /* DHMosaicTransitionRenderer.h in Headers */,
-				54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */,
 				5490CD811CD34EF900C93002 /* DHPushTransitionRenderer.h in Headers */,
-				549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */,
 				5490CD821CD34EF900C93002 /* DHResolvingDoorTransitionRenderer.h in Headers */,
 				5490CD831CD34EF900C93002 /* DHRevealTransitionRenderer.h in Headers */,
 				5490CD841CD34EF900C93002 /* DHRippleTransitionRenderer.h in Headers */,
@@ -2352,23 +2339,36 @@
 				5490CD8A1CD34EF900C93002 /* DHShredderTransitionRenderer.h in Headers */,
 				5490CD8B1CD34EF900C93002 /* DHSwitchTransitionRenderer.h in Headers */,
 				5490CD8C1CD34EF900C93002 /* DHTwistMesh.h in Headers */,
-				5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */,
-				5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */,
+				54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */,
+				545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */,
+				540B896C1D1BD1CD007ED37F /* DHTextDanceAnimationRenderer.h in Headers */,
+				549CCF331D177C65007517D0 /* DHTextEffectRenderer.h in Headers */,
+				549CCF491D1781EF007517D0 /* DHTextOrbitalMesh.h in Headers */,
+				540B89851D224326007ED37F /* DHCameraShakeEffect.h in Headers */,
+				540B893B1D1A60F7007ED37F /* DHTextSquishAnimationRenderer.h in Headers */,
+				540B89351D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.h in Headers */,
+				549CCF5B1D190402007517D0 /* DHTextFlyInAnimationRenderer.h in Headers */,
+				549CCF661D19053C007517D0 /* DHTextFlyInMesh.h in Headers */,
+				540B89401D1A6111007ED37F /* DHTextSquishMesh.h in Headers */,
+				54EE40061D125CA50090A491 /* DHPointExplosionAnimationRenderer.h in Headers */,
+				549CCF391D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.h in Headers */,
 				547F8A8C1D100C5900F730A5 /* DHPageCurlTransitionRenderer.h in Headers */,
 				549CCF441D177DD2007517D0 /* DHTextSceneMesh.h in Headers */,
+				549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */,
+				540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */,
+				549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */,
+				5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */,
+				5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */,
 				5490CD8F1CD34EF900C93002 /* DHSceneMesh.h in Headers */,
 				5490CD901CD34EF900C93002 /* DHTransitionRenderer.h in Headers */,
 				5490CD911CD34EF900C93002 /* DHObjectAnimationRenderer.h in Headers */,
 				5490CD921CD34EF900C93002 /* OpenGLHelper.h in Headers */,
-				549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */,
 				5490CD931CD34EF900C93002 /* TextureHelper.h in Headers */,
 				5490CD941CD34EF900C93002 /* NSBKeyframeAnimationFunctions.h in Headers */,
-				540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */,
 				5490CD951CD34EF900C93002 /* DHTimingFunctionHelper.h in Headers */,
 				5490CD961CD34EF900C93002 /* DHConstants.h in Headers */,
 				5490CD971CD34EF900C93002 /* DHTransitionSettings.h in Headers */,
 				5490CD981CD34EF900C93002 /* DHObjectAnimationSettings.h in Headers */,
-				549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */,
 				546F51C81CE2DF3900DA3B0C /* DHSplitTextureSceneMesh.h in Headers */,
 				546F52151CE430A300DA3B0C /* DHFaceExplosionAnimationRenderer.h in Headers */,
 			);
