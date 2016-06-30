@@ -27,6 +27,7 @@
 + (DHObjectAnimationSettings *) defaultSettingsForAnimationType:(DHObjectAnimationType)animationType event:(DHAnimationEvent)event forView:(UIView *)view
 {
     DHObjectAnimationSettings *settings = [DHObjectAnimationSettings defaultSettings];
+    settings.targetView = view;
         switch (animationType) {
             case DHObjectAnimationTypeShimmer: {
                 settings.rowCount = 15;

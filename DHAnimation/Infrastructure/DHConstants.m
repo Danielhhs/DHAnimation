@@ -145,6 +145,8 @@ static NSArray *textAnimationArray;
         return [[DHCompressAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Point Explosion"]) {
         return [[DHPointExplosionAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Firework"]) {
+        return [[DHFireworkAnimationRenderer alloc] init];
     }
     return nil;
 }
