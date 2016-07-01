@@ -106,7 +106,6 @@
     if (self.largestDistance < distance) {
         self.largestDistance = distance;
     }
-    NSLog(@"distance = %g, smallest = %g, largest = %g", distance, self.smallestDistance, self.largestDistance);
     GLfloat angle = [self angleForVertex:vertex];
     if (self.smallestAngle > angle) {
         self.smallestAngle = angle;
@@ -126,8 +125,15 @@
 
 - (GLKVector2) randomCenter
 {
-    GLfloat x = CGRectGetMaxX(self.targetView.frame) + [self randomPercent] * (self.containerView.frame.size.width - CGRectGetMaxX(self.targetView.frame));
-    GLfloat y = [self randomPercent] * (self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    GLfloat x, y;
+    
+    if (self.direction == DHAnimationDirectionRightToLeft) {
+        x = CGRectGetMaxX(self.targetView.frame) + [self randomPercent] * (self.containerView.frame.size.width - CGRectGetMaxX(self.targetView.frame));
+        y = [self randomPercent] * (self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    } else if (self.direction == DHAnimationDirectionLeftToRight) {
+        x = [self randomPercent] * self.targetView.frame.origin.x;
+        y = [self randomPercent] * (self.containerView.frame.size.height - CGRectGetMaxY(self.targetView.frame));
+    }
     return GLKVector2Make(x, y);
 }
 
@@ -147,7 +153,6 @@
     glUniform1f(wiperRadiusLoc, self.wiperRadius);
     glUniform1f(percentInCycleLoc, self.percentInCycle);
     glUniform1f(wipeDirectionLoc, self.wipeDirection);
-    NSLog(@"%g", self.wipeDirection);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
