@@ -94,7 +94,7 @@
 - (void) updateMeshesAndUniforms
 {
     self.angle = M_PI_4 + (M_PI / 2 - 0.23 - M_PI_4) * self.percent;
-    self.position = GLKVector2Make(self.fromView.frame.size.width *  (1 - self.percent * 1.2), self.fromView.frame.size.height * self.percent);
+    self.position = GLKVector2Make(self.fromView.frame.size.width *  (1 - self.percent * (1 + self.fromView.frame.size.height / tan(self.angle) / self.fromView.frame.size.width)), self.fromView.frame.size.height * self.percent);
 }
 
 - (void) glkView:(GLKView *)view drawInRect:(CGRect)rect

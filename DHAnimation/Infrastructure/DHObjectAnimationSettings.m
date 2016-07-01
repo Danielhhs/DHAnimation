@@ -88,7 +88,8 @@
             case DHObjectAnimationTypeSparkle:
             case DHObjectAnimationTypeBlur:
             case DHObjectAnimationTypeDissolve:
-            case DHObjectAnimationTypeSkid: {
+            case DHObjectAnimationTypeSkid:
+            case DHOBjectAnimationTypeWipe: {
             }
                 break;
             case DHObjectAnimationTypeFlame: {

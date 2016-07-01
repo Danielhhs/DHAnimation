@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/DHConstants.m"
-            timestampString = "488367000.007893"
+            timestampString = "489046405.244375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "+transitionRendererForName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -425,12 +425,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Infrastructure/Renderers/DHObjectAnimationRenderer.m"
-            timestampString = "488873276.837529"
+            filePath = "DHAnimation/Animations/ObjectAnimations/Wipe/DHWipeAnimationRenderer.m"
+            timestampString = "489057383.564385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>

@@ -85,7 +85,7 @@
 {
     if (!_fromView) {
         _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
-        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
+//        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _fromView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
@@ -97,7 +97,7 @@
 {
     if (!_toView) {
         _toView = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 200, 200)];
-        _toView.transform = CGAffineTransformMakeRotation(M_PI / 6);
+//        _toView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _toView.image = [self randomImage];
     }
     return _toView;

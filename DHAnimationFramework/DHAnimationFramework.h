@@ -40,6 +40,7 @@
 #import "DHTextFlyInAnimationRenderer.h"
 #import "DHPointExplosionAnimationRenderer.h"
 #import "DHTextOrbitalAnimationRenderer.h"
+#import "DHWipeAnimationRenderer.h"
 
 //Transition Renderers
 #import "DHTransitionRenderer.h"
