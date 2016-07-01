@@ -8,7 +8,7 @@
 
 #import "DHWipeAnimationRenderer.h"
 @interface DHWipeAnimationRenderer() {
-    GLuint centerLoc, wiperWidthLoc, singleWipeDurationLoc, wipeRangeLoc, wiperRadiusLoc, percentInCycleLoc;
+    GLuint centerLoc, wiperWidthLoc, singleWipeDurationLoc, wipeRangeLoc, wiperRadiusLoc, percentInCycleLoc, wipeDirectionLoc;
 }
 
 @property (nonatomic) GLKVector2 center;
@@ -16,6 +16,7 @@
 @property (nonatomic) NSTimeInterval singleWipeDuration;
 @property (nonatomic) GLfloat wiperRadius;
 @property (nonatomic) GLfloat percentInCycle;
+@property (nonatomic) GLfloat wipeDirection;    //0.f --> Left to Right; 1.f --> Right to Left
 
 @property (nonatomic) GLfloat largestDistance;
 @property (nonatomic) GLfloat smallestDistance;
@@ -47,6 +48,7 @@
     wipeRangeLoc = glGetUniformLocation(program, "u_wiperRange");
     wiperRadiusLoc = glGetUniformLocation(program, "u_wiperRadius");
     percentInCycleLoc = glGetUniformLocation(program, "u_percentInCycle");
+    wipeDirectionLoc = glGetUniformLocation(program, "u_wipeDirection");
     self.center = [self randomCenter];
     self.singleWipeDuration = self.duration / self.numberOfWipes;
     [self generateWiper];
@@ -70,7 +72,7 @@
     
     [self findSmallestDistance];
     
-    self.wiperWidth = (self.largestDistance - self.smallestDistance) / self.numberOfWipes + 10;
+    self.wiperWidth = (self.largestDistance - self.smallestDistance) / self.numberOfWipes;
 }
 
 - (void) findSmallestDistance
@@ -144,6 +146,8 @@
     glUniform2f(wipeRangeLoc, self.smallestAngle, self.largestAngle);
     glUniform1f(wiperRadiusLoc, self.wiperRadius);
     glUniform1f(percentInCycleLoc, self.percentInCycle);
+    glUniform1f(wipeDirectionLoc, self.wipeDirection);
+    NSLog(@"%g", self.wipeDirection);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -155,7 +159,7 @@
 - (GLuint) numberOfWipes
 {
     if (!_numberOfWipes) {
-        _numberOfWipes = 1;
+        _numberOfWipes = 3;
     }
     return _numberOfWipes;
 }
@@ -168,6 +172,11 @@
 - (void) updateAdditionalComponents
 {
     int cycle = floor(self.percent * self.numberOfWipes);
+    if (cycle % 2 == 0) {
+        self.wipeDirection = 0.f;
+    } else {
+        self.wipeDirection = 1.f;
+    }
     self.wiperRadius = self.smallestDistance + (self.largestDistance - self.smallestDistance) / self.numberOfWipes * cycle;
     self.percentInCycle = (self.elapsedTime - cycle * self.singleWipeDuration) / self.singleWipeDuration;
 }
