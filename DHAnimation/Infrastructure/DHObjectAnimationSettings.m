@@ -49,7 +49,11 @@
             case DHObjectAnimationTypeBlinds: {
                 settings.columnCount = 5;
                 settings.rowCount = 1;
-                settings.timingFunction = DHTimingFunctionEaseInOutBack;
+                if (event == DHAnimationEventBuiltIn) {
+                    settings.timingFunction = DHTimingFunctionEaseOutBack;
+                } else {
+                    settings.timingFunction = DHTimingFunctionEaseInBack;
+                }
             }
                 break;
             case DHObjectAnimationTypeFirework: {
