@@ -43,7 +43,7 @@
     squishFactorLoc = glGetUniformLocation(program, "u_squishFactor");
     squishTimeLoc = glGetUniformLocation(program, "u_squishTime");
     numberOfCyclesLoc = glGetUniformLocation(program, "u_numberOfCycles");
-    self.offset = self.origin.y + self.attributedString.size.height;
+    self.offset = self.origin.y + self.attributedString.size.height + 5;
     GLfloat fallTime = (self.cycle) / 2 - self.squishTime;
     self.gravity = 2 * self.offset / fallTime / fallTime;
     self.coeffient = 1.f;
