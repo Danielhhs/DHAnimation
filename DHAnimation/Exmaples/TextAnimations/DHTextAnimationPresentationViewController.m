@@ -50,7 +50,7 @@
     self.settings.containerView = self.view;
     self.settings.attributedText = self.label.attributedText;
     self.settings.textContainerView = self.label;
-    self.settings.origin = CGPointMake(self.label.frame.origin.x, self.label.frame.origin.y - 12);
+    self.settings.origin = CGPointMake(self.label.frame.origin.x, self.label.frame.origin.y - 13);
     __weak DHTextAnimationPresentationViewController *weakSelf = self;
     self.settings.completion = ^{
         if (weakSelf.settings.event == DHAnimationEventBuiltIn) {

@@ -183,12 +183,13 @@
 
 + (GLuint) setupTextureWithAttributedString:(NSAttributedString *)attrString
 {
+    GLfloat scale = [UIScreen mainScreen].scale;
     GLuint texture = [TextureHelper generateTexture];
-    GLfloat textureWidth = attrString.size.width * 2;
-    GLfloat textureHeight = ceil(attrString.size.height) * 2;
+    GLfloat textureWidth = attrString.size.width * scale;
+    GLfloat textureHeight = ceil(attrString.size.height) * scale;
     
     [TextureHelper drawRect:CGRectMake(0, 0, textureWidth, textureHeight) onTexture:texture textureWidth:textureWidth textureHeight:textureHeight drawBlock:^(CGContextRef context) {
-        CGContextScaleCTM(context, 2.f, 2.f);
+        CGContextScaleCTM(context, scale, scale);
         CGContextSetTextPosition(context, 0, 0);
         CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)attrString);
         CTLineDraw(line, context);

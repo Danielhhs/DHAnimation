@@ -426,12 +426,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Wipe/DHWipeAnimationRenderer.m"
-            timestampString = "489059480.930864"
+            timestampString = "489060291.551849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "-drawFrame"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-yAxis"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Wipe/DHWipeAnimationRenderer.m"
-            timestampString = "489059406.205716"
+            timestampString = "489060188.203234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-findSmallestDistance"
             landmarkType = "5">
          </BreakpointContent>
