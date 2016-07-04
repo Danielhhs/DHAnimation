@@ -19,13 +19,13 @@ vec4 updatedPosition() {
     
     float rotation;
     if (a_position.x > u_center.x && a_position.y > u_center.y) {
-        rotation = pi / 4.f;
+        rotation = atan((a_position.y - u_center.y) / (a_position.x - u_center.x));
     } else if (a_position.x < u_center.x && a_position.y > u_center.y) {
-        rotation = pi / 4.f * 3.f;
+        rotation = atan((a_position.y - u_center.y) / (a_position.x - u_center.x)) + pi;
     } else if (a_position.x < u_center.x && a_position.y < u_center.y) {
-        rotation = pi / 4.f * 5.f;
+        rotation = atan((a_position.y - u_center.y) / (a_position.x - u_center.x)) + pi;
     } else {
-        rotation = pi / 4. * 7.f;
+        rotation = atan((a_position.y - u_center.y) / (a_position.x - u_center.x));
     }
     
     float radius = distance(a_position.xy, u_center);
