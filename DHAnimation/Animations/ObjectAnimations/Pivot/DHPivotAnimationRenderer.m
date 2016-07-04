@@ -9,7 +9,7 @@
 #import "DHPivotAnimationRenderer.h"
 #import "TextureHelper.h"
 @interface DHPivotAnimationRenderer() {
-    GLuint anchorPointLoc, yOffsetLoc;
+    GLuint anchorPointLoc, yOffsetLoc, centerLoc;
 }
 
 @end
@@ -21,6 +21,7 @@
     [super setupGL];
     anchorPointLoc = glGetUniformLocation(program, "u_anchorPoint");
     yOffsetLoc = glGetUniformLocation(program, "u_yOffset");
+    centerLoc = glGetUniformLocation(program, "u_center");
 }
 
 - (NSString *) vertexShaderName
@@ -38,6 +39,7 @@
     [super drawFrame];
     GLKVector3 anchorPoint = [self anchorPoint];
     glUniform3fv(anchorPointLoc, 1, anchorPoint.v);
+    glUniform2f(centerLoc, CGRectGetMidX(self.targetView.frame), self.containerView.frame.size.height - CGRectGetMidY(self.targetView.frame));
     GLfloat yOffset = [self yOffset];
     glUniform1f(yOffsetLoc, yOffset);
     [self.mesh prepareToDraw];

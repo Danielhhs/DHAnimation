@@ -5,6 +5,7 @@ uniform float u_percent;
 uniform vec3 u_anchorPoint;
 uniform float u_yOffset;
 uniform float u_event;
+uniform vec2 u_center;
 
 layout(location = 0) in vec4 a_position;
 layout(location = 2) in vec2 a_texCoords;
@@ -45,9 +46,9 @@ vec4 updatedPosition()
     }
     if (a_position.x != u_anchorPoint.x && a_position.y != u_anchorPoint.y) {
         if (a_position.x < u_anchorPoint.x) {
-            angle = pi / 4.f * 7.f;
+            angle = pi * 1.5 + atan((a_position.y - u_anchorPoint.y) / (a_position.x - u_anchorPoint.x));
         } else {
-            angle = pi / 4.f;
+            angle = pi / 2.f - atan((a_position.y - u_anchorPoint.y) / (a_position.x - u_anchorPoint.x));
         }
         xSign = 1.f;
     }
