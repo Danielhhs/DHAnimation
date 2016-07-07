@@ -15,6 +15,7 @@
 @property (nonatomic, strong) GLKView *animationView;
 @property (nonatomic, strong) DHTextEffectRenderer *renderer;
 @property (nonatomic, strong) DHTextAnimationSettings *settings;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic, strong) UILabel *label;
 @end
 
@@ -31,8 +32,9 @@
     self.settings = [DHTextAnimationSettings defaultSettingForAnimationType:self.animationType];
     
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(100, 310, 0, 0)];
+    self.label.numberOfLines = 2;
 //    self.label.backgroundColor = [UIColor yellowColor];
-    self.label.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:55], NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.label.attributedText = [[NSAttributedString alloc] initWithString:@"Just Animate Whatever Here" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:55], NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [self.label sizeToFit];
     // Do any additional setup after loading the view.
 }
