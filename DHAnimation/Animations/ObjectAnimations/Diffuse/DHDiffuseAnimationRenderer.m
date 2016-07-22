@@ -11,7 +11,7 @@
 #import "TextureHelper.h"
 
 @interface DHDiffuseAnimationRenderer() {
-    GLuint crackTimeRatioLoc, durationLoc, timeLoc;
+    GLuint crackTimeRatioLoc, durationLoc, timeLoc, explosionPositionLoc;
 }
 
 @end
@@ -24,6 +24,7 @@
     crackTimeRatioLoc = glGetUniformLocation(program, "u_crackTimeRatio");
     durationLoc = glGetUniformLocation(program, "u_duration");
     timeLoc = glGetUniformLocation(program, "u_time");
+    explosionPositionLoc = glGetUniformLocation(program, "u_explosionPosition");
 }
 
 - (NSString *) vertexShaderName
@@ -55,10 +56,16 @@
     glUniform1f(crackTimeRatioLoc, 0.7);
     glUniform1f(durationLoc, self.duration);
     glUniform1f(timeLoc, self.elapsedTime);
+    GLfloat explosionPosition = self.elapsedTime / (self.duration * 0.7) * self.targetView.frame.size.width;
+    if (self.direction != DHAnimationDirectionLeftToRight) {
+        explosionPosition = self.targetView.frame.size.width - explosionPosition;
+    }
+    explosionPosition += self.targetView.frame.origin.x;
+    glUniform1f(explosionPositionLoc, explosionPosition);
     [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
-    [self.mesh drawEntireMesh];
+    [((DHDiffuseSceneMesh *)self.mesh) drawEntireMeshWithDirection:self.direction];
 }
 @end

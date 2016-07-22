@@ -10,4 +10,6 @@
 
 @interface DHDiffuseSceneMesh : DHSplitTextureSceneMesh
 
+- (void) drawEntireMeshWithDirection:(DHAnimationDirection)direction;
+
 @end

@@ -60,6 +60,10 @@
                 settings.duration = 5.f;
             }
                 break;
+            case DHObjectAnimationTypeDiffuse: {
+                settings.duration = 3.5;
+            }
+                break;
             case DHObjectAnimationTypeDrop: {
                 settings.timingFunction = DHTimingFunctionEaseOutBounce;
             }

@@ -28,7 +28,13 @@
     vertices[index + 1].startTime = (GLfloat)x / self.columnCount;
     vertices[index + 2].startTime = (GLfloat)x / self.columnCount;
     vertices[index + 3].startTime = (GLfloat)x / self.columnCount;
+    
+    vertices[index + 0].originalCenter = GLKVector3Make((vertices[index + 0].position.x + vertices[index + 1].position.x) / 2, (vertices[index + 0].position.y + vertices[index + 2].position.y) / 2, 0);
+    vertices[index + 1].originalCenter = vertices[index + 0].originalCenter;
+    vertices[index + 2].originalCenter = vertices[index + 0].originalCenter;
+    vertices[index + 3].originalCenter = vertices[index + 0].originalCenter;
 }
+
 
 - (CGFloat) randomRotation
 {
@@ -38,22 +44,26 @@
 
 - (GLKVector3) randomDirection
 {
-    int x = arc4random() % 150 + 100;
-    int y = arc4random() % 100 - 50;
+    int x = arc4random() % 100 + 100;
+    int y = arc4random() % 200 - 100;
     int z = arc4random() % 50;
     return GLKVector3Normalize(GLKVector3Make(x, y, z));
 }
 
 - (GLfloat) randomOffset
 {
-    return arc4random() % 150 + 100;
+    return arc4random() % 100 + 70;
 }
 
-- (void) drawEntireMesh
+- (void) drawEntireMeshWithDirection:(DHAnimationDirection)direction
 {
      glBindVertexArray(vertexArray);
-    for (NSInteger i = self.columnCount - 1; i >= 0; i--) {
-        glDrawElements(GL_TRIANGLES, (GLsizei)self.rowCount * 6, GL_UNSIGNED_INT, NULL + (i * self.rowCount * 6 * sizeof(GLuint)));
+    if (direction == DHAnimationDirectionLeftToRight) {
+        for (NSInteger i = self.columnCount - 1; i >= 0; i--) {
+            glDrawElements(GL_TRIANGLES, (GLsizei)self.rowCount * 6, GL_UNSIGNED_INT, NULL + (i * self.rowCount * 6 * sizeof(GLuint)));
+        }
+    } else {
+        glDrawElements(GL_TRIANGLES, (GLsizei)self.indexCount, GL_UNSIGNED_INT, NULL);
     }
     glBindVertexArray(0);
 }
