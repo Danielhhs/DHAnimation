@@ -29,7 +29,7 @@
         self.maxStartTime = vertices[index + 0].startTime;
     }
     
-    GLKVector3 direction = GLKVector3Normalize(GLKVector3Subtract(self.blowingPosition, vertices[index + 0].position));
+    GLKVector3 direction = GLKVector3Normalize(GLKVector3Subtract(vertices[index + 0].position, self.blowingPosition));
     GLKVector3 offset = GLKVector3MultiplyScalar(direction, [self randomOffset]);
     
     vertices[index + 0].targetCenter = offset;
@@ -40,7 +40,7 @@
 
 - (GLfloat) randomStickness
 {
-    return arc4random() % 70;
+    return arc4random() % 150;
 }
 
 - (GLfloat) randomOffset
