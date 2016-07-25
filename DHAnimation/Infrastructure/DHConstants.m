@@ -30,6 +30,7 @@
 #import "DHPointExplosionAnimationRenderer.h"
 #import "DHWipeAnimationRenderer.h"
 #import "DHDiffuseAnimationRenderer.h"
+#import "DHBlowAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -84,7 +85,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) builtOutAnimations
 {
     if (builtOutAnimationsArray == nil) {
-        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress", @"Skid", @"Wipe", @"Diffuse"];
+        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress", @"Skid", @"Wipe", @"Diffuse", @"Blow"];
     }
     return builtOutAnimationsArray;
 }
@@ -92,7 +93,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) allAnimations
 {
     if (allAnimationsArray == nil) {
-        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse"];
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse", @"Blow"];
     }
     return allAnimationsArray;
 }
@@ -153,6 +154,8 @@ static NSArray *textAnimationArray;
         return [[DHWipeAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Diffuse"]) {
         return [[DHDiffuseAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Blow"]) {
+        return [[DHBlowAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -254,6 +257,8 @@ static NSArray *textAnimationArray;
             return @"Wipe";
         case DHObjectAnimationTypeDiffuse:
             return @"Diffuse";
+        case DHObjectAnimationTypeBlow:
+            return @"Blow";
     }
     return @"None";
 }

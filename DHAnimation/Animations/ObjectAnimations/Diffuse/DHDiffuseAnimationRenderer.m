@@ -62,7 +62,6 @@
     }
     explosionPosition += self.targetView.frame.origin.x;
     glUniform1f(explosionPositionLoc, explosionPosition);
-    [self.mesh prepareToDraw];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);

@@ -24,6 +24,8 @@
     self = [super init];
     if (self) {
         _originX = view.frame.origin.x;
+        _containerView = containerView;
+        _targetView = view;
         if (containerView) {
             _originY = containerView.bounds.size.height - CGRectGetMaxY(view.frame);
         } else {

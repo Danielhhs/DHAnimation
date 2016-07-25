@@ -29,6 +29,8 @@ typedef struct {
 }
 @property (nonatomic, strong) NSData *verticesData;
 @property (nonatomic, strong) NSData *indicesData;
+@property (nonatomic, weak) UIView *containerView;
+@property (nonatomic, weak) UIView *targetView;
 @property (nonatomic) NSInteger vertexCount;
 @property (nonatomic) NSInteger indexCount;
 @property (nonatomic) NSInteger verticesSize;

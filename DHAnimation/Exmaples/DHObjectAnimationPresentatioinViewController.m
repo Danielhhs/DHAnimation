@@ -84,8 +84,8 @@
 - (UIImageView *)fromView
 {
     if (!_fromView) {
-        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 350, 200)];
-//        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
+        _fromView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 300, 200)];
+        _fromView.transform = CGAffineTransformMakeRotation(M_PI / 6);
         _fromView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
         _fromView.contentMode = UIViewContentModeScaleToFill;
         _fromView.image = [self randomImage];
