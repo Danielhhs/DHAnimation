@@ -53,7 +53,9 @@
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     self.srcMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:1 rowCount:fromView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO rotateTexture:YES];
+    [self.srcMesh generateMeshData];
     self.dstMesh = [DHSceneMeshFactory sceneMeshForView:toView  columnCount:1 rowCount:toView.bounds.size.height splitTexturesOnEachGrid:NO columnMajored:NO rotateTexture:YES];
+    [self.dstMesh generateMeshData];
     self.cylinderRadius = fromView.bounds.size.height / 2 / CENTER_ANGLE;
     self.targetCylinderCenter = GLKVector3Make(0, fromView.bounds.size.height / 2 + self.cylinderRadius * sinf(CENTER_ANGLE / 2), -self.cylinderRadius * (cosf(CENTER_ANGLE / 2)));
 }

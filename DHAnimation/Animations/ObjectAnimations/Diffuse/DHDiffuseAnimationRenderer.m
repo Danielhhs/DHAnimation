@@ -42,6 +42,7 @@
     int columnCount = self.targetView.frame.size.width / 5;
     int rowCount = self.targetView.frame.size.height / 10;
     self.mesh = [[DHDiffuseSceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.mesh generateMeshData];
 }
 
 - (void) setupTextures

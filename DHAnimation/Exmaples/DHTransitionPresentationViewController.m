@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settings = [DHTransitionSettings defaultSettings];
+    self.settings = [DHTransitionSettings defaultSettingsForTransitionType:self.animationType];
     UIBarButtonItem *animationSettingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(showSettingsPanel)];
     UIBarButtonItem *startAnimationButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(performAnimation)];
     [self.navigationItem setRightBarButtonItems:@[animationSettingButton, startAnimationButton]];
@@ -53,7 +53,6 @@
 
 - (void) performAnimation
 {
-    self.settings = [DHTransitionSettings defaultSettingsForTransitionType:self.animationType];
     [self updateAnimationSettings];
     self.renderer = [DHConstants transitionRendererForName:[DHConstants transitionNameForTransitionType:self.animationType]];
     [UIView animateWithDuration:0.5 animations:^{

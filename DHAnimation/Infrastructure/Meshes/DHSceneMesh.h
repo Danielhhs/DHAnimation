@@ -9,15 +9,15 @@
 #import <GLKit/GLKit.h>
 
 typedef struct {
-    GLKVector3 position;
-    GLKVector3 normal;
-    GLKVector2 texCoords;
-    GLKVector3 columnStartPosition;
-    float rotation;
-    GLKVector3 originalCenter;
-    GLKVector3 targetCenter;
-    BOOL rotating;
-    float startTime;
+    GLKVector3 position;    //0
+    GLKVector3 normal;      //1
+    GLKVector2 texCoords;   //2
+    GLKVector3 columnStartPosition; //3
+    float rotation;         //4
+    GLKVector3 originalCenter;  //5
+    GLKVector3 targetCenter;    //6
+    BOOL rotating;              //7
+    float startTime;            //8
 }SceneMeshVertex;
 
 @interface DHSceneMesh : NSObject {
@@ -50,6 +50,7 @@ typedef struct {
 - (void) tearDown;
 - (void) drawEntireMesh;
 - (void) destroyGL;
+- (void) generateMeshData;  //This method must be called to generate the mesh data. You can override this method to update your mesh data in your own class, but remember to call super's implementation at the last line;
 
 - (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index;
 

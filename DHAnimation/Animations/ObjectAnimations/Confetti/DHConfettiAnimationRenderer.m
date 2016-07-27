@@ -29,6 +29,7 @@
 - (void) setupMeshes
 {
     self.mesh = [[DHConfettiSourceMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.mesh generateMeshData];
 }
 
 - (void) setupTextures

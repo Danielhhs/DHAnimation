@@ -39,6 +39,7 @@
 - (void) setupMeshes
 {
     self.shimmerBackgroundMesh = [[DHShimmerBackgroundMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
+    [self.shimmerBackgroundMesh generateMeshData];
     [self.shimmerBackgroundMesh updateWithOffsetData:self.offsetData event:self.event];
 }
 

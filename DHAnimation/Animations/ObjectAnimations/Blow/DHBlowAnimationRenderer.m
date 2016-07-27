@@ -42,6 +42,7 @@
 - (void) setupMeshes
 {
     self.mesh = [[DHBlowSceneMesh alloc] initWithView:self.targetView containerView:self.containerView columnCount:self.targetView.bounds.size.width rowCount:self.targetView.bounds.size.height splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
+    [self.mesh generateMeshData];
 }
 
 - (void) setupTextures

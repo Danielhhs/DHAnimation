@@ -10,6 +10,6 @@
 
 @interface DHMosaicMesh : DHSplitTextureSceneMesh
 
-- (void) updateWithIndicesItemsStartedRotation:(NSArray *)items incrementedRotation:(CGFloat)increment;
+- (void) updateStartTime:(NSArray *) startTime;
 
 @end

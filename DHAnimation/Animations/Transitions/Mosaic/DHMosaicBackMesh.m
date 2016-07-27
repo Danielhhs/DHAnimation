@@ -12,6 +12,7 @@
 
 - (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index
 {
+    [super setupForVertexAtX:x y:y index:index];
     GLfloat tmpTexCoords = vertices[index + 0].texCoords.x;
     vertices[index + 0].texCoords.x = vertices[index + 1].texCoords.x;
     vertices[index + 1].texCoords.x = tmpTexCoords;

@@ -55,7 +55,9 @@
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     self.sourceMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:2 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.srcMesh generateMeshData];
     self.destinamtionMesh = [DHSceneMeshFactory sceneMeshForView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.dstMesh generateMeshData];
 }
 
 - (void)setupUniformsForSourceProgram

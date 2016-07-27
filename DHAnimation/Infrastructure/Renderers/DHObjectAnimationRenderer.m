@@ -208,6 +208,7 @@
 - (void) setupMeshes
 {
     self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
+    [self.mesh generateMeshData];
 }
 
 - (void) setupEffects
@@ -218,6 +219,7 @@
 - (void) setupBackground
 {
     self.backgroundMesh = [DHSceneMeshFactory sceneMeshForView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.backgroundMesh generateMeshData];
     backgroundTexture = [TextureHelper setupTextureWithImage:self.containerViewSnapshot];
 }
 

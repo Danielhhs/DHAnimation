@@ -131,7 +131,9 @@
         rowCount = fromView.bounds.size.height;
     }
     self.sourceMesh = [[DHTwistMesh alloc] initWithView:fromView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored rotateTexture:YES];
+    [self.sourceMesh generateMeshData];
     self.destinationMesh = [[DHTwistMesh alloc] initWithView:toView columnCount:columnCount rowCount:rowCount splitTexturesOnEachGrid:NO columnMajored:columnMajored rotateTexture:YES];
+    [self.destinationMesh generateMeshData];
 }
 
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView

@@ -42,6 +42,7 @@
 - (void) setupMeshes
 {
     self.mesh = [DHSceneMeshFactory sceneMeshForView:self.targetView containerView:self.containerView columnCount:1 rowCount:1 splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:NO];
+    [self.mesh generateMeshData];
 }
 
 - (void) setupEffects

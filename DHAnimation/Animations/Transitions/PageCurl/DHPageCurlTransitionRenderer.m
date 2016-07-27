@@ -81,8 +81,11 @@
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     self.srcMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:self.fromView.frame.size.width / 2 rowCount:self.fromView.frame.size.height /2  splitTexturesOnEachGrid:NO columnMajored:YES rotateTexture:YES];
+    [self.srcMesh generateMeshData];
     self.dstMesh = [DHSceneMeshFactory sceneMeshForView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:YES rotateTexture:YES];
+    [self.dstMesh generateMeshData];
     self.backMesh = [DHSceneMeshFactory sceneMeshForView:fromView columnCount:self.fromView.frame.size.width / 2 rowCount:self.fromView.frame.size.height / 2 splitTexturesOnEachGrid:NO columnMajored:YES rotateTexture:YES];
+    [self.backMesh generateMeshData];
 }
 
 - (void) setupTextureWithFromView:(UIView *)fromView toView:(UIView *)toView

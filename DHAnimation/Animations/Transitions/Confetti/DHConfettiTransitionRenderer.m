@@ -36,7 +36,9 @@
 - (void) setupMeshWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     self.srcMesh = [[DHConfettiSourceMesh alloc] initWithView:fromView columnCount:GRIDS_PER_ROW rowCount:fromView.bounds.size.height / fromView.bounds.size.width * GRIDS_PER_ROW splitTexturesOnEachGrid:YES columnMajored:YES rotateTexture:YES];
+    [self.srcMesh generateMeshData];
     self.dstMesh = [DHSceneMeshFactory sceneMeshForView:toView columnCount:1 rowCount:1 splitTexturesOnEachGrid:NO columnMajored:NO rotateTexture:YES];
+    [self.dstMesh generateMeshData];
 }
 
 - (void) setupGL

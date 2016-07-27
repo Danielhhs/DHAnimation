@@ -10,23 +10,23 @@
 
 @implementation DHMosaicMesh
 
-- (void) updateWithIndicesItemsStartedRotation:(NSArray *)items incrementedRotation:(CGFloat)increment
+- (void) setupForVertexAtX:(NSInteger)x y:(NSInteger)y index:(NSInteger)index
 {
-    for (NSNumber *index in items) {
-        vertices[[index integerValue]].rotating = YES;
+    vertices[index + 0].originalCenter = GLKVector3Make((vertices[index + 0].position.x + vertices[index + 1].position.x) / 2, (vertices[index + 0].position.y + vertices[index + 2].position.y) / 2, 0);
+    vertices[index + 1].originalCenter = vertices[index + 0].originalCenter;
+    vertices[index + 2].originalCenter = vertices[index + 0].originalCenter;
+    vertices[index + 3].originalCenter = vertices[index + 0].originalCenter;
+}
+
+- (void) updateStartTime:(NSArray *)startTime
+{
+    for (int i = 0; i < [startTime count]; i++) {
+        vertices[i * 4 + 0].startTime = [startTime[i] doubleValue];
+        vertices[i * 4 + 1].startTime = [startTime[i] doubleValue];
+        vertices[i * 4 + 2].startTime = [startTime[i] doubleValue];
+        vertices[i * 4 + 3].startTime = [startTime[i] doubleValue];
     }
-    for (int i = 0; i < self.vertexCount; i++) {
-        if (vertices[i].rotating == YES) {
-            vertices[i * 4 + 0].rotation += increment;
-            if (vertices[i * 4 + 0].rotation > M_PI) {
-                vertices[i * 4 + 0].rotation = M_PI;
-            }
-            vertices[i * 4 + 1].rotation = vertices[i * 4 + 0].rotation;
-            vertices[i * 4 + 2].rotation = vertices[i * 4 + 0].rotation;
-            vertices[i * 4 + 3].rotation = vertices[i * 4 + 0].rotation;
-        }
-    }
-    [self makeDynamicAndUpdateWithVertices:vertices numberOfVertices:self.vertexCount];
+    
 }
 
 @end

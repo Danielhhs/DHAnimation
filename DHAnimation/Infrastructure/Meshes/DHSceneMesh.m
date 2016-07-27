@@ -10,6 +10,8 @@
 #import <OpenGLES/ES3/glext.h>
 
 @interface DHSceneMesh ()
+@property (nonatomic) BOOL columnMajored;
+@property (nonatomic) BOOL rotateTexture;
 @end
 
 @implementation DHSceneMesh
@@ -33,14 +35,10 @@
         }
         _columnCount = columnCount;
         _rowCount = rowCount;
-        
-        [self generateVerticesAndIndicesForView:view containerView:containerView columnCount:columnCount rowCount:rowCount columnMajored:columnMajored rotateTexture:rotateTexture];
-        
-        _verticesData = [NSData dataWithBytesNoCopy:vertices length:self.verticesSize freeWhenDone:YES];
-        _indicesData = [NSData dataWithBytes:indices length:self.indicesSize];
-        [self prepareToDraw];
-        self.bufferDataBumped = YES;
+        _columnMajored = columnMajored;
+        _rotateTexture = rotateTexture;
     }
+    [self generateVerticesAndIndicesForView:self.targetView containerView:self.containerView columnCount:self.columnCount rowCount:self.rowCount columnMajored:self.columnMajored rotateTexture:self.rotateTexture];
     return self;
 }
 
@@ -54,6 +52,14 @@
         self.bufferDataBumped = YES;
     }
     return self;
+}
+
+- (void) generateMeshData
+{
+    _verticesData = [NSData dataWithBytesNoCopy:vertices length:self.verticesSize freeWhenDone:YES];
+    _indicesData = [NSData dataWithBytes:indices length:self.indicesSize];
+    [self prepareToDraw];
+    self.bufferDataBumped = YES;
 }
 
 - (void) prepareToDraw
