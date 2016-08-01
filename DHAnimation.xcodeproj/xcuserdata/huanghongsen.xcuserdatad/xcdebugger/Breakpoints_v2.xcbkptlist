@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/DHConstants.m"
-            timestampString = "490871449.948862"
+            timestampString = "491710029.487231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "+transitionRendererForName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -464,6 +464,22 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "-blowingPosition"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/ObjectAnimations/Shredder/DHShredderAnimationRenderer.m"
+            timestampString = "491725957.510183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

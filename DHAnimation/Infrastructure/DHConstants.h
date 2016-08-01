@@ -61,6 +61,7 @@ typedef NS_ENUM(NSInteger, DHObjectAnimationType) {
     DHOBjectAnimationTypeWipe = 21,
     DHObjectAnimationTypeDiffuse = 22,
     DHObjectAnimationTypeBlow = 23,
+    DHObjectAnimationTypeShredder = 24,
 };
 
 typedef NS_ENUM(NSInteger, DHTextAnimationType) {

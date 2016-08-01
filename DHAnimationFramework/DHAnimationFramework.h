@@ -92,7 +92,7 @@
 #import "DHMosaicBackMesh.h"
 #import "DHMosaicMesh.h"
 #import "DHShredderConfettiSceneMesh.h"
-#import "DHShredderMesh.h"
+#import "DHShredderAnimationSceneMesh.h"
 #import "DHShredderPaperBackPieceSceneMesh.h"
 #import "DHShredderPaperPieceSceneMesh.h"
 #import "DHTwistMesh.h"
