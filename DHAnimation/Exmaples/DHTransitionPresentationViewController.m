@@ -7,26 +7,7 @@
 //
 
 #import "DHTransitionPresentationViewController.h"
-#import "DHDoorWayTransitionRenderer.h"
-#import "DHCubeTransitionRenderer.h"
-#import "DHTwistTransitionRenderer.h"
-#import "DHClothLineTransitionRenderer.h"
-#import "DHShredderTransitionRenderer.h"
 #import "DHTransitionSettingViewController.h"
-#import "DHSwitchTransitionRenderer.h"
-#import "DHGridTransitionRenderer.h"
-#import "DHConfettiTransitionRenderer.h"
-#import "DHPushTransitionRenderer.h"
-#import "DHRevealTransitionRenderer.h"
-#import "DHDropTransitionRenderer.h"
-#import "DHMosaicTransitionRenderer.h"
-#import "DHFlopTransitionRenderer.h"
-#import "DHCoverTransitionRenderer.h"
-#import "DHFlipTransitionRenderer.h"
-#import "DHReflectionTransitionRenderer.h"
-#import "DHSpinDismissTransitionRenderer.h"
-#import "DHRippleTransitionRenderer.h"
-#import "DHResolvingDoorTransitionRenderer.h"
 
 @interface DHTransitionPresentationViewController ()
 @property (nonatomic, strong) DHTransitionSettings *settings;

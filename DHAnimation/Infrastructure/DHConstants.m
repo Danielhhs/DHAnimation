@@ -37,7 +37,6 @@
 #import "DHCubeTransitionRenderer.h"
 #import "DHTwistTransitionRenderer.h"
 #import "DHClothLineTransitionRenderer.h"
-#import "DHShredderTransitionRenderer.h"
 #import "DHSwitchTransitionRenderer.h"
 #import "DHGridTransitionRenderer.h"
 #import "DHConfettiTransitionRenderer.h"
@@ -173,8 +172,6 @@ static NSArray *textAnimationArray;
         return [[DHTwistTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Cloth Line"]) {
         return [[DHClothLineTransitionRenderer alloc] init];
-    } else if ([transitionName isEqualToString:@"Shredder"]) {
-        return [[DHShredderTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Switch"]) {
         return [[DHSwitchTransitionRenderer alloc] init];
     } else if ([transitionName isEqualToString:@"Grid"]) {
