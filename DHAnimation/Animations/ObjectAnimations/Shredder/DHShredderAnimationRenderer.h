@@ -10,4 +10,5 @@
 
 @interface DHShredderAnimationRenderer : DHObjectAnimationRenderer
 
+@property (nonatomic) GLfloat shredderHeight;
 @end

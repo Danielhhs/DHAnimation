@@ -97,7 +97,6 @@
             case DHObjectAnimationTypeBlur:
             case DHObjectAnimationTypeDissolve:
             case DHObjectAnimationTypeSkid:
-            case DHObjectAnimationTypeShredder:
             case DHOBjectAnimationTypeWipe: {
             }
                 break;
@@ -118,6 +117,9 @@
             }
             case DHObjectAnimationTypePointExplosion: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
+            }
+            case DHObjectAnimationTypeShredder: {
+                settings.columnCount = 7;
             }
             default:
                 break;

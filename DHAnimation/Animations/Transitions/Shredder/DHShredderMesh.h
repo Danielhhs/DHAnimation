@@ -9,6 +9,7 @@
 #import "DHSceneMesh.h"
 #define SHREDDER_HEIGHT 300
 @interface DHShredderMesh : DHSceneMesh
-- (instancetype) initWithScreenWidth:(size_t)screenWidth screenHeight:(size_t)screenHeight;
+- (instancetype) initWithView:(UIView *)targetView containerView:(UIView *)containerView shredderHeight:(GLfloat)height;
 - (GLuint) vertexArrayObejct;
+- (GLfloat) shredderHeight;
 @end

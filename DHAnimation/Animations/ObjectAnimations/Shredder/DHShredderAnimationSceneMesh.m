@@ -52,7 +52,6 @@
             zOffset = -1 * (self.targetView.frame.size.height * 0.2 + arc4random() % (int)(self.targetView.frame.size.height * 0.1));
         }
         GLfloat columnCenter = originX + (i + 0.5) * self.targetView.frame.size.width / self.columnCount;
-        NSLog(@"ColumnCenter = %g", columnCenter);
         for (int row = 0; row < self.targetView.frame.size.height; row++) {
             NSInteger index = i * self.rowCount + row;
             vertices[index * 4 + 0].position = GLKVector3Make(originX + self.targetView.frame.size.width / self.columnCount * i, originY + row / (GLfloat)self.rowCount * self.targetView.frame.size.height, 0);

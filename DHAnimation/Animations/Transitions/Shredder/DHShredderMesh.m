@@ -12,28 +12,41 @@
     SceneMeshVertex *vertices;
     GLuint meshVAO;
 }
-
+@property (nonatomic) GLfloat shredderHeight;
 @end
+
+#define SHREDDER_INSET 5
 
 @implementation DHShredderMesh
 
-- (instancetype) initWithScreenWidth:(size_t)screenWidth screenHeight:(size_t)screenHeight
+- (instancetype) initWithView:(UIView *)targetView containerView:(UIView *)containerView shredderHeight:(GLfloat)height
 {
-    vertices = malloc(sizeof(SceneMeshVertex) * 4);
-    vertices[0].position = GLKVector3Make(0, 0, 0);
-    vertices[0].texCoords = GLKVector2Make(0, 1);
-    vertices[1].position = GLKVector3Make(screenWidth, 0, 0);
-    vertices[1].texCoords = GLKVector2Make(1, 1);
-    vertices[2].position = GLKVector3Make(0, SHREDDER_HEIGHT, 0);
-    vertices[2].texCoords = GLKVector2Make(0, 0);
-    vertices[3].position = GLKVector3Make(screenWidth, SHREDDER_HEIGHT, 0);
-    vertices[3].texCoords = GLKVector2Make(1, 0);
-    
-    GLushort indicies[6] = {0,1,2,2,1,3};
-    NSData *vertexData = [NSData dataWithBytes:vertices length:sizeof(SceneMeshVertex) * 4];
-    NSData *indexData = [NSData dataWithBytes:indicies length:sizeof(indicies)];
-    [self createVAOWithVertexData:vertexData indexData:indexData];
-    return [self initWithVerticesData:vertexData indicesData:indexData];
+    self = [super init];
+    if (self) {
+        GLfloat originY = self.targetView.frame.size.height;
+        if (containerView) {
+            originY = self.containerView.bounds.size.height;
+        }
+        _shredderHeight = height;
+        self.targetView = targetView;
+        self.containerView = containerView;
+        vertices = malloc(sizeof(SceneMeshVertex) * 4);
+        vertices[0].position = GLKVector3Make(self.targetView.frame.origin.x - SHREDDER_INSET, originY - height, 0);
+        vertices[0].texCoords = GLKVector2Make(0, 1);
+        vertices[1].position = GLKVector3Make(CGRectGetMaxX(self.targetView.frame) + SHREDDER_INSET, originY - height, 0);
+        vertices[1].texCoords = GLKVector2Make(1, 1);
+        vertices[2].position = GLKVector3Make(self.targetView.frame.origin.x, originY - SHREDDER_INSET, 0);
+        vertices[2].texCoords = GLKVector2Make(0, 0);
+        vertices[3].position = GLKVector3Make(CGRectGetMaxX(self.targetView.frame) + SHREDDER_INSET, originY, 0);
+        vertices[3].texCoords = GLKVector2Make(1, 0);
+        
+        GLushort indicies[6] = {0,1,2,2,1,3};
+        NSData *vertexData = [NSData dataWithBytes:vertices length:sizeof(SceneMeshVertex) * 4];
+        NSData *indexData = [NSData dataWithBytes:indicies length:sizeof(indicies)];
+        [self createVAOWithVertexData:vertexData indexData:indexData];
+        return [self initWithVerticesData:vertexData indicesData:indexData];
+    }
+    return nil;
 }
 
 - (void) createVAOWithVertexData:(NSData *)vertexData indexData:(NSData *)indexData
@@ -64,7 +77,10 @@
 
 - (void) drawEntireMesh
 {
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+    glBindVertexArray(meshVAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, NULL);
+    glBindVertexArray(0);
 }
 
 - (GLuint) vertexArrayObejct

@@ -84,7 +84,7 @@
         DHShredderPaperPieceSceneMesh *mesh = [[DHShredderPaperBackPieceSceneMesh alloc] initWithScreenWidth:fromView.bounds.size.width screenHeight:fromView.bounds.size.height yResolution:8 totalPieces:columnCount index:i];
         [self.backMeshes addObject:mesh];
     }
-    self.shredderMesh = [[DHShredderMesh alloc] initWithScreenWidth:fromView.bounds.size.width screenHeight:fromView.bounds.size.height];
+    self.shredderMesh = [[DHShredderMesh alloc] initWithView:self.fromView containerView:nil shredderHeight:300];
 //    texture = [OpenGLHelper setupTextureWithView:view textureWidth:view.bounds.size.width * screenScale textureHeight:view.bounds.size.height * screenScale screenScale:screenScale];
 //    texture = [OpenGLHelper setupTextureWithView:view textureWidth:view.bounds.size.width * screenScale textureHeight:view.bounds.size.height * screenScale screenScale:screenScale flipVertical:NO];
     texture = [TextureHelper setupTextureWithView:fromView flipHorizontal:NO flipVertical:YES];
