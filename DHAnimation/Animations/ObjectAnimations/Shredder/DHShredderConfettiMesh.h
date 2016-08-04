@@ -10,6 +10,6 @@
 
 @interface DHShredderConfettiMesh : DHSceneMesh
 
-- (instancetype) initWithTargetView:(UIView *)targetView containerView:(UIView *)containerView columnCount:(NSInteger) columnCount;
-
+- (instancetype) initWithTargetView:(UIView *)targetView containerView:(UIView *)containerView;
+- (void) appendConfettiAtPosition:(GLKVector3)position length:(GLfloat)length startFallingTime:(GLfloat)startFallingTime;
 @end

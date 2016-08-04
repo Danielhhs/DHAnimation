@@ -8,15 +8,18 @@
 
 #import "DHShredderAnimationRenderer.h"
 #import "DHShredderAnimationSceneMesh.h"
+#import "DHShredderConfettiMesh.h"
 #import "OpenGLHelper.h"
 #import "DHShredderMesh.h"
 #import "TextureHelper.h"
 #import "DHConstants.h"
 @interface DHShredderAnimationRenderer () {
     GLuint shredderPositionLoc, timeLoc, durationLoc, columnWidthLoc, screenScaleLoc, shredderDisappearTimeLoc, maxShredderPositionLoc;
-    GLuint shredderProgram, shredderMvpLoc, shredderShredderPosistionLoc, shredderSamplerLoc, shredderTexture;
+    GLuint shredderProgram, shredderMvpLoc, shredderShredderPositionLoc, shredderSamplerLoc, shredderTexture;
+    GLuint confettiProgram, confettiMvpLoc, confettiShredderPositionLoc, confettiSamplerLoc, confettiTimeLoc;
 }
 @property (nonatomic, strong) DHShredderMesh *shredderMesh;
+@property (nonatomic, strong) DHShredderConfettiMesh *confettiMesh;
 @end
 
 #define SHREDDER_APPEAR_TIME_RATIO 0.1
@@ -49,9 +52,17 @@
     self.animationView.drawableMultisample = GLKViewDrawableMultisample4X;
     
     shredderProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ObjectShredderVertex.glsl" fragmentShaderSrc:@"ObjectShredderFragment.glsl"];
-    shredderShredderPosistionLoc = glGetUniformLocation(shredderProgram, "u_shredderPosition");
+    glUseProgram(shredderProgram);
+    shredderShredderPositionLoc = glGetUniformLocation(shredderProgram, "u_shredderPosition");
     shredderMvpLoc = glGetUniformLocation(shredderProgram, "u_mvpMatrix");
     shredderSamplerLoc = glGetUniformLocation(shredderProgram, "s_tex");
+    
+    confettiProgram = [OpenGLHelper loadProgramWithVertexShaderSrc:@"ObjectShredderConfettiVertex.glsl" fragmentShaderSrc:@"ObjectShredderConfettiFragment.glsl"];
+    glUseProgram(confettiProgram);
+    confettiMvpLoc = glGetUniformLocation(confettiProgram, "u_mvpMatrix");
+    confettiSamplerLoc = glGetUniformLocation(confettiProgram, "s_tex");
+    confettiShredderPositionLoc = glGetUniformLocation(confettiProgram, "u_shredderPosition");
+    confettiTimeLoc = glGetUniformLocation(confettiProgram, "u_time");
 }
 
 - (void) setupMeshes
@@ -60,6 +71,26 @@
     [self.mesh generateMeshData];
 
     self.shredderMesh = [[DHShredderMesh alloc] initWithView:self.targetView containerView:self.containerView shredderHeight:self.shredderHeight];
+    
+    int baseConffetiCount = (int)self.targetView.frame.size.height / 50;
+    GLfloat originX = self.targetView.frame.origin.x;
+    GLfloat originY = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame);
+    self.confettiMesh = [[DHShredderConfettiMesh alloc] initWithTargetView:self.targetView containerView:self.containerView];
+    for (int i = 0; i < self.columnCount; i++) {
+        int conffetiCount = baseConffetiCount + arc4random() % ((int)self.targetView.frame.size.height / 35 - baseConffetiCount);
+        GLfloat x = i / (GLfloat)self.columnCount * self.targetView.frame.size.width + originX;
+        GLfloat yGap = self.targetView.frame.size.height / conffetiCount;
+        GLfloat previousY = originY;
+        for (int j = 0; j < conffetiCount; j++) {
+            GLfloat y = previousY + yGap * 0.5 + arc4random() % ((int)yGap / 2);
+            GLfloat length = arc4random() % (int)(y - previousY) * 0.3 + (y - previousY) * 0.5;
+            previousY = y;
+            GLKVector3 position = GLKVector3Make(x, y, 0);
+            GLfloat fallingTime = (SHREDDER_STOP_TIME_RATIO + SHREDDER_APPEAR_TIME_RATIO + (y - originY + length) / self.targetView.frame.size.height * SHREDDER_TIME_RATIO) * self.duration;
+            [self.confettiMesh appendConfettiAtPosition:position length:ceil(length) startFallingTime:fallingTime];
+        }
+    }
+    [self.confettiMesh prepareToDraw];
 }
 
 - (void) setupTextures
@@ -87,10 +118,18 @@
     
     glUseProgram(shredderProgram);
     glUniformMatrix4fv(shredderMvpLoc, 1, GL_FALSE, mvpMatrix.m);
-    glUniform1f(shredderShredderPosistionLoc, shredderPosition + 5);
+    glUniform1f(shredderShredderPositionLoc, shredderPosition + 5);
     glBindTexture(GL_TEXTURE_2D, shredderTexture);
     glUniform1i(samplerLoc, 0);
     [self.shredderMesh drawEntireMesh];
+    
+    glUseProgram(confettiProgram);
+    glUniformMatrix4fv(confettiMvpLoc, 1, GL_FALSE, mvpMatrix.m);
+    glUniform1f(confettiShredderPositionLoc, shredderPosition - [self.shredderMesh shredderHeight]);
+    glUniform1f(confettiTimeLoc, self.elapsedTime);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glUniform1i(confettiSamplerLoc, 0);
+    [self.confettiMesh drawEntireMesh];
 }
 
 - (GLfloat) shredderHeight

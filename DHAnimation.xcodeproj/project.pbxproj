@@ -505,6 +505,8 @@
 		5492E9371D50424100BC016E /* Shredder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9351D50424100BC016E /* Shredder.png */; };
 		5492E93A1D50452F00BC016E /* DHShredderConfettiMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9391D50452F00BC016E /* DHShredderConfettiMesh.m */; };
 		5492E93B1D50452F00BC016E /* DHShredderConfettiMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9391D50452F00BC016E /* DHShredderConfettiMesh.m */; };
+		5492E95A1D5194B500BC016E /* ObjectShredderConfettiVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9591D5194B500BC016E /* ObjectShredderConfettiVertex.glsl */; };
+		5492E95C1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E95B1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl */; };
 		54942E761D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */; };
 		54942E771D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
 		54942E781D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
@@ -1074,6 +1076,8 @@
 		5492E9351D50424100BC016E /* Shredder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shredder.png; sourceTree = "<group>"; };
 		5492E9381D50452F00BC016E /* DHShredderConfettiMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHShredderConfettiMesh.h; sourceTree = "<group>"; };
 		5492E9391D50452F00BC016E /* DHShredderConfettiMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderConfettiMesh.m; sourceTree = "<group>"; };
+		5492E9591D5194B500BC016E /* ObjectShredderConfettiVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectShredderConfettiVertex.glsl; sourceTree = "<group>"; };
+		5492E95B1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectShredderConfettiFragment.glsl; sourceTree = "<group>"; };
 		54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDiffuseAnimationRenderer.h; sourceTree = "<group>"; };
 		54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDiffuseAnimationRenderer.m; sourceTree = "<group>"; };
 		54942E791D407A19001EFF01 /* ObjectDiffuseVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectDiffuseVertex.glsl; sourceTree = "<group>"; };
@@ -1420,6 +1424,8 @@
 				542C6D9C1D4E1E1200C604A0 /* ObjectShredderPiecesFragment.glsl */,
 				5492E92C1D4F331600BC016E /* ObjectShredderVertex.glsl */,
 				5492E92E1D4F332000BC016E /* ObjectShredderFragment.glsl */,
+				5492E9591D5194B500BC016E /* ObjectShredderConfettiVertex.glsl */,
+				5492E95B1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl */,
 			);
 			path = Shredder;
 			sourceTree = "<group>";
@@ -2918,6 +2924,7 @@
 				54A7688D1CBCA17C00826929 /* ReflectionDestinationFragment.glsl in Resources */,
 				547F8A2C1D0FB48F00F730A5 /* FireworkBackgroundVertex.glsl in Resources */,
 				548EDF3B1CC8DE6E005E997B /* ObjectDropVertex.glsl in Resources */,
+				5492E95A1D5194B500BC016E /* ObjectShredderConfettiVertex.glsl in Resources */,
 				547F8A901D100D7700F730A5 /* PageCurlSourceVertex.glsl in Resources */,
 				54F76E561D26403100C17394 /* ObjectWipeFragment.glsl in Resources */,
 				54EE400D1D125CCD0090A491 /* ObjectPointExplosionFragment.glsl in Resources */,
@@ -2985,6 +2992,7 @@
 				547F8A961D100D9100F730A5 /* PageCurlDestinationVertex.glsl in Resources */,
 				54A768A31CBCE2BE00826929 /* BlindsAnimationFragment.glsl in Resources */,
 				542C6D9B1D4E1E0800C604A0 /* ObjectShredderPiecesVertex.glsl in Resources */,
+				5492E95C1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl in Resources */,
 				547875CC1CA4D61B00012F76 /* CoverDestinationFragment.glsl in Resources */,
 				5420C0531CB8B0E6001C789C /* ShimmerBackgroundVertex.glsl in Resources */,
 				547875C11CA4D61B00012F76 /* ClothLineDestinationFragment.glsl in Resources */,
