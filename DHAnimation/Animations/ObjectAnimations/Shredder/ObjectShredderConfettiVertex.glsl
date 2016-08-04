@@ -10,6 +10,7 @@ layout(location = 2) in float a_startY;
 layout(location = 3) in float a_length;
 layout(location = 4) in float a_radius;
 layout(location = 5) in float a_startFallingTime;
+layout(location = 6) in vec2 a_direction;
 
 out vec2 v_texCoords;
 out float v_percent;
@@ -21,21 +22,16 @@ vec4 updatedPosition() {
         v_percent = 1.f;
         return position;
     }
-    float l = u_shredderPosition - position.y;
-    if (l < a_length) {
-        vec3 center = vec3(a_position.x, u_shredderPosition, a_radius);
-        float angle = l / a_radius;
-        position.x -= l * 0.382;
-        position.y = u_shredderPosition - a_radius * sin(angle);
-        position.z = a_radius* cos(angle);
-    } else {
-        l = a_length + a_startY - position.y;
-        vec3 center = vec3(a_position.x, a_startY + a_length, a_radius);
-        float angle = l / a_radius;
-        position.x -= l * 0.382;
-        position.y = a_length + a_startY - a_radius * sin(angle);
-        position.z = a_radius* cos(angle);
-    }
+    float centerPos = min(u_shredderPosition, a_startY + a_length);
+    float l = centerPos - position.y;
+    vec3 center = vec3(a_position.x, centerPos, a_radius);
+    float angle = l / a_radius;
+    vec2 currentDir = vec2(0.f, -a_radius * sin(angle));
+    float projection = dot(currentDir, a_direction);
+    vec2 projectedVec = projection * a_direction;
+    position.x += projectedVec.x;
+    position.y = centerPos + projectedVec.y;
+    position.z = a_radius* cos(angle);
     
     float time = u_time - a_startFallingTime;
     if (time > 0.f) {

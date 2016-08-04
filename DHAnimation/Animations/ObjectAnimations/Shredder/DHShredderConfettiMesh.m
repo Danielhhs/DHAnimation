@@ -16,6 +16,7 @@ typedef struct{
     GLfloat length;
     GLfloat radius;
     GLfloat startFallingTime;
+    GLKVector2 direction;
 }DHShredderConfettiMeshAttributes;
 
 @interface DHShredderConfettiMesh () {
@@ -46,6 +47,7 @@ typedef struct{
     if (self.containerView) {
         originY = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame);
     }
+    GLKVector2 direction = [self randomDirectionForLength:length];
     for (int i = 0; i < length; i++) {
         GLfloat radius = length / 2 + arc4random() % (int)length;
         DHShredderConfettiMeshAttributes bottomLeft;
@@ -55,6 +57,7 @@ typedef struct{
         bottomLeft.radius = radius;
         bottomLeft.startY = position.y;
         bottomLeft.startFallingTime = startFallingTime;
+        bottomLeft.direction = direction;
         [self.vertexData appendBytes:&bottomLeft length:sizeof(DHShredderConfettiMeshAttributes)];
         
         DHShredderConfettiMeshAttributes bottomRight;
@@ -64,6 +67,7 @@ typedef struct{
         bottomRight.radius = radius;
         bottomRight.startY = position.y;
         bottomRight.startFallingTime = startFallingTime;
+        bottomRight.direction = direction;
         [self.vertexData appendBytes:&bottomRight length:sizeof(DHShredderConfettiMeshAttributes)];
         
         DHShredderConfettiMeshAttributes topLeft;
@@ -73,6 +77,7 @@ typedef struct{
         topLeft.radius = radius;
         topLeft.startY = position.y;
         topLeft.startFallingTime = startFallingTime;
+        topLeft.direction = direction;
         [self.vertexData appendBytes:&topLeft length:sizeof(DHShredderConfettiMeshAttributes)];
         
         DHShredderConfettiMeshAttributes topRight;
@@ -82,6 +87,7 @@ typedef struct{
         topRight.radius = radius;
         topRight.startY = position.y;
         topRight.startFallingTime = startFallingTime;
+        topLeft.direction = direction;
         [self.vertexData appendBytes:&topRight length:sizeof(DHShredderConfettiMeshAttributes)];
     }
     
@@ -103,6 +109,13 @@ typedef struct{
     self.vertexCount += 4 * length;
 }
 
+- (GLKVector2) randomDirectionForLength:(GLfloat)length
+{
+    GLfloat x = arc4random() % ((int)length / 3);
+    GLfloat y = arc4random() % ((int)length / 2);
+    GLKVector2 direction = GLKVector2Normalize(GLKVector2Make(x, y));
+    return GLKVector2MultiplyScalar(direction, -1);
+}
 
 - (NSData *)verticesData
 {
@@ -146,6 +159,9 @@ typedef struct{
     
     glEnableVertexAttribArray(5);
     glVertexAttribPointer(5, 1, GL_FLOAT, GL_FALSE, sizeof(DHShredderConfettiMeshAttributes), NULL + offsetof(DHShredderConfettiMeshAttributes, startFallingTime));
+    
+    glEnableVertexAttribArray(6);
+    glVertexAttribPointer(6, 2, GL_FLOAT, GL_FALSE, sizeof(DHShredderConfettiMeshAttributes), NULL + offsetof(DHShredderConfettiMeshAttributes, direction));
 //    glBindVertexArray(0);
 }
 

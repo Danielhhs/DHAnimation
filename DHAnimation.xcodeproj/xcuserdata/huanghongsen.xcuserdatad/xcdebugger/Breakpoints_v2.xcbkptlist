@@ -505,13 +505,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/ObjectAnimations/Shredder/DHShredderAnimationRenderer.m"
-            timestampString = "491907275.873232"
+            filePath = "DHAnimation/Animations/ObjectAnimations/Shredder/DHShredderConfettiMesh.m"
+            timestampString = "491967820.642055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-drawFrame"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-appendConfettiAtPosition:length:startFallingTime:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -522,12 +522,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Shredder/DHShredderAnimationRenderer.m"
-            timestampString = "491906063.283102"
+            timestampString = "491972720.260779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-setupGL"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-setupMeshes"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
