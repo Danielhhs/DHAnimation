@@ -37,7 +37,6 @@ vec4 updatedPosition() {
         return position;
     }
     
-    //    position = curledPosition();
     float yPos = min(u_shredderPosition, a_startY + a_length);
     float l = yPos - a_position.y;
     vec3 offset = l * a_direction;
@@ -47,6 +46,7 @@ vec4 updatedPosition() {
     if (time > 0.f) {
         float fallingTime = u_duration - a_startFallingTime;
         float gravity = (a_startY + a_length) * 2.f / fallingTime / fallingTime + 100.f;
+        gravity = max(gravity, 1000.f);
         position.y -= 0.5 * gravity * time * time;
     }
     v_percent = 0.f;

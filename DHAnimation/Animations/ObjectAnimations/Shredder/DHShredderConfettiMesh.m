@@ -131,6 +131,7 @@ typedef struct{
         glGenBuffers(1, &vertexBuffer);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
         glBufferData(GL_ARRAY_BUFFER, [self.vertexData length], [self.vertexData bytes], GL_STATIC_DRAW);
+        glGenVertexArrays(1, &vertexArray);
     }
     if (indexBuffer == 0 && [self.indexData length] > 0) {
         glGenBuffers(1, &indexBuffer);
@@ -138,6 +139,7 @@ typedef struct{
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, [self.indexData length], [self.indexData bytes], GL_STATIC_DRAW);
     }
     
+    glBindVertexArray(vertexArray);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     
     glEnableVertexAttribArray(0);
@@ -160,16 +162,15 @@ typedef struct{
     
     glEnableVertexAttribArray(6);
     glVertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(DHShredderConfettiMeshAttributes), NULL + offsetof(DHShredderConfettiMeshAttributes, direction));
-//    glBindVertexArray(0);
+    glBindVertexArray(0);
 }
 
 - (void) drawEntireMesh
 {
-    [self prepareToDraw];
+    glBindVertexArray(vertexArray);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
-//    glBindVertexArray(vertexArray);
-    glDrawElements(GL_TRIANGLES, self.indexCount, GL_UNSIGNED_INT, NULL);
-//    glBindVertexArray(0);
+    glDrawElements(GL_TRIANGLES, (GLsizei)self.indexCount, GL_UNSIGNED_INT, NULL);
+    glBindVertexArray(0);
 }
 
 @end
