@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Infrastructure/DHConstants.m"
-            timestampString = "491799813.775816"
+            timestampString = "492319210.33968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "+transitionRendererForName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -496,6 +496,22 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "-createVAOWithVertexData:indexData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Text Effects/Fade/DHTextFadeAnimationRenderer.m"
+            timestampString = "492319970.608316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -507,6 +507,16 @@
 		5492E93B1D50452F00BC016E /* DHShredderConfettiMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9391D50452F00BC016E /* DHShredderConfettiMesh.m */; };
 		5492E95A1D5194B500BC016E /* ObjectShredderConfettiVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9591D5194B500BC016E /* ObjectShredderConfettiVertex.glsl */; };
 		5492E95C1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E95B1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl */; };
+		5492E9B81D5821C500BC016E /* DHTextFadeAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5492E9B61D5821C500BC016E /* DHTextFadeAnimationRenderer.h */; };
+		5492E9B91D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9B71D5821C500BC016E /* DHTextFadeAnimationRenderer.m */; };
+		5492E9BA1D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9B71D5821C500BC016E /* DHTextFadeAnimationRenderer.m */; };
+		5492E9BD1D5824B600BC016E /* DHTextFadeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5492E9BB1D5824B600BC016E /* DHTextFadeMesh.h */; };
+		5492E9BE1D5824B600BC016E /* DHTextFadeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9BC1D5824B600BC016E /* DHTextFadeMesh.m */; };
+		5492E9BF1D5824B600BC016E /* DHTextFadeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492E9BC1D5824B600BC016E /* DHTextFadeMesh.m */; };
+		5492E9C11D5824E100BC016E /* TextFadeVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C01D5824E000BC016E /* TextFadeVertex.glsl */; };
+		5492E9C21D5824E100BC016E /* TextFadeVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C01D5824E000BC016E /* TextFadeVertex.glsl */; };
+		5492E9C41D5824EB00BC016E /* TextFadeFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C31D5824EB00BC016E /* TextFadeFragment.glsl */; };
+		5492E9C51D5824EB00BC016E /* TextFadeFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C31D5824EB00BC016E /* TextFadeFragment.glsl */; };
 		54942E761D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */; };
 		54942E771D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
 		54942E781D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
@@ -1078,6 +1088,12 @@
 		5492E9391D50452F00BC016E /* DHShredderConfettiMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHShredderConfettiMesh.m; sourceTree = "<group>"; };
 		5492E9591D5194B500BC016E /* ObjectShredderConfettiVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectShredderConfettiVertex.glsl; sourceTree = "<group>"; };
 		5492E95B1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectShredderConfettiFragment.glsl; sourceTree = "<group>"; };
+		5492E9B61D5821C500BC016E /* DHTextFadeAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextFadeAnimationRenderer.h; sourceTree = "<group>"; };
+		5492E9B71D5821C500BC016E /* DHTextFadeAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextFadeAnimationRenderer.m; sourceTree = "<group>"; };
+		5492E9BB1D5824B600BC016E /* DHTextFadeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextFadeMesh.h; sourceTree = "<group>"; };
+		5492E9BC1D5824B600BC016E /* DHTextFadeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextFadeMesh.m; sourceTree = "<group>"; };
+		5492E9C01D5824E000BC016E /* TextFadeVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFadeVertex.glsl; sourceTree = "<group>"; };
+		5492E9C31D5824EB00BC016E /* TextFadeFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFadeFragment.glsl; sourceTree = "<group>"; };
 		54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDiffuseAnimationRenderer.h; sourceTree = "<group>"; };
 		54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDiffuseAnimationRenderer.m; sourceTree = "<group>"; };
 		54942E791D407A19001EFF01 /* ObjectDiffuseVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectDiffuseVertex.glsl; sourceTree = "<group>"; };
@@ -1977,6 +1993,19 @@
 			path = DHAnimationBundle;
 			sourceTree = "<group>";
 		};
+		5492E9B51D5821A700BC016E /* Fade */ = {
+			isa = PBXGroup;
+			children = (
+				5492E9B61D5821C500BC016E /* DHTextFadeAnimationRenderer.h */,
+				5492E9B71D5821C500BC016E /* DHTextFadeAnimationRenderer.m */,
+				5492E9BB1D5824B600BC016E /* DHTextFadeMesh.h */,
+				5492E9BC1D5824B600BC016E /* DHTextFadeMesh.m */,
+				5492E9C01D5824E000BC016E /* TextFadeVertex.glsl */,
+				5492E9C31D5824EB00BC016E /* TextFadeFragment.glsl */,
+			);
+			path = Fade;
+			sourceTree = "<group>";
+		};
 		54942E731D4079C8001EFF01 /* Diffuse */ = {
 			isa = PBXGroup;
 			children = (
@@ -2277,6 +2306,7 @@
 		54EE403D1D166E4E0090A491 /* Text Effects */ = {
 			isa = PBXGroup;
 			children = (
+				5492E9B51D5821A700BC016E /* Fade */,
 				540B89641D1BD100007ED37F /* Dance */,
 				540B89381D1A60DF007ED37F /* Squish */,
 				549CCF581D190394007517D0 /* FlyIn */,
@@ -2371,6 +2401,7 @@
 				5490CD771CD34EF900C93002 /* DHCubeSourceMesh.h in Headers */,
 				5490CD781CD34EF900C93002 /* DHDoorWayTransitionRenderer.h in Headers */,
 				5490CD7A1CD34EF900C93002 /* DHDropTransitionRenderer.h in Headers */,
+				5492E9B81D5821C500BC016E /* DHTextFadeAnimationRenderer.h in Headers */,
 				5490CD7B1CD34EF900C93002 /* DHFlipTransitionRenderer.h in Headers */,
 				5490CD7C1CD34EF900C93002 /* DHFlopTransitionRenderer.h in Headers */,
 				5490CD7D1CD34EF900C93002 /* DHGridTransitionRenderer.h in Headers */,
@@ -2386,6 +2417,7 @@
 				546F51CC1CE2E1FF00DA3B0C /* DHSceneMeshFactory.h in Headers */,
 				54F76E4F1D263B4100C17394 /* DHWipeAnimationRenderer.h in Headers */,
 				5490CD8B1CD34EF900C93002 /* DHSwitchTransitionRenderer.h in Headers */,
+				5492E9BD1D5824B600BC016E /* DHTextFadeMesh.h in Headers */,
 				5490CD8C1CD34EF900C93002 /* DHTwistMesh.h in Headers */,
 				54EE3FC21D12368E0090A491 /* DHPointExplosionEffect.h in Headers */,
 				545063341D0674CF001C44F7 /* DHFlameEffect.h in Headers */,
@@ -2681,9 +2713,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5492E9C21D5824E100BC016E /* TextFadeVertex.glsl in Resources */,
 				54942E7B1D407A19001EFF01 /* ObjectDiffuseVertex.glsl in Resources */,
 				54942E8D1D4216FF001EFF01 /* ObjectBlowVertex.glsl in Resources */,
 				54942E901D421708001EFF01 /* ObjectBlowFragment.glsl in Resources */,
+				5492E9C51D5824EB00BC016E /* TextFadeFragment.glsl in Resources */,
 				54942E7E1D407A25001EFF01 /* ObjectDiffuseFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2987,6 +3021,7 @@
 				54942E8F1D421708001EFF01 /* ObjectBlowFragment.glsl in Resources */,
 				547875C41CA4D61B00012F76 /* ClothLineSourceVertex.glsl in Resources */,
 				548EDF701CCA258E005E997B /* ObjectSpinFragment.glsl in Resources */,
+				5492E9C11D5824E100BC016E /* TextFadeVertex.glsl in Resources */,
 				54F64CCE1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl in Resources */,
 				548EDF8B1CCB60A9005E997B /* ObjectSkidFragment.glsl in Resources */,
 				547F8A961D100D9100F730A5 /* PageCurlDestinationVertex.glsl in Resources */,
@@ -3016,6 +3051,7 @@
 				548EDF601CCA01D6005E997B /* ObjectScaleFragment.glsl in Resources */,
 				549CCF3D1D177D8B007517D0 /* TextOrbitalVertex.glsl in Resources */,
 				54A7684A1CBBAB0200826929 /* ObjectRotationFragment.glsl in Resources */,
+				5492E9C41D5824EB00BC016E /* TextFadeFragment.glsl in Resources */,
 				54EE3FD71D123AF10090A491 /* PointExplosionFragment.glsl in Resources */,
 				54E264841C8FC5AC00FFB67E /* 8.jpg in Resources */,
 				548EDF591CC9FDFC005E997B /* ObjectPopVertex.glsl in Resources */,
@@ -3081,6 +3117,7 @@
 				5490CDA21CD34F2600C93002 /* DHSpinAnimationRenderer.m in Sources */,
 				540B89691D1BD1BB007ED37F /* DHTextDanceMesh.m in Sources */,
 				5490CDA31CD34F2600C93002 /* DHScaleBigAnimationRenderer.m in Sources */,
+				5492E9BF1D5824B600BC016E /* DHTextFadeMesh.m in Sources */,
 				549CCF351D177C65007517D0 /* DHTextEffectRenderer.m in Sources */,
 				5490CDA41CD34F2600C93002 /* DHScaleAnimationRenderer.m in Sources */,
 				5490CDA51CD34F2600C93002 /* DHPopAnimationRenderer.m in Sources */,
@@ -3149,6 +3186,7 @@
 				5490CDD41CD34F2600C93002 /* DHObjectAnimationRenderer.m in Sources */,
 				546F51C71CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.m in Sources */,
 				549CCF4B1D1781EF007517D0 /* DHTextOrbitalMesh.m in Sources */,
+				5492E9BA1D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */,
 				549CCF461D177DD2007517D0 /* DHTextSceneMesh.m in Sources */,
 				5490CDD51CD34F2600C93002 /* OpenGLHelper.m in Sources */,
 				5490CDD61CD34F2600C93002 /* TextureHelper.m in Sources */,
@@ -3272,6 +3310,7 @@
 				549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */,
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,
 				5420C05A1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m in Sources */,
+				5492E9B91D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */,
 				549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,
 				545617091CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m in Sources */,
 				549CCF3A1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
@@ -3324,6 +3363,7 @@
 				540B89361D1A5BD2007ED37F /* DHTextAnimationSettingsViewController.m in Sources */,
 				54A7688C1CBCA17C00826929 /* DHReflectionTransitionRenderer.m in Sources */,
 				547875D01CA4D61B00012F76 /* DHCoverTransitionRenderer.m in Sources */,
+				5492E9BE1D5824B600BC016E /* DHTextFadeMesh.m in Sources */,
 				547875F91CA4D61B00012F76 /* DHMosaicMesh.m in Sources */,
 				547876241CA4D61B00012F76 /* DHSwitchTransitionRenderer.m in Sources */,
 				54F64CCA1CCF474B00AFBCF8 /* DHAnvilAnimationRenderer.m in Sources */,

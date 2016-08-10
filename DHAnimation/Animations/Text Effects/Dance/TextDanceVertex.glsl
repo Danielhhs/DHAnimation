@@ -45,12 +45,6 @@ vec2 expandWithTime(float time) {
     
 }
 
-float NSBKeyframeAnimationFunctionEaseInOutCubic(float t, float b, float c, float d)
-{
-    if ((t/=d/2.f) < 1.f) return c/2.f*t*t*t + b;
-    return c/2.f*((t-=2.f)*t*t + 2.f) + b;
-}
-
 vec4 updatedPosition() {
     vec4 position = a_position;
     
@@ -84,7 +78,7 @@ vec4 updatedPosition() {
             position.xy = squishWithTime(timeInCycle - u_singleCycleDuration * (1.f - u_squishTimeRatio));
         } else {
             timeInCycle -= u_singleCycleDuration * u_squishTimeRatio;
-            float xPercent = NSBKeyframeAnimationFunctionEaseInOutCubic(timeInCycle * 1000.f, 0.f, 1.f, (u_singleCycleDuration * (1.f - 2.f * u_squishTimeRatio)) * 1000.f);
+            float xPercent = timeInCycle / (u_singleCycleDuration * (1.f - 2.f * u_squishTimeRatio));
             xOffset += xOffsetForOneCycle * xPercent;
             float velocity = u_gravity * (u_singleCycleDuration / 2.f - u_singleCycleDuration * u_squishTimeRatio);
             float y = velocity * timeInCycle - 0.5 * u_gravity * timeInCycle * timeInCycle;
