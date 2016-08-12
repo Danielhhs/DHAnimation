@@ -6,8 +6,6 @@
 //  Copyright © 2016 cn.daniel. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 //Object Animation Renderers
 #import "DHObjectAnimationRenderer.h"
 #import "DHBlindsAnimationRenderer.h"
@@ -41,6 +39,10 @@
 #import "DHPointExplosionAnimationRenderer.h"
 #import "DHTextOrbitalAnimationRenderer.h"
 #import "DHWipeAnimationRenderer.h"
+#import "DHBlowAnimationRenderer.h"
+#import "DHDiffuseAnimationRenderer.h"
+#import "DHTextFadeAnimationRenderer.h"
+#import "DHFoldAnimationRenderer.h"
 
 //Transition Renderers
 #import "DHTransitionRenderer.h"
@@ -64,6 +66,7 @@
 #import "DHSwitchTransitionRenderer.h"
 #import "DHTwistTransitionRenderer.h"
 #import "DHPageCurlTransitionRenderer.h"
+#import "DHShredderAnimationRenderer.h"
 
 //Helpers and Infrastructure classes
 #import "DHObjectAnimationSettings.h"
@@ -81,6 +84,7 @@
 #import "NSBKeyframeAnimationFunctions.h"
 #import "DHPointExplosionEffect.h"
 #import "DHFlameEffect.h"
+#import "DHTextFadeMesh.h"
 
 //Meshes
 #import "DHShimmerBackgroundMesh.h"
@@ -90,7 +94,6 @@
 #import "DHCubeSourceMesh.h"
 #import "DHMosaicBackMesh.h"
 #import "DHMosaicMesh.h"
-#import "DHShredderAnimationSceneMesh.h"
 #import "DHTwistMesh.h"
 #import "DHDustEffect.h"
 #import "DHFireworkEffect.h"
@@ -104,6 +107,14 @@
 #import "DHTextFlyInMesh.h"
 #import "DHTextSceneMesh.h"
 #import "DHTextDanceMesh.h"
+#import "DHBlowSceneMesh.h"
+#import "DHShredderMesh.h"
+#import "DHFoldSceneMesh.h"
+#import "DHDiffuseSceneMesh.h"
+#import "DHShredderMesh.h"
+#import "DHShredderConfettiMesh.h"
+#import "DHShredderAnimationSceneMesh.h"
+
 #import "DHSceneMeshFactory.h"
 //! Project version number for DHAnimationFramework.
 FOUNDATION_EXPORT double DHAnimationFrameworkVersionNumber;

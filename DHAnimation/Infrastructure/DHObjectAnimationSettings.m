@@ -115,12 +115,19 @@
             case DHObjectAnimationTypeCompress: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
             }
+            break;
             case DHObjectAnimationTypePointExplosion: {
                 settings.timingFunction = DHTimingFunctionEaseOutCubic;
             }
+            break;
             case DHObjectAnimationTypeShredder: {
                 settings.columnCount = 7;
             }
+            break;
+            case DHObjectAnimationTypeFold: {
+                settings.columnCount = 3;
+            }
+            break;
             default:
                 break;
         }

@@ -32,6 +32,7 @@
 #import "DHDiffuseAnimationRenderer.h"
 #import "DHBlowAnimationRenderer.h"
 #import "DHShredderAnimationRenderer.h"
+#import "DHFoldAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -86,7 +87,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) builtOutAnimations
 {
     if (builtOutAnimationsArray == nil) {
-        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress", @"Skid", @"Wipe", @"Diffuse", @"Blow", @"Shredder"];
+        builtOutAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Blur", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Face Explosion", @"Compress", @"Skid", @"Wipe", @"Diffuse", @"Blow", @"Shredder", @"Fold"];
     }
     return builtOutAnimationsArray;
 }
@@ -94,7 +95,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) allAnimations
 {
     if (allAnimationsArray == nil) {
-        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse", @"Blow", @"Shredder"];
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse", @"Blow", @"Shredder", @"Fold"];
     }
     return allAnimationsArray;
 }
@@ -159,6 +160,8 @@ static NSArray *textAnimationArray;
         return [[DHBlowAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Shredder"]) {
         return [[DHShredderAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Fold"]) {
+        return [[DHFoldAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -262,6 +265,8 @@ static NSArray *textAnimationArray;
             return @"Blow";
         case DHObjectAnimationTypeShredder:
             return @"Shredder";
+        case DHObjectAnimationTypeFold:
+            return @"Fold";
     }
     return @"None";
 }
