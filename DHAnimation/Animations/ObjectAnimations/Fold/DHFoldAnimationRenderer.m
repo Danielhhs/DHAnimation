@@ -46,13 +46,28 @@
 - (void) drawFrame
 {
     [super drawFrame];
+    if (self.event == DHAnimationEventBuiltIn) {
+        glUniform1f(percentLoc, 1 - self.percent);
+    }
     glUniform1f(columnWidthLoc, (self.targetView.frame.size.width - self.headerLength) / self.columnCount);
     glUniform1f(headerHeightLoc, self.headerLength);
-    glUniform2f(originLoc, self.targetView.frame.origin.x, self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
+    glUniform2f(originLoc, [self originPosition].x, [self originPosition].y);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
     [self.mesh drawEntireMesh];
 }
 
+- (GLKVector2)originPosition
+{
+    if (self.direction == DHAnimationDirectionLeftToRight) {
+        return GLKVector2Make(CGRectGetMaxX(self.targetView.frame), self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
+    } else if (self.direction == DHAnimationDirectionRightToLeft) {
+        return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
+    } else if (self.direction == DHAnimationDirectionTopToBottom) {
+        return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - self.targetView.frame.origin.y);
+    } else {
+        return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
+    }
+}
 @end

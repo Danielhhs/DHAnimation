@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Fold/DHFoldAnimationRenderer.m"
-            timestampString = "493373667.788122"
+            timestampString = "493377925.53884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
