@@ -59,6 +59,7 @@
 #import "DHTextSquishAnimationRenderer.h"
 #import "DHTextDanceAnimationRenderer.h"
 #import "DHTextFadeAnimationRenderer.h"
+#import "DHTextTraceAnimationRenderer.h"
 
 static NSArray *transitionsArray;
 static NSArray *builtInAnimationsArray;
@@ -103,7 +104,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) textAnimations
 {
     if (textAnimationArray == nil) {
-        textAnimationArray = @[@"Orbital", @"Fly In", @"Squish", @"Dance", @"Fade"];
+        textAnimationArray = @[@"Orbital", @"Fly In", @"Squish", @"Dance", @"Fade", @"Trace"];
     }
     return textAnimationArray;
 }
@@ -285,6 +286,8 @@ static NSArray *textAnimationArray;
             return [[DHTextDanceAnimationRenderer alloc] init];
         case DHTextAnimationTypeFade:
             return [[DHTextFadeAnimationRenderer alloc] init];
+        case DHTextAnimationTypeTrace:
+            return [[DHTextTraceAnimationRenderer alloc] init];
         default:
             break;
     }

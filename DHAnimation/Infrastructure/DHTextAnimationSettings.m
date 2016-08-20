@@ -48,10 +48,15 @@
         }
         case DHTextAnimationTypeDance: {
             settings.timingFunction = DHTimingFunctionEaseInOutCubic;
+            break;
         }
         case DHTextAnimationTypeFade: {
             settings.duration = 3;
             settings.event = DHAnimationEventBuiltOut;
+            break;
+        }
+        case DHTextAnimationTypeTrace: {
+            settings.duration = 3.f;
         }
         default:
             break;

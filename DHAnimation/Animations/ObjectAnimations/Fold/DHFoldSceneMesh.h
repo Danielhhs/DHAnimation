@@ -7,6 +7,9 @@
 //
 
 #import <DHAnimationFramework/DHAnimationFramework.h>
+
 @interface DHFoldSceneMesh : DHSplitTextureSceneMesh
+
+- (instancetype) initWithView:(UIView *)view containerView:(UIView *)containerView headerHeight:(GLfloat)headerHeight animationDirection:(DHAnimationDirection)direction columnCount:(NSInteger)columnCount rowCount:(NSInteger)rowCount columnMajored:(BOOL)columnMajored;
 
 @end

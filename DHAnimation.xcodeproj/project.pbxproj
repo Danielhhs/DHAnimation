@@ -542,6 +542,23 @@
 		5492EA331D5C8C3E00BC016E /* ObjectDiffuseFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 54942E7C1D407A25001EFF01 /* ObjectDiffuseFragment.glsl */; };
 		5492EA341D5C8C5000BC016E /* TextFadeVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C01D5824E000BC016E /* TextFadeVertex.glsl */; };
 		5492EA351D5C8C5300BC016E /* TextFadeFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492E9C31D5824EB00BC016E /* TextFadeFragment.glsl */; };
+		5492EA941D61866500BC016E /* DHTextTraceAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5492EA921D61866500BC016E /* DHTextTraceAnimationRenderer.h */; };
+		5492EA951D61866500BC016E /* DHTextTraceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EA931D61866500BC016E /* DHTextTraceAnimationRenderer.m */; };
+		5492EA961D61866500BC016E /* DHTextTraceAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EA931D61866500BC016E /* DHTextTraceAnimationRenderer.m */; };
+		5492EA981D61867F00BC016E /* TextTraceTextVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EA971D61867F00BC016E /* TextTraceTextVertex.glsl */; };
+		5492EA991D61867F00BC016E /* TextTraceTextVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EA971D61867F00BC016E /* TextTraceTextVertex.glsl */; };
+		5492EA9B1D61868C00BC016E /* TextTraceTextFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EA9A1D61868C00BC016E /* TextTraceTextFragment.glsl */; };
+		5492EA9C1D61868C00BC016E /* TextTraceTextFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EA9A1D61868C00BC016E /* TextTraceTextFragment.glsl */; };
+		5492EA9F1D618A1100BC016E /* DHTextTraceTextMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5492EA9D1D618A1100BC016E /* DHTextTraceTextMesh.h */; };
+		5492EAA01D618A1100BC016E /* DHTextTraceTextMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EA9E1D618A1100BC016E /* DHTextTraceTextMesh.m */; };
+		5492EAA11D618A1100BC016E /* DHTextTraceTextMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EA9E1D618A1100BC016E /* DHTextTraceTextMesh.m */; };
+		5492EAA41D618CF100BC016E /* DHTextTraceTraceMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 5492EAA21D618CF100BC016E /* DHTextTraceTraceMesh.h */; };
+		5492EAA51D618CF100BC016E /* DHTextTraceTraceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EAA31D618CF100BC016E /* DHTextTraceTraceMesh.m */; };
+		5492EAA61D618CF100BC016E /* DHTextTraceTraceMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5492EAA31D618CF100BC016E /* DHTextTraceTraceMesh.m */; };
+		5492EAA81D61969200BC016E /* TextTraceTraceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EAA71D61969200BC016E /* TextTraceTraceVertex.glsl */; };
+		5492EAA91D61969200BC016E /* TextTraceTraceVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EAA71D61969200BC016E /* TextTraceTraceVertex.glsl */; };
+		5492EAAB1D6196A500BC016E /* TextTraceTraceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EAAA1D6196A500BC016E /* TextTraceTraceFragment.glsl */; };
+		5492EAAC1D6196A500BC016E /* TextTraceTraceFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5492EAAA1D6196A500BC016E /* TextTraceTraceFragment.glsl */; };
 		54942E761D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54942E771D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
 		54942E781D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */; };
@@ -1121,6 +1138,16 @@
 		5492E9CF1D5ABEB000BC016E /* ObjectFoldFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectFoldFragment.glsl; sourceTree = "<group>"; };
 		5492E9D21D5AC1D800BC016E /* DHFoldSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFoldSceneMesh.h; sourceTree = "<group>"; };
 		5492E9D31D5AC1D800BC016E /* DHFoldSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFoldSceneMesh.m; sourceTree = "<group>"; };
+		5492EA921D61866500BC016E /* DHTextTraceAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextTraceAnimationRenderer.h; sourceTree = "<group>"; };
+		5492EA931D61866500BC016E /* DHTextTraceAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextTraceAnimationRenderer.m; sourceTree = "<group>"; };
+		5492EA971D61867F00BC016E /* TextTraceTextVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextTraceTextVertex.glsl; sourceTree = "<group>"; };
+		5492EA9A1D61868C00BC016E /* TextTraceTextFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextTraceTextFragment.glsl; sourceTree = "<group>"; };
+		5492EA9D1D618A1100BC016E /* DHTextTraceTextMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextTraceTextMesh.h; sourceTree = "<group>"; };
+		5492EA9E1D618A1100BC016E /* DHTextTraceTextMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextTraceTextMesh.m; sourceTree = "<group>"; };
+		5492EAA21D618CF100BC016E /* DHTextTraceTraceMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHTextTraceTraceMesh.h; sourceTree = "<group>"; };
+		5492EAA31D618CF100BC016E /* DHTextTraceTraceMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTextTraceTraceMesh.m; sourceTree = "<group>"; };
+		5492EAA71D61969200BC016E /* TextTraceTraceVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextTraceTraceVertex.glsl; sourceTree = "<group>"; };
+		5492EAAA1D6196A500BC016E /* TextTraceTraceFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextTraceTraceFragment.glsl; sourceTree = "<group>"; };
 		54942E741D4079FF001EFF01 /* DHDiffuseAnimationRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHDiffuseAnimationRenderer.h; sourceTree = "<group>"; };
 		54942E751D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHDiffuseAnimationRenderer.m; sourceTree = "<group>"; };
 		54942E791D407A19001EFF01 /* ObjectDiffuseVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectDiffuseVertex.glsl; sourceTree = "<group>"; };
@@ -2047,6 +2074,23 @@
 			path = Fold;
 			sourceTree = "<group>";
 		};
+		5492EA911D61860A00BC016E /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				5492EA921D61866500BC016E /* DHTextTraceAnimationRenderer.h */,
+				5492EA931D61866500BC016E /* DHTextTraceAnimationRenderer.m */,
+				5492EA9D1D618A1100BC016E /* DHTextTraceTextMesh.h */,
+				5492EA9E1D618A1100BC016E /* DHTextTraceTextMesh.m */,
+				5492EAA21D618CF100BC016E /* DHTextTraceTraceMesh.h */,
+				5492EAA31D618CF100BC016E /* DHTextTraceTraceMesh.m */,
+				5492EA971D61867F00BC016E /* TextTraceTextVertex.glsl */,
+				5492EA9A1D61868C00BC016E /* TextTraceTextFragment.glsl */,
+				5492EAA71D61969200BC016E /* TextTraceTraceVertex.glsl */,
+				5492EAAA1D6196A500BC016E /* TextTraceTraceFragment.glsl */,
+			);
+			path = Trace;
+			sourceTree = "<group>";
+		};
 		54942E731D4079C8001EFF01 /* Diffuse */ = {
 			isa = PBXGroup;
 			children = (
@@ -2347,6 +2391,7 @@
 		54EE403D1D166E4E0090A491 /* Text Effects */ = {
 			isa = PBXGroup;
 			children = (
+				5492EA911D61860A00BC016E /* Trace */,
 				5492E9B51D5821A700BC016E /* Fade */,
 				540B89641D1BD100007ED37F /* Dance */,
 				540B89381D1A60DF007ED37F /* Squish */,
@@ -2408,6 +2453,7 @@
 				5490CD5C1CD34EF900C93002 /* DHSkidAnimationRenderer.h in Headers */,
 				5490CD5D1CD34EF900C93002 /* DHDissolveAnimationRenderer.h in Headers */,
 				5490CD5E1CD34EF900C93002 /* DHTwirlAnimationRenderer.h in Headers */,
+				5492EAA41D618CF100BC016E /* DHTextTraceTraceMesh.h in Headers */,
 				5490CD5F1CD34EF900C93002 /* DHSpinAnimationRenderer.h in Headers */,
 				5490CD601CD34EF900C93002 /* DHScaleBigAnimationRenderer.h in Headers */,
 				5490CD611CD34EF900C93002 /* DHScaleAnimationRenderer.h in Headers */,
@@ -2450,6 +2496,7 @@
 				5490CD851CD34EF900C93002 /* DHSpinDismissTransitionRenderer.h in Headers */,
 				54107F5A1CE812E200DE5B35 /* DHBackgroundRenderer.h in Headers */,
 				546F51CC1CE2E1FF00DA3B0C /* DHSceneMeshFactory.h in Headers */,
+				5492EA9F1D618A1100BC016E /* DHTextTraceTextMesh.h in Headers */,
 				54F76E4F1D263B4100C17394 /* DHWipeAnimationRenderer.h in Headers */,
 				5490CD8B1CD34EF900C93002 /* DHSwitchTransitionRenderer.h in Headers */,
 				5490CD8C1CD34EF900C93002 /* DHTwistMesh.h in Headers */,
@@ -2473,6 +2520,7 @@
 				549CCF531D17A209007517D0 /* DHTextAnimationSettings.h in Headers */,
 				540B89671D1BD1BA007ED37F /* DHTextDanceMesh.h in Headers */,
 				549CCF4E1D179E80007517D0 /* DHTextAnimationPresentationViewController.h in Headers */,
+				5492EA941D61866500BC016E /* DHTextTraceAnimationRenderer.h in Headers */,
 				5490CD8D1CD34EF900C93002 /* DHTwistTransitionRenderer.h in Headers */,
 				5490CD8E1CD34EF900C93002 /* DHParticleEffect.h in Headers */,
 				5490CD8F1CD34EF900C93002 /* DHSceneMesh.h in Headers */,
@@ -2759,6 +2807,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5492EAAC1D6196A500BC016E /* TextTraceTraceFragment.glsl in Resources */,
+				5492EAA91D61969200BC016E /* TextTraceTraceVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2913,6 +2963,7 @@
 				54101B651CD34F9A002B10D0 /* PushSourceVertex.glsl in Resources */,
 				54101B661CD34F9A002B10D0 /* ResolvingDoorDestinationFragment.glsl in Resources */,
 				54101B671CD34F9A002B10D0 /* ResolvingDoorDestinationVertex.glsl in Resources */,
+				5492EA9C1D61868C00BC016E /* TextTraceTextFragment.glsl in Resources */,
 				54101B681CD34F9A002B10D0 /* ResolvingDoorSourceFragment.glsl in Resources */,
 				54101B691CD34F9A002B10D0 /* ResolvingDoorSourceVertex.glsl in Resources */,
 				54445AAF1D23671E0086C16A /* ObjectPointExplosionVertex.glsl in Resources */,
@@ -2935,6 +2986,7 @@
 				54101B7C1CD34F9B002B10D0 /* SwitchDestinationFragment.glsl in Resources */,
 				54101B7D1CD34F9B002B10D0 /* SwitchDestinationVertex.glsl in Resources */,
 				54101B7E1CD34F9B002B10D0 /* SwitchSourceFragment.glsl in Resources */,
+				5492EA991D61867F00BC016E /* TextTraceTextVertex.glsl in Resources */,
 				54101B7F1CD34F9B002B10D0 /* SwitchSourceVertex.glsl in Resources */,
 				54101B801CD34F9B002B10D0 /* TwistDestinationFragment.glsl in Resources */,
 				5492E9371D50424100BC016E /* Shredder.png in Resources */,
@@ -2951,6 +3003,7 @@
 			files = (
 				540AFA701CD2E65C004EF919 /* DustEffectVertex.glsl in Resources */,
 				548EDF6B1CCA1246005E997B /* ObjectScaleBigFragment.glsl in Resources */,
+				5492EA981D61867F00BC016E /* TextTraceTextVertex.glsl in Resources */,
 				54942E7A1D407A19001EFF01 /* ObjectDiffuseVertex.glsl in Resources */,
 				548EDF431CC90B59005E997B /* ObjectPivotVertex.glsl in Resources */,
 				5478760F1CA4D61B00012F76 /* RippleDestinationFragment.glsl in Resources */,
@@ -3035,6 +3088,7 @@
 				5492E9361D50424100BC016E /* Shredder.png in Resources */,
 				547876261CA4D61B00012F76 /* SwitchDestinationVertex.glsl in Resources */,
 				547875F51CA4D61B00012F76 /* GridDestinationVertex.glsl in Resources */,
+				5492EAA81D61969200BC016E /* TextTraceTraceVertex.glsl in Resources */,
 				547876151CA4D61B00012F76 /* SpinDismissVertex.glsl in Resources */,
 				547875FC1CA4D61B00012F76 /* MosaicDestinationVertex.glsl in Resources */,
 				542C6D9D1D4E1E1200C604A0 /* ObjectShredderPiecesFragment.glsl in Resources */,
@@ -3058,6 +3112,7 @@
 				548EDF891CCB609E005E997B /* ObjectSkidVertex.glsl in Resources */,
 				540B89441D1A611E007ED37F /* TextSquishVertex.glsl in Resources */,
 				540AFA781CD2E65C004EF919 /* star_white.png in Resources */,
+				5492EA9B1D61868C00BC016E /* TextTraceTextFragment.glsl in Resources */,
 				54A768A11CBCE2B000826929 /* BlindsAnimationVertex.glsl in Resources */,
 				549FBC771CC773D4000E1ABF /* BlurAnimationFragment.glsl in Resources */,
 				548EDF7B1CCB5675005E997B /* ObjectTwirlFragment.glsl in Resources */,
@@ -3080,6 +3135,7 @@
 				54F64CCE1CCF476C00AFBCF8 /* ObjectAnvilFragment.glsl in Resources */,
 				548EDF8B1CCB60A9005E997B /* ObjectSkidFragment.glsl in Resources */,
 				547F8A961D100D9100F730A5 /* PageCurlDestinationVertex.glsl in Resources */,
+				5492EAAB1D6196A500BC016E /* TextTraceTraceFragment.glsl in Resources */,
 				54A768A31CBCE2BE00826929 /* BlindsAnimationFragment.glsl in Resources */,
 				542C6D9B1D4E1E0800C604A0 /* ObjectShredderPiecesVertex.glsl in Resources */,
 				5492E95C1D5194CA00BC016E /* ObjectShredderConfettiFragment.glsl in Resources */,
@@ -3194,6 +3250,7 @@
 				5490CDB01CD34F2600C93002 /* DHShimmerAnimationRenderer.m in Sources */,
 				540B89871D224328007ED37F /* DHCameraShakeEffect.m in Sources */,
 				5490CDB11CD34F2600C93002 /* DHSparkleAnimationRenderer.m in Sources */,
+				5492EA961D61866500BC016E /* DHTextTraceAnimationRenderer.m in Sources */,
 				5490CDB21CD34F2600C93002 /* DHReflectionTransitionRenderer.m in Sources */,
 				549CCF3B1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
 				5492E9CB1D5ABE9600BC016E /* DHFoldAnimationRenderer.m in Sources */,
@@ -3201,6 +3258,7 @@
 				5490CDB31CD34F2600C93002 /* DHClothLineTransitionRenderer.m in Sources */,
 				5490CDB41CD34F2600C93002 /* DHConfettiTransitionRenderer.m in Sources */,
 				547F8A8E1D100C5900F730A5 /* DHPageCurlTransitionRenderer.m in Sources */,
+				5492EAA61D618CF100BC016E /* DHTextTraceTraceMesh.m in Sources */,
 				5490CDB51CD34F2600C93002 /* DHConfettiSourceMesh.m in Sources */,
 				5490CDB61CD34F2600C93002 /* DHCoverTransitionRenderer.m in Sources */,
 				5490CDB71CD34F2600C93002 /* DHCubeDestinationMesh.m in Sources */,
@@ -3238,6 +3296,7 @@
 				5492EA231D5C8BD700BC016E /* DHShredderAnimationRenderer.m in Sources */,
 				5490CDD01CD34F2600C93002 /* DHTwistTransitionRenderer.m in Sources */,
 				546F52081CE424D300DA3B0C /* DHFaceExplosionEffect.m in Sources */,
+				5492EAA11D618A1100BC016E /* DHTextTraceTextMesh.m in Sources */,
 				5490CDD11CD34F2600C93002 /* DHParticleEffect.m in Sources */,
 				5490CDD21CD34F2600C93002 /* DHSceneMesh.m in Sources */,
 				540B89421D1A6111007ED37F /* DHTextSquishMesh.m in Sources */,
@@ -3373,6 +3432,7 @@
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,
 				5420C05A1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m in Sources */,
 				5492E9B91D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */,
+				5492EAA51D618CF100BC016E /* DHTextTraceTraceMesh.m in Sources */,
 				549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,
 				545617091CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m in Sources */,
 				549CCF3A1D177CDD007517D0 /* DHTextOrbitalAnimationRenderer.m in Sources */,
@@ -3391,6 +3451,7 @@
 				5492E93A1D50452F00BC016E /* DHShredderConfettiMesh.m in Sources */,
 				547875D51CA4D61B00012F76 /* DHCubeDestinationMesh.m in Sources */,
 				547875E41CA4D61B00012F76 /* DHDropTransitionRenderer.m in Sources */,
+				5492EAA01D618A1100BC016E /* DHTextTraceTextMesh.m in Sources */,
 				54A768AA1CBD042E00826929 /* DHFireworkAnimationRenderer.m in Sources */,
 				548EDF961CCCA45D005E997B /* DHFlameAnimationRenderer.m in Sources */,
 				547876131CA4D61B00012F76 /* DHSpinDismissTransitionRenderer.m in Sources */,
@@ -3414,6 +3475,7 @@
 				547875FF1CA4D61B00012F76 /* DHPushTransitionRenderer.m in Sources */,
 				54942E771D4079FF001EFF01 /* DHDiffuseAnimationRenderer.m in Sources */,
 				54EC581E1C8FD25F009D812C /* TextureHelper.m in Sources */,
+				5492EA951D61866500BC016E /* DHTextTraceAnimationRenderer.m in Sources */,
 				547875D91CA4D61B00012F76 /* DHDoorWayTransitionRenderer.m in Sources */,
 				5420C04E1CB8B0E6001C789C /* DHShimmerBackgroundMesh.m in Sources */,
 				547875D71CA4D61B00012F76 /* DHCubeTransitionRenderer.m in Sources */,

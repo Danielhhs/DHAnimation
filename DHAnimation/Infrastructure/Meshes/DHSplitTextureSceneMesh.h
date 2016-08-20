@@ -9,5 +9,4 @@
 #import "DHSceneMesh.h"
 
 @interface DHSplitTextureSceneMesh : DHSceneMesh
-
 @end
