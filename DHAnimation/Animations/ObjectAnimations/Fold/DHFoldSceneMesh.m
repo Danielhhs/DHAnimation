@@ -37,9 +37,13 @@ typedef struct {
         
         [self generateVerticesData];
         
-        self.indexCount = (self.columnCount + 1) * 6;
+        NSInteger gridCount = self.columnCount;
+        if (self.direction == DHAnimationDirectionTopToBottom || self.direction == DHAnimationDirectionBottomToTop) {
+            gridCount = self.rowCount;
+        }
+        self.indexCount = (gridCount + 1) * 6;
         indices = malloc(sizeof(GLuint) * self.indexCount);
-        for (int i = 0; i <= self.columnCount; i++) {
+        for (int i = 0; i <= gridCount; i++) {
             indices[i * 6 + 0] = i * 4 + 0;
             indices[i * 6 + 1] = i * 4 + 1;
             indices[i * 6 + 2] = i * 4 + 2;
@@ -101,29 +105,6 @@ typedef struct {
         vertices[3].position = GLKVector3Make(originX + self.headerHeight, originY + self.targetView.frame.size.height, 0);
         vertices[3].texCoords = GLKVector2Make(self.headerHeight / self.targetView.frame.size.width, 0);
         vertices[3].index = -1.f;
-        
-        for (int i = 0; i < self.columnCount; i++) {
-            int index = i;
-            vertices[(i + 1) * 4 + 0].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY, 0);
-            vertices[(i + 1) * 4 + 0].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 1.f);
-            vertices[(i + 1) * 4 + 0].index = index;
-            vertices[(i + 1) * 4 + 0].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 1].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY, 0);
-            vertices[(i + 1) * 4 + 1].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 1.f);
-            vertices[(i + 1) * 4 + 1].index = index;
-            vertices[(i + 1) * 4 + 1].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 2].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY + self.targetView.frame.size.height, 0);
-            vertices[(i + 1) * 4 + 2].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 0.f);
-            vertices[(i + 1) * 4 + 2].index = index;
-            vertices[(i + 1) * 4 + 2].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 3].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY + self.targetView.frame.size.height, 0);
-            vertices[(i + 1) * 4 + 3].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 0.f);
-            vertices[(i + 1) * 4 + 3].index = index;
-            vertices[(i + 1) * 4 + 3].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-        }
     } else {
         vertices[0].position = GLKVector3Make(originX + self.targetView.frame.size.width - self.headerHeight, originY, 0);
         vertices[0].texCoords = GLKVector2Make(1 - self.headerHeight / self.targetView.frame.size.width, 1);
@@ -139,35 +120,107 @@ typedef struct {
         vertices[3].texCoords = GLKVector2Make(1, 0);
         vertices[3].index = -1.f;
         originXOffset = 0;
-        for (int i = 0; i < self.columnCount; i++) {
-            int index = (int)self.columnCount - 1 - i;
-            vertices[(i + 1) * 4 + 0].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY, 0);
-            vertices[(i + 1) * 4 + 0].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 1.f);
-            vertices[(i + 1) * 4 + 0].index = index;
-            vertices[(i + 1) * 4 + 0].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 1].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY, 0);
-            vertices[(i + 1) * 4 + 1].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 1.f);
-            vertices[(i + 1) * 4 + 1].index = index;
-            vertices[(i + 1) * 4 + 1].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 2].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY + self.targetView.frame.size.height, 0);
-            vertices[(i + 1) * 4 + 2].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 0.f);
-            vertices[(i + 1) * 4 + 2].index = index;
-            vertices[(i + 1) * 4 + 2].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
-            
-            vertices[(i + 1) * 4 + 3].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY + self.targetView.frame.size.height, 0);
-            vertices[(i + 1) * 4 + 3].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 0.f);
-            vertices[(i + 1) * 4 + 3].index = index;
-            vertices[(i + 1) * 4 + 3].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+    }
+    for (int i = 0; i < self.columnCount; i++) {
+        int index = i;
+        if (self.direction == DHAnimationDirectionLeftToRight) {
+            index = (int)self.columnCount - 1 - i;
         }
+        vertices[(i + 1) * 4 + 0].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY, 0);
+        vertices[(i + 1) * 4 + 0].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 1.f);
+        vertices[(i + 1) * 4 + 0].index = index;
+        vertices[(i + 1) * 4 + 0].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 1].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY, 0);
+        vertices[(i + 1) * 4 + 1].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 1.f);
+        vertices[(i + 1) * 4 + 1].index = index;
+        vertices[(i + 1) * 4 + 1].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 2].position = GLKVector3Make(originX + originXOffset + i * columnWidth, originY + self.targetView.frame.size.height, 0);
+        vertices[(i + 1) * 4 + 2].texCoords = GLKVector2Make((originXOffset + i * columnWidth) / self.targetView.frame.size.width, 0.f);
+        vertices[(i + 1) * 4 + 2].index = index;
+        vertices[(i + 1) * 4 + 2].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 3].position = GLKVector3Make(originX + originXOffset + (i + 1) * columnWidth, originY + self.targetView.frame.size.height, 0);
+        vertices[(i + 1) * 4 + 3].texCoords = GLKVector2Make((originXOffset + (i + 1) * columnWidth) / self.targetView.frame.size.width, 0.f);
+        vertices[(i + 1) * 4 + 3].index = index;
+        vertices[(i + 1) * 4 + 3].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
     }
     
 }
 
 - (void) generateVerticesForVertical
 {
-
+    self.vertexCount = (self.rowCount + 1) * 4;
+    vertices = malloc(self.vertexCount * sizeof(DHFoldSceneMeshAttributes));
+    
+    GLfloat rowHeight = (self.targetView.frame.size.height - self.headerHeight) / self.rowCount;
+    GLfloat originX = self.targetView.frame.origin.x;
+    GLfloat originY = 0;
+    if (self.containerView) {
+        originY = self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame);
+    }
+    
+    CGFloat originYOffset = self.headerHeight;
+    if (self.direction == DHAnimationDirectionTopToBottom) {
+        vertices[0].position = GLKVector3Make(originX, originY, 0);
+        vertices[0].texCoords = GLKVector2Make(0, 1);
+        vertices[0].index = -1.f;
+        vertices[1].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY, 0);
+        vertices[1].texCoords = GLKVector2Make(1, 1);
+        vertices[1].index = -1.f;
+        
+        vertices[2].position = GLKVector3Make(originX, originY + self.headerHeight, 0);
+        vertices[2].texCoords = GLKVector2Make(0, 1 - self.headerHeight / self.targetView.frame.size.height);
+        vertices[2].index = -1.f;
+        vertices[3].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY + self.headerHeight, 0);
+        vertices[3].texCoords = GLKVector2Make(1, 1 - self.headerHeight / self.targetView.frame.size.height);
+        vertices[3].index = -1.f;
+    } else {
+        vertices[0].position = GLKVector3Make(originX, originY + self.targetView.frame.size.height, 0);
+        vertices[0].texCoords = GLKVector2Make(0, 0);
+        vertices[0].index = -1.f;
+        vertices[1].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY + self.targetView.frame.size.height, 0);
+        vertices[1].texCoords = GLKVector2Make(1, 0);
+        vertices[1].index = -1.f;
+        
+        vertices[2].position = GLKVector3Make(originX, originY + self.targetView.frame.size.height - self.headerHeight, 0);
+        vertices[2].texCoords = GLKVector2Make(0, self.headerHeight / self.targetView.frame.size.height);
+        vertices[2].index = -1.f;
+        vertices[3].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY + self.targetView.frame.size.height - self.headerHeight, 0);
+        vertices[3].texCoords = GLKVector2Make(1, self.headerHeight / self.targetView.frame.size.height);
+        vertices[3].index = -1.f;
+    }
+    for (int i = 0; i < self.rowCount; i++) {
+        int index = i;
+        if (self.direction == DHAnimationDirectionBottomToTop) {
+            index = (int)self.rowCount - 1 - i;
+            vertices[(i + 1) * 4 + 0].texCoords = GLKVector2Make(0, (originYOffset + index * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 1].texCoords = GLKVector2Make(1, (originYOffset + index * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 2].texCoords = GLKVector2Make(0, (originYOffset + (index + 1) * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 3].texCoords = GLKVector2Make(1, (originYOffset + (index + 1) * rowHeight) / self.targetView.frame.size.height);
+        } else  {
+            vertices[(i + 1) * 4 + 0].texCoords = GLKVector2Make(0, 1.f - (originYOffset + index * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 1].texCoords = GLKVector2Make(1, 1.f - (originYOffset + index * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 2].texCoords = GLKVector2Make(0, 1.f - (originYOffset + (index + 1) * rowHeight) / self.targetView.frame.size.height);
+            vertices[(i + 1) * 4 + 3].texCoords = GLKVector2Make(1, 1.f - (originYOffset + (index + 1) * rowHeight) / self.targetView.frame.size.height);
+        }
+        vertices[(i + 1) * 4 + 0].position = GLKVector3Make(originX, originY + originYOffset + index * rowHeight, 0);
+        vertices[(i + 1) * 4 + 0].index = index;
+        vertices[(i + 1) * 4 + 0].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 1].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY + originYOffset + index * rowHeight, 0);
+        vertices[(i + 1) * 4 + 1].index = index;
+        vertices[(i + 1) * 4 + 1].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 2].position = GLKVector3Make(originX, originY + originYOffset + (index + 1) * rowHeight, 0);
+        vertices[(i + 1) * 4 + 2].index = index;
+        vertices[(i + 1) * 4 + 2].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+        
+        vertices[(i + 1) * 4 + 3].position = GLKVector3Make(originX + self.targetView.frame.size.width, originY + originYOffset + (index + 1) * rowHeight, 0);
+        vertices[(i + 1) * 4 + 3].index = index;
+        vertices[(i + 1) * 4 + 3].columnStartPosition = vertices[(i + 1) * 4 + 0].position;
+    }
 }
 
 - (void) prepareToDraw

@@ -126,6 +126,7 @@
             break;
             case DHObjectAnimationTypeFold: {
                 settings.columnCount = 3;
+                settings.rowCount = 3;
             }
             break;
             default:

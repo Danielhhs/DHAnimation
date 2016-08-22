@@ -68,6 +68,54 @@ vec4 updatedPositionForLeftToRight()
     return position;
 }
 
+vec4 updatedPositionForTopToBottom() {
+    vec4 position = a_position;
+    float rotation = u_percent * M_PI / 2.f;
+    int indexInFold = int(a_index) % 2;
+    if (indexInFold == 0) {
+        if (a_columnStartPosition.y == position.y) {
+            position.y = u_origin.y + u_headerHeight + a_index * u_columnWidth * cos(rotation);
+        } else {
+            position.y = u_origin.y + u_headerHeight + (a_index + 1.f) * u_columnWidth * cos(rotation);
+            position.z = -u_columnWidth * sin(rotation);
+        }
+        v_normal = vec3(0.f, sin(rotation), cos(rotation));
+    } else {
+        if (a_columnStartPosition.y == position.y) {
+            position.y = u_origin.y + u_headerHeight + a_index * u_columnWidth * cos(rotation);
+            position.z = -u_columnWidth * sin(rotation);
+        } else {
+            position.y = u_origin.y + u_headerHeight + (a_index + 1.f) * u_columnWidth * cos(rotation);
+        }
+        v_normal = vec3(0.f, -sin(rotation), cos(rotation));
+    }
+    return position;
+}
+
+vec4 updatedPositionForBottomToTop() {
+    vec4 position = a_position;
+    float rotation = u_percent * M_PI / 2.f;
+    int indexInFold = int(a_index) % 2;
+    if (indexInFold == 0) {
+        if (a_columnStartPosition.y == position.y) {
+            position.y = u_origin.y - u_headerHeight - a_index * u_columnWidth * cos(rotation);
+        } else {
+            position.y = u_origin.y - u_headerHeight - (a_index + 1.f) * u_columnWidth * cos(rotation);
+            position.z = -u_columnWidth * sin(rotation);
+        }
+        v_normal = vec3(0.f, -sin(rotation), cos(rotation));
+    } else {
+        if (a_columnStartPosition.y == position.y) {
+            position.y = u_origin.y - u_headerHeight - a_index * u_columnWidth * cos(rotation);
+            position.z = -u_columnWidth * sin(rotation);
+        } else {
+            position.y = u_origin.y - u_headerHeight - (a_index + 1.f) * u_columnWidth * cos(rotation);
+        }
+        v_normal = vec3(0.f, sin(rotation), cos(rotation));
+    }
+    return position;
+}
+
 vec4 updatedPosition() {
     if (a_index < 0.f) {
         v_normal = vec3(0.f, 0.f, 1.f);
@@ -75,8 +123,12 @@ vec4 updatedPosition() {
     }
     if (u_direction == 0.f) {
         return updatedPositionForLeftToRight();
-    } else {
+    } else if (u_direction == 1.f) {
         return updatedPositionForRightToLeft();
+    } else if (u_direction == 2.f) {
+        return updatedPositionForTopToBottom();
+    } else {
+        return updatedPositionForBottomToTop();
     }
 }
 

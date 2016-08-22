@@ -38,7 +38,7 @@
 
 - (void) setupMeshes
 {
-    DHFoldSceneMesh *mesh = [[DHFoldSceneMesh alloc] initWithView:self.targetView containerView:self.containerView headerHeight:self.headerLength animationDirection:self.direction columnCount:3 rowCount:0 columnMajored:YES];
+    DHFoldSceneMesh *mesh = [[DHFoldSceneMesh alloc] initWithView:self.targetView containerView:self.containerView headerHeight:self.headerLength animationDirection:self.direction columnCount:3 rowCount:3 columnMajored:YES];
     self.mesh = mesh;
     [self.mesh generateMeshData];
 }
@@ -49,7 +49,7 @@
     if (self.event == DHAnimationEventBuiltIn) {
         glUniform1f(percentLoc, 1 - self.percent);
     }
-    glUniform1f(columnWidthLoc, (self.targetView.frame.size.width - self.headerLength) / self.columnCount);
+    glUniform1f(columnWidthLoc, [self columnWidth]);
     glUniform1f(headerHeightLoc, self.headerLength);
     glUniform2f(originLoc, [self originPosition].x, [self originPosition].y);
     glActiveTexture(GL_TEXTURE0);
@@ -65,9 +65,18 @@
     } else if (self.direction == DHAnimationDirectionRightToLeft) {
         return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
     } else if (self.direction == DHAnimationDirectionTopToBottom) {
-        return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - self.targetView.frame.origin.y);
-    } else {
         return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - CGRectGetMaxY(self.targetView.frame));
+    } else {
+        return GLKVector2Make(self.targetView.frame.origin.x, self.containerView.bounds.size.height - self.targetView.frame.origin.y);
+    }
+}
+
+- (GLfloat) columnWidth
+{
+    if (self.direction == DHAnimationDirectionLeftToRight || self.direction == DHAnimationDirectionRightToLeft) {
+        return (self.targetView.frame.size.width - self.headerLength) / self.columnCount;
+    } else {
+        return (self.targetView.frame.size.height - self.headerLength) / self.rowCount;
     }
 }
 @end
