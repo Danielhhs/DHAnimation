@@ -78,7 +78,7 @@ typedef struct {
         attribute.position = GLKVector3Make(vertex.position.x, vertex.position.y, 0);
         attribute.offset = GLKVector2Make(self.offset.width, self.offset.height);
         attribute.color = self.colorComponents;
-        attribute.startTime = self.duration * 0.9 / numberOfPoints;
+        attribute.startTime = self.duration * 0.9 * i / numberOfPoints;
         [self.verticesData appendBytes:&attribute length:sizeof(DHTextTraceTraceAttributes)];
     }
     self.vertexData = self.verticesData;
@@ -90,7 +90,7 @@ void constructPath(void *info, const CGPathElement *element) {
     DHTextTraceUserInfo *userInfo = (__bridge DHTextTraceUserInfo *)info;
     NSMutableData *data = userInfo.data;
     GLKVector2 offset = GLKVector2Make(userInfo.offset.width, userInfo.offset.height);
-    CGPoint pathStartPoint;
+    CGPoint pathStartPoint, currentPoint;
     switch (element->type) {
         case kCGPathElementMoveToPoint: {
             DHTextTracePositionInfo attributes;
@@ -99,12 +99,14 @@ void constructPath(void *info, const CGPathElement *element) {
             attributes.elementType = kCGPathElementMoveToPoint;
             [data appendBytes:&attributes length:sizeof(DHTextTracePositionInfo)];
             pathStartPoint = CGPointMake(element->points->x, element->points->y);
+            currentPoint = CGPointMake(element->points->x, element->points->y);
         }
             break;
         case kCGPathElementAddLineToPoint:{
             DHTextTracePositionInfo *points = (DHTextTracePositionInfo *)[data bytes];
             DHTextTracePositionInfo lastPoint = points[[data length] / sizeof(DHTextTracePositionInfo) - 1];
             addLineToPoint(lastPoint.position.x, lastPoint.position.y, element->points->x, element->points->y, data, offset);
+            currentPoint = CGPointMake(element->points->x, element->points->y);
         }
             break;
         case kCGPathElementAddCurveToPoint: {
@@ -114,6 +116,7 @@ void constructPath(void *info, const CGPathElement *element) {
             CGPoint cp2 = element->points[1];
             CGPoint target = element->points[2];
             cubicBezierCurve(lastPoint.position.x, lastPoint.position.y, cp1.x, cp1.y, cp2.x, cp2.y, target.x, target.y, data, offset);
+            currentPoint = CGPointMake(element->points[2].x, element->points[2].y);
         }
             break;
         case kCGPathElementAddQuadCurveToPoint: {
@@ -122,10 +125,11 @@ void constructPath(void *info, const CGPathElement *element) {
             CGPoint cp1 = element->points[0];
             CGPoint target = element->points[1];
             quadraticBezierCurve(lastPoint.position.x, lastPoint.position.y, cp1.x, cp1.y, target.x, target.y, data, offset);
+            currentPoint = CGPointMake(element->points[1].x, element->points[1].y);
         }
             break;
         case kCGPathElementCloseSubpath: {
-            addLineToPoint(element->points->x, element->points->y, pathStartPoint.x, pathStartPoint.y, data, offset);
+            addLineToPoint(currentPoint.x, currentPoint.y, pathStartPoint.x, pathStartPoint.y, data, offset);
         }
             break;
         default:

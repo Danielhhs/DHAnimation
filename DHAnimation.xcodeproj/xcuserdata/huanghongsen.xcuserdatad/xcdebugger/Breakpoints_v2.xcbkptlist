@@ -521,22 +521,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/Text Effects/Trace/DHTextTraceTraceMesh.m"
-            timestampString = "493367140.980215"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-generateMeshesData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Fold/DHFoldAnimationRenderer.m"
             timestampString = "493377925.53884"
             startingColumnNumber = "9223372036854775807"
@@ -560,6 +544,22 @@
             startingLineNumber = "198"
             endingLineNumber = "198"
             landmarkName = "-generateVerticesForVertical"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DHAnimation/Animations/Text Effects/Trace/DHTextTraceAnimationRenderer.m"
+            timestampString = "493803866.312754"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

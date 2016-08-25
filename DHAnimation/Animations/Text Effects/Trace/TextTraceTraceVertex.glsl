@@ -16,6 +16,10 @@ void main() {
     position.xy += u_offset;
     position.xy += a_offset;
     gl_Position = u_mvpMatrix * position;
-    gl_PointSize = 3.f;
+    if (u_time < a_startTime) {
+        gl_PointSize = 0.f;
+    } else {
+        gl_PointSize = 2.f;
+    }
     v_color = a_color;
 }
