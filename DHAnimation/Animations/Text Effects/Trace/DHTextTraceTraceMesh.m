@@ -147,14 +147,14 @@ void addLineToPoint(CGFloat startX, CGFloat startY, CGFloat targetX, CGFloat tar
     GLKVector2 direction = GLKVector2Normalize(line);
     for (int i = 0; i <= GLKVector2Length(line) * 2; i++) {
         DHTextTracePositionInfo attributes;
-        attributes.position.x = start.x + direction.x * i / 2;
-        attributes.position.y = start.y + direction.y * i / 2;
+        attributes.position.x = start.x + direction.x * i / 2.f;
+        attributes.position.y = start.y + direction.y * i / 2.f;
         attributes.elementType = kCGPathElementAddLineToPoint;
         [data appendBytes:&attributes length:sizeof(DHTextTracePositionInfo)];
         
         DHTextTracePositionInfo attributes2;
-        attributes2.position.x = start.x + direction.x * (i / 2 + 1);
-        attributes2.position.y = start.y + direction.y * (i / 2 + 1);
+        attributes2.position.x = start.x + direction.x * (i + 1) / 2.f;
+        attributes2.position.y = start.y + direction.y * (i + 1) / 2.f;
         attributes2.elementType = kCGPathElementAddLineToPoint;
         [data appendBytes:&attributes2 length:sizeof(DHTextTracePositionInfo)];
     }

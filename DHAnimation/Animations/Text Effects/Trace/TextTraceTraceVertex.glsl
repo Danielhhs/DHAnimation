@@ -20,7 +20,7 @@ void main() {
     if (u_time < a_startTime || u_time > a_disappearTime) {
         gl_PointSize = 0.f;
     } else {
-        gl_PointSize = 2.5;
+        gl_PointSize = 2.f;
     }
     v_color = a_color;
 }
