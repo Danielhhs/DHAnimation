@@ -76,12 +76,27 @@
 }
 
 - (void) drawFrame {
-    [super drawFrame];
+    
+    [EAGLContext setCurrentContext:self.context];
+    glEnable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    [self prepareDrawingContext];
+    
+    glUseProgram(program);
+    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
+    glUniform1f(percentLoc, self.percent);
+    glUniform1f(eventLoc, self.event);
+    glUniform1f(timeLoc, self.elapsedTime);
     glUniform1f(durationLoc, self.duration);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUniform1i(samplerLoc, 0);
     [self.mesh drawEntireMesh];
+    
     glUseProgram(traceProgram);
     glUniformMatrix4fv(traceMvpLoc, 1, GL_FALSE, self.mvpMatrix.m);
     CGFloat height = (self.textContainerView == nil) ? self.attributedString.size.height : self.textContainerView.frame.size.height;

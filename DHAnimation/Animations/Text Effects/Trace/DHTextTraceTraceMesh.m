@@ -14,6 +14,7 @@ typedef struct {
     GLKVector4 color;
     GLKVector2 offset;
     GLfloat startTime;
+    GLfloat disappearTime;
 }DHTextTraceTraceAttributes;
 
 typedef struct {
@@ -78,7 +79,8 @@ typedef struct {
         attribute.position = GLKVector3Make(vertex.position.x, vertex.position.y, 0);
         attribute.offset = GLKVector2Make(self.offset.width, self.offset.height);
         attribute.color = self.colorComponents;
-        attribute.startTime = self.duration * 0.9 * i / numberOfPoints;
+        attribute.startTime = self.duration / 2 * i / numberOfPoints;
+        attribute.disappearTime = self.duration / 2 + self.duration / 2 * i / numberOfPoints;
         [self.verticesData appendBytes:&attribute length:sizeof(DHTextTraceTraceAttributes)];
     }
     self.vertexData = self.verticesData;
@@ -202,6 +204,9 @@ void quadraticBezierCurve(CGFloat originX, CGFloat originY, CGFloat cp1x, CGFloa
     
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(DHTextTraceTraceAttributes), NULL + offsetof(DHTextTraceTraceAttributes, startTime));
+    
+    glEnableVertexAttribArray(4);
+    glVertexAttribPointer(4, 1, GL_FLOAT, GL_FALSE, sizeof(DHTextTraceTraceAttributes), NULL + offsetof(DHTextTraceTraceAttributes, disappearTime));
     
     glBindVertexArray(0);
 }

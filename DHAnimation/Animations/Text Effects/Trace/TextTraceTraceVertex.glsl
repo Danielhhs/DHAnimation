@@ -8,6 +8,7 @@ layout(location = 0) in vec4 a_position;
 layout(location = 1) in vec4 a_color;
 layout(location = 2) in vec2 a_offset;
 layout(location = 3) in float a_startTime;
+layout(location = 4) in float a_disappearTime;
 
 out vec4 v_color;
 
@@ -16,10 +17,10 @@ void main() {
     position.xy += u_offset;
     position.xy += a_offset;
     gl_Position = u_mvpMatrix * position;
-    if (u_time < a_startTime) {
+    if (u_time < a_startTime || u_time > a_disappearTime) {
         gl_PointSize = 0.f;
     } else {
-        gl_PointSize = 2.f;
+        gl_PointSize = 2.5;
     }
     v_color = a_color;
 }
