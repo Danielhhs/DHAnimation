@@ -33,6 +33,7 @@
 #import "DHBlowAnimationRenderer.h"
 #import "DHShredderAnimationRenderer.h"
 #import "DHFoldAnimationRenderer.h"
+#import "DHCrumbleAnimationRenderer.h"
 
 #import "DHDoorWayTransitionRenderer.h"
 #import "DHCubeTransitionRenderer.h"
@@ -96,7 +97,7 @@ static NSArray *textAnimationArray;
 + (NSArray *) allAnimations
 {
     if (allAnimationsArray == nil) {
-        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse", @"Blow", @"Shredder", @"Fold"];
+        allAnimationsArray = @[@"Shimmer", @"Sparkle", @"Rotation", @"Confetti", @"Blinds", @"Firework", @"Blur", @"Drop", @"Pivot", @"Pop", @"Scale", @"Scale Big", @"Spin", @"Twirl", @"Dissolve", @"Skid", @"Flame", @"Anvil", @"Face Explosion", @"Compress", @"Point Explosion", @"Wipe", @"Diffuse", @"Blow", @"Shredder", @"Fold", @"Crumble"];
     }
     return allAnimationsArray;
 }
@@ -163,6 +164,8 @@ static NSArray *textAnimationArray;
         return [[DHShredderAnimationRenderer alloc] init];
     } else if ([animationName isEqualToString:@"Fold"]) {
         return [[DHFoldAnimationRenderer alloc] init];
+    } else if ([animationName isEqualToString:@"Crumble"]) {
+        return [[DHCrumbleAnimationRenderer alloc] init];
     }
     return nil;
 }
@@ -268,6 +271,8 @@ static NSArray *textAnimationArray;
             return @"Shredder";
         case DHObjectAnimationTypeFold:
             return @"Fold";
+        case DHObjectAnimationTypeCrumble:
+            return @"Crumble";
     }
     return @"None";
 }

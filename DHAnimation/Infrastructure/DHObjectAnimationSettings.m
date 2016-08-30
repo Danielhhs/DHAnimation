@@ -97,7 +97,8 @@
             case DHObjectAnimationTypeBlur:
             case DHObjectAnimationTypeDissolve:
             case DHObjectAnimationTypeSkid:
-            case DHOBjectAnimationTypeWipe: {
+            case DHOBjectAnimationTypeWipe:
+            case DHObjectAnimationTypeCrumble: {
             }
                 break;
             case DHObjectAnimationTypeFlame: {
