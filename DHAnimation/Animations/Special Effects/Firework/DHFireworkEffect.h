@@ -8,8 +8,18 @@
 
 #import "DHParticleEffect.h"
 
+typedef NS_ENUM(NSInteger, DHFireworkEffectType) {
+    DHFireworkEffectTypeExplodeAndFade,
+    DHFireworkEffectTypeFastExplosion,
+    DHFireworkEffectTypeDoubleExplosion,
+};
+
 @interface DHFireworkEffect : DHParticleEffect
 
-- (void) addExplosionAtPosition:(GLKVector3)explosionPosition explosionTime:(NSTimeInterval)explosionTime duration:(NSTimeInterval)duration color:(UIColor *)color;
+@property (nonatomic) DHFireworkEffectType fireworkType;
+@property (nonatomic) NSInteger explosionCount;
+@property (nonatomic) NSInteger tailParticleCount;
+
+- (void) addExplosionAtPosition:(GLKVector3)explosionPosition explosionTime:(NSTimeInterval)explosionTime duration:(NSTimeInterval)duration color:(UIColor *)color baseVelocity:(GLfloat)baseVelocity;
 
 @end

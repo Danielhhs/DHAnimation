@@ -39,7 +39,7 @@
             GLKVector3 emissionPosition = [self randomEmissionPosition];
             CGFloat duration = [self randomDuration];
             CGFloat emissionTime = [self randomBetweenZeroToOne] + startTime;
-            [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor]];
+            [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor] baseVelocity:200];
         }
     }
     [self.effect prepareToDraw];
