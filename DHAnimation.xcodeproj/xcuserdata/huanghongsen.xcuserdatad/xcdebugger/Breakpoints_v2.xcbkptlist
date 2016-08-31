@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Special Effects/Firework/DHFireworkEffect.m"
-            timestampString = "494243726.131876"
+            timestampString = "494326565.807879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-prepareToDraw"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,24 +57,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/Special Effects/Firework/DHFireworkEffect.m"
-            timestampString = "494241665.30875"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "-appendExplosionDataWithBaseVelocity:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Firework/DHFireworkAnimationRenderer.m"
-            timestampString = "487577669.566255"
+            timestampString = "494251210.445454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -86,31 +70,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DHAnimation/Animations/Special Effects/Firework/DHFireworkEffect.m"
-            timestampString = "494241665.30875"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-addExplosionAtPosition:explosionTime:duration:color:baseVelocity:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/ObjectAnimations/Firework/DHFireworkAnimationRenderer.m"
-            timestampString = "487569207.708261"
+            timestampString = "494321226.059026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-drawFrame"
             landmarkType = "5">
          </BreakpointContent>
@@ -538,12 +506,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DHAnimation/Animations/Special Effects/Firework/DHFireworkEffect.m"
-            timestampString = "494241665.30875"
+            timestampString = "494326590.048142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-tailDirectionAtIndex:"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-appendExplosionDataWithBaseVelocity:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -226,6 +226,9 @@
 		545577CC1D73DDBC00D6DAC1 /* DHPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 545577CA1D73DDBC00D6DAC1 /* DHPolygon.m */; };
 		545577CF1D7405F300D6DAC1 /* DHCrumbleMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 545577CE1D7405F300D6DAC1 /* DHCrumbleMesh.m */; };
 		545577D01D7405F300D6DAC1 /* DHCrumbleMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 545577CE1D7405F300D6DAC1 /* DHCrumbleMesh.m */; };
+		545577D31D76DFED00D6DAC1 /* DHFireworkSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 545577D21D76DFED00D6DAC1 /* DHFireworkSettings.m */; };
+		545577D51D76DFF000D6DAC1 /* DHFireworkSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 545577D21D76DFED00D6DAC1 /* DHFireworkSettings.m */; };
+		545577D61D76DFF500D6DAC1 /* DHFireworkSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 545577D11D76DFED00D6DAC1 /* DHFireworkSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5455FC8D1D0D165C00B6B022 /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = 5455FC8C1D0D165C00B6B022 /* firework.png */; };
 		5455FC8E1D0D165C00B6B022 /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = 5455FC8C1D0D165C00B6B022 /* firework.png */; };
 		545617091CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545617081CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m */; };
@@ -962,6 +965,8 @@
 		545577CA1D73DDBC00D6DAC1 /* DHPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHPolygon.m; sourceTree = "<group>"; };
 		545577CD1D7405F300D6DAC1 /* DHCrumbleMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHCrumbleMesh.h; sourceTree = "<group>"; };
 		545577CE1D7405F300D6DAC1 /* DHCrumbleMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHCrumbleMesh.m; sourceTree = "<group>"; };
+		545577D11D76DFED00D6DAC1 /* DHFireworkSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHFireworkSettings.h; sourceTree = "<group>"; };
+		545577D21D76DFED00D6DAC1 /* DHFireworkSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHFireworkSettings.m; sourceTree = "<group>"; };
 		5455FC8C1D0D165C00B6B022 /* firework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firework.png; sourceTree = "<group>"; };
 		545617071CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBuiltInAnimationTypeChooseTableViewController.h; sourceTree = "<group>"; };
 		545617081CA7AAE6002D5C04 /* DHBuiltInAnimationTypeChooseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBuiltInAnimationTypeChooseTableViewController.m; sourceTree = "<group>"; };
@@ -2292,6 +2297,8 @@
 				5455FC8C1D0D165C00B6B022 /* firework.png */,
 				54DEB7081D08103500812DFA /* DHFireworkEffect.h */,
 				54DEB7091D08103500812DFA /* DHFireworkEffect.m */,
+				545577D11D76DFED00D6DAC1 /* DHFireworkSettings.h */,
+				545577D21D76DFED00D6DAC1 /* DHFireworkSettings.m */,
 				54DEB70D1D08109800812DFA /* ExplodeAndFadeFireworkVertex.glsl */,
 				54DEB7101D0810A300812DFA /* ExplodeAndFadeFireworkFragment.glsl */,
 			);
@@ -2542,6 +2549,7 @@
 				54DEB70A1D08103500812DFA /* DHFireworkEffect.h in Headers */,
 				5490CD6B1CD34EF900C93002 /* DHRotationAnimationRenderer.h in Headers */,
 				5490CD6C1CD34EF900C93002 /* DHShimmerBackgroundMesh.h in Headers */,
+				545577D61D76DFF500D6DAC1 /* DHFireworkSettings.h in Headers */,
 				546F51C51CE2DF3500DA3B0C /* DHConsecutiveTextureSceneMesh.h in Headers */,
 				5490CD6D1CD34EF900C93002 /* DHShimmerAnimationRenderer.h in Headers */,
 				5490CD6E1CD34EF900C93002 /* DHSparkleAnimationRenderer.h in Headers */,
@@ -3358,6 +3366,7 @@
 				546F51C91CE2DF3F00DA3B0C /* DHSplitTextureSceneMesh.m in Sources */,
 				5490CDBF1CD34F2600C93002 /* DHFlopTransitionRenderer.m in Sources */,
 				5492E9341D50423000BC016E /* DHShredderMesh.m in Sources */,
+				545577D51D76DFF000D6DAC1 /* DHFireworkSettings.m in Sources */,
 				54EE3FC41D12368E0090A491 /* DHPointExplosionEffect.m in Sources */,
 				5490CDC01CD34F2600C93002 /* DHGridTransitionRenderer.m in Sources */,
 				5490CDC11CD34F2600C93002 /* DHMosaicBackMesh.m in Sources */,
@@ -3523,6 +3532,7 @@
 				549FBC731CC773B8000E1ABF /* DHBlurAnimationRenderer.m in Sources */,
 				547876381CA50E2700012F76 /* DHTransitionRenderer.m in Sources */,
 				5420C05A1CB8B0E6001C789C /* DHSparkleAnimationRenderer.m in Sources */,
+				545577D31D76DFED00D6DAC1 /* DHFireworkSettings.m in Sources */,
 				5492E9B91D5821C500BC016E /* DHTextFadeAnimationRenderer.m in Sources */,
 				5492EAA51D618CF100BC016E /* DHTextTraceTraceMesh.m in Sources */,
 				549CCF4F1D179E80007517D0 /* DHTextAnimationPresentationViewController.m in Sources */,

@@ -39,7 +39,9 @@
             GLKVector3 emissionPosition = [self randomEmissionPosition];
             CGFloat duration = [self randomDuration];
             CGFloat emissionTime = [self randomBetweenZeroToOne] + startTime;
-            [self.effect addExplosionAtPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor] baseVelocity:200];
+            DHFireworkEffectType type = arc4random() % 3;
+            [self.effect addFireworkOfType:DHFireworkEffectTypeExplodeAndFade atPosition:emissionPosition explosionTime:emissionTime duration:duration color:[self randomColor] baseVelocity:200 explosionCount:20 tailParticleCount:100];
+            [self.effect prepareToDraw];
         }
     }
     [self.effect prepareToDraw];
