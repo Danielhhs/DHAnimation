@@ -98,7 +98,7 @@ typedef struct {
                 GLfloat angle = j * M_PI * 2 / 10;
                 GLKVector3 secondExplosionDirection = GLKVector3Make(cos(angle), sin(angle), 0);
                 GLfloat explosionVelocity = [self randomNumberAroundNumber:100 range:0.2];
-                GLfloat explosionTime = self.settings.explosionTime + [self randomNumberAroundNumber:self.settings.duration range:0.1];
+                GLfloat explosionTime = self.settings.explosionTime + [self randomNumberAroundNumber:self.settings.duration range:0.3];
                 GLfloat duration = [self randomNumberAroundNumber:self.settings.duration * 0.8 range:0.2];
                 [self generateTailForDirection:secondExplosionDirection velocity:explosionVelocity emissionTime:explosionTime emissionPosition:position emissionDuration:duration particleCount:50];
             }
