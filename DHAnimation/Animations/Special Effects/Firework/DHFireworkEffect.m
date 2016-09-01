@@ -24,10 +24,7 @@ typedef struct {
     GLuint timeLoc;
     CGFloat red, green, blue, alpha;
 }
-@property (nonatomic) GLKVector3 emissionPosition;
-@property (nonatomic) GLfloat emissionTime;
-@property (nonatomic, strong) UIColor *color;
-@property (nonatomic) GLfloat baseVelocity;
+@property (nonatomic) DHFireworkSettings *settings;
 @property (nonatomic, strong) NSMutableArray *velocityArray;
 @end
 
@@ -38,7 +35,6 @@ typedef struct {
 {
     self = [super initWithContext:context];
     if (self) {
-        self.fireworkType = DHFireworkEffectTypeExplodeAndFade;
         self.velocityArray = [NSMutableArray array];
         [self generateParticlesData];
     }
@@ -52,22 +48,12 @@ typedef struct {
 
 - (NSString *) vertexShaderFileName
 {
-    switch (self.fireworkType) {
-        case DHFireworkEffectTypeExplodeAndFade:
-        case DHFireworkEffectTypeFastExplosion:
-        case DHFireworkEffectTypeDoubleExplosion:
-            return @"ExplodeAndFadeFireworkVertex.glsl";
-    }
+    return @"ExplodeAndFadeFireworkVertex.glsl";
 }
 
 - (NSString *) fragmentShaderFileName
 {
-    switch (self.fireworkType) {
-        case DHFireworkEffectTypeExplodeAndFade:
-        case DHFireworkEffectTypeFastExplosion:
-        case DHFireworkEffectTypeDoubleExplosion:
-            return @"ExplodeAndFadeFireworkFragment.glsl";
-    }
+    return @"ExplodeAndFadeFireworkFragment.glsl";
 }
 
 - (NSString *) particleImageName
@@ -81,54 +67,39 @@ typedef struct {
 }
 
 #pragma mark - Append Particle Data
-- (void) addFireworkOfType:(DHFireworkEffectType)type
-                atPosition:(GLKVector3)explosionPosition
-             explosionTime:(NSTimeInterval)explosionTime
-                  duration:(NSTimeInterval)duration
-                     color:(UIColor *)color
-              baseVelocity:(GLfloat)baseVelocity
-            explosionCount:(NSInteger)explosionCount
-         tailParticleCount:(NSInteger)tailParticleCount
+- (void) addFireworkWithSettings:(DHFireworkSettings *)settings
 {
-    _emissionPosition = explosionPosition;
-    _emissionTime = explosionTime;
-    self.fireworkType = type;
-    self.duration = duration;
-    self.color = color;
-    self.baseVelocity = baseVelocity;
-    self.explosionCount = explosionCount;
-    self.tailParticleCount = tailParticleCount;
-    if (type == DHFireworkEffectTypeDoubleExplosion) {
-        self.duration = duration * 0.5;
+    self.settings = settings;
+    if (self.settings.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
+        self.settings.duration *= 0.5;
     }
-    [color getRed:&red green:&green blue:&blue alpha:&alpha];
-    [self appendExplosionDataWithBaseVelocity:baseVelocity];
+    [self.settings.color getRed:&red green:&green blue:&blue alpha:&alpha];
+    [self appendExplosionDataWithBaseVelocity:self.settings.baseVelocity];
 }
 
 - (void) appendExplosionDataWithBaseVelocity:(GLfloat)baseVelocity
 {
-    for (int i = 0; i < self.explosionCount; i++) {
+    for (int i = 0; i < self.settings.explosionCount; i++) {
         GLKVector3 direction = [self tailDirectionAtIndex:i];
         GLfloat velocity = [self velocityForBaseVelocity:baseVelocity];
         
-        if (self.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
+        if (self.settings.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
             [self.velocityArray addObject:@(velocity)];
         }
-        GLfloat emissionTime = self.emissionTime;
-        [self generateTailForDirection:direction velocity:velocity emissionTime:emissionTime emissionPosition:self.emissionPosition emissionDuration:self.duration particleCount:self.tailParticleCount];
+        [self generateTailForDirection:direction velocity:velocity emissionTime:self.settings.explosionTime emissionPosition:self.settings.explosionPosition emissionDuration:self.settings.duration particleCount:self.settings.tailParticleCount];
     }
-    if (self.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
-        for (int i = 0; i < self.explosionCount; i++) {
+    if (self.settings.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
+        for (int i = 0; i < self.settings.explosionCount; i++) {
             GLKVector3 direction = [self tailDirectionAtIndex:i];
             GLfloat velocity = [self.velocityArray[i] floatValue];
-            GLKVector3 offset = [self offsetForParticleForDirection:direction velocity:velocity appearTime:self.duration duration:self.duration ];
-            GLKVector3 position = GLKVector3Add(self.emissionPosition, offset);
+            GLKVector3 offset = [self offsetForParticleForDirection:direction velocity:velocity appearTime:self.settings.duration duration:self.settings.duration ];
+            GLKVector3 position = GLKVector3Add(self.settings.explosionPosition, offset);
             for (int j = 0; j < 10; j++) {
                 GLfloat angle = j * M_PI * 2 / 10;
                 GLKVector3 secondExplosionDirection = GLKVector3Make(cos(angle), sin(angle), 0);
                 GLfloat explosionVelocity = [self randomNumberAroundNumber:100 range:0.2];
-                GLfloat explosionTime = self.emissionTime + [self randomNumberAroundNumber:self.duration range:0.1];
-                GLfloat duration = [self randomNumberAroundNumber:self.duration * 0.8 range:0.2];
+                GLfloat explosionTime = self.settings.explosionTime + [self randomNumberAroundNumber:self.settings.duration range:0.1];
+                GLfloat duration = [self randomNumberAroundNumber:self.settings.duration * 0.8 range:0.2];
                 [self generateTailForDirection:secondExplosionDirection velocity:explosionVelocity emissionTime:explosionTime emissionPosition:position emissionDuration:duration particleCount:50];
             }
         }
@@ -137,23 +108,22 @@ typedef struct {
 
 - (GLKVector3) tailDirectionAtIndex:(NSInteger)index;
 {
-    CGFloat angle = index * M_PI * 2 / self.explosionCount;
-    if (self.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
+    CGFloat angle = index * M_PI * 2 / self.settings.explosionCount;
+    if (self.settings.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
         angle = [self randomBetweenZeroToOne] * M_PI * 2;
     }
-    CGFloat radius = [self randomBetweenZeroToOne] * 150;
-    switch (self.fireworkType) {
+    switch (self.settings.fireworkType) {
         case DHFireworkEffectTypeFastExplosion:
         case DHFireworkEffectTypeDoubleExplosion:
-            return GLKVector3Normalize(GLKVector3Make(cos(angle) * radius, sin(angle) * radius, 0));
+            return GLKVector3Normalize(GLKVector3Make(cos(angle), sin(angle), 0));
         case DHFireworkEffectTypeExplodeAndFade:
-            return GLKVector3Normalize(GLKVector3Make(cos(angle) * radius, sin(angle) * radius, [self randomBetweenZeroToOne] * 2 * radius));
+            return GLKVector3Normalize(GLKVector3Make(cos(angle), sin(angle), [self randomBetweenZeroToOne]));
     }
 }
 
 - (GLfloat) velocityForBaseVelocity:(GLfloat)baseVelocity
 {
-    switch (self.fireworkType) {
+    switch (self.settings.fireworkType) {
         case DHFireworkEffectTypeExplodeAndFade:
             return [self randomBetweenZeroToOne] * baseVelocity / 2 + baseVelocity / 2;
         case DHFireworkEffectTypeDoubleExplosion:
@@ -191,16 +161,16 @@ typedef struct {
     float t = NSBKeyframeAnimationFunctionEaseOutQuad(appearTime * 1000.f, 0.f, duration, duration * 1000.f);
     GLKVector3 offset;
     float tsquare = 0.5 * t * t;
-    if (self.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
+    if (self.settings.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
         GLKVector3 velocityVector = GLKVector3MultiplyScalar(direction, velocity);
         float ax = -velocityVector.x / duration;
         float g = ((direction.y + 1.f) / 2.f * GRAVITY) * 0.5 + GRAVITY * 0.5;
         offset = GLKVector3Add(GLKVector3MultiplyScalar(velocityVector, t), GLKVector3MultiplyScalar(GLKVector3Make(ax, -g, 0.f), tsquare));
-    } else if (self.fireworkType == DHFireworkEffectTypeFastExplosion) {
+    } else if (self.settings.fireworkType == DHFireworkEffectTypeFastExplosion) {
         float a = -velocity / duration;
         float distance = velocity * t + a * tsquare;
         offset = GLKVector3MultiplyScalar(direction, distance);
-    } else if (self.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
+    } else if (self.settings.fireworkType == DHFireworkEffectTypeDoubleExplosion) {
         float a = -velocity / duration;
         float distance = velocity * t + a * tsquare;
         offset = GLKVector3MultiplyScalar(direction, distance);
