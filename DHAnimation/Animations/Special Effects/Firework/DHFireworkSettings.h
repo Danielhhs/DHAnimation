@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, DHFireworkEffectType) {
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic) GLfloat baseVelocity;
+@property (nonatomic) GLfloat gravity;
 
 + (DHFireworkSettings *)randomFireworkInView:(UIView *)view duration:(NSTimeInterval)duration startTime:(NSTimeInterval)startTime;
 @end

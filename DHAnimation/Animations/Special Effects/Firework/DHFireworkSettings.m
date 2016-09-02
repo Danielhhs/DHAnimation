@@ -12,6 +12,7 @@
 #define EXPLOSION_TIME_RATIO 0.382
 #define MAX_EXPLOSION_RATIO 0.382
 #define MIN_EXPLOSION_RATIO 0.2
+#define GRAVITY 150
 
 @implementation DHFireworkSettings
 
@@ -40,7 +41,8 @@
     settings.explosionTime = [self randomExplosionTimeWithStartTime:startTime];
     settings.duration = [DHFireworkSettings randomDurationWithAnimationDuration:duration startTime:settings.explosionTime];
     settings.color = [DHFireworkSettings randomColor];
-    settings.baseVelocity = [DHFireworkSettings randomVelocity];
+    settings.baseVelocity = [DHFireworkSettings randomVelocityForType:settings.fireworkType];
+    settings.gravity = GRAVITY;
     return settings;
 }
 
@@ -55,7 +57,7 @@
 + (GLfloat) randomDurationWithAnimationDuration:(NSTimeInterval)animationDuration startTime:(NSTimeInterval)startTime
 {
     NSTimeInterval maxTime = animationDuration - startTime;
-    return maxTime * 0.5 * (1 + [DHFireworkSettings randomBetweenZeroToOne]);
+    return maxTime * 0.3 + [DHFireworkSettings randomBetweenZeroToOne] * maxTime * 0.6;
 }
 
 + (NSTimeInterval) randomExplosionTimeWithStartTime:(NSTimeInterval)startTime
@@ -80,8 +82,11 @@
     return arc4random() % 255 / 255.f;
 }
 
-+ (GLfloat) randomVelocity
++ (GLfloat) randomVelocityForType:(DHFireworkEffectType)type
 {
-    return arc4random() % 150 + 150;
+    if(type == DHFireworkEffectTypeDoubleExplosion) {
+        return arc4random() % 250 + 250;
+    }
+    return arc4random() % 100 + 200;
 }
 @end

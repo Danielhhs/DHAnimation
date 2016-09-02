@@ -10,7 +10,6 @@
 #import <OpenGLES/ES3/glext.h>
 #import "NSBKeyframeAnimationFunctions.h"
 #import "DHConstants.h"
-#define GRAVITY 100
 
 typedef struct {
     GLKVector3 position;
@@ -164,7 +163,7 @@ typedef struct {
     if (self.settings.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
         GLKVector3 velocityVector = GLKVector3MultiplyScalar(direction, velocity);
         float ax = -velocityVector.x / duration;
-        float g = ((direction.y + 1.f) / 2.f * GRAVITY) * 0.5 + GRAVITY * 0.5;
+        float g = ((direction.y + 1.f) / 2.f * self.settings.gravity) * 0.5 + self.settings.gravity * 0.5;
         offset = GLKVector3Add(GLKVector3MultiplyScalar(velocityVector, t), GLKVector3MultiplyScalar(GLKVector3Make(ax, -g, 0.f), tsquare));
     } else if (self.settings.fireworkType == DHFireworkEffectTypeFastExplosion) {
         float a = -velocity / duration;
