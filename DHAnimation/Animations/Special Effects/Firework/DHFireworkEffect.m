@@ -78,7 +78,11 @@ typedef struct {
 
 - (void) appendExplosionDataWithBaseVelocity:(GLfloat)baseVelocity
 {
-    for (int i = 0; i < self.settings.explosionCount; i++) {
+    NSInteger explosionCount = self.settings.explosionCount;
+    if (self.settings.fireworkType == DHFireworkEffectTypeFastExplosion) {
+        explosionCount = pow(explosionCount, 3);
+    }
+    for (int i = 0; i < explosionCount; i++) {
         GLKVector3 direction = [self tailDirectionAtIndex:i];
         GLfloat velocity = [self velocityForBaseVelocity:baseVelocity];
         
@@ -105,14 +109,19 @@ typedef struct {
     }
 }
 
-- (GLKVector3) tailDirectionAtIndex:(NSInteger)index;
+- (GLKVector3) tailDirectionAtIndex:(NSInteger)index
 {
     CGFloat angle = index * M_PI * 2 / self.settings.explosionCount;
     if (self.settings.fireworkType == DHFireworkEffectTypeExplodeAndFade) {
         angle = [self randomBetweenZeroToOne] * M_PI * 2;
     }
     switch (self.settings.fireworkType) {
-        case DHFireworkEffectTypeFastExplosion:
+        case DHFireworkEffectTypeFastExplosion: {
+            GLfloat x = index % self.settings.explosionCount - self.settings.explosionCount / 2.f;
+            GLfloat y = index % (self.settings.explosionCount * self.settings.explosionCount) / self.settings.explosionCount - self.settings.explosionCount / 2.f;
+            GLfloat z = index / (self.settings.explosionCount * self.settings.explosionCount) - self.settings.explosionCount / 2.f;
+            return GLKVector3Normalize(GLKVector3Make(x, y, z));
+        }
         case DHFireworkEffectTypeDoubleExplosion:
             return GLKVector3Normalize(GLKVector3Make(cos(angle), sin(angle), 0));
         case DHFireworkEffectTypeExplodeAndFade:

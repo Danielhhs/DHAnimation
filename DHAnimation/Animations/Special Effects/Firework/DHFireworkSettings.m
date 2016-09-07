@@ -22,8 +22,8 @@
     settings.fireworkType = arc4random() % 3;
     switch (settings.fireworkType) {
         case DHFireworkEffectTypeFastExplosion: {
-            settings.tailParticleCount = 200;
-            settings.explosionCount = 20;
+            settings.tailParticleCount = 50;
+            settings.explosionCount = 6;
         }
             break;
         case DHFireworkEffectTypeExplodeAndFade: {
