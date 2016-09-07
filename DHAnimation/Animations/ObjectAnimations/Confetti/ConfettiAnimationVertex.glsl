@@ -41,9 +41,9 @@ vec4 updatedPosition()
             vertexToCenter.x = u_columnWidth / 2.f;
         }
         if (a_position.y < a_originalCenter.y) {
-            vertexToCenter.y = -u_columnWidth / 2.f;
+            vertexToCenter.y = -u_columnHeight / 2.f;
         } else {
-            vertexToCenter.y = u_columnWidth / 2.f;
+            vertexToCenter.y = u_columnHeight / 2.f;
         }
     }
     vertexToCenter.y *= cos(rotation);

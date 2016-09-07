@@ -40,6 +40,7 @@
     traceMvpLoc = glGetUniformLocation(traceProgram, "u_mvpMatrix");
     traceOffsetLoc = glGetUniformLocation(traceProgram, "u_offset");
     traceTimeLoc = glGetUniformLocation(traceProgram, "u_time");
+    self.animationView.drawableMultisample = GLKViewDrawableMultisample4X;
 }
 
 - (void) setupMeshes
